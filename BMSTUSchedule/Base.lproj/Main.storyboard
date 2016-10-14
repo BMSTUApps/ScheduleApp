@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pOp-LY-ntB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Расписание-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут будет таблица с расписанием занятий" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja5-hG-cD7">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ja5-hG-cD7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4AI-qI-i1M"/>
+                            <constraint firstItem="Ja5-hG-cD7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="BNq-dK-qhR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ja5-hG-cD7" secondAttribute="trailing" constant="37" id="ySm-GN-rwk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Расписание" id="sui-rO-64c"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="-353.07346326836586"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="M9z-rc-tBC">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pOp-LY-ntB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="F2C-0b-4h2">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bUR-Y3-Hhc" kind="relationship" relationship="viewControllers" id="7LW-OA-cN9"/>
+                        <segue destination="g57-tb-a0c" kind="relationship" relationship="viewControllers" id="R2K-wX-71O"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8fH-KY-m5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Настройки-->
+        <scene sceneID="Bfn-HX-AuA">
+            <objects>
+                <viewController id="Ayh-bN-yc0" customClass="ViewController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IxX-5j-cRF"/>
+                        <viewControllerLayoutGuide type="bottom" id="zUf-sy-vgf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4z5-IR-Hym">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут будут настройки приложения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWe-02-44l">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45.5" id="Jfn-VM-i30"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="vWe-02-44l" secondAttribute="trailing" constant="24" id="2W9-77-Bvn"/>
+                            <constraint firstItem="vWe-02-44l" firstAttribute="leading" secondItem="4z5-IR-Hym" secondAttribute="leadingMargin" constant="23" id="Jm7-Cb-vpb"/>
+                            <constraint firstItem="vWe-02-44l" firstAttribute="centerY" secondItem="4z5-IR-Hym" secondAttribute="centerY" id="UI0-sN-bJy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Настройки" id="22R-ic-T3Z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BQc-8o-VzI" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="563.56821589205401"/>
+        </scene>
+        <!--Расписание-->
+        <scene sceneID="bvQ-Lw-RZt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bUR-Y3-Hhc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Расписание" image="Test Image" selectedImage="Test Image (Filled)" id="LWg-IK-4q2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGy-34-HkW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="g3M-KN-psi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQZ-Ta-uka" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.8" y="-353.07346326836586"/>
+        </scene>
+        <!--Настройки-->
+        <scene sceneID="7YQ-oh-3YJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g57-tb-a0c" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Настройки" image="Test Image" selectedImage="Test Image (Filled)" id="boN-JZ-HTK"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q5M-J6-8Hd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ayh-bN-yc0" kind="relationship" relationship="rootViewController" id="oVp-Cr-kYN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U4M-Nw-1Xx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.8" y="563.56821589205401"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Test Image" width="25" height="25"/>
+        <image name="Test Image (Filled)" width="25" height="25"/>
+    </resources>
+</document>
