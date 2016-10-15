@@ -1,14 +1,12 @@
 //
-//  BSClass.swift
+//  Lesson.swift
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 14/10/2016.
 //  Copyright © 2016 techpark-iOS. All rights reserved.
 //
 
-import UIKit
-
-class Lesson {
+class Lesson: Base {
 
     enum LessonType {
         case lecture
@@ -24,8 +22,23 @@ class Lesson {
     
     var type: LessonType?
     
+    public override init() {
+        self.title = ""
+    }
+    
     public init(title: String) {
         self.title = title
+    }
+    
+    public init(title: String, teacher: String?, room: String?, type: LessonType?) {
+        self.title = title
+        self.teacher = teacher
+        self.room = room
+        self.type = type
+    }
+    
+    override var description : String {
+        return "Lesson(\"\(title)\")\n"
     }
     
 }

@@ -15,6 +15,7 @@
 		A5CED4EF1DB0E080000D2DFD /* BMSTUScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4EE1DB0E080000D2DFD /* BMSTUScheduleTests.swift */; };
 		A5CED4FA1DB0E080000D2DFD /* BMSTUScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4F91DB0E080000D2DFD /* BMSTUScheduleUITests.swift */; };
 		A5CED50B1DB0E94A000D2DFD /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED50A1DB0E94A000D2DFD /* Lesson.swift */; };
+		A5EC94B51DB2D96000299646 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC94B41DB2D96000299646 /* Base.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A5CED4F91DB0E080000D2DFD /* BMSTUScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMSTUScheduleUITests.swift; sourceTree = "<group>"; };
 		A5CED4FB1DB0E080000D2DFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5CED50A1DB0E94A000D2DFD /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lesson.swift; path = Model/Lesson.swift; sourceTree = "<group>"; };
+		A5EC94B41DB2D96000299646 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Base.swift; path = Model/Base.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		A5CED5091DB0E901000D2DFD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A5EC94B41DB2D96000299646 /* Base.swift */,
 				A5CED50A1DB0E94A000D2DFD /* Lesson.swift */,
 			);
 			name = Model;
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5EC94B51DB2D96000299646 /* Base.swift in Sources */,
 				A5CED4DC1DB0E080000D2DFD /* ViewController.swift in Sources */,
 				A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */,
 				A5CED50B1DB0E94A000D2DFD /* Lesson.swift in Sources */,
@@ -517,6 +521,7 @@
 				A5CED5001DB0E080000D2DFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5CED5011DB0E080000D2DFD /* Build configuration list for PBXNativeTarget "BMSTUScheduleTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +530,7 @@
 				A5CED5031DB0E080000D2DFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5CED5041DB0E080000D2DFD /* Build configuration list for PBXNativeTarget "BMSTUScheduleUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +539,7 @@
 				A5CED5061DB0E080000D2DFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
