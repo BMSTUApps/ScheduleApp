@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */; };
-		A5CED4DC1DB0E080000D2DFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4DB1DB0E080000D2DFD /* ViewController.swift */; };
 		A5CED4DF1DB0E080000D2DFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CED4DD1DB0E080000D2DFD /* Main.storyboard */; };
 		A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CED4E01DB0E080000D2DFD /* Assets.xcassets */; };
 		A5CED4E41DB0E080000D2DFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CED4E21DB0E080000D2DFD /* LaunchScreen.storyboard */; };
 		A5CED4EF1DB0E080000D2DFD /* BMSTUScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4EE1DB0E080000D2DFD /* BMSTUScheduleTests.swift */; };
 		A5CED4FA1DB0E080000D2DFD /* BMSTUScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4F91DB0E080000D2DFD /* BMSTUScheduleUITests.swift */; };
 		A5CED50B1DB0E94A000D2DFD /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED50A1DB0E94A000D2DFD /* Lesson.swift */; };
+		A5E0FE821DBFB59D008959A9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE811DBFB59D008959A9 /* SWRevealViewController.m */; };
+		A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE831DBFB870008959A9 /* ScheduleController.swift */; };
+		A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE881DBFFB22008959A9 /* SettingsController.swift */; };
 		A5EC94B51DB2D96000299646 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC94B41DB2D96000299646 /* Base.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +40,6 @@
 /* Begin PBXFileReference section */
 		A5CED4D61DB0E080000D2DFD /* BMSTUSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMSTUSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5CED4DB1DB0E080000D2DFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A5CED4DE1DB0E080000D2DFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5CED4E01DB0E080000D2DFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5CED4E31DB0E080000D2DFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +51,11 @@
 		A5CED4F91DB0E080000D2DFD /* BMSTUScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMSTUScheduleUITests.swift; sourceTree = "<group>"; };
 		A5CED4FB1DB0E080000D2DFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5CED50A1DB0E94A000D2DFD /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lesson.swift; path = Model/Lesson.swift; sourceTree = "<group>"; };
+		A5E0FE7F1DBFB59C008959A9 /* BMSTUSchedule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMSTUSchedule-Bridging-Header.h"; sourceTree = "<group>"; };
+		A5E0FE801DBFB59D008959A9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		A5E0FE811DBFB59D008959A9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		A5E0FE831DBFB870008959A9 /* ScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleController.swift; path = Controllers/ScheduleController.swift; sourceTree = "<group>"; };
+		A5E0FE881DBFFB22008959A9 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = Controllers/SettingsController.swift; sourceTree = "<group>"; };
 		A5EC94B41DB2D96000299646 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Base.swift; path = Model/Base.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,12 +108,13 @@
 			isa = PBXGroup;
 			children = (
 				A5CED5091DB0E901000D2DFD /* Model */,
+				A5E0FE851DBFB88D008959A9 /* Controllers */,
 				A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */,
-				A5CED4DB1DB0E080000D2DFD /* ViewController.swift */,
 				A5CED4DD1DB0E080000D2DFD /* Main.storyboard */,
-				A5CED4E01DB0E080000D2DFD /* Assets.xcassets */,
 				A5CED4E21DB0E080000D2DFD /* LaunchScreen.storyboard */,
+				A5CED4E01DB0E080000D2DFD /* Assets.xcassets */,
 				A5CED4E51DB0E080000D2DFD /* Info.plist */,
+				A5E0FE7A1DBFB56B008959A9 /* Libraries */,
 			);
 			path = BMSTUSchedule;
 			sourceTree = "<group>";
@@ -137,6 +144,33 @@
 				A5CED50A1DB0E94A000D2DFD /* Lesson.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A5E0FE7A1DBFB56B008959A9 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				A5E0FE7B1DBFB56B008959A9 /* SWRevealViewController */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		A5E0FE7B1DBFB56B008959A9 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A5E0FE801DBFB59D008959A9 /* SWRevealViewController.h */,
+				A5E0FE811DBFB59D008959A9 /* SWRevealViewController.m */,
+				A5E0FE7F1DBFB59C008959A9 /* BMSTUSchedule-Bridging-Header.h */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		A5E0FE851DBFB88D008959A9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A5E0FE831DBFB870008959A9 /* ScheduleController.swift */,
+				A5E0FE881DBFFB22008959A9 /* SettingsController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +241,7 @@
 				TargetAttributes = {
 					A5CED4D51DB0E07F000D2DFD = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 					};
 					A5CED4E91DB0E080000D2DFD = {
@@ -273,8 +308,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */,
 				A5EC94B51DB2D96000299646 /* Base.swift in Sources */,
-				A5CED4DC1DB0E080000D2DFD /* ViewController.swift in Sources */,
+				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
+				A5E0FE821DBFB59D008959A9 /* SWRevealViewController.m in Sources */,
 				A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */,
 				A5CED50B1DB0E94A000D2DFD /* Lesson.swift in Sources */,
 			);
@@ -426,11 +463,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BMSTUSchedule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.techpark-iOS.BMSTUSchedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BMSTUSchedule/Libraries/SWRevealViewController/BMSTUSchedule-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -439,11 +479,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BMSTUSchedule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.techpark-iOS.BMSTUSchedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BMSTUSchedule/Libraries/SWRevealViewController/BMSTUSchedule-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
