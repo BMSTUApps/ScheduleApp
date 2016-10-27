@@ -1,14 +1,14 @@
 //
-//  SettingsController.swift
+//  GroupsController.swift
 //  BMSTUSchedule
 //
-//  Created by Artem Belkov on 25/10/2016.
+//  Created by Artem Belkov on 27/10/2016.
 //  Copyright © 2016 techpark-iOS. All rights reserved.
 //
 
 import UIKit
 
-class SettingsController: UIViewController {
+class GroupsController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
