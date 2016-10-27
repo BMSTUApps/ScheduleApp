@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5485CBF1DC24245009610C2 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CBE1DC24245009610C2 /* LessonCell.swift */; };
 		A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */; };
 		A5CED4DF1DB0E080000D2DFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CED4DD1DB0E080000D2DFD /* Main.storyboard */; };
 		A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CED4E01DB0E080000D2DFD /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5485CBE1DC24245009610C2 /* LessonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonCell.swift; path = Views/LessonCell.swift; sourceTree = "<group>"; };
 		A5CED4D61DB0E080000D2DFD /* BMSTUSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMSTUSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CED4DE1DB0E080000D2DFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				A5CED5091DB0E901000D2DFD /* Model */,
+				A5E0FE8C1DC00698008959A9 /* Views */,
 				A5E0FE851DBFB88D008959A9 /* Controllers */,
 				A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */,
 				A5CED4DD1DB0E080000D2DFD /* Main.storyboard */,
@@ -171,6 +174,14 @@
 				A5E0FE881DBFFB22008959A9 /* SettingsController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A5E0FE8C1DC00698008959A9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5485CBE1DC24245009610C2 /* LessonCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5485CBF1DC24245009610C2 /* LessonCell.swift in Sources */,
 				A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */,
 				A5EC94B51DB2D96000299646 /* Base.swift in Sources */,
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
