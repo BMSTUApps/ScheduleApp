@@ -8,16 +8,15 @@
 
 import UIKit
 
-class ScheduleController: UIViewController {
+class ScheduleController: UITableViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var tableView: UITableView!
     
-    var lessons = [Lesson(title: "Предмет 1"),
-                   Lesson(title: "Предмет 2"),
-                   Lesson(title: "Предмет 3"),
-                   Lesson(title: "Предмет 4"),
-                   Lesson(title: "Предмет 5")]
+    var lessons = [Lesson(title: "Теория вероятности", teacher: "Безверхний", room: "230л"),
+                   Lesson(title: "Теория вероятности", teacher: "Безверхний", room: "230л"),
+                   Lesson(title: "Теория вероятности", teacher: "Безверхний", room: "230л"),
+                   Lesson(title: "Теория вероятности", teacher: "Безверхний", room: "230л"),
+                   Lesson(title: "Теория вероятности", teacher: "Безверхний", room: "230л")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +27,26 @@ class ScheduleController: UIViewController {
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+    
+        // Remove empty cells
+        tableView.tableFooterView = UIView()
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return lessons.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LessonCell", for: indexPath) as! LessonCell
+        
+        let lesson = lessons[indexPath.row]
+        
+        cell.titleLabel.text = lesson.title
+        cell.teacherLabel.text = lesson.teacher
+        cell.roomLabel.text = lesson.room
+        
+        return cell
     }
     
     override func didReceiveMemoryWarning() {

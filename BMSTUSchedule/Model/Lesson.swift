@@ -26,8 +26,12 @@ class Lesson: Base {
         self.title = ""
     }
     
-    public init(title: String) {
-        self.title = title
+    public convenience init(title: String) {
+        self.init(title: title, teacher: "", room: "", type: LessonType.lecture)
+    }
+    
+    public convenience init(title: String, teacher: String?, room: String?) {
+        self.init(title: title, teacher: teacher, room: room, type: LessonType.lecture)
     }
     
     public init(title: String, teacher: String?, room: String?, type: LessonType?) {

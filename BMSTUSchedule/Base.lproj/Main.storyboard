@@ -8,68 +8,78 @@
     </dependencies>
     <scenes>
         <!--Расписание-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="KMw-CN-uTd">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ScheduleController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="LUx-SS-ftO" customClass="ScheduleController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" id="rBB-Fl-gOx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fh7-L2-Czc">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonCell" rowHeight="100" id="Q9C-T9-ZaT" customClass="LessonCell" customModule="BMSTUSchedule" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q9C-T9-ZaT" id="K5O-AQ-UF6">
-                                            <frame key="frameInset" width="375" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPm-n1-5WQ">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="C04-tl-CAJ"/>
-                                                        <constraint firstAttribute="width" constant="126" id="c1f-GE-ek7"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonCell" rowHeight="77" id="Uqn-Ia-TRW" customClass="LessonCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="77"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uqn-Ia-TRW" id="2wx-Je-kFi">
+                                    <frame key="frameInset" width="375" height="76"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название предмета" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqP-mF-lvP">
                                             <constraints>
-                                                <constraint firstItem="fPm-n1-5WQ" firstAttribute="centerY" secondItem="K5O-AQ-UF6" secondAttribute="centerY" id="aey-OF-En5"/>
-                                                <constraint firstItem="fPm-n1-5WQ" firstAttribute="leading" secondItem="K5O-AQ-UF6" secondAttribute="leadingMargin" constant="10" id="yAK-fG-iif"/>
+                                                <constraint firstAttribute="height" constant="40" id="LpL-Ui-Vvv"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="titleLabel" destination="fPm-n1-5WQ" id="YXy-GU-f5h"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Fh7-L2-Czc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QXy-ZJ-1Xi"/>
-                            <constraint firstItem="Fh7-L2-Czc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cjf-Yq-obN"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fh7-L2-Czc" secondAttribute="bottom" id="ksr-PE-S0h"/>
-                            <constraint firstAttribute="trailing" secondItem="Fh7-L2-Czc" secondAttribute="trailing" id="tXZ-a0-vhQ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Расписание" id="sui-rO-64c">
-                        <barButtonItem key="leftBarButtonItem" image="Menu" id="Tci-Or-xl5">
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Преподаватель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpz-2y-XLq">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="641-xa-UQ7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="кабинет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avu-w0-hfV">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Tvk-Dl-BiB"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="avu-w0-hfV" firstAttribute="trailing" secondItem="2wx-Je-kFi" secondAttribute="trailingMargin" id="Buf-JA-rss"/>
+                                        <constraint firstItem="RqP-mF-lvP" firstAttribute="trailing" secondItem="2wx-Je-kFi" secondAttribute="trailingMargin" id="M3j-36-aI2"/>
+                                        <constraint firstItem="RqP-mF-lvP" firstAttribute="leading" secondItem="2wx-Je-kFi" secondAttribute="leadingMargin" constant="7" id="nMu-7N-AmP"/>
+                                        <constraint firstItem="RqP-mF-lvP" firstAttribute="top" secondItem="2wx-Je-kFi" secondAttribute="topMargin" id="s5i-Xu-yiz"/>
+                                        <constraint firstItem="kpz-2y-XLq" firstAttribute="bottom" secondItem="2wx-Je-kFi" secondAttribute="bottomMargin" id="uST-Ah-b6o"/>
+                                        <constraint firstItem="kpz-2y-XLq" firstAttribute="leading" secondItem="2wx-Je-kFi" secondAttribute="leadingMargin" constant="15" id="xR6-mm-fWF"/>
+                                        <constraint firstItem="avu-w0-hfV" firstAttribute="bottom" secondItem="2wx-Je-kFi" secondAttribute="bottomMargin" id="zF3-1v-NxI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="roomLabel" destination="avu-w0-hfV" id="S7v-X3-faD"/>
+                                    <outlet property="teacherLabel" destination="kpz-2y-XLq" id="Tdb-KN-BjW"/>
+                                    <outlet property="titleLabel" destination="RqP-mF-lvP" id="G8Y-I9-qNZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LUx-SS-ftO" id="d7g-aU-HGF"/>
+                            <outlet property="delegate" destination="LUx-SS-ftO" id="8Fx-ye-bUj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Расписание" id="AKe-4H-8dy">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="pNW-JG-CqJ">
                             <color key="tintColor" red="0.1294117719" green="0.14509804549999999" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="menuButton" destination="Tci-Or-xl5" id="MX9-7p-Pjo"/>
-                        <outlet property="tableView" destination="Fh7-L2-Czc" id="ma5-XC-iSZ"/>
+                        <outlet property="menuButton" destination="pNW-JG-CqJ" id="udl-XM-ent"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6D-7g-wwx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1964" y="-1066.4167916041979"/>
         </scene>
@@ -155,7 +165,7 @@
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KIz-L6-ffE" id="bB4-ft-ENz">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Расписание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJN-Yp-UNd">
@@ -175,7 +185,7 @@
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fg6-pY-7zV" id="RPZ-uZ-x9f">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRF-yZ-UUM">
@@ -192,7 +202,7 @@
                                         <rect key="frame" x="0.0" y="132" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qo3-5j-4VC" id="fNa-oH-shf">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Что-нибудь ещё" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wub-II-OxR">
@@ -209,7 +219,7 @@
                                         <rect key="frame" x="0.0" y="176" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kQP-cg-vfg" id="3ZJ-Vy-Kxq">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Настройки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hf-eP-IKZ">
@@ -249,7 +259,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="g3M-KN-psi"/>
+                        <segue destination="LUx-SS-ftO" kind="relationship" relationship="rootViewController" id="5Ft-Xq-PTK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQZ-Ta-uka" userLabel="First Responder" sceneMemberID="firstResponder"/>
