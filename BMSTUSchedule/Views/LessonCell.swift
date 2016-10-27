@@ -11,7 +11,11 @@ import UIKit
 class LessonCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
+    
     @IBOutlet weak var teacherLabel: UILabel!
     @IBOutlet weak var roomLabel: UILabel!
+    
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
     
 }

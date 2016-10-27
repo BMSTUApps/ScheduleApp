@@ -11,16 +11,17 @@
         <scene sceneID="KMw-CN-uTd">
             <objects>
                 <tableViewController id="LUx-SS-ftO" customClass="ScheduleController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" id="rBB-Fl-gOx">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" id="rBB-Fl-gOx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonCell" rowHeight="77" id="Uqn-Ia-TRW" customClass="LessonCell" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="77"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonCell" rowHeight="90" id="Uqn-Ia-TRW" customClass="LessonCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uqn-Ia-TRW" id="2wx-Je-kFi">
-                                    <frame key="frameInset" width="375" height="76"/>
+                                    <frame key="frameInset" width="375" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название предмета" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqP-mF-lvP">
@@ -28,14 +29,6 @@
                                                 <constraint firstAttribute="height" constant="40" id="LpL-Ui-Vvv"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Преподаватель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpz-2y-XLq">
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="641-xa-UQ7"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -47,19 +40,51 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7P-zE-wBQ">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="ppb-d9-veq"/>
+                                                <constraint firstAttribute="width" constant="38" id="zW4-sf-HhB"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0C-tc-1U6">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="HYP-Cf-lG2"/>
+                                                <constraint firstAttribute="width" constant="38" id="soj-Oo-jYu"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Преподаватель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpz-2y-XLq">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="641-xa-UQ7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="kpz-2y-XLq" firstAttribute="leading" secondItem="C0C-tc-1U6" secondAttribute="trailing" constant="17" id="6jd-Ke-VfC"/>
+                                        <constraint firstItem="Z7P-zE-wBQ" firstAttribute="top" secondItem="2wx-Je-kFi" secondAttribute="top" id="ASV-PE-oln"/>
                                         <constraint firstItem="avu-w0-hfV" firstAttribute="trailing" secondItem="2wx-Je-kFi" secondAttribute="trailingMargin" id="Buf-JA-rss"/>
                                         <constraint firstItem="RqP-mF-lvP" firstAttribute="trailing" secondItem="2wx-Je-kFi" secondAttribute="trailingMargin" id="M3j-36-aI2"/>
-                                        <constraint firstItem="RqP-mF-lvP" firstAttribute="leading" secondItem="2wx-Je-kFi" secondAttribute="leadingMargin" constant="7" id="nMu-7N-AmP"/>
-                                        <constraint firstItem="RqP-mF-lvP" firstAttribute="top" secondItem="2wx-Je-kFi" secondAttribute="topMargin" id="s5i-Xu-yiz"/>
-                                        <constraint firstItem="kpz-2y-XLq" firstAttribute="bottom" secondItem="2wx-Je-kFi" secondAttribute="bottomMargin" id="uST-Ah-b6o"/>
-                                        <constraint firstItem="kpz-2y-XLq" firstAttribute="leading" secondItem="2wx-Je-kFi" secondAttribute="leadingMargin" constant="15" id="xR6-mm-fWF"/>
+                                        <constraint firstAttribute="bottom" secondItem="C0C-tc-1U6" secondAttribute="bottom" id="Ovm-z6-bhj"/>
+                                        <constraint firstItem="Z7P-zE-wBQ" firstAttribute="leading" secondItem="2wx-Je-kFi" secondAttribute="leading" constant="8" id="QXj-se-CqU"/>
+                                        <constraint firstItem="RqP-mF-lvP" firstAttribute="leading" secondItem="Z7P-zE-wBQ" secondAttribute="trailing" constant="4" id="plJ-3O-kco"/>
+                                        <constraint firstItem="RqP-mF-lvP" firstAttribute="top" secondItem="2wx-Je-kFi" secondAttribute="topMargin" constant="2" id="s5i-Xu-yiz"/>
+                                        <constraint firstItem="kpz-2y-XLq" firstAttribute="bottom" secondItem="2wx-Je-kFi" secondAttribute="bottomMargin" constant="1" id="uST-Ah-b6o"/>
+                                        <constraint firstItem="C0C-tc-1U6" firstAttribute="leading" secondItem="2wx-Je-kFi" secondAttribute="leading" constant="8" id="z0q-Yw-ZcU"/>
                                         <constraint firstItem="avu-w0-hfV" firstAttribute="bottom" secondItem="2wx-Je-kFi" secondAttribute="bottomMargin" id="zF3-1v-NxI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="endTimeLabel" destination="C0C-tc-1U6" id="tcE-Kv-5Ra"/>
                                     <outlet property="roomLabel" destination="avu-w0-hfV" id="S7v-X3-faD"/>
+                                    <outlet property="startTimeLabel" destination="Z7P-zE-wBQ" id="zg5-5K-LDz"/>
                                     <outlet property="teacherLabel" destination="kpz-2y-XLq" id="Tdb-KN-BjW"/>
                                     <outlet property="titleLabel" destination="RqP-mF-lvP" id="G8Y-I9-qNZ"/>
                                 </connections>

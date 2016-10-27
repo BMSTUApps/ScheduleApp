@@ -22,23 +22,24 @@ class Lesson: Base {
     
     var type: LessonType?
     
-    public override init() {
-        self.title = ""
-    }
+    var startTime: String?
+    var endTime: String?
     
-    public convenience init(title: String) {
-        self.init(title: title, teacher: "", room: "", type: LessonType.lecture)
-    }
-    
-    public convenience init(title: String, teacher: String?, room: String?) {
-        self.init(title: title, teacher: teacher, room: room, type: LessonType.lecture)
-    }
-    
-    public init(title: String, teacher: String?, room: String?, type: LessonType?) {
+    init(title: String, teacher: String?, room: String?, type: LessonType?, startTime: String?, endTime: String?) {
         self.title = title
         self.teacher = teacher
         self.room = room
         self.type = type
+        self.startTime = startTime
+        self.endTime = endTime
+    }
+    
+    convenience init(title: String, teacher: String?, room: String?) {
+        self.init(title: title, teacher: teacher, room: room, type: .lecture, startTime: "", endTime: "")
+    }
+    
+    convenience init(title: String) {
+        self.init(title: title, teacher: "", room: "")
     }
     
     override var description : String {
