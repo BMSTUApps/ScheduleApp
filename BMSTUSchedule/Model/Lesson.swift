@@ -46,4 +46,26 @@ class Lesson: Base {
         return "Lesson(\"\(title)\")\n"
     }
     
+    func typeString() -> String {
+        
+        var typeString = ""
+        
+        if let type = self.type {
+            switch type {
+            case .lecture:
+                typeString = "лекция"
+            case .seminar:
+                typeString = "семинар"
+            case .lab:
+                typeString = "лаба"
+            case .consultation:
+                typeString = "кср"
+            default:
+                break
+            }
+        }
+        
+        return typeString
+    }
+    
 }

@@ -24,11 +24,19 @@
                                     <frame key="frameInset" width="375" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название предмета" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqP-mF-lvP">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название предмета" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RqP-mF-lvP">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="LpL-Ui-Vvv"/>
+                                                <constraint firstAttribute="height" constant="51" id="LpL-Ui-Vvv"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Преподаватель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpz-2y-XLq">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="641-xa-UQ7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -58,27 +66,29 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Преподаватель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpz-2y-XLq">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="тип" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odb-S6-gVh">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="641-xa-UQ7"/>
+                                                <constraint firstAttribute="height" constant="21" id="7kh-LY-i0D"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="kpz-2y-XLq" firstAttribute="leading" secondItem="C0C-tc-1U6" secondAttribute="trailing" constant="17" id="6jd-Ke-VfC"/>
+                                        <constraint firstAttribute="bottom" secondItem="Odb-S6-gVh" secondAttribute="bottom" constant="7" id="4Cp-Kl-3rH"/>
                                         <constraint firstItem="Z7P-zE-wBQ" firstAttribute="top" secondItem="2wx-Je-kFi" secondAttribute="top" id="ASV-PE-oln"/>
                                         <constraint firstItem="avu-w0-hfV" firstAttribute="trailing" secondItem="2wx-Je-kFi" secondAttribute="trailingMargin" id="Buf-JA-rss"/>
                                         <constraint firstItem="RqP-mF-lvP" firstAttribute="trailing" secondItem="2wx-Je-kFi" secondAttribute="trailingMargin" id="M3j-36-aI2"/>
                                         <constraint firstAttribute="bottom" secondItem="C0C-tc-1U6" secondAttribute="bottom" id="Ovm-z6-bhj"/>
                                         <constraint firstItem="Z7P-zE-wBQ" firstAttribute="leading" secondItem="2wx-Je-kFi" secondAttribute="leading" constant="8" id="QXj-se-CqU"/>
+                                        <constraint firstAttribute="trailing" secondItem="Odb-S6-gVh" secondAttribute="trailing" constant="8" id="QyB-Uh-mwQ"/>
+                                        <constraint firstItem="kpz-2y-XLq" firstAttribute="leading" secondItem="C0C-tc-1U6" secondAttribute="trailing" constant="16" id="iZ4-H0-ibX"/>
                                         <constraint firstItem="RqP-mF-lvP" firstAttribute="leading" secondItem="Z7P-zE-wBQ" secondAttribute="trailing" constant="4" id="plJ-3O-kco"/>
                                         <constraint firstItem="RqP-mF-lvP" firstAttribute="top" secondItem="2wx-Je-kFi" secondAttribute="topMargin" constant="2" id="s5i-Xu-yiz"/>
+                                        <constraint firstItem="avu-w0-hfV" firstAttribute="top" secondItem="2wx-Je-kFi" secondAttribute="topMargin" id="sgH-5D-TW3"/>
                                         <constraint firstItem="kpz-2y-XLq" firstAttribute="bottom" secondItem="2wx-Je-kFi" secondAttribute="bottomMargin" constant="1" id="uST-Ah-b6o"/>
                                         <constraint firstItem="C0C-tc-1U6" firstAttribute="leading" secondItem="2wx-Je-kFi" secondAttribute="leading" constant="8" id="z0q-Yw-ZcU"/>
-                                        <constraint firstItem="avu-w0-hfV" firstAttribute="bottom" secondItem="2wx-Je-kFi" secondAttribute="bottomMargin" id="zF3-1v-NxI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -87,6 +97,7 @@
                                     <outlet property="startTimeLabel" destination="Z7P-zE-wBQ" id="zg5-5K-LDz"/>
                                     <outlet property="teacherLabel" destination="kpz-2y-XLq" id="Tdb-KN-BjW"/>
                                     <outlet property="titleLabel" destination="RqP-mF-lvP" id="G8Y-I9-qNZ"/>
+                                    <outlet property="typeLabel" destination="Odb-S6-gVh" id="ugA-Al-bUB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

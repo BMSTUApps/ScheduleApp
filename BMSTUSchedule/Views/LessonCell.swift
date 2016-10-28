@@ -14,6 +14,7 @@ class LessonCell: UITableViewCell {
     
     @IBOutlet weak var teacherLabel: UILabel!
     @IBOutlet weak var roomLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
     
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!

@@ -70,6 +70,7 @@ class ScheduleController: UITableViewController {
         
         cell.teacherLabel.text = lesson.teacher
         cell.roomLabel.text = lesson.room
+        cell.typeLabel.text = lesson.typeString()
         
         cell.startTimeLabel.text = lesson.startTime
         cell.endTimeLabel.text = lesson.endTime
