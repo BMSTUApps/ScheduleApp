@@ -12,11 +12,7 @@ class ScheduleController: UITableViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    var lessons: [[Lesson]] = []
-    var daysTitles = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
-    
-    var schedule: [Schedule] = []
-    
+    var schedule: Schedule = Schedule()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +27,46 @@ class ScheduleController: UITableViewController {
         // Remove empty cells
         tableView.tableFooterView = UIView()
         
-        // Create test lessons
-        for _ in 0...self.daysTitles.count-1 {
+        // Set random schedule
+        self.setRandomSchedule()
+        
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return schedule.numeratorWeek.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return schedule.numeratorWeek[section].title
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return schedule.numeratorWeek[section].lessons.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LessonCell", for: indexPath) as! LessonCell
+        
+        let lesson = schedule.numeratorWeek[indexPath.section].lessons[indexPath.row]
+        
+        cell.titleLabel.text = lesson.title
+        
+        cell.teacherLabel.text = lesson.teacher
+        cell.roomLabel.text = lesson.room
+        cell.typeLabel.text = lesson.typeString()
+        
+        cell.startTimeLabel.text = lesson.startTime
+        cell.endTimeLabel.text = lesson.endTime
+        
+        return cell
+    }
+    
+    func setRandomSchedule() {
+     
+        var daysTitles = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
+        
+        for i in 0...daysTitles.count-1 {
             
             let dayLessonsCount = arc4random_uniform(5) + 1
             var dayLessons: [Lesson] = []
@@ -45,40 +79,11 @@ class ScheduleController: UITableViewController {
                                          startTime: "12:00",
                                          endTime: "13:35"))
             }
-
-            lessons.append(dayLessons)
+            
+            let day = Day(title:daysTitles[i], lessons:dayLessons)
+            self.schedule.numeratorWeek.append(day)
         }
         
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return lessons.count
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return daysTitles[section]
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lessons[section].count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LessonCell", for: indexPath) as! LessonCell
-        
-        let lesson = lessons[indexPath.section][indexPath.row]
-        
-        cell.titleLabel.text = lesson.title
-        
-        cell.teacherLabel.text = lesson.teacher
-        cell.roomLabel.text = lesson.room
-        cell.typeLabel.text = lesson.typeString()
-        
-        cell.startTimeLabel.text = lesson.startTime
-        cell.endTimeLabel.text = lesson.endTime
-        
-        return cell
     }
     
     override func didReceiveMemoryWarning() {

@@ -60,8 +60,6 @@ class Lesson: Base {
                 typeString = "лаба"
             case .consultation:
                 typeString = "кср"
-            default:
-                break
             }
         }
         

@@ -18,4 +18,8 @@ class Schedule: Base {
         self.denominatorWeek = denominatorWeek
     }
     
+    override convenience init() {
+        self.init(numeratorWeek: [], denominatorWeek: [])
+    }
+    
 }
