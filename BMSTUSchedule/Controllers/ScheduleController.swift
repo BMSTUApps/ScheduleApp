@@ -15,6 +15,9 @@ class ScheduleController: UITableViewController {
     var lessons: [[Lesson]] = []
     var daysTitles = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
     
+    var schedule: [Schedule] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

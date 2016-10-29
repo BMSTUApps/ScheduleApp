@@ -1,0 +1,6 @@
+framework module Pods_BMSTUScheduleTests {
+  umbrella header "Pods-BMSTUScheduleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

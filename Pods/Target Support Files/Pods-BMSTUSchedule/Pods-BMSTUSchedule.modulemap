@@ -1,0 +1,6 @@
+framework module Pods_BMSTUSchedule {
+  umbrella header "Pods-BMSTUSchedule-umbrella.h"
+
+  export *
+  module * { export * }
+}
