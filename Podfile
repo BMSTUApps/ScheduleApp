@@ -2,11 +2,14 @@
 # platform :ios, '9.0'
 
 target 'BMSTUSchedule' do
-  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for BMSTUSchedule
-  pod 'Alamofire'
+  pod 'SwiftyJSON',
+    :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+  pod 'Alamofire',
+    :git => 'https://github.com/Alamofire/Alamofire.git'
+
 
   target 'BMSTUScheduleTests' do
     inherit! :search_paths
