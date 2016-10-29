@@ -32,8 +32,8 @@
 
 
 ## Команда
-* [Семён Дердуга](https://park.mail.ru/profile/s.derduga/)
-* [Данилов Никита](https://park.mail.ru/profile/d.nikita/)
-* [Артём Белков](https://park.mail.ru/profile/a.belkov/)
-* [Рустам Мигранов](https://park.mail.ru/profile/r.migranov/)
+* [Семён Дердуга](https://park.mail.ru/profile/s.derduga/) (SemyonDerduga)
+* [Данилов Никита](https://park.mail.ru/profile/d.nikita/) (dankin96)
+* [Артём Белков](https://park.mail.ru/profile/a.belkov/) (bestK1ngArthur)
+* [Рустам Мигранов](https://park.mail.ru/profile/r.migranov/) (выбыл на неопределённый срок)
 
