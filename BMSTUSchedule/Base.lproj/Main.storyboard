@@ -218,11 +218,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.17254901960784313" green="0.21176470588235294" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.63137254899999995" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   МГТУ им. Н.Э. Баумана" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aeK-eI-Q3T">
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     МГТУ им. Н.Э. Баумана" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="99D-ph-6FK">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                            <color key="textColor" red="0.78431372549019607" green="0.81960784313725488" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.7843137255" green="0.81960784310000001" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <sections>
@@ -235,15 +235,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Расписание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJN-Yp-UNd">
-                                                    <rect key="frame" x="76" y="11" width="97" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расписание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJN-Yp-UNd">
+                                                    <rect key="frame" x="72" y="11" width="97" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.63137254901960782" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu-schedule" translatesAutoresizingMaskIntoConstraints="NO" id="E4E-a0-heO">
-                                                    <rect key="frame" x="40" y="9" width="25" height="25"/>
+                                                    <rect key="frame" x="36" y="9" width="25" height="25"/>
                                                     <color key="tintColor" red="0.63137254901960782" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="GPD-Kr-nWH"/>
@@ -252,8 +251,10 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="E4E-a0-heO" firstAttribute="leading" secondItem="bB4-ft-ENz" secondAttribute="leadingMargin" constant="32" id="GOe-fa-zIE"/>
+                                                <constraint firstItem="E4E-a0-heO" firstAttribute="leading" secondItem="bB4-ft-ENz" secondAttribute="leadingMargin" constant="28" id="GOe-fa-zIE"/>
+                                                <constraint firstItem="VJN-Yp-UNd" firstAttribute="top" secondItem="bB4-ft-ENz" secondAttribute="topMargin" constant="3" id="HMu-Rg-ZqK"/>
                                                 <constraint firstItem="E4E-a0-heO" firstAttribute="top" secondItem="bB4-ft-ENz" secondAttribute="topMargin" constant="1" id="QEy-Ef-vyu"/>
+                                                <constraint firstItem="VJN-Yp-UNd" firstAttribute="leading" secondItem="E4E-a0-heO" secondAttribute="trailing" constant="11" id="vKB-Jq-s7R"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.17254901959999999" green="0.21176470589999999" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -268,15 +269,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRF-yZ-UUM">
-                                                    <rect key="frame" x="76" y="11" width="59" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRF-yZ-UUM">
+                                                    <rect key="frame" x="72" y="11" width="59" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.63137254901960782" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu-groups" translatesAutoresizingMaskIntoConstraints="NO" id="asD-eh-4jC">
-                                                    <rect key="frame" x="40" y="9" width="25" height="25"/>
+                                                    <rect key="frame" x="36" y="9" width="25" height="25"/>
                                                     <color key="tintColor" red="0.63137254899999995" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="6aE-Ex-DnY"/>
@@ -285,8 +285,10 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="yRF-yZ-UUM" firstAttribute="leading" secondItem="asD-eh-4jC" secondAttribute="trailing" constant="11" id="2la-aY-kvS"/>
                                                 <constraint firstItem="asD-eh-4jC" firstAttribute="top" secondItem="RPZ-uZ-x9f" secondAttribute="topMargin" constant="1" id="6HD-zO-TZd"/>
-                                                <constraint firstItem="asD-eh-4jC" firstAttribute="leading" secondItem="RPZ-uZ-x9f" secondAttribute="leadingMargin" constant="32" id="p3c-q7-Z0R"/>
+                                                <constraint firstItem="yRF-yZ-UUM" firstAttribute="top" secondItem="RPZ-uZ-x9f" secondAttribute="topMargin" constant="3" id="E38-7Z-nW4"/>
+                                                <constraint firstItem="asD-eh-4jC" firstAttribute="leading" secondItem="RPZ-uZ-x9f" secondAttribute="leadingMargin" constant="28" id="p3c-q7-Z0R"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.17254901959999999" green="0.21176470589999999" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -301,15 +303,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Настройки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hf-eP-IKZ">
-                                                    <rect key="frame" x="76" y="11" width="88" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hf-eP-IKZ">
+                                                    <rect key="frame" x="72" y="11" width="88" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.63137254901960782" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu-settings" translatesAutoresizingMaskIntoConstraints="NO" id="0Ja-q5-Zav">
-                                                    <rect key="frame" x="40" y="9" width="25" height="25"/>
+                                                    <rect key="frame" x="36" y="9" width="25" height="25"/>
                                                     <color key="tintColor" red="0.63137254899999995" green="0.67450980390000004" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="0PF-eV-uh0"/>
@@ -318,8 +319,10 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="6hf-eP-IKZ" firstAttribute="leading" secondItem="0Ja-q5-Zav" secondAttribute="trailing" constant="11" id="3eP-Dk-Llp"/>
+                                                <constraint firstItem="6hf-eP-IKZ" firstAttribute="top" secondItem="3ZJ-Vy-Kxq" secondAttribute="topMargin" constant="3" id="6Gc-TV-ke3"/>
                                                 <constraint firstItem="0Ja-q5-Zav" firstAttribute="top" secondItem="3ZJ-Vy-Kxq" secondAttribute="topMargin" constant="1" id="b1d-IK-h9Z"/>
-                                                <constraint firstItem="0Ja-q5-Zav" firstAttribute="leading" secondItem="3ZJ-Vy-Kxq" secondAttribute="leadingMargin" constant="32" id="tRA-Kw-o2T"/>
+                                                <constraint firstItem="0Ja-q5-Zav" firstAttribute="leading" secondItem="3ZJ-Vy-Kxq" secondAttribute="leadingMargin" constant="28" id="tRA-Kw-o2T"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.17254901959999999" green="0.21176470589999999" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
