@@ -59,6 +59,11 @@ class ScheduleController: UITableViewController {
         cell.startTimeLabel.text = lesson.startTime
         cell.endTimeLabel.text = lesson.endTime
         
+        if let type = lesson.type {
+            cell.setTypeColor(type: type)
+            cell.drawTypeRect(type: type)
+        }
+        
         return cell
     }
     
@@ -72,12 +77,34 @@ class ScheduleController: UITableViewController {
             var dayLessons: [Lesson] = []
             
             for _ in 0...dayLessonsCount {
-                dayLessons.append(Lesson(title: "Теория вероятности",
-                                         teacher: "Безверхний Н.В.",
-                                         room: "230л",
-                                         type: .lecture,
-                                         startTime: "12:00",
-                                         endTime: "13:35"))
+                
+                let lessonIndex = arc4random_uniform(3) + 1
+                switch lessonIndex {
+                case 1:
+                    dayLessons.append(Lesson(title: "Теория вероятности",
+                                             teacher: "Безверхний Н.В.",
+                                             room: "230л",
+                                             type: .lecture,
+                                             startTime: "12:00",
+                                             endTime: "13:35"))
+                case 2:
+                    dayLessons.append(Lesson(title: "Электротехника",
+                                             teacher: "Белодедов М.В.",
+                                             room: "700",
+                                             type: .lab,
+                                             startTime: "13:50",
+                                             endTime: "15:25"))
+                case 3:
+                    dayLessons.append(Lesson(title: "Архитектура автоматизированных систем обработки информации и управления",
+                                             teacher: "Шук В. П.",
+                                             room: "501ю",
+                                             type: .seminar,
+                                             startTime: "10:15",
+                                             endTime: "11:50"))
+                default:
+                    break
+                }
+                
             }
             
             let day = Day(title:daysTitles[i], lessons:dayLessons)

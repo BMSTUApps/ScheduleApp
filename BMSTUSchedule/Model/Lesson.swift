@@ -12,7 +12,6 @@ class Lesson: Base {
         case lecture
         case seminar
         case lab
-        case consultation
     }
     
     var title: String
@@ -58,8 +57,6 @@ class Lesson: Base {
                 typeString = "семинар"
             case .lab:
                 typeString = "лаба"
-            case .consultation:
-                typeString = "кср"
             }
         }
         
