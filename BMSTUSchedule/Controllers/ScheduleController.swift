@@ -32,6 +32,8 @@ class ScheduleController: UITableViewController {
         
     }
     
+    // MARK: - Table view data source
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return schedule.numeratorWeek.count
     }
@@ -66,6 +68,9 @@ class ScheduleController: UITableViewController {
         
         return cell
     }
+    
+    
+    // MARK: - Schedule
     
     func setRandomSchedule() {
      
@@ -112,6 +117,8 @@ class ScheduleController: UITableViewController {
         }
         
     }
+    
+    // MARK: - Memory
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
