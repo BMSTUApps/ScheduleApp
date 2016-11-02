@@ -5,10 +5,10 @@ target 'BMSTUSchedule' do
   use_frameworks!
 
   # Pods for BMSTUSchedule
-  pod 'SwiftyJSON',
-    :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
-  pod 'Alamofire',
-    :git => 'https://github.com/Alamofire/Alamofire.git'
+  #pod 'SwiftyJSON',
+  #:git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+  #pod 'Alamofire',
+  #:git => 'https://github.com/Alamofire/Alamofire.git'
 
 
   target 'BMSTUScheduleTests' do
