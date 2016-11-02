@@ -19,4 +19,5 @@ class LessonCell: UITableViewCell {
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
     
+    @IBOutlet weak var breakLabel: UILabel!
 }
