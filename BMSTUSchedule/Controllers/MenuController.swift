@@ -18,6 +18,9 @@ class MenuController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Set swipe menu
+        self.revealViewController().rearViewRevealOverdraw = 0
+        
         // Change default image's tint color
         for imageView: UIImageView in self.imageViews {
             let color = UIColor(red: 161/255, green: 172/255, blue: 182/255, alpha: 1)
