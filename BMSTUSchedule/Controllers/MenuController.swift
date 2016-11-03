@@ -37,24 +37,18 @@ class MenuController: UITableViewController {
     
     // MARK: - Table view delegate
     
-    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         
-        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath as IndexPath)!
+        let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath as IndexPath)!
+        
+        selectedCell.selectionStyle = .gray
         
         let backgroundView = UIView()
         backgroundView.backgroundColor = menuItemSelectedColor
         selectedCell.selectedBackgroundView = backgroundView
         
-        return indexPath
+        return true
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath as IndexPath)!
-        
-        selectedCell.contentView.backgroundColor = menuItemSelectedColor
-    }
-
 }
 
 extension UIImage {
