@@ -10,9 +10,9 @@ import UIKit
 
 class ScheduleController: UITableViewController {
     
-    @IBOutlet weak var menuButton: UIBarButtonItem!
+    var schedule = Schedule()
     
-    var schedule: Schedule = Schedule()
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,15 +56,10 @@ class ScheduleController: UITableViewController {
         
         cell.teacherLabel.text = lesson.teacher
         cell.roomLabel.text = lesson.room
-        cell.typeLabel.text = lesson.typeString()
+        cell.setType(type: lesson.type)
         
         cell.startTimeLabel.text = lesson.startTime
         cell.endTimeLabel.text = lesson.endTime
-        
-        if let type = lesson.type {
-            cell.setTypeColor(type: type)
-            cell.drawTypeRect(type: type)
-        }
         
         return cell
     }

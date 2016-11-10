@@ -6,8 +6,6 @@
 //  Copyright © 2016 techpark-iOS. All rights reserved.
 //
 
-import UIKit
-
 class Schedule: Base {
 
     var numeratorWeek: [Day]

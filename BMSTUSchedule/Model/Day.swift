@@ -6,8 +6,6 @@
 //  Copyright © 2016 techpark-iOS. All rights reserved.
 //
 
-import UIKit
-
 class Day: Base {
 
     var title: String

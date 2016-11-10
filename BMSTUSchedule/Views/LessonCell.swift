@@ -32,7 +32,17 @@ class LessonCell: UITableViewCell {
     
     @IBOutlet weak var breakLabel: UILabel!
     
+    func setType(type: Lesson.LessonType?) {
+        
+        if let type = type {
+            self.typeLabel.text = type.string()
+            self.setTypeColor(type: type)
+            self.drawTypeRect(type: type)
+        }
+    }
+    
     func setTypeColor(type: Lesson.LessonType) {
+        
         switch type {
         case .lecture:
             self.typeLabel.textColor = typeColors["lecture"]

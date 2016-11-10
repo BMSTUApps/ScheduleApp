@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34F1BFD579AC516BB9D72D3F /* Pods_BMSTUScheduleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A44130F770FD807D2AED7F4F /* Pods_BMSTUScheduleTests.framework */; };
+		A525F3D21DD4C9D4003A7CC0 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3D11DD4C9D4003A7CC0 /* Group.swift */; };
 		A5485CC11DC245BC009610C2 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC01DC245BC009610C2 /* LessonCell.swift */; };
 		A5485CC31DC26173009610C2 /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC21DC26173009610C2 /* GroupsController.swift */; };
 		A55B90531DCA37E20068B9BE /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B90521DCA37E20068B9BE /* MenuController.swift */; };
@@ -53,6 +54,7 @@
 		793CA6CF03F2F48A50E4F412 /* Pods_BMSTUSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMSTUSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		831933F057A6FACC8B5135A8 /* Pods-BMSTUScheduleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMSTUScheduleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMSTUScheduleTests/Pods-BMSTUScheduleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A44130F770FD807D2AED7F4F /* Pods_BMSTUScheduleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMSTUScheduleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A525F3D11DD4C9D4003A7CC0 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = Model/Group.swift; sourceTree = "<group>"; };
 		A5485CC01DC245BC009610C2 /* LessonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonCell.swift; path = Views/LessonCell.swift; sourceTree = "<group>"; };
 		A5485CC21DC26173009610C2 /* GroupsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsController.swift; path = Controllers/GroupsController.swift; sourceTree = "<group>"; };
 		A55B90521DCA37E20068B9BE /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuController.swift; path = Controllers/MenuController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				A5CED50A1DB0E94A000D2DFD /* Lesson.swift */,
 				A5F2E1F61DC4C1E100841669 /* Day.swift */,
 				A5F2E1F81DC4C2D400841669 /* Schedule.swift */,
+				A525F3D11DD4C9D4003A7CC0 /* Group.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				A5485CC11DC245BC009610C2 /* LessonCell.swift in Sources */,
 				A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */,
 				A5EC94B51DB2D96000299646 /* Base.swift in Sources */,
+				A525F3D21DD4C9D4003A7CC0 /* Group.swift in Sources */,
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
 				A5E0FE821DBFB59D008959A9 /* SWRevealViewController.m in Sources */,
 				A55B90531DCA37E20068B9BE /* MenuController.swift in Sources */,

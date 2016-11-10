@@ -10,7 +10,6 @@ import UIKit
 
 class MenuController: UITableViewController {
 
-    
     let menuItemSelectedColor = UIColor(red: 87/255, green: 108/255, blue: 126/255, alpha: 1)
 
     @IBOutlet var imageViews: [UIImageView]!

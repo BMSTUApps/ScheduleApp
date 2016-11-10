@@ -9,9 +9,17 @@
 class Lesson: Base {
 
     enum LessonType {
-        case lecture
-        case seminar
-        case lab
+        case lecture, seminar, lab
+        func string() -> String {
+            switch self {
+            case .lecture:
+                return "лекция"
+            case .seminar:
+                return "семинар"
+            case .lab:
+                return "лаба"
+            }
+        }
     }
     
     var title: String
@@ -43,24 +51,6 @@ class Lesson: Base {
     
     override var description : String {
         return "Lesson(\"\(title)\")\n"
-    }
-    
-    func typeString() -> String {
-        
-        var typeString = ""
-        
-        if let type = self.type {
-            switch type {
-            case .lecture:
-                typeString = "лекция"
-            case .seminar:
-                typeString = "семинар"
-            case .lab:
-                typeString = "лаба"
-            }
-        }
-        
-        return typeString
     }
     
 }
