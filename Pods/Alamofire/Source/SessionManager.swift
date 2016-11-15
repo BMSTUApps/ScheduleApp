@@ -231,12 +231,14 @@ open class SessionManager {
         headers: HTTPHeaders? = nil)
         -> DataRequest
     {
+        var originalRequest: URLRequest?
+
         do {
-            let urlRequest = try URLRequest(url: url, method: method, headers: headers)
-            let encodedURLRequest = try encoding.encode(urlRequest, with: parameters)
+            originalRequest = try URLRequest(url: url, method: method, headers: headers)
+            let encodedURLRequest = try encoding.encode(originalRequest!, with: parameters)
             return request(encodedURLRequest)
         } catch {
-            return request(failedWith: error)
+            return request(originalRequest, failedWith: error)
         }
     }
 
@@ -248,9 +250,11 @@ open class SessionManager {
     ///
     /// - returns: The created `DataRequest`.
     open func request(_ urlRequest: URLRequestConvertible) -> DataRequest {
+        var originalRequest: URLRequest?
+
         do {
-            let originalRequest = try urlRequest.asURLRequest()
-            let originalTask = DataRequest.Requestable(urlRequest: originalRequest)
+            originalRequest = try urlRequest.asURLRequest()
+            let originalTask = DataRequest.Requestable(urlRequest: originalRequest!)
 
             let task = try originalTask.task(session: session, adapter: adapter, queue: queue)
             let request = DataRequest(session: session, requestTask: .data(originalTask, task))
@@ -261,15 +265,29 @@ open class SessionManager {
 
             return request
         } catch {
-            return request(failedWith: error)
+            return request(originalRequest, failedWith: error)
         }
     }
 
     // MARK: Private - Request Implementation
 
-    private func request(failedWith error: Error) -> DataRequest {
-        let request = DataRequest(session: session, requestTask: .data(nil, nil), error: error)
-        if startRequestsImmediately { request.resume() }
+    private func request(_ urlRequest: URLRequest?, failedWith error: Error) -> DataRequest {
+        var requestTask: Request.RequestTask = .data(nil, nil)
+
+        if let urlRequest = urlRequest {
+            let originalTask = DataRequest.Requestable(urlRequest: urlRequest)
+            requestTask = .data(originalTask, nil)
+        }
+
+        let underlyingError = error.underlyingAdaptError ?? error
+        let request = DataRequest(session: session, requestTask: requestTask, error: underlyingError)
+
+        if let retrier = retrier, error is AdaptError {
+            allowRetrier(retrier, toRetry: request, with: error)
+        } else {
+            if startRequestsImmediately { request.resume() }
+        }
+
         return request
     }
 
@@ -308,7 +326,7 @@ open class SessionManager {
             let encodedURLRequest = try encoding.encode(urlRequest, with: parameters)
             return download(encodedURLRequest, to: destination)
         } catch {
-            return download(failedWith: error)
+            return download(nil, to: destination, failedWith: error)
         }
     }
 
@@ -334,7 +352,7 @@ open class SessionManager {
             let urlRequest = try urlRequest.asURLRequest()
             return download(.request(urlRequest), to: destination)
         } catch {
-            return download(failedWith: error)
+            return download(nil, to: destination, failedWith: error)
         }
     }
 
@@ -379,23 +397,43 @@ open class SessionManager {
     {
         do {
             let task = try downloadable.task(session: session, adapter: adapter, queue: queue)
-            let request = DownloadRequest(session: session, requestTask: .download(downloadable, task))
+            let download = DownloadRequest(session: session, requestTask: .download(downloadable, task))
 
-            request.downloadDelegate.destination = destination
+            download.downloadDelegate.destination = destination
 
-            delegate[task] = request
+            delegate[task] = download
 
-            if startRequestsImmediately { request.resume() }
+            if startRequestsImmediately { download.resume() }
 
-            return request
+            return download
         } catch {
-            return download(failedWith: error)
+            return download(downloadable, to: destination, failedWith: error)
         }
     }
 
-    private func download(failedWith error: Error) -> DownloadRequest {
-        let download = DownloadRequest(session: session, requestTask: .download(nil, nil), error: error)
-        if startRequestsImmediately { download.resume() }
+    private func download(
+        _ downloadable: DownloadRequest.Downloadable?,
+        to destination: DownloadRequest.DownloadFileDestination?,
+        failedWith error: Error)
+        -> DownloadRequest
+    {
+        var downloadTask: Request.RequestTask = .download(nil, nil)
+
+        if let downloadable = downloadable {
+            downloadTask = .download(downloadable, nil)
+        }
+
+        let underlyingError = error.underlyingAdaptError ?? error
+
+        let download = DownloadRequest(session: session, requestTask: downloadTask, error: underlyingError)
+        download.downloadDelegate.destination = destination
+
+        if let retrier = retrier, error is AdaptError {
+            allowRetrier(retrier, toRetry: download, with: error)
+        } else {
+            if startRequestsImmediately { download.resume() }
+        }
+
         return download
     }
 
@@ -425,7 +463,7 @@ open class SessionManager {
             let urlRequest = try URLRequest(url: url, method: method, headers: headers)
             return upload(fileURL, with: urlRequest)
         } catch {
-            return upload(failedWith: error)
+            return upload(nil, failedWith: error)
         }
     }
 
@@ -443,7 +481,7 @@ open class SessionManager {
             let urlRequest = try urlRequest.asURLRequest()
             return upload(.file(fileURL, urlRequest))
         } catch {
-            return upload(failedWith: error)
+            return upload(nil, failedWith: error)
         }
     }
 
@@ -471,7 +509,7 @@ open class SessionManager {
             let urlRequest = try URLRequest(url: url, method: method, headers: headers)
             return upload(data, with: urlRequest)
         } catch {
-            return upload(failedWith: error)
+            return upload(nil, failedWith: error)
         }
     }
 
@@ -489,7 +527,7 @@ open class SessionManager {
             let urlRequest = try urlRequest.asURLRequest()
             return upload(.data(data, urlRequest))
         } catch {
-            return upload(failedWith: error)
+            return upload(nil, failedWith: error)
         }
     }
 
@@ -517,7 +555,7 @@ open class SessionManager {
             let urlRequest = try URLRequest(url: url, method: method, headers: headers)
             return upload(stream, with: urlRequest)
         } catch {
-            return upload(failedWith: error)
+            return upload(nil, failedWith: error)
         }
     }
 
@@ -535,7 +573,7 @@ open class SessionManager {
             let urlRequest = try urlRequest.asURLRequest()
             return upload(.stream(stream, urlRequest))
         } catch {
-            return upload(failedWith: error)
+            return upload(nil, failedWith: error)
         }
     }
 
@@ -659,12 +697,24 @@ open class SessionManager {
 
                     try formData.writeEncodedData(to: fileURL)
 
+                    let upload = self.upload(fileURL, with: urlRequestWithContentType)
+
+                    // Cleanup the temp file once the upload is complete
+                    upload.delegate.queue.addOperation {
+                        do {
+                            try FileManager.default.removeItem(at: fileURL)
+                        } catch {
+                            // No-op
+                        }
+                    }
+
                     DispatchQueue.main.async {
                         let encodingResult = MultipartFormDataEncodingResult.success(
-                            request: self.upload(fileURL, with: urlRequestWithContentType),
+                            request: upload,
                             streamingFromDisk: true,
                             streamFileURL: fileURL
                         )
+
                         encodingCompletion?(encodingResult)
                     }
                 }
@@ -691,13 +741,26 @@ open class SessionManager {
 
             return upload
         } catch {
-            return upload(failedWith: error)
+            return upload(uploadable, failedWith: error)
         }
     }
 
-    private func upload(failedWith error: Error) -> UploadRequest {
-        let upload = UploadRequest(session: session, requestTask: .upload(nil, nil), error: error)
-        if startRequestsImmediately { upload.resume() }
+    private func upload(_ uploadable: UploadRequest.Uploadable?, failedWith error: Error) -> UploadRequest {
+        var uploadTask: Request.RequestTask = .upload(nil, nil)
+
+        if let uploadable = uploadable {
+            uploadTask = .upload(uploadable, nil)
+        }
+
+        let underlyingError = error.underlyingAdaptError ?? error
+        let upload = UploadRequest(session: session, requestTask: uploadTask, error: underlyingError)
+
+        if let retrier = retrier, error is AdaptError {
+            allowRetrier(retrier, toRetry: upload, with: error)
+        } else {
+            if startRequestsImmediately { upload.resume() }
+        }
+
         return upload
     }
 
@@ -716,6 +779,7 @@ open class SessionManager {
     ///
     /// - returns: The created `StreamRequest`.
     @discardableResult
+    @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
     open func stream(withHostName hostName: String, port: Int) -> StreamRequest {
         return stream(.stream(hostName: hostName, port: port))
     }
@@ -730,12 +794,14 @@ open class SessionManager {
     ///
     /// - returns: The created `StreamRequest`.
     @discardableResult
+    @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
     open func stream(with netService: NetService) -> StreamRequest {
         return stream(.netService(netService))
     }
 
     // MARK: Private - Stream Implementation
 
+    @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
     private func stream(_ streamable: StreamRequest.Streamable) -> StreamRequest {
         do {
             let task = try streamable.task(session: session, adapter: adapter, queue: queue)
@@ -751,6 +817,7 @@ open class SessionManager {
         }
     }
 
+    @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
     private func stream(failedWith error: Error) -> StreamRequest {
         let stream = StreamRequest(session: session, requestTask: .stream(nil, nil), error: error)
         if startRequestsImmediately { stream.resume() }
@@ -777,8 +844,31 @@ open class SessionManager {
 
             return true
         } catch {
-            request.delegate.error = error
+            request.delegate.error = error.underlyingAdaptError ?? error
             return false
+        }
+    }
+
+    private func allowRetrier(_ retrier: RequestRetrier, toRetry request: Request, with error: Error) {
+        DispatchQueue.utility.async { [weak self] in
+            guard let strongSelf = self else { return }
+
+            retrier.should(strongSelf, retry: request, with: error) { shouldRetry, timeDelay in
+                guard let strongSelf = self else { return }
+
+                guard shouldRetry else {
+                    if strongSelf.startRequestsImmediately { request.resume() }
+                    return
+                }
+
+                let retrySucceeded = strongSelf.retry(request)
+
+                if retrySucceeded, let task = request.task {
+                    strongSelf.delegate[task] = request
+                } else {
+                    if strongSelf.startRequestsImmediately { request.resume() }
+                }
+            }
         }
     }
 }
