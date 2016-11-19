@@ -7,9 +7,8 @@ target 'BMSTUSchedule' do
   # Pods for BMSTUSchedule
   #pod 'SwiftyJSON',
   #:git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
-  #pod 'Alamofire',
-  #:git => 'https://github.com/Alamofire/Alamofire.git'
-
+  pod 'Alamofire',
+  :git => 'https://github.com/Alamofire/Alamofire.git'
 
   target 'BMSTUScheduleTests' do
     inherit! :search_paths
