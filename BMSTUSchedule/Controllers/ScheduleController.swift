@@ -28,14 +28,14 @@ class ScheduleController: UITableViewController {
         // Remove empty cells
         tableView.tableFooterView = UIView()
         
-        // Set random schedule
-        //self.setRandomSchedule()
-        
+        // Load schedule
         ScheduleManager.sharedManager.getSchedule(group: Group(name: "ИУ5-33"), success: { schedule in
             self.schedule = schedule
             self.tableView.reloadData()
         })
         
+        // Set random schedule
+        //self.setRandomSchedule()
     }
     
     // MARK: - Table view data source

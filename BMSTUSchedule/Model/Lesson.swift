@@ -69,7 +69,7 @@ class Lesson: Base {
             title = snapshotValue["title"] as! String
             teacher = snapshotValue["teacher"] as? String
             room = snapshotValue["room"] as? String
-            //type = snapshotValue["type"] as! String
+            type = Lesson.type(string: snapshotValue["type"] as! String)
             startTime = snapshotValue["startTime"] as? String
             endTime = snapshotValue["endTime"] as? String
         } else {
@@ -88,8 +88,21 @@ class Lesson: Base {
             "room": room,
             "type": type?.string(),
             "startTime": startTime,
-            "endTime": endTime,
+            "endTime": endTime
         ]
+    }
+    
+    class func type(string: String) -> LessonType? {
+        switch string {
+        case "лекция":
+            return .lecture
+        case "семинар":
+            return .seminar
+        case "лаба":
+            return .lab
+        default:
+            return nil
+        }
     }
     
 }
