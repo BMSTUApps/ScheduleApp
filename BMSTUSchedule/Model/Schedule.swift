@@ -20,4 +20,8 @@ class Schedule: Base {
         self.init(numeratorWeek: [], denominatorWeek: [])
     }
     
+    override var description : String {
+        return "Schedule()\n"
+    }
+    
 }

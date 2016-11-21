@@ -56,4 +56,9 @@ class Day: Base {
             return nil
         }
     }
+    
+    override var description : String {
+        return "Day(\"\(title.string())\")\n"
+    }
+    
 }
