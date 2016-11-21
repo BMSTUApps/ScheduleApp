@@ -3,7 +3,6 @@
 
 target 'BMSTUSchedule' do
   use_frameworks!
-  inhibit_all_warnings!
 
   # Pods for BMSTUSchedule
   pod 'Firebase/Core'

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ScheduleController: UITableViewController {
     
@@ -28,7 +29,12 @@ class ScheduleController: UITableViewController {
         tableView.tableFooterView = UIView()
         
         // Set random schedule
-        self.setRandomSchedule()
+        //self.setRandomSchedule()
+        
+        ScheduleManager.sharedManager.getSchedule(group: Group(name: "ИУ5-33"), success: { schedule in
+            self.schedule = schedule
+            self.tableView.reloadData()
+        })
         
     }
     
@@ -39,7 +45,7 @@ class ScheduleController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return schedule.numeratorWeek[section].title
+        return schedule.numeratorWeek[section].title.string()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,7 +75,7 @@ class ScheduleController: UITableViewController {
     
     func setRandomSchedule() {
      
-        var daysTitles = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
+        var daysTitles = [Day.Title.monday, Day.Title.thuesday, Day.Title.wednesday, Day.Title.thursday, Day.Title.friday, Day.Title.saturday]
         
         for i in 0...daysTitles.count-1 {
             
@@ -79,31 +85,36 @@ class ScheduleController: UITableViewController {
             for _ in 0...dayLessonsCount {
                 
                 let lessonIndex = arc4random_uniform(3) + 1
+                var lesson: Lesson?
                 switch lessonIndex {
                 case 1:
-                    dayLessons.append(Lesson(title: "Теория вероятности",
-                                             teacher: "Безверхний Н.В.",
-                                             room: "230л",
-                                             type: .lecture,
-                                             startTime: "12:00",
-                                             endTime: "13:35"))
+                    lesson = Lesson(title: "Теория вероятности",
+                                    teacher: "Безверхний Н.В.",
+                                    room: "230л",
+                                    type: .lecture,
+                                    startTime: "12:00",
+                                    endTime: "13:35")
                 case 2:
-                    dayLessons.append(Lesson(title: "Электротехника",
-                                             teacher: "Белодедов М.В.",
-                                             room: "700",
-                                             type: .lab,
-                                             startTime: "13:50",
-                                             endTime: "15:25"))
+                    lesson = Lesson(title: "Электротехника",
+                                    teacher: "Белодедов М.В.",
+                                    room: "700",
+                                    type: .lab,
+                                    startTime: "13:50",
+                                    endTime: "15:25")
                 case 3:
-                    dayLessons.append(Lesson(title: "Архитектура автоматизированных систем обработки информации и управления",
-                                             teacher: "Шук В. П.",
-                                             room: "501ю",
-                                             type: .seminar,
-                                             startTime: "10:15",
-                                             endTime: "11:50"))
+                    lesson = Lesson(title: "Архитектура автоматизированных систем обработки информации и управления",
+                                    teacher: "Шук В. П.",
+                                    room: "501ю",
+                                    type: .seminar,
+                                    startTime: "10:15",
+                                    endTime: "11:50")
                 default:
                     break
                 }
+                dayLessons.append(lesson!)
+                
+                // Add to firebase
+                ScheduleManager.sharedManager.addLesson(lesson: lesson!, group: Group(name: "ИУ5-33"), isNumerator: false, day: daysTitles[i])
                 
             }
             
