@@ -17,6 +17,8 @@ class Day: Base {
         case thursday  = "четверг"
         case friday    = "пятница"
         case saturday  = "суббота"
+        
+        static let allValues = [monday, thuesday, wednesday, thursday, friday, saturday]
     }
     
     var title: Title

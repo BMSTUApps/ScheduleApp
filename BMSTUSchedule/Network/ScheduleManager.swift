@@ -40,7 +40,13 @@ class ScheduleManager {
                 }
             
                 // Sort days
-                //days.sort(by: { $0.0.title > $0.1.title })
+                var sortedDays: [Day] = []
+                for dayTitle in Day.Title.allValues {
+                    if let day = days.filter({$0.title == dayTitle}).first {
+                        sortedDays.append(day)
+                    }
+                }
+                days = sortedDays
                 
                 let weekType = (weekTypeSnap as! FIRDataSnapshot).key
                 
@@ -56,7 +62,6 @@ class ScheduleManager {
             }
             
             success(schedule)
-            
         })
     }
     
