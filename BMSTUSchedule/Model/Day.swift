@@ -10,24 +10,13 @@ import Firebase
 
 class Day: Base {
 
-    enum Title {
-        case monday, thuesday, wednesday, thursday, friday, saturday
-        func string() -> String {
-            switch self {
-            case .monday:
-                return "понедельник"
-            case .thuesday:
-                return "вторник"
-            case .wednesday:
-                return "среда"
-            case .thursday:
-                return "четверг"
-            case .friday:
-                return "пятница"
-            case .saturday:
-                return "суббота"
-            }
-        }
+    enum Title: String {
+        case monday    = "понедельник"
+        case thuesday  = "вторник"
+        case wednesday = "среда"
+        case thursday  = "четверг"
+        case friday    = "пятница"
+        case saturday  = "суббота"
     }
     
     var title: Title
@@ -38,6 +27,7 @@ class Day: Base {
         self.lessons = lessons
     }
     
+    /*
     class func title(string: String) -> Title? {
         switch string {
         case "понедельник":
@@ -56,9 +46,10 @@ class Day: Base {
             return nil
         }
     }
+     */
     
     override var description : String {
-        return "Day(\"\(title.string())\")\n"
+        return "Day(\"\(title)\")\n"
     }
     
 }

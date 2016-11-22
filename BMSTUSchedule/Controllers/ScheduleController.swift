@@ -45,7 +45,7 @@ class ScheduleController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return schedule.numeratorWeek[section].title.string()
+        return schedule.numeratorWeek[section].title.rawValue
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

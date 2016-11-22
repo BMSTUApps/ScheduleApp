@@ -35,7 +35,7 @@ class LessonCell: UITableViewCell {
     func setType(type: Lesson.LessonType?) {
         
         if let type = type {
-            self.typeLabel.text = type.string()
+            self.typeLabel.text = type.rawValue
             self.setTypeColor(type: type)
             self.drawTypeRect(type: type)
         }

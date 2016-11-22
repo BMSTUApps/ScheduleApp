@@ -10,18 +10,10 @@ import Firebase
 
 class Lesson: Base {
 
-    enum LessonType {
-        case lecture, seminar, lab
-        func string() -> String {
-            switch self {
-            case .lecture:
-                return "лекция"
-            case .seminar:
-                return "семинар"
-            case .lab:
-                return "лаба"
-            }
-        }
+    enum LessonType: String {
+        case lecture = "лекция"
+        case seminar = "семинар"
+        case lab = "лаба"
     }
     
     let key: String
@@ -69,7 +61,7 @@ class Lesson: Base {
             title = snapshotValue["title"] as! String
             teacher = snapshotValue["teacher"] as? String
             room = snapshotValue["room"] as? String
-            type = Lesson.type(string: snapshotValue["type"] as! String)
+            type = LessonType(rawValue: snapshotValue["type"] as! String)
             startTime = snapshotValue["startTime"] as? String
             endTime = snapshotValue["endTime"] as? String
         } else {
@@ -86,12 +78,13 @@ class Lesson: Base {
             "title": title,
             "teacher": teacher,
             "room": room,
-            "type": type?.string(),
+            "type": type?.rawValue,
             "startTime": startTime,
             "endTime": endTime
         ]
     }
     
+    /*
     class func type(string: String) -> LessonType? {
         switch string {
         case "лекция":
@@ -104,5 +97,6 @@ class Lesson: Base {
             return nil
         }
     }
+     */
     
 }

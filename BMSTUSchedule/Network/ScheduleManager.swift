@@ -24,7 +24,7 @@ class ScheduleManager {
                 for daySnap in (weekTypeSnap as! FIRDataSnapshot).children {
                     let dayTitleString = (daySnap as! FIRDataSnapshot).key
                     var day = Day(title: .monday, lessons: [])
-                    if let dayTitle = Day.title(string: dayTitleString) {
+                    if let dayTitle = Day.Title(rawValue: dayTitleString) {
                         day = Day(title: dayTitle, lessons: [])
                     }
                     
@@ -36,8 +36,12 @@ class ScheduleManager {
                     
                     day.lessons = lessons
                     days.append(day)
+                    
                 }
             
+                // Sort days
+                //days.sort(by: { $0.0.title > $0.1.title })
+                
                 let weekType = (weekTypeSnap as! FIRDataSnapshot).key
                 
                 switch weekType {
@@ -63,7 +67,7 @@ class ScheduleManager {
             weekType = "nominator"
         }
         
-        let lessonRef = FIRDatabase.database().reference(withPath: "schedules").child(group.name).child(weekType).child(day.string()).child(lesson.title)
+        let lessonRef = FIRDatabase.database().reference(withPath: "schedules").child(group.name).child(weekType).child(day.rawValue).child(lesson.title)
         lessonRef.setValue(lesson.toAnyObject())
         
     }
