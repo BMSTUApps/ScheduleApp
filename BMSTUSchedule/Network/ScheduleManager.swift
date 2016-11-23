@@ -43,9 +43,22 @@ class ScheduleManager {
                 var sortedDays: [Day] = []
                 for dayTitle in Day.Title.allValues {
                     if let day = days.filter({$0.title == dayTitle}).first {
+                        // Sort lessons
+                        day.lessons = day.lessons.sorted(by: {
+                            
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "HH:mm"
+
+                            let startDate1 = dateFormatter.date(from: $0.0.startTime!)
+                            let startDate2 = dateFormatter.date(from: $0.1.startTime!)
+                            
+                            return startDate1! < startDate2!
+                        })
                         sortedDays.append(day)
                     }
                 }
+                
+                
                 days = sortedDays
                 
                 let weekType = (weekTypeSnap as! FIRDataSnapshot).key
