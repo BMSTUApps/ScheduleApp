@@ -58,7 +58,6 @@ class ScheduleManager {
                     }
                 }
                 
-                
                 days = sortedDays
                 
                 let weekType = (weekTypeSnap as! FIRDataSnapshot).key
