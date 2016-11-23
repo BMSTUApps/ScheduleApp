@@ -23,7 +23,7 @@ class SettingsController: UIViewController {
         }
         
     }
-
+    
     // MARK: - Memory
     
     override func didReceiveMemoryWarning() {

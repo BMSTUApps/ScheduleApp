@@ -61,7 +61,11 @@ class Lesson: Base {
             title = snapshotValue["title"] as! String
             teacher = snapshotValue["teacher"] as? String
             room = snapshotValue["room"] as? String
-            type = LessonType(rawValue: snapshotValue["type"] as! String)
+            if let typeString = snapshotValue["type"] {
+                type = LessonType(rawValue: typeString as! String)
+            } else {
+                type = nil
+            }
             startTime = snapshotValue["startTime"] as? String
             endTime = snapshotValue["endTime"] as? String
         } else {

@@ -28,12 +28,13 @@ class ScheduleController: UITableViewController {
         // Remove empty cells
         tableView.tableFooterView = UIView()
         
+
         // Load schedule
         ScheduleManager.sharedManager.getSchedule(group: Group(name: "ИУ5-33"), success: { schedule in
             self.schedule = schedule
             self.tableView.reloadData()
         })
-        
+    
         // Set random schedule
         //self.setRandomSchedule()
     }
@@ -45,7 +46,7 @@ class ScheduleController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return schedule.numeratorWeek[section].title.rawValue.capitalized
+        return schedule.numeratorWeek[section].title.rawValue.capitalized   
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
