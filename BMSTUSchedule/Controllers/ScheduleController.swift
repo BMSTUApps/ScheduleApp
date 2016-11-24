@@ -33,6 +33,8 @@ class ScheduleController: UITableViewController {
             self.schedule = schedule
             self.tableView.reloadData()
         })
+        
+        self.tableView.sectionHeaderHeight = 40
     }
     
     // MARK: - Table view data source
@@ -41,10 +43,25 @@ class ScheduleController: UITableViewController {
         return schedule.numeratorWeek.count
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40))
+        headerView.backgroundColor = UIColor.groupTableViewBackground
+        
+        let titleLabel = UILabel(frame: CGRect(x: 12, y: 0, width: 200, height: 40))
+        titleLabel.text = schedule.numeratorWeek[section].title.rawValue.capitalized
+        
+        headerView.addSubview(titleLabel)
+        
+        return headerView
+    }
+    
+    /*
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return schedule.numeratorWeek[section].title.rawValue.capitalized   
     }
-    
+    */
+ 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return schedule.numeratorWeek[section].lessons.count
     }
