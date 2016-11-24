@@ -12,6 +12,7 @@ import Firebase
 class ScheduleController: UITableViewController {
     
     var schedule = Schedule()
+    var days: [Day] = []
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -30,30 +31,35 @@ class ScheduleController: UITableViewController {
 
         // Load schedule
         ScheduleManager.sharedManager.getSchedule(group: Group(name: "ИУ5-33"), success: { schedule in
-            self.schedule = schedule
+            self.setSchedule(schedule: schedule)
             self.tableView.reloadData()
         })
+    }
+    
+    func setSchedule(schedule: Schedule) {
+        self.schedule = schedule
+        self.days = self.schedule.numeratorWeek + self.schedule.denominatorWeek
     }
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return schedule.numeratorWeek.count
+        return days.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return schedule.numeratorWeek[section].title.rawValue.capitalized   
+        return days[section].title.rawValue.capitalized
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return schedule.numeratorWeek[section].lessons.count
+        return days[section].lessons.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "LessonCell", for: indexPath) as! LessonCell
         
-        let lesson = schedule.numeratorWeek[indexPath.section].lessons[indexPath.row]
+        let lesson = days[indexPath.section].lessons[indexPath.row]
         
         cell.titleLabel.text = lesson.title
         
