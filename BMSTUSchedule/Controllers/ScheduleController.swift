@@ -55,7 +55,7 @@ class ScheduleController: UITableViewController {
         headerView.backgroundColor = UIColor.groupTableViewBackground
         
         let titleLabel = UILabel(frame: CGRect(x: 12, y: 0, width: 200, height: 40))
-        titleLabel.text = schedule.numeratorWeek[section].title.rawValue.capitalized
+        titleLabel.text = days[section].title.rawValue.capitalized
         
         headerView.addSubview(titleLabel)
         
