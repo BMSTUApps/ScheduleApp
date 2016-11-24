@@ -1,4 +1,5 @@
 # Расписание МГТУ имени Н.Э. Баумана
+![Platform](https://img.shields.io/badge/platform-iOS-lightgray.svg)
 
 Неофициальное приложение с расписанием занятий МГТУ имени Н.Э. Баумана.
 
@@ -36,4 +37,3 @@
 * [Данилов Никита](https://park.mail.ru/profile/d.nikita/) (dankin96)
 * [Артём Белков](https://park.mail.ru/profile/a.belkov/) (bestK1ngArthur)
 * [Рустам Мигранов](https://park.mail.ru/profile/r.migranov/) (выбыл на неопределённый срок)
-
