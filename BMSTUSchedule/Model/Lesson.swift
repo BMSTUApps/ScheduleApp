@@ -29,6 +29,12 @@ class Lesson: Base {
     var startTime: String?
     var endTime: String?
     
+    override var description : String {
+        return "Lesson(\"\(title)\")\n"
+    }
+    
+    // MARK: Initialization
+    
     init(title: String, teacher: String?, room: String?, type: LessonType?, startTime: String?, endTime: String?, key: String = "") {
         self.key = key
         self.ref = nil
@@ -47,10 +53,6 @@ class Lesson: Base {
     
     convenience init(title: String) {
         self.init(title: title, teacher: "", room: "")
-    }
-    
-    override var description : String {
-        return "Lesson(\"\(title)\")\n"
     }
     
     init(snapshot: FIRDataSnapshot) {
@@ -77,6 +79,8 @@ class Lesson: Base {
         }
     }
     
+    // MARK: Export
+    
     func toAnyObject() -> Any {
         return [
             "title": title,
@@ -87,20 +91,5 @@ class Lesson: Base {
             "endTime": endTime
         ]
     }
-    
-    /*
-    class func type(string: String) -> LessonType? {
-        switch string {
-        case "лекция":
-            return .lecture
-        case "семинар":
-            return .seminar
-        case "лаба":
-            return .lab
-        default:
-            return nil
-        }
-    }
-     */
     
 }

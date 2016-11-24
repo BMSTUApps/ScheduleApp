@@ -14,10 +14,12 @@ class ScheduleManager {
 
     func getSchedule(group: Group, success: @escaping (Schedule) -> ()) {
         let scheduleRef = FIRDatabase.database().reference(withPath: "schedules").child(group.name)
-        
+
+        // Get schedule
         scheduleRef.observe(.value, with: { snapshot in
             let schedule = Schedule()
         
+            // Parse schedule
             for weekTypeSnap in snapshot.children {
                 var days: [Day] = []
                 
@@ -39,13 +41,13 @@ class ScheduleManager {
                     
                 }
             
-                // Sort days
+                // Sort days by title
                 var sortedDays: [Day] = []
                 for dayTitle in Day.Title.allValues {
                     if let day = days.filter({$0.title == dayTitle}).first {
-                        // Sort lessons
+                        
+                        // Sort lessons by start time
                         day.lessons = day.lessons.sorted(by: {
-                            
                             let dateFormatter = DateFormatter()
                             dateFormatter.dateFormat = "HH:mm"
 
@@ -57,7 +59,6 @@ class ScheduleManager {
                         sortedDays.append(day)
                     }
                 }
-                
                 days = sortedDays
                 
                 let weekType = (weekTypeSnap as! FIRDataSnapshot).key
@@ -70,12 +71,52 @@ class ScheduleManager {
                 default:
                     break
                 }
-
             }
-            
             success(schedule)
         })
     }
+    
+    // MARK: Lesson
+    
+    func addLesson(lesson: Lesson, group: Group, isNumerator: Bool, day: Day.Title) {
+        
+        var weekType = "denominator"
+        if isNumerator {
+            weekType = "numerator"
+        }
+        
+        let lessonRef = FIRDatabase.database().reference(withPath: "schedules").child(group.name).child(weekType).child(day.rawValue).child(lesson.title)
+        lessonRef.setValue(lesson.toAnyObject())
+        
+    }
+    
+    // MARK: Schedule
+    
+    func addSchedule(schedule: Schedule, group: Group) {
+        let scheduleRef = FIRDatabase.database().reference(withPath: "schedules").child(group.name)
+        
+        // Set numerator week
+        let numeratorWeekRef = scheduleRef.child("numerator")
+        for day in schedule.numeratorWeek {
+            let dayRef = numeratorWeekRef.child(day.title.rawValue)
+            for lesson in day.lessons {
+                let lessonRef = dayRef.child(lesson.title)
+                lessonRef.setValue(lesson.toAnyObject())
+            }
+        }
+        
+        // Set denominator week
+        let denominatorWeekRef = scheduleRef.child("denominator")
+        for day in schedule.denominatorWeek {
+            let dayRef = denominatorWeekRef.child(day.title.rawValue)
+            for lesson in day.lessons {
+                let lessonRef = dayRef.child(lesson.title)
+                lessonRef.setValue(lesson.toAnyObject())
+            }
+        }
+    }
+    
+    // MARK: Test data
     
     func testSchedule() -> Schedule {
         
@@ -130,45 +171,56 @@ class ScheduleManager {
         return schedule
     }
     
-    // MARK: Lesson
-    
-    func addLesson(lesson: Lesson, group: Group, isNumerator: Bool, day: Day.Title) {
+    func randomSchedule() -> Schedule {
+        let schedule = Schedule()
         
-        var weekType = "denominator"
-        if isNumerator {
-            weekType = "numerator"
-        }
+        var daysTitles = [Day.Title.monday, Day.Title.thuesday, Day.Title.wednesday, Day.Title.thursday, Day.Title.friday, Day.Title.saturday]
         
-        let lessonRef = FIRDatabase.database().reference(withPath: "schedules").child(group.name).child(weekType).child(day.rawValue).child(lesson.title)
-        lessonRef.setValue(lesson.toAnyObject())
-        
-    }
-    
-    // MARK: Schedule
-    
-    func addSchedule(schedule: Schedule, group: Group) {
-        
-        let scheduleRef = FIRDatabase.database().reference(withPath: "schedules").child(group.name)
-        
-        // numerator
-        let numeratorWeekRef = scheduleRef.child("numerator")
-        for day in schedule.numeratorWeek {
-            let dayRef = numeratorWeekRef.child(day.title.rawValue)
-            for lesson in day.lessons {
-                let lessonRef = dayRef.child(lesson.title)
-                lessonRef.setValue(lesson.toAnyObject())
+        for i in 0...daysTitles.count-1 {
+            
+            let dayLessonsCount = arc4random_uniform(5) + 1
+            var dayLessons: [Lesson] = []
+            
+            for _ in 0...dayLessonsCount {
+                
+                let lessonIndex = arc4random_uniform(3) + 1
+                var lesson: Lesson?
+                switch lessonIndex {
+                case 1:
+                    lesson = Lesson(title: "Теория вероятности",
+                                    teacher: "Безверхний Н.В.",
+                                    room: "230л",
+                                    type: .lecture,
+                                    startTime: "12:00",
+                                    endTime: "13:35")
+                case 2:
+                    lesson = Lesson(title: "Электротехника",
+                                    teacher: "Белодедов М.В.",
+                                    room: "700",
+                                    type: .lab,
+                                    startTime: "13:50",
+                                    endTime: "15:25")
+                case 3:
+                    lesson = Lesson(title: "Архитектура автоматизированных систем обработки информации и управления",
+                                    teacher: "Шук В. П.",
+                                    room: "501ю",
+                                    type: .seminar,
+                                    startTime: "10:15",
+                                    endTime: "11:50")
+                default:
+                    break
+                }
+                dayLessons.append(lesson!)
+                
+                // Add to firebase
+                ScheduleManager.sharedManager.addLesson(lesson: lesson!, group: Group(name: "ИУ5-33"), isNumerator: false, day: daysTitles[i])
+                
             }
+            
+            let day = Day(title:daysTitles[i], lessons:dayLessons)
+            schedule.numeratorWeek.append(day)
         }
-        // denominator
-        let denominatorWeekRef = scheduleRef.child("denominator")
-        for day in schedule.denominatorWeek {
-            let dayRef = denominatorWeekRef.child(day.title.rawValue)
-            for lesson in day.lessons {
-                let lessonRef = dayRef.child(lesson.title)
-                lessonRef.setValue(lesson.toAnyObject())
-            }
-        }
- 
+        return schedule
     }
     
 }

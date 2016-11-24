@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class LessonCell: UITableViewCell {
 
     let typeColors = [
@@ -34,10 +33,7 @@ class LessonCell: UITableViewCell {
     @IBOutlet weak var breakLabel: UILabel!
     
     func setType(type: Lesson.LessonType?) {
-        
-        if type != nil {
-            self.typeLabel.text = type?.rawValue
-        }
+        self.setTypeTitle(type: type)
         self.setTypeColor(type: type)
         self.drawTypeRect(type: type)
     }
@@ -52,13 +48,18 @@ class LessonCell: UITableViewCell {
             case .lab:
                 self.typeLabel.textColor = typeColors["lab"]
             }
+        }
+    }
+    
+    func setTypeTitle(type: Lesson.LessonType?) {
+        if type != nil {
+            self.typeLabel.text = type?.rawValue
         } else {
             self.typeLabel.text = ""
         }
     }
     
     func drawTypeRect(type: Lesson.LessonType?) {
-        
         let origin = CGPoint(x:typeRectLeadingOffset, y:typeRectTopOffset)
         let size = CGSize(width:typeRectThickness, height:self.contentView.frame.height - 2 * typeRectTopOffset)
         

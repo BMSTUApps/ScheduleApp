@@ -21,16 +21,16 @@ class Day: Base {
         static let allValues = [monday, thuesday, wednesday, thursday, friday, saturday]
     }
     
+    override var description : String {
+        return "Day(\"\(title)\")\n"
+    }
+    
     var title: Title
     var lessons: [Lesson]
     
     init(title: Title, lessons: [Lesson], key: String = "") {
         self.title = title
         self.lessons = lessons
-    }
-    
-    override var description : String {
-        return "Day(\"\(title)\")\n"
     }
     
 }
