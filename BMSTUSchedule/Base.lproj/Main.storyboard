@@ -57,9 +57,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="кабинет" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avu-w0-hfV">
-                                            <rect key="frame" x="296" y="73" width="70" height="21"/>
+                                            <rect key="frame" x="254" y="73" width="112" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="70" id="61C-wo-wwn"/>
+                                                <constraint firstAttribute="width" constant="112" id="61C-wo-wwn"/>
                                                 <constraint firstAttribute="height" constant="21" id="Tvk-Dl-BiB"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -185,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMS-ZL-O0l" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="493"/>
+            <point key="canvasLocation" x="1964" y="492.50374812593708"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="47i-d2-c3R">

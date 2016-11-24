@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34F1BFD579AC516BB9D72D3F /* Pods_BMSTUScheduleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A44130F770FD807D2AED7F4F /* Pods_BMSTUScheduleTests.framework */; };
-		A5124C3E1DDDF1CE00363FF9 /* ScheduleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5124C3D1DDDF1CE00363FF9 /* ScheduleRouter.swift */; };
+		A50779381DE20B04005BA983 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50779371DE20B04005BA983 /* ScheduleManager.swift */; };
 		A525F3D21DD4C9D4003A7CC0 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3D11DD4C9D4003A7CC0 /* Group.swift */; };
 		A5485CC11DC245BC009610C2 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC01DC245BC009610C2 /* LessonCell.swift */; };
 		A5485CC31DC26173009610C2 /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC21DC26173009610C2 /* GroupsController.swift */; };
@@ -23,6 +23,9 @@
 		A5E0FE821DBFB59D008959A9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE811DBFB59D008959A9 /* SWRevealViewController.m */; };
 		A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE831DBFB870008959A9 /* ScheduleController.swift */; };
 		A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE881DBFFB22008959A9 /* SettingsController.swift */; };
+		A5E908591DE1EE89006D4B96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5E908581DE1EE89006D4B96 /* GoogleService-Info.plist */; };
+		A5E9085A1DE1EE89006D4B96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5E908581DE1EE89006D4B96 /* GoogleService-Info.plist */; };
+		A5E9085B1DE1EE89006D4B96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5E908581DE1EE89006D4B96 /* GoogleService-Info.plist */; };
 		A5EC94B51DB2D96000299646 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC94B41DB2D96000299646 /* Base.swift */; };
 		A5F2E1F71DC4C1E100841669 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E1F61DC4C1E100841669 /* Day.swift */; };
 		A5F2E1F91DC4C2D400841669 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E1F81DC4C2D400841669 /* Schedule.swift */; };
@@ -55,7 +58,7 @@
 		793CA6CF03F2F48A50E4F412 /* Pods_BMSTUSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMSTUSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		831933F057A6FACC8B5135A8 /* Pods-BMSTUScheduleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMSTUScheduleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMSTUScheduleTests/Pods-BMSTUScheduleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A44130F770FD807D2AED7F4F /* Pods_BMSTUScheduleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMSTUScheduleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5124C3D1DDDF1CE00363FF9 /* ScheduleRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleRouter.swift; path = Network/ScheduleRouter.swift; sourceTree = "<group>"; };
+		A50779371DE20B04005BA983 /* ScheduleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleManager.swift; path = Network/ScheduleManager.swift; sourceTree = "<group>"; };
 		A525F3D11DD4C9D4003A7CC0 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = Model/Group.swift; sourceTree = "<group>"; };
 		A5485CC01DC245BC009610C2 /* LessonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonCell.swift; path = Views/LessonCell.swift; sourceTree = "<group>"; };
 		A5485CC21DC26173009610C2 /* GroupsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsController.swift; path = Controllers/GroupsController.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		A5E0FE811DBFB59D008959A9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		A5E0FE831DBFB870008959A9 /* ScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleController.swift; path = Controllers/ScheduleController.swift; sourceTree = "<group>"; };
 		A5E0FE881DBFFB22008959A9 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = Controllers/SettingsController.swift; sourceTree = "<group>"; };
+		A5E908581DE1EE89006D4B96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5EC94B41DB2D96000299646 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Base.swift; path = Model/Base.swift; sourceTree = "<group>"; };
 		A5F2E1F61DC4C1E100841669 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = Model/Day.swift; sourceTree = "<group>"; };
 		A5F2E1F81DC4C2D400841669 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = Model/Schedule.swift; sourceTree = "<group>"; };
@@ -113,14 +117,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A5124C3F1DDDF1D800363FF9 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				A5124C3D1DDDF1CE00363FF9 /* ScheduleRouter.swift */,
-			);
-			name = Network;
-			sourceTree = "<group>";
-		};
 		A5CED4CD1DB0E07F000D2DFD = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +142,7 @@
 		A5CED4D81DB0E080000D2DFD /* BMSTUSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				A5124C3F1DDDF1D800363FF9 /* Network */,
+				A50779371DE20B04005BA983 /* ScheduleManager.swift */,
 				A5CED5091DB0E901000D2DFD /* Model */,
 				A5E0FE8C1DC00698008959A9 /* Views */,
 				A5E0FE851DBFB88D008959A9 /* Controllers */,
@@ -155,6 +151,7 @@
 				A5CED4E21DB0E080000D2DFD /* LaunchScreen.storyboard */,
 				A5CED4E01DB0E080000D2DFD /* Assets.xcassets */,
 				A5CED4E51DB0E080000D2DFD /* Info.plist */,
+				A5E908581DE1EE89006D4B96 /* GoogleService-Info.plist */,
 				A5E0FE7A1DBFB56B008959A9 /* Libraries */,
 			);
 			path = BMSTUSchedule;
@@ -369,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5CED4E41DB0E080000D2DFD /* LaunchScreen.storyboard in Resources */,
+				A5E908591DE1EE89006D4B96 /* GoogleService-Info.plist in Resources */,
 				A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */,
 				A5CED4DF1DB0E080000D2DFD /* Main.storyboard in Resources */,
 			);
@@ -378,6 +376,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E9085A1DE1EE89006D4B96 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E9085B1DE1EE89006D4B96 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,9 +543,9 @@
 				A5F2E1F71DC4C1E100841669 /* Day.swift in Sources */,
 				A5485CC31DC26173009610C2 /* GroupsController.swift in Sources */,
 				A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */,
-				A5124C3E1DDDF1CE00363FF9 /* ScheduleRouter.swift in Sources */,
 				A5F2E1F91DC4C2D400841669 /* Schedule.swift in Sources */,
 				A5CED50B1DB0E94A000D2DFD /* Lesson.swift in Sources */,
+				A50779381DE20B04005BA983 /* ScheduleManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

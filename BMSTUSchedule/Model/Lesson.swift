@@ -6,21 +6,18 @@
 //  Copyright © 2016 techpark-iOS. All rights reserved.
 //
 
+import Firebase
+
 class Lesson: Base {
 
-    enum LessonType {
-        case lecture, seminar, lab
-        func string() -> String {
-            switch self {
-            case .lecture:
-                return "лекция"
-            case .seminar:
-                return "семинар"
-            case .lab:
-                return "лаба"
-            }
-        }
+    enum LessonType: String {
+        case lecture = "лекция"
+        case seminar = "семинар"
+        case lab = "лаба"
     }
+    
+    let key: String
+    let ref: FIRDatabaseReference?
     
     var title: String
     
@@ -32,7 +29,16 @@ class Lesson: Base {
     var startTime: String?
     var endTime: String?
     
-    init(title: String, teacher: String?, room: String?, type: LessonType?, startTime: String?, endTime: String?) {
+    override var description : String {
+        return "Lesson(\"\(title)\")\n"
+    }
+    
+    // MARK: Initialization
+    
+    init(title: String, teacher: String?, room: String?, type: LessonType?, startTime: String?, endTime: String?, key: String = "") {
+        self.key = key
+        self.ref = nil
+        
         self.title = title
         self.teacher = teacher
         self.room = room
@@ -49,8 +55,41 @@ class Lesson: Base {
         self.init(title: title, teacher: "", room: "")
     }
     
-    override var description : String {
-        return "Lesson(\"\(title)\")\n"
+    init(snapshot: FIRDataSnapshot) {
+        key = snapshot.key
+        ref = snapshot.ref
+        
+        if let snapshotValue = snapshot.value as? [String: AnyObject] {
+            title = snapshotValue["title"] as! String
+            teacher = snapshotValue["teacher"] as? String
+            room = snapshotValue["room"] as? String
+            if let typeString = snapshotValue["type"] {
+                type = LessonType(rawValue: typeString as! String)
+            } else {
+                type = nil
+            }
+            startTime = snapshotValue["startTime"] as? String
+            endTime = snapshotValue["endTime"] as? String
+        } else {
+            title = ""
+            teacher = ""
+            room = ""
+            startTime = ""
+            endTime = ""
+        }
+    }
+    
+    // MARK: Export
+    
+    func toAnyObject() -> Any {
+        return [
+            "title": title,
+            "teacher": teacher,
+            "room": room,
+            "type": type?.rawValue,
+            "startTime": startTime,
+            "endTime": endTime
+        ]
     }
     
 }

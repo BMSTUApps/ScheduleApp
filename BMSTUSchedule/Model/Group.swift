@@ -9,11 +9,9 @@
 class Group: Base {
 
     var name: String
-    var schedule: Schedule
     
-    init(name: String, schedule: Schedule) {
+    init(name: String) {
         self.name = name
-        self.schedule = schedule
     }
     
     override var description : String {
@@ -21,7 +19,7 @@ class Group: Base {
     }
     
     override convenience init() {
-        self.init(name: String(), schedule: Schedule())
+        self.init(name: String())
     }
     
 }

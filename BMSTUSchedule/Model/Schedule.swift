@@ -11,6 +11,10 @@ class Schedule: Base {
     var numeratorWeek: [Day]
     var denominatorWeek: [Day]
     
+    override var description : String {
+        return "Schedule(numeratorWeek: \(numeratorWeek.count) lessons, denominatorWeek: \(denominatorWeek.count) lessons)\n"
+    }
+    
     init(numeratorWeek: [Day], denominatorWeek: [Day]) {
         self.numeratorWeek = numeratorWeek
         self.denominatorWeek = denominatorWeek

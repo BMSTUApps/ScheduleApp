@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,16 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Test ScheduleRouter
-        /*
-        Alamofire.request(ScheduleRouter.getSchedule(groupName: "ИУ3-33")).responseJSON { response in
-            print(response.request!)  // original URL request
-            
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
-        }
-         */
+        // Set firebase
+        FIRApp.configure()
+        FIRDatabase.database().persistenceEnabled = true
         
         return true
     }
