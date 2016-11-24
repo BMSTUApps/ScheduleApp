@@ -28,6 +28,8 @@ class Day: Base {
     var title: Title
     var lessons: [Lesson]
     
+    // MARK: Initialization
+    
     init(title: Title, lessons: [Lesson], key: String = "") {
         self.title = title
         self.lessons = lessons

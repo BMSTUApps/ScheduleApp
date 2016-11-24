@@ -32,13 +32,13 @@ class LessonCell: UITableViewCell {
     
     @IBOutlet weak var breakLabel: UILabel!
     
-    func setType(type: Lesson.LessonType?) {
+    func setType(type: Lesson.Kind?) {
         self.setTypeTitle(type: type)
         self.setTypeColor(type: type)
         self.drawTypeRect(type: type)
     }
     
-    func setTypeColor(type: Lesson.LessonType?) {
+    func setTypeColor(type: Lesson.Kind?) {
         if let type = type {
             switch type {
             case .lecture:
@@ -51,7 +51,7 @@ class LessonCell: UITableViewCell {
         }
     }
     
-    func setTypeTitle(type: Lesson.LessonType?) {
+    func setTypeTitle(type: Lesson.Kind?) {
         if type != nil {
             self.typeLabel.text = type?.rawValue
         } else {
@@ -59,7 +59,7 @@ class LessonCell: UITableViewCell {
         }
     }
     
-    func drawTypeRect(type: Lesson.LessonType?) {
+    func drawTypeRect(type: Lesson.Kind?) {
         let origin = CGPoint(x:typeRectLeadingOffset, y:typeRectTopOffset)
         let size = CGSize(width:typeRectThickness, height:self.contentView.frame.height - 2 * typeRectTopOffset)
         

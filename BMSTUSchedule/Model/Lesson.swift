@@ -10,7 +10,7 @@ import Firebase
 
 class Lesson: Base {
 
-    enum LessonType: String {
+    enum Kind: String {
         case lecture = "лекция"
         case seminar = "семинар"
         case lab = "лаба"
@@ -24,10 +24,15 @@ class Lesson: Base {
     var teacher: String?
     var room: String?
     
-    var type: LessonType?
+    var type: Kind?
     
+    // Last format (DEPRECATED)
     var startTime: String?
     var endTime: String?
+    
+    // New format
+    var startDate: Date?
+    var endDate: Date?
     
     override var description : String {
         return "Lesson(\"\(title)\")\n"
@@ -35,7 +40,7 @@ class Lesson: Base {
     
     // MARK: Initialization
     
-    init(title: String, teacher: String?, room: String?, type: LessonType?, startTime: String?, endTime: String?, key: String = "") {
+    init(title: String, teacher: String?, room: String?, type: Kind?, startTime: String?, endTime: String?, key: String = "") {
         self.key = key
         self.ref = nil
         
@@ -64,7 +69,7 @@ class Lesson: Base {
             teacher = snapshotValue["teacher"] as? String
             room = snapshotValue["room"] as? String
             if let typeString = snapshotValue["type"] {
-                type = LessonType(rawValue: typeString as! String)
+                type = Kind(rawValue: typeString as! String)
             } else {
                 type = nil
             }

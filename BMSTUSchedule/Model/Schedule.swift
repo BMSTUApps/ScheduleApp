@@ -8,20 +8,22 @@
 
 class Schedule: Base {
 
-    var numeratorWeek: [Day]
-    var denominatorWeek: [Day]
+    var numeratorWeek: Week
+    var denominatorWeek: Week
     
     override var description : String {
-        return "Schedule(numeratorWeek: \(numeratorWeek.count) lessons, denominatorWeek: \(denominatorWeek.count) lessons)\n"
+        return "Schedule(numeratorWeek: \(numeratorWeek.days.count) lessons, denominatorWeek: \(denominatorWeek.days.count) lessons)\n"
     }
     
-    init(numeratorWeek: [Day], denominatorWeek: [Day]) {
+    // MARK: Initialization
+    
+    init(numeratorWeek: Week, denominatorWeek: Week) {
         self.numeratorWeek = numeratorWeek
         self.denominatorWeek = denominatorWeek
     }
     
     override convenience init() {
-        self.init(numeratorWeek: [], denominatorWeek: [])
+        self.init(numeratorWeek: Week(), denominatorWeek: Week())
     }
     
 }

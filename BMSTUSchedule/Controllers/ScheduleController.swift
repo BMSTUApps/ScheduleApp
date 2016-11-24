@@ -27,8 +27,8 @@ class ScheduleController: UITableViewController {
         }
     
         // Remove empty cells
-        tableView.tableFooterView = UIView()
-
+        tableView.tableFooterView = UIView()        
+        
         // Load schedule
         ScheduleManager.sharedManager.getSchedule(group: Group(name: "ИУ5-33"), success: { schedule in
             self.setSchedule(schedule: schedule)
@@ -40,7 +40,7 @@ class ScheduleController: UITableViewController {
     
     func setSchedule(schedule: Schedule) {
         self.schedule = schedule
-        self.days = self.schedule.numeratorWeek + self.schedule.denominatorWeek
+        self.days = self.schedule.numeratorWeek.days + self.schedule.denominatorWeek.days
     }
     
     // MARK: - Table view data source

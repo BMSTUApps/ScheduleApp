@@ -10,12 +10,14 @@ class Group: Base {
 
     var name: String
     
-    init(name: String) {
-        self.name = name
-    }
-    
     override var description : String {
         return "Group(\"\(name)\")\n"
+    }
+    
+    // MARK: Initialization
+    
+    init(name: String) {
+        self.name = name
     }
     
     override convenience init() {
