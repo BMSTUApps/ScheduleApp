@@ -30,7 +30,7 @@ class ScheduleController: UITableViewController {
         tableView.tableFooterView = UIView()        
         
         // Load schedule
-        ScheduleManager.sharedManager.getSchedule(group: Group(name: "ИУ5-33"), success: { schedule in
+        ScheduleManager.manager.firebase.getSchedule(group: Group(name: "ИУ5-33"), success: { schedule in
             self.setSchedule(schedule: schedule)
             self.tableView.reloadData()
         })

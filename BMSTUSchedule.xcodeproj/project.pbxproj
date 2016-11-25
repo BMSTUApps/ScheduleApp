@@ -8,25 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		34F1BFD579AC516BB9D72D3F /* Pods_BMSTUScheduleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A44130F770FD807D2AED7F4F /* Pods_BMSTUScheduleTests.framework */; };
-		A50779381DE20B04005BA983 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50779371DE20B04005BA983 /* ScheduleManager.swift */; };
 		A525F3D21DD4C9D4003A7CC0 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3D11DD4C9D4003A7CC0 /* Group.swift */; };
 		A5485CC11DC245BC009610C2 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC01DC245BC009610C2 /* LessonCell.swift */; };
 		A5485CC31DC26173009610C2 /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC21DC26173009610C2 /* GroupsController.swift */; };
 		A55B90531DCA37E20068B9BE /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B90521DCA37E20068B9BE /* MenuController.swift */; };
 		A5A123F61DE7422A006FB4E5 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A123F51DE7422A006FB4E5 /* Week.swift */; };
+		A5A123F91DE8DCD8006FB4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5A123F71DE8DCD8006FB4E5 /* GoogleService-Info.plist */; };
+		A5A123FA1DE8DCD8006FB4E5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5A123F81DE8DCD8006FB4E5 /* Info.plist */; };
+		A5A124051DE8DD24006FB4E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */; };
+		A5A124061DE8DD24006FB4E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A124031DE8DD24006FB4E5 /* Main.storyboard */; };
+		A5A124091DE8DD70006FB4E5 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A124081DE8DD70006FB4E5 /* ScheduleManager.swift */; };
+		A5A1240C1DE8DE9A006FB4E5 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A1240B1DE8DE9A006FB4E5 /* FirebaseManager.swift */; };
+		A5A1240E1DE8DED5006FB4E5 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A1240D1DE8DED5006FB4E5 /* CalendarManager.swift */; };
 		A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */; };
-		A5CED4DF1DB0E080000D2DFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CED4DD1DB0E080000D2DFD /* Main.storyboard */; };
 		A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CED4E01DB0E080000D2DFD /* Assets.xcassets */; };
-		A5CED4E41DB0E080000D2DFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CED4E21DB0E080000D2DFD /* LaunchScreen.storyboard */; };
 		A5CED4EF1DB0E080000D2DFD /* BMSTUScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4EE1DB0E080000D2DFD /* BMSTUScheduleTests.swift */; };
 		A5CED4FA1DB0E080000D2DFD /* BMSTUScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4F91DB0E080000D2DFD /* BMSTUScheduleUITests.swift */; };
 		A5CED50B1DB0E94A000D2DFD /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED50A1DB0E94A000D2DFD /* Lesson.swift */; };
 		A5E0FE821DBFB59D008959A9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE811DBFB59D008959A9 /* SWRevealViewController.m */; };
 		A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE831DBFB870008959A9 /* ScheduleController.swift */; };
 		A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE881DBFFB22008959A9 /* SettingsController.swift */; };
-		A5E908591DE1EE89006D4B96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5E908581DE1EE89006D4B96 /* GoogleService-Info.plist */; };
-		A5E9085A1DE1EE89006D4B96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5E908581DE1EE89006D4B96 /* GoogleService-Info.plist */; };
-		A5E9085B1DE1EE89006D4B96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5E908581DE1EE89006D4B96 /* GoogleService-Info.plist */; };
 		A5EC94B51DB2D96000299646 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC94B41DB2D96000299646 /* Base.swift */; };
 		A5F2E1F71DC4C1E100841669 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E1F61DC4C1E100841669 /* Day.swift */; };
 		A5F2E1F91DC4C2D400841669 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E1F81DC4C2D400841669 /* Schedule.swift */; };
@@ -59,18 +60,21 @@
 		793CA6CF03F2F48A50E4F412 /* Pods_BMSTUSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMSTUSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		831933F057A6FACC8B5135A8 /* Pods-BMSTUScheduleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMSTUScheduleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMSTUScheduleTests/Pods-BMSTUScheduleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A44130F770FD807D2AED7F4F /* Pods_BMSTUScheduleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMSTUScheduleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A50779371DE20B04005BA983 /* ScheduleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleManager.swift; path = Network/ScheduleManager.swift; sourceTree = "<group>"; };
 		A525F3D11DD4C9D4003A7CC0 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = Model/Group.swift; sourceTree = "<group>"; };
 		A5485CC01DC245BC009610C2 /* LessonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonCell.swift; path = Views/LessonCell.swift; sourceTree = "<group>"; };
 		A5485CC21DC26173009610C2 /* GroupsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsController.swift; path = Controllers/GroupsController.swift; sourceTree = "<group>"; };
 		A55B90521DCA37E20068B9BE /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuController.swift; path = Controllers/MenuController.swift; sourceTree = "<group>"; };
 		A5A123F51DE7422A006FB4E5 /* Week.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Week.swift; path = Model/Week.swift; sourceTree = "<group>"; };
+		A5A123F71DE8DCD8006FB4E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Other/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A5A123F81DE8DCD8006FB4E5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Other/Info.plist; sourceTree = "<group>"; };
+		A5A124021DE8DD24006FB4E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5A124041DE8DD24006FB4E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A5A124081DE8DD70006FB4E5 /* ScheduleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleManager.swift; path = Managers/ScheduleManager.swift; sourceTree = "<group>"; };
+		A5A1240B1DE8DE9A006FB4E5 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Managers/FirebaseManager.swift; sourceTree = "<group>"; };
+		A5A1240D1DE8DED5006FB4E5 /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarManager.swift; path = Managers/CalendarManager.swift; sourceTree = "<group>"; };
 		A5CED4D61DB0E080000D2DFD /* BMSTUSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMSTUSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5CED4DE1DB0E080000D2DFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5CED4E01DB0E080000D2DFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A5CED4E31DB0E080000D2DFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A5CED4E51DB0E080000D2DFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5CED4EA1DB0E080000D2DFD /* BMSTUScheduleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMSTUScheduleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CED4EE1DB0E080000D2DFD /* BMSTUScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMSTUScheduleTests.swift; sourceTree = "<group>"; };
 		A5CED4F01DB0E080000D2DFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,7 +87,6 @@
 		A5E0FE811DBFB59D008959A9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		A5E0FE831DBFB870008959A9 /* ScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleController.swift; path = Controllers/ScheduleController.swift; sourceTree = "<group>"; };
 		A5E0FE881DBFFB22008959A9 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = Controllers/SettingsController.swift; sourceTree = "<group>"; };
-		A5E908581DE1EE89006D4B96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5EC94B41DB2D96000299646 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Base.swift; path = Model/Base.swift; sourceTree = "<group>"; };
 		A5F2E1F61DC4C1E100841669 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = Model/Day.swift; sourceTree = "<group>"; };
 		A5F2E1F81DC4C2D400841669 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = Model/Schedule.swift; sourceTree = "<group>"; };
@@ -119,6 +122,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5A124071DE8DD4F006FB4E5 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				A5CED4E01DB0E080000D2DFD /* Assets.xcassets */,
+				A5A123F71DE8DCD8006FB4E5 /* GoogleService-Info.plist */,
+				A5A123F81DE8DCD8006FB4E5 /* Info.plist */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		A5A1240A1DE8DD75006FB4E5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A5A124081DE8DD70006FB4E5 /* ScheduleManager.swift */,
+				A5A1240B1DE8DE9A006FB4E5 /* FirebaseManager.swift */,
+				A5A1240D1DE8DED5006FB4E5 /* CalendarManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		A5CED4CD1DB0E07F000D2DFD = {
 			isa = PBXGroup;
 			children = (
@@ -144,16 +167,14 @@
 		A5CED4D81DB0E080000D2DFD /* BMSTUSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				A50779371DE20B04005BA983 /* ScheduleManager.swift */,
 				A5CED5091DB0E901000D2DFD /* Model */,
+				A5A1240A1DE8DD75006FB4E5 /* Managers */,
 				A5E0FE8C1DC00698008959A9 /* Views */,
 				A5E0FE851DBFB88D008959A9 /* Controllers */,
 				A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */,
-				A5CED4DD1DB0E080000D2DFD /* Main.storyboard */,
-				A5CED4E21DB0E080000D2DFD /* LaunchScreen.storyboard */,
-				A5CED4E01DB0E080000D2DFD /* Assets.xcassets */,
-				A5CED4E51DB0E080000D2DFD /* Info.plist */,
-				A5E908581DE1EE89006D4B96 /* GoogleService-Info.plist */,
+				A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */,
+				A5A124031DE8DD24006FB4E5 /* Main.storyboard */,
+				A5A124071DE8DD4F006FB4E5 /* Other */,
 				A5E0FE7A1DBFB56B008959A9 /* Libraries */,
 			);
 			path = BMSTUSchedule;
@@ -368,10 +389,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5CED4E41DB0E080000D2DFD /* LaunchScreen.storyboard in Resources */,
-				A5E908591DE1EE89006D4B96 /* GoogleService-Info.plist in Resources */,
+				A5A123FA1DE8DCD8006FB4E5 /* Info.plist in Resources */,
+				A5A124061DE8DD24006FB4E5 /* Main.storyboard in Resources */,
+				A5A124051DE8DD24006FB4E5 /* LaunchScreen.storyboard in Resources */,
+				A5A123F91DE8DCD8006FB4E5 /* GoogleService-Info.plist in Resources */,
 				A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */,
-				A5CED4DF1DB0E080000D2DFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +401,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5E9085A1DE1EE89006D4B96 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +408,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5E9085B1DE1EE89006D4B96 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,8 +558,10 @@
 			files = (
 				A5485CC11DC245BC009610C2 /* LessonCell.swift in Sources */,
 				A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */,
+				A5A124091DE8DD70006FB4E5 /* ScheduleManager.swift in Sources */,
 				A5EC94B51DB2D96000299646 /* Base.swift in Sources */,
 				A525F3D21DD4C9D4003A7CC0 /* Group.swift in Sources */,
+				A5A1240E1DE8DED5006FB4E5 /* CalendarManager.swift in Sources */,
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
 				A5E0FE821DBFB59D008959A9 /* SWRevealViewController.m in Sources */,
 				A55B90531DCA37E20068B9BE /* MenuController.swift in Sources */,
@@ -547,9 +569,9 @@
 				A5485CC31DC26173009610C2 /* GroupsController.swift in Sources */,
 				A5A123F61DE7422A006FB4E5 /* Week.swift in Sources */,
 				A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */,
+				A5A1240C1DE8DE9A006FB4E5 /* FirebaseManager.swift in Sources */,
 				A5F2E1F91DC4C2D400841669 /* Schedule.swift in Sources */,
 				A5CED50B1DB0E94A000D2DFD /* Lesson.swift in Sources */,
-				A50779381DE20B04005BA983 /* ScheduleManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,20 +607,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A5CED4DD1DB0E080000D2DFD /* Main.storyboard */ = {
+		A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A5CED4DE1DB0E080000D2DFD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A5CED4E21DB0E080000D2DFD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A5CED4E31DB0E080000D2DFD /* Base */,
+				A5A124021DE8DD24006FB4E5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A5A124031DE8DD24006FB4E5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5A124041DE8DD24006FB4E5 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -706,7 +728,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CT884K7983;
-				INFOPLIST_FILE = BMSTUSchedule/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.techpark-iOS.BMSTUSchedule";
@@ -726,7 +748,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CT884K7983;
-				INFOPLIST_FILE = BMSTUSchedule/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.techpark-iOS.BMSTUSchedule";
