@@ -20,6 +20,8 @@
 		A5A124091DE8DD70006FB4E5 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A124081DE8DD70006FB4E5 /* ScheduleManager.swift */; };
 		A5A1240C1DE8DE9A006FB4E5 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A1240B1DE8DE9A006FB4E5 /* FirebaseManager.swift */; };
 		A5A1240E1DE8DED5006FB4E5 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A1240D1DE8DED5006FB4E5 /* CalendarManager.swift */; };
+		A5A124121DE8E606006FB4E5 /* Screenshot-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = A5A124101DE8E606006FB4E5 /* Screenshot-Menu.png */; };
+		A5A124131DE8E606006FB4E5 /* Screenshot-Schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = A5A124111DE8E606006FB4E5 /* Screenshot-Schedule.png */; };
 		A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */; };
 		A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CED4E01DB0E080000D2DFD /* Assets.xcassets */; };
 		A5CED4EF1DB0E080000D2DFD /* BMSTUScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4EE1DB0E080000D2DFD /* BMSTUScheduleTests.swift */; };
@@ -72,6 +74,8 @@
 		A5A124081DE8DD70006FB4E5 /* ScheduleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleManager.swift; path = Managers/ScheduleManager.swift; sourceTree = "<group>"; };
 		A5A1240B1DE8DE9A006FB4E5 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Managers/FirebaseManager.swift; sourceTree = "<group>"; };
 		A5A1240D1DE8DED5006FB4E5 /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarManager.swift; path = Managers/CalendarManager.swift; sourceTree = "<group>"; };
+		A5A124101DE8E606006FB4E5 /* Screenshot-Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot-Menu.png"; sourceTree = "<group>"; };
+		A5A124111DE8E606006FB4E5 /* Screenshot-Schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot-Schedule.png"; sourceTree = "<group>"; };
 		A5CED4D61DB0E080000D2DFD /* BMSTUSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMSTUSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CED4E01DB0E080000D2DFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 				A5CED4E01DB0E080000D2DFD /* Assets.xcassets */,
 				A5A123F71DE8DCD8006FB4E5 /* GoogleService-Info.plist */,
 				A5A123F81DE8DCD8006FB4E5 /* Info.plist */,
+				A5A1240F1DE8E606006FB4E5 /* Screenshots */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -140,6 +145,16 @@
 				A5A1240D1DE8DED5006FB4E5 /* CalendarManager.swift */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		A5A1240F1DE8E606006FB4E5 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				A5A124101DE8E606006FB4E5 /* Screenshot-Menu.png */,
+				A5A124111DE8E606006FB4E5 /* Screenshot-Schedule.png */,
+			);
+			name = Screenshots;
+			path = Other/Screenshots;
 			sourceTree = "<group>";
 		};
 		A5CED4CD1DB0E07F000D2DFD = {
@@ -389,7 +404,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A124121DE8E606006FB4E5 /* Screenshot-Menu.png in Resources */,
 				A5A123FA1DE8DCD8006FB4E5 /* Info.plist in Resources */,
+				A5A124131DE8E606006FB4E5 /* Screenshot-Schedule.png in Resources */,
 				A5A124061DE8DD24006FB4E5 /* Main.storyboard in Resources */,
 				A5A124051DE8DD24006FB4E5 /* LaunchScreen.storyboard in Resources */,
 				A5A123F91DE8DCD8006FB4E5 /* GoogleService-Info.plist in Resources */,
