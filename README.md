@@ -1,5 +1,6 @@
 # Расписание МГТУ имени Н.Э. Баумана
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgray.svg)
+![Contributors](https://img.shields.io/github/contributors/BMSTUScheduleTeam/BMSTUSchedule.svg)
 
 Неофициальное приложение с расписанием занятий МГТУ имени Н.Э. Баумана.
 
@@ -19,7 +20,7 @@
 
 Использование UITableView / UICollectionView в своём проекте.
 
-### Домашнее задание №3
+### Домашнее задание №3 (Реализовано в Firebase)
 
 Максимум 20 баллов, срок - занятие 10, то есть 24 ноября.
 
