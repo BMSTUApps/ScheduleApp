@@ -28,6 +28,8 @@ class Day: Base {
     var title: Title
     var lessons: [Lesson]
     
+    var date: NSDate = NSDate()
+    
     // MARK: Initialization
     
     init(title: Title, lessons: [Lesson], key: String = "") {

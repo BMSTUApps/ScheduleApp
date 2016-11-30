@@ -11,7 +11,6 @@ import Firebase
 
 class ScheduleController: UITableViewController {
     
-    var schedule = Schedule()
     var days: [Day] = []
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -31,16 +30,22 @@ class ScheduleController: UITableViewController {
         
         // Load schedule
         ScheduleManager.manager.firebase.getSchedule(group: Group(name: "ИУ5-33"), success: { schedule in
-            self.setSchedule(schedule: schedule)
+            let weeks = ScheduleManager.manager.calendar.weeksFromSchedule(schedule: schedule, offset: 0, count: 2)
+            self.setDays(weeks: weeks)
             self.tableView.reloadData()
         })
         
         self.tableView.sectionHeaderHeight = 40
     }
     
-    func setSchedule(schedule: Schedule) {
-        self.schedule = schedule
-        self.days = self.schedule.numeratorWeek.days + self.schedule.denominatorWeek.days
+    func setDays(schedule: Schedule) {
+        self.days = schedule.denominatorWeek.days + schedule.numeratorWeek.days
+    }
+    
+    func setDays(weeks: [Week]) {
+        for week in weeks {
+            self.days.append(contentsOf: week.days)
+        }
     }
     
     // MARK: - Table view data source
@@ -49,6 +54,7 @@ class ScheduleController: UITableViewController {
         return days.count
     }
     
+    // Custom header
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40))
@@ -61,12 +67,6 @@ class ScheduleController: UITableViewController {
         
         return headerView
     }
-    
-    /*
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return days[section].title.rawValue.capitalized
-    }
-    */
  
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return days[section].lessons.count

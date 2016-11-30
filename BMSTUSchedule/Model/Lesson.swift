@@ -26,13 +26,8 @@ class Lesson: Base {
     
     var type: Kind?
     
-    // Last format (DEPRECATED)
     var startTime: String?
     var endTime: String?
-    
-    // New format
-    var startDate: Date?
-    var endDate: Date?
     
     override var description : String {
         return "Lesson(\"\(title)\")\n"

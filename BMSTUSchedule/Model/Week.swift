@@ -16,6 +16,8 @@ class Week: Base {
     var kind: Kind
     var days: [Day]
 
+    var number: Int = 0
+    
     override var description : String {
         return "Week(\"\(kind.rawValue)\")\n"
     }
