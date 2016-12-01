@@ -8,7 +8,7 @@
 
 import Firebase
 
-class Lesson: Base {
+class Lesson: Base, Equatable {
 
     enum Kind: String {
         case lecture = "лекция"
@@ -31,6 +31,11 @@ class Lesson: Base {
     
     override var description : String {
         return "Lesson(\"\(title)\")\n"
+    }
+    
+    func generateKey() -> String {
+        let key = "\(self.startTime ?? "") - \(self.endTime ?? "") \(self.title)"
+        return key
     }
     
     // MARK: Initialization
@@ -79,9 +84,11 @@ class Lesson: Base {
         }
     }
     
-    func firebaseKey() -> String {
-        let key = "\(self.startTime ?? "") - \(self.endTime ?? "") \(self.title)"
-        return key
+    // MARK: Equatable
+    
+    static func ==(lhs: Lesson, rhs: Lesson) -> Bool {
+        
+        return lhs.key == rhs.key
     }
     
     // MARK: Export

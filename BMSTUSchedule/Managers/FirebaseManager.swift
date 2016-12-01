@@ -40,7 +40,12 @@ class FirebaseManager {
                     var lessons: [Lesson] = []
                     for lessonSnap in (daySnap as! FIRDataSnapshot).children {
                         let lesson = Lesson(snapshot: lessonSnap as! FIRDataSnapshot)
-                        lessons.append(lesson)
+
+                        if lessons.index(of: lesson) != nil {
+                            // Found copy!
+                        } else {
+                            lessons.append(lesson)
+                        }
                     }
                     
                     day.lessons = lessons
@@ -85,7 +90,7 @@ class FirebaseManager {
     
     func addLesson(lesson: Lesson, group: Group, weekKind: Week.Kind, dayTitle: Day.Title) {
         
-        let lessonRef = FIRDatabase.database().reference(withPath: "schedules").child(group.name).child(weekKind.rawValue).child(dayTitle.rawValue).child(lesson.firebaseKey())
+        let lessonRef = FIRDatabase.database().reference(withPath: "schedules").child(group.name).child(weekKind.rawValue).child(dayTitle.rawValue).child(lesson.generateKey())
         lessonRef.setValue(lesson.toAnyObject())
         
     }
@@ -98,7 +103,7 @@ class FirebaseManager {
         for day in schedule.numeratorWeek.days {
             let dayRef = numeratorWeekRef.child(day.title.rawValue)
             for lesson in day.lessons {
-                let lessonRef = dayRef.child(lesson.firebaseKey())
+                let lessonRef = dayRef.child(lesson.generateKey())
                 lessonRef.setValue(lesson.toAnyObject())
             }
         }
@@ -108,7 +113,7 @@ class FirebaseManager {
         for day in schedule.denominatorWeek.days {
             let dayRef = denominatorWeekRef.child(day.title.rawValue)
             for lesson in day.lessons {
-                let lessonRef = dayRef.child(lesson.firebaseKey())
+                let lessonRef = dayRef.child(lesson.generateKey())
                 lessonRef.setValue(lesson.toAnyObject())
             }
         }

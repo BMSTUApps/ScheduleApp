@@ -19,9 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Configure firebase
         ScheduleManager.manager.firebase.configure()
-        
-        ScheduleManager.manager.firebase.addSchedule(schedule: ScheduleManager.manager.testSchedule(), group: Group(name: "ИУ5-33"))
-        
+
         return true
     }
 
