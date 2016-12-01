@@ -13,8 +13,6 @@
 		A5485CC31DC26173009610C2 /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC21DC26173009610C2 /* GroupsController.swift */; };
 		A55B90531DCA37E20068B9BE /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B90521DCA37E20068B9BE /* MenuController.swift */; };
 		A5A123F61DE7422A006FB4E5 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A123F51DE7422A006FB4E5 /* Week.swift */; };
-		A5A123F91DE8DCD8006FB4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5A123F71DE8DCD8006FB4E5 /* GoogleService-Info.plist */; };
-		A5A123FA1DE8DCD8006FB4E5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5A123F81DE8DCD8006FB4E5 /* Info.plist */; };
 		A5A124051DE8DD24006FB4E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */; };
 		A5A124061DE8DD24006FB4E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A124031DE8DD24006FB4E5 /* Main.storyboard */; };
 		A5A124091DE8DD70006FB4E5 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A124081DE8DD70006FB4E5 /* ScheduleManager.swift */; };
@@ -22,6 +20,7 @@
 		A5A1240E1DE8DED5006FB4E5 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A1240D1DE8DED5006FB4E5 /* CalendarManager.swift */; };
 		A5A124121DE8E606006FB4E5 /* Screenshot-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = A5A124101DE8E606006FB4E5 /* Screenshot-Menu.png */; };
 		A5A124131DE8E606006FB4E5 /* Screenshot-Schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = A5A124111DE8E606006FB4E5 /* Screenshot-Schedule.png */; };
+		A5B257291DF01C260081EA0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5B257271DF01C260081EA0B /* GoogleService-Info.plist */; };
 		A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */; };
 		A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CED4E01DB0E080000D2DFD /* Assets.xcassets */; };
 		A5CED4EF1DB0E080000D2DFD /* BMSTUScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4EE1DB0E080000D2DFD /* BMSTUScheduleTests.swift */; };
@@ -67,8 +66,7 @@
 		A5485CC21DC26173009610C2 /* GroupsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsController.swift; path = Controllers/GroupsController.swift; sourceTree = "<group>"; };
 		A55B90521DCA37E20068B9BE /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuController.swift; path = Controllers/MenuController.swift; sourceTree = "<group>"; };
 		A5A123F51DE7422A006FB4E5 /* Week.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Week.swift; path = Model/Week.swift; sourceTree = "<group>"; };
-		A5A123F71DE8DCD8006FB4E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Other/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A5A123F81DE8DCD8006FB4E5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Other/Info.plist; sourceTree = "<group>"; };
+		A5A123F81DE8DCD8006FB4E5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5A124021DE8DD24006FB4E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5A124041DE8DD24006FB4E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5A124081DE8DD70006FB4E5 /* ScheduleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleManager.swift; path = Managers/ScheduleManager.swift; sourceTree = "<group>"; };
@@ -76,6 +74,7 @@
 		A5A1240D1DE8DED5006FB4E5 /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarManager.swift; path = Managers/CalendarManager.swift; sourceTree = "<group>"; };
 		A5A124101DE8E606006FB4E5 /* Screenshot-Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot-Menu.png"; sourceTree = "<group>"; };
 		A5A124111DE8E606006FB4E5 /* Screenshot-Schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot-Schedule.png"; sourceTree = "<group>"; };
+		A5B257271DF01C260081EA0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5CED4D61DB0E080000D2DFD /* BMSTUSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMSTUSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CED4E01DB0E080000D2DFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				A5CED4E01DB0E080000D2DFD /* Assets.xcassets */,
-				A5A123F71DE8DCD8006FB4E5 /* GoogleService-Info.plist */,
+				A5B257271DF01C260081EA0B /* GoogleService-Info.plist */,
 				A5A123F81DE8DCD8006FB4E5 /* Info.plist */,
 				A5A1240F1DE8E606006FB4E5 /* Screenshots */,
 			);
@@ -405,11 +404,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A124121DE8E606006FB4E5 /* Screenshot-Menu.png in Resources */,
-				A5A123FA1DE8DCD8006FB4E5 /* Info.plist in Resources */,
+				A5B257291DF01C260081EA0B /* GoogleService-Info.plist in Resources */,
 				A5A124131DE8E606006FB4E5 /* Screenshot-Schedule.png in Resources */,
 				A5A124061DE8DD24006FB4E5 /* Main.storyboard in Resources */,
 				A5A124051DE8DD24006FB4E5 /* LaunchScreen.storyboard in Resources */,
-				A5A123F91DE8DCD8006FB4E5 /* GoogleService-Info.plist in Resources */,
 				A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -745,7 +743,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CT884K7983;
-				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Other/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.techpark-iOS.BMSTUSchedule";
@@ -765,7 +763,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CT884K7983;
-				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Other/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.techpark-iOS.BMSTUSchedule";
