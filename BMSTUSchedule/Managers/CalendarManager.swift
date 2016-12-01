@@ -11,6 +11,9 @@ import UIKit
 class CalendarManager {
 
     // MARK: Constants
+    
+    // Only for debug!!!
+    // In release it will be stored in FireBase
     var startWeekIndex: Int {
         get {
             let dateString = "01.09.2016"
@@ -70,8 +73,7 @@ class CalendarManager {
         
         var nowWeekKind = startWeekKind
         var nowWeekNumber = startWeekNumber
-        for _ in 0...count {
-            
+        for _ in 1...count {
             let week = Week()
             week.number = nowWeekNumber
             week.kind = nowWeekKind

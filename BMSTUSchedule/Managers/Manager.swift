@@ -8,12 +8,10 @@
 
 import Firebase
 
-class ScheduleManager {
-    
-    static let manager = ScheduleManager()
-    
-    let calendar = CalendarManager()
-    let firebase = FirebaseManager()
+class Manager {
+        
+    static let calendarManager = CalendarManager()
+    static let firebaseManager = FirebaseManager()
     
     // MARK: Test data
     
@@ -39,50 +37,82 @@ class ScheduleManager {
                                           startTime: "17:25",
                                           endTime: "19:00")])
         
-        let denominatorTuesday = Day(title: .thuesday,
-                                     lessons: [Lesson(title: "Модели данных",
-                                                      teacher: "Ковалева Н. А.",
-                                                      room: "306э",
-                                                      type: .lab,
-                                                      startTime: "12:00",
-                                                      endTime: "13:35"),
-                                               Lesson(title: "Модели данных",
-                                                      teacher: "Ковалева Н. А.",
-                                                      room: "306э",
-                                                      type: .lab,
-                                                      startTime: "13:50",
-                                                      endTime: "15:25"),
-                                               Lesson(title: "Физика",
-                                                      teacher: "",
-                                                      room: "224л",
-                                                      type: .lecture,
-                                                      startTime: "15:40",
-                                                      endTime: "17:15"),
-                                               Lesson(title: "Электротехника",
-                                                      teacher: "Белодедов М. В.",
-                                                      room: "218л",
-                                                      type: .lecture,
-                                                      startTime: "17:25",
-                                                      endTime: "19:00")])
-        
         let numeratorTuesday = Day(title: .thuesday,
-                                   lessons: [Lesson(title: "Физика",
+                                   lessons: [Lesson(title: "Модели данных",
+                                                    teacher: "Ковалева Н. А.",
+                                                    room: "306э",
+                                                    type: .lab,
+                                                    startTime: "12:00",
+                                                    endTime: "13:35"),
+                                             Lesson(title: "Модели данных",
+                                                    teacher: "Ковалева Н. А.",
+                                                    room: "306э",
+                                                    type: .lab,
+                                                    startTime: "13:50",
+                                                    endTime: "15:25"),
+                                             Lesson(title: "Физика",
                                                     teacher: "",
                                                     room: "224л",
                                                     type: .lecture,
                                                     startTime: "15:40",
                                                     endTime: "17:15"),
-                                            Lesson(title: "Теория вероятностей и математическая статистика",
-                                                    teacher: "Безверхний Н. В.",
+                                             Lesson(title: "Электротехника",
+                                                    teacher: "Белодедов М. В.",
                                                     room: "218л",
                                                     type: .lecture,
                                                     startTime: "17:25",
                                                     endTime: "19:00")])
         
+        let denominatorTuesday = Day(title: .thuesday,
+                                     lessons: [Lesson(title: "Физика",
+                                                      teacher: "",
+                                                      room: "224л",
+                                                      type: .lecture,
+                                                      startTime: "15:40",
+                                                      endTime: "17:15"),
+                                               Lesson(title: "Теория вероятностей и математическая статистика",
+                                                      teacher: "Безверхний Н. В.",
+                                                      room: "218л",
+                                                      type: .lecture,
+                                                      startTime: "17:25",
+                                                      endTime: "19:00")])
+
+        let numeratorWednesday = Day(title: .wednesday,
+                                    lessons: [Lesson(title: "Электротехника",
+                                                     teacher: "Белодедов М. В.",
+                                                     room: "700",
+                                                     type: .lab,
+                                                     startTime: "10:15",
+                                                     endTime: "11:50"),
+                                              Lesson(title: "Модели данных",
+                                                     teacher: "Ревунков Г. И.",
+                                                     room: "501ю",
+                                                     type: .lecture,
+                                                     startTime: "12:00",
+                                                     endTime: "13:35"),
+                                              Lesson(title: "Базовые компоненты интернет-технологий",
+                                                     teacher: "Гапанюк Ю. Е.",
+                                                     room: "501ю",
+                                                     type: .lecture,
+                                                     startTime: "13:50",
+                                                     endTime: "15:25"),
+                                              Lesson(title: "Базовые компоненты интернет-технологий",
+                                                     teacher: "Гапанюк Ю. Е.",
+                                                     room: "306э",
+                                                     type: .lab,
+                                                     startTime: "15:40",
+                                                     endTime: "17:15")])
+        
         let denominatorWednesday = Day(title: .wednesday,
-                                       lessons: [Lesson(title: "Электротехника",
-                                                        teacher: "Белодедов М. В.",
-                                                        room: "700",
+                                       lessons: [Lesson(title: "Физика",
+                                                        teacher: "",
+                                                        room: "дом физики",
+                                                        type: .lab,
+                                                        startTime: "8:30",
+                                                        endTime: "10:05"),
+                                                 Lesson(title: "Физика",
+                                                        teacher: "",
+                                                        room: "дом физики",
                                                         type: .lab,
                                                         startTime: "10:15",
                                                         endTime: "11:50"),
@@ -92,45 +122,13 @@ class ScheduleManager {
                                                         type: .lecture,
                                                         startTime: "12:00",
                                                         endTime: "13:35"),
-                                                 Lesson(title: "Базовые компоненты интернет-технологий",
-                                                        teacher: "Гапанюк Ю. Е.",
-                                                        room: "501ю",
-                                                        type: .lecture,
-                                                        startTime: "13:50",
-                                                        endTime: "15:25"),
-                                                 Lesson(title: "Базовые компоненты интернет-технологий",
-                                                        teacher: "Гапанюк Ю. Е.",
-                                                        room: "306э",
-                                                        type: .lab,
-                                                        startTime: "15:40",
-                                                        endTime: "17:15")])
-        
-        let numeratorWednesday = Day(title: .wednesday,
-                                     lessons: [Lesson(title: "Физика",
-                                                    teacher: "",
-                                                    room: "дом физики",
-                                                    type: .lab,
-                                                    startTime: "8:30",
-                                                    endTime: "10:05"),
-                                               Lesson(title: "Физика",
-                                                    teacher: "",
-                                                    room: "дом физики",
-                                                    type: .lab,
-                                                    startTime: "10:15",
-                                                    endTime: "11:50"),
-                                               Lesson(title: "Модели данных",
-                                                    teacher: "Ревунков Г. И.",
-                                                    room: "501ю",
-                                                    type: .lecture,
-                                                    startTime: "12:00",
-                                                    endTime: "13:35"),
                                                  Lesson(title: "Электротехника",
                                                         teacher: "Белодедов М. В.",
                                                         room: "501ю",
                                                         type: .lecture,
                                                         startTime: "13:50",
                                                         endTime: "15:25")])
-        
+
         let thursday = Day(title: .thursday,
                            lessons: [Lesson(title: "Экология",
                                             teacher: "",
@@ -156,7 +154,7 @@ class ScheduleManager {
                                             startTime: "13:50",
                                             endTime: "15:25")])
         
-        let denominatorFriday = Day(title: .friday,
+        let numeratorFriday = Day(title: .friday,
                                     lessons: [Lesson(title: "Теория вероятностей и математическая статистика",
                                                      teacher: "",
                                                      room: "830л",
@@ -170,7 +168,7 @@ class ScheduleManager {
                                                      startTime: "10:15",
                                                      endTime: "11:50")])
         
-        let numeratorFriday = Day(title: .friday,
+        let denominatorFriday = Day(title: .friday,
                                   lessons: [Lesson(title: "Теория вероятностей и математическая статистика",
                                                    teacher: "",
                                                    room: "830л",
@@ -190,31 +188,31 @@ class ScheduleManager {
                                                     startTime: "12:00",
                                                     endTime: "13:25")])
         
-        let numeratorSaturday = Day(title: .saturday,
-                                    lessons: [Lesson(title: "Правоведение",
-                                                    teacher: "",
-                                                    room: "523",
-                                                    type: .seminar,
-                                                    startTime: "13:50",
-                                                    endTime: "15:25"),
-                                            Lesson(title: "Физика",
-                                                    teacher: "",
-                                                    room: "520",
-                                                    type: .seminar,
-                                                    startTime: "15:40",
-                                                    endTime: "17:15")])
+        let denominatorSaturday = Day(title: .saturday,
+                                      lessons: [Lesson(title: "Правоведение",
+                                                       teacher: "",
+                                                       room: "523",
+                                                       type: .seminar,
+                                                       startTime: "13:50",
+                                                       endTime: "15:25"),
+                                                Lesson(title: "Физика",
+                                                       teacher: "",
+                                                       room: "520",
+                                                       type: .seminar,
+                                                       startTime: "15:40",
+                                                       endTime: "17:15")])
         
         let schedule = Schedule(numeratorWeek: Week(kind: .numerator, days: [monday,
                                                                              numeratorTuesday,
                                                                              numeratorWednesday,
                                                                              thursday,
-                                                                             numeratorFriday,
-                                                                             numeratorSaturday]),
+                                                                             numeratorFriday]),
                                 denominatorWeek: Week(kind: .denominator, days: [monday,
                                                                                  denominatorTuesday,
                                                                                  denominatorWednesday,
                                                                                  thursday,
-                                                                                 denominatorFriday]))
+                                                                                 denominatorFriday,
+                                                                                 denominatorSaturday]))
         return schedule
     }
     
