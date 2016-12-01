@@ -36,6 +36,7 @@ class CalendarManager {
             return weekIndex
         }
     }
+    
     var currentDate: Date {
         get {
             let date = Date.init(timeIntervalSinceNow: 0)
@@ -47,6 +48,25 @@ class CalendarManager {
 
     func weeksFromSchedule(schedule: Schedule, offset: Int, count: Int) -> [Week] {
      
+        // Constants
+        
+        var currentDayOfWeekIndex: Int {
+            get {
+                let calendar = Calendar.current
+                var dayIndex = calendar.component(.weekday, from: self.currentDate)
+                
+                if dayIndex == 0 {
+                    dayIndex = 6
+                } else {
+                    dayIndex = dayIndex - 2
+                }
+                
+                return dayIndex
+            }
+        }
+        
+        // Functions
+        
         func weekKind(weekNumber: Int) -> Week.Kind {
             if weekNumber % 2 == 0 {
                 return .denominator
@@ -64,20 +84,34 @@ class CalendarManager {
             }
         }
         
+        func tomorrow(today: Date) -> Date? {
+            return self.dayDateWithOffset(currentDate: today, offset: 1)
+        }
+        
+        // Setting constants
+        
         let currentWeekNumber = currentWeekIndex - startWeekIndex + 1
         
         let startWeekNumber = currentWeekNumber + offset
         let startWeekKind = weekKind(weekNumber: startWeekNumber)
         
+        let daysOffset = offset * 7 - currentDayOfWeekIndex
+        let startDayDate = self.dayDateWithOffset(currentDate: self.currentDate, offset: daysOffset)
+        
+        // Calculating
+        
         var weeks: [Week] = []
         
         var nowWeekKind = startWeekKind
         var nowWeekNumber = startWeekNumber
+        var nowDayDate = startDayDate
+        
         for _ in 1...count {
             let week = Week()
             week.number = nowWeekNumber
             week.kind = nowWeekKind
             
+            // Choosing days for week kind
             switch nowWeekKind {
             case .numerator:
                 week.days = schedule.numeratorWeek.days
@@ -85,13 +119,33 @@ class CalendarManager {
                 week.days = schedule.denominatorWeek.days
             }
             
+            // Setting date for days
+            for day in week.days {
+                if let date = nowDayDate {
+                    day.date = date
+                    nowDayDate = tomorrow(today: date)
+                }
+            }
+            
             weeks.append(week)
             
+            // Update constants
             nowWeekKind = switchWeekKind(weekKind: nowWeekKind)
             nowWeekNumber = nowWeekNumber + 1
         }
         
         return weeks
+    }
+    
+    // Get date with days offset
+    //
+    // Example: 12.11.2016 -(offset = -2)-> 10.11.2016
+    
+    func dayDateWithOffset(currentDate: Date, offset: Int) -> Date? {
+        let calendar = Calendar.current
+        let offsetDate = calendar.date(byAdding: .day, value: offset, to: currentDate)
+        
+        return offsetDate ?? nil
     }
     
 }
