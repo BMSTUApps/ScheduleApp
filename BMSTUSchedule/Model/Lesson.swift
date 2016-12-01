@@ -79,6 +79,11 @@ class Lesson: Base {
         }
     }
     
+    func firebaseKey() -> String {
+        let key = "\(self.startTime ?? "") - \(self.endTime ?? "") \(self.title)"
+        return key
+    }
+    
     // MARK: Export
     
     func toAnyObject() -> Any {

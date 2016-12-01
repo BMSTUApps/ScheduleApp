@@ -74,13 +74,16 @@ class CalendarManager {
             
             let week = Week()
             week.number = nowWeekNumber
+            week.kind = nowWeekKind
             
             switch nowWeekKind {
             case .numerator:
-                weeks.append(schedule.numeratorWeek)
+                week.days = schedule.numeratorWeek.days
             case .denominator:
-                weeks.append(schedule.denominatorWeek)
+                week.days = schedule.denominatorWeek.days
             }
+            
+            weeks.append(week)
             
             nowWeekKind = switchWeekKind(weekKind: nowWeekKind)
             nowWeekNumber = nowWeekNumber + 1
