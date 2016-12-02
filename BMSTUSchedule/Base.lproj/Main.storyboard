@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GSV-k9-7Yh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GSV-k9-7Yh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zBY-ia-ZY2" id="pTN-fQ-4j8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="День недели" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="Qoz-aG-zPo">
@@ -34,7 +34,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="дата" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F20-py-wTr">
-                                            <rect key="frame" x="118" y="10" width="31" height="18"/>
+                                            <rect key="frame" x="116" y="11" width="31" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -44,9 +44,9 @@
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Qoz-aG-zPo" secondAttribute="bottom" id="Pfe-Gu-eq7"/>
                                         <constraint firstItem="Qoz-aG-zPo" firstAttribute="leading" secondItem="pTN-fQ-4j8" secondAttribute="leading" constant="8" id="RBV-d4-bzc"/>
-                                        <constraint firstItem="F20-py-wTr" firstAttribute="top" secondItem="pTN-fQ-4j8" secondAttribute="topMargin" constant="2" id="RDZ-dN-1rz"/>
+                                        <constraint firstItem="F20-py-wTr" firstAttribute="top" secondItem="pTN-fQ-4j8" secondAttribute="topMargin" constant="3" id="RDZ-dN-1rz"/>
                                         <constraint firstItem="Qoz-aG-zPo" firstAttribute="top" secondItem="pTN-fQ-4j8" secondAttribute="top" id="nwY-NL-3iQ"/>
-                                        <constraint firstItem="F20-py-wTr" firstAttribute="leading" secondItem="Qoz-aG-zPo" secondAttribute="trailing" constant="8" id="qqc-tQ-Prv"/>
+                                        <constraint firstItem="F20-py-wTr" firstAttribute="leading" secondItem="Qoz-aG-zPo" secondAttribute="trailing" constant="6" id="qqc-tQ-Prv"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="F20-py-wTr" secondAttribute="bottom" constant="3" id="vxl-lY-j8d"/>
                                     </constraints>
                                 </tableViewCellContentView>

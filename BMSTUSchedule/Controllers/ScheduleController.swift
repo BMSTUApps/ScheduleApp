@@ -30,7 +30,7 @@ class ScheduleController: UITableViewController {
         
         // Load schedule
         Manager.firebaseManager.getSchedule(group: Group(name: "ИУ5-33"), success: { schedule in
-            let weeks = Manager.calendarManager.weeksFromSchedule(schedule: schedule, offset: 0, count: 2)
+            let weeks = Manager.calendarManager.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
             self.setDays(weeks: weeks)
             self.tableView.reloadData()
         })
@@ -77,6 +77,8 @@ class ScheduleController: UITableViewController {
         
         let lesson = days[indexPath.section].lessons[indexPath.row]
         
+        // Set lesson info
+        
         cell.titleLabel.text = lesson.title
         
         cell.teacherLabel.text = lesson.teacher
@@ -85,6 +87,18 @@ class ScheduleController: UITableViewController {
         
         cell.startTimeLabel.text = lesson.startTime
         cell.endTimeLabel.text = lesson.endTime
+        
+        // Set break info
+        
+        if indexPath.row > 0 { // Check if break exists before lesson
+            let lastLesson = days[indexPath.section].lessons[indexPath.row - 1]
+            
+            if let breakTime = Manager.calendarManager.calculateBreakTime(lastLesson: lastLesson, lesson: lesson) {
+                cell.breakLabel.text = "\(breakTime) минут перерыва"
+            }
+        } else {
+            cell.breakLabel.text = ""
+        }
         
         return cell
     }

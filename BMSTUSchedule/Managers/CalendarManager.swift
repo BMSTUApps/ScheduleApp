@@ -44,9 +44,9 @@ class CalendarManager {
         }
     }
     
-    // MARK: Dates source
+    // MARK: Create
     
-    func weeksFromSchedule(schedule: Schedule, offset: Int, count: Int) -> [Week] {
+    func createWeeksFromSchedule(schedule: Schedule, offset: Int, count: Int) -> [Week] {
      
         // BUG: Wrong counting week index with offset and count 
         // Need to fix it!!!
@@ -140,6 +140,28 @@ class CalendarManager {
         
         return weeks
     }
+    
+    // MARK: Calculate
+    
+    func calculateBreakTime(lastLesson: Lesson, lesson: Lesson) -> Int? {
+        if let endTime = lastLesson.endTime, let startTime = lesson.startTime {
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            
+            let startBreakDate = dateFormatter.date(from: endTime) ?? Date()
+            let endBreakDate = dateFormatter.date(from: startTime) ?? Date()
+
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.minute], from: startBreakDate, to: endBreakDate)
+            
+            return components.minute
+        } else {
+            return nil
+        }
+    }
+    
+    // MARK: Utility
     
     // Get date with days offset
     //
