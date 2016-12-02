@@ -45,9 +45,12 @@ class CalendarManager {
     }
     
     // MARK: Dates source
-
+    
     func weeksFromSchedule(schedule: Schedule, offset: Int, count: Int) -> [Week] {
      
+        // BUG: Wrong counting week index with offset and count 
+        // Need to fix it!!!
+        
         // Constants
         
         var currentDayOfWeekIndex: Int {
@@ -85,7 +88,7 @@ class CalendarManager {
         }
         
         func tomorrow(today: Date) -> Date? {
-            return self.dayDateWithOffset(currentDate: today, offset: 1)
+            return self.dateWithDaysOffset(currentDate: today, offset: 1)
         }
         
         // Setting constants
@@ -96,7 +99,7 @@ class CalendarManager {
         let startWeekKind = weekKind(weekNumber: startWeekNumber)
         
         let daysOffset = offset * 7 - currentDayOfWeekIndex
-        let startDayDate = self.dayDateWithOffset(currentDate: self.currentDate, offset: daysOffset)
+        let startDayDate = self.dateWithDaysOffset(currentDate: self.currentDate, offset: daysOffset) ?? self.currentDate
         
         // Calculating
         
@@ -104,7 +107,6 @@ class CalendarManager {
         
         var nowWeekKind = startWeekKind
         var nowWeekNumber = startWeekNumber
-        var nowDayDate = startDayDate
         
         for _ in 1...count {
             let week = Week()
@@ -118,12 +120,14 @@ class CalendarManager {
             case .denominator:
                 week.days = schedule.denominatorWeek.days
             }
-            
+
             // Setting date for days
             for day in week.days {
-                if let date = nowDayDate {
+                let weekCount = nowWeekNumber - currentWeekNumber
+                let offset = 7 * weekCount + day.indexInWeek
+                
+                if let date = self.dateWithDaysOffset(currentDate: startDayDate, offset: offset) {
                     day.date = date
-                    nowDayDate = tomorrow(today: date)
                 }
             }
             
@@ -141,11 +145,11 @@ class CalendarManager {
     //
     // Example: 12.11.2016 -(offset = -2)-> 10.11.2016
     
-    func dayDateWithOffset(currentDate: Date, offset: Int) -> Date? {
+    func dateWithDaysOffset(currentDate: Date, offset: Int) -> Date? {
         let calendar = Calendar.current
         let offsetDate = calendar.date(byAdding: .day, value: offset, to: currentDate)
         
         return offsetDate ?? nil
     }
-    
+        
 }
