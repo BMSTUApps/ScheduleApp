@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Configure firebase
-        ScheduleManager.manager.firebase.configure()
-                
+        Manager.firebaseManager.configure()
+        
         return true
     }
 
