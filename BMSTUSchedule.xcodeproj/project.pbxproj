@@ -21,6 +21,7 @@
 		A5A124121DE8E606006FB4E5 /* Screenshot-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = A5A124101DE8E606006FB4E5 /* Screenshot-Menu.png */; };
 		A5A124131DE8E606006FB4E5 /* Screenshot-Schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = A5A124111DE8E606006FB4E5 /* Screenshot-Schedule.png */; };
 		A5B257291DF01C260081EA0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5B257271DF01C260081EA0B /* GoogleService-Info.plist */; };
+		A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B2572B1DF085D70081EA0B /* DayHeader.swift */; };
 		A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */; };
 		A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CED4E01DB0E080000D2DFD /* Assets.xcassets */; };
 		A5CED4EF1DB0E080000D2DFD /* BMSTUScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4EE1DB0E080000D2DFD /* BMSTUScheduleTests.swift */; };
@@ -75,6 +76,7 @@
 		A5A124101DE8E606006FB4E5 /* Screenshot-Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot-Menu.png"; sourceTree = "<group>"; };
 		A5A124111DE8E606006FB4E5 /* Screenshot-Schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot-Schedule.png"; sourceTree = "<group>"; };
 		A5B257271DF01C260081EA0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A5B2572B1DF085D70081EA0B /* DayHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayHeader.swift; path = Views/DayHeader.swift; sourceTree = "<group>"; };
 		A5CED4D61DB0E080000D2DFD /* BMSTUSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMSTUSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CED4E01DB0E080000D2DFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 		A5E0FE8C1DC00698008959A9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A5B2572B1DF085D70081EA0B /* DayHeader.swift */,
 				A5485CC01DC245BC009610C2 /* LessonCell.swift */,
 			);
 			name = Views;
@@ -580,6 +583,7 @@
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
 				A5E0FE821DBFB59D008959A9 /* SWRevealViewController.m in Sources */,
 				A55B90531DCA37E20068B9BE /* MenuController.swift in Sources */,
+				A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */,
 				A5F2E1F71DC4C1E100841669 /* Day.swift in Sources */,
 				A5485CC31DC26173009610C2 /* GroupsController.swift in Sources */,
 				A5A123F61DE7422A006FB4E5 /* Week.swift in Sources */,

@@ -54,18 +54,14 @@ class ScheduleController: UITableViewController {
         return days.count
     }
     
-    // Custom header
+    // Custom header for day title
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let dayHeader = tableView.dequeueReusableCell(withIdentifier: "DayHeader") as! DayHeader
         
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40))
-        headerView.backgroundColor = UIColor.groupTableViewBackground
+        dayHeader.titleLabel.text = days[section].title.rawValue.capitalized
         
-        let titleLabel = UILabel(frame: CGRect(x: 12, y: 0, width: 200, height: 40))
-        titleLabel.text = days[section].title.rawValue.capitalized
-        
-        headerView.addSubview(titleLabel)
-        
-        return headerView
+        return dayHeader
     }
  
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

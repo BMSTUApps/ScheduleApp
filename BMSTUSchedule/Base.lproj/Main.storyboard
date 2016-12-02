@@ -20,8 +20,43 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayHeader" rowHeight="40" id="zBY-ia-ZY2" customClass="DayHeader" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zBY-ia-ZY2" id="pTN-fQ-4j8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="День недели" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="Qoz-aG-zPo">
+                                            <rect key="frame" x="8" y="0.0" width="102" height="39"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="дата" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F20-py-wTr">
+                                            <rect key="frame" x="118" y="10" width="31" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Qoz-aG-zPo" secondAttribute="bottom" id="Pfe-Gu-eq7"/>
+                                        <constraint firstItem="Qoz-aG-zPo" firstAttribute="leading" secondItem="pTN-fQ-4j8" secondAttribute="leading" constant="8" id="RBV-d4-bzc"/>
+                                        <constraint firstItem="F20-py-wTr" firstAttribute="top" secondItem="pTN-fQ-4j8" secondAttribute="topMargin" constant="2" id="RDZ-dN-1rz"/>
+                                        <constraint firstItem="Qoz-aG-zPo" firstAttribute="top" secondItem="pTN-fQ-4j8" secondAttribute="top" id="nwY-NL-3iQ"/>
+                                        <constraint firstItem="F20-py-wTr" firstAttribute="leading" secondItem="Qoz-aG-zPo" secondAttribute="trailing" constant="8" id="qqc-tQ-Prv"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="F20-py-wTr" secondAttribute="bottom" constant="3" id="vxl-lY-j8d"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="F20-py-wTr" id="OlE-4G-GVY"/>
+                                    <outlet property="titleLabel" destination="Qoz-aG-zPo" id="VaF-IL-4yb"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonCell" rowHeight="96" id="Uqn-Ia-TRW" customClass="LessonCell" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="96"/>
+                                <rect key="frame" x="0.0" y="68" width="375" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uqn-Ia-TRW" id="2wx-Je-kFi">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
@@ -127,6 +162,7 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="LUx-SS-ftO" id="d7g-aU-HGF"/>
                             <outlet property="delegate" destination="LUx-SS-ftO" id="8Fx-ye-bUj"/>

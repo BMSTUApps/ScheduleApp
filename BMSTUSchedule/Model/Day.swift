@@ -28,7 +28,7 @@ class Day: Base {
     var title: Title
     var lessons: [Lesson]
     
-    var date: NSDate = NSDate()
+    var date: Date = Date()
     
     // MARK: Initialization
     
