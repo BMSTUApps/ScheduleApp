@@ -59,7 +59,10 @@ class ScheduleController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let dayHeader = tableView.dequeueReusableCell(withIdentifier: "DayHeader") as! DayHeader
         
-        dayHeader.titleLabel.text = days[section].title.rawValue.capitalized
+        let day = days[section]
+        
+        dayHeader.titleLabel.text = day.title.rawValue.capitalized
+        dayHeader.dateLabel.text = day.dateString
         
         return dayHeader
     }

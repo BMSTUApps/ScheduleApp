@@ -30,6 +30,17 @@ class Day: Base {
     
     var date: Date = Date()
     
+    var dateString: String? {
+        get {
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "RU_ru")
+            dateFormatter.dateFormat = "dd MMMM"
+            
+            let dateString = dateFormatter.string(from: self.date)
+            return dateString
+        }
+    }
+    
     // MARK: Initialization
     
     init(title: Title, lessons: [Lesson], key: String = "") {
