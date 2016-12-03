@@ -9,9 +9,26 @@
 import Firebase
 
 class Manager {
-        
+    
+    static let manager = Manager()
     static let calendarManager = CalendarManager()
     static let firebaseManager = FirebaseManager()
+    
+    let defaults = UserDefaults.standard
+    
+    // Current group
+    
+    var currentGroup: Group {
+        get {
+            let groupName = defaults.string(forKey: "currentGroup") ?? ""
+            return Group(name: groupName)
+        }
+        
+        set(new) {
+            let groupName = new.name
+            defaults.set(groupName, forKey: "currentGroup")
+        }
+    }
     
     // MARK: Test data
     
