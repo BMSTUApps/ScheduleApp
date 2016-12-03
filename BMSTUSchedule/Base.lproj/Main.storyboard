@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GSV-k9-7Yh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GSV-k9-7Yh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -319,11 +319,20 @@
                                                         <constraint firstAttribute="height" constant="25" id="Ej2-SS-quB"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AA0-00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l24-Wy-Taj">
+                                                    <rect key="frame" x="296" y="12" width="65" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.63137254901960782" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="yRF-yZ-UUM" firstAttribute="leading" secondItem="asD-eh-4jC" secondAttribute="trailing" constant="11" id="2la-aY-kvS"/>
                                                 <constraint firstItem="asD-eh-4jC" firstAttribute="top" secondItem="RPZ-uZ-x9f" secondAttribute="topMargin" constant="1" id="6HD-zO-TZd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="l24-Wy-Taj" secondAttribute="bottom" constant="4" id="8Xe-PM-5cz"/>
                                                 <constraint firstItem="yRF-yZ-UUM" firstAttribute="top" secondItem="RPZ-uZ-x9f" secondAttribute="topMargin" constant="3" id="E38-7Z-nW4"/>
+                                                <constraint firstItem="l24-Wy-Taj" firstAttribute="trailing" secondItem="RPZ-uZ-x9f" secondAttribute="trailingMargin" constant="-6" id="JJ2-Vh-0v5"/>
+                                                <constraint firstItem="l24-Wy-Taj" firstAttribute="top" secondItem="RPZ-uZ-x9f" secondAttribute="topMargin" constant="4" id="XL4-ft-gnd"/>
                                                 <constraint firstItem="asD-eh-4jC" firstAttribute="leading" secondItem="RPZ-uZ-x9f" secondAttribute="leadingMargin" constant="28" id="p3c-q7-Z0R"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -375,6 +384,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="currentGroupLabel" destination="l24-Wy-Taj" id="bbQ-XK-bVn"/>
                         <outletCollection property="imageViews" destination="E4E-a0-heO" collectionClass="NSMutableArray" id="fsU-fi-Dpa"/>
                         <outletCollection property="imageViews" destination="asD-eh-4jC" collectionClass="NSMutableArray" id="aLs-9h-XcV"/>
                         <outletCollection property="imageViews" destination="0Ja-q5-Zav" collectionClass="NSMutableArray" id="sxS-p4-fjj"/>
@@ -382,7 +392,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ib-7a-9yy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="105" y="-297"/>
+            <point key="canvasLocation" x="104.8" y="-297.30134932533736"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bvQ-Lw-RZt">

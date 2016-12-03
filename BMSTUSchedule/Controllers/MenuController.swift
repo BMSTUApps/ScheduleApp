@@ -14,6 +14,8 @@ class MenuController: UITableViewController {
 
     @IBOutlet var imageViews: [UIImageView]!
     
+    @IBOutlet weak var currentGroupLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,9 @@ class MenuController: UITableViewController {
             let color = UIColor(red: 161/255, green: 172/255, blue: 182/255, alpha: 1)
             imageView.image = imageView.image?.imageWithColor(newColor: color)
         }
+        
+        // Show current group
+        self.currentGroupLabel.text = Manager.manager.currentGroup.name
     }
 
     // MARK: - Table view data source
