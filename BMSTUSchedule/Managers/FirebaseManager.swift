@@ -11,6 +11,9 @@ import Firebase
 
 class FirebaseManager {
 
+    let schedulesPath = "schedules"
+    let groupsPath = "groups"
+    
     func configure() {
         // Set firebase
         FIRApp.configure()
@@ -20,7 +23,7 @@ class FirebaseManager {
     // MARK: Get
     
     func getSchedule(group: Group, success: @escaping (Schedule) -> ()) {
-        let scheduleRef = FIRDatabase.database().reference(withPath: "schedules").child(group.name)
+        let scheduleRef = FIRDatabase.database().reference(withPath: schedulesPath).child(group.name)
         
         // Get schedule
         scheduleRef.observe(.value, with: { snapshot in
@@ -88,15 +91,34 @@ class FirebaseManager {
     
     // MARK: Set
     
-    func addLesson(lesson: Lesson, group: Group, weekKind: Week.Kind, dayTitle: Day.Title) {
+    func addGroup(group: Group) {
         
-        let lessonRef = FIRDatabase.database().reference(withPath: "schedules").child(group.name).child(weekKind.rawValue).child(dayTitle.rawValue).child(lesson.generateKey())
-        lessonRef.setValue(lesson.toAnyObject())
+        let groupRef = FIRDatabase.database().reference(withPath: groupsPath).child(group.name)
+        groupRef.setValue(group.toAnyObject())
         
     }
     
+    func addLesson(lesson: Lesson, group: Group, weekKind: Week.Kind, dayTitle: Day.Title) {
+        
+        // Add group
+        
+        self.addGroup(group: group)
+        
+        // Add lesson
+        
+        let lessonRef = FIRDatabase.database().reference(withPath: schedulesPath).child(group.name).child(weekKind.rawValue).child(dayTitle.rawValue).child(lesson.generateKey())
+        lessonRef.setValue(lesson.toAnyObject())
+    }
+    
     func addSchedule(schedule: Schedule, group: Group) {
-        let scheduleRef = FIRDatabase.database().reference(withPath: "schedules").child(group.name)
+        
+        // Add group
+        
+        self.addGroup(group: group)
+        
+        // Add schedule
+        
+        let scheduleRef = FIRDatabase.database().reference(withPath: schedulesPath).child(group.name)
         
         // Set numerator week
         let numeratorWeekRef = scheduleRef.child(Week.Kind.numerator.rawValue)
