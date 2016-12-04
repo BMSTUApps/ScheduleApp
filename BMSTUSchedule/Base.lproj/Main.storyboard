@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zBY-ia-ZY2" id="pTN-fQ-4j8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="День недели" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="Qoz-aG-zPo">
@@ -59,7 +59,7 @@
                                 <rect key="frame" x="0.0" y="68" width="375" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uqn-Ia-TRW" id="2wx-Je-kFi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название предмета" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="RqP-mF-lvP">
@@ -320,7 +320,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AA0-00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l24-Wy-Taj">
-                                                    <rect key="frame" x="296" y="12" width="65" height="20"/>
+                                                    <rect key="frame" x="296" y="11" width="65" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.63137254901960782" green="0.67450980392156867" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -329,10 +329,10 @@
                                             <constraints>
                                                 <constraint firstItem="yRF-yZ-UUM" firstAttribute="leading" secondItem="asD-eh-4jC" secondAttribute="trailing" constant="11" id="2la-aY-kvS"/>
                                                 <constraint firstItem="asD-eh-4jC" firstAttribute="top" secondItem="RPZ-uZ-x9f" secondAttribute="topMargin" constant="1" id="6HD-zO-TZd"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="l24-Wy-Taj" secondAttribute="bottom" constant="4" id="8Xe-PM-5cz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="l24-Wy-Taj" secondAttribute="bottom" constant="5" id="8Xe-PM-5cz"/>
                                                 <constraint firstItem="yRF-yZ-UUM" firstAttribute="top" secondItem="RPZ-uZ-x9f" secondAttribute="topMargin" constant="3" id="E38-7Z-nW4"/>
                                                 <constraint firstItem="l24-Wy-Taj" firstAttribute="trailing" secondItem="RPZ-uZ-x9f" secondAttribute="trailingMargin" constant="-6" id="JJ2-Vh-0v5"/>
-                                                <constraint firstItem="l24-Wy-Taj" firstAttribute="top" secondItem="RPZ-uZ-x9f" secondAttribute="topMargin" constant="4" id="XL4-ft-gnd"/>
+                                                <constraint firstItem="l24-Wy-Taj" firstAttribute="top" secondItem="RPZ-uZ-x9f" secondAttribute="topMargin" constant="3" id="XL4-ft-gnd"/>
                                                 <constraint firstItem="asD-eh-4jC" firstAttribute="leading" secondItem="RPZ-uZ-x9f" secondAttribute="leadingMargin" constant="28" id="p3c-q7-Z0R"/>
                                             </constraints>
                                         </tableViewCellContentView>
