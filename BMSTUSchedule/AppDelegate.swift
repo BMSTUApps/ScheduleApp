@@ -20,6 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Configure firebase
         Manager.firebaseManager.configure()
         
+        // DEBUG: Test saving current group to user dafults
+        if (Manager.manager.currentGroup.name == "") {
+            Manager.manager.currentGroup = Group(name: "ИУ5-33")
+        }
+        
+        Manager.firebaseManager.getGroups { (groups: [Group]) in
+            
+            print(groups)
+        }
+        
         return true
     }
 

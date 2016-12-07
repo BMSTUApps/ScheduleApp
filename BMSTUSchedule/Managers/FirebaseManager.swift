@@ -22,8 +22,31 @@ class FirebaseManager {
     
     // MARK: Get
     
+    func getGroups(success: @escaping ([Group]) -> ()) {
+        let groupsRef = FIRDatabase.database().reference(withPath: groupsPath)
+        
+        // Get groups
+        groupsRef.observeSingleEvent(of: .value, with: { snapshot in
+            if snapshot.value is NSNull {
+                success([])
+            } else {
+                var groups: [Group] = []
+                
+                if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    for snapshot in snapshots {
+                        let group = Group(snapshot: snapshot)
+                        groups.append(group)
+                    }
+                    success(groups)
+                } else {
+                    success([])
+                }
+            }
+        })
+    }
+    
     func getSchedule(group: Group, success: @escaping (Schedule) -> ()) {
-        let scheduleRef = FIRDatabase.database().reference(withPath: schedulesPath).child(group.name)
+        let scheduleRef = FIRDatabase.database().reference().child(schedulesPath).child(group.name)
         
         // Get schedule
         scheduleRef.observe(.value, with: { snapshot in
