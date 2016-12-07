@@ -14,6 +14,8 @@ class FirebaseManager {
     let schedulesPath = "schedules"
     let groupsPath = "groups"
     
+    // MARK: Configure
+    
     func configure() {
         // Set firebase
         FIRApp.configure()

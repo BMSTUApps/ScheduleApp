@@ -33,6 +33,8 @@ class Lesson: Base, Equatable {
         return "Lesson(\"\(title)\")\n"
     }
     
+    // MARK: Firebase
+    
     func generateKey() -> String {
         let key = "\(self.startTime ?? "") - \(self.endTime ?? "") \(self.title)"
         return key

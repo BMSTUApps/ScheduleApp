@@ -25,11 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Manager.manager.currentGroup = Group(name: "ИУ5-33")
         }
         
-        Manager.firebaseManager.getGroups { (groups: [Group]) in
-            
-            print(groups)
-        }
-        
         return true
     }
 
