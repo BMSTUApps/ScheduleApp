@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34F1BFD579AC516BB9D72D3F /* Pods_BMSTUScheduleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A44130F770FD807D2AED7F4F /* Pods_BMSTUScheduleTests.framework */; };
+		A5218D731DF9F6F900E817B0 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5218D721DF9F6F900E817B0 /* GroupCell.swift */; };
 		A525F3D21DD4C9D4003A7CC0 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3D11DD4C9D4003A7CC0 /* Group.swift */; };
 		A5485CC11DC245BC009610C2 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC01DC245BC009610C2 /* LessonCell.swift */; };
 		A5485CC31DC26173009610C2 /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC21DC26173009610C2 /* GroupsController.swift */; };
@@ -62,6 +63,7 @@
 		793CA6CF03F2F48A50E4F412 /* Pods_BMSTUSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMSTUSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		831933F057A6FACC8B5135A8 /* Pods-BMSTUScheduleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMSTUScheduleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMSTUScheduleTests/Pods-BMSTUScheduleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A44130F770FD807D2AED7F4F /* Pods_BMSTUScheduleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMSTUScheduleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5218D721DF9F6F900E817B0 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupCell.swift; path = Views/GroupCell.swift; sourceTree = "<group>"; };
 		A525F3D11DD4C9D4003A7CC0 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = Model/Group.swift; sourceTree = "<group>"; };
 		A5485CC01DC245BC009610C2 /* LessonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonCell.swift; path = Views/LessonCell.swift; sourceTree = "<group>"; };
 		A5485CC21DC26173009610C2 /* GroupsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsController.swift; path = Controllers/GroupsController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				A5B2572B1DF085D70081EA0B /* DayHeader.swift */,
 				A5485CC01DC245BC009610C2 /* LessonCell.swift */,
+				A5218D721DF9F6F900E817B0 /* GroupCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
 				A5E0FE821DBFB59D008959A9 /* SWRevealViewController.m in Sources */,
 				A55B90531DCA37E20068B9BE /* MenuController.swift in Sources */,
+				A5218D731DF9F6F900E817B0 /* GroupCell.swift in Sources */,
 				A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */,
 				A5F2E1F71DC4C1E100841669 /* Day.swift in Sources */,
 				A5485CC31DC26173009610C2 /* GroupsController.swift in Sources */,

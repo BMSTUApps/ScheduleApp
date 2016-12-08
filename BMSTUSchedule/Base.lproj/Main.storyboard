@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zBY-ia-ZY2" id="pTN-fQ-4j8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="День недели" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="Qoz-aG-zPo">
@@ -59,7 +59,7 @@
                                 <rect key="frame" x="0.0" y="68" width="375" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uqn-Ia-TRW" id="2wx-Je-kFi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название предмета" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="RqP-mF-lvP">
@@ -437,43 +437,57 @@
             <point key="canvasLocation" x="1026" y="493"/>
         </scene>
         <!--Группы-->
-        <scene sceneID="gaa-Yp-fUW">
+        <scene sceneID="hbt-wO-DEc">
             <objects>
-                <viewController id="vpJ-B1-0jR" customClass="GroupsController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YTQ-WU-TpO"/>
-                        <viewControllerLayoutGuide type="bottom" id="NQC-7w-CfS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zf5-Rm-z6e">
+                <tableViewController id="otb-3e-cFk" customClass="GroupsController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="UZp-3x-Qvz">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут будут группы юзера" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1h-3S-wYe">
-                                <rect key="frame" x="52" y="290" width="270" height="23"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="a1h-3S-wYe" firstAttribute="centerY" secondItem="zf5-Rm-z6e" secondAttribute="centerY" id="FB5-w4-nX5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="a1h-3S-wYe" secondAttribute="trailing" constant="37" id="QT2-NE-fy0"/>
-                            <constraint firstItem="a1h-3S-wYe" firstAttribute="leading" secondItem="zf5-Rm-z6e" secondAttribute="leadingMargin" constant="36" id="gdE-1D-hyZ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Группы" id="iot-on-0hM">
-                        <barButtonItem key="leftBarButtonItem" image="Menu" id="drM-8S-PCV">
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="70" id="3sX-IP-wpV" customClass="GroupCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3sX-IP-wpV" id="djR-we-Gqj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя группы" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rl-qs-M1i">
+                                            <rect key="frame" x="8" y="16" width="109.5" height="37"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2Rl-qs-M1i" secondAttribute="bottom" constant="8" id="RPT-wO-SGi"/>
+                                        <constraint firstItem="2Rl-qs-M1i" firstAttribute="top" secondItem="djR-we-Gqj" secondAttribute="topMargin" constant="8" id="cct-uS-B5i"/>
+                                        <constraint firstItem="2Rl-qs-M1i" firstAttribute="leading" secondItem="djR-we-Gqj" secondAttribute="leadingMargin" id="i2e-D7-G2T"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="2Rl-qs-M1i" id="6tK-Ct-mX1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="otb-3e-cFk" id="ce5-qK-9Nx"/>
+                            <outlet property="delegate" destination="otb-3e-cFk" id="4wQ-NC-FHU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Группы" id="IoA-a0-awf">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="Yfa-RM-hnx">
                             <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="menuButton" destination="drM-8S-PCV" id="0vD-ph-r3g"/>
+                        <outlet property="menuButton" destination="Yfa-RM-hnx" id="CdZ-an-sjZ"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jls-yP-XZg" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r1j-4T-O3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="-297"/>
+            <point key="canvasLocation" x="1964" y="-297.30134932533736"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hJK-Lc-XFo">
@@ -490,7 +504,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vpJ-B1-0jR" kind="relationship" relationship="rootViewController" id="yEE-MT-jsK"/>
+                        <segue destination="otb-3e-cFk" kind="relationship" relationship="rootViewController" id="R9S-0M-eLt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhO-RR-b72" userLabel="First Responder" sceneMemberID="firstResponder"/>
