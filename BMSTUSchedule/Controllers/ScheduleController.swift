@@ -29,7 +29,7 @@ class ScheduleController: UITableViewController {
         tableView.tableFooterView = UIView()        
         
         // Load schedule
-        Manager.firebaseManager.getSchedule(group: Manager.manager.currentGroup, success: { schedule in
+        Manager.firebaseManager.getSchedule(group: Manager.manager.currentGroup!, success: { schedule in
             let weeks = Manager.calendarManager.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
             self.setDays(weeks: weeks)
             self.tableView.reloadData()

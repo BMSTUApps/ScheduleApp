@@ -18,15 +18,21 @@ class Manager {
     
     // Current group
     
-    var currentGroup: Group {
+    var currentGroup: Group? {
         get {
-            let groupName = defaults.string(forKey: "currentGroup") ?? ""
-            return Group(name: groupName)
+            let groupName = defaults.string(forKey: "currentGroup")
+            
+            if let newGroupName = groupName {
+               return Group(name: newGroupName)
+            } else {
+                return nil
+            }
         }
         
         set(new) {
-            let groupName = new.name
-            defaults.set(groupName, forKey: "currentGroup")
+            if let groupName = new?.name {
+                defaults.set(groupName, forKey: "currentGroup")
+            }
         }
     }
     

@@ -29,7 +29,7 @@ class MenuController: UITableViewController {
         }
         
         // Show current group
-        self.currentGroupLabel.text = Manager.manager.currentGroup.name
+        self.currentGroupLabel.text = Manager.manager.currentGroup?.name
     }
 
     // MARK: - Table view data source
