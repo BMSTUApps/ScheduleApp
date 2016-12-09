@@ -66,6 +66,13 @@ class Group: Base {
         }
     }
     
+    // MARK: Equatable
+    
+    static func ==(lhs: Group, rhs: Group) -> Bool {
+        
+        return lhs.name == rhs.name
+    }
+    
     // MARK: Export
     
     func toAnyObject() -> Any {
