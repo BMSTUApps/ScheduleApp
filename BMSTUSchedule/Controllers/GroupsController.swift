@@ -35,6 +35,19 @@ class GroupsController: UITableViewController {
         
     }
     
+    // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Deselect cell
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        // Set new current group
+        let group = self.groups[indexPath.row]
+        Manager.manager.currentGroup = group
+        
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
