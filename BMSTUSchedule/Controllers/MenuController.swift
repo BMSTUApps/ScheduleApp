@@ -27,6 +27,9 @@ class MenuController: UITableViewController {
             let color = UIColor(red: 161/255, green: 172/255, blue: 182/255, alpha: 1)
             imageView.image = imageView.image?.imageWithColor(newColor: color)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
         // Show current group
         self.currentGroupLabel.text = Manager.manager.currentGroup?.name
