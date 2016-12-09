@@ -60,7 +60,7 @@ class Manager {
                                           startTime: "17:25",
                                           endTime: "19:00")])
         
-        let numeratorTuesday = Day(title: .thuesday,
+        let numeratorTuesday = Day(title: .tuesday,
                                    lessons: [Lesson(title: "Модели данных",
                                                     teacher: "Ковалева Н. А.",
                                                     room: "306э",
@@ -86,7 +86,7 @@ class Manager {
                                                     startTime: "17:25",
                                                     endTime: "19:00")])
         
-        let denominatorTuesday = Day(title: .thuesday,
+        let denominatorTuesday = Day(title: .tuesday,
                                      lessons: [Lesson(title: "Физика",
                                                       teacher: "",
                                                       room: "224л",
@@ -255,7 +255,7 @@ class Manager {
                                           startTime: "10:15",
                                           endTime: "11:50")])
         
-        let tuesday = Day(title: .monday,
+        let tuesday = Day(title: .tuesday,
                           lessons: [Lesson(title: "Теоретическая механика",
                                            teacher: "",
                                            room: "1032л",
@@ -269,7 +269,7 @@ class Manager {
                                            startTime: "13:50",
                                            endTime: "15:25")])
         
-        let wednesday = Day(title: .thuesday,
+        let wednesday = Day(title: .wednesday,
                             lessons: [Lesson(title: "Физическое воспитание",
                                              teacher: "",
                                              room: "СК",
@@ -289,7 +289,7 @@ class Manager {
                                              startTime: "12:00",
                                              endTime: "13:35")])
         
-        let numeratorThursday = Day(title: .wednesday,
+        let numeratorThursday = Day(title: .thursday,
                                     lessons: [Lesson(title: "Инженерная графика",
                                                      teacher: "",
                                                      room: "кафедра",
@@ -303,7 +303,7 @@ class Manager {
                                                      startTime: "17:25",
                                                      endTime: "19:00")])
         
-        let denominatorThursday = Day(title: .wednesday,
+        let denominatorThursday = Day(title: .thursday,
                                       lessons: [Lesson(title: "Культурология",
                                                        teacher: "",
                                                        room: "544л",
@@ -421,7 +421,7 @@ class Manager {
     func randomSchedule() -> Schedule {
         let schedule = Schedule()
         
-        var daysTitles = [Day.Title.monday, Day.Title.thuesday, Day.Title.wednesday, Day.Title.thursday, Day.Title.friday, Day.Title.saturday]
+        var daysTitles = [Day.Title.monday, Day.Title.tuesday, Day.Title.wednesday, Day.Title.thursday, Day.Title.friday, Day.Title.saturday]
         
         for i in 0...daysTitles.count-1 {
             

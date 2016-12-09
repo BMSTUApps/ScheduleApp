@@ -12,13 +12,13 @@ class Day: Base {
 
     enum Title: String {
         case monday    = "понедельник"
-        case thuesday  = "вторник"
+        case tuesday  = "вторник"
         case wednesday = "среда"
         case thursday  = "четверг"
         case friday    = "пятница"
         case saturday  = "суббота"
         
-        static let allValues = [monday, thuesday, wednesday, thursday, friday, saturday]
+        static let allValues = [monday, tuesday, wednesday, thursday, friday, saturday]
     }
     
     override var description : String {
@@ -46,7 +46,7 @@ class Day: Base {
             switch title {
             case .monday:
                 return 0
-            case .thuesday:
+            case .tuesday:
                 return 1
             case .wednesday:
                 return 2
