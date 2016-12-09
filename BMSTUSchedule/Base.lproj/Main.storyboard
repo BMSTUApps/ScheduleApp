@@ -440,33 +440,43 @@
         <scene sceneID="hbt-wO-DEc">
             <objects>
                 <tableViewController id="otb-3e-cFk" customClass="GroupsController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="UZp-3x-Qvz">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="UZp-3x-Qvz">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <inset key="separatorInset" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="separatorInset" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="70" id="3sX-IP-wpV" customClass="GroupCell" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="50" id="3sX-IP-wpV" customClass="GroupCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3sX-IP-wpV" id="djR-we-Gqj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя группы" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rl-qs-M1i">
-                                            <rect key="frame" x="8" y="16" width="109.5" height="37"/>
+                                            <rect key="frame" x="18" y="8" width="110" height="33.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер курса" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGr-9s-L2K">
+                                            <rect key="frame" x="267.5" y="14" width="99.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="2Rl-qs-M1i" secondAttribute="bottom" constant="8" id="RPT-wO-SGi"/>
-                                        <constraint firstItem="2Rl-qs-M1i" firstAttribute="top" secondItem="djR-we-Gqj" secondAttribute="topMargin" constant="8" id="cct-uS-B5i"/>
-                                        <constraint firstItem="2Rl-qs-M1i" firstAttribute="leading" secondItem="djR-we-Gqj" secondAttribute="leadingMargin" id="i2e-D7-G2T"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="RGr-9s-L2K" secondAttribute="bottom" constant="6" id="BZU-S5-xu5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2Rl-qs-M1i" secondAttribute="bottom" id="RPT-wO-SGi"/>
+                                        <constraint firstItem="RGr-9s-L2K" firstAttribute="top" secondItem="djR-we-Gqj" secondAttribute="topMargin" constant="6" id="SVl-rR-dg6"/>
+                                        <constraint firstItem="2Rl-qs-M1i" firstAttribute="top" secondItem="djR-we-Gqj" secondAttribute="topMargin" id="cct-uS-B5i"/>
+                                        <constraint firstItem="2Rl-qs-M1i" firstAttribute="leading" secondItem="djR-we-Gqj" secondAttribute="leadingMargin" constant="10" id="i2e-D7-G2T"/>
+                                        <constraint firstItem="RGr-9s-L2K" firstAttribute="trailing" secondItem="djR-we-Gqj" secondAttribute="trailingMargin" id="x72-CJ-Uk3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="courseLabel" destination="RGr-9s-L2K" id="TqL-ys-7e1"/>
                                     <outlet property="nameLabel" destination="2Rl-qs-M1i" id="6tK-Ct-mX1"/>
                                 </connections>
                             </tableViewCell>

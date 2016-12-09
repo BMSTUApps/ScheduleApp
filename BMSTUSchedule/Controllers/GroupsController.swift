@@ -53,6 +53,7 @@ class GroupsController: UITableViewController {
         
         // Set group info
         cell.nameLabel.text = group.name
+        cell.courseLabel.text = String(format:"%d курс", group.course)
  
         return cell
     }

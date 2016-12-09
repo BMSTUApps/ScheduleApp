@@ -12,12 +12,35 @@ class Group: Base {
 
     var name: String
     
+    let key: String
+    let ref: FIRDatabaseReference?
+    
+    var course: Int {
+        get {
+            let hyphen: Character = "-"
+            
+            // Finding number
+            if let indexOfHyphen = self.name.characters.index(of: hyphen) {
+                let numberString = self.name.substring(from: self.name.index(indexOfHyphen, offsetBy: 1))
+                
+                // Check number
+                if let number = Int(numberString) {
+                    
+                    // Calculate course
+                    let course = Int(String(format:"%.f", Double(Double(number) / 20)))
+                    return course!
+                } else {
+                    return 0
+                }
+            } else {
+                return 0
+            }
+        }
+    }
+    
     override var description : String {
         return "Group(\"\(name)\")\n"
     }
-    
-    let key: String
-    let ref: FIRDatabaseReference?
     
     // MARK: Initialization
     
