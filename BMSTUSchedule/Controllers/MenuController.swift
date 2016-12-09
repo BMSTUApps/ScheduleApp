@@ -30,7 +30,6 @@ class MenuController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         // Show current group
         self.currentGroupLabel.text = Manager.manager.currentGroup?.name
     }
@@ -48,7 +47,6 @@ class MenuController: UITableViewController {
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        
         let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath as IndexPath)!
         
         selectedCell.selectionStyle = .gray

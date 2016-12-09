@@ -13,7 +13,6 @@ class GroupsController: UITableViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     var groups: [Group] = []
-    var currentGroupIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +33,7 @@ class GroupsController: UITableViewController {
             // Set groups
             self.groups = groups
             self.tableView.reloadData()
-            
-            // Select current group
-            if let indexPath = self.currentGroupIndexPath, let cell = self.tableView.cellForRow(at: indexPath) {
-                cell.setSelected(true, animated: false)
-                cell.contentView.backgroundColor = UIColor(red: 241/255, green: 251/255, blue: 255/255, alpha: 1)
-            }
         }
-        
     }
     
     // MARK: - Table view data source
@@ -62,7 +54,6 @@ class GroupsController: UITableViewController {
         // Save current group
         if let currentGroup = Manager.manager.currentGroup {
             if group == currentGroup {
-                cell.setSelected(true, animated: false)
                 cell.contentView.backgroundColor = UIColor(red: 241/255, green: 251/255, blue: 255/255, alpha: 1)
             }
         }
@@ -82,28 +73,26 @@ class GroupsController: UITableViewController {
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         // Set new current group
         let group = self.groups[indexPath.row]
         Manager.manager.currentGroup = group
         
         // Set custom selection color
         let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-        UIView.animate(withDuration: 0.6, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             selectedCell.contentView.backgroundColor = UIColor(red: 232/255, green: 255/255, blue: 239/255, alpha: 1)
             selectedCell.contentView.backgroundColor = UIColor(red: 241/255, green: 251/255, blue: 255/255, alpha: 1)
         })
-        
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
         // Set custom deselection color
         let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
-        UIView.animate(withDuration: 0.6, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             selectedCell.contentView.backgroundColor = UIColor.white
         })
-        
     }
     
 
