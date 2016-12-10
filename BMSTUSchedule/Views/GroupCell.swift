@@ -52,9 +52,19 @@ class GroupCell: UITableViewCell {
                 }
     
             }, completion: nil)
-            
         } else {
-
+            
+            self.pointerRect.backgroundColor = UIColor.white
+        }
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        
+        if highlighted {
+            self.contentView.backgroundColor = self.pointerRectColor.withAlphaComponent(0.2)
+            self.pointerRect.backgroundColor = self.pointerRectColor.withAlphaComponent(0)
+        } else {
+            self.contentView.backgroundColor = UIColor.white
             self.pointerRect.backgroundColor = UIColor.white
         }
     }
