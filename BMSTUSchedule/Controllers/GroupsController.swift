@@ -48,25 +48,21 @@ class GroupsController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
+        cell.selectionStyle = .none
         
         let group = self.groups[indexPath.row]
         
         // Save current group
         if let currentGroup = Manager.manager.currentGroup {
             if group == currentGroup {
-                cell.contentView.backgroundColor = UIColor(red: 241/255, green: 251/255, blue: 255/255, alpha: 1)
+                // Select cell
             }
         }
         
         // Set group info
         cell.nameLabel.text = group.name
         cell.courseLabel.text = String(format:"%d курс", group.course)
-        
-        // Set background view
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 233/255, alpha: 1)
-        cell.selectedBackgroundView = backgroundView
- 
+
         return cell
     }
     
@@ -77,22 +73,11 @@ class GroupsController: UITableViewController {
         // Set new current group
         let group = self.groups[indexPath.row]
         Manager.manager.currentGroup = group
-        
-        // Set custom selection color
-        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-        UIView.animate(withDuration: 0.5, animations: {
-            selectedCell.contentView.backgroundColor = UIColor(red: 232/255, green: 255/255, blue: 239/255, alpha: 1)
-            selectedCell.contentView.backgroundColor = UIColor(red: 241/255, green: 251/255, blue: 255/255, alpha: 1)
-        })
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
-        // Set custom deselection color
-        let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
-        UIView.animate(withDuration: 0.3, animations: {
-            selectedCell.contentView.backgroundColor = UIColor.white
-        })
+
+        // Deselect cell
     }
     
 
