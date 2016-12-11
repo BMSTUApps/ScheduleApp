@@ -24,9 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (Manager.manager.currentGroup == nil) {
             Manager.manager.currentGroup = Group(name: "ИУ5-33")
         }
-        
-        Manager.firebaseManager.addSchedule(schedule: Manager.manager.testSchedule2(), group: Group(name: "МТ2-32"))
-        
+                
         return true
     }
 

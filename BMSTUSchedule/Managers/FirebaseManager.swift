@@ -123,27 +123,26 @@ class FirebaseManager {
         
     }
     
-    func addLesson(lesson: Lesson, group: Group, weekKind: Week.Kind, dayTitle: Day.Title) {
-        
-        // Add group
-        
-        self.addGroup(group: group)
-        
+    func addLesson(lesson: Lesson, identifier: String, weekKind: Week.Kind, dayTitle: Day.Title) {
+
         // Add lesson
-        
-        let lessonRef = FIRDatabase.database().reference(withPath: schedulesPath).child(group.name).child(weekKind.rawValue).child(dayTitle.rawValue).child(lesson.generateKey())
+        let lessonRef = FIRDatabase.database().reference(withPath: schedulesPath).child(identifier).child(weekKind.rawValue).child(dayTitle.rawValue).child(lesson.generateKey())
         lessonRef.setValue(lesson.toAnyObject())
     }
     
-    func addSchedule(schedule: Schedule, group: Group) {
+    func addLesson(lesson: Lesson, group: Group, weekKind: Week.Kind, dayTitle: Day.Title) {
         
         // Add group
-        
         self.addGroup(group: group)
         
-        // Add schedule
+        // Add lesson
+        self.addLesson(lesson: lesson, identifier: group.name, weekKind: weekKind, dayTitle: dayTitle)
+    }
+    
+    func addSchedule(schedule: Schedule, identifier: String) {
         
-        let scheduleRef = FIRDatabase.database().reference(withPath: schedulesPath).child(group.name)
+        // Add schedule
+        let scheduleRef = FIRDatabase.database().reference(withPath: schedulesPath).child(identifier)
         
         // Set numerator week
         let numeratorWeekRef = scheduleRef.child(Week.Kind.numerator.rawValue)
@@ -166,4 +165,12 @@ class FirebaseManager {
         }
     }
     
+    func addSchedule(schedule: Schedule, group: Group) {
+        
+        // Add group
+        self.addGroup(group: group)
+        
+        // Add schedule
+        self.addSchedule(schedule: schedule, identifier: group.name)
+    }
 }

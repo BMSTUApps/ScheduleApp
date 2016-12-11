@@ -38,6 +38,8 @@ class ScheduleController: UITableViewController {
         self.tableView.sectionHeaderHeight = 40
     }
     
+    // MARK: - Setting table
+    
     func setDays(schedule: Schedule) {
         self.days = schedule.denominatorWeek.days + schedule.numeratorWeek.days
     }
@@ -101,6 +103,14 @@ class ScheduleController: UITableViewController {
         }
         
         return cell
+    }
+    
+    // MARK: -
+    
+    func changeSchedule() {
+        
+        //
+        
     }
 
     // MARK: - Memory
