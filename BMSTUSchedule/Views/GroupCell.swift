@@ -21,7 +21,7 @@ class GroupCell: UITableViewCell {
     let pointerRectTopOffset: CGFloat = 3.0
     let pointerRectThickness: CGFloat = 3.0
     
-    let pointerRectDuration = 1.0
+    let pointerRectDuration = 0.8
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,12 +46,10 @@ class GroupCell: UITableViewCell {
                     self.pointerRect.frame = newFrame
                     self.pointerRect.backgroundColor = self.pointerRectColor.withAlphaComponent(0.6)
                 }
-                
-                UIView.addKeyframe(withRelativeStartTime: 1.0, relativeDuration: self.pointerRectDuration) {
-                    self.pointerRect.backgroundColor = self.pointerRectColor.withAlphaComponent(1.0)
-                }
-    
-            }, completion: nil)
+            }, completion: {finished in
+              
+                self.pointerRect.backgroundColor = self.pointerRectColor.withAlphaComponent(1.0)
+            })
         } else {
             
             self.pointerRect.backgroundColor = UIColor.white
