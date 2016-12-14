@@ -31,27 +31,42 @@ class GroupCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        if selected {
-            
-            self.pointerRect.frame = self.contentView.frame
-            self.pointerRect.backgroundColor = self.pointerRectColor.withAlphaComponent(0.2)
-            self.addSubview(self.pointerRect)
-            
-            UIView.animateKeyframes(withDuration: pointerRectDuration, delay: 0, options: .calculationModeCubic, animations: {
+        if selected { // Cell is selected
+            if animated {
                 
-                UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: self.pointerRectDuration) {
-                    let newFrame = CGRect(origin: CGPoint(x: self.pointerRectLeadingOffset, y: self.pointerRectTopOffset),
-                                          size: CGSize(width: self.pointerRectThickness,
-                                                       height: self.frame.height - 2 * self.pointerRectTopOffset))
-                    self.pointerRect.frame = newFrame
-                    self.pointerRect.backgroundColor = self.pointerRectColor.withAlphaComponent(0.6)
-                }
-            }, completion: {finished in
-              
+                // Set to start frame
+                self.pointerRect.frame = self.contentView.frame
+                self.pointerRect.backgroundColor = self.pointerRectColor.withAlphaComponent(0.2)
+                self.addSubview(self.pointerRect)
+                
+                UIView.animateKeyframes(withDuration: pointerRectDuration, delay: 0, options: .calculationModeCubic, animations: {
+                
+                    // Animate to end frame
+                    UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: self.pointerRectDuration) {
+                        let newFrame = CGRect(origin: CGPoint(x: self.pointerRectLeadingOffset, y: self.pointerRectTopOffset),
+                                              size: CGSize(width: self.pointerRectThickness,
+                                                           height: self.frame.height - 2 * self.pointerRectTopOffset))
+                        self.pointerRect.frame = newFrame
+                        self.pointerRect.backgroundColor = self.pointerRectColor.withAlphaComponent(0.6)
+                    }
+                }, completion: {finished in
+                    
+                    // Fill color
+                    self.pointerRect.backgroundColor = self.pointerRectColor.withAlphaComponent(1.0)
+                })
+                
+            } else {
+                
+                // Set to final frame
+                let newFrame = CGRect(origin: CGPoint(x: self.pointerRectLeadingOffset, y: self.pointerRectTopOffset),
+                                      size: CGSize(width: self.pointerRectThickness,
+                                                   height: self.frame.height - 2 * self.pointerRectTopOffset))
+                self.pointerRect.frame = newFrame
+                self.addSubview(self.pointerRect)
+                
                 self.pointerRect.backgroundColor = self.pointerRectColor.withAlphaComponent(1.0)
-            })
-        } else {
-            
+            }
+        } else { // Cell isn't selected
             self.pointerRect.backgroundColor = UIColor.white
         }
     }
