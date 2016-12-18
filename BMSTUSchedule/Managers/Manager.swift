@@ -15,7 +15,7 @@ class Manager {
     static let firebaseManager = FirebaseManager()
     
     let defaults = UserDefaults.standard
-    
+        
     // Current group
     
     var currentGroup: Group? {

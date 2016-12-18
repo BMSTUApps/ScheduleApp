@@ -11,8 +11,9 @@ import Firebase
 
 class FirebaseManager {
 
+    let datesPath     = "dates"
     let schedulesPath = "schedules"
-    let groupsPath = "groups"
+    let groupsPath    = "groups"
     
     // MARK: Configure
     
@@ -20,9 +21,42 @@ class FirebaseManager {
         // Set firebase
         FIRApp.configure()
         FIRDatabase.database().persistenceEnabled = true
+        
+        // Update dates
+        getStartTermDate { (startTermDate) in /* Update schedule */ }
+        getEndTermDate { (endTermDate) in /* Update schedule */ }
     }
     
     // MARK: Get
+    func getDate(path: String, success: @escaping (Date?) -> ()) {
+        let dateRef = FIRDatabase.database().reference(withPath: datesPath).child(path)
+        
+        dateRef.observe(.value, with: { snapshot in
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "RU_ru")
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            
+            if let date = dateFormatter.date(from: snapshot.value as! String) {
+                UserDefaults.standard.set(snapshot.value as! String, forKey: path)
+                success(date)
+            } else {
+                success(nil)
+            }
+        })
+    }
+    
+    func getStartTermDate(success: @escaping (Date?) -> ()) {
+        getDate(path: "startTermDate") { (startTermDate) in
+            success(startTermDate)
+        }
+    }
+    
+    func getEndTermDate(success: @escaping (Date?) -> ()) {
+        getDate(path: "endTermDate") { (startTermDate) in
+            success(startTermDate)
+        }
+    }
     
     func getGroups(success: @escaping ([Group]) -> ()) {
         let groupsRef = FIRDatabase.database().reference(withPath: groupsPath)

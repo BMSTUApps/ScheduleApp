@@ -9,31 +9,46 @@
 import UIKit
 
 class CalendarManager {
-
-    // MARK: Constants
     
-    // Only for debug!!!
-    // In release it will be stored in FireBase
-    var startWeekIndex: Int {
+    // MARK: Dates
+    
+    var startTermDate: Date? {
         get {
-            let dateString = "01.09.2016"
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "US_en")
-            dateFormatter.dateFormat = "dd.MM.yyyy"
-            let date = dateFormatter.date(from: dateString)
-            
-            let calendar = Calendar.current
-            let weekIndex = calendar.component(.weekOfYear, from: date ?? Date.init(timeIntervalSinceNow: 0))
-            
-            return weekIndex
+            // If date saved to defaults
+            if let startDateString = UserDefaults.standard.string(forKey: "startTermDate") {
+                // If date is right
+                let dateFormatter = DateFormatter()
+                dateFormatter.locale = Locale(identifier: "RU_ru")
+                dateFormatter.dateFormat = "dd.MM.yyyy"
+                if let date = dateFormatter.date(from: startDateString) {
+                    return date
+                }
+            }
+            return nil
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "startTermDate")
+            self.startTermDate = newValue
         }
     }
-    var currentWeekIndex: Int {
+    
+    var endTermDate: Date? {
         get {
-            let calendar = Calendar.current
-            let weekIndex = calendar.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
-            return weekIndex
+            // If date saved to defaults
+            if let startDateString = UserDefaults.standard.string(forKey: "endTermDate") {
+                // If date is right
+                let dateFormatter = DateFormatter()
+                dateFormatter.locale = Locale(identifier: "RU_ru")
+                dateFormatter.dateFormat = "dd.MM.yyyy"
+                if let date = dateFormatter.date(from: startDateString) {
+                    return date
+                }
+            }
+            return nil
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "endTermDate")
+            self.startTermDate = newValue
         }
     }
     
@@ -41,6 +56,25 @@ class CalendarManager {
         get {
             let date = Date.init(timeIntervalSinceNow: 0)
             return date
+        }
+    }
+    
+    // MARK: Indexes
+    
+    private var startWeekIndex: Int {
+        get {
+            let date = self.startTermDate
+            let calendar = Calendar.current
+            let weekIndex = calendar.component(.weekOfYear, from: date ?? Date.init(timeIntervalSinceNow: 0))
+            
+            return weekIndex
+        }
+    }
+    private var currentWeekIndex: Int {
+        get {
+            let calendar = Calendar.current
+            let weekIndex = calendar.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
+            return weekIndex
         }
     }
     
