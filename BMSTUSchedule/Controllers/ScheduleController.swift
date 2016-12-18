@@ -31,7 +31,7 @@ class ScheduleController: UITableViewController {
         // Load schedule
         Manager.firebaseManager.getSchedule(group: Manager.manager.currentGroup!, success: { schedule in
             let weeks = Manager.calendarManager.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
-            self.setDays(weeks: weeks)
+            self.setWeeks(weeks: weeks)
             self.tableView.reloadData()
         })
         
@@ -40,11 +40,11 @@ class ScheduleController: UITableViewController {
     
     // MARK: - Setting table
     
-    func setDays(schedule: Schedule) {
+    func setSchedule(schedule: Schedule) {
         self.days = schedule.denominatorWeek.days + schedule.numeratorWeek.days
     }
     
-    func setDays(weeks: [Week]) {
+    func setWeeks(weeks: [Week]) {
         for week in weeks {
             self.days.append(contentsOf: week.days)
         }

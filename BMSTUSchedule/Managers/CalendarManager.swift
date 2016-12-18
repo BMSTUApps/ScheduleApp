@@ -70,6 +70,15 @@ class CalendarManager {
             return weekIndex
         }
     }
+    private var endWeekIndex: Int {
+        get {
+            let date = self.endTermDate
+            let calendar = Calendar.current
+            let weekIndex = calendar.component(.weekOfYear, from: date ?? Date.init(timeIntervalSinceNow: 0))
+            
+            return weekIndex
+        }
+    }
     private var currentWeekIndex: Int {
         get {
             let calendar = Calendar.current
@@ -170,6 +179,76 @@ class CalendarManager {
             // Update constants
             nowWeekKind = switchWeekKind(weekKind: nowWeekKind)
             nowWeekNumber = nowWeekNumber + 1
+        }
+        
+        return weeks
+    }
+
+    func createWeeksFromSchedule2(schedule: Schedule, offset: Int, count: Int) -> [Week] {
+        
+        // Functions
+        
+        func weekNumber(weekIndex: Int) -> Int {
+            return self.currentWeekIndex - self.startWeekIndex + 1
+        }
+        
+        func weekKind(weekNumber: Int) -> Week.Kind {
+            if weekNumber % 2 == 0 {
+                return .denominator
+            } else {
+                return .numerator
+            }
+        }
+        
+        func switchWeekKind(weekKind: Week.Kind) -> Week.Kind {
+            switch weekKind {
+            case .numerator:
+                return .denominator
+            case .denominator:
+                return .numerator
+            }
+        }
+        
+        func tomorrow(today: Date) -> Date? {
+            return self.dateWithDaysOffset(currentDate: today, offset: 1)
+        }
+        
+        // Setting constants
+        
+        let weeksCount = abs(offset) + count
+        
+        let startWeekIndex = currentWeekIndex + offset
+        let startWeekKind = weekKind(weekNumber: weekNumber(weekIndex: startWeekIndex))
+        
+        // Calculating
+        
+        var weeks: [Week] = []
+        
+        var nowWeekKind = startWeekKind
+        var nowWeekIndex = startWeekIndex
+        
+        for _ in 1...weeksCount {
+            
+            let week = Week()
+            week.number = weekNumber(weekIndex: nowWeekIndex)
+            week.kind = nowWeekKind
+            
+            // Choosing days for week kind
+            switch nowWeekKind {
+            case .numerator:
+                week.days = schedule.numeratorWeek.days
+            case .denominator:
+                week.days = schedule.denominatorWeek.days
+            }
+            
+            // Setting date for days
+            // processing
+            
+            weeks.append(week)
+            
+            // Update constants
+            nowWeekKind = switchWeekKind(weekKind: nowWeekKind)
+            nowWeekIndex = nowWeekIndex + 1
         }
         
         return weeks
