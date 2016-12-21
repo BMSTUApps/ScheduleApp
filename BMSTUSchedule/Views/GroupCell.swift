@@ -32,7 +32,7 @@ class GroupCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         if selected { // Cell is selected
-            if animated {
+            if !animated {
                 
                 // Set to start frame
                 self.pointerRect.frame = self.contentView.frame
