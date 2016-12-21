@@ -15,12 +15,23 @@ class FirebaseManager {
     let schedulesPath = "schedules"
     let groupsPath    = "groups"
     
+    var offlineMode: Bool {
+        get {
+            let mode = UserDefaults.standard.bool(forKey: "offlineMode")
+            return mode
+        }
+        
+        set(new) {
+            UserDefaults.standard.set(new, forKey: "offlineMode")
+        }
+    }
+    
     // MARK: Configure
     
     func configure() {
         // Set firebase
         FIRApp.configure()
-        FIRDatabase.database().persistenceEnabled = true
+        FIRDatabase.database().persistenceEnabled = self.offlineMode
         
         // Update dates
         getStartTermDate { (startTermDate) in /* Update schedule */ }
