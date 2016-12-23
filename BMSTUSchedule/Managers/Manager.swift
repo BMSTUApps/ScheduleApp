@@ -16,7 +16,7 @@ class Manager {
     
     let defaults = UserDefaults.standard
         
-    // Current group
+    // Identifiers
     
     var currentGroup: Group? {
         get {
@@ -33,6 +33,12 @@ class Manager {
             if let groupName = new?.name {
                 defaults.set(groupName, forKey: "currentGroup")
             }
+        }
+    }
+    
+    var userIdentifier: String? {
+        get {
+            return UIDevice.current.identifierForVendor?.uuidString
         }
     }
     

@@ -11,7 +11,10 @@ import Firebase
 
 class ScheduleController: UITableViewController {
     
-    var days: [Day] = []
+    var schedule: Schedule?
+    var group: Group?
+    
+    private var days: [Day] = []
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -25,20 +28,30 @@ class ScheduleController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     
-        // Remove empty cells
-        tableView.tableFooterView = UIView()        
+        // Set table view
+        tableView.tableFooterView = UIView()
+        self.tableView.sectionHeaderHeight = 40
+        
+        // Set group
+        if self.group == nil, let group = Manager.manager.currentGroup {
+            self.group = group
+        }
         
         // Load schedule
-        Manager.firebaseManager.getSchedule(group: Manager.manager.currentGroup!, success: { schedule in
-            let weeks = Manager.calendarManager.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
-            self.setWeeks(weeks: weeks)
-            self.tableView.reloadData()
-        })
-        
-        self.tableView.sectionHeaderHeight = 40
+        if self.schedule == nil {
+            Manager.firebaseManager.getSchedule(group: self.group!, success: { schedule in
+                // Save schedule
+                self.schedule = schedule
+                
+                // Get weeks from schedule
+                let weeks = Manager.calendarManager.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
+                self.setWeeks(weeks: weeks)
+                self.tableView.reloadData()
+            })
+        }
     }
     
-    // MARK: - Setting table
+    // MARK: - Set table view
     
     func setSchedule(schedule: Schedule) {
         self.days = schedule.denominatorWeek.days + schedule.numeratorWeek.days
@@ -105,14 +118,6 @@ class ScheduleController: UITableViewController {
         return cell
     }
     
-    // MARK: -
-    
-    func changeSchedule() {
-        
-        //
-        
-    }
-
     // MARK: - Memory
     
     override func didReceiveMemoryWarning() {

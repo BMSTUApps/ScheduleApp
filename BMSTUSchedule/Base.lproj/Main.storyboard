@@ -197,7 +197,7 @@
                                         <rect key="frame" x="0.0" y="35" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UNt-OB-8zI" id="diK-pA-cwQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кешировать расписание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDt-Xj-jQv">
@@ -228,7 +228,7 @@
                             </tableViewSection>
                             <tableViewSection id="LxC-rU-tpI">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="ukf-nE-Gvv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="ukf-nE-Gvv">
                                         <rect key="frame" x="0.0" y="121" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ukf-nE-Gvv" id="8r7-6L-XDh">
@@ -248,8 +248,11 @@
                                                 <constraint firstItem="eA7-4L-sIr" firstAttribute="top" secondItem="8r7-6L-XDh" secondAttribute="topMargin" constant="3" id="TKL-Ok-BkW"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="v7L-LF-Nnn" kind="show" id="XNY-3Q-UDs"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="YCW-Hv-dfw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="YCW-Hv-dfw">
                                         <rect key="frame" x="0.0" y="171" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YCW-Hv-dfw" id="EeV-WI-Oh9">
@@ -291,6 +294,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sT6-oe-aYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2004" y="493"/>
+        </scene>
+        <!--Лицензии-->
+        <scene sceneID="ZjG-07-NSQ">
+            <objects>
+                <viewController id="v7L-LF-Nnn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="goz-Iw-Emc"/>
+                        <viewControllerLayoutGuide type="bottom" id="k5R-Nr-ffO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tgi-CA-Exn">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdY-NM-nBu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Firebase" translatesAutoresizingMaskIntoConstraints="NO" id="lLK-2Z-Oh2">
+                                        <rect key="frame" x="8" y="8" width="359" height="130"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="130" id="LKg-Dc-b4u"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egn-pn-8hI">
+                                        <rect key="frame" x="20" y="146" width="335" height="344"/>
+                                        <mutableString key="text">Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SWRevealViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKr-vN-Yjx">
+                                        <rect key="frame" x="73" y="511" width="229" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="ozL-bG-MZ7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caQ-VQ-Abp">
+                                        <rect key="frame" x="20" y="540" width="335" height="611"/>
+                                        <mutableString key="text">Copyright (c) 2013 Joan Lluch joan.lluch@sweetwilliamsl.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="lLK-2Z-Oh2" firstAttribute="top" secondItem="zdY-NM-nBu" secondAttribute="top" constant="8" id="0cd-pX-Nw9"/>
+                                    <constraint firstItem="RKr-vN-Yjx" firstAttribute="top" secondItem="Egn-pn-8hI" secondAttribute="bottom" constant="21" id="5fS-jB-67Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="Egn-pn-8hI" secondAttribute="bottom" constant="113" id="96H-mm-XQ3"/>
+                                    <constraint firstItem="Egn-pn-8hI" firstAttribute="leading" secondItem="zdY-NM-nBu" secondAttribute="leading" constant="20" id="GZM-Ol-lSH"/>
+                                    <constraint firstAttribute="trailing" secondItem="caQ-VQ-Abp" secondAttribute="trailing" constant="20" id="O2p-RS-kF2"/>
+                                    <constraint firstItem="lLK-2Z-Oh2" firstAttribute="leading" secondItem="zdY-NM-nBu" secondAttribute="leading" constant="8" id="Shj-ux-CPQ"/>
+                                    <constraint firstItem="caQ-VQ-Abp" firstAttribute="leading" secondItem="zdY-NM-nBu" secondAttribute="leading" constant="20" id="VIq-PN-5Pa"/>
+                                    <constraint firstItem="Egn-pn-8hI" firstAttribute="top" secondItem="lLK-2Z-Oh2" secondAttribute="bottom" constant="8" id="cNX-04-Sjn"/>
+                                    <constraint firstItem="RKr-vN-Yjx" firstAttribute="centerX" secondItem="zdY-NM-nBu" secondAttribute="centerX" id="exG-pR-2Fw"/>
+                                    <constraint firstItem="lLK-2Z-Oh2" firstAttribute="centerX" secondItem="zdY-NM-nBu" secondAttribute="centerX" id="fD3-r5-ae9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Egn-pn-8hI" secondAttribute="trailing" constant="20" id="kGU-ZY-mhd"/>
+                                    <constraint firstItem="caQ-VQ-Abp" firstAttribute="top" secondItem="RKr-vN-Yjx" secondAttribute="bottom" constant="8" id="qcb-CE-yUo"/>
+                                    <constraint firstAttribute="trailing" secondItem="lLK-2Z-Oh2" secondAttribute="trailing" constant="8" id="quK-QI-fvj"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zdY-NM-nBu" secondAttribute="trailing" id="6CQ-rl-8er"/>
+                            <constraint firstItem="zdY-NM-nBu" firstAttribute="top" secondItem="tgi-CA-Exn" secondAttribute="top" id="Ox6-Hw-zCx"/>
+                            <constraint firstItem="zdY-NM-nBu" firstAttribute="leading" secondItem="tgi-CA-Exn" secondAttribute="leading" id="PhN-Km-fJH"/>
+                            <constraint firstItem="k5R-Nr-ffO" firstAttribute="top" secondItem="zdY-NM-nBu" secondAttribute="bottom" id="o5N-6X-9Pa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Лицензии" id="bqL-bB-xtI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EPd-pN-mOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2948" y="492.50374812593708"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="47i-d2-c3R">
@@ -468,7 +564,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bUR-Y3-Hhc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="gGy-34-HkW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="gGy-34-HkW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
@@ -490,7 +586,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g57-tb-a0c" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Q5M-J6-8Hd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Q5M-J6-8Hd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -594,6 +690,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Firebase" width="232" height="64"/>
         <image name="Menu" width="25" height="25"/>
         <image name="Menu-groups" width="25" height="25"/>
         <image name="Menu-schedule" width="25" height="25"/>

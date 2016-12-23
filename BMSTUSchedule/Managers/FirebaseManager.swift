@@ -20,15 +20,15 @@ class FirebaseManager {
             let mode = UserDefaults.standard.bool(forKey: "offlineMode")
             return mode
         }
-        
         set(new) {
             UserDefaults.standard.set(new, forKey: "offlineMode")
         }
     }
     
-    // MARK: Configure
+    // MARK: - Configure
     
     func configure() {
+        
         // Set firebase
         FIRApp.configure()
         FIRDatabase.database().persistenceEnabled = self.offlineMode
@@ -38,7 +38,10 @@ class FirebaseManager {
         getEndTermDate { (endTermDate) in /* Update schedule */ }
     }
     
-    // MARK: Get
+    // MARK: - Get
+    
+    // Date
+    
     func getDate(path: String, success: @escaping (Date?) -> ()) {
         let dateRef = FIRDatabase.database().reference(withPath: datesPath).child(path)
         
@@ -69,6 +72,8 @@ class FirebaseManager {
         }
     }
     
+    // Group
+    
     func getGroups(success: @escaping ([Group]) -> ()) {
         let groupsRef = FIRDatabase.database().reference(withPath: groupsPath)
         
@@ -91,6 +96,8 @@ class FirebaseManager {
             }
         })
     }
+    
+    // Schedule
     
     func getSchedule(group: Group, success: @escaping (Schedule) -> ()) {
         let scheduleRef = FIRDatabase.database().reference().child(schedulesPath).child(group.name)
@@ -159,18 +166,18 @@ class FirebaseManager {
         })
     }
     
-    // MARK: Set
+    // MARK: - Set
+    
+    // Group
     
     func addGroup(group: Group) {
-        
         let groupRef = FIRDatabase.database().reference(withPath: groupsPath).child(group.name)
         groupRef.setValue(group.toAnyObject())
-        
     }
     
+    // Lesson
+    
     func addLesson(lesson: Lesson, identifier: String, weekKind: Week.Kind, dayTitle: Day.Title) {
-
-        // Add lesson
         let lessonRef = FIRDatabase.database().reference(withPath: schedulesPath).child(identifier).child(weekKind.rawValue).child(dayTitle.rawValue).child(lesson.generateKey())
         lessonRef.setValue(lesson.toAnyObject())
     }
@@ -183,6 +190,17 @@ class FirebaseManager {
         // Add lesson
         self.addLesson(lesson: lesson, identifier: group.name, weekKind: weekKind, dayTitle: dayTitle)
     }
+    
+    func removeLesson(lesson: Lesson, identifier: String, weekKind: Week.Kind, dayTitle: Day.Title) {
+        let lessonRef = FIRDatabase.database().reference(withPath: schedulesPath).child(identifier).child(weekKind.rawValue).child(dayTitle.rawValue).child(lesson.generateKey())
+        lessonRef.removeValue()
+    }
+    
+    func removeLesson(lesson: Lesson, group: Group, weekKind: Week.Kind, dayTitle: Day.Title) {
+        self.removeLesson(lesson: lesson, identifier: group.name, weekKind: weekKind, dayTitle: dayTitle)
+    }
+    
+    // Schedule
     
     func addSchedule(schedule: Schedule, identifier: String) {
         
