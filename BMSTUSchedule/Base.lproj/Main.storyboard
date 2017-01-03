@@ -232,7 +232,7 @@
                                         <rect key="frame" x="0.0" y="121" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ukf-nE-Gvv" id="8r7-6L-XDh">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лицензии" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eA7-4L-sIr">
@@ -256,7 +256,7 @@
                                         <rect key="frame" x="0.0" y="171" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YCW-Hv-dfw" id="EeV-WI-Oh9">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О приложении" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dv-jY-Cc7">
@@ -315,14 +315,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Firebase" translatesAutoresizingMaskIntoConstraints="NO" id="bt5-46-ejT">
-                                                    <rect key="frame" x="8" y="6" width="359" height="92"/>
+                                                    <rect key="frame" x="8" y="38" width="359" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="92" id="Tyl-EM-syZ"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Tyl-EM-syZ"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5G-gc-7uM">
-                                                    <rect key="frame" x="20" y="106" width="335" height="344"/>
-                                                    <mutableString key="text">Licensed under the Apache License, Version 2.0 (the "License");
+                                                    <rect key="frame" x="20" y="103" width="335" height="347"/>
+                                                    <string key="text">Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
@@ -332,7 +332,7 @@
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
-   limitations under the License.</mutableString>
+   limitations under the License.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -342,9 +342,10 @@
                                                 <constraint firstItem="bt5-46-ejT" firstAttribute="leading" secondItem="HVx-Ef-pED" secondAttribute="leadingMargin" id="5hX-cP-nZN"/>
                                                 <constraint firstItem="q5G-gc-7uM" firstAttribute="leading" secondItem="HVx-Ef-pED" secondAttribute="leadingMargin" constant="12" id="60f-qu-BEH"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="q5G-gc-7uM" secondAttribute="trailing" constant="12" id="LoH-Tn-nMV"/>
+                                                <constraint firstItem="bt5-46-ejT" firstAttribute="top" secondItem="HVx-Ef-pED" secondAttribute="topMargin" constant="30" id="Yom-Ra-uD2"/>
                                                 <constraint firstItem="q5G-gc-7uM" firstAttribute="bottom" secondItem="HVx-Ef-pED" secondAttribute="bottomMargin" id="aVd-kW-DW4"/>
                                                 <constraint firstAttribute="trailing" secondItem="bt5-46-ejT" secondAttribute="trailing" constant="8" id="mvd-J1-DrC"/>
-                                                <constraint firstItem="q5G-gc-7uM" firstAttribute="top" secondItem="bt5-46-ejT" secondAttribute="bottom" constant="8" id="ybb-Ph-NAx"/>
+                                                <constraint firstItem="q5G-gc-7uM" firstAttribute="top" secondItem="bt5-46-ejT" secondAttribute="bottom" constant="15" id="ybb-Ph-NAx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -357,20 +358,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJd-Ia-Gmc">
-                                                    <rect key="frame" x="20" y="69" width="335" height="623"/>
-                                                    <mutableString key="text">Copyright (c) 2013 Joan Lluch joan.lluch@sweetwilliamsl.com
+                                                    <rect key="frame" x="20" y="79" width="335" height="613"/>
+                                                    <string key="text">Copyright (c) 2013 Joan Lluch joan.lluch@sweetwilliamsl.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</mutableString>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SWRevealViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrv-Uh-QuU">
-                                                    <rect key="frame" x="73" y="28" width="229" height="21"/>
+                                                    <rect key="frame" x="73" y="38" width="229" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="6Xf-0q-cuR"/>
                                                     </constraints>
@@ -383,7 +384,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                                 <constraint firstItem="wJd-Ia-Gmc" firstAttribute="top" secondItem="zrv-Uh-QuU" secondAttribute="bottom" constant="20" id="7A1-pq-0Ax"/>
                                                 <constraint firstItem="zrv-Uh-QuU" firstAttribute="centerX" secondItem="fVx-1A-aii" secondAttribute="centerX" id="VBK-4e-ws1"/>
                                                 <constraint firstItem="wJd-Ia-Gmc" firstAttribute="leading" secondItem="fVx-1A-aii" secondAttribute="leadingMargin" constant="12" id="dhL-wE-gh7"/>
-                                                <constraint firstItem="zrv-Uh-QuU" firstAttribute="top" secondItem="fVx-1A-aii" secondAttribute="topMargin" constant="20" id="eBa-gl-COk"/>
+                                                <constraint firstItem="zrv-Uh-QuU" firstAttribute="top" secondItem="fVx-1A-aii" secondAttribute="topMargin" constant="30" id="eBa-gl-COk"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wJd-Ia-Gmc" secondAttribute="trailing" constant="12" id="hea-qJ-xk9"/>
                                                 <constraint firstItem="wJd-Ia-Gmc" firstAttribute="bottom" secondItem="fVx-1A-aii" secondAttribute="bottomMargin" id="jM4-9j-ZMO"/>
                                             </constraints>
@@ -580,7 +581,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bUR-Y3-Hhc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="gGy-34-HkW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="gGy-34-HkW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
@@ -606,7 +607,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.3411764706" green="0.42352941179999998" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
