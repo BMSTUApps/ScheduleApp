@@ -71,15 +71,42 @@ class ScheduleController: UITableViewController {
     
     // Custom header for day title
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let dayHeader = tableView.dequeueReusableCell(withIdentifier: "DayHeader") as! DayHeader
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         let day = days[section]
         
-        dayHeader.titleLabel.text = day.title.rawValue.capitalized
-        dayHeader.dateLabel.text = day.dateString
+        if day.title == .monday {
+
+            return 80
         
-        return dayHeader
+        } else {
+            
+            return 40
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        let day = days[section]
+
+        if day.title == .monday {
+            
+            let advancedDayHeader = tableView.dequeueReusableCell(withIdentifier: "AdvancedDayHeader") as! AdvancedDayHeader
+            
+            advancedDayHeader.dayTitleLabel.text = day.title.rawValue.capitalized
+            advancedDayHeader.dayDateLabel.text = day.dateString
+            
+            return advancedDayHeader
+            
+        } else {
+         
+            let dayHeader = tableView.dequeueReusableCell(withIdentifier: "DayHeader") as! DayHeader
+            
+            dayHeader.titleLabel.text = day.title.rawValue.capitalized
+            dayHeader.dateLabel.text = day.dateString
+            
+            return dayHeader
+        }
     }
  
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

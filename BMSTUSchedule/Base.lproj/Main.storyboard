@@ -20,20 +20,83 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayHeader" rowHeight="40" id="zBY-ia-ZY2" customClass="DayHeader" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdvancedDayHeader" rowHeight="80" id="zBY-ia-ZY2" customClass="AdvancedDayHeader" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zBY-ia-ZY2" id="pTN-fQ-4j8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="День недели" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="Qoz-aG-zPo">
-                                            <rect key="frame" x="8" y="0.0" width="102" height="39"/>
+                                            <rect key="frame" x="8" y="40" width="102" height="39"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="39" id="iQK-BF-tZC"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="дата" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F20-py-wTr">
+                                            <rect key="frame" x="116" y="51" width="31" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="u1k-g5-w9a"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 неделя" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNR-Vh-q3U">
+                                            <rect key="frame" x="148" y="14" width="79" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="26" id="5TJ-O1-OnH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="дата" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3m-q1-VFX">
+                                            <rect key="frame" x="233" y="14" width="31" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="yrk-25-ZSb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="hNR-Vh-q3U" firstAttribute="top" secondItem="pTN-fQ-4j8" secondAttribute="topMargin" constant="6" id="259-P3-W9E"/>
+                                        <constraint firstItem="g3m-q1-VFX" firstAttribute="leading" secondItem="hNR-Vh-q3U" secondAttribute="trailing" constant="6" id="2Pe-WL-19B"/>
+                                        <constraint firstItem="Qoz-aG-zPo" firstAttribute="leading" secondItem="pTN-fQ-4j8" secondAttribute="leading" constant="8" id="RBV-d4-bzc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="F20-py-wTr" secondAttribute="bottom" constant="2" id="WuB-cy-inY"/>
+                                        <constraint firstItem="g3m-q1-VFX" firstAttribute="top" secondItem="pTN-fQ-4j8" secondAttribute="topMargin" constant="6" id="hPE-nR-e8f"/>
+                                        <constraint firstItem="hNR-Vh-q3U" firstAttribute="centerX" secondItem="pTN-fQ-4j8" secondAttribute="centerX" id="pGR-AY-0IA"/>
+                                        <constraint firstItem="F20-py-wTr" firstAttribute="leading" secondItem="Qoz-aG-zPo" secondAttribute="trailing" constant="6" id="qqc-tQ-Prv"/>
+                                        <constraint firstAttribute="bottom" secondItem="Qoz-aG-zPo" secondAttribute="bottom" id="wU7-ZG-hxg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dayDateLabel" destination="F20-py-wTr" id="S1D-UO-ff2"/>
+                                    <outlet property="dayTitleLabel" destination="Qoz-aG-zPo" id="mJ5-L3-e1L"/>
+                                    <outlet property="weekNumberLabel" destination="hNR-Vh-q3U" id="47C-hF-lwe"/>
+                                    <outlet property="weekTypeLabel" destination="g3m-q1-VFX" id="45z-BI-t0N"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayHeader" rowHeight="40" id="XO0-EA-zkE" customClass="DayHeader" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="108" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XO0-EA-zkE" id="o7B-Dr-N2q">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="День недели" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="DRh-QV-Lzx">
+                                            <rect key="frame" x="8" y="0.0" width="102" height="39"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="дата" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPG-Ia-EXe">
                                             <rect key="frame" x="116" y="11" width="31" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,21 +105,21 @@
                                     </subviews>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="Qoz-aG-zPo" secondAttribute="bottom" id="Pfe-Gu-eq7"/>
-                                        <constraint firstItem="Qoz-aG-zPo" firstAttribute="leading" secondItem="pTN-fQ-4j8" secondAttribute="leading" constant="8" id="RBV-d4-bzc"/>
-                                        <constraint firstItem="F20-py-wTr" firstAttribute="top" secondItem="pTN-fQ-4j8" secondAttribute="topMargin" constant="3" id="RDZ-dN-1rz"/>
-                                        <constraint firstItem="Qoz-aG-zPo" firstAttribute="top" secondItem="pTN-fQ-4j8" secondAttribute="top" id="nwY-NL-3iQ"/>
-                                        <constraint firstItem="F20-py-wTr" firstAttribute="leading" secondItem="Qoz-aG-zPo" secondAttribute="trailing" constant="6" id="qqc-tQ-Prv"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="F20-py-wTr" secondAttribute="bottom" constant="3" id="vxl-lY-j8d"/>
+                                        <constraint firstItem="nPG-Ia-EXe" firstAttribute="leading" secondItem="DRh-QV-Lzx" secondAttribute="trailing" constant="6" id="0bh-gG-je5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="nPG-Ia-EXe" secondAttribute="bottom" constant="3" id="25y-c5-HoC"/>
+                                        <constraint firstAttribute="bottom" secondItem="DRh-QV-Lzx" secondAttribute="bottom" id="7oA-Ri-WtX"/>
+                                        <constraint firstItem="DRh-QV-Lzx" firstAttribute="leading" secondItem="o7B-Dr-N2q" secondAttribute="leading" constant="8" id="F1B-q9-s8o"/>
+                                        <constraint firstItem="nPG-Ia-EXe" firstAttribute="top" secondItem="o7B-Dr-N2q" secondAttribute="topMargin" constant="3" id="GRY-uo-V7p"/>
+                                        <constraint firstItem="DRh-QV-Lzx" firstAttribute="top" secondItem="o7B-Dr-N2q" secondAttribute="top" id="hmT-cJ-H8B"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="dateLabel" destination="F20-py-wTr" id="OlE-4G-GVY"/>
-                                    <outlet property="titleLabel" destination="Qoz-aG-zPo" id="VaF-IL-4yb"/>
+                                    <outlet property="dateLabel" destination="nPG-Ia-EXe" id="YWR-qX-zZg"/>
+                                    <outlet property="titleLabel" destination="DRh-QV-Lzx" id="C1l-A5-uwD"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonCell" rowHeight="96" id="Uqn-Ia-TRW" customClass="LessonCell" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="68" width="375" height="96"/>
+                                <rect key="frame" x="0.0" y="148" width="375" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uqn-Ia-TRW" id="2wx-Je-kFi">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
@@ -603,7 +666,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g57-tb-a0c" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Q5M-J6-8Hd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Q5M-J6-8Hd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.3411764706" green="0.42352941179999998" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
