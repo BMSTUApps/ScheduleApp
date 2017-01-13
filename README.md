@@ -2,39 +2,30 @@
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgray.svg)
 ![Contributors](https://img.shields.io/github/contributors/BMSTUScheduleTeam/BMSTUSchedule.svg)
 
+<p align="left">
+  <img src="https://github.com/BMSTUScheduleTeam/BMSTUSchedule/raw/master/BMSTUSchedule/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60%403x.png" alt="Icon"/>
+</p>
+
 Неофициальное приложение с расписанием занятий МГТУ имени Н.Э. Баумана.
 
-Проект для курса "Разработка под iOS" Технопарка Mail.ru.
+Изначально проект разрабатывался для курса "Разработка под iOS" [Технопарка](https://park.mail.ru) [Mail.ru](https://mail.ru).
 
-## Таймлайн курса
+## Скриншоты
 
-### Домашнее задание №1 (Сделано)
+<p align="center">
+  <img src="https://github.com/BMSTUScheduleTeam/BMSTUSchedule/raw/master/BMSTUSchedule/Other/Screenshots/ScheduleController-screenshot.png" width="350" alt="ScheduleController"/>
+  <img src="https://github.com/BMSTUScheduleTeam/BMSTUSchedule/raw/master/BMSTUSchedule/Other/Screenshots/MenuController-screenshot.png" width="350" hspace="50" alt="MenuController"/>
+</p>
 
-Максимум 8 баллов, срок был к занятию 4.
+## Статус
 
-Базовое устройство приложений. Самая маленькая домашняя работа, чтобы get up and running. Главное - всем разбиться на группы, определиться с темой и начать работать над проектом.
+**Решается судьба проекта.**
 
-### Домашнее задание №2 (Сделано)
-
-Максимум 15 баллов, срок - занятие 6, то есть 27 октября.
-
-Использование UITableView / UICollectionView в своём проекте.
-
-### Домашнее задание №3 (Реализовано в Firebase)
-
-Максимум 20 баллов, срок - занятие 10, то есть 24 ноября.
-
-Асинхронная работа с сетью, кеширование, хранение данных и работа с файлами.
-
-### Домашнее задание №4
-
-Максимум 15 баллов, срок - занятие 13, то есть 15 декабря.
-
-Дополнительные функции, например карты, проигрывание музыки, Siri Kit и другое, в зависимости от темы проекта.
-
+Ведутся переговоры по поводу сотрудничества с бауманкой, но пока ничего не ясно.
 
 ## Команда
+* [Артём Белков](https://park.mail.ru/profile/a.belkov/) (bestK1ngArthur)
 * [Семён Дердуга](https://park.mail.ru/profile/s.derduga/) (SemyonDerduga)
 * [Данилов Никита](https://park.mail.ru/profile/d.nikita/) (dankin96)
-* [Артём Белков](https://park.mail.ru/profile/a.belkov/) (bestK1ngArthur)
-* [Рустам Мигранов](https://park.mail.ru/profile/r.migranov/) (выбыл на неопределённый срок)
+
+**Если есть вопросы или предложения, а также по поводу участия в проекте, пишите [мне в вк](https://vk.com/bestk1ngarthur) или на artem-belkov@mail.ru**
