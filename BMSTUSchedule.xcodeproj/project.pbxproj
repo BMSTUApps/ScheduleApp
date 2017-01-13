@@ -19,8 +19,6 @@
 		A5A124091DE8DD70006FB4E5 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A124081DE8DD70006FB4E5 /* Manager.swift */; };
 		A5A1240C1DE8DE9A006FB4E5 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A1240B1DE8DE9A006FB4E5 /* FirebaseManager.swift */; };
 		A5A1240E1DE8DED5006FB4E5 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A1240D1DE8DED5006FB4E5 /* CalendarManager.swift */; };
-		A5A124121DE8E606006FB4E5 /* Screenshot-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = A5A124101DE8E606006FB4E5 /* Screenshot-Menu.png */; };
-		A5A124131DE8E606006FB4E5 /* Screenshot-Schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = A5A124111DE8E606006FB4E5 /* Screenshot-Schedule.png */; };
 		A5B257291DF01C260081EA0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5B257271DF01C260081EA0B /* GoogleService-Info.plist */; };
 		A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B2572B1DF085D70081EA0B /* DayHeader.swift */; };
 		A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */; };
@@ -75,8 +73,6 @@
 		A5A124081DE8DD70006FB4E5 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Managers/Manager.swift; sourceTree = "<group>"; };
 		A5A1240B1DE8DE9A006FB4E5 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Managers/FirebaseManager.swift; sourceTree = "<group>"; };
 		A5A1240D1DE8DED5006FB4E5 /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarManager.swift; path = Managers/CalendarManager.swift; sourceTree = "<group>"; };
-		A5A124101DE8E606006FB4E5 /* Screenshot-Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot-Menu.png"; sourceTree = "<group>"; };
-		A5A124111DE8E606006FB4E5 /* Screenshot-Schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot-Schedule.png"; sourceTree = "<group>"; };
 		A5B257271DF01C260081EA0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5B2572B1DF085D70081EA0B /* DayHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayHeader.swift; path = Views/DayHeader.swift; sourceTree = "<group>"; };
 		A5CED4D61DB0E080000D2DFD /* BMSTUSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMSTUSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,8 +149,6 @@
 		A5A1240F1DE8E606006FB4E5 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				A5A124101DE8E606006FB4E5 /* Screenshot-Menu.png */,
-				A5A124111DE8E606006FB4E5 /* Screenshot-Schedule.png */,
 			);
 			name = Screenshots;
 			path = Other/Screenshots;
@@ -409,9 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5A124121DE8E606006FB4E5 /* Screenshot-Menu.png in Resources */,
 				A5B257291DF01C260081EA0B /* GoogleService-Info.plist in Resources */,
-				A5A124131DE8E606006FB4E5 /* Screenshot-Schedule.png in Resources */,
 				A5A124061DE8DD24006FB4E5 /* Main.storyboard in Resources */,
 				A5A124051DE8DD24006FB4E5 /* LaunchScreen.storyboard in Resources */,
 				A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */,

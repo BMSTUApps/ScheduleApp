@@ -15,9 +15,10 @@ class ScheduleController: UITableViewController {
     var group: Group?
     
     private var days: [Day] = []
+    private var weeks: [Week] = []
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,6 +59,11 @@ class ScheduleController: UITableViewController {
     }
     
     func setWeeks(weeks: [Week]) {
+        
+        // Save weeks
+        self.weeks = weeks
+        
+        // Save days
         for week in weeks {
             self.days.append(contentsOf: week.days)
         }
@@ -76,11 +82,8 @@ class ScheduleController: UITableViewController {
         let day = days[section]
         
         if day.title == .monday {
-
             return 80
-        
         } else {
-            
             return 40
         }
     }
@@ -89,9 +92,26 @@ class ScheduleController: UITableViewController {
 
         let day = days[section]
 
-        if day.title == .monday {
+        if day.title == .monday { // Need do add week labels
             
             let advancedDayHeader = tableView.dequeueReusableCell(withIdentifier: "AdvancedDayHeader") as! AdvancedDayHeader
+            
+            // Set week information
+            
+            for week in self.weeks {
+                
+                // Find the week
+                
+                let indexOfWeek = week.days.index{$0 === day}
+                if indexOfWeek != nil {
+                    
+                    advancedDayHeader.weekNumberLabel.text = "\(week.number) неделя"
+                    advancedDayHeader.weekKindLabel.text = week.kind.rawValue
+                
+                }
+            }
+            
+            // Set day information
             
             advancedDayHeader.dayTitleLabel.text = day.title.rawValue.capitalized
             advancedDayHeader.dayDateLabel.text = day.dateString
@@ -101,6 +121,8 @@ class ScheduleController: UITableViewController {
         } else {
          
             let dayHeader = tableView.dequeueReusableCell(withIdentifier: "DayHeader") as! DayHeader
+            
+            // Set day information
             
             dayHeader.titleLabel.text = day.title.rawValue.capitalized
             dayHeader.dateLabel.text = day.dateString
