@@ -18,7 +18,7 @@ class ScheduleController: UITableViewController {
     private var weeks: [Week] = []
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
-        
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -166,6 +166,29 @@ class ScheduleController: UITableViewController {
         
         return cell
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func scrollToCurrentDayAction(_ sender: UIBarButtonItem) {
+        
+        var indexPath: NSIndexPath?
+        
+        // Search current day
+        let currentDate = Manager.calendarManager.currentDate
+        for (index, day) in self.days.enumerated() {
+            if currentDate == day.date {
+                indexPath = NSIndexPath(row: 0, section: index)
+            }
+        }
+        
+        // Scroll to section
+        if indexPath != nil {
+            self.tableView.scrollToRow(at: indexPath! as IndexPath, at: UITableViewScrollPosition.none, animated: true)
+        } else {
+            sender.isEnabled = false
+        }
+    }
+    
     
     // MARK: - Memory
     

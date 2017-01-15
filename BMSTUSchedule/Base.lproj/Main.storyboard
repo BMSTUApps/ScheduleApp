@@ -235,7 +235,12 @@
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="pNW-JG-CqJ">
                             <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="add" id="0r7-bs-4Zg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="0r7-bs-4Zg">
+                            <color key="tintColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="scrollToCurrentDayAction:" destination="LUx-SS-ftO" id="ogb-w8-ljX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="pNW-JG-CqJ" id="udl-XM-ent"/>
