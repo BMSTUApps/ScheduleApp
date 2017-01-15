@@ -3,7 +3,7 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 26/11/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import Foundation
@@ -11,17 +11,26 @@ import Firebase
 
 class FirebaseManager {
 
-    let datesPath     = "dates"
-    let schedulesPath = "schedules"
-    let groupsPath    = "groups"
+    // Paths
+    
+    private let datesPath     = "dates"
+    private let schedulesPath = "schedules"
+    private let groupsPath    = "groups"
+    
+    private let startTermDatePath = "startTermDate"
+    private let endTermDatePath   = "endTermDate"
+    
+    // Keys
+    
+    private let offlineModeKey = "offlineMode"
     
     var offlineMode: Bool {
         get {
-            let mode = UserDefaults.standard.bool(forKey: "offlineMode")
+            let mode = UserDefaults.standard.bool(forKey: offlineModeKey)
             return mode
         }
         set(new) {
-            UserDefaults.standard.set(new, forKey: "offlineMode")
+            UserDefaults.standard.set(new, forKey: offlineModeKey)
         }
     }
     
@@ -61,13 +70,13 @@ class FirebaseManager {
     }
     
     func getStartTermDate(success: @escaping (Date?) -> ()) {
-        getDate(path: "startTermDate") { (startTermDate) in
+        getDate(path: startTermDatePath) { (startTermDate) in
             success(startTermDate)
         }
     }
     
     func getEndTermDate(success: @escaping (Date?) -> ()) {
-        getDate(path: "endTermDate") { (startTermDate) in
+        getDate(path: endTermDatePath) { (startTermDate) in
             success(startTermDate)
         }
     }

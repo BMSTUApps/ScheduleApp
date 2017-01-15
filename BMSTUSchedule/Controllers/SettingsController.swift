@@ -3,7 +3,7 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 25/10/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import UIKit
@@ -26,13 +26,13 @@ class SettingsController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.offlineModeSwitch.isOn = Manager.firebaseManager.offlineMode
+        self.offlineModeSwitch.isOn = Manager.firebase.offlineMode
     }
     
     // MARK: - Actions
     
     @IBAction func switchModeAction(_ sender: UISwitch) {
-        Manager.firebaseManager.offlineMode = sender.isOn
+        Manager.firebase.offlineMode = sender.isOn
     }
     
     // MARK: - Memory

@@ -3,24 +3,28 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 20/11/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import Firebase
 
 class Manager {
     
-    static let manager = Manager()
-    static let calendarManager = CalendarManager()
-    static let firebaseManager = FirebaseManager()
+    static let standard = Manager()
+    static let calendar = CalendarManager()
+    static let firebase = FirebaseManager()
     
     let defaults = UserDefaults.standard
-        
+    
+    // Keys
+    
+    private let currentGroupKey = "currentGroup"
+    
     // Identifiers
     
     var currentGroup: Group? {
         get {
-            let groupName = defaults.string(forKey: "currentGroup")
+            let groupName = defaults.string(forKey: currentGroupKey)
             
             if let newGroupName = groupName {
                return Group(name: newGroupName)
@@ -31,7 +35,7 @@ class Manager {
         
         set(new) {
             if let groupName = new?.name {
-                defaults.set(groupName, forKey: "currentGroup")
+                defaults.set(groupName, forKey: currentGroupKey)
             }
         }
     }

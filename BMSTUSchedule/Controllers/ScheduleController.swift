@@ -3,7 +3,7 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 25/10/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import UIKit
@@ -34,18 +34,18 @@ class ScheduleController: UITableViewController {
         self.tableView.sectionHeaderHeight = 40
         
         // Set group
-        if self.group == nil, let group = Manager.manager.currentGroup {
+        if self.group == nil, let group = Manager.standard.currentGroup {
             self.group = group
         }
         
         // Load schedule
         if self.schedule == nil {
-            Manager.firebaseManager.getSchedule(group: self.group!, success: { schedule in
+            Manager.firebase.getSchedule(group: self.group!, success: { schedule in
                 // Save schedule
                 self.schedule = schedule
                 
                 // Get weeks from schedule
-                let weeks = Manager.calendarManager.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
+                let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
                 self.setWeeks(weeks: weeks)
                 self.tableView.reloadData()
             })
@@ -157,7 +157,7 @@ class ScheduleController: UITableViewController {
         if indexPath.row > 0 { // Check if break exists before lesson
             let lastLesson = days[indexPath.section].lessons[indexPath.row - 1]
             
-            if let breakTime = Manager.calendarManager.calculateBreakTime(lastLesson: lastLesson, lesson: lesson) {
+            if let breakTime = Manager.calendar.calculateBreakTime(lastLesson: lastLesson, lesson: lesson) {
                 cell.breakLabel.text = "\(breakTime) минут перерыва"
             }
         } else {
@@ -174,7 +174,7 @@ class ScheduleController: UITableViewController {
         var indexPath: NSIndexPath?
         
         // Search current day
-        let currentDate = Manager.calendarManager.currentDate
+        let currentDate = Manager.calendar.currentDate
         for (index, day) in self.days.enumerated() {
             if currentDate == day.date {
                 indexPath = NSIndexPath(row: 0, section: index)

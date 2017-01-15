@@ -3,23 +3,14 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 26/10/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import UIKit
 
 class LessonCell: UITableViewCell {
-
-    let typeColors = [
-        "lecture": UIColor(red: 51/255, green: 187/255, blue: 156/255, alpha: 1),
-        "seminar": UIColor(red: 59/255, green: 154/255, blue: 216/255, alpha: 1),
-        "lab": UIColor(red: 245/255, green: 166/255, blue: 35/255, alpha: 1),
-        "default": UIColor.gray
-    ]
     
-    let typeRectLeadingOffset: CGFloat = 52
-    let typeRectTopOffset: CGFloat = 3.0
-    let typeRectThickness: CGFloat = 3.0
+    // MARK: Storyboard
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -31,6 +22,21 @@ class LessonCell: UITableViewCell {
     @IBOutlet weak var endTimeLabel: UILabel!
     
     @IBOutlet weak var breakLabel: UILabel!
+    
+    // MARK: - Constants
+    
+    let typeColors = [
+        "lecture": UIColor(red: 51/255, green: 187/255, blue: 156/255, alpha: 1), // green
+        "seminar": UIColor(red: 59/255, green: 154/255, blue: 216/255, alpha: 1), // blue
+        "lab"    : UIColor(red: 245/255, green: 166/255, blue: 35/255, alpha: 1), // yellow
+        "default": UIColor.gray
+    ]
+    
+    let typeRectLeadingOffset: CGFloat = 52
+    let typeRectTopOffset: CGFloat = 3.0
+    let typeRectThickness: CGFloat = 3.0
+    
+    // MARK: - Type
     
     func setType(type: Lesson.Kind?) {
         self.setTypeTitle(type: type)

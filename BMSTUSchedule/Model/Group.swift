@@ -3,7 +3,7 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 10/11/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import Firebase

@@ -3,15 +3,19 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 08/12/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import UIKit
 
 class GroupCell: UITableViewCell {
 
+    // MARK: Storyboard
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var courseLabel: UILabel!
+    
+    // MARK: - Constants
     
     var pointerRect: UIView = UIView()
     
@@ -22,12 +26,16 @@ class GroupCell: UITableViewCell {
     let pointerRectThickness: CGFloat = 3.0
     
     let pointerRectDuration = 0.8
+
+    // MARK: -
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    // MARK: -
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         

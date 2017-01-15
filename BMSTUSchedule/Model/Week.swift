@@ -3,13 +3,13 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 24/11/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 class Week: Base {
 
     enum Kind: String {
-        case numerator = "числитель"
+        case numerator   = "числитель"
         case denominator = "знаменатель"
     }
     
@@ -19,7 +19,7 @@ class Week: Base {
     var number: Int = 0
     
     override var description : String {
-        return "Week(\"\(kind.rawValue)\")\n"
+        return "Week(#\(number) - \"\(kind.rawValue)\")\n"
     }
     
     // MARK: Initialization

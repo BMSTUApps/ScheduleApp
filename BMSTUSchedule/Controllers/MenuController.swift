@@ -3,7 +3,7 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 02/11/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import UIKit
@@ -30,8 +30,9 @@ class MenuController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         // Show current group
-        self.currentGroupLabel.text = Manager.manager.currentGroup?.name
+        self.currentGroupLabel.text = Manager.standard.currentGroup?.name
     }
 
     // MARK: - Table view data source
@@ -59,7 +60,10 @@ class MenuController: UITableViewController {
     }
 }
 
+// MARK: -
+
 extension UIImage {
+    
     func imageWithColor(newColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         newColor.setFill()

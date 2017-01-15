@@ -3,7 +3,7 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 14/10/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import UIKit
@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Configure firebase
-        Manager.firebaseManager.configure()
+        Manager.firebase.configure()
         
         // DEBUG: Test saving current group to user defaults
-        if (Manager.manager.currentGroup == nil) {
-            Manager.manager.currentGroup = Group(name: "ИУ5-33")
+        if (Manager.standard.currentGroup == nil) {
+            Manager.standard.currentGroup = Group(name: "ИУ5-33")
         }
         
         return true

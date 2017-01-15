@@ -3,19 +3,24 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 26/11/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import UIKit
 
 class CalendarManager {
     
+    // Keys
+
+    private let startTermDateKey = "startTermDate"
+    private let endTermDateKey   = "endTermDate"
+    
     // MARK: Dates
     
     var startTermDate: Date? {
         get {
             // If date saved to defaults
-            if let startDateString = UserDefaults.standard.string(forKey: "startTermDate") {
+            if let startDateString = UserDefaults.standard.string(forKey: startTermDateKey) {
                 // If date is right
                 let dateFormatter = DateFormatter()
                 dateFormatter.locale = Locale(identifier: "RU_ru")
@@ -27,7 +32,7 @@ class CalendarManager {
             return nil
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: "startTermDate")
+            UserDefaults.standard.set(newValue, forKey: startTermDateKey)
             self.startTermDate = newValue
         }
     }
@@ -35,19 +40,19 @@ class CalendarManager {
     var endTermDate: Date? {
         get {
             // If date saved to defaults
-            if let startDateString = UserDefaults.standard.string(forKey: "endTermDate") {
+            if let endDateString = UserDefaults.standard.string(forKey: endTermDateKey) {
                 // If date is right
                 let dateFormatter = DateFormatter()
                 dateFormatter.locale = Locale(identifier: "RU_ru")
                 dateFormatter.dateFormat = "dd.MM.yyyy"
-                if let date = dateFormatter.date(from: startDateString) {
+                if let date = dateFormatter.date(from: endDateString) {
                     return date
                 }
             }
             return nil
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: "endTermDate")
+            UserDefaults.standard.set(newValue, forKey: endTermDateKey)
             self.startTermDate = newValue
         }
     }

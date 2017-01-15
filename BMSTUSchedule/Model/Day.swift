@@ -3,7 +3,7 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 29/10/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import Firebase
@@ -12,7 +12,7 @@ class Day: Base {
 
     enum Title: String {
         case monday    = "понедельник"
-        case tuesday  = "вторник"
+        case tuesday   = "вторник"
         case wednesday = "среда"
         case thursday  = "четверг"
         case friday    = "пятница"

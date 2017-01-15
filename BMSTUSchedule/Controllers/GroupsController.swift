@@ -3,7 +3,7 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 27/10/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import UIKit
@@ -28,7 +28,7 @@ class GroupsController: UITableViewController {
         tableView.tableFooterView = UIView()
         
         // Load groups
-        Manager.firebaseManager.getGroups { (groups: [Group]) in
+        Manager.firebase.getGroups { (groups: [Group]) in
             
             // Set groups
             self.groups = groups
@@ -53,7 +53,7 @@ class GroupsController: UITableViewController {
         let group = self.groups[indexPath.row]
         
         // Save current group
-        if let currentGroup = Manager.manager.currentGroup {
+        if let currentGroup = Manager.standard.currentGroup {
             if group == currentGroup {
                 // Select cell
             }
@@ -72,7 +72,7 @@ class GroupsController: UITableViewController {
         
         // Set new current group
         let group = self.groups[indexPath.row]
-        Manager.manager.currentGroup = group
+        Manager.standard.currentGroup = group
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

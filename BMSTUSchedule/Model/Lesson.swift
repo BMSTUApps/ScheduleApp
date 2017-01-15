@@ -3,7 +3,7 @@
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 14/10/2016.
-//  Copyright © 2016 techpark-iOS. All rights reserved.
+//  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
 import Firebase
@@ -13,7 +13,7 @@ class Lesson: Base, Equatable {
     enum Kind: String {
         case lecture = "лекция"
         case seminar = "семинар"
-        case lab = "лаба"
+        case lab     = "лаба"
     }
     
     let key: String
