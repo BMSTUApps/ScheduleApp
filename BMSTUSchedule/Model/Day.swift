@@ -21,6 +21,14 @@ class Day: Base {
         static let allValues = [monday, tuesday, wednesday, thursday, friday, saturday]
     }
     
+    static var dateFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "RU_ru")
+        dateFormatter.dateFormat = "dd MMMM"
+        
+        return dateFormatter
+    }
+    
     override var description : String {
         return "Day(\"\(title)\")\n"
     }
@@ -32,11 +40,7 @@ class Day: Base {
     
     var dateString: String? {
         get {
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "RU_ru")
-            dateFormatter.dateFormat = "dd MMMM"
-            
-            let dateString = dateFormatter.string(from: self.date)
+            let dateString = Day.dateFormatter.string(from: self.date)
             return dateString
         }
     }

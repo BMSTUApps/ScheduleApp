@@ -14,15 +14,3 @@ class DayHeader: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
 
 }
-
-class AdvancedDayHeader: UITableViewCell {
-    
-    // Week information
-    @IBOutlet weak var weekNumberLabel: UILabel!
-    @IBOutlet weak var weekKindLabel: UILabel!
-    
-    // Day information
-    @IBOutlet weak var dayTitleLabel: UILabel!
-    @IBOutlet weak var dayDateLabel: UILabel!
-    
-}

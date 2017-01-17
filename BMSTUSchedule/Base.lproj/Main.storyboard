@@ -14,77 +14,14 @@
         <scene sceneID="KMw-CN-uTd">
             <objects>
                 <tableViewController id="LUx-SS-ftO" customClass="ScheduleController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="77" sectionHeaderHeight="18" sectionFooterHeight="18" id="rBB-Fl-gOx">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" id="rBB-Fl-gOx">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdvancedDayHeader" rowHeight="80" id="zBY-ia-ZY2" customClass="AdvancedDayHeader" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="375" height="80"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zBY-ia-ZY2" id="pTN-fQ-4j8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="День недели" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="Qoz-aG-zPo">
-                                            <rect key="frame" x="8" y="40" width="102" height="39"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="39" id="iQK-BF-tZC"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="дата" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F20-py-wTr">
-                                            <rect key="frame" x="116" y="51" width="31" height="18"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="18" id="u1k-g5-w9a"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 неделя" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNR-Vh-q3U">
-                                            <rect key="frame" x="116" y="17" width="79" height="26"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="26" id="5TJ-O1-OnH"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="числитель" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3m-q1-VFX">
-                                            <rect key="frame" x="198" y="17" width="70" height="18"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="18" id="yrk-25-ZSb"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstItem="hNR-Vh-q3U" firstAttribute="top" secondItem="pTN-fQ-4j8" secondAttribute="topMargin" constant="9" id="259-P3-W9E"/>
-                                        <constraint firstItem="g3m-q1-VFX" firstAttribute="leading" secondItem="hNR-Vh-q3U" secondAttribute="trailing" constant="3" id="2Pe-WL-19B"/>
-                                        <constraint firstItem="Qoz-aG-zPo" firstAttribute="leading" secondItem="pTN-fQ-4j8" secondAttribute="leading" constant="8" id="RBV-d4-bzc"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="F20-py-wTr" secondAttribute="bottom" constant="2" id="WuB-cy-inY"/>
-                                        <constraint firstItem="g3m-q1-VFX" firstAttribute="top" secondItem="pTN-fQ-4j8" secondAttribute="topMargin" constant="9" id="hPE-nR-e8f"/>
-                                        <constraint firstItem="hNR-Vh-q3U" firstAttribute="centerX" secondItem="pTN-fQ-4j8" secondAttribute="centerX" constant="-32" id="pGR-AY-0IA"/>
-                                        <constraint firstItem="F20-py-wTr" firstAttribute="leading" secondItem="Qoz-aG-zPo" secondAttribute="trailing" constant="6" id="qqc-tQ-Prv"/>
-                                        <constraint firstAttribute="bottom" secondItem="Qoz-aG-zPo" secondAttribute="bottom" id="wU7-ZG-hxg"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="dayDateLabel" destination="F20-py-wTr" id="S1D-UO-ff2"/>
-                                    <outlet property="dayTitleLabel" destination="Qoz-aG-zPo" id="mJ5-L3-e1L"/>
-                                    <outlet property="weekKindLabel" destination="g3m-q1-VFX" id="zFO-8u-J9W"/>
-                                    <outlet property="weekNumberLabel" destination="hNR-Vh-q3U" id="47C-hF-lwe"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayHeader" rowHeight="40" id="XO0-EA-zkE" customClass="DayHeader" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="136" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XO0-EA-zkE" id="o7B-Dr-N2q">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
@@ -119,7 +56,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonCell" rowHeight="96" id="Uqn-Ia-TRW" customClass="LessonCell" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="176" width="375" height="96"/>
+                                <rect key="frame" x="0.0" y="68" width="375" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uqn-Ia-TRW" id="2wx-Je-kFi">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>

@@ -15,7 +15,6 @@ class ScheduleController: UITableViewController {
     var group: Group?
     
     private var days: [Day] = []
-    private var weeks: [Week] = []
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
 
@@ -59,11 +58,6 @@ class ScheduleController: UITableViewController {
     }
     
     func setWeeks(weeks: [Week]) {
-        
-        // Save weeks
-        self.weeks = weeks
-        
-        // Save days
         for week in weeks {
             self.days.append(contentsOf: week.days)
         }
@@ -78,57 +72,22 @@ class ScheduleController: UITableViewController {
     // Custom header for day title
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-        let day = days[section]
-        
-        if day.title == .monday {
-            return 80
-        } else {
-            return 40
-        }
+        return 40
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         let day = days[section]
 
-        if day.title == .monday { // Need do add week labels
+        
+        let dayHeader = tableView.dequeueReusableCell(withIdentifier: "DayHeader") as! DayHeader
             
-            let advancedDayHeader = tableView.dequeueReusableCell(withIdentifier: "AdvancedDayHeader") as! AdvancedDayHeader
+        // Set day information
             
-            // Set week information
+        dayHeader.titleLabel.text = day.title.rawValue.capitalized
+        dayHeader.dateLabel.text = day.dateString
             
-            for week in self.weeks {
-                
-                // Find the week
-                
-                let indexOfWeek = week.days.index{$0 === day}
-                if indexOfWeek != nil {
-                    
-                    advancedDayHeader.weekNumberLabel.text = "\(week.number) неделя"
-                    advancedDayHeader.weekKindLabel.text = week.kind.rawValue
-                
-                }
-            }
-            
-            // Set day information
-            
-            advancedDayHeader.dayTitleLabel.text = day.title.rawValue.capitalized
-            advancedDayHeader.dayDateLabel.text = day.dateString
-            
-            return advancedDayHeader
-            
-        } else {
-         
-            let dayHeader = tableView.dequeueReusableCell(withIdentifier: "DayHeader") as! DayHeader
-            
-            // Set day information
-            
-            dayHeader.titleLabel.text = day.title.rawValue.capitalized
-            dayHeader.dateLabel.text = day.dateString
-            
-            return dayHeader
-        }
+        return dayHeader
     }
  
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -174,21 +133,24 @@ class ScheduleController: UITableViewController {
         var indexPath: NSIndexPath?
         
         // Search current day
+        
         let currentDate = Manager.calendar.currentDate
+        let currentDateString = Day.dateFormatter.string(from: currentDate)
+        
         for (index, day) in self.days.enumerated() {
-            if currentDate == day.date {
+            if currentDateString == day.dateString {
                 indexPath = NSIndexPath(row: 0, section: index)
             }
         }
         
         // Scroll to section
+        
         if indexPath != nil {
             self.tableView.scrollToRow(at: indexPath! as IndexPath, at: UITableViewScrollPosition.none, animated: true)
         } else {
             sender.isEnabled = false
         }
     }
-    
     
     // MARK: - Memory
     
