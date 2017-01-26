@@ -10,21 +10,29 @@ import UIKit
 
 class CalendarManager {
     
+    let calendar = Calendar(identifier: .gregorian)
+    
     // MARK: Keys
 
     private let startTermDateKey = "startTermDate"
     private let endTermDateKey   = "endTermDate"
     
+    private let localeIdentifier = "RU_ru"
+    private let dateFormat = "dd.MM.yyyy"
+    
     // MARK: Dates
+    
+    // Dates are loaded from NSUserDefaults
     
     var startTermDate: Date? {
         get {
             // If date saved to defaults
             if let startDateString = UserDefaults.standard.string(forKey: startTermDateKey) {
+                
                 // If date is right
                 let dateFormatter = DateFormatter()
-                dateFormatter.locale = Locale(identifier: "RU_ru")
-                dateFormatter.dateFormat = "dd.MM.yyyy"
+                dateFormatter.locale = Locale(identifier: localeIdentifier)
+                dateFormatter.dateFormat = dateFormat
                 if let date = dateFormatter.date(from: startDateString) {
                     return date
                 }
@@ -41,10 +49,11 @@ class CalendarManager {
         get {
             // If date saved to defaults
             if let endDateString = UserDefaults.standard.string(forKey: endTermDateKey) {
+                
                 // If date is right
                 let dateFormatter = DateFormatter()
-                dateFormatter.locale = Locale(identifier: "RU_ru")
-                dateFormatter.dateFormat = "dd.MM.yyyy"
+                dateFormatter.locale = Locale(identifier: localeIdentifier)
+                dateFormatter.dateFormat = dateFormat
                 if let date = dateFormatter.date(from: endDateString) {
                     return date
                 }
@@ -64,9 +73,7 @@ class CalendarManager {
         }
     }
     
-    // MARK: Indexes
-    
-    let calendar = Calendar(identifier: .gregorian)
+    // MARK: Indices
     
     private var startWeekIndex: Int {
         get {
@@ -197,9 +204,8 @@ class CalendarManager {
     // Get date with days offset
     // Ex: 12.11.2016 -(offset = -2)-> 10.11.2016
     func dateWithDaysOffset(currentDate: Date, offset: Int) -> Date {
-        let calendar = Calendar.current
-        let offsetDate = calendar.date(byAdding: .day, value: offset, to: currentDate)
         
+        let offsetDate = calendar.date(byAdding: .day, value: offset, to: currentDate)
         return offsetDate!
     }
     
