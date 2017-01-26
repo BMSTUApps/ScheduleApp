@@ -30,7 +30,7 @@ class Day: Base {
     }
     
     override var description : String {
-        return "Day(\"\(title)\")\n"
+        return "Day(\(date) - \"\(title)\")\n"
     }
     
     var title: Title
@@ -69,6 +69,10 @@ class Day: Base {
     init(title: Title, lessons: [Lesson], key: String = "") {
         self.title = title
         self.lessons = lessons
+    }
+    
+    convenience init(day: Day) {
+        self.init(title: day.title, lessons: day.lessons)
     }
     
 }
