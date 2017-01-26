@@ -44,7 +44,7 @@ class ScheduleController: UITableViewController {
                 self.schedule = schedule
                 
                 // Get weeks from schedule
-                let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
+                let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: -1, count: 3)
                 self.setWeeks(weeks: weeks)
                 self.tableView.reloadData()
             })
@@ -146,7 +146,7 @@ class ScheduleController: UITableViewController {
         // Scroll to section
         
         if indexPath != nil {
-            self.tableView.scrollToRow(at: indexPath! as IndexPath, at: UITableViewScrollPosition.none, animated: true)
+            self.tableView.scrollToRow(at: indexPath! as IndexPath, at: UITableViewScrollPosition.top, animated: true)
         } else {
             sender.isEnabled = false
         }
