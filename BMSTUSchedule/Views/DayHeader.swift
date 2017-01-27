@@ -8,9 +8,32 @@
 
 import UIKit
 
-class DayHeader: UITableViewCell {
+@IBDesignable
 
+class DayHeader: UITableViewCell {
+    
+    // MARK: - IBOutlet
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
 
+    // MARK: - IBInspectable
+    
+    @IBInspectable var today: Bool = false {
+        didSet {
+            if today {
+                self.contentView.backgroundColor = self.todayColor
+            } else {
+                self.contentView.backgroundColor = UIColor.groupTableViewBackground
+            }
+        }
+    }
+    @IBInspectable var todayColor: UIColor = UIColor(red:206/255, green:229/255, blue:241/255, alpha: 1) {
+        didSet {
+            if today {
+                self.contentView.backgroundColor = self.todayColor
+            }
+        }
+    }
+    
 }

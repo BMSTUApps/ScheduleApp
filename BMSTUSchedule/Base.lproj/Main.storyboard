@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XO0-EA-zkE" id="o7B-Dr-N2q">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="День недели" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="DRh-QV-Lzx">
@@ -51,6 +51,11 @@
                                         <constraint firstItem="DRh-QV-Lzx" firstAttribute="top" secondItem="o7B-Dr-N2q" secondAttribute="top" id="hmT-cJ-H8B"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                        <color key="value" red="0.80784313725490198" green="0.89803921568627454" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dateLabel" destination="nPG-Ia-EXe" id="YWR-qX-zZg"/>
                                     <outlet property="titleLabel" destination="DRh-QV-Lzx" id="C1l-A5-uwD"/>

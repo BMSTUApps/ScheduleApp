@@ -86,7 +86,18 @@ class ScheduleController: UITableViewController {
             
         dayHeader.titleLabel.text = day.title.rawValue.capitalized
         dayHeader.dateLabel.text = day.dateString
-            
+        
+        // Check if today
+        
+        let currentDate = Manager.calendar.currentDate
+        let currentDateString = Day.dateFormatter.string(from: currentDate)
+        
+        if currentDateString == day.dateString {
+            dayHeader.today = true
+        } else {
+            dayHeader.today = false
+        }
+        
         return dayHeader
     }
  
