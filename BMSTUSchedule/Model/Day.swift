@@ -8,7 +8,7 @@
 
 import Firebase
 
-class Day: Base {
+class Day: CustomStringConvertible {
 
     enum Title: String {
         case monday    = "понедельник"
@@ -29,7 +29,7 @@ class Day: Base {
         return dateFormatter
     }
     
-    override var description : String {
+    var description : String {
         return "Day(\(date) - \"\(title)\")\n"
     }
     

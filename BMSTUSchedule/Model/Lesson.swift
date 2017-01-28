@@ -8,7 +8,7 @@
 
 import Firebase
 
-class Lesson: Base, Equatable {
+class Lesson: CustomStringConvertible, Equatable {
 
     enum Kind: String {
         case lecture = "лекция"
@@ -29,7 +29,7 @@ class Lesson: Base, Equatable {
     var startTime: String?
     var endTime: String?
     
-    override var description : String {
+    var description : String {
         return "Lesson(\"\(title)\")\n"
     }
     

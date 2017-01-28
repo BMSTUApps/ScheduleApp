@@ -6,12 +6,12 @@
 //  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
-class Schedule: Base {
+class Schedule: CustomStringConvertible {
 
     var numeratorWeek: Week
     var denominatorWeek: Week
     
-    override var description : String {
+    var description : String {
         return "Schedule(numeratorWeek: \(numeratorWeek.days.count) lessons, denominatorWeek: \(denominatorWeek.days.count) lessons)\n"
     }
     
@@ -22,7 +22,7 @@ class Schedule: Base {
         self.denominatorWeek = denominatorWeek
     }
     
-    override convenience init() {
+    convenience init() {
         self.init(numeratorWeek: Week(), denominatorWeek: Week())
     }
     

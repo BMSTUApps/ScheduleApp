@@ -44,7 +44,7 @@ class ScheduleController: UITableViewController {
                 self.schedule = schedule
                 
                 // Get weeks from schedule
-                let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 20, count: 3)
+                let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
                 self.setWeeks(weeks: weeks)
                 self.tableView.reloadData()
             })

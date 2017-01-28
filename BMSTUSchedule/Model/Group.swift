@@ -8,7 +8,7 @@
 
 import Firebase
 
-class Group: Base {
+class Group: CustomStringConvertible {
 
     var name: String
     
@@ -38,7 +38,7 @@ class Group: Base {
         }
     }
     
-    override var description : String {
+    var description : String {
         return "Group(\"\(name)\")\n"
     }
     
@@ -51,7 +51,7 @@ class Group: Base {
         self.name = name
     }
     
-    override convenience init() {
+    convenience init() {
         self.init(name: String())
     }
     

@@ -6,7 +6,7 @@
 //  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
-class Week: Base {
+class Week: CustomStringConvertible {
 
     enum Kind: String {
         case numerator   = "числитель"
@@ -18,7 +18,7 @@ class Week: Base {
 
     var number: Int = 0
     
-    override var description : String {
+    var description : String {
         return "Week(#\(number) - \"\(kind.rawValue)\")\n"
     }
     
@@ -29,7 +29,7 @@ class Week: Base {
         self.days = days
     }
     
-    convenience override init() {
+    convenience init() {
         self.init(kind: .numerator, days: [])
     }
         
