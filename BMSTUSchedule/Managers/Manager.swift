@@ -16,11 +16,11 @@ class Manager {
     
     let defaults = UserDefaults.standard
     
-    // Keys
+    // MARK: Keys
     
     private let currentGroupKey = "currentGroup"
     
-    // Identifiers
+    // MARK: Identifiers
     
     var currentGroup: Group? {
         get {

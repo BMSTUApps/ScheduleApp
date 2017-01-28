@@ -44,7 +44,7 @@ class ScheduleController: UITableViewController {
                 self.schedule = schedule
                 
                 // Get weeks from schedule
-                let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: -1, count: 3)
+                let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 20, count: 3)
                 self.setWeeks(weeks: weeks)
                 self.tableView.reloadData()
             })
@@ -78,7 +78,6 @@ class ScheduleController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         let day = days[section]
-
         
         let dayHeader = tableView.dequeueReusableCell(withIdentifier: "DayHeader") as! DayHeader
             

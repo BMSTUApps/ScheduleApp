@@ -124,10 +124,22 @@ class CalendarManager {
         // Set constants
         
         // 'Start' means start for calculation, NOT REAL START!!!
-        let startWeekIndex = currentWeekIndex + offset
-        let startWeekKind = weekKind(weekNumber: weekNumber(weekIndex: startWeekIndex))
+        var startWeekIndex = currentWeekIndex + offset
+        var startWeekKind = weekKind(weekNumber: weekNumber(weekIndex: startWeekIndex))
         
-        let startDate = self.dateWithDaysOffset(currentDate: self.currentDate, offset: 7*offset - currentDayIndexInWeek)
+        var startDate = self.dateWithDaysOffset(currentDate: self.currentDate, offset: 7*offset - currentDayIndexInWeek)
+        
+        // if startTermDate & endTermDate loaded
+        if let startTermDate = self.startTermDate, let _ = self.endTermDate {
+            // if startDate < startTermDate
+            if startDate.compare(startTermDate) == .orderedAscending {
+                startWeekIndex = self.weekIndex(weekNumber: 1)
+                startWeekKind = weekKind(weekNumber: 1)
+                startDate = startTermDate
+            }
+        } else {
+            return []
+        }
         
         // Calculate
         
@@ -139,16 +151,18 @@ class CalendarManager {
         
         for i in 1...count {
             
+            // if nowWeekDate > endTermDate
+            if nowWeekDate.compare(self.endTermDate!) == .orderedDescending {
+                break
+            }
+            
             let week = Week()
             
             week.number = weekNumber(weekIndex: nowWeekIndex)
             week.kind = nowWeekKind
             
-            nowWeekDate = self.dateWithDaysOffset(currentDate: startDate, offset: i*7) // First date of week
-            
             // Choose days for week kind
             var days: [Day] = []
-            
             switch nowWeekKind {
             case .numerator:
                 days = schedule.numeratorWeek.days
@@ -164,12 +178,14 @@ class CalendarManager {
             
             // Set date for days
             for day in week.days {
-                day.date = self.dateWithDaysOffset(currentDate: nowWeekDate, offset: day.indexInWeek)
+                let date = self.dateWithDaysOffset(currentDate: nowWeekDate, offset: day.indexInWeek)
+                day.date = date
             }
 
             weeks.append(week)
 
             // Update constants
+            nowWeekDate = self.dateWithDaysOffset(currentDate: startDate, offset: i*7) // First date of week
             nowWeekKind = switchWeekKind(weekKind: nowWeekKind)
             nowWeekIndex = nowWeekIndex + 1
         }
@@ -180,6 +196,7 @@ class CalendarManager {
     // MARK: Calculate
     
     func calculateBreakTime(lastLesson: Lesson, lesson: Lesson) -> Int? {
+        
         if let endTime = lastLesson.endTime, let startTime = lesson.startTime {
             
             let dateFormatter = DateFormatter()

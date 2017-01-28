@@ -12,7 +12,7 @@ import UIKit
 
 class DayHeader: UITableViewCell {
     
-    // MARK: - IBOutlet
+    // MARK: IBOutlet
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

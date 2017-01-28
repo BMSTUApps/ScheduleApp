@@ -234,9 +234,9 @@
 		A5E0FE7B1DBFB56B008959A9 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A5E0FE7F1DBFB59C008959A9 /* BMSTUSchedule-Bridging-Header.h */,
 				A5E0FE801DBFB59D008959A9 /* SWRevealViewController.h */,
 				A5E0FE811DBFB59D008959A9 /* SWRevealViewController.m */,
-				A5E0FE7F1DBFB59C008959A9 /* BMSTUSchedule-Bridging-Header.h */,
 			);
 			path = SWRevealViewController;
 			sourceTree = "<group>";
