@@ -10,7 +10,8 @@ target 'BMSTUSchedule' do
 
   target 'BMSTUScheduleTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'Firebase/Core'
+    pod 'Firebase/Database'
   end
 
   target 'BMSTUScheduleUITests' do
