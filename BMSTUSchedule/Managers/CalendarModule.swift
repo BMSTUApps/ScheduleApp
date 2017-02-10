@@ -1,5 +1,5 @@
 //
-//  CalendarManager.swift
+//  CalendarModule.swift
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 26/11/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalendarManager {
+class CalendarModule {
     
     let calendar = Calendar(identifier: .gregorian)
     

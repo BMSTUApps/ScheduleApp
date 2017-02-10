@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (Manager.standard.currentGroup == nil) {
             Manager.standard.currentGroup = Group(name: "ИУ5-33")
         }
-        
+                
         return true
     }
 

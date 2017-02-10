@@ -28,7 +28,7 @@ class BMSTUScheduleTests: XCTestCase {
         }
     }
     
-    // MARK - CalendarManager
+    // MARK - CalendarModule
     
     func testWeeksFromSchedule() {
         
