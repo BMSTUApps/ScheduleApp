@@ -23,6 +23,15 @@ class LessonCell: UITableViewCell {
     
     @IBOutlet weak var breakLabel: UILabel!
     
+    var type: Lesson.Kind? {
+        get {
+            return self.type
+        }
+        set(new) {
+            self.setType(type: type)
+        }
+    }
+    
     // MARK: - Constants
     
     let typeColors = [
@@ -70,6 +79,9 @@ class LessonCell: UITableViewCell {
         let size = CGSize(width:typeRectThickness, height:self.contentView.frame.height - 2 * typeRectTopOffset)
         
         let typeRect = UIView(frame: CGRect(origin: origin, size: size))
+        
+        typeRect.layer.cornerRadius = typeRectThickness
+        typeRect.layer.masksToBounds = true
         
         if let type = type {
             switch type {
