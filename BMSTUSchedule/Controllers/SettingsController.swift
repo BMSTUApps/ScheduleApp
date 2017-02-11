@@ -26,13 +26,13 @@ class SettingsController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.offlineModeSwitch.isOn = Manager.firebase.offlineMode
+        self.offlineModeSwitch.isOn = Manager.standard.offlineMode
     }
     
     // MARK: - Actions
     
     @IBAction func switchModeAction(_ sender: UISwitch) {
-        Manager.firebase.offlineMode = sender.isOn
+        Manager.standard.offlineMode = sender.isOn
     }
     
     // MARK: - Memory

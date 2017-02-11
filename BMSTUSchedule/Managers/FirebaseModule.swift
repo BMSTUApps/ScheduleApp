@@ -26,7 +26,7 @@ class FirebaseModule {
         
         // Set firebase
         FIRApp.configure()
-        FIRDatabase.database().persistenceEnabled = self.offlineMode
+        FIRDatabase.database().persistenceEnabled = Manager.standard.offlineMode
         
         // Update dates
         getStartTermDate { (startTermDate) in /* Update schedule */ }
