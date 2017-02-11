@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // DEBUG: Test saving current group to user defaults
         if (Manager.standard.currentGroup == nil) {
-            Manager.standard.currentGroup = Group(name: "ИУ5-33")
+            Manager.standard.currentGroup = Group(name: "ИУ5-43")
         }
                 
         return true

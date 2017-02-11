@@ -12,17 +12,23 @@ class Manager {
     
     static let standard = Manager()
     
+    // MARK: - Modules
+    
     static let calendar = CalendarModule()
     static let firebase = FirebaseModule()
     
+    // MARK: -
+    
     let defaults = UserDefaults.standard
     
-    // MARK: Keys
+    // MARK: - Keys
     
     private let currentGroupKey = "currentGroup"
+    private let offlineModeKey = "offlineMode"
     
-    // MARK: Identifiers
+    // MARK: - Identifiers
     
+    // Current selected group
     var currentGroup: Group? {
         get {
             let groupName = defaults.string(forKey: currentGroupKey)
@@ -41,9 +47,21 @@ class Manager {
         }
     }
     
+    // Unique user identifier
     var userIdentifier: String? {
         get {
             return UIDevice.current.identifierForVendor?.uuidString
+        }
+    }
+    
+    // Offline mode flag
+    var offlineMode: Bool {
+        get {
+            let mode = defaults.bool(forKey: offlineModeKey)
+            return mode
+        }
+        set(new) {
+            defaults.set(new, forKey: offlineModeKey)
         }
     }
     

@@ -11,7 +11,7 @@ import Firebase
 
 class FirebaseModule {
 
-    // Paths
+    // MARK: - Server paths
     
     private let datesPath     = "dates"
     private let schedulesPath = "schedules"
@@ -19,20 +19,6 @@ class FirebaseModule {
     
     private let startTermDatePath = "startTermDate"
     private let endTermDatePath   = "endTermDate"
-    
-    // Keys
-    
-    private let offlineModeKey = "offlineMode"
-    
-    var offlineMode: Bool {
-        get {
-            let mode = UserDefaults.standard.bool(forKey: offlineModeKey)
-            return mode
-        }
-        set(new) {
-            UserDefaults.standard.set(new, forKey: offlineModeKey)
-        }
-    }
     
     // MARK: - Configure
     
@@ -246,7 +232,7 @@ class FirebaseModule {
         self.addSchedule(schedule: schedule, identifier: group.name)
     }
     
-    // MARK: Test data
+    // MARK: - Test data
     
     func testSchedule() -> Schedule {
         

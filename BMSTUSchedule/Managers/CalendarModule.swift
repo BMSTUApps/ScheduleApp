@@ -12,7 +12,7 @@ class CalendarModule {
     
     let calendar = Calendar(identifier: .gregorian)
     
-    // MARK: Keys
+    // MARK: - Keys
 
     private let startTermDateKey = "startTermDate"
     private let endTermDateKey   = "endTermDate"
@@ -20,7 +20,7 @@ class CalendarModule {
     private let localeIdentifier = "RU_ru"
     private let dateFormat = "dd.MM.yyyy"
     
-    // MARK: Dates
+    // MARK: - Dates
     
     // Dates are loaded from NSUserDefaults
     
@@ -98,7 +98,7 @@ class CalendarModule {
         }
     }
     
-    // MARK: Create
+    // MARK: - Create
 
     func createWeeksFromSchedule(schedule: Schedule, offset: Int, count: Int) -> [Week] {
         
@@ -193,7 +193,7 @@ class CalendarModule {
         return weeks
     }
     
-    // MARK: Calculate
+    // MARK: - Calculate
     
     func calculateBreakTime(lastLesson: Lesson, lesson: Lesson) -> Int? {
         
@@ -214,7 +214,7 @@ class CalendarModule {
         }
     }
     
-    // MARK: Utility
+    // MARK: - Utility
     
     // Date
     
