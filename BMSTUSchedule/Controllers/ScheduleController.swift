@@ -137,9 +137,24 @@ class ScheduleController: UITableViewController {
     }
     
     // MARK: - Actions
+
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake { // After shaking the device
+            _ = self.scrollToToday(animated: true)
+        }
+    }
     
-    @IBAction func scrollToCurrentDayAction(_ sender: UIBarButtonItem) {
-        
+    // MARK: - Memory
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - 
+    
+    func scrollToToday(animated: Bool) -> Bool {
+       
         var indexPath: NSIndexPath?
         
         // Search current day
@@ -155,18 +170,16 @@ class ScheduleController: UITableViewController {
         
         // Scroll to section
         
+        var success: Bool = false
+        
         if indexPath != nil {
-            self.tableView.scrollToRow(at: indexPath! as IndexPath, at: UITableViewScrollPosition.top, animated: true)
+            self.tableView.scrollToRow(at: indexPath! as IndexPath, at: UITableViewScrollPosition.top, animated: animated)
+            success = true
         } else {
-            sender.isEnabled = false
+            success = false
         }
-    }
-    
-    // MARK: - Memory
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        return success
     }
     
 }

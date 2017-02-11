@@ -134,13 +134,13 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
-		A5A1240A1DE8DD75006FB4E5 /* Modules */ = {
+		A5A1240A1DE8DD75006FB4E5 /* Manager Modules */ = {
 			isa = PBXGroup;
 			children = (
 				A5A1240B1DE8DE9A006FB4E5 /* FirebaseModule.swift */,
 				A5A1240D1DE8DED5006FB4E5 /* CalendarModule.swift */,
 			);
-			name = Modules;
+			name = "Manager Modules";
 			sourceTree = "<group>";
 		};
 		A5A1240F1DE8E606006FB4E5 /* Screenshots */ = {
@@ -179,7 +179,7 @@
 				A5CED5091DB0E901000D2DFD /* Model */,
 				A5E0FE8C1DC00698008959A9 /* Views */,
 				A5E0FE851DBFB88D008959A9 /* Controllers */,
-				A5A1240A1DE8DD75006FB4E5 /* Modules */,
+				A5A1240A1DE8DD75006FB4E5 /* Manager Modules */,
 				A5A124081DE8DD70006FB4E5 /* Manager.swift */,
 				A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */,
 				A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */,
