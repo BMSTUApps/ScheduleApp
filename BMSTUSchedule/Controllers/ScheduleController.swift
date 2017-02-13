@@ -32,23 +32,46 @@ class ScheduleController: UITableViewController {
         tableView.tableFooterView = UIView()
         self.tableView.sectionHeaderHeight = 40
         
-        // Set group
-        if self.group == nil, let group = Manager.standard.currentGroup {
-            self.group = group
+        // Load group & schedule
+        if let defaultsGroup = Manager.standard.currentGroup {
+            self.group = defaultsGroup
+            self.loadSchedule(group: self.group!)
+        }
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // Check group
+        if let defaultsGroup = Manager.standard.currentGroup {
+            
+            if let currentGroup = self.group {
+                
+                if currentGroup.name != defaultsGroup.name {
+                    
+                    self.group = defaultsGroup
+                    
+                    // Update schedule
+                    self.loadSchedule(group: self.group!)
+                }
+                
+            } else {
+                self.group = defaultsGroup
+            }
         }
         
-        // Load schedule
-        if self.schedule == nil {
-            Manager.firebase.getSchedule(group: self.group!, success: { schedule in
-                // Save schedule
-                self.schedule = schedule
-                
-                // Get weeks from schedule
-                let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
-                self.setWeeks(weeks: weeks)
-                self.tableView.reloadData()
-            })
-        }
+    }
+    
+    func loadSchedule(group: Group) {
+        Manager.firebase.getSchedule(group: group, success: { schedule in
+            // Save schedule
+            self.schedule = schedule
+            
+            // Get weeks from schedule
+            let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
+            self.setWeeks(weeks: weeks)
+            self.tableView.reloadData()
+        })
     }
     
     // MARK: - Set table view
