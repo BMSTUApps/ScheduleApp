@@ -407,12 +407,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <scene sceneID="3FL-LM-OKf">
             <objects>
                 <tabBarController id="GjX-oX-8CA" customClass="TabBarController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" itemPositioning="centered" id="Pos-lM-x3Y">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" translucent="NO" itemPositioning="centered" id="Pos-lM-x3Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.59956503184417886" green="0.70113082803228055" blue="0.76352916758295164" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="bUR-Y3-Hhc" kind="relationship" relationship="viewControllers" id="wfs-tx-ZfF"/>
@@ -428,7 +428,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <scene sceneID="bvQ-Lw-RZt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bUR-Y3-Hhc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Расписание" image="Menu-schedule" id="Egw-al-eeA"/>
+                    <tabBarItem key="tabBarItem" title="Расписание" image="TabBar-schedule" selectedImage="TabBar-schedule-selected" id="Egw-al-eeA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="gGy-34-HkW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -451,7 +451,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <scene sceneID="7YQ-oh-3YJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g57-tb-a0c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Настройки" image="Menu-settings" id="P7C-Bx-anz"/>
+                    <tabBarItem key="tabBarItem" title="Настройки" image="TabBar-settings" id="P7C-Bx-anz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Q5M-J6-8Hd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -531,7 +531,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <scene sceneID="hJK-Lc-XFo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1h6-uy-U8K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Группы" image="Menu-groups" id="Ih7-aa-Hxx"/>
+                    <tabBarItem key="tabBarItem" title="Группы" image="TabBar-groups" selectedImage="TabBar-groups-selected" id="Ih7-aa-Hxx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ID5-tF-SYP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -554,8 +554,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <resources>
         <image name="Firebase" width="232" height="64"/>
         <image name="Menu" width="25" height="25"/>
-        <image name="Menu-groups" width="25" height="25"/>
-        <image name="Menu-schedule" width="25" height="25"/>
-        <image name="Menu-settings" width="25" height="25"/>
+        <image name="TabBar-groups" width="12" height="18"/>
+        <image name="TabBar-groups-selected" width="12" height="18"/>
+        <image name="TabBar-schedule" width="19" height="19"/>
+        <image name="TabBar-schedule-selected" width="19" height="19"/>
+        <image name="TabBar-settings" width="24" height="24"/>
     </resources>
 </document>
