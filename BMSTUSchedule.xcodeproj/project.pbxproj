@@ -12,7 +12,6 @@
 		A525F3D21DD4C9D4003A7CC0 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3D11DD4C9D4003A7CC0 /* Group.swift */; };
 		A5485CC11DC245BC009610C2 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC01DC245BC009610C2 /* LessonCell.swift */; };
 		A5485CC31DC26173009610C2 /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC21DC26173009610C2 /* GroupsController.swift */; };
-		A55B90531DCA37E20068B9BE /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B90521DCA37E20068B9BE /* MenuController.swift */; };
 		A5A123F61DE7422A006FB4E5 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A123F51DE7422A006FB4E5 /* Week.swift */; };
 		A5A124051DE8DD24006FB4E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */; };
 		A5A124061DE8DD24006FB4E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A124031DE8DD24006FB4E5 /* Main.storyboard */; };
@@ -65,7 +64,6 @@
 		A525F3D11DD4C9D4003A7CC0 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = Model/Group.swift; sourceTree = "<group>"; };
 		A5485CC01DC245BC009610C2 /* LessonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonCell.swift; path = Views/LessonCell.swift; sourceTree = "<group>"; };
 		A5485CC21DC26173009610C2 /* GroupsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsController.swift; path = Controllers/GroupsController.swift; sourceTree = "<group>"; };
-		A55B90521DCA37E20068B9BE /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuController.swift; path = Controllers/MenuController.swift; sourceTree = "<group>"; };
 		A5A123F51DE7422A006FB4E5 /* Week.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Week.swift; path = Model/Week.swift; sourceTree = "<group>"; };
 		A5A123F81DE8DCD8006FB4E5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5A124021DE8DD24006FB4E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 		A5E0FE851DBFB88D008959A9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A55B90521DCA37E20068B9BE /* MenuController.swift */,
 				A5E0FE831DBFB870008959A9 /* ScheduleController.swift */,
 				A5485CC21DC26173009610C2 /* GroupsController.swift */,
 				A5E0FE881DBFFB22008959A9 /* SettingsController.swift */,
@@ -585,7 +582,6 @@
 				A5A1240E1DE8DED5006FB4E5 /* CalendarModule.swift in Sources */,
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
 				A5E0FE821DBFB59D008959A9 /* SWRevealViewController.m in Sources */,
-				A55B90531DCA37E20068B9BE /* MenuController.swift in Sources */,
 				A5218D731DF9F6F900E817B0 /* GroupCell.swift in Sources */,
 				A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */,
 				A5F2E1F71DC4C1E100841669 /* Day.swift in Sources */,

@@ -16,17 +16,8 @@ class ScheduleController: UITableViewController {
     
     private var days: [Day] = []
     
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Menu button
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
     
         // Set table view
         tableView.tableFooterView = UIView()

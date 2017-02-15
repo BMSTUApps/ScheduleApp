@@ -10,30 +10,38 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
-    let tabBarHeight: CGFloat = 40
+    // MARK: Constants
+    
+    let tabBarHeight: CGFloat = 45
     
     let tabNormalColor = UIColor(red:137/255, green:161/255, blue:175/255, alpha: 1)
     let tabSelectedColor = UIColor(red:206/255, green:229/255, blue:241/255, alpha: 1)
 
+    // MARK: -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        // Selected
-        UITabBar.appearance().tintColor = self.tabSelectedColor
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: self.tabSelectedColor,
-                                                          NSFontAttributeName: UIFont.boldSystemFont(ofSize: 10)], for:.selected)
-
+        
         // Normal
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: self.tabNormalColor,
                                                           NSFontAttributeName: UIFont.boldSystemFont(ofSize: 10)], for:.normal)
+        
+        // Selected
+        //UITabBar.appearance().tintColor = self.tabSelectedColor
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: self.tabSelectedColor,
+                                                          NSFontAttributeName: UIFont.boldSystemFont(ofSize: 10)], for:.selected)
+        
         for item in self.tabBar.items! as [UITabBarItem] {
-            if let image = item.image {
+            if let image = item.image, let selectedImage = item.selectedImage {
+                // Normal
                 item.image = image.imageWithColor(newColor: self.tabNormalColor).withRenderingMode(.alwaysOriginal)
+                // Selected
+                item.selectedImage = selectedImage.withRenderingMode(.alwaysOriginal)
             }
         }
         
     }
-
+    
     override func viewWillLayoutSubviews() {
         var tabFrame = self.tabBar.frame
         tabFrame.size.height = self.tabBarHeight

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Расписание-->
+        <!--Schedule-->
         <scene sceneID="KMw-CN-uTd">
             <objects>
-                <tableViewController id="LUx-SS-ftO" customClass="ScheduleController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="LUx-SS-ftO" userLabel="Schedule" customClass="ScheduleController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" id="rBB-Fl-gOx">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="1964" y="-1066.4167916041979"/>
         </scene>
-        <!--Настройки-->
+        <!--Settings-->
         <scene sceneID="GLF-bs-KaM">
             <objects>
-                <tableViewController id="f0c-tG-LwS" customClass="SettingsController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="f0c-tG-LwS" userLabel="Settings" customClass="SettingsController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="k6Q-Oc-NuO">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,19 +279,14 @@
                             <outlet property="delegate" destination="f0c-tG-LwS" id="2Hg-Ao-gtJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Настройки" id="2gf-tG-7Oh">
-                        <barButtonItem key="leftBarButtonItem" image="Menu" id="SbC-BU-By8">
-                            <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Настройки" id="2gf-tG-7Oh"/>
                     <connections>
-                        <outlet property="menuButton" destination="SbC-BU-By8" id="ddC-nL-xqd"/>
                         <outlet property="offlineModeSwitch" destination="QOc-hS-YGd" id="QDY-Ug-WQZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sT6-oe-aYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="493"/>
+            <point key="canvasLocation" x="1964" y="493"/>
         </scene>
         <!--Лицензии-->
         <scene sceneID="LSt-IY-k9R">
@@ -410,9 +405,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" translucent="NO" itemPositioning="centered" id="Pos-lM-x3Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.80784313725490198" green="0.89803921568627454" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="0.59956503184417886" green="0.70113082803228055" blue="0.76352916758295164" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="bUR-Y3-Hhc" kind="relationship" relationship="viewControllers" id="wfs-tx-ZfF"/>
@@ -424,10 +418,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             </objects>
             <point key="canvasLocation" x="42" y="-297"/>
         </scene>
-        <!--Расписание-->
+        <!--Navigation Schedule-->
         <scene sceneID="bvQ-Lw-RZt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bUR-Y3-Hhc" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsWhenVerticallyCompact="YES" id="bUR-Y3-Hhc" userLabel="Navigation Schedule" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Расписание" image="TabBar-schedule" selectedImage="TabBar-schedule-selected" id="Egw-al-eeA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="gGy-34-HkW">
@@ -439,6 +433,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Vbx-Dg-Z9m">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="LUx-SS-ftO" kind="relationship" relationship="rootViewController" id="5Ft-Xq-PTK"/>
                     </connections>
@@ -447,11 +445,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             </objects>
             <point key="canvasLocation" x="1025" y="-1066"/>
         </scene>
-        <!--Настройки-->
+        <!--Navigation Settings-->
         <scene sceneID="7YQ-oh-3YJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g57-tb-a0c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Настройки" image="TabBar-settings" id="P7C-Bx-anz"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g57-tb-a0c" userLabel="Navigation Settings" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Настройки" image="TabBar-settings" selectedImage="TabBar-settings-selected" id="P7C-Bx-anz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Q5M-J6-8Hd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -471,10 +469,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             </objects>
             <point key="canvasLocation" x="1026" y="493"/>
         </scene>
-        <!--Группы-->
+        <!--Groups-->
         <scene sceneID="hbt-wO-DEc">
             <objects>
-                <tableViewController id="otb-3e-cFk" customClass="GroupsController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="otb-3e-cFk" userLabel="Groups" customClass="GroupsController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="UZp-3x-Qvz">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -527,10 +525,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             </objects>
             <point key="canvasLocation" x="1964" y="-297.30134932533736"/>
         </scene>
-        <!--Группы-->
+        <!--Navigation Groups-->
         <scene sceneID="hJK-Lc-XFo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1h6-uy-U8K" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1h6-uy-U8K" userLabel="Navigation Groups" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Группы" image="TabBar-groups" selectedImage="TabBar-groups-selected" id="Ih7-aa-Hxx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ID5-tF-SYP">
@@ -553,11 +551,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     </scenes>
     <resources>
         <image name="Firebase" width="232" height="64"/>
-        <image name="Menu" width="25" height="25"/>
         <image name="TabBar-groups" width="12" height="18"/>
         <image name="TabBar-groups-selected" width="12" height="18"/>
         <image name="TabBar-schedule" width="19" height="19"/>
         <image name="TabBar-schedule-selected" width="19" height="19"/>
-        <image name="TabBar-settings" width="24" height="24"/>
+        <image name="TabBar-settings" width="21" height="21"/>
+        <image name="TabBar-settings-selected" width="21" height="21"/>
     </resources>
 </document>

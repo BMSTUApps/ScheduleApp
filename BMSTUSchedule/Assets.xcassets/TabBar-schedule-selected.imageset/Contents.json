@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Icon*.png",
+      "filename" : "Tabbar-schedule-selected.png",
       "scale" : "1x"
     },
     {
