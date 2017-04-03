@@ -25,7 +25,6 @@
 		A5CED4EF1DB0E080000D2DFD /* BMSTUScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4EE1DB0E080000D2DFD /* BMSTUScheduleTests.swift */; };
 		A5CED4FA1DB0E080000D2DFD /* BMSTUScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4F91DB0E080000D2DFD /* BMSTUScheduleUITests.swift */; };
 		A5CED50B1DB0E94A000D2DFD /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED50A1DB0E94A000D2DFD /* Lesson.swift */; };
-		A5E0FE821DBFB59D008959A9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE811DBFB59D008959A9 /* SWRevealViewController.m */; };
 		A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE831DBFB870008959A9 /* ScheduleController.swift */; };
 		A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE881DBFFB22008959A9 /* SettingsController.swift */; };
 		A5F2E1F71DC4C1E100841669 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E1F61DC4C1E100841669 /* Day.swift */; };
@@ -83,9 +82,6 @@
 		A5CED4F91DB0E080000D2DFD /* BMSTUScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMSTUScheduleUITests.swift; sourceTree = "<group>"; };
 		A5CED4FB1DB0E080000D2DFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5CED50A1DB0E94A000D2DFD /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lesson.swift; path = Model/Lesson.swift; sourceTree = "<group>"; };
-		A5E0FE7F1DBFB59C008959A9 /* BMSTUSchedule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMSTUSchedule-Bridging-Header.h"; sourceTree = "<group>"; };
-		A5E0FE801DBFB59D008959A9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		A5E0FE811DBFB59D008959A9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		A5E0FE831DBFB870008959A9 /* ScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleController.swift; path = Controllers/ScheduleController.swift; sourceTree = "<group>"; };
 		A5E0FE881DBFFB22008959A9 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = Controllers/SettingsController.swift; sourceTree = "<group>"; };
 		A5F2E1F61DC4C1E100841669 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = Model/Day.swift; sourceTree = "<group>"; };
@@ -193,7 +189,6 @@
 				A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */,
 				A5A124031DE8DD24006FB4E5 /* Main.storyboard */,
 				A5A124071DE8DD4F006FB4E5 /* Other */,
-				A5E0FE7A1DBFB56B008959A9 /* Libraries */,
 			);
 			path = BMSTUSchedule;
 			sourceTree = "<group>";
@@ -226,24 +221,6 @@
 				A525F3D11DD4C9D4003A7CC0 /* Group.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		A5E0FE7A1DBFB56B008959A9 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				A5E0FE7B1DBFB56B008959A9 /* SWRevealViewController */,
-			);
-			path = Libraries;
-			sourceTree = "<group>";
-		};
-		A5E0FE7B1DBFB56B008959A9 /* SWRevealViewController */ = {
-			isa = PBXGroup;
-			children = (
-				A5E0FE7F1DBFB59C008959A9 /* BMSTUSchedule-Bridging-Header.h */,
-				A5E0FE801DBFB59D008959A9 /* SWRevealViewController.h */,
-				A5E0FE811DBFB59D008959A9 /* SWRevealViewController.m */,
-			);
-			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		A5E0FE851DBFB88D008959A9 /* Controllers */ = {
@@ -581,7 +558,6 @@
 				A525F3D21DD4C9D4003A7CC0 /* Group.swift in Sources */,
 				A5A1240E1DE8DED5006FB4E5 /* CalendarModule.swift in Sources */,
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
-				A5E0FE821DBFB59D008959A9 /* SWRevealViewController.m in Sources */,
 				A5218D731DF9F6F900E817B0 /* GroupCell.swift in Sources */,
 				A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */,
 				A5F2E1F71DC4C1E100841669 /* Day.swift in Sources */,
