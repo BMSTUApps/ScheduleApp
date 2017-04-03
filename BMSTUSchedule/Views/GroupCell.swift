@@ -10,7 +10,7 @@ import UIKit
 
 class GroupCell: UITableViewCell {
 
-    // MARK: Storyboard
+    // MARK: Outlets
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var courseLabel: UILabel!
