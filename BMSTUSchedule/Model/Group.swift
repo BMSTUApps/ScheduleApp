@@ -38,6 +38,12 @@ class Group: CustomStringConvertible {
         }
     }
     
+    var identifier: String {
+        get {
+            return "group(\(self.name))"
+        }
+    }
+    
     var description : String {
         return "Group(\"\(name)\")\n"
     }

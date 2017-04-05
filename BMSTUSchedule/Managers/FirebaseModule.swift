@@ -166,7 +166,7 @@ class FirebaseModule {
     
     func getSchedule(group: Group, success: @escaping (Schedule) -> ()) {
         
-        self.getSchedule(identifier: group.name) { schedule in
+        self.getSchedule(identifier: group.identifier) { schedule in
             success(schedule)
         }
     }
@@ -176,7 +176,7 @@ class FirebaseModule {
     // Group
     
     func addGroup(group: Group) {
-        let groupRef = FIRDatabase.database().reference(withPath: groupsPath).child(group.name)
+        let groupRef = FIRDatabase.database().reference(withPath: groupsPath).child(group.identifier)
         groupRef.setValue(group.toAnyObject())
     }
     
@@ -193,7 +193,7 @@ class FirebaseModule {
         self.addGroup(group: group)
         
         // Add lesson
-        self.addLesson(lesson: lesson, identifier: group.name, weekKind: weekKind, dayTitle: dayTitle)
+        self.addLesson(lesson: lesson, identifier: group.identifier, weekKind: weekKind, dayTitle: dayTitle)
     }
     
     func removeLesson(lesson: Lesson, identifier: String, weekKind: Week.Kind, dayTitle: Day.Title) {
@@ -202,7 +202,7 @@ class FirebaseModule {
     }
     
     func removeLesson(lesson: Lesson, group: Group, weekKind: Week.Kind, dayTitle: Day.Title) {
-        self.removeLesson(lesson: lesson, identifier: group.name, weekKind: weekKind, dayTitle: dayTitle)
+        self.removeLesson(lesson: lesson, identifier: group.identifier, weekKind: weekKind, dayTitle: dayTitle)
     }
     
     // Schedule
@@ -239,7 +239,7 @@ class FirebaseModule {
         self.addGroup(group: group)
         
         // Add schedule
-        self.addSchedule(schedule: schedule, identifier: group.name)
+        self.addSchedule(schedule: schedule, identifier: group.identifier)
     }
     
     // MARK: - Test data
