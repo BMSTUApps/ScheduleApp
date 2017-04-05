@@ -25,7 +25,6 @@
 
 ## Команда
 * [Артём Белков](https://park.mail.ru/profile/a.belkov/) (bestK1ngArthur)
-* [Семён Дердуга](https://park.mail.ru/profile/s.derduga/) (SemyonDerduga)
-* [Данилов Никита](https://park.mail.ru/profile/d.nikita/) (dankin96)
+* *разыскивается iOS dev.*
 
 **Если есть вопросы или предложения, а также по поводу участия в проекте, пишите [мне в вк](https://vk.com/bestk1ngarthur) или на artem-belkov@mail.ru**
