@@ -55,12 +55,14 @@ class FirebaseModule {
         })
     }
     
+    // Start Term Date
     func getStartTermDate(success: @escaping (Date?) -> ()) {
         getDate(path: startTermDatePath) { (startTermDate) in
             success(startTermDate)
         }
     }
     
+    // End Term Date
     func getEndTermDate(success: @escaping (Date?) -> ()) {
         getDate(path: endTermDatePath) { (startTermDate) in
             success(startTermDate)
@@ -94,8 +96,10 @@ class FirebaseModule {
     
     // Schedule
     
-    func getSchedule(group: Group, success: @escaping (Schedule) -> ()) {
-        let scheduleRef = FIRDatabase.database().reference().child(schedulesPath).child(group.name)
+    func getSchedule(identifier: String, success: @escaping (Schedule) -> ()) {
+        
+        // Set path to schedule
+        let scheduleRef = FIRDatabase.database().reference().child(schedulesPath).child(identifier)
         
         // Get schedule
         scheduleRef.observe(.value, with: { snapshot in
@@ -115,7 +119,7 @@ class FirebaseModule {
                     var lessons: [Lesson] = []
                     for lessonSnap in (daySnap as! FIRDataSnapshot).children {
                         let lesson = Lesson(snapshot: lessonSnap as! FIRDataSnapshot)
-
+                        
                         if lessons.index(of: lesson) != nil {
                             // Found copy!
                         } else {
@@ -125,7 +129,6 @@ class FirebaseModule {
                     
                     day.lessons = lessons
                     days.append(day)
-                    
                 }
                 
                 // Sort days by title
@@ -159,6 +162,13 @@ class FirebaseModule {
             }
             success(schedule)
         })
+    }
+    
+    func getSchedule(group: Group, success: @escaping (Schedule) -> ()) {
+        
+        self.getSchedule(identifier: group.name) { schedule in
+            success(schedule)
+        }
     }
     
     // MARK: - Set
