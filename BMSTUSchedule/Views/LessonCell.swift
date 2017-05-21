@@ -35,9 +35,9 @@ class LessonCell: UITableViewCell {
     // MARK: - Constants
     
     let typeColors = [
-        "lecture": UIColor(red: 51/255, green: 187/255, blue: 156/255, alpha: 1), // green
-        "seminar": UIColor(red: 59/255, green: 154/255, blue: 216/255, alpha: 1), // blue
-        "lab"    : UIColor(red: 245/255, green: 166/255, blue: 35/255, alpha: 1), // yellow
+        "lecture": Theme.current.greenColor, // green
+        "seminar": Theme.current.blueColor, // blue
+        "lab"    : Theme.current.yellowColor, // yellow
         "default": UIColor.gray
     ]
     

@@ -18,7 +18,7 @@ class ScheduleController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         // Set table view
         tableView.tableFooterView = UIView()
         self.tableView.sectionHeaderHeight = 40
@@ -32,7 +32,7 @@ class ScheduleController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+                
         // Check group
         if let defaultsGroup = Manager.standard.currentGroup {
             
@@ -202,13 +202,4 @@ class ScheduleController: UITableViewController {
         
         return success
     }
-    
-    //MARK: Theme
-    
-    func setTheme() {
-        
-        
-        
-    }
-    
 }
