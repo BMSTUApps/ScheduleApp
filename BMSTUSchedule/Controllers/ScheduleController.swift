@@ -24,8 +24,8 @@ class ScheduleController: UITableViewController {
         self.tableView.sectionHeaderHeight = 40
         
         // Load group & schedule
-        if let defaultsGroup = Manager.standard.currentGroup {
-            self.group = defaultsGroup
+        if let defaultGroup = Manager.standard.currentGroup {
+            self.group = defaultGroup
             self.loadSchedule(group: self.group!)
         }
 
@@ -84,7 +84,6 @@ class ScheduleController: UITableViewController {
     }
     
     // Custom header for day title
-    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
@@ -150,6 +149,14 @@ class ScheduleController: UITableViewController {
         return cell
     }
     
+    // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
+    }
+    
     // MARK: - Actions
 
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
@@ -165,7 +172,7 @@ class ScheduleController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - 
+    // MARK: -
     
     func scrollToToday(animated: Bool) -> Bool {
        
@@ -194,6 +201,14 @@ class ScheduleController: UITableViewController {
         }
         
         return success
+    }
+    
+    //MARK: Theme
+    
+    func setTheme() {
+        
+        
+        
     }
     
 }

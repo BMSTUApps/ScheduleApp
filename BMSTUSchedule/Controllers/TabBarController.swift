@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum TabIndex: Int {
+    case schedule = 0
+    case groups   = 1
+    case settings = 2
+}
+
 class TabBarController: UITabBarController {
 
     // MARK: Constants
@@ -29,21 +35,41 @@ class TabBarController: UITabBarController {
                                                           NSFontAttributeName: self.tabTitleFont], for:.normal)
         
         // Selected
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: self.tabSelectedColor,
-                                                          NSFontAttributeName: self.tabTitleFont], for:.selected)
         
         for item in self.tabBar.items! as [UITabBarItem] {
             if let image = item.image, let selectedImage = item.selectedImage {
+                
                 // Normal
+                
                 item.image = image.imageWithColor(newColor: self.tabNormalColor).withRenderingMode(.alwaysOriginal)
+                
                 // Selected
-                item.selectedImage = selectedImage.withRenderingMode(.alwaysOriginal)
+                
+                let index = TabIndex(rawValue: self.tabBar.items!.index(of: item)!) ?? .schedule
+                
+                switch index {
+                case .schedule:
+                    item.selectedImage = selectedImage.imageWithColor(newColor: Theme.current.greenColor).withRenderingMode(.alwaysOriginal)
+                    UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: Theme.current.greenColor,
+                                                                      NSFontAttributeName: self.tabTitleFont], for:.selected)
+                    break
+                case .groups:
+                    item.selectedImage = selectedImage.imageWithColor(newColor: Theme.current.blueColor).withRenderingMode(.alwaysOriginal)
+                    UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: Theme.current.blueColor,
+                                                                      NSFontAttributeName: self.tabTitleFont], for:.selected)
+                    break
+                case .settings:
+                    item.selectedImage = selectedImage.imageWithColor(newColor: self.tabSelectedColor).withRenderingMode(.alwaysOriginal)
+                    UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: self.tabSelectedColor,
+                                                                      NSFontAttributeName: self.tabTitleFont], for:.selected)
+                    break
+                }
             }
         }
-        
     }
     
     override func viewWillLayoutSubviews() {
+        
         var tabFrame = self.tabBar.frame
         tabFrame.size.height = self.tabBarHeight
         tabFrame.origin.y = self.view.frame.size.height - self.tabBarHeight

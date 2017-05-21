@@ -12,7 +12,7 @@ class Schedule: CustomStringConvertible {
     var denominatorWeek: Week
     
     var description : String {
-        return "Schedule(numeratorWeek: \(numeratorWeek.days.count) lessons, denominatorWeek: \(denominatorWeek.days.count) lessons)\n"
+        return "Schedule(numeratorWeek: \(numeratorWeek.days.count) days, denominatorWeek: \(denominatorWeek.days.count) days)\n"
     }
     
     // MARK: Initialization
