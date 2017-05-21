@@ -18,6 +18,8 @@
 		A5A124091DE8DD70006FB4E5 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A124081DE8DD70006FB4E5 /* Manager.swift */; };
 		A5A1240C1DE8DE9A006FB4E5 /* FirebaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A1240B1DE8DE9A006FB4E5 /* FirebaseModule.swift */; };
 		A5A1240E1DE8DED5006FB4E5 /* CalendarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A1240D1DE8DED5006FB4E5 /* CalendarModule.swift */; };
+		A5B0EBFB1ED1E524006EE607 /* LessonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B0EBFA1ED1E524006EE607 /* LessonController.swift */; };
+		A5B0EBFD1ED1E756006EE607 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B0EBFC1ED1E756006EE607 /* Theme.swift */; };
 		A5B257291DF01C260081EA0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5B257271DF01C260081EA0B /* GoogleService-Info.plist */; };
 		A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B2572B1DF085D70081EA0B /* DayHeader.swift */; };
 		A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */; };
@@ -70,6 +72,8 @@
 		A5A124081DE8DD70006FB4E5 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Managers/Manager.swift; sourceTree = "<group>"; };
 		A5A1240B1DE8DE9A006FB4E5 /* FirebaseModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseModule.swift; path = Managers/FirebaseModule.swift; sourceTree = "<group>"; };
 		A5A1240D1DE8DED5006FB4E5 /* CalendarModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarModule.swift; path = Managers/CalendarModule.swift; sourceTree = "<group>"; };
+		A5B0EBFA1ED1E524006EE607 /* LessonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonController.swift; path = Controllers/LessonController.swift; sourceTree = "<group>"; };
+		A5B0EBFC1ED1E756006EE607 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A5B257271DF01C260081EA0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5B2572B1DF085D70081EA0B /* DayHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayHeader.swift; path = Views/DayHeader.swift; sourceTree = "<group>"; };
 		A5CED4D61DB0E080000D2DFD /* BMSTUSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMSTUSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +190,7 @@
 				A5E0FE851DBFB88D008959A9 /* Controllers */,
 				A53E1B061E536AC300E93F37 /* Manager */,
 				A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */,
+				A5B0EBFC1ED1E756006EE607 /* Theme.swift */,
 				A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */,
 				A5A124031DE8DD24006FB4E5 /* Main.storyboard */,
 				A5A124071DE8DD4F006FB4E5 /* Other */,
@@ -226,6 +231,7 @@
 		A5E0FE851DBFB88D008959A9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A5B0EBFA1ED1E524006EE607 /* LessonController.swift */,
 				A5E0FE831DBFB870008959A9 /* ScheduleController.swift */,
 				A5485CC21DC26173009610C2 /* GroupsController.swift */,
 				A5E0FE881DBFFB22008959A9 /* SettingsController.swift */,
@@ -557,8 +563,10 @@
 				A5FEDCF21E4FBCBF00D425D2 /* TabBarController.swift in Sources */,
 				A525F3D21DD4C9D4003A7CC0 /* Group.swift in Sources */,
 				A5A1240E1DE8DED5006FB4E5 /* CalendarModule.swift in Sources */,
+				A5B0EBFB1ED1E524006EE607 /* LessonController.swift in Sources */,
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
 				A5218D731DF9F6F900E817B0 /* GroupCell.swift in Sources */,
+				A5B0EBFD1ED1E756006EE607 /* Theme.swift in Sources */,
 				A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */,
 				A5F2E1F71DC4C1E100841669 /* Day.swift in Sources */,
 				A5485CC31DC26173009610C2 /* GroupsController.swift in Sources */,

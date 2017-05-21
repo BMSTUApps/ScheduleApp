@@ -21,9 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Manager.firebase.configure()
         
         // DEBUG: Test saving current group to user defaults
+        #if DEBUG
         if (Manager.standard.currentGroup == nil) {
             Manager.standard.currentGroup = Group(name: "ИУ5-43")
         }
+        #endif
                 
         return true
     }
@@ -50,5 +52,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    //MARK: Theme
+    
+    func setTheme() {
+        
+        //UITabBar.appearance().tintColor = Theme.current.mainColor
+
+        
+    }
 
 }
