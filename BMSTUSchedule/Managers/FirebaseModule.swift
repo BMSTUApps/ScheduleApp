@@ -98,9 +98,21 @@ class FirebaseModule {
     
     func getSchedule(identifier: String, success: @escaping (Schedule) -> ()) {
         
+        /*
+        let testRef = FIRDatabase.database().reference().child(schedulesPath)
+        
+        testRef.observe(.value, with: { snapshot in
+            
+            for schedule in snapshot.children {
+                print((schedule as! FIRDataSnapshot).key)
+            }
+            
+        })
+         */
+        
         // Set path to schedule
         let scheduleRef = FIRDatabase.database().reference().child(schedulesPath).child(identifier)
-        
+
         // Get schedule
         scheduleRef.observe(.value, with: { snapshot in
             let schedule = Schedule()
@@ -162,6 +174,7 @@ class FirebaseModule {
             }
             success(schedule)
         })
+
     }
     
     func getSchedule(group: Group, success: @escaping (Schedule) -> ()) {
@@ -525,5 +538,4 @@ class FirebaseModule {
         }
         return schedule
     }
-    
 }

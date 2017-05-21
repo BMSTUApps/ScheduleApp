@@ -50,7 +50,11 @@ class Manager {
     // Unique user identifier
     var userIdentifier: String? {
         get {
-            return UIDevice.current.identifierForVendor?.uuidString
+            if let identifier = UIDevice.current.identifierForVendor?.uuidString {
+                return "user(\(identifier))"
+            } else {
+                return nil
+            }
         }
     }
     
