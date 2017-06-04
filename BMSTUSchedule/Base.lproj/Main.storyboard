@@ -61,7 +61,7 @@
                                     <outlet property="titleLabel" destination="DRh-QV-Lzx" id="C1l-A5-uwD"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonCell" rowHeight="96" id="Uqn-Ia-TRW" customClass="LessonCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LessonCell" rowHeight="96" id="Uqn-Ia-TRW" customClass="LessonCell" customModule="BMSTUSchedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="68" width="375" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uqn-Ia-TRW" id="2wx-Je-kFi">

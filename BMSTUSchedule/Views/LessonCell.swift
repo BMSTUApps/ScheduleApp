@@ -35,15 +35,26 @@ class LessonCell: UITableViewCell {
     // MARK: - Constants
     
     let typeColors = [
-        "lecture": Theme.current.greenColor, // green
-        "seminar": Theme.current.blueColor, // blue
-        "lab"    : Theme.current.yellowColor, // yellow
+        "lecture": Theme.current.greenColor,
+        "seminar": Theme.current.blueColor,
+        "lab"    : Theme.current.yellowColor,
         "default": UIColor.gray
     ]
     
     let typeRectLeadingOffset: CGFloat = 52
     let typeRectTopOffset: CGFloat = 3.0
     let typeRectThickness: CGFloat = 3.0
+    
+    // MARK: - Selection
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        
+        if highlighted {
+            self.backgroundColor = UIColor.lightGray.withAlphaComponent(0.15)
+        } else {
+            self.backgroundColor = UIColor.white
+        }
+    }
     
     // MARK: - Type
     

@@ -15,7 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        // Circle corners
+        let rootViewController = self.window!.rootViewController
+        rootViewController?.view.layer.cornerRadius = 4.0
+        rootViewController?.view.clipsToBounds = true
         
         // Configure firebase
         Manager.firebase.configure()
