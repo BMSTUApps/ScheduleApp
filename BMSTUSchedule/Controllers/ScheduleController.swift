@@ -9,7 +9,9 @@
 import UIKit
 import Firebase
 
-class ScheduleController: UITableViewController {
+class ScheduleController: ViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var schedule: Schedule?
     var group: Group?
@@ -18,7 +20,7 @@ class ScheduleController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         // Set table view
         tableView.tableFooterView = UIView()
         self.tableView.sectionHeaderHeight = 40
@@ -29,15 +31,16 @@ class ScheduleController: UITableViewController {
             self.loadSchedule(group: self.group!)
         }
 
+        // Set back button
+        self.backButtonColor = Theme.current.lightGreenColor
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         // Check group
         if let defaultsGroup = Manager.standard.currentGroup {
-            
             if let currentGroup = self.group {
-                
                 if currentGroup.name != defaultsGroup.name {
                     
                     self.group = defaultsGroup
@@ -45,24 +48,10 @@ class ScheduleController: UITableViewController {
                     // Update schedule
                     self.loadSchedule(group: self.group!)
                 }
-                
             } else {
                 self.group = defaultsGroup
             }
         }
-        
-    }
-    
-    func loadSchedule(group: Group) {
-        Manager.firebase.getSchedule(group: group, success: { schedule in
-            // Save schedule
-            self.schedule = schedule
-            
-            // Get weeks from schedule
-            let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
-            self.setWeeks(weeks: weeks)
-            self.tableView.reloadData()
-        })
     }
     
     // MARK: - Set table view
@@ -79,16 +68,16 @@ class ScheduleController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return days.count
     }
     
     // Custom header for day title
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         let day = days[section]
         
@@ -113,14 +102,13 @@ class ScheduleController: UITableViewController {
         return dayHeader
     }
  
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return days[section].lessons.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "LessonCell", for: indexPath) as! LessonCell
-        
         let lesson = days[indexPath.section].lessons[indexPath.row]
         
         // Set lesson info
@@ -151,10 +139,13 @@ class ScheduleController: UITableViewController {
     
     // MARK: - Table view delegate
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
-        
+        /*
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let lessonController = storyboard.instantiateViewController(withIdentifier: "LessonController")
+        self.present(lessonController, animated: true, completion: nil)
+         */
     }
     
     // MARK: - Actions
@@ -165,11 +156,18 @@ class ScheduleController: UITableViewController {
         }
     }
     
-    // MARK: - Memory
+    // MARK: - Schedule
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loadSchedule(group: Group) {
+        Manager.firebase.getSchedule(group: group, success: { schedule in
+            // Save schedule
+            self.schedule = schedule
+            
+            // Get weeks from schedule
+            let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
+            self.setWeeks(weeks: weeks)
+            self.tableView.reloadData()
+        })
     }
     
     // MARK: -
@@ -202,13 +200,4 @@ class ScheduleController: UITableViewController {
         
         return success
     }
-    
-    //MARK: Theme
-    
-    func setTheme() {
-        
-        
-        
-    }
-    
 }

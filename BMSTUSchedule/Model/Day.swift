@@ -8,6 +8,9 @@
 
 import Firebase
 
+/*
+ Day 🌞
+ */
 class Day: CustomStringConvertible {
 
     enum Title: String {
@@ -22,6 +25,7 @@ class Day: CustomStringConvertible {
     }
     
     static var dateFormatter: DateFormatter {
+        
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "RU_ru")
         dateFormatter.dateFormat = "dd MMMM"
@@ -74,5 +78,4 @@ class Day: CustomStringConvertible {
     convenience init(day: Day) {
         self.init(title: day.title, lessons: day.lessons)
     }
-    
 }

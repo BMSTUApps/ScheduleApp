@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Manager.standard.currentGroup = Group(name: "ИУ5-43")
         }
         #endif
-                
+
         return true
     }
 
@@ -55,10 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: Theme
     
     func setTheme() {
-        
         //UITabBar.appearance().tintColor = Theme.current.mainColor
-
-        
     }
-
 }

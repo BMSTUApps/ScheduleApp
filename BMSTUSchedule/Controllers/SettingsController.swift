@@ -8,13 +8,12 @@
 
 import UIKit
 
-class SettingsController: UITableViewController {
+class SettingsController: TableViewController {
 
     @IBOutlet weak var offlineModeSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,12 +25,4 @@ class SettingsController: UITableViewController {
     @IBAction func switchModeAction(_ sender: UISwitch) {
         Manager.standard.offlineMode = sender.isOn
     }
-    
-    // MARK: - Memory
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }

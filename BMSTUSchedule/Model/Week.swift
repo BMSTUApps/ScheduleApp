@@ -6,6 +6,9 @@
 //  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
+/*
+ Week 🗓
+ */
 class Week: CustomStringConvertible {
 
     enum Kind: String {
@@ -32,5 +35,4 @@ class Week: CustomStringConvertible {
     convenience init() {
         self.init(kind: .numerator, days: [])
     }
-        
 }

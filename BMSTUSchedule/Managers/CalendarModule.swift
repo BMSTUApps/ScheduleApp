@@ -25,6 +25,7 @@ class CalendarModule {
     // Dates are loaded from NSUserDefaults
     
     var startTermDate: Date? {
+        
         get {
             // If date saved to defaults
             if let startDateString = UserDefaults.standard.string(forKey: startTermDateKey) {
@@ -39,6 +40,7 @@ class CalendarModule {
             }
             return nil
         }
+        
         set {
             UserDefaults.standard.set(newValue, forKey: startTermDateKey)
             self.startTermDate = newValue
@@ -46,6 +48,7 @@ class CalendarModule {
     }
     
     var endTermDate: Date? {
+        
         get {
             // If date saved to defaults
             if let endDateString = UserDefaults.standard.string(forKey: endTermDateKey) {
@@ -60,6 +63,7 @@ class CalendarModule {
             }
             return nil
         }
+        
         set {
             UserDefaults.standard.set(newValue, forKey: endTermDateKey)
             self.startTermDate = newValue
@@ -67,6 +71,7 @@ class CalendarModule {
     }
     
     var currentDate: Date {
+        
         get {
             let date = Date.init(timeIntervalSinceNow: 0)
             return date
@@ -76,6 +81,7 @@ class CalendarModule {
     // MARK: Indices
     
     private var startWeekIndex: Int {
+        
         get {
             let date = self.startTermDate
             let weekIndex = calendar.component(.weekOfYear, from: date ?? Date.init(timeIntervalSinceNow: 0))
@@ -84,6 +90,7 @@ class CalendarModule {
         }
     }
     private var endWeekIndex: Int {
+        
         get {
             let date = self.endTermDate
             let weekIndex = calendar.component(.weekOfYear, from: date ?? Date.init(timeIntervalSinceNow: 0))
@@ -92,6 +99,7 @@ class CalendarModule {
         }
     }
     private var currentWeekIndex: Int {
+        
         get {
             let weekIndex = calendar.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
             return weekIndex
@@ -255,6 +263,7 @@ class CalendarModule {
     }
     
     func weekKind(weekNumber: Int) -> Week.Kind {
+        
         if weekNumber % 2 == 0 {
             return .denominator
         } else {

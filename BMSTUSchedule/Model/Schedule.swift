@@ -6,6 +6,9 @@
 //  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
+/*
+ Schedule 🗂
+ */
 class Schedule: CustomStringConvertible {
 
     var numeratorWeek: Week
@@ -25,5 +28,4 @@ class Schedule: CustomStringConvertible {
     convenience init() {
         self.init(numeratorWeek: Week(), denominatorWeek: Week())
     }
-    
 }
