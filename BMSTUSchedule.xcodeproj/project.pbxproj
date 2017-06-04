@@ -172,7 +172,6 @@
 			children = (
 				A5A839D21EE3F24C0081D8D5 /* ViewController.swift */,
 				A5A83BB21EE42BA70081D8D5 /* TableViewController.swift */,
-				A5FEDCF11E4FBCBF00D425D2 /* TabBarController.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -249,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				A5A839D41EE3FAC50081D8D5 /* Base */,
+				A5FEDCF11E4FBCBF00D425D2 /* TabBarController.swift */,
 				A5B0EBFA1ED1E524006EE607 /* LessonController.swift */,
 				A5E0FE831DBFB870008959A9 /* ScheduleController.swift */,
 				A5485CC21DC26173009610C2 /* GroupsController.swift */,

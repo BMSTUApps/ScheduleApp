@@ -160,11 +160,11 @@
                                 <connections>
                                     <outlet property="breakLabel" destination="ujT-le-VjK" id="31e-CF-Hbi"/>
                                     <outlet property="endTimeLabel" destination="cmt-CQ-ZuO" id="UqC-6o-BBP"/>
+                                    <outlet property="kindLabel" destination="Odb-S6-gVh" id="Ad1-WJ-hkd"/>
                                     <outlet property="roomLabel" destination="avu-w0-hfV" id="S7v-X3-faD"/>
                                     <outlet property="startTimeLabel" destination="Z7P-zE-wBQ" id="zg5-5K-LDz"/>
                                     <outlet property="teacherLabel" destination="kpz-2y-XLq" id="Tdb-KN-BjW"/>
                                     <outlet property="titleLabel" destination="RqP-mF-lvP" id="G8Y-I9-qNZ"/>
-                                    <outlet property="typeLabel" destination="Odb-S6-gVh" id="ugA-Al-bUB"/>
                                     <segue destination="RNo-LV-zeV" kind="show" identifier="ShowLesson" id="Eep-ac-B5d"/>
                                 </connections>
                             </tableViewCell>

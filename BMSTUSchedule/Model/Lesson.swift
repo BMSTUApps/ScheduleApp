@@ -36,7 +36,7 @@ class Lesson: CustomStringConvertible, Equatable {
     var teacher: String?
     var room: String?
     
-    var type: Kind?
+    var kind: Kind?
     
     var startTime: String?
     var endTime: String?
@@ -54,20 +54,20 @@ class Lesson: CustomStringConvertible, Equatable {
     
     // MARK: Initialization
     
-    init(title: String, teacher: String?, room: String?, type: Kind?, startTime: String?, endTime: String?, key: String = "") {
+    init(title: String, teacher: String?, room: String?, kind: Kind?, startTime: String?, endTime: String?, key: String = "") {
         self.key = key
         self.ref = nil
         
         self.title = title
         self.teacher = teacher
         self.room = room
-        self.type = type
+        self.kind = kind
         self.startTime = startTime
         self.endTime = endTime
     }
     
     convenience init(title: String, teacher: String?, room: String?) {
-        self.init(title: title, teacher: teacher, room: room, type: .lecture, startTime: "", endTime: "")
+        self.init(title: title, teacher: teacher, room: room, kind: .lecture, startTime: "", endTime: "")
     }
     
     convenience init(title: String) {
@@ -86,10 +86,10 @@ class Lesson: CustomStringConvertible, Equatable {
             title = snapshotValue["title"] as! String
             teacher = snapshotValue["teacher"] as? String
             room = snapshotValue["room"] as? String
-            if let typeString = snapshotValue["type"] {
-                type = Kind(rawValue: typeString as! String)
+            if let kindString = snapshotValue["kind"] {
+                kind = Kind(rawValue: kindString as! String)
             } else {
-                type = nil
+                kind = nil
             }
             startTime = snapshotValue["startTime"] as? String
             endTime = snapshotValue["endTime"] as? String
@@ -116,7 +116,7 @@ class Lesson: CustomStringConvertible, Equatable {
             "title": title,
             "teacher": teacher,
             "room": room,
-            "type": type?.rawValue,
+            "kind": kind?.rawValue,
             "startTime": startTime,
             "endTime": endTime
         ]

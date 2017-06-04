@@ -16,34 +16,34 @@ class LessonCell: UITableViewCell {
     
     @IBOutlet weak var teacherLabel: UILabel!
     @IBOutlet weak var roomLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var kindLabel: UILabel!
     
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
     
     @IBOutlet weak var breakLabel: UILabel!
     
-    var type: Lesson.Kind? {
+    var kind: Lesson.Kind? {
         get {
-            return self.type
+            return self.kind
         }
         set(new) {
-            self.setType(type: type)
+            self.setKind(kind: kind)
         }
     }
     
     // MARK: - Constants
     
-    let typeColors = [
+    let kindColors = [
         "lecture": Theme.current.greenColor,
         "seminar": Theme.current.blueColor,
         "lab"    : Theme.current.yellowColor,
         "default": UIColor.gray
     ]
     
-    let typeRectLeadingOffset: CGFloat = 52
-    let typeRectTopOffset: CGFloat = 3.0
-    let typeRectThickness: CGFloat = 3.0
+    let kindRectLeadingOffset: CGFloat = 52
+    let kindRectTopOffset: CGFloat = 3.0
+    let kindRectThickness: CGFloat = 3.0
     
     // MARK: - Selection
     
@@ -56,57 +56,57 @@ class LessonCell: UITableViewCell {
         }
     }
     
-    // MARK: - Type
+    // MARK: - Kind
     
-    func setType(type: Lesson.Kind?) {
-        self.setTypeTitle(type: type)
-        self.setTypeColor(type: type)
-        self.drawTypeRect(type: type)
+    func setKind(kind: Lesson.Kind?) {
+        self.setKindTitle(kind: kind)
+        self.setKindColor(kind: kind)
+        self.drawKindRect(kind: kind)
     }
     
-    func setTypeColor(type: Lesson.Kind?) {
-        if let type = type {
-            switch type {
+    func setKindColor(kind: Lesson.Kind?) {
+        if let kind = kind {
+            switch kind {
             case .lecture:
-                self.typeLabel.textColor = typeColors["lecture"]
+                self.kindLabel.textColor = kindColors["lecture"]
             case .seminar:
-                self.typeLabel.textColor = typeColors["seminar"]
+                self.kindLabel.textColor = kindColors["seminar"]
             case .lab:
-                self.typeLabel.textColor = typeColors["lab"]
+                self.kindLabel.textColor = kindColors["lab"]
             }
         }
     }
     
-    func setTypeTitle(type: Lesson.Kind?) {
-        if type != nil {
-            self.typeLabel.text = type?.rawValue
+    func setKindTitle(kind: Lesson.Kind?) {
+        if kind != nil {
+            self.kindLabel.text = kind?.rawValue
         } else {
-            self.typeLabel.text = ""
+            self.kindLabel.text = ""
         }
     }
     
-    func drawTypeRect(type: Lesson.Kind?) {
-        let origin = CGPoint(x:typeRectLeadingOffset, y:typeRectTopOffset)
-        let size = CGSize(width:typeRectThickness, height:self.contentView.frame.height - 2 * typeRectTopOffset)
+    func drawKindRect(kind: Lesson.Kind?) {
+        let origin = CGPoint(x:kindRectLeadingOffset, y:kindRectTopOffset)
+        let size = CGSize(width:kindRectThickness, height:self.contentView.frame.height - 2 * kindRectTopOffset)
         
-        let typeRect = UIView(frame: CGRect(origin: origin, size: size))
+        let kindRect = UIView(frame: CGRect(origin: origin, size: size))
         
-        typeRect.layer.cornerRadius = typeRectThickness
-        typeRect.layer.masksToBounds = true
+        kindRect.layer.cornerRadius = kindRectThickness
+        kindRect.layer.masksToBounds = true
         
-        if let type = type {
-            switch type {
+        if let kind = kind {
+            switch kind {
             case .lecture:
-                typeRect.backgroundColor = typeColors["lecture"]
+                kindRect.backgroundColor = kindColors["lecture"]
             case .seminar:
-                typeRect.backgroundColor = typeColors["seminar"]
+                kindRect.backgroundColor = kindColors["seminar"]
             case .lab:
-                typeRect.backgroundColor = typeColors["lab"]
+                kindRect.backgroundColor = kindColors["lab"]
             }
         } else {
-            typeRect.backgroundColor = typeColors["default"]
+            kindRect.backgroundColor = kindColors["default"]
         }
         
-        self.contentView.addSubview(typeRect)
+        self.contentView.addSubview(kindRect)
     }
 }

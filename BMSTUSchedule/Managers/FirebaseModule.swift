@@ -98,18 +98,6 @@ class FirebaseModule {
     
     func getSchedule(identifier: String, success: @escaping (Schedule) -> ()) {
         
-        /*
-        let testRef = FIRDatabase.database().reference().child(schedulesPath)
-        
-        testRef.observe(.value, with: { snapshot in
-            
-            for schedule in snapshot.children {
-                print((schedule as! FIRDataSnapshot).key)
-            }
-            
-        })
-         */
-        
         // Set path to schedule
         let scheduleRef = FIRDatabase.database().reference().child(schedulesPath).child(identifier)
 
@@ -118,10 +106,10 @@ class FirebaseModule {
             let schedule = Schedule()
             
             // Parse schedule
-            for weekTypeSnap in snapshot.children {
+            for weekKindSnap in snapshot.children {
                 var days: [Day] = []
                 
-                for daySnap in (weekTypeSnap as! FIRDataSnapshot).children {
+                for daySnap in (weekKindSnap as! FIRDataSnapshot).children {
                     let dayTitleString = (daySnap as! FIRDataSnapshot).key
                     var day = Day(title: .monday, lessons: [])
                     if let dayTitle = Day.Title(rawValue: dayTitleString) {
@@ -168,7 +156,7 @@ class FirebaseModule {
                 }
                 days = sortedDays
                 
-                if let weekKind = Week.Kind(rawValue: (weekTypeSnap as! FIRDataSnapshot).key) {
+                if let weekKind = Week.Kind(rawValue: (weekKindSnap as! FIRDataSnapshot).key) {
                     switch weekKind{
                     case .numerator:
                         schedule.numeratorWeek = Week(kind: .numerator, days: days)
@@ -270,25 +258,25 @@ class FirebaseModule {
                                   lessons: [Lesson(title: "Базы данных",
                                                    teacher: "",
                                                    room: "306э/1",
-                                                   type: .lab,
+                                                   kind: .lab,
                                                    startTime: "10:15",
                                                    endTime: "11:50"),
                                             Lesson(title: "Базы данных",
                                                    teacher: "",
                                                    room: "306э/1",
-                                                   type: .lab,
+                                                   kind: .lab,
                                                    startTime: "12:00",
                                                    endTime: "13:35"),
                                             Lesson(title: "Политология",
                                                    teacher: "",
                                                    room: "720л",
-                                                   type: .lecture,
+                                                   kind: .lecture,
                                                    startTime: "13:50",
                                                    endTime: "15:25"),
                                             Lesson(title: "Электроника",
                                                    teacher: "Белодедов М. В.",
                                                    room: "615л",
-                                                   type: .seminar,
+                                                   kind: .seminar,
                                                    startTime: "15:40",
                                                    endTime: "17:15")])
         
@@ -296,25 +284,25 @@ class FirebaseModule {
                                     lessons: [Lesson(title: "Схемотехника дискретных устройств",
                                                      teacher: "",
                                                      room: "700",
-                                                     type: .lab,
+                                                     kind: .lab,
                                                      startTime: "8:30",
                                                      endTime: "10:05"),
                                               Lesson(title: "Схемотехника дискретных устройств",
                                                      teacher: "",
                                                      room: "700",
-                                                     type: .lab,
+                                                     kind: .lab,
                                                      startTime: "10:15",
                                                      endTime: "11:50"),
                                               Lesson(title: "Политология",
                                                      teacher: "",
                                                      room: "218л",
-                                                     type: .seminar,
+                                                     kind: .seminar,
                                                      startTime: "12:00",
                                                      endTime: "13:35"),
                                               Lesson(title: "Политология",
                                                      teacher: "",
                                                      room: "720л",
-                                                     type: .lecture,
+                                                     kind: .lecture,
                                                      startTime: "13:50",
                                                      endTime: "15:25")])
         
@@ -322,25 +310,25 @@ class FirebaseModule {
                           lessons: [Lesson(title: "Военная подготовка",
                                            teacher: "",
                                            room: "ВК",
-                                           type: .lecture,
+                                           kind: .lecture,
                                            startTime: "8:30",
                                            endTime: "10:05"),
                                     Lesson(title: "Военная подготовка",
                                            teacher: "",
                                            room: "ВК",
-                                           type: .lecture,
+                                           kind: .lecture,
                                            startTime: "10:15",
                                            endTime: "11:50"),
                                     Lesson(title: "Военная подготовка",
                                            teacher: "",
                                            room: "ВК",
-                                           type: .lecture,
+                                           kind: .lecture,
                                            startTime: "12:00",
                                            endTime: "13:35"),
                                     Lesson(title: "Военная подготовка",
                                            teacher: "",
                                            room: "ВК",
-                                           type: .seminar,
+                                           kind: .seminar,
                                            startTime: "13:50",
                                            endTime: "15:25")])
         
@@ -348,19 +336,19 @@ class FirebaseModule {
                                      lessons: [Lesson(title: "Схемотехника дискретных устройств",
                                                       teacher: "Спиридонов С. Б.",
                                                       room: "501ю",
-                                                      type: .lecture,
+                                                      kind: .lecture,
                                                       startTime: "8:30",
                                                       endTime: "10:05"),
                                                Lesson(title: "Схемотехника дискретных устройств",
                                                       teacher: "Спиридонов С. Б.",
                                                       room: "501ю",
-                                                      type: .lecture,
+                                                      kind: .lecture,
                                                       startTime: "10:15",
                                                       endTime: "11:50"),
                                                Lesson(title: "Базы данных",
                                                       teacher: "Ревунков Г. И.",
                                                       room: "501ю",
-                                                      type: .lecture,
+                                                      kind: .lecture,
                                                       startTime: "12:00",
                                                       endTime: "13:35")])
         
@@ -368,25 +356,25 @@ class FirebaseModule {
                                        lessons: [Lesson(title: "Схемотехника дискретных устройств",
                                                         teacher: "Спиридонов С. Б.",
                                                         room: "501ю",
-                                                        type: .lecture,
+                                                        kind: .lecture,
                                                         startTime: "10:15",
                                                         endTime: "11:50"),
                                                  Lesson(title: "Базы данных",
                                                         teacher: "Ревунков Г. И.",
                                                         room: "501ю",
-                                                        type: .lecture,
+                                                        kind: .lecture,
                                                         startTime: "12:00",
                                                         endTime: "13:35"),
                                                  Lesson(title: "Системное программирование",
                                                         teacher: "",
                                                         room: "306э/2",
-                                                        type: .lab,
+                                                        kind: .lab,
                                                         startTime: "13:50",
                                                         endTime: "15:25"),
                                                  Lesson(title: "Системное программирование",
                                                         teacher: "",
                                                         room: "306э/2",
-                                                        type: .lab,
+                                                        kind: .lab,
                                                         startTime: "15:40",
                                                         endTime: "17:15")])
         
@@ -394,25 +382,25 @@ class FirebaseModule {
                                     lessons: [Lesson(title: "Физическое воспитание",
                                                      teacher: "",
                                                      room: "СК",
-                                                     type: nil,
+                                                     kind: nil,
                                                      startTime: "12:00",
                                                      endTime: "13:35"),
                                               Lesson(title: "Электроника",
                                                      teacher: "Белодедов М. В.",
                                                      room: "501ю",
-                                                     type: .lecture,
+                                                     kind: .lecture,
                                                      startTime: "13:50",
                                                      endTime: "15:25"),
                                               Lesson(title: "Системное программирование",
                                                      teacher: "Большаков С. А.",
                                                      room: "501ю",
-                                                     type: .lecture,
+                                                     kind: .lecture,
                                                      startTime: "15:40",
                                                      endTime: "17:15"),
                                               Lesson(title: "Программирование в среде ХМL ",
                                                      teacher: "Гапанюк Ю. Е.",
                                                      room: "700",
-                                                     type: .lab,
+                                                     kind: .lab,
                                                      startTime: "17:25",
                                                      endTime: "19:00")])
         
@@ -420,25 +408,25 @@ class FirebaseModule {
                                       lessons: [Lesson(title: "Физическое воспитание",
                                                        teacher: "",
                                                        room: "СК",
-                                                       type: .lecture,
+                                                       kind: .lecture,
                                                        startTime: "12:00",
                                                        endTime: "13:35"),
                                                 Lesson(title: "Электроника",
                                                        teacher: "Белодедов М. В.",
                                                        room: "501ю",
-                                                       type: .lecture,
+                                                       kind: .lecture,
                                                        startTime: "13:50",
                                                        endTime: "15:25"),
                                                 Lesson(title: "Системное программирование",
                                                        teacher: "Большаков С. А.",
                                                        room: "501ю",
-                                                       type: .lecture,
+                                                       kind: .lecture,
                                                        startTime: "15:40",
                                                        endTime: "17:15"),
                                                 Lesson(title: "Программирование в среде ХМL ",
                                                        teacher: "Гапанюк Ю. Е.",
                                                        room: "501ю",
-                                                       type: .lecture,
+                                                       kind: .lecture,
                                                        startTime: "17:25",
                                                        endTime: "19:00")])
         
@@ -446,25 +434,25 @@ class FirebaseModule {
                          lessons: [Lesson(title: "Физическое воспитание",
                                           teacher: "",
                                           room: "СК",
-                                          type: nil,
+                                          kind: nil,
                                           startTime: "13:50",
                                           endTime: "15:25"),
                                    Lesson(title: "Дискретная математика",
                                           teacher: "Безверхний Н. В.",
                                           room: "544л",
-                                          type: .lecture,
+                                          kind: .lecture,
                                           startTime: "15:40",
                                           endTime: "17:15"),
                                    Lesson(title: "Дискретная математика",
                                           teacher: "",
                                           room: "619л",
-                                          type: .seminar,
+                                          kind: .seminar,
                                           startTime: "17:25",
                                           endTime: "19:00"),
                                    Lesson(title: "Иностранный язык",
                                           teacher: "",
                                           room: "кафедра",
-                                          type: .seminar,
+                                          kind: .seminar,
                                           startTime: "19:10",
                                           endTime: "20:45")])
         
@@ -473,13 +461,13 @@ class FirebaseModule {
                                     lessons: [Lesson(title: "Электроника",
                                                     teacher: "Белодедов М. В.",
                                                     room: "700",
-                                                    type: .lab,
+                                                    kind: .lab,
                                                     startTime: "13:50",
                                                     endTime: "15:25"),
                                               Lesson(title: "Вычислительный практикум",
                                                     teacher: "",
                                                     room: "700",
-                                                    type: .lab,
+                                                    kind: .lab,
                                                     startTime: "15:40",
                                                     endTime: "17:15")])
         
@@ -517,21 +505,21 @@ class FirebaseModule {
                     lesson = Lesson(title: "Теория вероятности",
                                     teacher: "Безверхний Н.В.",
                                     room: "230л",
-                                    type: .lecture,
+                                    kind: .lecture,
                                     startTime: "12:00",
                                     endTime: "13:35")
                 case 2:
                     lesson = Lesson(title: "Электротехника",
                                     teacher: "Белодедов М.В.",
                                     room: "700",
-                                    type: .lab,
+                                    kind: .lab,
                                     startTime: "13:50",
                                     endTime: "15:25")
                 case 3:
                     lesson = Lesson(title: "Архитектура автоматизированных систем обработки информации и управления",
                                     teacher: "Шук В. П.",
                                     room: "501ю",
-                                    type: .seminar,
+                                    kind: .seminar,
                                     startTime: "10:15",
                                     endTime: "11:50")
                 default:

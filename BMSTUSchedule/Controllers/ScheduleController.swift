@@ -118,7 +118,7 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
         
         cell.teacherLabel.text = lesson.teacher
         cell.roomLabel.text = lesson.room
-        cell.setType(type: lesson.type)
+        cell.setKind(kind: lesson.kind)
         
         cell.startTimeLabel.text = lesson.startTime
         cell.endTimeLabel.text = lesson.endTime

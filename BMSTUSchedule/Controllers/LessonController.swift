@@ -15,6 +15,6 @@ class LessonController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = lesson.title
+        self.navigationItem.title = lesson.kind?.rawValue
     }
 }
