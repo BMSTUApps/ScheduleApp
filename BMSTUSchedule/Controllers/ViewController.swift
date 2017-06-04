@@ -12,7 +12,6 @@ class ViewController: UIViewController {
 
     var backButtonColor = UIColor.lightGray
     var backButtonTitle = ""
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +19,18 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        setCustomBackButton();
     }
 
     // MARK: Custom appearance
     
-    func setCustomBackButton() {
+    func setAppearance() {
+        
+        setCustomBackButton()
+    }
+    
+    // Navigation bar
+    
+    private func setCustomBackButton() {
         
         let backImage = UIImage(named: "Back")
         self.navigationController?.navigationBar.backIndicatorImage = backImage

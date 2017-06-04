@@ -13,32 +13,24 @@ class TableViewController: UITableViewController {
     var backButtonColor = UIColor.lightGray
     var backButtonTitle = ""
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        setCustomBackButton();
-    }
-    
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
     }
 
     // MARK: Custom appearance
     
-    func setCustomBackButton() {
+    func setAppearance() {
+        
+        setCustomBackButton()
+    }
+    
+    // Navigation bar
+    
+    private func setCustomBackButton() {
         
         let backImage = UIImage(named: "Back")
         self.navigationController?.navigationBar.backIndicatorImage = backImage

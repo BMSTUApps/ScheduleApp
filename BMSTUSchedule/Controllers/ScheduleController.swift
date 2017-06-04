@@ -31,8 +31,9 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
             self.loadSchedule(group: self.group!)
         }
 
-        // Set back button
+        // Set appearance
         self.backButtonColor = Theme.current.lightGreenColor
+        self.setAppearance()
     }
     
     override func viewDidAppear(_ animated: Bool) {
