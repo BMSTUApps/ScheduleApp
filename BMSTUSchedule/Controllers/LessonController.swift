@@ -10,9 +10,11 @@ import UIKit
 
 class LessonController: ViewController {
 
+    var lesson = Lesson()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = lesson.title
     }
 }

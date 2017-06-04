@@ -33,10 +33,6 @@ class Day: CustomStringConvertible {
         return dateFormatter
     }
     
-    var description : String {
-        return "Day(\(date) - \"\(title)\")\n"
-    }
-    
     var title: Title
     var lessons: [Lesson]
     
@@ -66,6 +62,10 @@ class Day: CustomStringConvertible {
                 return 5
             }
         }
+    }
+    
+    var description : String {
+        return "Day(\(date) - \"\(title)\")\n"
     }
     
     // MARK: Initialization

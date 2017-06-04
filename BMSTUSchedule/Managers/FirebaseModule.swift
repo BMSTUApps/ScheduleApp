@@ -149,14 +149,19 @@ class FirebaseModule {
                     if let day = days.filter({$0.title == dayTitle}).first {
                         
                         // Sort lessons by start time
-                        day.lessons = day.lessons.sorted(by: {
-                            let dateFormatter = DateFormatter()
-                            dateFormatter.dateFormat = "HH:mm"
+                        day.lessons = day.lessons.sorted(by: { (lesson1: Lesson, lesson2: Lesson) -> Bool in
+
+                            let startTime1 = lesson1.startTime!
+                            let startTime2 = lesson2.startTime!
                             
-                            let startDate1 = dateFormatter.date(from: $0.0.startTime!)
-                            let startDate2 = dateFormatter.date(from: $0.1.startTime!)
+                            let startDate1 = Lesson.dateFormatter.date(from: startTime1)
+                            let startDate2 = Lesson.dateFormatter.date(from: startTime2)
                             
-                            return startDate1! < startDate2!
+                            if startDate1 == nil || startDate2 == nil {
+                                return true
+                            } else {
+                                return startDate1! < startDate2!
+                            }
                         })
                         sortedDays.append(day)
                     }

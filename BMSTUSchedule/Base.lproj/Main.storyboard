@@ -165,7 +165,7 @@
                                     <outlet property="teacherLabel" destination="kpz-2y-XLq" id="Tdb-KN-BjW"/>
                                     <outlet property="titleLabel" destination="RqP-mF-lvP" id="G8Y-I9-qNZ"/>
                                     <outlet property="typeLabel" destination="Odb-S6-gVh" id="ugA-Al-bUB"/>
-                                    <segue destination="RNo-LV-zeV" kind="show" id="Eep-ac-B5d"/>
+                                    <segue destination="RNo-LV-zeV" kind="show" identifier="ShowLesson" id="Eep-ac-B5d"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

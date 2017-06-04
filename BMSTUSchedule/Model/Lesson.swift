@@ -19,6 +19,15 @@ class Lesson: CustomStringConvertible, Equatable {
         case lab     = "лаба"
     }
     
+    static var dateFormatter: DateFormatter {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "RU_ru")
+        dateFormatter.dateFormat = "HH:mm"
+        
+        return dateFormatter
+    }
+    
     let key: String
     let ref: FIRDatabaseReference?
     
@@ -31,7 +40,7 @@ class Lesson: CustomStringConvertible, Equatable {
     
     var startTime: String?
     var endTime: String?
-    
+
     var description : String {
         return "Lesson(\"\(title)\")\n"
     }
@@ -63,6 +72,10 @@ class Lesson: CustomStringConvertible, Equatable {
     
     convenience init(title: String) {
         self.init(title: title, teacher: "", room: "")
+    }
+    
+    convenience init() {
+        self.init(title: "")
     }
     
     init(snapshot: FIRDataSnapshot) {

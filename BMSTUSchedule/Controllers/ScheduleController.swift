@@ -142,11 +142,8 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        /*
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let lessonController = storyboard.instantiateViewController(withIdentifier: "LessonController")
-        self.present(lessonController, animated: true, completion: nil)
-         */
+        // ...
+        
     }
     
     // MARK: - Actions
@@ -171,7 +168,23 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
         })
     }
     
-    // MARK: -
+    // MARK: Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Show lesson's information
+        if segue.identifier == "ShowLesson" {
+            if let lessonController = segue.destination as? LessonController, let lessonCell = sender as? LessonCell {
+                
+                // Getting lesson
+                let indexPath = tableView.indexPath(for: lessonCell)
+                let lesson = days[(indexPath?.section)!].lessons[(indexPath?.row)!]
+                lessonController.lesson = lesson
+            }
+        }
+    }
+    
+    // MARK: - Utilites
     
     func scrollToToday(animated: Bool) -> Bool {
        

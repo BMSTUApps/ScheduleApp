@@ -47,7 +47,7 @@ class TabBarController: UITabBarController {
                     item.selectedImage = selectedImage.imageWithColor(newColor: Theme.current.blueColor).withRenderingMode(.alwaysOriginal)
                     break
                 case .settings:
-                    item.selectedImage = selectedImage.imageWithColor(newColor: UIColor.gray).withRenderingMode(.alwaysOriginal)
+                    item.selectedImage = selectedImage.imageWithColor(newColor: Theme.current.defaultsColor).withRenderingMode(.alwaysOriginal)
                     break
                 }
             }

@@ -16,7 +16,7 @@ class SettingsController: TableViewController {
         super.viewDidLoad()
     
         // Set appearance
-        self.backButtonColor = UIColor.red
+        self.backButtonColor = Theme.current.lightsDefaultColor
         self.setAppearance()
     }
     
@@ -41,7 +41,7 @@ class SettingsController: TableViewController {
         default:
             return 0
         }
-}
+    }
     
     // MARK: - Actions
     
