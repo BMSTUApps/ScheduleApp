@@ -8,13 +8,12 @@
 
 import UIKit
 
-class SettingsController: UITableViewController {
+class SettingsController: TableViewController {
 
     @IBOutlet weak var offlineModeSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {

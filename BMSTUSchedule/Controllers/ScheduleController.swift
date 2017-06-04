@@ -9,7 +9,9 @@
 import UIKit
 import Firebase
 
-class ScheduleController: UITableViewController {
+class ScheduleController: ViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var schedule: Schedule?
     var group: Group?
@@ -29,10 +31,13 @@ class ScheduleController: UITableViewController {
             self.loadSchedule(group: self.group!)
         }
 
+        // Set back button
+        self.backButtonColor = Theme.current.lightGreenColor
     }
     
     override func viewDidAppear(_ animated: Bool) {
-                
+        super.viewDidAppear(animated)
+        
         // Check group
         if let defaultsGroup = Manager.standard.currentGroup {
             if let currentGroup = self.group {
@@ -63,16 +68,16 @@ class ScheduleController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return days.count
     }
     
     // Custom header for day title
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         let day = days[section]
         
@@ -97,11 +102,11 @@ class ScheduleController: UITableViewController {
         return dayHeader
     }
  
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return days[section].lessons.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "LessonCell", for: indexPath) as! LessonCell
         let lesson = days[indexPath.section].lessons[indexPath.row]
@@ -134,10 +139,13 @@ class ScheduleController: UITableViewController {
     
     // MARK: - Table view delegate
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // open lesson controller
-        
+        /*
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let lessonController = storyboard.instantiateViewController(withIdentifier: "LessonController")
+        self.present(lessonController, animated: true, completion: nil)
+         */
     }
     
     // MARK: - Actions

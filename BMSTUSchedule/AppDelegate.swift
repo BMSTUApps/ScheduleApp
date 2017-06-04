@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Manager.standard.currentGroup = Group(name: "ИУ5-43")
         }
         #endif
-                
+
         return true
     }
 
