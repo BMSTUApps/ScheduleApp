@@ -138,6 +138,17 @@
 			name = Manager;
 			sourceTree = "<group>";
 		};
+		A5989B7C1EE48F59002424D3 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				A5FEDCF11E4FBCBF00D425D2 /* TabBarController.swift */,
+				A5E0FE831DBFB870008959A9 /* ScheduleController.swift */,
+				A5485CC21DC26173009610C2 /* GroupsController.swift */,
+				A5E0FE881DBFFB22008959A9 /* SettingsController.swift */,
+			);
+			name = Tabs;
+			sourceTree = "<group>";
+		};
 		A5A124071DE8DD4F006FB4E5 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,11 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				A5A839D41EE3FAC50081D8D5 /* Base */,
-				A5FEDCF11E4FBCBF00D425D2 /* TabBarController.swift */,
+				A5989B7C1EE48F59002424D3 /* Tabs */,
 				A5B0EBFA1ED1E524006EE607 /* LessonController.swift */,
-				A5E0FE831DBFB870008959A9 /* ScheduleController.swift */,
-				A5485CC21DC26173009610C2 /* GroupsController.swift */,
-				A5E0FE881DBFFB22008959A9 /* SettingsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

@@ -15,6 +15,17 @@ class LessonController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = lesson.kind?.rawValue
+        setTitle()
+    }
+    
+    func setTitle() {
+        
+        var typeString = lesson.kind?.rawValue.capitalized
+        
+        if typeString == nil {
+            typeString = "Занятие"
+        }
+        
+        self.navigationItem.title = typeString
     }
 }

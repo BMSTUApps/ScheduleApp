@@ -40,17 +40,12 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
         super.viewDidAppear(animated)
         
         // Check group
-        if let defaultsGroup = Manager.standard.currentGroup {
-            if let currentGroup = self.group {
-                if currentGroup.name != defaultsGroup.name {
-                    
-                    self.group = defaultsGroup
-                    
-                    // Update schedule
-                    self.loadSchedule(group: self.group!)
-                }
-            } else {
+        if let defaultsGroup = Manager.standard.currentGroup, let currentGroup = self.group {
+            if currentGroup.name != defaultsGroup.name {
+                
+                // Update schedule
                 self.group = defaultsGroup
+                self.loadSchedule(group: defaultsGroup)
             }
         }
     }
@@ -62,6 +57,9 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
     }
     
     func setWeeks(weeks: [Week]) {
+        
+        self.days.removeAll()
+        
         for week in weeks {
             self.days.append(contentsOf: week.days)
         }
