@@ -8,6 +8,9 @@
 
 import Firebase
 
+/*
+ Group 👥
+ */
 class Group: CustomStringConvertible {
 
     var name: String
@@ -62,6 +65,7 @@ class Group: CustomStringConvertible {
     }
     
     init(snapshot: FIRDataSnapshot) {
+        
         key = snapshot.key
         ref = snapshot.ref
         
@@ -86,5 +90,4 @@ class Group: CustomStringConvertible {
             "name": name,
         ]
     }
-    
 }

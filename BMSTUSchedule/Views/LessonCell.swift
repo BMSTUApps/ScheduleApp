@@ -98,5 +98,4 @@ class LessonCell: UITableViewCell {
         
         self.contentView.addSubview(typeRect)
     }
-    
 }

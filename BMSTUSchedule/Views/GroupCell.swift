@@ -40,6 +40,7 @@ class GroupCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         if selected { // Cell is selected
+            
             if !animated {
                 
                 // Set to start frame
@@ -74,6 +75,7 @@ class GroupCell: UITableViewCell {
                 
                 self.pointerRect.backgroundColor = self.pointerRectColor.withAlphaComponent(1.0)
             }
+            
         } else { // Cell isn't selected
             self.pointerRect.backgroundColor = UIColor.white
         }

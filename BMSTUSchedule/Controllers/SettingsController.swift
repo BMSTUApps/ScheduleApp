@@ -26,12 +26,4 @@ class SettingsController: UITableViewController {
     @IBAction func switchModeAction(_ sender: UISwitch) {
         Manager.standard.offlineMode = sender.isOn
     }
-    
-    // MARK: - Memory
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }

@@ -68,5 +68,4 @@ class Manager {
             defaults.set(new, forKey: offlineModeKey)
         }
     }
-    
 }

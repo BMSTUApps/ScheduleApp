@@ -55,10 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: Theme
     
     func setTheme() {
-        
         //UITabBar.appearance().tintColor = Theme.current.mainColor
-
-        
     }
-
 }

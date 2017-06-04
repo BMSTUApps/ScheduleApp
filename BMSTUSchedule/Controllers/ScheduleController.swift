@@ -35,9 +35,7 @@ class ScheduleController: UITableViewController {
                 
         // Check group
         if let defaultsGroup = Manager.standard.currentGroup {
-            
             if let currentGroup = self.group {
-                
                 if currentGroup.name != defaultsGroup.name {
                     
                     self.group = defaultsGroup
@@ -45,24 +43,10 @@ class ScheduleController: UITableViewController {
                     // Update schedule
                     self.loadSchedule(group: self.group!)
                 }
-                
             } else {
                 self.group = defaultsGroup
             }
         }
-        
-    }
-    
-    func loadSchedule(group: Group) {
-        Manager.firebase.getSchedule(group: group, success: { schedule in
-            // Save schedule
-            self.schedule = schedule
-            
-            // Get weeks from schedule
-            let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
-            self.setWeeks(weeks: weeks)
-            self.tableView.reloadData()
-        })
     }
     
     // MARK: - Set table view
@@ -120,7 +104,6 @@ class ScheduleController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "LessonCell", for: indexPath) as! LessonCell
-        
         let lesson = days[indexPath.section].lessons[indexPath.row]
         
         // Set lesson info
@@ -153,7 +136,7 @@ class ScheduleController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
+        // open lesson controller
         
     }
     
@@ -165,11 +148,18 @@ class ScheduleController: UITableViewController {
         }
     }
     
-    // MARK: - Memory
+    // MARK: - Schedule
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loadSchedule(group: Group) {
+        Manager.firebase.getSchedule(group: group, success: { schedule in
+            // Save schedule
+            self.schedule = schedule
+            
+            // Get weeks from schedule
+            let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
+            self.setWeeks(weeks: weeks)
+            self.tableView.reloadData()
+        })
     }
     
     // MARK: -

@@ -17,5 +17,4 @@ class Theme {
     let yellowColor = UIColor(red: 245/255, green: 166/255, blue: 35/255, alpha: 1)
     
     let ligthGrayColor = UIColor(red:137/255, green:161/255, blue:175/255, alpha: 1)
-    
 }

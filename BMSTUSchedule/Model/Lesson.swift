@@ -8,6 +8,9 @@
 
 import Firebase
 
+/*
+ Lesson 🎓
+ */
 class Lesson: CustomStringConvertible, Equatable {
 
     enum Kind: String {
@@ -105,5 +108,4 @@ class Lesson: CustomStringConvertible, Equatable {
             "endTime": endTime
         ]
     }
-    
 }

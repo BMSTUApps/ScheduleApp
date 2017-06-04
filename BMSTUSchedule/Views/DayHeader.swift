@@ -28,6 +28,7 @@ class DayHeader: UITableViewCell {
             }
         }
     }
+    
     @IBInspectable var todayColor: UIColor = UIColor(red:206/255, green:229/255, blue:241/255, alpha: 1) {
         didSet {
             if today {
@@ -35,5 +36,4 @@ class DayHeader: UITableViewCell {
             }
         }
     }
-    
 }

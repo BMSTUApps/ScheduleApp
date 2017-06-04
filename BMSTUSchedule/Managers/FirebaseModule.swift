@@ -174,7 +174,6 @@ class FirebaseModule {
             }
             success(schedule)
         })
-
     }
     
     func getSchedule(group: Group, success: @escaping (Schedule) -> ()) {
@@ -189,6 +188,7 @@ class FirebaseModule {
     // Group
     
     func addGroup(group: Group) {
+        
         let groupRef = FIRDatabase.database().reference(withPath: groupsPath).child(group.identifier)
         groupRef.setValue(group.toAnyObject())
     }
@@ -196,6 +196,7 @@ class FirebaseModule {
     // Lesson
     
     func addLesson(lesson: Lesson, identifier: String, weekKind: Week.Kind, dayTitle: Day.Title) {
+        
         let lessonRef = FIRDatabase.database().reference(withPath: schedulesPath).child(identifier).child(weekKind.rawValue).child(dayTitle.rawValue).child(lesson.generateKey())
         lessonRef.setValue(lesson.toAnyObject())
     }
@@ -210,6 +211,7 @@ class FirebaseModule {
     }
     
     func removeLesson(lesson: Lesson, identifier: String, weekKind: Week.Kind, dayTitle: Day.Title) {
+        
         let lessonRef = FIRDatabase.database().reference(withPath: schedulesPath).child(identifier).child(weekKind.rawValue).child(dayTitle.rawValue).child(lesson.generateKey())
         lessonRef.removeValue()
     }
@@ -487,6 +489,7 @@ class FirebaseModule {
                                                                                  denominatorWednesday,
                                                                                  denominatorThursday,
                                                                                  friday]))
+        
         return schedule
     }
     
@@ -536,6 +539,7 @@ class FirebaseModule {
             let day = Day(title:daysTitles[i], lessons:dayLessons)
             schedule.numeratorWeek.days.append(day)
         }
+        
         return schedule
     }
 }
