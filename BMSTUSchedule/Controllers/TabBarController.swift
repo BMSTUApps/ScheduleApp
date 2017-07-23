@@ -27,8 +27,9 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         // Normal
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: Theme.current.ligthGrayColor,
-                                                          NSFontAttributeName: self.tabTitleFont], for: .normal)
+        //FIXME: Some troubles to use appearance
+        //UIAppearance.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Theme.current.ligthGrayColor,
+        //                                                  NSAttributedStringKey.font: self.tabTitleFont], for: .normal)
         
         // Selected
         for item in self.tabBar.items! as [UITabBarItem] {
@@ -42,18 +43,18 @@ class TabBarController: UITabBarController {
                 switch index {
                 case .schedule:
                     item.selectedImage = selectedImage.imageWithColor(newColor: Theme.current.greenColor).withRenderingMode(.alwaysOriginal)
-                    item.setTitleTextAttributes([NSForegroundColorAttributeName: Theme.current.greenColor,
-                                                 NSFontAttributeName: self.tabTitleFont], for: .selected)
+                    item.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Theme.current.greenColor,
+                                                 NSAttributedStringKey.font: self.tabTitleFont], for: .selected)
                     break
                 case .groups:
                     item.selectedImage = selectedImage.imageWithColor(newColor: Theme.current.blueColor).withRenderingMode(.alwaysOriginal)
-                    item.setTitleTextAttributes([NSForegroundColorAttributeName: Theme.current.blueColor,
-                                                 NSFontAttributeName: self.tabTitleFont], for: .selected)
+                    item.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Theme.current.blueColor,
+                                                 NSAttributedStringKey.font: self.tabTitleFont], for: .selected)
                     break
                 case .settings:
                     item.selectedImage = selectedImage.imageWithColor(newColor: Theme.current.defaultsColor).withRenderingMode(.alwaysOriginal)
-                    item.setTitleTextAttributes([NSForegroundColorAttributeName: Theme.current.defaultsColor,
-                                                 NSFontAttributeName: self.tabTitleFont], for: .selected)
+                    item.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Theme.current.defaultsColor,
+                                                 NSAttributedStringKey.font: self.tabTitleFont], for: .selected)
                     break
                 }
             }

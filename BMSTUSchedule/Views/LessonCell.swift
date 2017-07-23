@@ -24,10 +24,8 @@ class LessonCell: UITableViewCell {
     @IBOutlet weak var breakLabel: UILabel!
     
     var kind: Lesson.Kind? {
-        get {
-            return self.kind
-        }
-        set(new) {
+
+        didSet {
             self.setKind(kind: kind)
         }
     }
@@ -50,7 +48,20 @@ class LessonCell: UITableViewCell {
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         
         if highlighted {
-            self.backgroundColor = UIColor.lightGray.withAlphaComponent(0.15)
+            
+            var key = "default"
+            if let kind = kind {
+                switch kind {
+                case .lecture:
+                    key = "lecture"
+                case .seminar:
+                    key = "seminar"
+                case .lab:
+                    key = "lab"
+                }
+            }
+            self.backgroundColor = kindColors[key]?.withAlphaComponent(0.15)
+            
         } else {
             self.backgroundColor = UIColor.white
         }
@@ -59,12 +70,14 @@ class LessonCell: UITableViewCell {
     // MARK: - Kind
     
     func setKind(kind: Lesson.Kind?) {
+        
         self.setKindTitle(kind: kind)
         self.setKindColor(kind: kind)
         self.drawKindRect(kind: kind)
     }
     
     func setKindColor(kind: Lesson.Kind?) {
+        
         if let kind = kind {
             switch kind {
             case .lecture:
@@ -78,6 +91,7 @@ class LessonCell: UITableViewCell {
     }
     
     func setKindTitle(kind: Lesson.Kind?) {
+        
         if kind != nil {
             self.kindLabel.text = kind?.rawValue
         } else {
@@ -86,6 +100,7 @@ class LessonCell: UITableViewCell {
     }
     
     func drawKindRect(kind: Lesson.Kind?) {
+        
         let origin = CGPoint(x:kindRectLeadingOffset, y:kindRectTopOffset)
         let size = CGSize(width:kindRectThickness, height:self.contentView.frame.height - 2 * kindRectTopOffset)
         
