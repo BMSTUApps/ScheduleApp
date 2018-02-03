@@ -375,7 +375,7 @@
 				TargetAttributes = {
 					A5CED4D51DB0E07F000D2DFD = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = CT884K7983;
+						DevelopmentTeam = 27S8L7RZLQ;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -772,11 +772,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CT884K7983;
+				DEVELOPMENT_TEAM = 27S8L7RZLQ;
 				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.BMSTUTeam.BMSTUSchedule;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.bestK1ng.BMSTUScheduleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -793,11 +793,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CT884K7983;
+				DEVELOPMENT_TEAM = 27S8L7RZLQ;
 				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.BMSTUTeam.BMSTUSchedule;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.bestK1ng.BMSTUScheduleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
