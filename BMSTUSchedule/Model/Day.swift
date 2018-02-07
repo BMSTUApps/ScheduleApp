@@ -70,7 +70,7 @@ class Day: CustomStringConvertible {
     
     // MARK: Initialization
     
-    init(title: Title, lessons: [Lesson], key: String = "") {
+    init(title: Title, lessons: [Lesson]) {
         self.title = title
         self.lessons = lessons
     }
