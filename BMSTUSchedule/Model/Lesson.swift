@@ -29,7 +29,7 @@ class Lesson: CustomStringConvertible, Equatable {
     }
     
     let key: String
-    let ref: FIRDatabaseReference?
+    //let ref: FIRDatabaseReference?
     
     var title: String
     
@@ -56,7 +56,7 @@ class Lesson: CustomStringConvertible, Equatable {
     
     init(title: String, teacher: String?, room: String?, kind: Kind?, startTime: String?, endTime: String?, key: String = "") {
         self.key = key
-        self.ref = nil
+        //self.ref = nil
         
         self.title = title
         self.teacher = teacher
@@ -78,6 +78,7 @@ class Lesson: CustomStringConvertible, Equatable {
         self.init(title: "")
     }
     
+    /*
     init(snapshot: FIRDataSnapshot) {
         key = snapshot.key
         ref = snapshot.ref
@@ -101,6 +102,7 @@ class Lesson: CustomStringConvertible, Equatable {
             endTime = ""
         }
     }
+    */
     
     // MARK: Equatable
     

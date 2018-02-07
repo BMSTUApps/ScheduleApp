@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootViewController?.view.clipsToBounds = true
         
         // Configure firebase
-        Manager.firebase.configure()
+        FirebaseApp.configure()
         
         #if DEBUG
         if (Manager.standard.currentGroup == nil) {

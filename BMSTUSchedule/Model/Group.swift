@@ -16,7 +16,7 @@ class Group: CustomStringConvertible {
     var name: String
     
     let key: String
-    let ref: FIRDatabaseReference?
+    //let ref: FIRDatabaseReference?
     
     var course: Int {
         get {
@@ -55,7 +55,7 @@ class Group: CustomStringConvertible {
     
     init(name: String, key: String = "") {
         self.key = key
-        self.ref = nil
+        //self.ref = nil
         
         self.name = name
     }
@@ -64,6 +64,7 @@ class Group: CustomStringConvertible {
         self.init(name: String())
     }
     
+    /*
     init(snapshot: FIRDataSnapshot) {
         
         key = snapshot.key
@@ -75,7 +76,8 @@ class Group: CustomStringConvertible {
             name = ""
         }
     }
-    
+    */
+ 
     // MARK: Equatable
     
     static func ==(lhs: Group, rhs: Group) -> Bool {

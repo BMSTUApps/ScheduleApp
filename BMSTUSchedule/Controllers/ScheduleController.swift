@@ -155,15 +155,15 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
     // MARK: - Schedule
     
     func loadSchedule(group: Group) {
-        Manager.firebase.getSchedule(group: group, success: { schedule in
-            // Save schedule
-            self.schedule = schedule
-            
-            // Get weeks from schedule
-            let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
-            self.setWeeks(weeks: weeks)
-            self.tableView.reloadData()
-        })
+//        Manager.firebase.getSchedule(group: group, success: { schedule in
+//            // Save schedule
+//            self.schedule = schedule
+//
+//            // Get weeks from schedule
+//            let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
+//            self.setWeeks(weeks: weeks)
+//            self.tableView.reloadData()
+//        })
     }
     
     // MARK: Segue

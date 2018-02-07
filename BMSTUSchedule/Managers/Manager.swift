@@ -15,7 +15,7 @@ class Manager {
     // MARK: - Modules
     
     static let calendar = CalendarModule()
-    static let firebase = FirebaseModule()
+    //static let firebase = FirebaseModule()
     
     // MARK: -
     

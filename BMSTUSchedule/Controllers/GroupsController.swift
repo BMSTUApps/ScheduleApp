@@ -21,12 +21,12 @@ class GroupsController: ViewController, UITableViewDataSource, UITableViewDelega
         tableView.tableFooterView = UIView()
         
         // Load groups
-        Manager.firebase.getGroups { (groups: [Group]) in
-            
-            // Set groups
-            self.groups = groups
-            self.tableView.reloadData()
-        }
+//        Manager.firebase.getGroups { (groups: [Group]) in
+//
+//            // Set groups
+//            self.groups = groups
+//            self.tableView.reloadData()
+//        }
     }
     
     // MARK: - Table view data source
