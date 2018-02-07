@@ -46,13 +46,6 @@ class GroupsController: ViewController, UITableViewDataSource, UITableViewDelega
         
         let group = self.groups[indexPath.row]
         
-        // Save current group
-        if let currentGroup = Manager.standard.currentGroup {
-            if group == currentGroup {
-                // Select cell
-            }
-        }
-        
         // Set group info
         cell.nameLabel.text = group.name
         cell.courseLabel.text = String(format:"%d курс", group.course)

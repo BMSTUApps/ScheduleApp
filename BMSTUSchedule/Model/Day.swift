@@ -6,7 +6,7 @@
 //  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
-import Firebase
+import Foundation
 
 /*
  Day 🌞

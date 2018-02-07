@@ -6,7 +6,7 @@
 //  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
-import Firebase
+import Foundation
 
 /*
  Group 👥
@@ -14,9 +14,6 @@ import Firebase
 class Group: CustomStringConvertible {
 
     var name: String
-    
-    let key: String
-    //let ref: FIRDatabaseReference?
     
     var course: Int {
         get {
@@ -53,43 +50,11 @@ class Group: CustomStringConvertible {
     
     // MARK: Initialization
     
-    init(name: String, key: String = "") {
-        self.key = key
-        //self.ref = nil
-        
+    init(name: String) {
         self.name = name
     }
     
     convenience init() {
         self.init(name: String())
-    }
-    
-    /*
-    init(snapshot: FIRDataSnapshot) {
-        
-        key = snapshot.key
-        ref = snapshot.ref
-        
-        if let snapshotValue = snapshot.value as? [String: AnyObject] {
-            name = snapshotValue["name"] as! String
-        } else {
-            name = ""
-        }
-    }
-    */
- 
-    // MARK: Equatable
-    
-    static func ==(lhs: Group, rhs: Group) -> Bool {
-        
-        return lhs.name == rhs.name
-    }
-    
-    // MARK: Export
-    
-    func toAnyObject() -> Any {
-        return [
-            "name": name,
-        ]
     }
 }

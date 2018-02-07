@@ -6,12 +6,12 @@
 //  Copyright © 2016 BMSTU Team. All rights reserved.
 //
 
-import Firebase
+import Foundation
 
 /*
  Lesson 🎓
  */
-class Lesson: CustomStringConvertible, Equatable {
+class Lesson: CustomStringConvertible {
 
     enum Kind: String {
         case lecture = "лекция"
@@ -28,9 +28,6 @@ class Lesson: CustomStringConvertible, Equatable {
         return dateFormatter
     }
     
-    let key: String
-    //let ref: FIRDatabaseReference?
-    
     var title: String
     
     var teacher: String?
@@ -45,19 +42,9 @@ class Lesson: CustomStringConvertible, Equatable {
         return "Lesson(\"\(title)\")\n"
     }
     
-    // MARK: Firebase
-    
-    func generateKey() -> String {
-        let key = "\(self.startTime ?? "") - \(self.endTime ?? "") \(self.title)"
-        return key
-    }
-    
     // MARK: Initialization
     
-    init(title: String, teacher: String?, room: String?, kind: Kind?, startTime: String?, endTime: String?, key: String = "") {
-        self.key = key
-        //self.ref = nil
-        
+    init(title: String, teacher: String?, room: String?, kind: Kind?, startTime: String?, endTime: String?) {
         self.title = title
         self.teacher = teacher
         self.room = room
@@ -76,51 +63,5 @@ class Lesson: CustomStringConvertible, Equatable {
     
     convenience init() {
         self.init(title: "")
-    }
-    
-    /*
-    init(snapshot: FIRDataSnapshot) {
-        key = snapshot.key
-        ref = snapshot.ref
-        
-        if let snapshotValue = snapshot.value as? [String: AnyObject] {
-            title = snapshotValue["title"] as! String
-            teacher = snapshotValue["teacher"] as? String
-            room = snapshotValue["room"] as? String
-            if let kindString = snapshotValue["kind"] {
-                kind = Kind(rawValue: kindString as! String)
-            } else {
-                kind = nil
-            }
-            startTime = snapshotValue["startTime"] as? String
-            endTime = snapshotValue["endTime"] as? String
-        } else {
-            title = ""
-            teacher = ""
-            room = ""
-            startTime = ""
-            endTime = ""
-        }
-    }
-    */
-    
-    // MARK: Equatable
-    
-    static func ==(lhs: Lesson, rhs: Lesson) -> Bool {
-        
-        return lhs.key == rhs.key
-    }
-    
-    // MARK: Export
-    
-    func toAnyObject() -> Any {
-        return [
-            "title": title,
-            "teacher": teacher,
-            "room": room,
-            "kind": kind?.rawValue,
-            "startTime": startTime,
-            "endTime": endTime
-        ]
     }
 }
