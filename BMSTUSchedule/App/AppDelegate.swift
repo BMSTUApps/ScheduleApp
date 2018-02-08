@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         #if DEBUG
-        if (Manager.standard.currentGroup == nil) {
-            Manager.standard.currentGroup = Group(name: "ИУ5-43")
+        if (AppManager.standard.currentGroup == nil) {
+            AppManager.standard.currentGroup = Group(name: "ИУ5-43")
         }
         #endif
 
@@ -55,9 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    //MARK: Theme
+    //MARK: AppTheme
     
     func setTheme() {
-        //UITabBar.appearance().tintColor = Theme.current.mainColor
+        //UITabBar.appearance().tintColor = AppTheme.current.mainColor
     }
 }

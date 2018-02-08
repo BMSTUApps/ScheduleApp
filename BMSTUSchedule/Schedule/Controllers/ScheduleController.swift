@@ -26,13 +26,13 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
         self.tableView.sectionHeaderHeight = 40
         
         // Load group & schedule
-        if let defaultGroup = Manager.standard.currentGroup {
+        if let defaultGroup = AppManager.standard.currentGroup {
             self.group = defaultGroup
             self.loadSchedule(group: self.group!)
         }
 
         // Set appearance
-        self.backButtonColor = Theme.current.lightGreenColor
+        self.backButtonColor = AppTheme.current.lightGreenColor
         self.setAppearance()
     }
     
@@ -40,7 +40,7 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
         super.viewDidAppear(animated)
         
         // Check group
-        if let defaultsGroup = Manager.standard.currentGroup, let currentGroup = self.group {
+        if let defaultsGroup = AppManager.standard.currentGroup, let currentGroup = self.group {
             if currentGroup.name != defaultsGroup.name {
                 
                 // Update schedule
@@ -89,7 +89,7 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
         
         // Check if today
         
-        let currentDate = Manager.calendar.currentDate
+        let currentDate = AppManager.calendar.currentDate
         let currentDateString = Day.dateFormatter.string(from: currentDate)
         
         if currentDateString == day.dateString {
@@ -126,7 +126,7 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
         if indexPath.row > 0 { // Check if break exists before lesson
             let lastLesson = days[indexPath.section].lessons[indexPath.row - 1]
             
-            if let breakTime = Manager.calendar.calculateBreakTime(lastLesson: lastLesson, lesson: lesson) {
+            if let breakTime = AppManager.calendar.calculateBreakTime(lastLesson: lastLesson, lesson: lesson) {
                 cell.breakLabel.text = "\(breakTime) минут перерыва"
             }
         } else {
@@ -155,12 +155,12 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
     // MARK: - Schedule
     
     func loadSchedule(group: Group) {
-//        Manager.firebase.getSchedule(group: group, success: { schedule in
+//        AppManager.firebase.getSchedule(group: group, success: { schedule in
 //            // Save schedule
 //            self.schedule = schedule
 //
 //            // Get weeks from schedule
-//            let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
+//            let weeks = AppManager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
 //            self.setWeeks(weeks: weeks)
 //            self.tableView.reloadData()
 //        })
@@ -190,7 +190,7 @@ class ScheduleController: ViewController, UITableViewDataSource, UITableViewDele
         
         // Search current day
         
-        let currentDate = Manager.calendar.currentDate
+        let currentDate = AppManager.calendar.currentDate
         let currentDateString = Day.dateFormatter.string(from: currentDate)
         
         for (index, day) in self.days.enumerated() {

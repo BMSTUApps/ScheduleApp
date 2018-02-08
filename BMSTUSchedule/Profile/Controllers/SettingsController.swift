@@ -16,12 +16,12 @@ class SettingsController: TableViewController {
         super.viewDidLoad()
     
         // Set appearance
-        self.backButtonColor = Theme.current.lightsDefaultColor
+        self.backButtonColor = AppTheme.current.lightsDefaultColor
         self.setAppearance()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.offlineModeSwitch.isOn = Manager.standard.offlineMode
+        self.offlineModeSwitch.isOn = AppManager.standard.offlineMode
     }
     
     // MARK: - Table view data source
@@ -46,6 +46,6 @@ class SettingsController: TableViewController {
     // MARK: - Actions
     
     @IBAction func switchModeAction(_ sender: UISwitch) {
-        Manager.standard.offlineMode = sender.isOn
+        AppManager.standard.offlineMode = sender.isOn
     }
 }

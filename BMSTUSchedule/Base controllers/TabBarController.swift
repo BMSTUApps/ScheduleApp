@@ -28,7 +28,7 @@ class TabBarController: UITabBarController {
         
         // Normal
         //FIXME: Some troubles to use appearance
-        //UIAppearance.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Theme.current.ligthGrayColor,
+        //UIAppearance.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: AppTheme.current.ligthGrayColor,
         //                                                  NSAttributedStringKey.font: self.tabTitleFont], for: .normal)
         
         // Selected
@@ -36,24 +36,24 @@ class TabBarController: UITabBarController {
             if let image = item.image, let selectedImage = item.selectedImage {
                 
                 // Normal
-                item.image = image.imageWithColor(newColor: Theme.current.ligthGrayColor).withRenderingMode(.alwaysOriginal)
+                item.image = image.imageWithColor(newColor: AppTheme.current.ligthGrayColor).withRenderingMode(.alwaysOriginal)
                 
                 // Selected
                 let index = TabIndex(rawValue: self.tabBar.items!.index(of: item)!) ?? .schedule
                 switch index {
                 case .schedule:
-                    item.selectedImage = selectedImage.imageWithColor(newColor: Theme.current.greenColor).withRenderingMode(.alwaysOriginal)
-                    item.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Theme.current.greenColor,
+                    item.selectedImage = selectedImage.imageWithColor(newColor: AppTheme.current.greenColor).withRenderingMode(.alwaysOriginal)
+                    item.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: AppTheme.current.greenColor,
                                                  NSAttributedStringKey.font: self.tabTitleFont], for: .selected)
                     break
                 case .groups:
-                    item.selectedImage = selectedImage.imageWithColor(newColor: Theme.current.blueColor).withRenderingMode(.alwaysOriginal)
-                    item.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Theme.current.blueColor,
+                    item.selectedImage = selectedImage.imageWithColor(newColor: AppTheme.current.blueColor).withRenderingMode(.alwaysOriginal)
+                    item.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: AppTheme.current.blueColor,
                                                  NSAttributedStringKey.font: self.tabTitleFont], for: .selected)
                     break
                 case .settings:
-                    item.selectedImage = selectedImage.imageWithColor(newColor: Theme.current.defaultsColor).withRenderingMode(.alwaysOriginal)
-                    item.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Theme.current.defaultsColor,
+                    item.selectedImage = selectedImage.imageWithColor(newColor: AppTheme.current.defaultsColor).withRenderingMode(.alwaysOriginal)
+                    item.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: AppTheme.current.defaultsColor,
                                                  NSAttributedStringKey.font: self.tabTitleFont], for: .selected)
                     break
                 }

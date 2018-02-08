@@ -33,9 +33,9 @@ class LessonCell: UITableViewCell {
     // MARK: - Constants
     
     let kindColors = [
-        "lecture": Theme.current.greenColor,
-        "seminar": Theme.current.blueColor,
-        "lab"    : Theme.current.yellowColor,
+        "lecture": AppTheme.current.greenColor,
+        "seminar": AppTheme.current.blueColor,
+        "lab"    : AppTheme.current.yellowColor,
         "default": UIColor.gray
     ]
     

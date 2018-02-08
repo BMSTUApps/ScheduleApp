@@ -8,9 +8,9 @@
 
 import Firebase
 
-class Manager {
+class AppManager {
     
-    static let standard = Manager()
+    static let standard = AppManager()
     
     // MARK: - Modules
     

@@ -21,7 +21,7 @@ class GroupsController: ViewController, UITableViewDataSource, UITableViewDelega
         tableView.tableFooterView = UIView()
         
         // Load groups
-//        Manager.firebase.getGroups { (groups: [Group]) in
+//        AppManager.firebase.getGroups { (groups: [Group]) in
 //
 //            // Set groups
 //            self.groups = groups
@@ -59,7 +59,7 @@ class GroupsController: ViewController, UITableViewDataSource, UITableViewDelega
         
         // Set new current group
         let group = self.groups[indexPath.row]
-        Manager.standard.currentGroup = group
+        AppManager.standard.currentGroup = group
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

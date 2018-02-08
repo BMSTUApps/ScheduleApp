@@ -1,5 +1,5 @@
 //
-//  Theme.swift
+//  AppTheme.swift
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 21/05/2017.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class Theme {
+class AppTheme {
 
-    static let current = Theme()
+    static let current = AppTheme()
     
     let defaultsColor = UIColor(red: 45/255, green: 62/255, blue: 79/255, alpha: 1)
     let lightsDefaultColor = UIColor(red: 89/255, green: 123/255, blue: 156/255, alpha: 1)
