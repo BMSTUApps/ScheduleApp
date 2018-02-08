@@ -419,7 +419,7 @@
 				TargetAttributes = {
 					A5CED4D51DB0E07F000D2DFD = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = CT884K7983;
+						DevelopmentTeam = 27S8L7RZLQ;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -833,7 +833,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CT884K7983;
+				DEVELOPMENT_TEAM = 27S8L7RZLQ;
 				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Helpers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -854,7 +854,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CT884K7983;
+				DEVELOPMENT_TEAM = 27S8L7RZLQ;
 				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Helpers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
