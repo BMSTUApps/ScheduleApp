@@ -35,7 +35,6 @@
 		A5CED4FA1DB0E080000D2DFD /* BMSTUScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4F91DB0E080000D2DFD /* BMSTUScheduleUITests.swift */; };
 		A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE831DBFB870008959A9 /* ScheduleController.swift */; };
 		A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE881DBFFB22008959A9 /* SettingsController.swift */; };
-		A5FEDCF21E4FBCBF00D425D2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FEDCF11E4FBCBF00D425D2 /* TabBarController.swift */; };
 		D2AAD222BEEA050D66FD0373 /* Pods_BMSTUScheduleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDF20F0E282FC6530764F45 /* Pods_BMSTUScheduleUITests.framework */; };
 		EA1D579B2221715A897E26CE /* Pods_BMSTUSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 793CA6CF03F2F48A50E4F412 /* Pods_BMSTUSchedule.framework */; };
 /* End PBXBuildFile section */
@@ -99,7 +98,6 @@
 		A5CED4FB1DB0E080000D2DFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5E0FE831DBFB870008959A9 /* ScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
 		A5E0FE881DBFFB22008959A9 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
-		A5FEDCF11E4FBCBF00D425D2 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C442BC49042323BC7E77F3BB /* Pods-BMSTUSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMSTUSchedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMSTUSchedule/Pods-BMSTUSchedule.debug.xcconfig"; sourceTree = "<group>"; };
 		FC75701F99C0401E43436CA6 /* Pods-BMSTUSchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMSTUSchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-BMSTUSchedule/Pods-BMSTUSchedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,7 +218,6 @@
 			children = (
 				A5A839D21EE3F24C0081D8D5 /* ViewController.swift */,
 				A5A83BB21EE42BA70081D8D5 /* TableViewController.swift */,
-				A5FEDCF11E4FBCBF00D425D2 /* TabBarController.swift */,
 			);
 			path = "Base controllers";
 			sourceTree = "<group>";
@@ -653,7 +650,6 @@
 				A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */,
 				A5A124091DE8DD70006FB4E5 /* AppManager.swift in Sources */,
 				A5545DC1202C3CEC00CBF1CD /* Week.swift in Sources */,
-				A5FEDCF21E4FBCBF00D425D2 /* TabBarController.swift in Sources */,
 				A5A1240E1DE8DED5006FB4E5 /* CalendarModule.swift in Sources */,
 				A5B0EBFB1ED1E524006EE607 /* LessonController.swift in Sources */,
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,

@@ -12,12 +12,12 @@
         <!--Tab Bar Controller-->
         <scene sceneID="3FL-LM-OKf">
             <objects>
-                <tabBarController id="GjX-oX-8CA" customClass="TabBarController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="GjX-oX-8CA" sceneMemberID="viewController">
                     <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" itemPositioning="centered" id="Pos-lM-x3Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.80784313725490198" green="0.89803921568627454" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="0.36068040130000001" green="0.74273419380000005" blue="0.61375617979999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="egg-oP-AfV" kind="relationship" relationship="viewControllers" id="uCg-GO-RYk"/>
@@ -33,7 +33,7 @@
         <scene sceneID="ufa-OH-9t6">
             <objects>
                 <viewControllerPlaceholder storyboardName="Schedule" id="egg-oP-AfV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gZy-Pf-E9C"/>
+                    <tabBarItem key="tabBarItem" title="Расписание" image="TabBar-schedule" selectedImage="TabBar-schedule-selected" id="gZy-Pf-E9C"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGR-Vo-qZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,7 +43,7 @@
         <scene sceneID="PNt-Zy-QEF">
             <objects>
                 <viewControllerPlaceholder storyboardName="Teachers" id="b4b-Vo-4Fc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1XI-wi-9If"/>
+                    <tabBarItem key="tabBarItem" title="Преподаватели" image="TabBar-groups" selectedImage="TabBar-groups-selected" id="1XI-wi-9If"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9c-yz-M4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,11 +53,19 @@
         <scene sceneID="2fy-ly-7iG">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="IlX-KC-JvU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="SEV-th-5Sv"/>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="TabBar-settings" selectedImage="TabBar-settings-selected" id="SEV-th-5Sv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVQ-Sq-olE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="283" y="226"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TabBar-groups" width="25" height="25"/>
+        <image name="TabBar-groups-selected" width="25" height="25"/>
+        <image name="TabBar-schedule" width="19" height="19"/>
+        <image name="TabBar-schedule-selected" width="19" height="19"/>
+        <image name="TabBar-settings" width="21" height="21"/>
+        <image name="TabBar-settings-selected" width="21" height="21"/>
+    </resources>
 </document>

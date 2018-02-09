@@ -131,14 +131,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Кешировать расписание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbj-Ac-Gvq">
-                                                    <rect key="frame" x="8" y="14" width="204" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кешировать расписание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbj-Ac-Gvq">
+                                                    <rect key="frame" x="16" y="14" width="197" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SHd-nk-qbd">
-                                                    <rect key="frame" x="317" y="12" width="51" height="26"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SHd-nk-qbd">
+                                                    <rect key="frame" x="309" y="11.5" width="51" height="26.5"/>
                                                     <color key="onTintColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="switchModeAction:" destination="KBI-zV-0bg" eventType="valueChanged" id="ABp-Bn-iq3"/>
@@ -146,13 +146,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                                 </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="SHd-nk-qbd" firstAttribute="top" secondItem="iM4-jE-a74" secondAttribute="topMargin" constant="1" id="535-lQ-scA"/>
                                                 <constraint firstItem="Rbj-Ac-Gvq" firstAttribute="top" secondItem="iM4-jE-a74" secondAttribute="topMargin" constant="3" id="95l-gU-j46"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Rbj-Ac-Gvq" secondAttribute="bottom" constant="3" id="KhX-dO-aMc"/>
+                                                <constraint firstItem="SHd-nk-qbd" firstAttribute="centerY" secondItem="iM4-jE-a74" secondAttribute="centerY" id="WRz-1f-8CQ"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="SHd-nk-qbd" secondAttribute="bottom" constant="1" id="iiF-s1-aV9"/>
                                                 <constraint firstItem="SHd-nk-qbd" firstAttribute="trailing" secondItem="iM4-jE-a74" secondAttribute="trailingMargin" constant="-1" id="kee-iA-Akc"/>
                                                 <constraint firstItem="Rbj-Ac-Gvq" firstAttribute="leading" secondItem="iM4-jE-a74" secondAttribute="leadingMargin" id="la0-dn-sqL"/>
-                                                <constraint firstItem="SHd-nk-qbd" firstAttribute="leading" secondItem="Rbj-Ac-Gvq" secondAttribute="trailing" constant="105" id="om8-QA-KQO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
