@@ -14,9 +14,9 @@ import Foundation
 class Lesson: CustomStringConvertible {
 
     enum Kind: String {
-        case lecture = "лекция"
-        case seminar = "семинар"
-        case lab     = "лаба"
+        case lecture = "lecture"
+        case seminar = "seminar"
+        case lab     = "lab"
     }
     
     static var dateFormatter: DateFormatter {

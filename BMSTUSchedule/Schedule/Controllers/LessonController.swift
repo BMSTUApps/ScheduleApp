@@ -15,7 +15,6 @@ class LessonController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setAppearance()
         setTitle()
     }
     

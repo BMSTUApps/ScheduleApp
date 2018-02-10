@@ -106,7 +106,7 @@ class LessonCell: UITableViewCell {
         
         let kindRect = UIView(frame: CGRect(origin: origin, size: size))
         
-        kindRect.layer.cornerRadius = kindRectThickness
+        kindRect.layer.cornerRadius = kindRectThickness / 2
         kindRect.layer.masksToBounds = true
         
         if let kind = kind {

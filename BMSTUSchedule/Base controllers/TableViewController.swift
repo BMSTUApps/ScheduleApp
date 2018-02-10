@@ -15,6 +15,8 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setAppearance()
     }
 
     override func viewDidAppear(_ animated: Bool) {

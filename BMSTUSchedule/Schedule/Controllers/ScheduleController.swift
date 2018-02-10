@@ -9,207 +9,89 @@
 import UIKit
 import Firebase
 
-class ScheduleController: ViewController, UITableViewDataSource, UITableViewDelegate {
+class ScheduleController: TableViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    
-    var schedule: Schedule?
+    var schedule: Schedule = Schedule()
     var group: Group?
     
-    private var days: [Day] = []
+    /// Return all days of 2 weeks
+    var days: [Day] {
+        return schedule.numeratorWeek.days + schedule.denominatorWeek.days
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        // FIXME: Test schedule
+        
+        let lesson1 = Lesson(title: "Операционные системы", teacher: "Семкин П.С.", room: "515ю", kind: .lecture, startTime: "8:30", endTime: "10:15")
+        let lesson2 = Lesson(title: "Теория вероятности и математическая статистика", teacher: "Безверхний Н.В.", room: "218л", kind: .seminar, startTime: "10:25", endTime: "11:50")
+        let day = Day(title: .monday, lessons: [lesson1, lesson2, lesson1])
+        let week = Week(kind: .denominator, days: [day, day, day, day, day])
+        self.schedule = Schedule(numeratorWeek: week, denominatorWeek: week)
+        
+        prepareUI()
+    }
+    
+    func prepareUI() {
+        
+        self.navigationItem.title = "Расписание"
+        
+        // Add large titles
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.barStyle = .black
+            self.navigationController?.navigationBar.tintColor = UIColor.white
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
+        }
         
         // Set table view
         tableView.tableFooterView = UIView()
-        self.tableView.sectionHeaderHeight = 40
-        
-        // Load group & schedule
-        if let defaultGroup = AppManager.standard.currentGroup {
-            self.group = defaultGroup
-            self.loadSchedule(group: self.group!)
-        }
-
-        // Set appearance
-        self.backButtonColor = AppTheme.current.lightGreenColor
-        self.setAppearance()
+        tableView.sectionHeaderHeight = 40.0 // FIXME: Need self-size header
+        tableView.rowHeight = 96.0 // FIXME: Need self-size cell
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        // Check group
-        if let defaultsGroup = AppManager.standard.currentGroup, let currentGroup = self.group {
-            if currentGroup.name != defaultsGroup.name {
-                
-                // Update schedule
-                self.group = defaultsGroup
-                self.loadSchedule(group: defaultsGroup)
-            }
-        }
-    }
+    // MARK: UITableViewDataSource
     
-    // MARK: - Set table view
-    
-    func setSchedule(schedule: Schedule) {
-        self.days = schedule.denominatorWeek.days + schedule.numeratorWeek.days
-    }
-    
-    func setWeeks(weeks: [Week]) {
-        
-        self.days.removeAll()
-        
-        for week in weeks {
-            self.days.append(contentsOf: week.days)
-        }
-    }
-    
-    // MARK: - Table view data source
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return days.count
     }
     
-    // Custom header for day title
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-
-        let day = days[section]
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let dayHeader = tableView.dequeueReusableCell(withIdentifier: "DayHeader") as! DayHeader
+        let header = tableView.dequeueReusableCell(withIdentifier: String(describing: DayHeader.self))
+        if let header = header as? DayHeader {
             
-        // Set day information
+            let day = days[section]
             
-        dayHeader.titleLabel.text = day.title.rawValue.capitalized
-        dayHeader.dateLabel.text = day.dateString
-        
-        // Check if today
-        
-        let currentDate = AppManager.calendar.currentDate
-        let currentDateString = Day.dateFormatter.string(from: currentDate)
-        
-        if currentDateString == day.dateString {
-            dayHeader.today = true
-        } else {
-            dayHeader.today = false
+            header.titleLabel.text = day.title.rawValue.capitalized
+            header.dateLabel.text = day.dateString
         }
         
-        return dayHeader
+        return header
     }
- 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return days[section].lessons.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LessonCell", for: indexPath) as! LessonCell
-        let lesson = days[indexPath.section].lessons[indexPath.row]
-        
-        // Set lesson info
-        
-        cell.titleLabel.text = lesson.title
-        
-        cell.teacherLabel.text = lesson.teacher
-        cell.roomLabel.text = lesson.room
-        cell.setKind(kind: lesson.kind)
-        
-        cell.startTimeLabel.text = lesson.startTime
-        cell.endTimeLabel.text = lesson.endTime
-        
-        // Set break info
-        
-        if indexPath.row > 0 { // Check if break exists before lesson
-            let lastLesson = days[indexPath.section].lessons[indexPath.row - 1]
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: LessonCell.self), for: indexPath)
+        if let cell = cell as? LessonCell {
             
-            if let breakTime = AppManager.calendar.calculateBreakTime(lastLesson: lastLesson, lesson: lesson) {
-                cell.breakLabel.text = "\(breakTime) минут перерыва"
-            }
-        } else {
-            cell.breakLabel.text = ""
+            let lesson = days[indexPath.section].lessons[indexPath.row]
+            
+            cell.titleLabel.text = lesson.title
+            
+            cell.teacherLabel.text = lesson.teacher
+            cell.roomLabel.text = lesson.room
+            cell.setKind(kind: lesson.kind)
+            
+            cell.startTimeLabel.text = lesson.startTime
+            cell.endTimeLabel.text = lesson.endTime
         }
-        
-        return cell
-    }
-    
-    // MARK: - Table view delegate
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        // ...
-        
-    }
-    
-    // MARK: - Actions
 
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if motion == .motionShake { // After shaking the device
-            _ = self.scrollToToday(animated: true)
-        }
-    }
-    
-    // MARK: - Schedule
-    
-    func loadSchedule(group: Group) {
-//        AppManager.firebase.getSchedule(group: group, success: { schedule in
-//            // Save schedule
-//            self.schedule = schedule
-//
-//            // Get weeks from schedule
-//            let weeks = AppManager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: 2)
-//            self.setWeeks(weeks: weeks)
-//            self.tableView.reloadData()
-//        })
-    }
-    
-    // MARK: Segue
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        // Show lesson's information
-        if segue.identifier == "ShowLesson" {
-            if let lessonController = segue.destination as? LessonController, let lessonCell = sender as? LessonCell {
-                
-                // Getting lesson
-                let indexPath = tableView.indexPath(for: lessonCell)
-                let lesson = days[(indexPath?.section)!].lessons[(indexPath?.row)!]
-                lessonController.lesson = lesson
-            }
-        }
-    }
-    
-    // MARK: - Utilites
-    
-    func scrollToToday(animated: Bool) -> Bool {
-       
-        var indexPath: NSIndexPath?
-        
-        // Search current day
-        
-        let currentDate = AppManager.calendar.currentDate
-        let currentDateString = Day.dateFormatter.string(from: currentDate)
-        
-        for (index, day) in self.days.enumerated() {
-            if currentDateString == day.dateString {
-                indexPath = NSIndexPath(row: 0, section: index)
-            }
-        }
-        
-        // Scroll to section
-        
-        var success: Bool = false
-        
-        if indexPath != nil {
-            self.tableView.scrollToRow(at: indexPath! as IndexPath, at: UITableViewScrollPosition.top, animated: animated)
-            success = true
-        } else {
-            success = false
-        }
-        
-        return success
+        return cell
     }
 }
