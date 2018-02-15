@@ -12,11 +12,6 @@ class AppManager {
     
     static let standard = AppManager()
     
-    // MARK: - Modules
-    
-    static let calendar = CalendarModule()
-    //static let firebase = FirebaseModule()
-    
     // MARK: -
     
     let defaults = UserDefaults.standard

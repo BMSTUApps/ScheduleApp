@@ -11,12 +11,18 @@ import Firebase
 
 class ScheduleController: TableViewController {
     
-    var schedule: Schedule = Schedule()
+    var schedule: Schedule?
     var group: Group?
     
     /// Return all days of 2 weeks
     var days: [Day] {
-        return schedule.numeratorWeek.days + schedule.denominatorWeek.days
+        
+        var days: [Day] = []
+        for week in (schedule?.weeks)! {
+            days.append(contentsOf: week.days)
+        }
+        
+        return days
     }
     
     override func viewDidLoad() {
@@ -24,11 +30,14 @@ class ScheduleController: TableViewController {
     
         // FIXME: Test schedule
         
+        let group = Group(name: "ИУ5-63")
+        self.group = group
+        
         let lesson1 = Lesson(title: "Операционные системы", teacher: "Семкин П.С.", room: "515ю", kind: .lecture, startTime: "8:30", endTime: "10:15")
         let lesson2 = Lesson(title: "Теория вероятности и математическая статистика", teacher: "Безверхний Н.В.", room: "218л", kind: .seminar, startTime: "10:25", endTime: "11:50")
-        let day = Day(title: .monday, lessons: [lesson1, lesson2, lesson1])
-        let week = Week(kind: .denominator, days: [day, day, day, day, day])
-        self.schedule = Schedule(numeratorWeek: week, denominatorWeek: week)
+        let day = Day(title: .monday, lessons: [lesson1, lesson2, lesson1], date: Date())
+        let week = Week(number: 0, kind: .denominator, days: [day, day, day, day, day])
+        self.schedule = Schedule(group: group, weeks: [week, week])
         
         prepareUI()
     }
@@ -65,7 +74,7 @@ class ScheduleController: TableViewController {
             let day = days[section]
             
             header.titleLabel.text = day.title.rawValue.capitalized
-            header.dateLabel.text = day.dateString
+            header.dateLabel.text = ""
         }
         
         return header

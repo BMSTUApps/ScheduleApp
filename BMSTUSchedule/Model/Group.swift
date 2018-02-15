@@ -13,37 +13,19 @@ import Foundation
  */
 class Group: CustomStringConvertible {
 
-    var name: String
-    
-    var course: Int {
-        get {
-            let hyphen: Character = "-"
-            
-            // Finding number
-            if let indexOfHyphen = self.name.characters.index(of: hyphen) {
-                let numberString = self.name.substring(from: self.name.index(indexOfHyphen, offsetBy: 1))
-                
-                // Check number
-                if let number = Int(numberString) {
-                    
-                    // Calculate course
-                    let course = Int(String(format:"%.f", Double(Double(number) / 20)))
-                    return course!
-                } else {
-                    return 0
-                }
-            } else {
-                return 0
-            }
+    var name: String {
+        didSet {
+            self.department = parseDepartment(name)
+            self.number = parseNumber(name)
+            self.course = parseCourse(name)
         }
     }
     
-    var identifier: String {
-        get {
-            return "group(\(self.name))"
-        }
-    }
+    var department: String
+    var number: Int
     
+    var course: Int
+
     var description : String {
         return "Group(\"\(name)\")\n"
     }
@@ -52,9 +34,55 @@ class Group: CustomStringConvertible {
     
     init(name: String) {
         self.name = name
+        self.department = ""
+        self.number = 0
+        self.course = 0
+    }
+
+    // MARK: Parsing
+    
+    func parseDepartment(_ name: String) -> String {
+        
+        let hyphen: Character = "-"
+        
+        // Finding department
+        if let indexOfHyphen = name.index(of: hyphen) {
+            let department = String(name.prefix(upTo: indexOfHyphen))
+            
+            return department
+        }
+        
+        return ""
     }
     
-    convenience init() {
-        self.init(name: String())
+    func parseNumber(_ name: String) -> Int {
+        
+        let hyphen: Character = "-"
+        
+        // Finding number
+        if let indexOfHyphen = name.index(of: hyphen) {
+            let number = Int(name.suffix(from: indexOfHyphen)) ?? 0
+            
+            return number
+        }
+        
+        return 0
+    }
+    
+    func parseCourse(_ name: String) -> Int {
+        
+        let hyphen: Character = "-"
+
+        // Finding course
+        if let indexOfHyphen = name.index(of: hyphen) {
+            let number = Int(name.suffix(from: indexOfHyphen)) ?? 0
+            
+            // Calculate course
+            let course = Int(String(format:"%.f", Double(Double(number) / 20))) ?? 0
+            
+            return course
+        }
+        
+        return 0
     }
 }

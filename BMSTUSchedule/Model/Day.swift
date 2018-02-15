@@ -14,36 +14,20 @@ import Foundation
 class Day: CustomStringConvertible {
 
     enum Title: String {
-        case monday    = "понедельник"
-        case tuesday   = "вторник"
-        case wednesday = "среда"
-        case thursday  = "четверг"
-        case friday    = "пятница"
-        case saturday  = "суббота"
+        case monday    = "monday"
+        case tuesday   = "tuesday"
+        case wednesday = "wednesday"
+        case thursday  = "thursday"
+        case friday    = "friday"
+        case saturday  = "saturday"
         
         static let allValues = [monday, tuesday, wednesday, thursday, friday, saturday]
     }
     
-    static var dateFormatter: DateFormatter {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "RU_ru")
-        dateFormatter.dateFormat = "dd MMMM"
-        
-        return dateFormatter
-    }
-    
     var title: Title
+    var date: Date
+    
     var lessons: [Lesson]
-    
-    var date: Date = Date()
-    
-    var dateString: String? {
-        get {
-            let dateString = Day.dateFormatter.string(from: self.date)
-            return dateString
-        }
-    }
     
     var indexInWeek: Int {
         get {
@@ -70,12 +54,9 @@ class Day: CustomStringConvertible {
     
     // MARK: Initialization
     
-    init(title: Title, lessons: [Lesson]) {
+    init(title: Title, lessons: [Lesson], date: Date) {
         self.title = title
+        self.date = date
         self.lessons = lessons
-    }
-    
-    convenience init(day: Day) {
-        self.init(title: day.title, lessons: day.lessons)
     }
 }

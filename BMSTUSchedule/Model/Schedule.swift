@@ -13,21 +13,17 @@ import Foundation
  */
 class Schedule: CustomStringConvertible {
 
-    var numeratorWeek: Week
-    var denominatorWeek: Week
+    var group: Group
+    var weeks: [Week]
     
     var description : String {
-        return "Schedule(numeratorWeek: \(numeratorWeek.days.count) days, denominatorWeek: \(denominatorWeek.days.count) days)\n"
+        return "Schedule(weeksCount: \(weeks.count))"
     }
     
     // MARK: Initialization
     
-    init(numeratorWeek: Week, denominatorWeek: Week) {
-        self.numeratorWeek = numeratorWeek
-        self.denominatorWeek = denominatorWeek
-    }
-    
-    convenience init() {
-        self.init(numeratorWeek: Week(), denominatorWeek: Week())
+    init(group: Group, weeks: [Week]) {
+        self.group = group
+        self.weeks = weeks
     }
 }

@@ -19,10 +19,10 @@
 		A5545DC1202C3CEC00CBF1CD /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBC202C3CEC00CBF1CD /* Week.swift */; };
 		A5545DC2202C3CEC00CBF1CD /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBD202C3CEC00CBF1CD /* Schedule.swift */; };
 		A5545DC3202C3CEC00CBF1CD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBE202C3CEC00CBF1CD /* Group.swift */; };
+		A594878B203611320002C470 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594878A203611320002C470 /* DayViewModel.swift */; };
 		A5A124051DE8DD24006FB4E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */; };
 		A5A124061DE8DD24006FB4E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A124031DE8DD24006FB4E5 /* Main.storyboard */; };
 		A5A124091DE8DD70006FB4E5 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A124081DE8DD70006FB4E5 /* AppManager.swift */; };
-		A5A1240E1DE8DED5006FB4E5 /* CalendarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A1240D1DE8DED5006FB4E5 /* CalendarModule.swift */; };
 		A5A839D31EE3F24C0081D8D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A839D21EE3F24C0081D8D5 /* ViewController.swift */; };
 		A5A839D61EE3FB050081D8D5 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A839D51EE3FB050081D8D5 /* UIImage+Color.swift */; };
 		A5A83BB31EE42BA70081D8D5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A83BB21EE42BA70081D8D5 /* TableViewController.swift */; };
@@ -33,6 +33,7 @@
 		A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CED4E01DB0E080000D2DFD /* Assets.xcassets */; };
 		A5CED4EF1DB0E080000D2DFD /* BMSTUScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4EE1DB0E080000D2DFD /* BMSTUScheduleTests.swift */; };
 		A5CED4FA1DB0E080000D2DFD /* BMSTUScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CED4F91DB0E080000D2DFD /* BMSTUScheduleUITests.swift */; };
+		A5D915062035FDDC00E066CA /* LessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D915052035FDDC00E066CA /* LessonViewModel.swift */; };
 		A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE831DBFB870008959A9 /* ScheduleController.swift */; };
 		A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0FE881DBFFB22008959A9 /* SettingsController.swift */; };
 		D2AAD222BEEA050D66FD0373 /* Pods_BMSTUScheduleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDF20F0E282FC6530764F45 /* Pods_BMSTUScheduleUITests.framework */; };
@@ -76,11 +77,11 @@
 		A5545DBC202C3CEC00CBF1CD /* Week.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
 		A5545DBD202C3CEC00CBF1CD /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		A5545DBE202C3CEC00CBF1CD /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		A594878A203611320002C470 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		A5A123F81DE8DCD8006FB4E5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5A124021DE8DD24006FB4E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5A124041DE8DD24006FB4E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5A124081DE8DD70006FB4E5 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		A5A1240D1DE8DED5006FB4E5 /* CalendarModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModule.swift; sourceTree = "<group>"; };
 		A5A839D21EE3F24C0081D8D5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A5A839D51EE3FB050081D8D5 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		A5A83BB21EE42BA70081D8D5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		A5CED4F51DB0E080000D2DFD /* BMSTUScheduleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMSTUScheduleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CED4F91DB0E080000D2DFD /* BMSTUScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMSTUScheduleUITests.swift; sourceTree = "<group>"; };
 		A5CED4FB1DB0E080000D2DFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5D915052035FDDC00E066CA /* LessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewModel.swift; sourceTree = "<group>"; };
 		A5E0FE831DBFB870008959A9 /* ScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
 		A5E0FE881DBFFB22008959A9 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		C442BC49042323BC7E77F3BB /* Pods-BMSTUSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMSTUSchedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMSTUSchedule/Pods-BMSTUSchedule.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				A5545DA4202C38DC00CBF1CD /* Schedule.storyboard */,
+				A5D915072035FE3B00E066CA /* ViewModels */,
 				A5545DAD202C3B1A00CBF1CD /* Views */,
 				A5545DAC202C3B0500CBF1CD /* Controllers */,
 			);
@@ -225,7 +228,6 @@
 		A5545DB7202C3C9B00CBF1CD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A5A1240D1DE8DED5006FB4E5 /* CalendarModule.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -314,6 +316,15 @@
 				A5CED4FB1DB0E080000D2DFD /* Info.plist */,
 			);
 			path = BMSTUScheduleUITests;
+			sourceTree = "<group>";
+		};
+		A5D915072035FE3B00E066CA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A5D915052035FDDC00E066CA /* LessonViewModel.swift */,
+				A594878A203611320002C470 /* DayViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		AC0978EFB39E439D4AD3A2B1 /* Frameworks */ = {
@@ -650,11 +661,11 @@
 				A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */,
 				A5A124091DE8DD70006FB4E5 /* AppManager.swift in Sources */,
 				A5545DC1202C3CEC00CBF1CD /* Week.swift in Sources */,
-				A5A1240E1DE8DED5006FB4E5 /* CalendarModule.swift in Sources */,
 				A5B0EBFB1ED1E524006EE607 /* LessonController.swift in Sources */,
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
 				A5218D731DF9F6F900E817B0 /* GroupCell.swift in Sources */,
 				A5B0EBFD1ED1E756006EE607 /* AppTheme.swift in Sources */,
+				A5D915062035FDDC00E066CA /* LessonViewModel.swift in Sources */,
 				A5545DC0202C3CEC00CBF1CD /* Day.swift in Sources */,
 				A5545DBF202C3CEC00CBF1CD /* Lesson.swift in Sources */,
 				A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */,
@@ -662,6 +673,7 @@
 				A5545DC2202C3CEC00CBF1CD /* Schedule.swift in Sources */,
 				A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */,
 				A5A839D61EE3FB050081D8D5 /* UIImage+Color.swift in Sources */,
+				A594878B203611320002C470 /* DayViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

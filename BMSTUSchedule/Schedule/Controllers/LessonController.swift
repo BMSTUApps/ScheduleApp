@@ -20,7 +20,7 @@ class LessonController: ViewController {
     
     func setTitle() {
         
-        var typeString = lesson.kind?.rawValue.capitalized
+        var typeString = lesson.kind.rawValue.capitalized
         
         if typeString == nil {
             typeString = "Занятие"

@@ -17,26 +17,18 @@ class Lesson: CustomStringConvertible {
         case lecture = "lecture"
         case seminar = "seminar"
         case lab     = "lab"
+        case undefined
     }
-    
-    static var dateFormatter: DateFormatter {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "RU_ru")
-        dateFormatter.dateFormat = "HH:mm"
-        
-        return dateFormatter
-    }
-    
+
     var title: String
     
     var teacher: String?
     var room: String?
     
-    var kind: Kind?
+    var kind: Kind
     
-    var startTime: String?
-    var endTime: String?
+    var startTime: String
+    var endTime: String
 
     var description : String {
         return "Lesson(\"\(title)\")\n"
@@ -44,7 +36,7 @@ class Lesson: CustomStringConvertible {
     
     // MARK: Initialization
     
-    init(title: String, teacher: String?, room: String?, kind: Kind?, startTime: String?, endTime: String?) {
+    init(title: String, teacher: String?, room: String?, kind: Kind = .undefined, startTime: String, endTime: String) {
         self.title = title
         self.teacher = teacher
         self.room = room
@@ -54,11 +46,11 @@ class Lesson: CustomStringConvertible {
     }
     
     convenience init(title: String, teacher: String?, room: String?) {
-        self.init(title: title, teacher: teacher, room: room, kind: .lecture, startTime: "", endTime: "")
+        self.init(title: title, teacher: teacher, room: room, kind: .undefined, startTime: "", endTime: "")
     }
     
     convenience init(title: String) {
-        self.init(title: title, teacher: "", room: "")
+        self.init(title: title, teacher: nil, room: nil)
     }
     
     convenience init() {

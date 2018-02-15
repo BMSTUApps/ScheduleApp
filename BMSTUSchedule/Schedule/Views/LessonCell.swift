@@ -58,6 +58,8 @@ class LessonCell: UITableViewCell {
                     key = "seminar"
                 case .lab:
                     key = "lab"
+                case .undefined:
+                    key = "default"
                 }
             }
             self.backgroundColor = kindColors[key]?.withAlphaComponent(0.15)
@@ -86,6 +88,8 @@ class LessonCell: UITableViewCell {
                 self.kindLabel.textColor = kindColors["seminar"]
             case .lab:
                 self.kindLabel.textColor = kindColors["lab"]
+            case .undefined:
+                self.kindLabel.textColor = kindColors["default"]
             }
         }
     }
@@ -117,6 +121,8 @@ class LessonCell: UITableViewCell {
                 kindRect.backgroundColor = kindColors["seminar"]
             case .lab:
                 kindRect.backgroundColor = kindColors["lab"]
+            case .undefined:
+                kindRect.backgroundColor = kindColors["default"]
             }
         } else {
             kindRect.backgroundColor = kindColors["default"]
