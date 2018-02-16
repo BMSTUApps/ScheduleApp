@@ -225,13 +225,6 @@
 			path = "Base controllers";
 			sourceTree = "<group>";
 		};
-		A5545DB7202C3C9B00CBF1CD /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
 		A5545DB9202C3CEC00CBF1CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,7 +240,6 @@
 		A5545DC4202C3D5800CBF1CD /* App */ = {
 			isa = PBXGroup;
 			children = (
-				A5545DB7202C3C9B00CBF1CD /* Modules */,
 				A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */,
 				A5A124081DE8DD70006FB4E5 /* AppManager.swift */,
 				A5B0EBFC1ED1E756006EE607 /* AppTheme.swift */,
@@ -427,7 +419,7 @@
 				TargetAttributes = {
 					A5CED4D51DB0E07F000D2DFD = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 27S8L7RZLQ;
+						DevelopmentTeam = CT884K7983;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -841,7 +833,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 27S8L7RZLQ;
+				DEVELOPMENT_TEAM = CT884K7983;
 				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Helpers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -862,7 +854,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 27S8L7RZLQ;
+				DEVELOPMENT_TEAM = CT884K7983;
 				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Helpers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

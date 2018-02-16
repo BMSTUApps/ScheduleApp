@@ -14,7 +14,6 @@ class ScheduleController: TableViewController {
     var schedule: Schedule?
     var group: Group?
     
-    /// Return all days of 2 weeks
     var days: [Day] {
         
         var days: [Day] = []
@@ -50,6 +49,7 @@ class ScheduleController: TableViewController {
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.barStyle = .black
             self.navigationController?.navigationBar.tintColor = UIColor.white
+            self.navigationController?.view.backgroundColor = self.view.backgroundColor
             self.navigationController?.navigationBar.prefersLargeTitles = true
             self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
         }

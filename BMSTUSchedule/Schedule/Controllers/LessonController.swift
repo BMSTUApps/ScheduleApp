@@ -10,22 +10,14 @@ import UIKit
 
 class LessonController: ViewController {
 
-    var lesson = Lesson()
+    var lesson: Lesson?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTitle()
-    }
-    
-    func setTitle() {
-        
-        var typeString = lesson.kind.rawValue.capitalized
-        
-        if typeString == nil {
-            typeString = "Занятие"
+        // Add large titles
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .never
         }
-        
-        self.navigationItem.title = typeString
     }
 }

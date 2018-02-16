@@ -17,6 +17,7 @@ class LessonCell: UITableViewCell {
     @IBOutlet weak var teacherLabel: UILabel!
     @IBOutlet weak var roomLabel: UILabel!
     @IBOutlet weak var kindLabel: UILabel!
+    @IBOutlet weak var kindView: UIView!
     
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
@@ -30,6 +31,11 @@ class LessonCell: UITableViewCell {
         }
     }
     
+    override func awakeFromNib() {
+        
+        kindView.layer.cornerRadius = 2
+    }
+    
     // MARK: - Constants
     
     let kindColors = [
@@ -38,10 +44,6 @@ class LessonCell: UITableViewCell {
         "lab"    : AppTheme.current.yellowColor,
         "default": UIColor.gray
     ]
-    
-    let kindRectLeadingOffset: CGFloat = 52
-    let kindRectTopOffset: CGFloat = 3.0
-    let kindRectThickness: CGFloat = 3.0
     
     // MARK: - Selection
     
@@ -72,10 +74,8 @@ class LessonCell: UITableViewCell {
     // MARK: - Kind
     
     func setKind(kind: Lesson.Kind?) {
-        
         self.setKindTitle(kind: kind)
         self.setKindColor(kind: kind)
-        self.drawKindRect(kind: kind)
     }
     
     func setKindColor(kind: Lesson.Kind?) {
@@ -83,13 +83,17 @@ class LessonCell: UITableViewCell {
         if let kind = kind {
             switch kind {
             case .lecture:
-                self.kindLabel.textColor = kindColors["lecture"]
+                kindLabel.textColor = kindColors["lecture"]
+                kindView.backgroundColor = kindColors["lecture"]
             case .seminar:
-                self.kindLabel.textColor = kindColors["seminar"]
+                kindLabel.textColor = kindColors["seminar"]
+                kindView.backgroundColor = kindColors["seminar"]
             case .lab:
-                self.kindLabel.textColor = kindColors["lab"]
+                kindLabel.textColor = kindColors["lab"]
+                kindView.backgroundColor = kindColors["lab"]
             case .undefined:
-                self.kindLabel.textColor = kindColors["default"]
+                kindLabel.textColor = kindColors["default"]
+                kindView.backgroundColor = kindColors["default"]
             }
         }
     }
@@ -101,33 +105,5 @@ class LessonCell: UITableViewCell {
         } else {
             self.kindLabel.text = ""
         }
-    }
-    
-    func drawKindRect(kind: Lesson.Kind?) {
-        
-        let origin = CGPoint(x:kindRectLeadingOffset, y:kindRectTopOffset)
-        let size = CGSize(width:kindRectThickness, height:self.contentView.frame.height - 2 * kindRectTopOffset)
-        
-        let kindRect = UIView(frame: CGRect(origin: origin, size: size))
-        
-        kindRect.layer.cornerRadius = kindRectThickness / 2
-        kindRect.layer.masksToBounds = true
-        
-        if let kind = kind {
-            switch kind {
-            case .lecture:
-                kindRect.backgroundColor = kindColors["lecture"]
-            case .seminar:
-                kindRect.backgroundColor = kindColors["seminar"]
-            case .lab:
-                kindRect.backgroundColor = kindColors["lab"]
-            case .undefined:
-                kindRect.backgroundColor = kindColors["default"]
-            }
-        } else {
-            kindRect.backgroundColor = kindColors["default"]
-        }
-        
-        self.contentView.addSubview(kindRect)
     }
 }
