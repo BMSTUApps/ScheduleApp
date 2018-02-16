@@ -13,11 +13,7 @@ class SettingsController: TableViewController {
     @IBOutlet weak var offlineModeSwitch: UISwitch!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-    
-        // Set appearance
-        self.backButtonColor = AppTheme.current.lightsDefaultColor
-        self.setAppearance()
+        super.viewDidLoad()    
     }
     
     override func viewDidAppear(_ animated: Bool) {
