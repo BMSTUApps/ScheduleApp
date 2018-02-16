@@ -10,7 +10,10 @@ import UIKit
 
 class LessonCell: UITableViewCell {
     
-    // MARK: Storyboard
+    @IBOutlet weak var breakLabel: UILabel!
+
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -19,25 +22,6 @@ class LessonCell: UITableViewCell {
     @IBOutlet weak var kindLabel: UILabel!
     @IBOutlet weak var kindView: UIView!
     
-    @IBOutlet weak var startTimeLabel: UILabel!
-    @IBOutlet weak var endTimeLabel: UILabel!
-    
-    @IBOutlet weak var breakLabel: UILabel!
-    
-    var kind: Lesson.Kind? {
-
-        didSet {
-            self.setKind(kind: kind)
-        }
-    }
-    
-    override func awakeFromNib() {
-        
-        kindView.layer.cornerRadius = 2
-    }
-    
-    // MARK: - Constants
-    
     let kindColors = [
         "lecture": AppTheme.current.greenColor,
         "seminar": AppTheme.current.blueColor,
@@ -45,65 +29,48 @@ class LessonCell: UITableViewCell {
         "default": UIColor.gray
     ]
     
-    // MARK: - Selection
+    override func awakeFromNib() {
+        
+        kindView.layer.cornerRadius = 2
+    }
+    
+    override func prepareForReuse() {
+        
+        breakLabel.text = ""
+        
+        startTimeLabel.text = ""
+        endTimeLabel.text = ""
+        
+        titleLabel.text = ""
+        
+        teacherLabel.text = ""
+        roomLabel.text = ""
+        kindLabel.text = ""
+        kindView.backgroundColor = kindColors["default"]
+    }
+    
+    func fill(model: LessonViewModel) {
+        
+        breakLabel.text = "15 минут перерыва"
+        
+        startTimeLabel.text = model.startTime
+        endTimeLabel.text = model.endTime
+        
+        titleLabel.text = model.titleText
+        
+        teacherLabel.text = model.teacherText
+        roomLabel.text = model.roomText
+        kindLabel.text = model.kindText
+        kindLabel.textColor = kindColors[model.kindText]
+        kindView.backgroundColor = kindColors[model.kindText]
+    }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         
         if highlighted {
-            
-            var key = "default"
-            if let kind = kind {
-                switch kind {
-                case .lecture:
-                    key = "lecture"
-                case .seminar:
-                    key = "seminar"
-                case .lab:
-                    key = "lab"
-                case .undefined:
-                    key = "default"
-                }
-            }
-            self.backgroundColor = kindColors[key]?.withAlphaComponent(0.15)
-            
+            self.backgroundColor = UIColor.gray.withAlphaComponent(0.15)
         } else {
             self.backgroundColor = UIColor.white
-        }
-    }
-    
-    // MARK: - Kind
-    
-    func setKind(kind: Lesson.Kind?) {
-        self.setKindTitle(kind: kind)
-        self.setKindColor(kind: kind)
-    }
-    
-    func setKindColor(kind: Lesson.Kind?) {
-        
-        if let kind = kind {
-            switch kind {
-            case .lecture:
-                kindLabel.textColor = kindColors["lecture"]
-                kindView.backgroundColor = kindColors["lecture"]
-            case .seminar:
-                kindLabel.textColor = kindColors["seminar"]
-                kindView.backgroundColor = kindColors["seminar"]
-            case .lab:
-                kindLabel.textColor = kindColors["lab"]
-                kindView.backgroundColor = kindColors["lab"]
-            case .undefined:
-                kindLabel.textColor = kindColors["default"]
-                kindView.backgroundColor = kindColors["default"]
-            }
-        }
-    }
-    
-    func setKindTitle(kind: Lesson.Kind?) {
-        
-        if kind != nil {
-            self.kindLabel.text = kind?.rawValue
-        } else {
-            self.kindLabel.text = ""
         }
     }
 }

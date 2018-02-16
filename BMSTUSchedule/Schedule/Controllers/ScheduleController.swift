@@ -90,15 +90,8 @@ class ScheduleController: TableViewController {
         if let cell = cell as? LessonCell {
             
             let lesson = days[indexPath.section].lessons[indexPath.row]
-            
-            cell.titleLabel.text = lesson.title
-            
-            cell.teacherLabel.text = lesson.teacher
-            cell.roomLabel.text = lesson.room
-            cell.setKind(kind: lesson.kind)
-            
-            cell.startTimeLabel.text = lesson.startTime
-            cell.endTimeLabel.text = lesson.endTime
+            let model = LessonViewModel(lesson)
+            cell.fill(model: model)
         }
 
         return cell
