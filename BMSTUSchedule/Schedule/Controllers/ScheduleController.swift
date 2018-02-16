@@ -96,4 +96,22 @@ class ScheduleController: TableViewController {
 
         return cell
     }
+    
+    // MARK: Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ShowLessonViewController" {
+            
+            guard let lessonController = segue.destination as? LessonController else {
+                return
+            }
+
+            guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {
+                return
+            }
+            
+            lessonController.lesson = days[indexPath.section].lessons[indexPath.row]
+        }
+    }
 }

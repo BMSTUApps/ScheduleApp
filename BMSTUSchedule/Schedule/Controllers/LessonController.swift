@@ -8,16 +8,44 @@
 
 import UIKit
 
-class LessonController: ViewController {
+class LessonController: TableViewController {
 
     var lesson: Lesson?
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var kindLabel: UILabel!
+    @IBOutlet weak var kindView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Add large titles
+        prepareUI()
+        updateUI()
+    }
+    
+    func prepareUI() {
+
+        self.navigationItem.title = "Занятие"
+        
+        // Hide large titles
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .never
         }
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44
+        
+        self.kindView.layer.cornerRadius = 10
+    }
+    
+    func updateUI() {
+        
+        guard let castedLesson = lesson else {
+            return
+        }
+        
+        self.titleLabel.text = castedLesson.title
+        self.kindLabel.text = castedLesson.kind.rawValue
     }
 }
