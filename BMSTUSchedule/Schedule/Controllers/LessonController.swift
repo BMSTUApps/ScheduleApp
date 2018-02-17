@@ -26,7 +26,7 @@ class LessonController: TableViewController {
     
     func prepareUI() {
 
-        self.navigationItem.title = "Занятие"
+        self.navigationItem.title = "Lesson".localized
         
         // Hide large titles
         if #available(iOS 11.0, *) {
@@ -46,6 +46,6 @@ class LessonController: TableViewController {
         }
         
         self.titleLabel.text = castedLesson.title
-        self.kindLabel.text = castedLesson.kind.rawValue
+        self.kindLabel.text = castedLesson.kind.rawValue.localized
     }
 }

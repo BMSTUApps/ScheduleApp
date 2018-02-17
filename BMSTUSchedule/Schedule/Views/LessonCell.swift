@@ -60,7 +60,7 @@ class LessonCell: UITableViewCell {
         
         teacherLabel.text = model.teacherText
         roomLabel.text = model.roomText
-        kindLabel.text = model.kindText
+        kindLabel.text = model.kindText.localized
         kindLabel.textColor = kindColors[model.kindText]
         kindView.backgroundColor = kindColors[model.kindText]
     }

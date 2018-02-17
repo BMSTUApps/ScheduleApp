@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  BMSTUSchedule
+
+  Created by Artem Belkov on 17/02/2018.
+  Copyright © 2018 BMSTU Team. All rights reserved.
+*/
+
+"Schedule" = "Schedule";
+
+"Lesson" = "Lesson";
+
+"lecture" = "lecture";
+"seminar" = "seminar";
+"lab" = "lab";

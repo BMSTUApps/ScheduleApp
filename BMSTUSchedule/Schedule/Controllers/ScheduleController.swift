@@ -43,7 +43,8 @@ class ScheduleController: TableViewController {
     
     func prepareUI() {
         
-        self.navigationItem.title = "Расписание"
+        self.navigationItem.title = "Schedule".localized
+        self.navigationController?.tabBarItem.title = "Schedule".localized
         
         // Add large titles
         if #available(iOS 11.0, *) {
