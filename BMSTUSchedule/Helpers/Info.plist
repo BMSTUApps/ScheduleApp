@@ -25,8 +25,8 @@
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
-			<key>UIApplicationShortcutIconType</key>
-			<string>TabBar-groups-selected</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>teachers</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Преподаватели</string>
 			<key>UIApplicationShortcutItemType</key>
@@ -34,7 +34,7 @@
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string>TabBar-schedule-selected</string>
+			<string>schedule</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Расписание</string>
 			<key>UIApplicationShortcutItemType</key>
