@@ -10,7 +10,7 @@ import Firebase
 
 class AppManager {
     
-    static let standard = AppManager()
+    static let shared = AppManager()
     
     // MARK: -
     
@@ -62,5 +62,49 @@ class AppManager {
         set(new) {
             defaults.set(new, forKey: offlineModeKey)
         }
+    }
+}
+
+extension AppManager {
+    
+    enum Shortcut: String {
+        case openSchedule = "OpenSchedule"
+        case openTeachers = "OpenTeachers"
+    }
+    
+    func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        
+        var quickActionHandled = false
+        let type = shortcutItem.type.components(separatedBy: ".").last!
+        if let shortcutType = Shortcut.init(rawValue: type) {
+            
+            switch shortcutType {
+            case .openSchedule:
+                
+                guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else {
+                    return quickActionHandled
+                }
+                
+                if let tababarController = rootViewController as? UITabBarController {
+                    tababarController.selectedIndex = 0
+                }
+                
+                quickActionHandled = true
+                
+            case .openTeachers:
+                
+                guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else {
+                    return quickActionHandled
+                }
+                
+                if let tababarController = rootViewController as? UITabBarController {
+                    tababarController.selectedIndex = 1
+                }
+                
+                quickActionHandled = true
+            }
+        }
+        
+        return quickActionHandled
     }
 }

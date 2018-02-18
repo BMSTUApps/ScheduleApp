@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUx-lA-3Qv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14087.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUx-lA-3Qv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14075.4"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-LightItalic</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Расписание-->
         <scene sceneID="pYv-WQ-z7p">
@@ -282,7 +277,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4t-sj-Fj1">
-                                                    <rect key="frame" x="34" y="179.5" width="307" height="84"/>
+                                                    <rect key="frame" x="16" y="179.5" width="343" height="84"/>
                                                     <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="84" id="JlL-pq-SQj"/>
@@ -300,8 +295,8 @@
                                                 <constraint firstItem="fxa-O4-2ab" firstAttribute="leading" secondItem="2a7-wv-B37" secondAttribute="leading" constant="16" id="Wje-yo-Nmg"/>
                                                 <constraint firstAttribute="trailing" secondItem="fxa-O4-2ab" secondAttribute="trailing" constant="16" id="ZLz-Ot-1R7"/>
                                                 <constraint firstItem="R4t-sj-Fj1" firstAttribute="top" secondItem="k1e-WE-lnL" secondAttribute="bottom" constant="16" id="hwk-4s-dKW"/>
-                                                <constraint firstAttribute="trailing" secondItem="R4t-sj-Fj1" secondAttribute="trailing" constant="34" id="ihJ-yA-NPr"/>
-                                                <constraint firstItem="R4t-sj-Fj1" firstAttribute="leading" secondItem="2a7-wv-B37" secondAttribute="leading" constant="34" id="ivP-ir-ihM"/>
+                                                <constraint firstAttribute="trailing" secondItem="R4t-sj-Fj1" secondAttribute="trailing" constant="16" id="ihJ-yA-NPr"/>
+                                                <constraint firstItem="R4t-sj-Fj1" firstAttribute="leading" secondItem="2a7-wv-B37" secondAttribute="leading" constant="16" id="ivP-ir-ihM"/>
                                                 <constraint firstItem="MjT-hh-vFf" firstAttribute="top" secondItem="fxa-O4-2ab" secondAttribute="bottom" constant="8" id="kdt-bE-vH7"/>
                                                 <constraint firstItem="k1e-WE-lnL" firstAttribute="top" secondItem="MjT-hh-vFf" secondAttribute="bottom" constant="16" id="zG1-xf-mbw"/>
                                             </constraints>

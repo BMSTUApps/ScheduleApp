@@ -17,7 +17,7 @@ class SettingsController: TableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.offlineModeSwitch.isOn = AppManager.standard.offlineMode
+        self.offlineModeSwitch.isOn = AppManager.shared.offlineMode
     }
     
     // MARK: - Table view data source
@@ -42,6 +42,6 @@ class SettingsController: TableViewController {
     // MARK: - Actions
     
     @IBAction func switchModeAction(_ sender: UISwitch) {
-        AppManager.standard.offlineMode = sender.isOn
+        AppManager.shared.offlineMode = sender.isOn
     }
 }

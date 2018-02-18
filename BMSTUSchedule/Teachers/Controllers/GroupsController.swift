@@ -59,7 +59,7 @@ class GroupsController: ViewController, UITableViewDataSource, UITableViewDelega
         
         // Set new current group
         let group = self.groups[indexPath.row]
-        AppManager.standard.currentGroup = group
+        AppManager.shared.currentGroup = group
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
