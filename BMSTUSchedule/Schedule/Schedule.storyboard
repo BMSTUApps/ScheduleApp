@@ -174,7 +174,7 @@
         <!--Lesson Controller-->
         <scene sceneID="E1h-vx-WRI">
             <objects>
-                <tableViewController id="lhP-wd-u7B" customClass="LessonController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LessonController" id="lhP-wd-u7B" customClass="LessonController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6XG-iA-tIg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,11 +182,11 @@
                         <sections>
                             <tableViewSection id="9i6-Kf-hg7">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="371" id="8f6-R5-x95">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="371"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="377" id="8f6-R5-x95">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="377"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8f6-R5-x95" id="2a7-wv-B37">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="371"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="377"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Название предмета" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fxa-O4-2ab">
@@ -208,6 +208,7 @@
                                                     <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="Qod-Ef-VXP" secondAttribute="bottom" constant="4" id="1ej-3W-stV"/>
+                                                        <constraint firstAttribute="height" constant="24" id="PWz-Ed-15X"/>
                                                         <constraint firstItem="Qod-Ef-VXP" firstAttribute="leading" secondItem="MjT-hh-vFf" secondAttribute="leading" constant="7" id="Psu-ee-efZ"/>
                                                         <constraint firstItem="Qod-Ef-VXP" firstAttribute="top" secondItem="MjT-hh-vFf" secondAttribute="top" constant="3" id="eG6-z5-FnV"/>
                                                         <constraint firstAttribute="trailing" secondItem="Qod-Ef-VXP" secondAttribute="trailing" constant="7" id="uxT-05-IPv"/>
@@ -355,6 +356,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="schedule" width="45" height="45"/>
+        <image name="schedule" width="30" height="30"/>
     </resources>
 </document>

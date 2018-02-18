@@ -41,7 +41,7 @@ class LessonController: TableViewController {
         }
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 44
+        self.tableView.estimatedRowHeight = 100
         
         self.kindView.layer.cornerRadius = 10
         

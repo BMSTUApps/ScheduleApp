@@ -57,7 +57,14 @@ class ScheduleController: TableViewController {
         // Set table view
         tableView.tableFooterView = UIView()
         tableView.sectionHeaderHeight = 40.0 // FIXME: Need self-size header
-        tableView.rowHeight = 96.0 // FIXME: Need self-size cell
+        tableView.estimatedRowHeight = 96.0 // FIXME: Need self-size cell
+        
+        // Setup 3d touch
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        } else {
+            print("3D Touch Not Available")
+        }
     }
     
     // MARK: UITableViewDataSource
@@ -114,4 +121,30 @@ class ScheduleController: TableViewController {
             lessonController.lesson = days[indexPath.section].lessons[indexPath.row]
         }
     }
+}
+
+extension ScheduleController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = tableView.indexPathForRow(at: location), let cell = tableView.cellForRow(at: indexPath) else {
+            return nil
+        }
+        
+        guard let lessonController = storyboard?.instantiateViewController(withIdentifier: String(describing: LessonController.self)) as? LessonController else {
+            return nil
+            
+        }
+        
+        lessonController.lesson = days[indexPath.section].lessons[indexPath.row]
+
+        previewingContext.sourceRect = cell.frame
+        
+        return lessonController
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: self)
+    }
+    
 }
