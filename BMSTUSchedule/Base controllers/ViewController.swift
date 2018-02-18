@@ -10,34 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var backButtonColor = UIColor.lightGray
-    var backButtonTitle = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setAppearance()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-
-    // MARK: Custom appearance
-    
-    func setAppearance() {
-        
-        setCustomBackButton()
-    }
-    
-    // Navigation bar
-    
-    private func setCustomBackButton() {
-        
-        let backImage = UIImage(named: "Back")
-        self.navigationController?.navigationBar.backIndicatorImage = backImage
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: backButtonTitle, style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-        self.navigationController?.navigationBar.tintColor = backButtonColor
+        // Localize tabBar titles
+        self.tabBarController?.tabBar.items?[0].title = "Schedule".localized
+        self.tabBarController?.tabBar.items?[1].title = "Teachers".localized
+        self.tabBarController?.tabBar.items?[2].title = "Settings".localized
     }
 }

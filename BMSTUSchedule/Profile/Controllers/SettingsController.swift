@@ -13,7 +13,14 @@ class SettingsController: TableViewController {
     @IBOutlet weak var offlineModeSwitch: UISwitch!
     
     override func viewDidLoad() {
-        super.viewDidLoad()    
+        super.viewDidLoad()
+        
+        prepareUI()
+    }
+    
+    func prepareUI() {
+        
+        self.navigationItem.title = "Settings".localized
     }
     
     override func viewDidAppear(_ animated: Bool) {

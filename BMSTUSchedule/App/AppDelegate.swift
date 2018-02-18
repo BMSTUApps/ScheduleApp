@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootViewController = self.window!.rootViewController
         rootViewController?.view.layer.cornerRadius = 4.0
         rootViewController?.view.clipsToBounds = true
-
+        
         #if DEBUG
         if (AppManager.shared.currentGroup == nil) {
             AppManager.shared.currentGroup = Group(name: "ИУ5-63")

@@ -17,16 +17,15 @@ class GroupsController: ViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        prepareUI()
+    }
+    
+    func prepareUI() {
+        
+        self.navigationItem.title = "Teachers".localized
+        
         // Remove empty cells
         tableView.tableFooterView = UIView()
-        
-        // Load groups
-//        AppManager.firebase.getGroups { (groups: [Group]) in
-//
-//            // Set groups
-//            self.groups = groups
-//            self.tableView.reloadData()
-//        }
     }
     
     // MARK: - Table view data source

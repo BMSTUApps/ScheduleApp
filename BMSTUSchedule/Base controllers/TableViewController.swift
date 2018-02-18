@@ -12,9 +12,10 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        
+        // Localize tabBar titles
+        self.tabBarController?.tabBar.items?[0].title = "Schedule".localized
+        self.tabBarController?.tabBar.items?[1].title = "Teachers".localized
+        self.tabBarController?.tabBar.items?[2].title = "Settings".localized
     }
 }
