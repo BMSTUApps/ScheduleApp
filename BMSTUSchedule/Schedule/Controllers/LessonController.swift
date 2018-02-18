@@ -17,6 +17,13 @@ class LessonController: TableViewController {
     @IBOutlet weak var kindLabel: UILabel!
     @IBOutlet weak var kindView: UIView!
     
+    @IBOutlet weak var teacherTitleLabel: UILabel!
+    @IBOutlet weak var teacherValueLabel: UILabel!
+    @IBOutlet weak var roomTitleLabel: UILabel!
+    @IBOutlet weak var roomValueLabel: UILabel!
+    @IBOutlet weak var timeTitleLabel: UILabel!
+    @IBOutlet weak var timeValueLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +44,10 @@ class LessonController: TableViewController {
         self.tableView.estimatedRowHeight = 44
         
         self.kindView.layer.cornerRadius = 10
+        
+        self.teacherTitleLabel.text = "\("Teacher".localized):"
+        self.roomTitleLabel.text = "\("Room".localized):"
+        self.timeTitleLabel.text = "\("Time".localized):"
     }
     
     func updateUI() {
@@ -47,5 +58,20 @@ class LessonController: TableViewController {
         
         self.titleLabel.text = castedLesson.title
         self.kindLabel.text = castedLesson.kind.rawValue.localized
+
+        switch castedLesson.kind {
+        case .lecture:
+            self.kindView.backgroundColor = AppTheme.current.greenColor
+        case .seminar:
+            self.kindView.backgroundColor = AppTheme.current.blueColor
+        case .lab:
+            self.kindView.backgroundColor = AppTheme.current.yellowColor
+        default:
+            self.kindView.backgroundColor = UIColor.gray
+        }
+        
+        self.teacherValueLabel.text = " \(castedLesson.teacher ?? "")"
+        self.roomValueLabel.text = " \(castedLesson.room ?? "")"
+        self.timeValueLabel.text = " \(castedLesson.startTime) - \(castedLesson.endTime)"
     }
 }
