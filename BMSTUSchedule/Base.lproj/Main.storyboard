@@ -33,7 +33,7 @@
         <scene sceneID="ufa-OH-9t6">
             <objects>
                 <viewControllerPlaceholder storyboardName="Schedule" id="egg-oP-AfV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Расписание" image="TabBar-schedule" selectedImage="TabBar-schedule-selected" id="gZy-Pf-E9C"/>
+                    <tabBarItem key="tabBarItem" title="Расписание" image="schedule" id="gZy-Pf-E9C"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGR-Vo-qZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,7 +43,7 @@
         <scene sceneID="PNt-Zy-QEF">
             <objects>
                 <viewControllerPlaceholder storyboardName="Teachers" id="b4b-Vo-4Fc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Преподаватели" image="TabBar-groups" selectedImage="TabBar-groups-selected" id="1XI-wi-9If"/>
+                    <tabBarItem key="tabBarItem" title="Преподаватели" image="teachers" id="1XI-wi-9If"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9c-yz-M4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,7 +53,7 @@
         <scene sceneID="2fy-ly-7iG">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="IlX-KC-JvU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Профиль" image="TabBar-settings" selectedImage="TabBar-settings-selected" id="SEV-th-5Sv"/>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="settings" id="SEV-th-5Sv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVQ-Sq-olE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,11 +61,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TabBar-groups" width="25" height="25"/>
-        <image name="TabBar-groups-selected" width="25" height="25"/>
-        <image name="TabBar-schedule" width="19" height="19"/>
-        <image name="TabBar-schedule-selected" width="19" height="19"/>
-        <image name="TabBar-settings" width="21" height="21"/>
-        <image name="TabBar-settings-selected" width="21" height="21"/>
+        <image name="schedule" width="45" height="45"/>
+        <image name="settings" width="45" height="45"/>
+        <image name="teachers" width="45" height="45"/>
     </resources>
 </document>
