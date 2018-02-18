@@ -137,6 +137,7 @@ extension ScheduleController: UIViewControllerPreviewingDelegate {
         }
         
         lessonController.lesson = days[indexPath.section].lessons[indexPath.row]
+        lessonController.preferredContentSize = CGSize(width: lessonController.preferredContentSize.width, height: 350)
 
         previewingContext.sourceRect = cell.frame
         

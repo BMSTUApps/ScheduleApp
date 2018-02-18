@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LessonController: TableViewController {
+class LessonController: ViewController {
 
     var lesson: Lesson?
     
@@ -23,6 +23,17 @@ class LessonController: TableViewController {
     @IBOutlet weak var roomValueLabel: UILabel!
     @IBOutlet weak var timeTitleLabel: UILabel!
     @IBOutlet weak var timeValueLabel: UILabel!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    override var previewActionItems: [UIPreviewActionItem] {
+        
+        let notificationAction = UIPreviewAction(title: "Enable notifications".localized, style: .default, handler: { previewAction, viewController in
+            // TODO: Setup notifications
+        })
+
+        return [notificationAction]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +50,6 @@ class LessonController: TableViewController {
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .never
         }
-        
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 100
         
         self.kindView.layer.cornerRadius = 10
         
