@@ -138,6 +138,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AE5385E203AC16D008441FC /* Realm Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Realm Models";
+			sourceTree = "<group>";
+		};
 		A5545DAA202C3ABA00CBF1CD /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,7 +240,7 @@
 			path = "Base controllers";
 			sourceTree = "<group>";
 		};
-		A5545DB9202C3CEC00CBF1CD /* Model */ = {
+		A5545DB9202C3CEC00CBF1CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				A5545DBA202C3CEC00CBF1CD /* Lesson.swift */,
@@ -242,7 +249,7 @@
 				A5545DBD202C3CEC00CBF1CD /* Schedule.swift */,
 				A5545DBE202C3CEC00CBF1CD /* Group.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A5545DC4202C3D5800CBF1CD /* App */ = {
@@ -287,7 +294,8 @@
 		A5CED4D81DB0E080000D2DFD /* BMSTUSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				A5545DB9202C3CEC00CBF1CD /* Model */,
+				A5545DB9202C3CEC00CBF1CD /* Models */,
+				6AE5385E203AC16D008441FC /* Realm Models */,
 				A5545DB6202C3C7600CBF1CD /* Base controllers */,
 				A5545DAA202C3ABA00CBF1CD /* Schedule */,
 				A5545DAF202C3B4000CBF1CD /* Teachers */,
@@ -607,12 +615,16 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-BMSTUSchedule/Pods-BMSTUSchedule-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

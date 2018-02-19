@@ -7,6 +7,7 @@ target 'BMSTUSchedule' do
   # Pods for BMSTUSchedule
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'RealmSwift'
 
   target 'BMSTUScheduleTests' do
     inherit! :search_paths
