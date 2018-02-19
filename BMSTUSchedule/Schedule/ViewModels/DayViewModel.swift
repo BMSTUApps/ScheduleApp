@@ -2,7 +2,7 @@
 //  DayViewModel.swift
 //  BMSTUSchedule
 //
-//  Created by Arthur K1ng on 15/02/2018.
+//  Created by Artem Belkov on 15/02/2018.
 //  Copyright © 2018 BMSTU Team. All rights reserved.
 //
 
