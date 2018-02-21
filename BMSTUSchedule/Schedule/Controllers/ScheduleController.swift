@@ -10,40 +10,43 @@ import UIKit
 
 class ScheduleController: TableViewController {
     
-    var schedule: Schedule? = AppManager.shared.getCurrentSchedule()
+    var schedule: Schedule? {
+        
+        didSet {
+            
+            // Set days
+            var days: [Day] = []
+            for week in (schedule?.weeks)! {
+                days.append(contentsOf: week.days)
+            }
+            
+            self.days = days
+            
+            // Set viewModels
+            var daysViewModels: [DayViewModel] = []
+            for day in days {
+                let dayViewModel = DayViewModel(day)
+                daysViewModels.append(dayViewModel)
+            }
+            
+            self.daysViewModels = daysViewModels
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     var group: Group?
-    
-    // FIXME: Remove days
-    var days: [Day] {
-        
-        var days: [Day] = []
-        for week in (schedule?.weeks)! {
-            days.append(contentsOf: week.days)
-        }
-        
-        return days
-    }
-    
-    var daysViewModels: [DayViewModel] {
-        
-        var days: [Day] = []
-        for week in (schedule?.weeks)! {
-            days.append(contentsOf: week.days)
-        }
-        
-        var daysViewModels: [DayViewModel] = []
-        for day in days {
-            let dayViewModel = DayViewModel(day)
-            daysViewModels.append(dayViewModel)
-        }
-        
-        return daysViewModels
-    }
+    var days: [Day] = [] // FIXME: Remove days
+    var daysViewModels: [DayViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         prepareUI()
+        
+        self.schedule = AppManager.shared.getCurrentSchedule()
     }
     
     func prepareUI() {
