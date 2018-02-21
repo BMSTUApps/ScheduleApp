@@ -87,7 +87,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAX-YO-bTl">
-                                            <rect key="frame" x="6" y="5" width="38.5" height="18"/>
+                                            <rect key="frame" x="6" y="5" width="40.5" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="S2H-ON-iG7"/>
                                             </constraints>
@@ -96,7 +96,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ql-XD-nuy">
-                                            <rect key="frame" x="6" y="73" width="38.5" height="18"/>
+                                            <rect key="frame" x="6" y="73" width="40.5" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="4G1-1Z-dk9"/>
                                             </constraints>
@@ -117,7 +117,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaS-He-jjo">
-                                            <rect key="frame" x="51" y="5" width="3" height="85.5"/>
+                                            <rect key="frame" x="53" y="5" width="3" height="85.5"/>
                                             <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="3" id="m48-YO-hqI"/>
@@ -128,7 +128,7 @@
                                         <constraint firstAttribute="trailing" secondItem="Fbb-hA-a0u" secondAttribute="trailing" constant="10" id="1GM-ZD-Cjt"/>
                                         <constraint firstAttribute="bottom" secondItem="TaS-He-jjo" secondAttribute="bottom" constant="5" id="1He-lN-az8"/>
                                         <constraint firstItem="CVC-Ps-V5u" firstAttribute="top" secondItem="Suu-2J-Uou" secondAttribute="top" constant="4" id="5gW-2s-2cx"/>
-                                        <constraint firstItem="TaS-He-jjo" firstAttribute="leading" secondItem="Suu-2J-Uou" secondAttribute="leading" constant="51" id="7ph-bp-Xdd"/>
+                                        <constraint firstItem="TaS-He-jjo" firstAttribute="leading" secondItem="Suu-2J-Uou" secondAttribute="leading" constant="53" id="7ph-bp-Xdd"/>
                                         <constraint firstAttribute="trailing" secondItem="gzd-sK-2tJ" secondAttribute="trailing" constant="9" id="Hxs-RF-p8R"/>
                                         <constraint firstAttribute="trailing" secondItem="W1q-RE-YuA" secondAttribute="trailing" constant="10" id="J4y-W9-onW"/>
                                         <constraint firstItem="Rdx-qD-rfv" firstAttribute="top" secondItem="W1q-RE-YuA" secondAttribute="bottom" constant="7" id="L14-z8-bDy"/>
