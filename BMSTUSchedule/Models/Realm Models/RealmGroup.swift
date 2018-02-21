@@ -18,6 +18,20 @@ class RealmGroup: Object {
     @objc dynamic var course: Int = 0
 }
 
+// MARK: - Model linking
+
+extension RealmGroup {
+    
+    convenience init(_ model: Group) {
+        self.init()
+        
+        self.name = model.name
+        self.department = model.department
+        self.number = model.number
+        self.course = model.course
+    }
+}
+
 extension Group {
     
     convenience init(_ realmModel: RealmGroup?) {

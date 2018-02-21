@@ -15,6 +15,26 @@ class RealmSchedule: Object {
     let weeks = List<RealmWeek>()
 }
 
+// MARK: - Model linking
+
+extension RealmSchedule {
+    
+    convenience init(_ model: Schedule) {
+        self.init()
+        
+        self.group = RealmGroup(model.group)
+        
+        var realmWeeks: [RealmWeek] = []
+        
+        for week in model.weeks {
+            let realmWeek = RealmWeek(week)
+            realmWeeks.append(realmWeek)
+        }
+        
+        self.weeks.append(objectsIn: realmWeeks)
+    }
+}
+
 extension Schedule {
     
     convenience init(_ realmModel: RealmSchedule) {

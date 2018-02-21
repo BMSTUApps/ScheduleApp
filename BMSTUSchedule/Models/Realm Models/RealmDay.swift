@@ -17,6 +17,27 @@ class RealmDay: Object {
     let lessons = List<RealmLesson>()
 }
 
+// MARK: - Model linking
+
+extension RealmDay {
+    
+    convenience init(_ model: Day) {
+        self.init()
+        
+        self.title = model.title.rawValue
+        self.date = model.date
+        
+        var realmLessons: [RealmLesson] = []
+        
+        for lesson in model.lessons {
+            let realmLesson = RealmLesson(lesson)
+            realmLessons.append(realmLesson)
+        }
+        
+        self.lessons.append(objectsIn: realmLessons)
+    }
+}
+
 extension Day {
     
     convenience init(_ realmModel: RealmDay) {

@@ -22,6 +22,20 @@ class RealmLesson: Object {
     @objc dynamic var endTime: String = ""
 }
 
+// MARK: - Model linking
+
+extension RealmLesson {
+    
+    convenience init(_ model: Lesson) {
+        self.init()
+        self.title = model.title
+        self.teacher = model.teacher
+        self.kind = model.kind.rawValue
+        self.startTime = model.startTime
+        self.endTime = model.endTime
+    }
+}
+
 extension Lesson {
     
     convenience init(_ realmModel: RealmLesson) {

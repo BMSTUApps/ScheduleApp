@@ -17,6 +17,27 @@ class RealmWeek: Object {
     let days = List<RealmDay>()
 }
 
+// MARK: - Model linking
+
+extension RealmWeek {
+    
+    convenience init(_ model: Week) {
+        self.init()
+        
+        self.number = model.number
+        self.kind = model.kind.rawValue
+        
+        var realmDays: [RealmDay] = []
+        
+        for day in model.days {
+            let realmDay = RealmDay(day)
+            realmDays.append(realmDay)
+        }
+        
+        self.days.append(objectsIn: realmDays)
+    }
+}
+
 extension Week {
     
     convenience init(_ realmModel: RealmWeek) {
