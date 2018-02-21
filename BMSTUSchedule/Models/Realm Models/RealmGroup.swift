@@ -17,3 +17,10 @@ class RealmGroup: Object {
     @objc dynamic var number: Int = 0
     @objc dynamic var course: Int = 0
 }
+
+extension Group {
+    
+    convenience init(_ realmModel: RealmGroup?) {
+        self.init(name: realmModel?.name ?? "")
+    }
+}

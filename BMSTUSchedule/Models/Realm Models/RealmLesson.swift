@@ -21,3 +21,10 @@ class RealmLesson: Object {
     @objc dynamic var startTime: String = ""
     @objc dynamic var endTime: String = ""
 }
+
+extension Lesson {
+    
+    convenience init(_ realmModel: RealmLesson) {
+        self.init(title: realmModel.title, teacher: realmModel.teacher, room: realmModel.room, kind: Kind(rawValue: realmModel.kind) ?? .undefined, startTime: realmModel.startTime, endTime: realmModel.endTime)
+    }
+}

@@ -14,9 +14,9 @@ import Foundation
 class Lesson: CustomStringConvertible {
 
     enum Kind: String {
-        case lecture = "lecture"
-        case seminar = "seminar"
-        case lab     = "lab"
+        case lecture
+        case seminar
+        case lab
         case undefined
     }
 

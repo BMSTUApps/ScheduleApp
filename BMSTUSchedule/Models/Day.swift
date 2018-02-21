@@ -14,12 +14,12 @@ import Foundation
 class Day: CustomStringConvertible {
 
     enum Title: String {
-        case monday    = "monday"
-        case tuesday   = "tuesday"
-        case wednesday = "wednesday"
-        case thursday  = "thursday"
-        case friday    = "friday"
-        case saturday  = "saturday"
+        case monday
+        case tuesday
+        case wednesday
+        case thursday
+        case friday
+        case saturday
         
         static let allValues = [monday, tuesday, wednesday, thursday, friday, saturday]
     }

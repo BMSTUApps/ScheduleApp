@@ -263,6 +263,7 @@
 				A5545DBC202C3CEC00CBF1CD /* Week.swift */,
 				A5545DBD202C3CEC00CBF1CD /* Schedule.swift */,
 				A5545DBE202C3CEC00CBF1CD /* Group.swift */,
+				6AE5385E203AC16D008441FC /* Realm Models */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,7 +311,6 @@
 			isa = PBXGroup;
 			children = (
 				A5545DB9202C3CEC00CBF1CD /* Models */,
-				6AE5385E203AC16D008441FC /* Realm Models */,
 				A5545DB6202C3C7600CBF1CD /* Base controllers */,
 				A5545DAA202C3ABA00CBF1CD /* Schedule */,
 				A5545DAF202C3B4000CBF1CD /* Teachers */,
