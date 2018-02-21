@@ -18,8 +18,16 @@ class DayViewModel {
         self.title = day.title.rawValue
         
         var lessonsViewModels: [LessonViewModel] = []
-        for lesson in day.lessons {
-            let lessonViewModel = LessonViewModel(lesson)
+        for (index, lesson) in day.lessons.enumerated() {
+            
+            var brakeText = ""
+            
+            let isLastLessonExist = day.lessons.indices.contains(index-1)
+            if isLastLessonExist {
+                brakeText = AppManager.shared.calculateBrake(lesson1: day.lessons[index-1], lesson2: lesson) ?? ""
+            }
+            
+            let lessonViewModel = LessonViewModel(lesson, brakeText: brakeText)
             lessonsViewModels.append(lessonViewModel)
         }
         self.lessons = lessonsViewModels

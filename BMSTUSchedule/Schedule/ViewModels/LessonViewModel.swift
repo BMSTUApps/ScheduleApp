@@ -21,9 +21,9 @@ class LessonViewModel {
     let startTime: String
     let endTime: String
     
-    init(_ lesson: Lesson) {
+    init(_ lesson: Lesson, brakeText: String = "") {
         
-        self.brakeText = ""
+        self.brakeText = brakeText
         
         if lesson.kind == .undefined {
             self.kindText = ""

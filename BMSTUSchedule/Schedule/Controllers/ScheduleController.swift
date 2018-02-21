@@ -13,6 +13,7 @@ class ScheduleController: TableViewController {
     var schedule: Schedule? = AppManager.shared.getCurrentSchedule()
     var group: Group?
     
+    // FIXME: Remove days
     var days: [Day] {
         
         var days: [Day] = []
@@ -21,6 +22,22 @@ class ScheduleController: TableViewController {
         }
         
         return days
+    }
+    
+    var daysViewModels: [DayViewModel] {
+        
+        var days: [Day] = []
+        for week in (schedule?.weeks)! {
+            days.append(contentsOf: week.days)
+        }
+        
+        var daysViewModels: [DayViewModel] = []
+        for day in days {
+            let dayViewModel = DayViewModel(day)
+            daysViewModels.append(dayViewModel)
+        }
+        
+        return daysViewModels
     }
     
     override func viewDidLoad() {
@@ -58,7 +75,7 @@ class ScheduleController: TableViewController {
     // MARK: UITableViewDataSource
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return days.count
+        return daysViewModels.count
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -66,9 +83,9 @@ class ScheduleController: TableViewController {
         let header = tableView.dequeueReusableCell(withIdentifier: String(describing: DayHeader.self))
         if let header = header as? DayHeader {
             
-            let day = days[section]
+            let dayViewModel = daysViewModels[section]
             
-            header.titleLabel.text = day.title.rawValue.capitalized
+            header.titleLabel.text = dayViewModel.title.localized.capitalized
             header.dateLabel.text = ""
         }
         
@@ -76,7 +93,7 @@ class ScheduleController: TableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return days[section].lessons.count
+        return daysViewModels[section].lessons.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,9 +101,8 @@ class ScheduleController: TableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: LessonCell.self), for: indexPath)
         if let cell = cell as? LessonCell {
             
-            let lesson = days[indexPath.section].lessons[indexPath.row]
-            let model = LessonViewModel(lesson)
-            cell.fill(model: model)
+            let lessonViewModel = daysViewModels[indexPath.section].lessons[indexPath.row]
+            cell.fill(model: lessonViewModel)
         }
 
         return cell

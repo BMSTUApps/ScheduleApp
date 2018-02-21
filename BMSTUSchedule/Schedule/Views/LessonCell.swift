@@ -51,7 +51,7 @@ class LessonCell: UITableViewCell {
     
     func fill(model: LessonViewModel) {
         
-        breakLabel.text = "15 минут перерыва"
+        breakLabel.text = model.brakeText
         
         startTimeLabel.text = model.startTime
         endTimeLabel.text = model.endTime

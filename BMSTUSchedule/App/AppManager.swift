@@ -110,7 +110,7 @@ class AppManager {
         
         let group = Group(name: "ИУ5-63")
         
-        let lesson1 = Lesson(title: "English", teacher: "Трошина О.В.", room: "401л", kind: .seminar, startTime: "8:30", endTime: "10:15")
+        let lesson1 = Lesson(title: "English", teacher: "Трошина О.В.", room: "401л", kind: .seminar, startTime: "8:30", endTime: "10:05")
         let lesson2 = Lesson(title: "Network Software", teacher: "Семкин П.С.", room: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
         let lesson3 = Lesson(title: "Multimedia Technology", teacher: "Афанасьев Г.И.", room: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
         let lesson4 = Lesson(title: "Philosophy", teacher: nil, room: "502", kind: .seminar, startTime: "13:50", endTime: "15:25")
@@ -118,7 +118,7 @@ class AppManager {
         
         let monday = Day(title: .monday, lessons: [lesson1, lesson2, lesson3, lesson4, lesson5], date: Date())
         
-        let lesson6 = Lesson(title: "Discrete optimization methods", teacher: "Иванов А.О.", room: "306ю", kind: .seminar, startTime: "8:30", endTime: "10:15")
+        let lesson6 = Lesson(title: "Discrete optimization methods", teacher: "Иванов А.О.", room: "306ю", kind: .seminar, startTime: "8:30", endTime: "10:05")
         let lesson7 = Lesson(title: "Discrete optimization methods", teacher: "Иванов А.О.", room: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
         let lesson8 = Lesson(title: "Description of the life cycle processes of ASOIS", teacher: "Черненький В. М.", room: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
         let lesson9 = Lesson(title: "Description of the life cycle processes of ASOIS", teacher: "Черненький В. М.", room: "515ю", kind: .lecture, startTime: "13:50", endTime: "15:25")
@@ -141,7 +141,7 @@ class AppManager {
         
         let numeratorThursday = Day(title: .thursday, lessons: [lesson17, lesson18, lesson19], date: Date())
         
-        let lesson20 = Lesson(title: "Network Software", teacher: "Семкин П.С.", room: "903", kind: .lab, startTime: "8:30", endTime: "10:15")
+        let lesson20 = Lesson(title: "Network Software", teacher: "Семкин П.С.", room: "903", kind: .lab, startTime: "8:30", endTime: "10:05")
         let lesson21 = Lesson(title: "Network Software", teacher: "Семкин П.С.", room: "903", kind: .lab, startTime: "10:15", endTime: "11:50")
         
         let numeratorSaturday = Day(title: .saturday, lessons: [lesson20, lesson21], date: Date())
@@ -156,7 +156,7 @@ class AppManager {
         
         let denominatorThursday = Day(title: .thursday, lessons: [lesson17, lesson18, lesson19, lesson23], date: Date())
         
-        let lesson24 = Lesson(title: "Network technologies in ASOIS", teacher: "Аксёнов А.Н", room: "362", kind: .lab, startTime: "8:30", endTime: "10:15")
+        let lesson24 = Lesson(title: "Network technologies in ASOIS", teacher: "Аксёнов А.Н", room: "362", kind: .lab, startTime: "8:30", endTime: "10:05")
         let lesson25 = Lesson(title: "Network technologies in ASOIS", teacher: "Аксёнов А.Н", room: "362", kind: .lab, startTime: "10:15", endTime: "11:50")
         
         let denominatorFriday = Day(title: .friday, lessons: [lesson24, lesson25], date: Date())
@@ -213,5 +213,29 @@ extension AppManager {
         }
         
         return quickActionHandled
+    }
+}
+
+// MARK: - Helpers
+
+extension AppManager {
+    
+    func calculateBrake(lesson1: Lesson, lesson2: Lesson) -> String? {
+
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        timeFormatter.locale = Locale(identifier: "ru-RU")
+        
+        let date1 = timeFormatter.date(from: lesson1.endTime)
+        let date2 = timeFormatter.date(from: lesson2.startTime)
+        
+        guard let startBrakeDate = date1, let endBrakeDate = date2 else {
+            return nil
+        }
+        
+        let interval = endBrakeDate.timeIntervalSince(startBrakeDate)
+        let minutes = Int(interval / 60)
+        
+        return String(format: "%@ minutes break".localized, "\(minutes)")
     }
 }

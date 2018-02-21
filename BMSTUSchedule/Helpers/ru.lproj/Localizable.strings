@@ -22,3 +22,5 @@
 "Settings" = "Настройки";
 
 "Enable notifications" = "Присылать уведомления";
+
+"%@ minutes break" = "%@ минут перерыва";
