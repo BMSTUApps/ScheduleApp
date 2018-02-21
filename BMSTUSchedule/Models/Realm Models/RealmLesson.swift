@@ -30,6 +30,7 @@ extension RealmLesson {
         self.init()
         self.title = model.title
         self.teacher = model.teacher
+        self.room = model.room
         self.kind = model.kind.rawValue
         self.startTime = model.startTime
         self.endTime = model.endTime
