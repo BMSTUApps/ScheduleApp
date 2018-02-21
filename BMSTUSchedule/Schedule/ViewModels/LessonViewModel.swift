@@ -24,7 +24,12 @@ class LessonViewModel {
     init(_ lesson: Lesson) {
         
         self.brakeText = ""
-        self.kindText = lesson.kind.rawValue
+        
+        if lesson.kind == .undefined {
+            self.kindText = ""
+        } else {
+            self.kindText = lesson.kind.rawValue
+        }
         
         self.titleText = lesson.title
         

@@ -26,7 +26,7 @@ class LessonCell: UITableViewCell {
         "lecture": AppTheme.current.greenColor,
         "seminar": AppTheme.current.blueColor,
         "lab"    : AppTheme.current.yellowColor,
-        "default": UIColor.gray
+        "": UIColor.gray
     ]
     
     override func awakeFromNib() {
