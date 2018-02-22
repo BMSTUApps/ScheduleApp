@@ -114,7 +114,7 @@ class AppManager {
         let lesson2 = Lesson(title: "Network Software", teacher: "Семкин П. С.", room: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
         let lesson3 = Lesson(title: "Multimedia Technology", teacher: "Афанасьев Г. И.", room: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
         let lesson4 = Lesson(title: "Philosophy", teacher: nil, room: "502", kind: .seminar, startTime: "13:50", endTime: "15:25")
-        let lesson5 = Lesson(title: "Swimming pool", teacher: "Васющенкова Т. С.", room: "Sports Complex", kind: .undefined, startTime: "15:50", endTime: "17:25")
+        let lesson5 = Lesson(title: "Swimming pool", teacher: "Васющенкова Т. С.", room: "Sports Complex", kind: .other, startTime: "15:50", endTime: "17:25")
         
         let monday = Day(title: .monday, lessons: [lesson1, lesson2, lesson3, lesson4, lesson5], date: Date())
         
@@ -122,14 +122,14 @@ class AppManager {
         let lesson7 = Lesson(title: "Discrete optimization methods", teacher: "Иванов А. О.", room: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
         let lesson8 = Lesson(title: "Description of the life cycle processes of ASOIS", teacher: "Черненький В. М.", room: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
         let lesson9 = Lesson(title: "Description of the life cycle processes of ASOIS", teacher: "Черненький В. М.", room: "515ю", kind: .lecture, startTime: "13:50", endTime: "15:25")
-        let lesson10 = Lesson(title: "Swimming pool", teacher: "Васющенкова Т. С.", room: "Sports Complex", kind: .undefined, startTime: "15:50", endTime: "17:25")
+        let lesson10 = Lesson(title: "Swimming pool", teacher: "Васющенкова Т. С.", room: "Sports Complex", kind: .other, startTime: "15:50", endTime: "17:25")
         
         let numeratorTuesday = Day(title: .tuesday, lessons: [lesson6, lesson7, lesson8, lesson9, lesson10], date: Date())
         
-        let lesson11 = Lesson(title: "Military Training", teacher: "Лясковский В. Л.", room: "214", kind: .undefined, startTime: "10:15", endTime: "11:50")
-        let lesson12 = Lesson(title: "Military Training", teacher: "Горелов В. И.", room: "214", kind: .undefined, startTime: "12:00", endTime: "13:35")
-        let lesson13 = Lesson(title: "Military Training", teacher: "Амелько А. В.", room: "214", kind: .undefined, startTime: "13:50", endTime: "15:25")
-        let lesson14 = Lesson(title: "Military Training", teacher: "Горелов В. И.", room: "208", kind: .undefined, startTime: "15:40", endTime: "17:15")
+        let lesson11 = Lesson(title: "Military Training", teacher: "Лясковский В. Л.", room: "214", kind: .other, startTime: "10:15", endTime: "11:50")
+        let lesson12 = Lesson(title: "Military Training", teacher: "Горелов В. И.", room: "214", kind: .other, startTime: "12:00", endTime: "13:35")
+        let lesson13 = Lesson(title: "Military Training", teacher: "Амелько А. В.", room: "214", kind: .other, startTime: "13:50", endTime: "15:25")
+        let lesson14 = Lesson(title: "Military Training", teacher: "Горелов В. И.", room: "208", kind: .other, startTime: "15:40", endTime: "17:15")
         let lesson15 = Lesson(title: "Multimedia Technology", teacher: "Белоногов И. Б.", room: "903", kind: .lab, startTime: "17:25", endTime: "19:00")
         let lesson16 = Lesson(title: "Multimedia Technology", teacher: "Белоногов И. Б.", room: "903", kind: .lab, startTime: "19:10", endTime: "20:45")
         

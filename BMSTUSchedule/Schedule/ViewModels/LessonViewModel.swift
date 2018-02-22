@@ -25,7 +25,7 @@ class LessonViewModel {
         
         self.brakeText = brakeText
         
-        if lesson.kind == .undefined {
+        if lesson.kind == .other {
             self.kindText = ""
         } else {
             self.kindText = lesson.kind.rawValue

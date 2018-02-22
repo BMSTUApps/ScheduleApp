@@ -17,7 +17,7 @@ class Lesson: CustomStringConvertible {
         case lecture
         case seminar
         case lab
-        case undefined
+        case other
     }
 
     var title: String
@@ -36,7 +36,7 @@ class Lesson: CustomStringConvertible {
     
     // MARK: Initialization
     
-    init(title: String, teacher: String?, room: String?, kind: Kind = .undefined, startTime: String, endTime: String) {
+    init(title: String, teacher: String?, room: String?, kind: Kind = .other, startTime: String, endTime: String) {
         self.title = title
         self.teacher = teacher
         self.room = room
@@ -46,7 +46,7 @@ class Lesson: CustomStringConvertible {
     }
     
     convenience init(title: String, teacher: String?, room: String?) {
-        self.init(title: title, teacher: teacher, room: room, kind: .undefined, startTime: "", endTime: "")
+        self.init(title: title, teacher: teacher, room: room, kind: .other, startTime: "", endTime: "")
     }
     
     convenience init(title: String) {

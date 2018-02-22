@@ -40,6 +40,6 @@ extension RealmLesson {
 extension Lesson {
     
     convenience init(_ realmModel: RealmLesson) {
-        self.init(title: realmModel.title, teacher: realmModel.teacher, room: realmModel.room, kind: Kind(rawValue: realmModel.kind) ?? .undefined, startTime: realmModel.startTime, endTime: realmModel.endTime)
+        self.init(title: realmModel.title, teacher: realmModel.teacher, room: realmModel.room, kind: Kind(rawValue: realmModel.kind) ?? .other, startTime: realmModel.startTime, endTime: realmModel.endTime)
     }
 }

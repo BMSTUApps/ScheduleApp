@@ -13,6 +13,7 @@
 "lecture" = "lecture";
 "seminar" = "seminar";
 "lab" = "lab";
+"other" = "other";
 
 "Teacher" = "Teacher";
 "Room" = "Room";
