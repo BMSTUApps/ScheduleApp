@@ -26,6 +26,7 @@
 		A5545DC1202C3CEC00CBF1CD /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBC202C3CEC00CBF1CD /* Week.swift */; };
 		A5545DC2202C3CEC00CBF1CD /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBD202C3CEC00CBF1CD /* Schedule.swift */; };
 		A5545DC3202C3CEC00CBF1CD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBE202C3CEC00CBF1CD /* Group.swift */; };
+		A5650861204062F900D2DA66 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5650860204062F900D2DA66 /* CalendarView.swift */; };
 		A594878B203611320002C470 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594878A203611320002C470 /* DayViewModel.swift */; };
 		A5A124051DE8DD24006FB4E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */; };
 		A5A124061DE8DD24006FB4E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A124031DE8DD24006FB4E5 /* Main.storyboard */; };
@@ -93,6 +94,7 @@
 		A5545DBC202C3CEC00CBF1CD /* Week.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
 		A5545DBD202C3CEC00CBF1CD /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		A5545DBE202C3CEC00CBF1CD /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		A5650860204062F900D2DA66 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		A594878A203611320002C470 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		A5A124021DE8DD24006FB4E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5A124041DE8DD24006FB4E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				A5B2572B1DF085D70081EA0B /* DayHeader.swift */,
 				A5485CC01DC245BC009610C2 /* LessonCell.swift */,
+				A5650860204062F900D2DA66 /* CalendarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
 				A5218D731DF9F6F900E817B0 /* GroupCell.swift in Sources */,
 				A5B0EBFD1ED1E756006EE607 /* AppTheme.swift in Sources */,
+				A5650861204062F900D2DA66 /* CalendarView.swift in Sources */,
 				6AE53860203AC2F3008441FC /* RealmLesson.swift in Sources */,
 				A5D915062035FDDC00E066CA /* LessonViewModel.swift in Sources */,
 				A5545DC0202C3CEC00CBF1CD /* Day.swift in Sources */,

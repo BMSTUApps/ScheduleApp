@@ -271,12 +271,9 @@
                                     <constraint firstAttribute="bottom" secondItem="aSu-pC-IpV" secondAttribute="bottom" id="wNW-4c-oay"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORv-0F-uGv">
-                                <rect key="frame" x="16" y="179" width="343" height="84"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="ORv-0F-uGv" customClass="CalendarView" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="16" y="179" width="343" height="60"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="Owl-zN-Hxg"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
@@ -305,6 +302,7 @@
                         <viewLayoutGuide key="safeArea" id="ykF-k4-QbF"/>
                     </view>
                     <connections>
+                        <outlet property="calendarView" destination="ORv-0F-uGv" id="S6a-Le-VlU"/>
                         <outlet property="kindLabel" destination="Bke-BL-Arh" id="D0V-fy-R92"/>
                         <outlet property="kindView" destination="Bi1-2Z-gnv" id="zN3-jz-dzI"/>
                         <outlet property="roomTitleLabel" destination="dEl-2f-xol" id="eJc-TE-bnt"/>
@@ -319,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0c-Zm-YIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3004" y="-1066"/>
+            <point key="canvasLocation" x="3004" y="-1066.4167916041979"/>
         </scene>
         <!--Navigation Schedule-->
         <scene sceneID="rDJ-z9-tDA">

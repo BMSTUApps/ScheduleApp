@@ -24,6 +24,8 @@ class LessonController: ViewController {
     @IBOutlet weak var timeTitleLabel: UILabel!
     @IBOutlet weak var timeValueLabel: UILabel!
     
+    @IBOutlet weak var calendarView: CalendarView!
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     override var previewActionItems: [UIPreviewActionItem] {
@@ -81,5 +83,8 @@ class LessonController: ViewController {
         self.teacherValueLabel.text = " \(castedLesson.teacher ?? "")"
         self.roomValueLabel.text = " \(castedLesson.room ?? "")"
         self.timeValueLabel.text = " \(castedLesson.startTime) - \(castedLesson.endTime)"
+        
+        guard let lesson = self.lesson else { return }
+        self.calendarView.lessons = [lesson]
     }
 }
