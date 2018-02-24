@@ -14,6 +14,7 @@ class CalendarView: UIView {
     let bottomOffset = 12
     let titleHeight = 12
     let titleSpace = 5
+    let lineThickness = 0.5
     
     var selectedIndex: Int = 0
     var lessons: [Lesson] = [] {
@@ -34,8 +35,8 @@ class CalendarView: UIView {
     
     override func awakeFromNib() {
         
-        self.layer.borderWidth = 0.3
-        self.layer.borderColor = UIColor(displayP3Red: 143/255, green: 142/255, blue: 148/255, alpha: 1).cgColor
+        self.layer.borderWidth = CGFloat(lineThickness)
+        self.layer.borderColor = UIColor(displayP3Red: 143/255, green: 142/255, blue: 148/255, alpha: 0.5).cgColor
     }
     
     func updateView() {
@@ -89,10 +90,10 @@ class CalendarView: UIView {
             let lineY = y + titleHeight / 2
             let lineX = bottomOffset + 26 + bottomOffset
             
-            let lineView = UIView(frame: CGRect(x: CGFloat(lineX), y: CGFloat(lineY), width: self.frame.width - CGFloat(lineY), height: 0.3))
+            let lineView = UIView(frame: CGRect(x: CGFloat(lineX), y: CGFloat(lineY), width: self.frame.width - CGFloat(lineY), height: CGFloat(lineThickness)))
             self.addSubview(lineView)
             
-            lineView.backgroundColor = UIColor(displayP3Red: 143/255, green: 142/255, blue: 148/255, alpha: 1)
+            lineView.backgroundColor = UIColor(displayP3Red: 143/255, green: 142/255, blue: 148/255, alpha: 0.5)
             
             y += titleHeight + titleSpace
         }
