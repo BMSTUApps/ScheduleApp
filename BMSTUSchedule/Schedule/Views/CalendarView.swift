@@ -12,7 +12,7 @@ class CalendarView: UIView {
 
     let topOffset = 10
     let bottomOffset = 12
-    let titleHeight = 12
+    let titleHeight = 15
     let titleSpace = 5
     let lineThickness = 0.5
     
@@ -127,7 +127,9 @@ class CalendarView: UIView {
         let topOffset = CGFloat(self.topOffset + titleHeight / 2)
         let bottomOfset = CGFloat(bottomOffset + 26 + bottomOffset)
         
-        for lesson in lessons {
+        for (index, lesson) in lessons.enumerated() {
+            
+            // Calculate frame
             
             guard let startTime = getTime(string: lesson.startTime) else { return }
             guard let endTime = getTime(string: lesson.endTime) else { return }
@@ -140,9 +142,42 @@ class CalendarView: UIView {
             let width = self.frame.width - x
             let height = (endTimeValue - startTimeValue) * CGFloat(titleHeight + titleSpace) / 60
             
-            let view = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
-            view.backgroundColor = kindColors[lesson.kind.rawValue]?.withAlphaComponent(0.5)
+            let frame = CGRect(x: x, y: y, width: width, height: height)
+            
+            // Add title
+            
+            let view = UIView()
             self.addSubview(view)
+
+            let titleLabel = UILabel()
+            view.addSubview(titleLabel)
+            
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            titleLabel.font = UIFont.systemFont(ofSize: 11)
+            titleLabel.textColor = UIColor.white
+            titleLabel.numberOfLines = 0
+            titleLabel.text = lesson.title
+            NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 6).isActive = true
+            NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 2).isActive = true
+            
+            let roomLabel = UILabel()
+            view.addSubview(roomLabel)
+            
+            roomLabel.translatesAutoresizingMaskIntoConstraints = false
+            roomLabel.font = UIFont.systemFont(ofSize: 10, weight: .bold)
+            roomLabel.textColor = UIColor.white
+            roomLabel.numberOfLines = 0
+            roomLabel.text = lesson.room
+            NSLayoutConstraint(item: roomLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 10).isActive = true
+            NSLayoutConstraint(item: roomLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: titleLabel, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 1).isActive = true
+            
+            view.frame = frame
+            
+            if selectedIndex == index {
+                view.backgroundColor = kindColors[lesson.kind.rawValue]?.withAlphaComponent(0.8)
+            } else {
+                view.backgroundColor = kindColors[lesson.kind.rawValue]?.withAlphaComponent(0.5)
+            }
         }
     }
     

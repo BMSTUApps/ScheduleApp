@@ -85,7 +85,10 @@ class LessonController: ViewController {
         self.roomValueLabel.text = " \(castedLesson.room ?? "")"
         self.timeValueLabel.text = " \(castedLesson.startTime) - \(castedLesson.endTime)"
         
-        guard let lesson = self.lesson else { return }
-        self.calendarView.lessons = displayedLessons ?? [lesson]
+        guard let lesson = self.lesson, let displayedLessons = displayedLessons else { return }
+        self.calendarView.selectedIndex = displayedLessons.index { (currentLesson) -> Bool in
+            return currentLesson.startTime == lesson.startTime
+        }!
+        self.calendarView.lessons = displayedLessons
     }
 }
