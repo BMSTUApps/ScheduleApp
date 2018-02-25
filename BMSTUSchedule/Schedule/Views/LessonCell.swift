@@ -22,11 +22,12 @@ class LessonCell: UITableViewCell {
     @IBOutlet weak var kindLabel: UILabel!
     @IBOutlet weak var kindView: UIView!
     
+    // FIXME: Create kind colors in Theme
     let kindColors = [
         "lecture": AppTheme.current.greenColor,
         "seminar": AppTheme.current.blueColor,
         "lab"    : AppTheme.current.yellowColor,
-        "": UIColor.gray
+        ""       : UIColor.gray
     ]
     
     override func awakeFromNib() {

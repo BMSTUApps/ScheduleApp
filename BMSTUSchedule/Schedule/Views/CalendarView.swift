@@ -23,6 +23,24 @@ class CalendarView: UIView {
         }
     }
     
+    // FIXME: Create kind colors in Theme
+    private let kindColors = [
+        "lecture": AppTheme.current.greenColor,
+        "seminar": AppTheme.current.blueColor,
+        "lab"    : AppTheme.current.yellowColor,
+        "other"  : UIColor.gray
+    ]
+    
+    private typealias Time = (hours: Int, minutes: Int)
+    
+    private var firstTime: Time? {
+        return self.getTime(string: lessons.first?.startTime)
+    }
+    
+    private var lastTime: Time? {
+        return self.getTime(string: lessons.last?.endTime)
+    }
+    
     override var intrinsicContentSize: CGSize {
         
         let titles = self.getTitles()
@@ -43,11 +61,12 @@ class CalendarView: UIView {
         let titles = getTitles()
         
         drawTitles(titles: titles)
+        drawLessons(lessons: lessons)
         layoutIfNeeded()
     }
     
     /// Get array of titles
-    func getTitles() -> [String] {
+    private func getTitles() -> [String] {
         
         if let firstTime = lessons.first?.startTime, let lastTime = lessons.last?.endTime {
             
@@ -68,7 +87,8 @@ class CalendarView: UIView {
         return []
     }
     
-    func drawTitles(titles: [String]) {
+    /// Draw array of titles
+    private func drawTitles(titles: [String]) {
         
         var y = topOffset
         
@@ -96,5 +116,46 @@ class CalendarView: UIView {
             
             y += titleHeight + titleSpace
         }
+    }
+    
+    /// Draw lessons
+    private func drawLessons(lessons: [Lesson]) {
+    
+        guard let firstTime = firstTime else { return }
+        let firstTimeValue = CGFloat(firstTime.hours * 60)
+        
+        let topOffset = CGFloat(self.topOffset + titleHeight / 2)
+        let bottomOfset = CGFloat(bottomOffset + 26 + bottomOffset)
+        
+        for lesson in lessons {
+            
+            guard let startTime = getTime(string: lesson.startTime) else { return }
+            guard let endTime = getTime(string: lesson.endTime) else { return }
+            
+            let startTimeValue = CGFloat(startTime.hours * 60 + startTime.minutes)
+            let endTimeValue = CGFloat(endTime.hours * 60 + endTime.minutes)
+
+            let x = bottomOfset
+            let y = topOffset + (startTimeValue - firstTimeValue) * CGFloat(titleHeight + titleSpace) / 60
+            let width = self.frame.width - x
+            let height = (endTimeValue - startTimeValue) * CGFloat(titleHeight + titleSpace) / 60
+            
+            let view = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
+            view.backgroundColor = kindColors[lesson.kind.rawValue]?.withAlphaComponent(0.5)
+            self.addSubview(view)
+        }
+    }
+    
+    // MARK: Helpers
+    
+    /// Get time tuple from string
+    private func getTime(string: String?) -> Time? {
+        
+        guard let castedString = string else { return nil }
+        guard let index = castedString.index(of: ":") else { return nil }
+        guard let hours = Int(castedString.prefix(upTo: index)) else { return nil }
+        guard let minutes = Int(castedString.suffix(from: castedString.index(after: index))) else { return nil }
+
+        return (hours, minutes)
     }
 }
