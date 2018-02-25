@@ -11,6 +11,7 @@ import UIKit
 class LessonController: ViewController {
 
     var lesson: Lesson?
+    var displayedLessons: [Lesson]?
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -85,6 +86,6 @@ class LessonController: ViewController {
         self.timeValueLabel.text = " \(castedLesson.startTime) - \(castedLesson.endTime)"
         
         guard let lesson = self.lesson else { return }
-        self.calendarView.lessons = [lesson]
+        self.calendarView.lessons = displayedLessons ?? [lesson]
     }
 }

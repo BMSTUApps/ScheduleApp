@@ -125,8 +125,12 @@ class ScheduleController: TableViewController {
                 return
             }
             
+            let startIndex = (indexPath.row - 1 >= 0) ? (indexPath.row - 1) : 0
+            let endIndex = (indexPath.row + 1 < days[indexPath.section].lessons.count) ? (indexPath.row + 1) : days[indexPath.section].lessons.count-1
+            let displayedLessons: [Lesson] = Array(days[indexPath.section].lessons[startIndex...endIndex])
+            
             lessonController.lesson = days[indexPath.section].lessons[indexPath.row]
-        }
+            lessonController.displayedLessons = displayedLessons        }
     }
 }
 
@@ -143,7 +147,12 @@ extension ScheduleController: UIViewControllerPreviewingDelegate {
             
         }
         
+        let startIndex = (indexPath.row - 1 >= 0) ? (indexPath.row - 1) : 0
+        let endIndex = (indexPath.row + 1 < days[indexPath.section].lessons.count) ? (indexPath.row + 1) : days[indexPath.section].lessons.count-1
+        let displayedLessons: [Lesson] = Array(days[indexPath.section].lessons[startIndex...endIndex])
+        
         lessonController.lesson = days[indexPath.section].lessons[indexPath.row]
+        lessonController.displayedLessons = displayedLessons
         lessonController.preferredContentSize = CGSize(width: lessonController.preferredContentSize.width, height: 350)
 
         previewingContext.sourceRect = cell.frame
