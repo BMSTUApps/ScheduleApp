@@ -86,11 +86,10 @@ class CalendarView: UIView {
             
             // Draw line
             
-            // FIXME: Fix incorrect calculation
             let lineY = y + titleHeight / 2
             let lineX = bottomOffset + 26 + bottomOffset
             
-            let lineView = UIView(frame: CGRect(x: CGFloat(lineX), y: CGFloat(lineY), width: self.frame.width - CGFloat(lineY), height: CGFloat(lineThickness)))
+            let lineView = UIView(frame: CGRect(x: CGFloat(lineX), y: CGFloat(lineY), width: self.frame.width - CGFloat(lineX), height: CGFloat(lineThickness)))
             self.addSubview(lineView)
             
             lineView.backgroundColor = UIColor(displayP3Red: 143/255, green: 142/255, blue: 148/255, alpha: 0.5)
