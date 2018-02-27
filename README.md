@@ -3,7 +3,7 @@
 ![Contributors](https://img.shields.io/github/contributors/BMSTUScheduleTeam/BMSTUSchedule.svg)
 
 <p align="left">
-  <img src="https://github.com/BMSTUScheduleTeam/BMSTUSchedule/raw/master/BMSTUSchedule/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60%403x.png" alt="Icon"/>
+  <img width=150 src="https://github.com/BMSTUScheduleTeam/App/blob/develop/BMSTUSchedule/Helpers/Screenshots/Icon.png" alt="Icon"/>
 </p>
 
 Неофициальное приложение с расписанием занятий МГТУ имени Н.Э. Баумана.
@@ -13,8 +13,8 @@
 ## Скриншоты
 
 <p align="center">
-  <img src="https://github.com/BMSTUScheduleTeam/BMSTUSchedule/raw/master/BMSTUSchedule/Other/Screenshots/ScheduleController-screenshot.png" width="350" alt="ScheduleController"/>
-  <img src="https://github.com/BMSTUScheduleTeam/BMSTUSchedule/raw/master/BMSTUSchedule/Other/Screenshots/MenuController-screenshot.png" width="350" hspace="50" alt="MenuController"/>
+  <img src="https://github.com/BMSTUScheduleTeam/App/blob/develop/BMSTUSchedule/Helpers/Screenshots/ScheduleController-screenshot.png" width="350" alt="ScheduleController"/>
+  <img src="https://github.com/BMSTUScheduleTeam/App/blob/develop/BMSTUSchedule/Helpers/Screenshots/LessonController-screenshot.png" width="350" hspace="50" alt="MenuController"/>
 </p>
 
 ## Статус
@@ -24,7 +24,6 @@
 Ведутся переговоры по поводу сотрудничества с бауманкой, но пока ничего не ясно.
 
 ## Команда
-* [Артём Белков](https://park.mail.ru/profile/a.belkov/) (bestK1ngArthur)
+* [@bestK1ngArthur](https://github.com/bestK1ngArthur)
 * *разыскивается iOS dev.*
-
-**Если есть вопросы или предложения, а также по поводу участия в проекте, пишите [мне в вк](https://vk.com/bestk1ngarthur) или на artem-belkov@mail.ru**
+* *разыскивается UI/UX designer*
