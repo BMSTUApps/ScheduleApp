@@ -48,6 +48,7 @@ class LessonController: ViewController {
     func prepareUI() {
 
         self.navigationItem.title = "Lesson".localized
+        self.scrollView.alwaysBounceVertical = true
         
         // Hide large titles
         if #available(iOS 11.0, *) {
