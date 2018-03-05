@@ -10,6 +10,12 @@ import UIKit
 
 class SettingsController: TableViewController {
 
+    enum Section: Int {
+        case group = 0
+        case schedule
+        case teachers
+    }
+    
     @IBOutlet weak var offlineModeSwitch: UISwitch!
     
     override func viewDidLoad() {
@@ -36,12 +42,16 @@ class SettingsController: TableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
+        guard let section = Section(rawValue: section) else {
+            return 0
+        }
+        
         switch section {
-        case 0:
+        case .group:
             return 1
-        case 1:
+        case .schedule:
             return 2
-        default:
+        case .teachers:
             return 0
         }
     }
