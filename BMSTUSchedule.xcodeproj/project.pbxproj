@@ -13,6 +13,7 @@
 		6AE53864203AC4C8008441FC /* RealmWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE53863203AC4C8008441FC /* RealmWeek.swift */; };
 		6AE53866203AC518008441FC /* RealmSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE53865203AC518008441FC /* RealmSchedule.swift */; };
 		6AE53868203AC57E008441FC /* RealmGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE53867203AC57E008441FC /* RealmGroup.swift */; };
+		6AE9FE3D20557F26002733F0 /* SettingsRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */; };
 		6AF332B02037F88A0085C033 /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF332AF2037F88A0085C033 /* String+Localize.swift */; };
 		6AF332BA2037FBB10085C033 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AF332BC2037FBB10085C033 /* Localizable.strings */; };
 		A5218D731DF9F6F900E817B0 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5218D721DF9F6F900E817B0 /* GroupCell.swift */; };
@@ -74,6 +75,7 @@
 		6AE53863203AC4C8008441FC /* RealmWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWeek.swift; sourceTree = "<group>"; };
 		6AE53865203AC518008441FC /* RealmSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSchedule.swift; sourceTree = "<group>"; };
 		6AE53867203AC57E008441FC /* RealmGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGroup.swift; sourceTree = "<group>"; };
+		6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowCell.swift; sourceTree = "<group>"; };
 		6AF332AF2037F88A0085C033 /* String+Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localize.swift"; sourceTree = "<group>"; };
 		6AF332BB2037FBB10085C033 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6AF332BD2037FBC50085C033 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -162,6 +164,14 @@
 			path = "Realm Models";
 			sourceTree = "<group>";
 		};
+		6AE9FE3B20557F26002733F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A5545DAA202C3ABA00CBF1CD /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				A5545DA8202C3A3900CBF1CD /* Profile.storyboard */,
+				6AE9FE3B20557F26002733F0 /* Views */,
 				A5545DB3202C3BA800CBF1CD /* Controllers */,
 			);
 			path = Profile;
@@ -453,7 +464,7 @@
 				TargetAttributes = {
 					A5CED4D51DB0E07F000D2DFD = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 27S8L7RZLQ;
+						DevelopmentTeam = CT884K7983;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -703,6 +714,7 @@
 				A5B0EBFD1ED1E756006EE607 /* AppTheme.swift in Sources */,
 				A5650861204062F900D2DA66 /* CalendarView.swift in Sources */,
 				6AE53860203AC2F3008441FC /* RealmLesson.swift in Sources */,
+				6AE9FE3D20557F26002733F0 /* SettingsRowCell.swift in Sources */,
 				A5D915062035FDDC00E066CA /* LessonViewModel.swift in Sources */,
 				A5545DC0202C3CEC00CBF1CD /* Day.swift in Sources */,
 				A5545DBF202C3CEC00CBF1CD /* Lesson.swift in Sources */,
@@ -892,7 +904,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 27S8L7RZLQ;
+				DEVELOPMENT_TEAM = CT884K7983;
 				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Helpers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -913,7 +925,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 27S8L7RZLQ;
+				DEVELOPMENT_TEAM = CT884K7983;
 				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Helpers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

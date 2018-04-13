@@ -10,55 +10,119 @@ import UIKit
 
 class SettingsController: TableViewController {
 
-    enum Section: Int {
-        case group = 0
-        case schedule
-        case teachers
+    private enum Section: Int {
+        case group, teachers, other
+        
+        // Group Row 👥
+        enum GroupRow: Int {
+            case name, change
+            
+            static var count = {
+                return GroupRow.change.rawValue + 1
+            }
+        }
+        
+        // Teachers Row 👨‍🏫
+        enum TeachersRow: Int {
+            case showAll
+            
+            static var count = {
+                return TeachersRow.showAll.rawValue + 1
+            }
+            
+            private static let titles = [showAll: "Show all teachers".localized]
+            
+            func title() -> String {
+                if let title = TeachersRow.titles[self] {
+                    return title
+                } else {
+                    return ""
+                }
+            }
+        }
+        
+        // Other Row 📖
+        enum OtherRow: Int {
+            case license, about
+            
+            static var count = {
+                return OtherRow.about.rawValue + 1
+            }
+            
+            private static let titles = [license: "License".localized,
+                                           about: "About".localized]
+            
+            func title() -> String {
+                if let title = OtherRow.titles[self] {
+                    return title
+                } else {
+                    return ""
+                }
+            }
+        }
+        
+        static var count = {
+            return Section.other.rawValue + 1
+        }
+        
+        private static let titles = [teachers: "Teachers".localized,
+                                     other: "Other".localized]
+        
+        func title() -> String {
+            if let title = Section.titles[self] {
+                return title
+            } else {
+                return ""
+            }
+        }
     }
-    
-    @IBOutlet weak var offlineModeSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         prepareUI()
     }
     
+    // MARK: - UI
+    
     func prepareUI() {
         
+        // Set title
         self.navigationItem.title = "Settings".localized
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.offlineModeSwitch.isOn = AppManager.shared.offlineMode
-    }
-    
+
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 2
+        return Section.count()
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let section = Section(rawValue: section) else { return nil }
+
+        return section.title()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        guard let section = Section(rawValue: section) else {
-            return 0
-        }
+        guard let section = Section(rawValue: section) else { return 0 }
+        
+        var rows = 0
         
         switch section {
         case .group:
-            return 1
-        case .schedule:
-            return 2
+            rows = Section.GroupRow.count()
         case .teachers:
-            return 0
+            rows = Section.TeachersRow.count()
+        case .other:
+            rows = Section.OtherRow.count()
         }
+        
+        return rows
     }
     
-    // MARK: - Actions
-    
-    @IBAction func switchModeAction(_ sender: UISwitch) {
-        AppManager.shared.offlineMode = sender.isOn
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        return SettingsRowCell()
     }
 }
