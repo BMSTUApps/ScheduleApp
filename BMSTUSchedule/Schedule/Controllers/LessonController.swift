@@ -73,11 +73,11 @@ class LessonController: ViewController {
 
         switch castedLesson.kind {
         case .lecture:
-            self.kindView.backgroundColor = AppTheme.current.greenColor
+            self.kindView.backgroundColor = AppTheme.shared.greenColor
         case .seminar:
-            self.kindView.backgroundColor = AppTheme.current.blueColor
+            self.kindView.backgroundColor = AppTheme.shared.blueColor
         case .lab:
-            self.kindView.backgroundColor = AppTheme.current.yellowColor
+            self.kindView.backgroundColor = AppTheme.shared.yellowColor
         default:
             self.kindView.backgroundColor = UIColor.gray
         }

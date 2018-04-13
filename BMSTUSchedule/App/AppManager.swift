@@ -175,8 +175,8 @@ class AppManager {
 extension AppManager {
     
     enum Shortcut: String {
-        case openSchedule = "OpenSchedule"
-        case openTeachers = "OpenTeachers"
+        case openSchedule = "OpenSchedule" // ..opening schedule screen
+        case openTeachers = "OpenTeachers" // ..opening teachers screen
     }
     
     func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
@@ -220,14 +220,14 @@ extension AppManager {
 
 extension AppManager {
     
-    func calculateBrake(lesson1: Lesson, lesson2: Lesson) -> String? {
+    func calculateBrake(currentLesson: Lesson, nextLesson: Lesson) -> String? {
 
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm"
         timeFormatter.locale = Locale(identifier: "ru-RU")
         
-        let date1 = timeFormatter.date(from: lesson1.endTime)
-        let date2 = timeFormatter.date(from: lesson2.startTime)
+        let date1 = timeFormatter.date(from: currentLesson.endTime)
+        let date2 = timeFormatter.date(from: nextLesson.startTime)
         
         guard let startBrakeDate = date1, let endBrakeDate = date2 else {
             return nil

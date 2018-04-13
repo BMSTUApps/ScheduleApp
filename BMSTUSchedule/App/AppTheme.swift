@@ -10,7 +10,7 @@ import UIKit
 
 class AppTheme {
 
-    static let current = AppTheme()
+    static let shared = AppTheme()
     
     let defaultsColor = UIColor(red: 45/255, green: 62/255, blue: 79/255, alpha: 1)
     let lightsDefaultColor = UIColor(red: 89/255, green: 123/255, blue: 156/255, alpha: 1)

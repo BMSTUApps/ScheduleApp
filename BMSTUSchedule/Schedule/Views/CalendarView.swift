@@ -25,9 +25,9 @@ class CalendarView: UIView {
     
     // FIXME: Create kind colors in Theme
     private let kindColors = [
-        "lecture": AppTheme.current.greenColor,
-        "seminar": AppTheme.current.blueColor,
-        "lab"    : AppTheme.current.yellowColor,
+        "lecture": AppTheme.shared.greenColor,
+        "seminar": AppTheme.shared.blueColor,
+        "lab"    : AppTheme.shared.yellowColor,
         "other"  : UIColor.gray
     ]
     

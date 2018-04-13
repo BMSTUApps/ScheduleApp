@@ -24,7 +24,7 @@ class DayViewModel {
             
             let isLastLessonExist = day.lessons.indices.contains(index-1)
             if isLastLessonExist {
-                brakeText = AppManager.shared.calculateBrake(lesson1: day.lessons[index-1], lesson2: lesson) ?? ""
+                brakeText = AppManager.shared.calculateBrake(currentLesson: day.lessons[index-1], nextLesson: lesson) ?? ""
             }
             
             let lessonViewModel = LessonViewModel(lesson, brakeText: brakeText)
