@@ -21,7 +21,7 @@
 		A5485CC31DC26173009610C2 /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC21DC26173009610C2 /* GroupsController.swift */; };
 		A5545DA5202C38DC00CBF1CD /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5545DA4202C38DC00CBF1CD /* Schedule.storyboard */; };
 		A5545DA7202C39DD00CBF1CD /* Teachers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5545DA6202C39DD00CBF1CD /* Teachers.storyboard */; };
-		A5545DA9202C3A3900CBF1CD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5545DA8202C3A3900CBF1CD /* Profile.storyboard */; };
+		A5545DA9202C3A3900CBF1CD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5545DA8202C3A3900CBF1CD /* Settings.storyboard */; };
 		A5545DBF202C3CEC00CBF1CD /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBA202C3CEC00CBF1CD /* Lesson.swift */; };
 		A5545DC0202C3CEC00CBF1CD /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBB202C3CEC00CBF1CD /* Day.swift */; };
 		A5545DC1202C3CEC00CBF1CD /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBC202C3CEC00CBF1CD /* Week.swift */; };
@@ -89,7 +89,7 @@
 		A5485CC21DC26173009610C2 /* GroupsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsController.swift; sourceTree = "<group>"; };
 		A5545DA4202C38DC00CBF1CD /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		A5545DA6202C39DD00CBF1CD /* Teachers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Teachers.storyboard; sourceTree = "<group>"; };
-		A5545DA8202C3A3900CBF1CD /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		A5545DA8202C3A3900CBF1CD /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A5545DB5202C3BFE00CBF1CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5545DBA202C3CEC00CBF1CD /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		A5545DBB202C3CEC00CBF1CD /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -228,14 +228,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A5545DB2202C3B9500CBF1CD /* Profile */ = {
+		A5545DB2202C3B9500CBF1CD /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				A5545DA8202C3A3900CBF1CD /* Profile.storyboard */,
+				A5545DA8202C3A3900CBF1CD /* Settings.storyboard */,
 				6AE9FE3B20557F26002733F0 /* Views */,
 				A5545DB3202C3BA800CBF1CD /* Controllers */,
 			);
-			path = Profile;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		A5545DB3202C3BA800CBF1CD /* Controllers */ = {
@@ -328,7 +328,7 @@
 				A5545DB6202C3C7600CBF1CD /* Base controllers */,
 				A5545DAA202C3ABA00CBF1CD /* Schedule */,
 				A5545DAF202C3B4000CBF1CD /* Teachers */,
-				A5545DB2202C3B9500CBF1CD /* Profile */,
+				A5545DB2202C3B9500CBF1CD /* Settings */,
 				A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */,
 				A5A124031DE8DD24006FB4E5 /* Main.storyboard */,
 				A5545DC4202C3D5800CBF1CD /* App */,
@@ -514,7 +514,7 @@
 				A5545DA7202C39DD00CBF1CD /* Teachers.storyboard in Resources */,
 				6AF332BA2037FBB10085C033 /* Localizable.strings in Resources */,
 				A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */,
-				A5545DA9202C3A3900CBF1CD /* Profile.storyboard in Resources */,
+				A5545DA9202C3A3900CBF1CD /* Settings.storyboard in Resources */,
 				A5545DA5202C38DC00CBF1CD /* Schedule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
