@@ -117,12 +117,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <scene sceneID="yE0-y6-oVu">
             <objects>
                 <tableViewController id="KBI-zV-0bg" customClass="SettingsController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="WfM-B7-yx0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="WfM-B7-yx0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="ltB-ok-823">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsRowCell" rowHeight="50" id="ltB-ok-823" customClass="SettingsRowCell" customModule="BMSTUSchedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ltB-ok-823" id="s1g-0K-awq">
@@ -149,6 +149,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                         <constraint firstAttribute="bottomMargin" secondItem="HPf-5B-Mhk" secondAttribute="bottom" constant="3" id="wjl-d5-2Pw"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="actionSwitch" destination="wjq-D6-dKE" id="Df9-SS-pWv"/>
+                                    <outlet property="titleLabel" destination="HPf-5B-Mhk" id="bAa-pT-BZ8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -190,6 +194,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     </scenes>
     <resources>
         <image name="Firebase" width="232" height="64"/>
-        <image name="settings" width="30" height="30"/>
+        <image name="settings" width="25" height="25"/>
     </resources>
 </document>

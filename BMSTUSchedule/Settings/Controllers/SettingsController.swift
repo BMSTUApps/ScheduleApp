@@ -122,7 +122,44 @@ class SettingsController: TableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let section = Section(rawValue: indexPath.section) else { return SettingsRowCell() }
+
+        switch section {
+        case .group:
+            return cellForGroupSection(row: indexPath.row)
+        case .teachers:
+            return cellForTeachersSection(row: indexPath.row)
+        case .other:
+            return cellForOtherSection(row: indexPath.row)
+        }
+    }
+    
+    private func cellForGroupSection(row: Int) -> UITableViewCell {
+    
+        // ..
         
         return SettingsRowCell()
+    }
+
+    private func cellForTeachersSection(row: Int) -> UITableViewCell {
+        guard let row = Section.TeachersRow(rawValue: row) else { return SettingsRowCell() }
+        
+        let reuseIdentifier = String(describing: SettingsRowCell.self)
+        let cell = (tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? SettingsRowCell) ?? SettingsRowCell()
+        
+        cell.fill(title: row.title(), style: .switcher)
+        
+        return cell
+    }
+
+    private func cellForOtherSection(row: Int) -> UITableViewCell {
+        guard let row = Section.OtherRow(rawValue: row) else { return SettingsRowCell() }
+        
+        let reuseIdentifier = String(describing: SettingsRowCell.self)
+        let cell = (tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? SettingsRowCell) ?? SettingsRowCell()
+        
+        cell.fill(title: row.title(), style: .disclosure)
+        
+        return cell
     }
 }

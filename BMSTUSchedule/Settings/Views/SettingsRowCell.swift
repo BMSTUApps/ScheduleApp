@@ -15,13 +15,28 @@ class SettingsRowCell: UITableViewCell {
         case switcher
     }
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var actionSwitch: UISwitch!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.prepareUI()
     }
     
-    func prepareUI() {
-        //
+    func fill(title: String, style: Style = .disclosure) {
+        
+        titleLabel.text = title
+        
+        switch style {
+        case .disclosure:
+            self.accessoryType = .disclosureIndicator
+            self.actionSwitch.isHidden = true
+            break
+        case .switcher:
+            self.accessoryType = .none
+            self.actionSwitch.isHidden = false
+            break
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,5 +44,11 @@ class SettingsRowCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    // MARK: - UI
+    
+    private func prepareUI() {
+        
+        // ..
+    }
 }
