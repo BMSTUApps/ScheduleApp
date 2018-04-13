@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        // FIXME: Bring UI preparation to a separate place
         // Circle corners of root VC
         let rootViewController = self.window!.rootViewController
         rootViewController?.view.layer.cornerRadius = 4.0
