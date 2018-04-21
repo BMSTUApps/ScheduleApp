@@ -35,17 +35,13 @@ class SettingsGroupCell: UITableViewCell {
         attributedDepartment.append(attributedNumber)
         groupLabel.attributedText = attributedDepartment
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
     // MARK: - UI
     
     private func prepareUI() {
         
-        // FIXME: Set colors from theme
+        changeButton.tintColor = AppTheme.shared.blueColor
+        changeButton.backgroundColor = AppTheme.shared.blueColor.withAlphaComponent(0.15)
+        changeButton.layer.cornerRadius = 12
     }
 }

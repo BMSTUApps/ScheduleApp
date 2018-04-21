@@ -40,17 +40,11 @@ class SettingsRowCell: UITableViewCell {
             break
         }
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-    }
-    
     // MARK: - UI
     
     private func prepareUI() {
         
-        // FIXME: Set colors from theme
+        actionSwitch.tintColor = AppTheme.shared.blueColor
     }
 }
