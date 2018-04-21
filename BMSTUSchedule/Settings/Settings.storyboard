@@ -117,41 +117,94 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <scene sceneID="yE0-y6-oVu">
             <objects>
                 <tableViewController id="KBI-zV-0bg" customClass="SettingsController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="WfM-B7-yx0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="WfM-B7-yx0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsRowCell" rowHeight="50" id="ltB-ok-823" customClass="SettingsRowCell" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsGroupCell" rowHeight="198" id="ltB-ok-823" customClass="SettingsGroupCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="198"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ltB-ok-823" id="s1g-0K-awq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кешировать расписание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPf-5B-Mhk">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGq-6Y-C61">
+                                            <rect key="frame" x="115" y="24" width="145" height="150"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ИУ5-63" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHB-Lo-ImN">
+                                                    <rect key="frame" x="8" y="8" width="129" height="80"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hI3-g5-Xmp">
+                                                    <rect key="frame" x="8" y="102" width="129" height="40"/>
+                                                    <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="lPp-10-lYM"/>
+                                                    </constraints>
+                                                    <state key="normal" title="изменить">
+                                                        <color key="titleColor" red="0.23137254901960785" green="0.60392156862745094" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="12"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ZHB-Lo-ImN" secondAttribute="trailing" constant="8" id="3Ev-we-4RN"/>
+                                                <constraint firstItem="ZHB-Lo-ImN" firstAttribute="leading" secondItem="WGq-6Y-C61" secondAttribute="leading" constant="8" id="UfI-y2-CGH"/>
+                                                <constraint firstItem="ZHB-Lo-ImN" firstAttribute="top" secondItem="WGq-6Y-C61" secondAttribute="top" constant="8" id="ZSp-5p-cbQ"/>
+                                                <constraint firstItem="hI3-g5-Xmp" firstAttribute="leading" secondItem="WGq-6Y-C61" secondAttribute="leading" constant="8" id="a1A-1f-dhH"/>
+                                                <constraint firstItem="hI3-g5-Xmp" firstAttribute="top" secondItem="ZHB-Lo-ImN" secondAttribute="bottom" constant="14" id="d1Q-7O-UVZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="hI3-g5-Xmp" secondAttribute="bottom" constant="8" id="kOB-bl-Xh9"/>
+                                                <constraint firstAttribute="trailing" secondItem="hI3-g5-Xmp" secondAttribute="trailing" constant="8" id="pGh-Ul-hvm"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="WGq-6Y-C61" firstAttribute="centerX" secondItem="s1g-0K-awq" secondAttribute="centerX" id="TGo-ca-jW4"/>
+                                        <constraint firstAttribute="bottom" secondItem="WGq-6Y-C61" secondAttribute="bottom" constant="24" id="VN0-SJ-SWU"/>
+                                        <constraint firstItem="WGq-6Y-C61" firstAttribute="top" secondItem="s1g-0K-awq" secondAttribute="top" constant="24" id="yrd-WP-ArB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="changeButton" destination="hI3-g5-Xmp" id="fXZ-gi-mZN"/>
+                                    <outlet property="groupLabel" destination="ZHB-Lo-ImN" id="T4O-H7-UhD"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsRowCell" rowHeight="50" id="j4k-RL-VFv" customClass="SettingsRowCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="253.5" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j4k-RL-VFv" id="mIV-Hc-F7j">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кешировать расписание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMZ-jB-W4D">
                                             <rect key="frame" x="16" y="14" width="197" height="22"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wjq-D6-dKE">
-                                            <rect key="frame" x="309" y="11.5" width="51" height="26.5"/>
-                                            <color key="onTintColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w8z-uz-cTY">
+                                            <rect key="frame" x="309" y="12" width="51" height="26"/>
+                                            <color key="onTintColor" red="0.23137254901960785" green="0.60392156862745094" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                         </switch>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="HPf-5B-Mhk" firstAttribute="top" secondItem="s1g-0K-awq" secondAttribute="topMargin" constant="3" id="F5E-8T-EcA"/>
-                                        <constraint firstItem="wjq-D6-dKE" firstAttribute="trailing" secondItem="s1g-0K-awq" secondAttribute="trailingMargin" constant="-1" id="MQZ-S1-sdY"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="wjq-D6-dKE" secondAttribute="bottom" constant="1" id="Mk8-tg-Jar"/>
-                                        <constraint firstItem="wjq-D6-dKE" firstAttribute="centerY" secondItem="s1g-0K-awq" secondAttribute="centerY" id="bmN-Qt-gwG"/>
-                                        <constraint firstItem="HPf-5B-Mhk" firstAttribute="leading" secondItem="s1g-0K-awq" secondAttribute="leadingMargin" id="q8p-nI-HSj"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="HPf-5B-Mhk" secondAttribute="bottom" constant="3" id="wjl-d5-2Pw"/>
+                                        <constraint firstItem="cMZ-jB-W4D" firstAttribute="leading" secondItem="mIV-Hc-F7j" secondAttribute="leadingMargin" id="aWM-pd-gtX"/>
+                                        <constraint firstItem="cMZ-jB-W4D" firstAttribute="top" secondItem="mIV-Hc-F7j" secondAttribute="topMargin" constant="3" id="bvn-gH-pt4"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="w8z-uz-cTY" secondAttribute="bottom" constant="1" id="kRD-qa-6bN"/>
+                                        <constraint firstItem="w8z-uz-cTY" firstAttribute="trailing" secondItem="mIV-Hc-F7j" secondAttribute="trailingMargin" constant="-1" id="lZR-tL-bSM"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cMZ-jB-W4D" secondAttribute="bottom" constant="3" id="mUD-yU-Aog"/>
+                                        <constraint firstItem="w8z-uz-cTY" firstAttribute="centerY" secondItem="mIV-Hc-F7j" secondAttribute="centerY" id="y4z-oH-A48"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="actionSwitch" destination="wjq-D6-dKE" id="Df9-SS-pWv"/>
-                                    <outlet property="titleLabel" destination="HPf-5B-Mhk" id="bAa-pT-BZ8"/>
+                                    <outlet property="actionSwitch" destination="w8z-uz-cTY" id="X2u-6q-zxr"/>
+                                    <outlet property="titleLabel" destination="cMZ-jB-W4D" id="MAh-eQ-Qsh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

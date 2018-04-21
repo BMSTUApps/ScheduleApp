@@ -10,6 +10,8 @@ import UIKit
 
 class SettingsRowCell: UITableViewCell {
 
+    // TODO: Add separators
+    
     enum Style {
         case disclosure
         case switcher
@@ -49,6 +51,6 @@ class SettingsRowCell: UITableViewCell {
     
     private func prepareUI() {
         
-        // ..
+        // FIXME: Set colors from theme
     }
 }

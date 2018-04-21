@@ -15,10 +15,10 @@ class SettingsController: TableViewController {
         
         // Group Row 👥
         enum GroupRow: Int {
-            case name, change
+            case group
             
             static var count = {
-                return GroupRow.change.rawValue + 1
+                return GroupRow.group.rawValue + 1
             }
         }
         
@@ -135,10 +135,16 @@ class SettingsController: TableViewController {
     }
     
     private func cellForGroupSection(row: Int) -> UITableViewCell {
-    
-        // ..
+        guard let row = Section.GroupRow(rawValue: row) else { return SettingsGroupCell() }
         
-        return SettingsRowCell()
+        let reuseIdentifier = String(describing: SettingsGroupCell.self)
+        let cell = (tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? SettingsGroupCell) ?? SettingsGroupCell()
+        cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, UIScreen.main.bounds.width)
+        
+        // Fix group name
+        cell.fill(groupName: "ИУ5-63")
+
+        return cell
     }
 
     private func cellForTeachersSection(row: Int) -> UITableViewCell {
