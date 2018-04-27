@@ -1,92 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14087.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u5W-cb-Vb1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u5W-cb-Vb1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14075.4"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Группы-->
-        <scene sceneID="71n-k1-oEG">
-            <objects>
-                <viewController id="vAz-D6-A6S" customClass="GroupsController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1Id-iV-WDq"/>
-                        <viewControllerLayoutGuide type="bottom" id="VEn-z9-5nQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UoM-Wk-MtQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xW3-2h-rWs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <inset key="separatorInset" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="50" id="CJ5-pW-QC3" customClass="GroupCell" customModule="BMSTUSchedule" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CJ5-pW-QC3" id="SSu-0N-qqO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя группы" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gd-Yx-fqC">
-                                                    <rect key="frame" x="25" y="11" width="106.5" height="28"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер курса" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPw-d1-987">
-                                                    <rect key="frame" x="260.5" y="17" width="99.5" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="1Gd-Yx-fqC" firstAttribute="leading" secondItem="SSu-0N-qqO" secondAttribute="leadingMargin" constant="10" id="0bm-0x-3PH"/>
-                                                <constraint firstItem="1Gd-Yx-fqC" firstAttribute="top" secondItem="SSu-0N-qqO" secondAttribute="topMargin" id="Bee-Pn-nja"/>
-                                                <constraint firstItem="DPw-d1-987" firstAttribute="trailing" secondItem="SSu-0N-qqO" secondAttribute="trailingMargin" id="CIZ-Ni-mLU"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="DPw-d1-987" secondAttribute="bottom" constant="6" id="EdK-Ze-U2l"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="1Gd-Yx-fqC" secondAttribute="bottom" id="Mps-sX-mmd"/>
-                                                <constraint firstItem="DPw-d1-987" firstAttribute="top" secondItem="SSu-0N-qqO" secondAttribute="topMargin" constant="6" id="j6b-xE-nbB"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="courseLabel" destination="DPw-d1-987" id="zh6-f4-2Gi"/>
-                                            <outlet property="nameLabel" destination="1Gd-Yx-fqC" id="4cX-HM-L6B"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="vAz-D6-A6S" id="2iT-jG-PNB"/>
-                                    <outlet property="delegate" destination="vAz-D6-A6S" id="SVq-PT-vJo"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="xW3-2h-rWs" firstAttribute="bottom" secondItem="7N3-IP-RlD" secondAttribute="bottom" id="3TY-4J-Tmn"/>
-                            <constraint firstItem="xW3-2h-rWs" firstAttribute="leading" secondItem="UoM-Wk-MtQ" secondAttribute="leading" id="Oc6-S7-Rq7"/>
-                            <constraint firstAttribute="trailing" secondItem="xW3-2h-rWs" secondAttribute="trailing" id="gSM-6Y-jxt"/>
-                            <constraint firstItem="xW3-2h-rWs" firstAttribute="top" secondItem="7N3-IP-RlD" secondAttribute="top" id="uea-77-4jl"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="7N3-IP-RlD"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Группы" id="7er-mr-qcB"/>
-                    <connections>
-                        <outlet property="tableView" destination="xW3-2h-rWs" id="QA8-O5-z8g"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3sb-dX-2Jt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1976.5" y="-297.5"/>
-        </scene>
         <!--Navigation Groups-->
         <scene sceneID="S7w-yr-b1Z">
             <objects>
@@ -103,15 +25,44 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vAz-D6-A6S" kind="relationship" relationship="rootViewController" id="J5Z-Dy-4Ix"/>
+                        <segue destination="1lr-Uw-J6G" kind="relationship" relationship="rootViewController" id="i2O-po-4z4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Elq-Ve-bH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1025" y="-297"/>
         </scene>
+        <!--Teachers-->
+        <scene sceneID="Vds-n1-bZ4">
+            <objects>
+                <tableViewController id="1lr-Uw-J6G" customClass="TeachersController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ye6-bN-aXe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kch-We-UgR">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kch-We-UgR" id="QPf-tQ-N5w">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1lr-Uw-J6G" id="otX-ak-a4p"/>
+                            <outlet property="delegate" destination="1lr-Uw-J6G" id="r73-3A-a3s"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Teachers" id="q8U-NX-Mny"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dw4-9g-p9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1902" y="-297"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="teachers" width="45" height="45"/>
+        <image name="teachers" width="25" height="25"/>
     </resources>
 </document>
