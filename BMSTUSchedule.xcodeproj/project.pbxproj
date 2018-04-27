@@ -162,6 +162,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		6A86E43820936B7600333FCF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A5A839D51EE3FB050081D8D5 /* UIImage+Color.swift */,
+				6AF332AF2037F88A0085C033 /* String+Localize.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6AE5385E203AC16D008441FC /* Realm Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,8 +269,7 @@
 		A5545DB4202C3BDF00CBF1CD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				A5A839D51EE3FB050081D8D5 /* UIImage+Color.swift */,
-				6AF332AF2037F88A0085C033 /* String+Localize.swift */,
+				6A86E43820936B7600333FCF /* Extensions */,
 				6AF332BC2037FBB10085C033 /* Localizable.strings */,
 				A5CED4E01DB0E080000D2DFD /* Assets.xcassets */,
 				A5D39BEA2039C8130072B6D5 /* Info.plist */,
