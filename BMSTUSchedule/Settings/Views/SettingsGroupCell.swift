@@ -42,6 +42,6 @@ class SettingsGroupCell: UITableViewCell {
         
         changeButton.tintColor = AppTheme.shared.blueColor
         changeButton.backgroundColor = AppTheme.shared.blueColor.withAlphaComponent(0.15)
-        changeButton.layer.cornerRadius = 12
+        changeButton.layer.cornerRadius = 10
     }
 }
