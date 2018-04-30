@@ -193,8 +193,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                             <rect key="frame" x="309" y="12" width="51" height="26"/>
                                             <color key="onTintColor" red="0.23137254901960785" green="0.60392156862745094" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                         </switch>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFJ-Db-6qy">
+                                            <rect key="frame" x="16" y="49" width="398" height="1"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="398" id="Cpc-d4-d7U"/>
+                                                <constraint firstAttribute="height" constant="1" id="Hol-ek-964"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="rFJ-Db-6qy" firstAttribute="leading" secondItem="mIV-Hc-F7j" secondAttribute="leading" constant="16" id="I4Z-7B-Cgv"/>
+                                        <constraint firstAttribute="bottom" secondItem="rFJ-Db-6qy" secondAttribute="bottom" id="XpC-lv-6FE"/>
                                         <constraint firstItem="cMZ-jB-W4D" firstAttribute="leading" secondItem="mIV-Hc-F7j" secondAttribute="leadingMargin" id="aWM-pd-gtX"/>
                                         <constraint firstItem="cMZ-jB-W4D" firstAttribute="top" secondItem="mIV-Hc-F7j" secondAttribute="topMargin" constant="3" id="bvn-gH-pt4"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="w8z-uz-cTY" secondAttribute="bottom" constant="1" id="kRD-qa-6bN"/>
@@ -205,6 +215,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="actionSwitch" destination="w8z-uz-cTY" id="X2u-6q-zxr"/>
+                                    <outlet property="separatorView" destination="rFJ-Db-6qy" id="x8c-Mg-8fg"/>
                                     <outlet property="titleLabel" destination="cMZ-jB-W4D" id="MAh-eQ-Qsh"/>
                                 </connections>
                             </tableViewCell>

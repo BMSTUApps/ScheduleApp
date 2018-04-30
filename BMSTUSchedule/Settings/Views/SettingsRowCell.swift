@@ -19,6 +19,7 @@ class SettingsRowCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var actionSwitch: UISwitch!
+    @IBOutlet weak var separatorView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -89,6 +89,7 @@ class SettingsController: TableViewController {
         
         cell.selectionStyle = row.canSelect() ? .default : .none
         cell.fill(title: row.title(), style: .switcher)
+        cell.separatorView.isHidden = row.rawValue == (SettingsSection.TeachersRow.count() - 1)
         
         return cell
     }
@@ -101,7 +102,8 @@ class SettingsController: TableViewController {
         
         cell.selectionStyle = row.canSelect() ? .default : .none
         cell.fill(title: row.title(), style: .disclosure)
-        
+        cell.separatorView.isHidden = row.rawValue == (SettingsSection.OtherRow.count() - 1)
+
         return cell
     }
 }
