@@ -172,6 +172,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="betweenConstraint" destination="d1Q-7O-UVZ" id="SZ9-no-xxJ"/>
+                                    <outlet property="bottomConstraint" destination="VN0-SJ-SWU" id="iZr-En-M6j"/>
                                     <outlet property="changeButton" destination="hI3-g5-Xmp" id="fXZ-gi-mZN"/>
                                     <outlet property="groupLabel" destination="ZHB-Lo-ImN" id="T4O-H7-UhD"/>
                                     <outlet property="topConstraint" destination="yrd-WP-ArB" id="JON-TR-9gl"/>

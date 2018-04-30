@@ -14,6 +14,8 @@ class SettingsGroupCell: UITableViewCell {
     @IBOutlet weak var changeButton: UIButton!
     
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var betweenConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     fileprivate let initialTopConstant: CGFloat = 24
     
@@ -44,7 +46,9 @@ class SettingsGroupCell: UITableViewCell {
         
         let newOffset = initialTopConstant + offset
         if newOffset < initialTopConstant {
-            topConstraint.constant = initialTopConstant + offset
+            topConstraint.constant = floor(newOffset / 3)
+            betweenConstraint.constant = -floor(newOffset / 3)
+            bottomConstraint.constant = -floor(newOffset / 3)
         }
     }
 
