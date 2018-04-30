@@ -174,6 +174,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                 <connections>
                                     <outlet property="changeButton" destination="hI3-g5-Xmp" id="fXZ-gi-mZN"/>
                                     <outlet property="groupLabel" destination="ZHB-Lo-ImN" id="T4O-H7-UhD"/>
+                                    <outlet property="topConstraint" destination="yrd-WP-ArB" id="JON-TR-9gl"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsRowCell" rowHeight="50" id="j4k-RL-VFv" customClass="SettingsRowCell" customModule="BMSTUSchedule" customModuleProvider="target">

@@ -10,6 +10,8 @@ import UIKit
 
 class SettingsController: TableViewController {
     
+    fileprivate var groupCell: SettingsGroupCell?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
@@ -78,6 +80,8 @@ class SettingsController: TableViewController {
         // Fix group name
         cell.fill(groupName: "ИУ5-63")
 
+        self.groupCell = cell
+        
         return cell
     }
 
@@ -105,5 +109,12 @@ class SettingsController: TableViewController {
         cell.separatorView.isHidden = row.rawValue == (SettingsSection.OtherRow.count() - 1)
 
         return cell
+    }
+    
+    // MARK: - Scroll view delegate
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        groupCell?.updateTopOffset(scrollView.contentOffset.y)
     }
 }

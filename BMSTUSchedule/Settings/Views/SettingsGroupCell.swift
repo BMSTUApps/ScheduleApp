@@ -13,6 +13,10 @@ class SettingsGroupCell: UITableViewCell {
     @IBOutlet weak var groupLabel: UILabel!
     @IBOutlet weak var changeButton: UIButton!
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    
+    fileprivate let initialTopConstant: CGFloat = 24
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.prepareUI()
@@ -35,10 +39,20 @@ class SettingsGroupCell: UITableViewCell {
         attributedDepartment.append(attributedNumber)
         groupLabel.attributedText = attributedDepartment
     }
+    
+    func updateTopOffset(_ offset: CGFloat) {
+        
+        let newOffset = initialTopConstant + offset
+        if newOffset < initialTopConstant {
+            topConstraint.constant = initialTopConstant + offset
+        }
+    }
 
     // MARK: - UI
     
     private func prepareUI() {
+        
+        self.clipsToBounds = false
         
         changeButton.tintColor = AppTheme.shared.blueColor
         changeButton.backgroundColor = AppTheme.shared.blueColor.withAlphaComponent(0.15)
