@@ -18,6 +18,7 @@ class SettingsGroupCell: UITableViewCell {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     fileprivate let initialTopConstant: CGFloat = 24
+    fileprivate let initialBetweenConstant: CGFloat = 14
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,11 +45,13 @@ class SettingsGroupCell: UITableViewCell {
     
     func updateTopOffset(_ offset: CGFloat) {
         
+        // FIXME: Fix lugs with parallax
+        
         let newOffset = initialTopConstant + offset
         if newOffset < initialTopConstant {
-            topConstraint.constant = floor(newOffset / 3)
-            betweenConstraint.constant = -floor(newOffset / 3)
-            bottomConstraint.constant = -floor(newOffset / 3)
+            topConstraint.constant = initialTopConstant + floor(offset / 3)
+            betweenConstraint.constant = initialBetweenConstant - floor(offset / 6)
+            bottomConstraint.constant = initialTopConstant - floor(offset / 6)
         }
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yW8-6u-Ul3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14111" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yW8-6u-Ul3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -122,24 +122,27 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsGroupCell" rowHeight="198" id="ltB-ok-823" customClass="SettingsGroupCell" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="198"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsGroupCell" rowHeight="158" id="ltB-ok-823" customClass="SettingsGroupCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="158"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ltB-ok-823" id="s1g-0K-awq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGq-6Y-C61">
-                                            <rect key="frame" x="115" y="24" width="145" height="150"/>
+                                            <rect key="frame" x="115" y="24" width="145" height="110"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ИУ5-63" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHB-Lo-ImN">
-                                                    <rect key="frame" x="8" y="8" width="129" height="90"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ИУ5-63" textAlignment="center" lineBreakMode="middleTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHB-Lo-ImN">
+                                                    <rect key="frame" x="8" y="8" width="129" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="uEa-nL-3q8"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hI3-g5-Xmp">
-                                                    <rect key="frame" x="8" y="112" width="129" height="30"/>
+                                                    <rect key="frame" x="8" y="72" width="129" height="30"/>
                                                     <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="lPp-10-lYM"/>
@@ -155,11 +158,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="ZHB-Lo-ImN" secondAttribute="trailing" constant="8" id="3Ev-we-4RN"/>
+                                                <constraint firstAttribute="bottom" secondItem="hI3-g5-Xmp" secondAttribute="bottom" constant="8" id="IKI-MC-gzO"/>
                                                 <constraint firstItem="ZHB-Lo-ImN" firstAttribute="leading" secondItem="WGq-6Y-C61" secondAttribute="leading" constant="8" id="UfI-y2-CGH"/>
                                                 <constraint firstItem="ZHB-Lo-ImN" firstAttribute="top" secondItem="WGq-6Y-C61" secondAttribute="top" constant="8" id="ZSp-5p-cbQ"/>
                                                 <constraint firstItem="hI3-g5-Xmp" firstAttribute="leading" secondItem="WGq-6Y-C61" secondAttribute="leading" constant="8" id="a1A-1f-dhH"/>
                                                 <constraint firstItem="hI3-g5-Xmp" firstAttribute="top" secondItem="ZHB-Lo-ImN" secondAttribute="bottom" constant="14" id="d1Q-7O-UVZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="hI3-g5-Xmp" secondAttribute="bottom" constant="8" id="kOB-bl-Xh9"/>
                                                 <constraint firstAttribute="trailing" secondItem="hI3-g5-Xmp" secondAttribute="trailing" constant="8" id="pGh-Ul-hvm"/>
                                             </constraints>
                                         </view>
@@ -180,7 +183,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsRowCell" rowHeight="50" id="j4k-RL-VFv" customClass="SettingsRowCell" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="253.5" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="213.5" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j4k-RL-VFv" id="mIV-Hc-F7j">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
