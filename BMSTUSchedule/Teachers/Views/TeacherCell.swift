@@ -32,10 +32,18 @@ class TeacherCell: UITableViewCell {
     
     private func prepareUI() {
 
-        // FIXME: Fix shadow
+        self.clipsToBounds = false
+
         liningView.layer.cornerRadius = 15.0
-        liningView.layer.shadowColor = UIColor.black.withAlphaComponent(0.05).cgColor
-        liningView.layer.shadowRadius = 15.0
+        
+        liningView.layer.shadowColor = UIColor.black.cgColor
+        liningView.layer.shadowOpacity = 0.05
+        liningView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        liningView.layer.shadowRadius = 15
+        
+        liningView.layer.shadowPath = UIBezierPath(rect: liningView.bounds).cgPath
+        liningView.layer.shouldRasterize = true
+        liningView.layer.rasterizationScale = UIScreen.main.scale
         
         photoView.layer.cornerRadius = photoView.frame.height / 2
     }
