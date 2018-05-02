@@ -8,9 +8,7 @@
 
 import Foundation
 
-/*
- Schedule 🗂
- */
+/// Schedule 🗂
 class Schedule: CustomStringConvertible {
 
     var group: Group

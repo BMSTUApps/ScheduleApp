@@ -8,9 +8,7 @@
 
 import Foundation
 
-/*
- Lesson 🎓
- */
+/// Lesson 🎓
 class Lesson: CustomStringConvertible {
 
     enum Kind: String {

@@ -8,9 +8,8 @@
 
 import Foundation
 
-/*
- Group 👥
- */
+
+/// Group 👥
 class Group: CustomStringConvertible {
 
     var name: String {

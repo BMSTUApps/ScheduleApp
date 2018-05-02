@@ -8,9 +8,7 @@
 
 import Foundation
 
-/*
- Week 🗓
- */
+/// Week 🗓
 class Week: CustomStringConvertible {
 
     enum Kind: String {

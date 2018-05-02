@@ -8,9 +8,7 @@
 
 import Foundation
 
-/*
- Day 🌞
- */
+/// Day 🌞
 class Day: CustomStringConvertible {
 
     enum Title: String {

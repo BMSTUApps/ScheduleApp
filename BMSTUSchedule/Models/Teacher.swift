@@ -8,9 +8,7 @@
 
 import Foundation
 
-/*
- Teacher 👨‍🏫
- */
+/// Teacher 👨‍🏫
 class Teacher: CustomStringConvertible {
 
     var firstName: String
