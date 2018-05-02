@@ -188,8 +188,8 @@
 		6AE9FE3B20557F26002733F0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */,
 				6A5CE040208AACDE002BE568 /* SettingsGroupCell.swift */,
+				6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -481,7 +481,7 @@
 				TargetAttributes = {
 					A5CED4D51DB0E07F000D2DFD = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = CT884K7983;
+						DevelopmentTeam = 27S8L7RZLQ;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -848,11 +848,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CT884K7983;
+				DEVELOPMENT_TEAM = 27S8L7RZLQ;
 				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Helpers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.bestK1ng.schedule-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bestK1ng.schedule-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -869,11 +869,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CT884K7983;
+				DEVELOPMENT_TEAM = 27S8L7RZLQ;
 				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Helpers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.bestK1ng.schedule-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bestK1ng.schedule-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
