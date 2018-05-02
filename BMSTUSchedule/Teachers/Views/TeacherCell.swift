@@ -27,6 +27,15 @@ class TeacherCell: UITableViewCell {
         nameLabel.text = "Абулкасимов Манас Мукитович"
         positionLabel.text = "старший преподаватель"
     }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        
+        if highlighted {
+            liningView.backgroundColor = UIColor.gray.withAlphaComponent(0.15)
+        } else {
+            liningView.backgroundColor = UIColor.white
+        }
+    }
 
     // MARK: - UI
     
