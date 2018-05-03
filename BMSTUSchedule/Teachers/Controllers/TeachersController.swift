@@ -24,6 +24,10 @@ class TeachersController: UITableViewController {
         
         // Set content inset
         self.tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+        
+        // Setup navigation bar
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     // MARK: - Table view data source

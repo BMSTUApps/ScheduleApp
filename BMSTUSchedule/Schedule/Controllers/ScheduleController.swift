@@ -43,8 +43,7 @@ class ScheduleController: TableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        prepareUI()
+        self.prepareUI()
         
         self.schedule = AppManager.shared.getCurrentSchedule()
     }

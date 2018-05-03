@@ -361,6 +361,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="schedule" width="30" height="30"/>
+        <image name="schedule" width="25" height="25"/>
     </resources>
 </document>
