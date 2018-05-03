@@ -27,7 +27,7 @@ class TeachersController: UITableViewController {
         
         // Setup navigation bar
         self.navigationController?.navigationBar.barStyle = .black
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = AppTheme.shared.navigationBarTintColor
     }
     
     // MARK: - Table view data source

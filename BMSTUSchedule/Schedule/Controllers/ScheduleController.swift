@@ -55,7 +55,7 @@ class ScheduleController: TableViewController {
         // Add large titles
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.barStyle = .black
-            self.navigationController?.navigationBar.tintColor = UIColor.white
+            self.navigationController?.navigationBar.tintColor = AppTheme.shared.navigationBarTintColor
             self.navigationController?.view.backgroundColor = self.view.backgroundColor
             self.navigationController?.navigationBar.prefersLargeTitles = true
             self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
