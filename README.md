@@ -27,3 +27,4 @@
 * [@bestK1ngArthur](https://github.com/bestK1ngArthur)
 * *разыскивается iOS dev.*
 * *разыскивается UI/UX designer*
+* *разыскивается Vapor Master*
