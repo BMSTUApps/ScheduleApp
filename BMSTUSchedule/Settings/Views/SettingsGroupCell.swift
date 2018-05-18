@@ -52,6 +52,8 @@ class SettingsGroupCell: UITableViewCell {
             topConstraint.constant = initialTopConstant + floor(offset / 3)
             betweenConstraint.constant = initialBetweenConstant - floor(offset / 6)
             bottomConstraint.constant = initialTopConstant - floor(offset / 6)
+        
+            groupLabel.font = groupLabel.font.withSize(36 - floor(offset / 6))
         }
     }
 
