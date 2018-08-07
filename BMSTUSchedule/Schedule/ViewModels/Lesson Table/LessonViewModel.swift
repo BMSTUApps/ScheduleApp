@@ -25,6 +25,7 @@ class LessonViewModel {
         
         fillTitleViewModel()
         fillDescriptionViewModel()
+        fillLocationViewModel()
         fillTeacherViewModel()
         fillCalendarViewModel()
     }
@@ -61,6 +62,16 @@ class LessonViewModel {
         
         let teacherViewModel = LessonTeacherCellViewModel(fakeTeacher)
         viewModels.append(teacherViewModel)
+    }
+    
+    private func fillLocationViewModel() {
+        
+        guard let location = lesson.room else {
+            return
+        }
+        
+        let locationViewModel = LessonLocationViewModel(location: location)
+        viewModels.append(locationViewModel)
     }
     
     private func fillCalendarViewModel() {

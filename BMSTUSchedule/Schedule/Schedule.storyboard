@@ -236,8 +236,8 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Преподаватель" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jx2-eB-B2I">
-                                            <rect key="frame" x="16" y="8" width="102" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                            <rect key="frame" x="16" y="8" width="109" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -306,6 +306,49 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="calendarView" destination="QYb-Og-Pte" id="FrR-5g-KqW"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonLocationCell" rowHeight="75" id="Mjs-Hi-S0V" customClass="LessonLocationCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="305" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mjs-Hi-S0V" id="rel-Hl-VKQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Аудитория" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lDi-fz-vmq">
+                                            <rect key="frame" x="16" y="8" width="76" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123л" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8h-A1-DZE">
+                                            <rect key="frame" x="16" y="33" width="343" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(1 этаж, учебно-лабораторный корпус)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p8-eb-3as">
+                                            <rect key="frame" x="16" y="52.5" width="343" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.098231281725888353" green="0.098231281725888353" blue="0.098231281725888353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Q8h-A1-DZE" firstAttribute="top" secondItem="lDi-fz-vmq" secondAttribute="bottom" constant="8" id="5wh-o1-hyh"/>
+                                        <constraint firstAttribute="trailing" secondItem="Q8h-A1-DZE" secondAttribute="trailing" constant="16" id="AYC-27-lXa"/>
+                                        <constraint firstItem="6p8-eb-3as" firstAttribute="leading" secondItem="rel-Hl-VKQ" secondAttribute="leading" constant="16" id="Fe0-HX-M11"/>
+                                        <constraint firstItem="lDi-fz-vmq" firstAttribute="leading" secondItem="rel-Hl-VKQ" secondAttribute="leading" constant="16" id="Md7-62-TPr"/>
+                                        <constraint firstAttribute="bottom" secondItem="6p8-eb-3as" secondAttribute="bottom" constant="8" id="Mxp-Iy-V0b"/>
+                                        <constraint firstItem="Q8h-A1-DZE" firstAttribute="leading" secondItem="rel-Hl-VKQ" secondAttribute="leading" constant="16" id="cik-2u-36t"/>
+                                        <constraint firstItem="6p8-eb-3as" firstAttribute="top" secondItem="Q8h-A1-DZE" secondAttribute="bottom" id="fiG-xJ-jTe"/>
+                                        <constraint firstItem="lDi-fz-vmq" firstAttribute="top" secondItem="rel-Hl-VKQ" secondAttribute="top" constant="8" id="hmO-te-K0e"/>
+                                        <constraint firstAttribute="trailing" secondItem="6p8-eb-3as" secondAttribute="trailing" constant="16" id="mF9-64-qKk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="locationDescriptionLabel" destination="6p8-eb-3as" id="W4W-JM-bYD"/>
+                                    <outlet property="locationLabel" destination="Q8h-A1-DZE" id="uwa-F2-e3H"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
