@@ -16,14 +16,17 @@ class LessonViewModel {
     
     private var viewModels: [CellViewModel] = []
     private let lesson: Lesson
-    
-    init(_ lesson: Lesson) {
+    private let displayedLessons: [Lesson]?
+
+    init(_ lesson: Lesson, displayedLessons: [Lesson]? = nil) {
         
         self.lesson = lesson
+        self.displayedLessons = displayedLessons
         
         fillTitleViewModel()
         fillDescriptionViewModel()
         fillTeacherViewModel()
+        fillCalendarViewModel()
     }
     
     func viewModel(for indexPath: IndexPath) -> CellViewModel? {
@@ -58,5 +61,15 @@ class LessonViewModel {
         
         let teacherViewModel = LessonTeacherCellViewModel(fakeTeacher)
         viewModels.append(teacherViewModel)
+    }
+    
+    private func fillCalendarViewModel() {
+        
+        guard let displayedLessons = displayedLessons else {
+            return
+        }
+        
+        let calendarViewModel = LessonCalendarCellViewModel(currentLesson: lesson, displayedLessons: displayedLessons)
+        viewModels.append(calendarViewModel)
     }
 }

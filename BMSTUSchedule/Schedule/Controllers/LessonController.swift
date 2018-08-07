@@ -10,13 +10,7 @@ import UIKit
 
 class LessonController: UITableViewController {
 
-    var lesson: Lesson? {
-        didSet {
-            if let lesson = lesson {
-                viewModel = LessonViewModel(lesson)
-            }
-        }
-    }
+    var lesson: Lesson?
     var displayedLessons: [Lesson]?
     
     private var viewModel: LessonViewModel?
@@ -34,6 +28,7 @@ class LessonController: UITableViewController {
         super.viewDidLoad()
 
         prepareUI()
+        updateTable()
     }
     
     func prepareUI() {
@@ -44,6 +39,16 @@ class LessonController: UITableViewController {
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .never
         }
+    }
+    
+    func updateTable() {
+        
+        guard let lesson = lesson else {
+            return
+        }
+        
+        viewModel = LessonViewModel(lesson, displayedLessons: displayedLessons)
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source

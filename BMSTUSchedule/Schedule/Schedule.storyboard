@@ -444,6 +444,32 @@
                                     <outlet property="photoView" destination="P6w-2U-Wgh" id="X4F-Pa-uwb"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonCalendarCell" rowHeight="76" id="uIs-88-rEo" customClass="LessonCalendarCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="229" width="375" height="76"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uIs-88-rEo" id="pdt-VP-t7H">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="QYb-Og-Pte" customClass="CalendarView" customModule="BMSTUSchedule" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="8" width="343" height="60"/>
+                                            <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QYb-Og-Pte" firstAttribute="top" secondItem="pdt-VP-t7H" secondAttribute="top" constant="8" id="7IB-Pl-jsE"/>
+                                        <constraint firstItem="QYb-Og-Pte" firstAttribute="leading" secondItem="pdt-VP-t7H" secondAttribute="leading" constant="16" id="Fpr-EE-nws"/>
+                                        <constraint firstAttribute="trailing" secondItem="QYb-Og-Pte" secondAttribute="trailing" constant="16" id="etI-mX-hu1"/>
+                                        <constraint firstAttribute="bottom" secondItem="QYb-Og-Pte" secondAttribute="bottom" constant="8" id="hx8-yz-7xg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="calendarView" destination="QYb-Og-Pte" id="FrR-5g-KqW"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="WaZ-XC-i9H" id="FPj-6T-rm8"/>
