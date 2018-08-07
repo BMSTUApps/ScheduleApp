@@ -142,7 +142,7 @@ extension ScheduleController: UIViewControllerPreviewingDelegate {
             return nil
         }
         
-        guard let lessonController = storyboard?.instantiateViewController(withIdentifier: String(describing: OldLessonController.self)) as? OldLessonController else {
+        guard let lessonController = storyboard?.instantiateViewController(withIdentifier: String(describing: LessonController.self)) as? LessonController else {
             return nil
             
         }
