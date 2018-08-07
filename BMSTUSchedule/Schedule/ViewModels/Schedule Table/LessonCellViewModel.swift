@@ -1,5 +1,5 @@
 //
-//  LessonViewModel.swift
+//  LessonCellViewModel.swift
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 15/02/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LessonViewModel {
+class LessonCellViewModel {
     
     let brakeText: String
     let kindText: String

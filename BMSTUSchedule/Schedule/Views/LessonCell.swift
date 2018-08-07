@@ -50,7 +50,7 @@ class LessonCell: UITableViewCell {
         kindView.backgroundColor = kindColors["default"]
     }
     
-    func fill(model: LessonViewModel) {
+    func fill(model: LessonCellViewModel) {
         
         breakLabel.text = model.brakeText
         

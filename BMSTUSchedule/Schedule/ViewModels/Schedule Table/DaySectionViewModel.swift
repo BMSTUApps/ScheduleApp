@@ -8,16 +8,16 @@
 
 import Foundation
 
-class DayViewModel {
+class DaySectionViewModel {
 
     let title: String
-    let lessons: [LessonViewModel]
+    let lessons: [LessonCellViewModel]
     
     init(_ day: Day) {
         
         self.title = day.title.rawValue
         
-        var lessonsViewModels: [LessonViewModel] = []
+        var lessonsViewModels: [LessonCellViewModel] = []
         for (index, lesson) in day.lessons.enumerated() {
             
             var brakeText = ""
@@ -27,7 +27,7 @@ class DayViewModel {
                 brakeText = AppManager.shared.calculateBrake(currentLesson: day.lessons[index-1], nextLesson: lesson) ?? ""
             }
             
-            let lessonViewModel = LessonViewModel(lesson, brakeText: brakeText)
+            let lessonViewModel = LessonCellViewModel(lesson, brakeText: brakeText)
             lessonsViewModels.append(lessonViewModel)
         }
         self.lessons = lessonsViewModels

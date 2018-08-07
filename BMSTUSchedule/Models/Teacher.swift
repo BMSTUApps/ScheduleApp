@@ -17,13 +17,24 @@ class Teacher: CustomStringConvertible {
     
     var department: String
     
+    var position: String?
+    var degree: String?
+    
     var photoURL: URL?
     var about: String?
 
     var description : String {
         return "Teacher(\"\(firstName) \(lastName)\")\n"
     }
+
+    var fullName: String {
+        return lastName + firstName + (middleName ?? "")
+    }
     
+    var shortName: String {
+        return "\(lastName) \(String(describing: firstName.first)).\(String(describing: middleName?.first))."
+    }
+
     // MARK: Initialization
     
     init(firstName: String, lastName: String, department: String) {

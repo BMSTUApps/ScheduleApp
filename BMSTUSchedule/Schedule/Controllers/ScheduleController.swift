@@ -23,9 +23,9 @@ class ScheduleController: TableViewController {
             self.days = days
             
             // Set viewModels
-            var daysViewModels: [DayViewModel] = []
+            var daysViewModels: [DaySectionViewModel] = []
             for day in days {
-                let dayViewModel = DayViewModel(day)
+                let dayViewModel = DaySectionViewModel(day)
                 daysViewModels.append(dayViewModel)
             }
             
@@ -39,7 +39,7 @@ class ScheduleController: TableViewController {
     
     var group: Group?
     var days: [Day] = [] // FIXME: Remove days
-    var daysViewModels: [DayViewModel] = []
+    var daysViewModels: [DaySectionViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +129,8 @@ class ScheduleController: TableViewController {
             let displayedLessons: [Lesson] = Array(days[indexPath.section].lessons[startIndex...endIndex])
             
             lessonController.lesson = days[indexPath.section].lessons[indexPath.row]
-            lessonController.displayedLessons = displayedLessons        }
+            lessonController.displayedLessons = displayedLessons
+        }
     }
 }
 
@@ -141,7 +142,7 @@ extension ScheduleController: UIViewControllerPreviewingDelegate {
             return nil
         }
         
-        guard let lessonController = storyboard?.instantiateViewController(withIdentifier: String(describing: LessonController.self)) as? LessonController else {
+        guard let lessonController = storyboard?.instantiateViewController(withIdentifier: String(describing: OldLessonController.self)) as? OldLessonController else {
             return nil
             
         }
