@@ -351,6 +351,39 @@
                                     <outlet property="locationLabel" destination="Q8h-A1-DZE" id="uwa-F2-e3H"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonTimeCell" rowHeight="61" id="pdr-Ag-8lf" customClass="LessonTimeCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="380" width="375" height="61"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pdr-Ag-8lf" id="us6-qR-WIU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Время" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MBr-HV-l5s">
+                                            <rect key="frame" x="16" y="8" width="45.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 — 13:35" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVD-OV-Jga">
+                                            <rect key="frame" x="16" y="33" width="343" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.098231281729999995" green="0.098231281729999995" blue="0.098231281729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="kVD-OV-Jga" secondAttribute="trailing" constant="16" id="C2l-qN-Hse"/>
+                                        <constraint firstItem="kVD-OV-Jga" firstAttribute="top" secondItem="MBr-HV-l5s" secondAttribute="bottom" constant="8" id="RIh-L4-gjx"/>
+                                        <constraint firstAttribute="bottom" secondItem="kVD-OV-Jga" secondAttribute="bottom" constant="8" id="VTu-aC-Mt1"/>
+                                        <constraint firstItem="kVD-OV-Jga" firstAttribute="leading" secondItem="us6-qR-WIU" secondAttribute="leading" constant="16" id="Xd9-fM-Rp7"/>
+                                        <constraint firstItem="MBr-HV-l5s" firstAttribute="leading" secondItem="us6-qR-WIU" secondAttribute="leading" constant="16" id="aqb-Jo-s5Q"/>
+                                        <constraint firstItem="MBr-HV-l5s" firstAttribute="top" secondItem="us6-qR-WIU" secondAttribute="top" constant="8" id="jNn-5v-S1o"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="timeLabel" destination="kVD-OV-Jga" id="gxG-Cc-pP5"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="WaZ-XC-i9H" id="FPj-6T-rm8"/>

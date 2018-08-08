@@ -22,7 +22,7 @@ class LessonLocationCell: UITableViewCell, CellViewModelProtocol {
     
     func fillCell(model: CellViewModel) {
         
-        guard let castedModel = model as? LessonLocationViewModel else {
+        guard let castedModel = model as? LessonLocationCellViewModel else {
             return
         }
 

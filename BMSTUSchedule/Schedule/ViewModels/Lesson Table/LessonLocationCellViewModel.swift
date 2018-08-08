@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LessonLocationViewModel: CellViewModel {
+class LessonLocationCellViewModel: CellViewModel {
 
     var location: String
     var locationDescription: String
