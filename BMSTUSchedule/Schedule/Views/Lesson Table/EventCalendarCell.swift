@@ -1,5 +1,5 @@
 //
-//  LessonCalendarCell.swift
+//  EventCalendarCell.swift
 //  BMSTUSchedule
 //
 //  Created by a.belkov on 08/08/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LessonCalendarCell: UITableViewCell, CellViewModelProtocol {
+class EventCalendarCell: UITableViewCell, CellViewModelProtocol {
 
     @IBOutlet weak var calendarView: CalendarView!
     
@@ -21,13 +21,13 @@ class LessonCalendarCell: UITableViewCell, CellViewModelProtocol {
     
     func fillCell(model: CellViewModel) {
         
-        guard let castedModel = model as? LessonCalendarCellViewModel else {
+        guard let castedModel = model as? EventCalendarCellViewModel else {
             return
         }
 
-        calendarView.selectedIndex = castedModel.displayedLessons.index { (currentLesson) -> Bool in
-            return currentLesson.startTime == castedModel.currentLesson.startTime
+        calendarView.selectedIndex = castedModel.displayedEvents.index { (currentEvent) -> Bool in
+            return currentEvent.startTime == castedModel.currentEvent.startTime
         }!
-        calendarView.lessons = castedModel.displayedLessons
+        calendarView.events = castedModel.displayedEvents
     }
 }

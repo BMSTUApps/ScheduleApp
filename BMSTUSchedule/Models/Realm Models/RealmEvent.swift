@@ -1,5 +1,5 @@
 //
-//  RealmLesson.swift
+//  RealmEvent.swift
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 19/02/2018.
@@ -9,12 +9,12 @@
 import Foundation
 import RealmSwift
 
-class RealmLesson: Object {
+class RealmEvent: Object {
     
     @objc dynamic var title: String = ""
     
     @objc dynamic var teacher: String? = nil
-    @objc dynamic var room: String? = nil
+    @objc dynamic var location: String? = nil
     
     @objc dynamic var kind: String = ""
     
@@ -24,22 +24,22 @@ class RealmLesson: Object {
 
 // MARK: - Model linking
 
-extension RealmLesson {
+extension RealmEvent {
     
-    convenience init(_ model: Lesson) {
+    convenience init(_ model: Event) {
         self.init()
         self.title = model.title
         self.teacher = model.teacher
-        self.room = model.room
+        self.location = model.location
         self.kind = model.kind.rawValue
         self.startTime = model.startTime
         self.endTime = model.endTime
     }
 }
 
-extension Lesson {
+extension Event {
     
-    convenience init(_ realmModel: RealmLesson) {
-        self.init(title: realmModel.title, teacher: realmModel.teacher, room: realmModel.room, kind: Kind(rawValue: realmModel.kind) ?? .other, startTime: realmModel.startTime, endTime: realmModel.endTime)
+    convenience init(_ realmModel: RealmEvent) {
+        self.init(title: realmModel.title, teacher: realmModel.teacher, location: realmModel.location, kind: Kind(rawValue: realmModel.kind) ?? .other, startTime: realmModel.startTime, endTime: realmModel.endTime)
     }
 }

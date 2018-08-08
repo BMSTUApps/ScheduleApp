@@ -95,16 +95,16 @@ class ScheduleController: TableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return daysViewModels[section].lessons.count
+        return daysViewModels[section].events.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: LessonCell.self), for: indexPath)
-        if let cell = cell as? LessonCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EventCell.self), for: indexPath)
+        if let cell = cell as? EventCell {
             
-            let lessonViewModel = daysViewModels[indexPath.section].lessons[indexPath.row]
-            cell.fill(model: lessonViewModel)
+            let eventViewModel = daysViewModels[indexPath.section].events[indexPath.row]
+            cell.fill(model: eventViewModel)
         }
 
         return cell
@@ -114,9 +114,9 @@ class ScheduleController: TableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "ShowLessonViewController" {
+        if segue.identifier == "ShowEventViewController" {
             
-            guard let lessonController = segue.destination as? LessonController else {
+            guard let eventController = segue.destination as? EventController else {
                 return
             }
 
@@ -125,11 +125,11 @@ class ScheduleController: TableViewController {
             }
             
             let startIndex = (indexPath.row - 1 >= 0) ? (indexPath.row - 1) : 0
-            let endIndex = (indexPath.row + 1 < days[indexPath.section].lessons.count) ? (indexPath.row + 1) : days[indexPath.section].lessons.count-1
-            let displayedLessons: [Lesson] = Array(days[indexPath.section].lessons[startIndex...endIndex])
+            let endIndex = (indexPath.row + 1 < days[indexPath.section].events.count) ? (indexPath.row + 1) : days[indexPath.section].events.count-1
+            let displayedEvents: [Event] = Array(days[indexPath.section].events[startIndex...endIndex])
             
-            lessonController.lesson = days[indexPath.section].lessons[indexPath.row]
-            lessonController.displayedLessons = displayedLessons
+            eventController.event = days[indexPath.section].events[indexPath.row]
+            eventController.displayedEvents = displayedEvents
         }
     }
 }
@@ -142,22 +142,22 @@ extension ScheduleController: UIViewControllerPreviewingDelegate {
             return nil
         }
         
-        guard let lessonController = storyboard?.instantiateViewController(withIdentifier: String(describing: LessonController.self)) as? LessonController else {
+        guard let eventController = storyboard?.instantiateViewController(withIdentifier: String(describing: EventController.self)) as? EventController else {
             return nil
             
         }
         
         let startIndex = (indexPath.row - 1 >= 0) ? (indexPath.row - 1) : 0
-        let endIndex = (indexPath.row + 1 < days[indexPath.section].lessons.count) ? (indexPath.row + 1) : days[indexPath.section].lessons.count-1
-        let displayedLessons: [Lesson] = Array(days[indexPath.section].lessons[startIndex...endIndex])
+        let endIndex = (indexPath.row + 1 < days[indexPath.section].events.count) ? (indexPath.row + 1) : days[indexPath.section].events.count-1
+        let displayedEvents: [Event] = Array(days[indexPath.section].events[startIndex...endIndex])
         
-        lessonController.lesson = days[indexPath.section].lessons[indexPath.row]
-        lessonController.displayedLessons = displayedLessons
-        lessonController.preferredContentSize = CGSize(width: lessonController.preferredContentSize.width, height: 400)
+        eventController.event = days[indexPath.section].events[indexPath.row]
+        eventController.displayedEvents = displayedEvents
+        eventController.preferredContentSize = CGSize(width: eventController.preferredContentSize.width, height: 400)
 
         previewingContext.sourceRect = cell.frame
         
-        return lessonController
+        return eventController
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {

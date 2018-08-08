@@ -1,5 +1,5 @@
 //
-//  LessonTeacherCellViewModel.swift
+//  EventTeacherCellViewModel.swift
 //  BMSTUSchedule
 //
 //  Created by a.belkov on 07/08/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LessonTeacherCellViewModel: CellViewModel {
+class EventTeacherCellViewModel: CellViewModel {
 
     var photoUrl: URL?
    
@@ -22,6 +22,6 @@ class LessonTeacherCellViewModel: CellViewModel {
         self.fullName = teacher.fullName
         self.degree = teacher.degree
         
-        super.init(identifier: String(describing: LessonTeacherCell.self))
+        super.init(identifier: String(describing: EventTeacherCell.self))
     }
 }

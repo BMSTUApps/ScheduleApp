@@ -17,7 +17,7 @@ class CalendarView: UIView {
     let lineThickness = 0.5
     
     var selectedIndex: Int = 0
-    var lessons: [Lesson] = [] {
+    var events: [Event] = [] {
         didSet {
             updateView()
         }
@@ -34,11 +34,11 @@ class CalendarView: UIView {
     private typealias Time = (hours: Int, minutes: Int)
     
     private var firstTime: Time? {
-        return self.getTime(string: lessons.first?.startTime)
+        return self.getTime(string: events.first?.startTime)
     }
     
     private var lastTime: Time? {
-        return self.getTime(string: lessons.last?.endTime)
+        return self.getTime(string: events.last?.endTime)
     }
     
     override var intrinsicContentSize: CGSize {
@@ -61,14 +61,14 @@ class CalendarView: UIView {
         let titles = getTitles()
         
         drawTitles(titles: titles)
-        drawLessons(lessons: lessons)
+        drawEvents(events: events)
         layoutIfNeeded()
     }
     
     /// Get array of titles
     private func getTitles() -> [String] {
         
-        if let firstTime = lessons.first?.startTime, let lastTime = lessons.last?.endTime {
+        if let firstTime = events.first?.startTime, let lastTime = events.last?.endTime {
             
             guard let indexFirst = firstTime.index(of: ":") else { return [] }
             guard let indexLast = lastTime.index(of: ":") else { return [] }
@@ -134,8 +134,8 @@ class CalendarView: UIView {
         }
     }
     
-    /// Draw lessons
-    private func drawLessons(lessons: [Lesson]) {
+    /// Draw events
+    private func drawEvents(events: [Event]) {
     
         guard let firstTime = firstTime else { return }
         let firstTimeValue = CGFloat(firstTime.hours * 60)
@@ -143,13 +143,13 @@ class CalendarView: UIView {
         let topOffset = CGFloat(self.topOffset + titleHeight / 2)
         let bottomOfset = CGFloat(bottomOffset + 26 + bottomOffset)
         
-        var lastLessonView: UIView?
-        for (index, lesson) in lessons.enumerated() {
+        var lastEventView: UIView?
+        for (index, event) in events.enumerated() {
             
             // Calculate frame
             
-            guard let startTime = getTime(string: lesson.startTime) else { return }
-            guard let endTime = getTime(string: lesson.endTime) else { return }
+            guard let startTime = getTime(string: event.startTime) else { return }
+            guard let endTime = getTime(string: event.endTime) else { return }
             
             let startTimeValue = CGFloat(startTime.hours * 60 + startTime.minutes)
             let endTimeValue = CGFloat(endTime.hours * 60 + endTime.minutes)
@@ -173,11 +173,11 @@ class CalendarView: UIView {
             titleLabel.font = UIFont.systemFont(ofSize: 11)
             titleLabel.textColor = UIColor.white
             titleLabel.numberOfLines = 0
-            titleLabel.text = lesson.title
+            titleLabel.text = event.title
             NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 6).isActive = true
             NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 2).isActive = true
             
-            // Add room
+            // Add location
             
             let roomLabel = UILabel()
             view.addSubview(roomLabel)
@@ -186,7 +186,7 @@ class CalendarView: UIView {
             roomLabel.font = UIFont.systemFont(ofSize: 10, weight: .bold)
             roomLabel.textColor = UIColor.white
             roomLabel.numberOfLines = 0
-            roomLabel.text = lesson.room
+            roomLabel.text = event.location
             NSLayoutConstraint(item: roomLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 10).isActive = true
             NSLayoutConstraint(item: roomLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: titleLabel, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 1).isActive = true
             
@@ -198,7 +198,7 @@ class CalendarView: UIView {
             NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0).isActive = true
             NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: frame.height).isActive = true
             
-            if let lastView = lastLessonView {
+            if let lastView = lastEventView {
                 let viewY = frame.origin.y - lastView.frame.origin.y - lastView.frame.height
                 NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: lastView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: viewY).isActive = true
             } else {
@@ -206,12 +206,12 @@ class CalendarView: UIView {
             }
             
             if selectedIndex == index {
-                view.backgroundColor = kindColors[lesson.kind.rawValue]?.withAlphaComponent(0.8)
+                view.backgroundColor = kindColors[event.kind.rawValue]?.withAlphaComponent(0.8)
             } else {
-                view.backgroundColor = kindColors[lesson.kind.rawValue]?.withAlphaComponent(0.5)
+                view.backgroundColor = kindColors[event.kind.rawValue]?.withAlphaComponent(0.5)
             }
             
-            lastLessonView = view
+            lastEventView = view
         }
     }
     

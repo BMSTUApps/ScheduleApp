@@ -11,25 +11,25 @@ import Foundation
 class DaySectionViewModel {
 
     let title: String
-    let lessons: [LessonCellViewModel]
+    let events: [EventCellViewModel]
     
     init(_ day: Day) {
         
         self.title = day.title.rawValue
         
-        var lessonsViewModels: [LessonCellViewModel] = []
-        for (index, lesson) in day.lessons.enumerated() {
+        var eventsViewModels: [EventCellViewModel] = []
+        for (index, event) in day.events.enumerated() {
             
             var brakeText = ""
             
-            let isLastLessonExist = day.lessons.indices.contains(index-1)
-            if isLastLessonExist {
-                brakeText = AppManager.shared.calculateBrake(currentLesson: day.lessons[index-1], nextLesson: lesson) ?? ""
+            let isLastEventExist = day.events.indices.contains(index-1)
+            if isLastEventExist {
+                brakeText = AppManager.shared.calculateBrake(currentEvent: day.events[index-1], nextEvent: event) ?? ""
             }
             
-            let lessonViewModel = LessonCellViewModel(lesson, brakeText: brakeText)
-            lessonsViewModels.append(lessonViewModel)
+            let eventViewModel = EventCellViewModel(event, brakeText: brakeText)
+            eventsViewModels.append(eventViewModel)
         }
-        self.lessons = lessonsViewModels
+        self.events = eventsViewModels
     }
 }

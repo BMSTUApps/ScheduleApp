@@ -110,56 +110,56 @@ class AppManager {
         
         let group = Group(name: "ИУ5-63")
         
-        let lesson1 = Lesson(title: "English", teacher: "Трошина О. В.", room: "401л", kind: .seminar, startTime: "8:30", endTime: "10:05")
-        let lesson2 = Lesson(title: "Network Software", teacher: "Семкин П. С.", room: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
-        let lesson3 = Lesson(title: "Multimedia Technology", teacher: "Афанасьев Г. И.", room: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
-        let lesson4 = Lesson(title: "Philosophy", teacher: nil, room: "502", kind: .seminar, startTime: "13:50", endTime: "15:25")
-        let lesson5 = Lesson(title: "Swimming pool", teacher: "Васющенкова Т. С.", room: "Sports Complex", kind: .other, startTime: "15:50", endTime: "17:25")
+        let event1 = Event(title: "English", teacher: "Трошина О. В.", location: "401л", kind: .seminar, startTime: "8:30", endTime: "10:05")
+        let event2 = Event(title: "Network Software", teacher: "Семкин П. С.", location: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
+        let event3 = Event(title: "Multimedia Technology", teacher: "Афанасьев Г. И.", location: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
+        let event4 = Event(title: "Philosophy", teacher: nil, location: "502", kind: .seminar, startTime: "13:50", endTime: "15:25")
+        let event5 = Event(title: "Swimming pool", teacher: "Васющенкова Т. С.", location: "Sports Complex", kind: .other, startTime: "15:50", endTime: "17:25")
         
-        let monday = Day(title: .monday, lessons: [lesson1, lesson2, lesson3, lesson4, lesson5], date: Date())
+        let monday = Day(title: .monday, events: [event1, event2, event3, event4, event5], date: Date())
         
-        let lesson6 = Lesson(title: "Discrete optimization methods", teacher: "Иванов А. О.", room: "306ю", kind: .seminar, startTime: "8:30", endTime: "10:05")
-        let lesson7 = Lesson(title: "Discrete optimization methods", teacher: "Иванов А. О.", room: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
-        let lesson8 = Lesson(title: "Description of the life cycle processes of ASOIS", teacher: "Черненький В. М.", room: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
-        let lesson9 = Lesson(title: "Description of the life cycle processes of ASOIS", teacher: "Черненький В. М.", room: "515ю", kind: .lecture, startTime: "13:50", endTime: "15:25")
-        let lesson10 = Lesson(title: "Swimming pool", teacher: "Васющенкова Т. С.", room: "Sports Complex", kind: .other, startTime: "15:50", endTime: "17:25")
+        let event6 = Event(title: "Discrete optimization methods", teacher: "Иванов А. О.", location: "306ю", kind: .seminar, startTime: "8:30", endTime: "10:05")
+        let event7 = Event(title: "Discrete optimization methods", teacher: "Иванов А. О.", location: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
+        let event8 = Event(title: "Description of the life cycle processes of ASOIS", teacher: "Черненький В. М.", location: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
+        let event9 = Event(title: "Description of the life cycle processes of ASOIS", teacher: "Черненький В. М.", location: "515ю", kind: .lecture, startTime: "13:50", endTime: "15:25")
+        let event10 = Event(title: "Swimming pool", teacher: "Васющенкова Т. С.", location: "Sports Complex", kind: .other, startTime: "15:50", endTime: "17:25")
         
-        let numeratorTuesday = Day(title: .tuesday, lessons: [lesson6, lesson7, lesson8, lesson9, lesson10], date: Date())
+        let numeratorTuesday = Day(title: .tuesday, events: [event6, event7, event8, event9, event10], date: Date())
         
-        let lesson11 = Lesson(title: "Military Training", teacher: "Лясковский В. Л.", room: "214", kind: .other, startTime: "10:15", endTime: "11:50")
-        let lesson12 = Lesson(title: "Military Training", teacher: "Горелов В. И.", room: "214", kind: .other, startTime: "12:00", endTime: "13:35")
-        let lesson13 = Lesson(title: "Military Training", teacher: "Амелько А. В.", room: "214", kind: .other, startTime: "13:50", endTime: "15:25")
-        let lesson14 = Lesson(title: "Military Training", teacher: "Горелов В. И.", room: "208", kind: .other, startTime: "15:40", endTime: "17:15")
-        let lesson15 = Lesson(title: "Multimedia Technology", teacher: "Белоногов И. Б.", room: "903", kind: .lab, startTime: "17:25", endTime: "19:00")
-        let lesson16 = Lesson(title: "Multimedia Technology", teacher: "Белоногов И. Б.", room: "903", kind: .lab, startTime: "19:10", endTime: "20:45")
+        let event11 = Event(title: "Military Training", teacher: "Лясковский В. Л.", location: "214", kind: .other, startTime: "10:15", endTime: "11:50")
+        let event12 = Event(title: "Military Training", teacher: "Горелов В. И.", location: "214", kind: .other, startTime: "12:00", endTime: "13:35")
+        let event13 = Event(title: "Military Training", teacher: "Амелько А. В.", location: "214", kind: .other, startTime: "13:50", endTime: "15:25")
+        let event14 = Event(title: "Military Training", teacher: "Горелов В. И.", location: "208", kind: .other, startTime: "15:40", endTime: "17:15")
+        let event15 = Event(title: "Multimedia Technology", teacher: "Белоногов И. Б.", location: "903", kind: .lab, startTime: "17:25", endTime: "19:00")
+        let event16 = Event(title: "Multimedia Technology", teacher: "Белоногов И. Б.", location: "903", kind: .lab, startTime: "19:10", endTime: "20:45")
         
-        let numeratorWednesday = Day(title: .wednesday, lessons: [lesson11, lesson12, lesson13, lesson14, lesson15, lesson16], date: Date())
+        let numeratorWednesday = Day(title: .wednesday, events: [event11, event12, event13, event14, event15, event16], date: Date())
         
-        let lesson17 = Lesson(title: "Network technologies in ASOIS", teacher: "Антонов А. И.", room: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
-        let lesson18 = Lesson(title: "Philosophy", teacher: "Ивлев В. Ю.", room: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
-        let lesson19 = Lesson(title: "Supercomputer", teacher: "Калистратов А. П.", room: "515ю", kind: .lecture, startTime: "13:50", endTime: "15:25")
+        let event17 = Event(title: "Network technologies in ASOIS", teacher: "Антонов А. И.", location: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
+        let event18 = Event(title: "Philosophy", teacher: "Ивлев В. Ю.", location: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
+        let event19 = Event(title: "Supercomputer", teacher: "Калистратов А. П.", location: "515ю", kind: .lecture, startTime: "13:50", endTime: "15:25")
         
-        let numeratorThursday = Day(title: .thursday, lessons: [lesson17, lesson18, lesson19], date: Date())
+        let numeratorThursday = Day(title: .thursday, events: [event17, event18, event19], date: Date())
         
-        let lesson20 = Lesson(title: "Network Software", teacher: "Семкин П. С.", room: "903", kind: .lab, startTime: "8:30", endTime: "10:05")
-        let lesson21 = Lesson(title: "Network Software", teacher: "Семкин П. С.", room: "903", kind: .lab, startTime: "10:15", endTime: "11:50")
+        let event20 = Event(title: "Network Software", teacher: "Семкин П. С.", location: "903", kind: .lab, startTime: "8:30", endTime: "10:05")
+        let event21 = Event(title: "Network Software", teacher: "Семкин П. С.", location: "903", kind: .lab, startTime: "10:15", endTime: "11:50")
         
-        let numeratorSaturday = Day(title: .saturday, lessons: [lesson20, lesson21], date: Date())
+        let numeratorSaturday = Day(title: .saturday, events: [event20, event21], date: Date())
         
-        let lesson22 = Lesson(title: "Description of the life cycle processes of ASOIS", teacher: "Черненький М. В.", room: "395", kind: .seminar, startTime: "13:50", endTime: "15:25")
+        let event22 = Event(title: "Description of the life cycle processes of ASOIS", teacher: "Черненький М. В.", location: "395", kind: .seminar, startTime: "13:50", endTime: "15:25")
         
-        let denominatorTuesday = Day(title: .tuesday, lessons: [lesson6, lesson7, lesson8, lesson22, lesson10], date: Date())
+        let denominatorTuesday = Day(title: .tuesday, events: [event6, event7, event8, event22, event10], date: Date())
         
-        let denominatorWednesday = Day(title: .wednesday, lessons: [lesson11, lesson12, lesson13, lesson14], date: Date())
+        let denominatorWednesday = Day(title: .wednesday, events: [event11, event12, event13, event14], date: Date())
         
-        let lesson23 = Lesson(title: "Supercomputer", teacher: "Калистратов А. П.", room: "903", kind: .lab, startTime: "15:40", endTime: "17:15")
+        let event23 = Event(title: "Supercomputer", teacher: "Калистратов А. П.", location: "903", kind: .lab, startTime: "15:40", endTime: "17:15")
         
-        let denominatorThursday = Day(title: .thursday, lessons: [lesson17, lesson18, lesson19, lesson23], date: Date())
+        let denominatorThursday = Day(title: .thursday, events: [event17, event18, event19, event23], date: Date())
         
-        let lesson24 = Lesson(title: "Network technologies in ASOIS", teacher: "Аксёнов А. Н.", room: "362", kind: .lab, startTime: "8:30", endTime: "10:05")
-        let lesson25 = Lesson(title: "Network technologies in ASOIS", teacher: "Аксёнов А. Н.", room: "362", kind: .lab, startTime: "10:15", endTime: "11:50")
+        let event24 = Event(title: "Network technologies in ASOIS", teacher: "Аксёнов А. Н.", location: "362", kind: .lab, startTime: "8:30", endTime: "10:05")
+        let event25 = Event(title: "Network technologies in ASOIS", teacher: "Аксёнов А. Н.", location: "362", kind: .lab, startTime: "10:15", endTime: "11:50")
         
-        let denominatorFriday = Day(title: .friday, lessons: [lesson24, lesson25], date: Date())
+        let denominatorFriday = Day(title: .friday, events: [event24, event25], date: Date())
         
         let numerator = Week(number: 0, kind: .numerator, days: [monday, numeratorTuesday, numeratorWednesday, numeratorThursday, numeratorSaturday])
         let denominator = Week(number: 0, kind: .denominator, days: [monday, denominatorTuesday, denominatorWednesday, denominatorThursday, denominatorFriday])
@@ -220,14 +220,14 @@ extension AppManager {
 
 extension AppManager {
     
-    func calculateBrake(currentLesson: Lesson, nextLesson: Lesson) -> String? {
+    func calculateBrake(currentEvent: Event, nextEvent: Event) -> String? {
 
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm"
         timeFormatter.locale = Locale(identifier: "ru-RU")
         
-        let date1 = timeFormatter.date(from: currentLesson.endTime)
-        let date2 = timeFormatter.date(from: nextLesson.startTime)
+        let date1 = timeFormatter.date(from: currentEvent.endTime)
+        let date2 = timeFormatter.date(from: nextEvent.startTime)
         
         guard let startBrakeDate = date1, let endBrakeDate = date2 else {
             return nil

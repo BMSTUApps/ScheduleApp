@@ -57,7 +57,7 @@
                                     <outlet property="titleLabel" destination="tBM-03-8hL" id="cKo-B0-5gk"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LessonCell" rowHeight="96" id="hpD-7j-EOI" customClass="LessonCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="96" id="hpD-7j-EOI" customClass="EventCell" customModule="BMSTUSchedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="68" width="375" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hpD-7j-EOI" id="Suu-2J-Uou">
@@ -156,7 +156,7 @@
                                     <outlet property="startTimeLabel" destination="BAX-YO-bTl" id="Gom-Wu-w36"/>
                                     <outlet property="teacherLabel" destination="Rdx-qD-rfv" id="x1l-M9-MCw"/>
                                     <outlet property="titleLabel" destination="W1q-RE-YuA" id="5iC-rX-mgl"/>
-                                    <segue destination="WaZ-XC-i9H" kind="show" identifier="ShowLessonViewController" id="8Eh-ff-N4I"/>
+                                    <segue destination="WaZ-XC-i9H" kind="show" identifier="ShowEventViewController" id="8Eh-ff-N4I"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -171,16 +171,16 @@
             </objects>
             <point key="canvasLocation" x="2005.5999999999999" y="-1066.4167916041979"/>
         </scene>
-        <!--Lesson Controller-->
+        <!--Event Controller-->
         <scene sceneID="3un-vw-gDB">
             <objects>
-                <tableViewController id="WaZ-XC-i9H" customClass="LessonController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="WaZ-XC-i9H" customClass="EventController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oIi-0D-soo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonTitleCell" rowHeight="106" id="6Vf-iF-97t" customClass="LessonTitleCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTitleCell" rowHeight="106" id="6Vf-iF-97t" customClass="EventTitleCell" customModule="BMSTUSchedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Vf-iF-97t" id="Aga-fv-Tvm">
@@ -228,7 +228,7 @@
                                     <outlet property="titleLabel" destination="GD9-6t-Fmb" id="avz-4Y-iAJ"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonTeacherCell" rowHeight="95" id="t3t-VP-61P" customClass="LessonTeacherCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTeacherCell" rowHeight="95" id="t3t-VP-61P" customClass="EventTeacherCell" customModule="BMSTUSchedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="134" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t3t-VP-61P" id="Vhv-cL-mqv">
@@ -282,7 +282,7 @@
                                     <outlet property="photoView" destination="P6w-2U-Wgh" id="X4F-Pa-uwb"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonCalendarCell" rowHeight="76" id="uIs-88-rEo" customClass="LessonCalendarCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCalendarCell" rowHeight="76" id="uIs-88-rEo" customClass="EventCalendarCell" customModule="BMSTUSchedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="229" width="375" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uIs-88-rEo" id="pdt-VP-t7H">
@@ -308,7 +308,7 @@
                                     <outlet property="calendarView" destination="QYb-Og-Pte" id="FrR-5g-KqW"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonLocationCell" rowHeight="75" id="Mjs-Hi-S0V" customClass="LessonLocationCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventLocationCell" rowHeight="75" id="Mjs-Hi-S0V" customClass="EventLocationCell" customModule="BMSTUSchedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="305" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mjs-Hi-S0V" id="rel-Hl-VKQ">
@@ -351,7 +351,7 @@
                                     <outlet property="locationLabel" destination="Q8h-A1-DZE" id="uwa-F2-e3H"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonTimeCell" rowHeight="61" id="pdr-Ag-8lf" customClass="LessonTimeCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTimeCell" rowHeight="61" id="pdr-Ag-8lf" customClass="EventTimeCell" customModule="BMSTUSchedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="380" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pdr-Ag-8lf" id="us6-qR-WIU">

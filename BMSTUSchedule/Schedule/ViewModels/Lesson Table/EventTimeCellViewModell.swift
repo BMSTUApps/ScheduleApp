@@ -1,5 +1,5 @@
 //
-//  LessonTimeCellViewModell.swift
+//  EventTimeCellViewModell.swift
 //  BMSTUSchedule
 //
 //  Created by a.belkov on 08/08/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LessonTimeCellViewModell: CellViewModel {
+class EventTimeCellViewModell: CellViewModel {
 
     var timeInterval: String
     
@@ -16,6 +16,6 @@ class LessonTimeCellViewModell: CellViewModel {
         
         self.timeInterval = "\(startTime) — \(endTime)"
         
-        super.init(identifier: String(describing: LessonTimeCell.self))
+        super.init(identifier: String(describing: EventTimeCell.self))
     }
 }

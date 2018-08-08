@@ -1,5 +1,5 @@
 //
-//  LessonTitleCell.swift
+//  EventTitleCell.swift
 //  BMSTUSchedule
 //
 //  Created by a.belkov on 07/08/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LessonTitleCell: UITableViewCell, CellViewModelProtocol {
+class EventTitleCell: UITableViewCell, CellViewModelProtocol {
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -33,7 +33,7 @@ class LessonTitleCell: UITableViewCell, CellViewModelProtocol {
     
     func fillCell(model: CellViewModel) {
         
-        guard let castedModel = model as? LessonTitleCellViewModel else {
+        guard let castedModel = model as? EventTitleCellViewModel else {
             return
         }
         

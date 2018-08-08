@@ -1,5 +1,5 @@
 //
-//  LessonTimeCell.swift
+//  EventTimeCell.swift
 //  BMSTUSchedule
 //
 //  Created by a.belkov on 08/08/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LessonTimeCell: UITableViewCell, CellViewModelProtocol {
+class EventTimeCell: UITableViewCell, CellViewModelProtocol {
 
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -21,7 +21,7 @@ class LessonTimeCell: UITableViewCell, CellViewModelProtocol {
     
     func fillCell(model: CellViewModel) {
         
-        guard let castedModel = model as? LessonTimeCellViewModell else {
+        guard let castedModel = model as? EventTimeCellViewModell else {
             return
         }
         

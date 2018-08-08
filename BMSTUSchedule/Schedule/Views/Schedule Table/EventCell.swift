@@ -1,5 +1,5 @@
 //
-//  LessonCell.swift
+//  EventCell.swift
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 26/10/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LessonCell: UITableViewCell {
+class EventCell: UITableViewCell {
     
     @IBOutlet weak var breakLabel: UILabel!
 
@@ -50,7 +50,7 @@ class LessonCell: UITableViewCell {
         kindView.backgroundColor = kindColors["default"]
     }
     
-    func fill(model: LessonCellViewModel) {
+    func fill(model: EventCellViewModel) {
         
         breakLabel.text = model.brakeText
         

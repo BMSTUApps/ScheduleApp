@@ -1,5 +1,5 @@
 //
-//  Lesson.swift
+//  Event.swift
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 14/10/2016.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-/// Lesson 🎓
-class Lesson: CustomStringConvertible {
+/// Event 🎓
+class Event: CustomStringConvertible {
 
     enum Kind: String {
         case lecture
@@ -21,7 +21,7 @@ class Lesson: CustomStringConvertible {
     var title: String
     
     var teacher: String?
-    var room: String?
+    var location: String?
     
     var kind: Kind
     
@@ -29,26 +29,26 @@ class Lesson: CustomStringConvertible {
     var endTime: String
 
     var description : String {
-        return "Lesson(\"\(title)\")\n"
+        return "Event(\"\(title)\")\n"
     }
     
     // MARK: Initialization
     
-    init(title: String, teacher: String?, room: String?, kind: Kind = .other, startTime: String, endTime: String) {
+    init(title: String, teacher: String?, location: String?, kind: Kind = .other, startTime: String, endTime: String) {
         self.title = title
         self.teacher = teacher
-        self.room = room
+        self.location = location
         self.kind = kind
         self.startTime = startTime
         self.endTime = endTime
     }
     
-    convenience init(title: String, teacher: String?, room: String?) {
-        self.init(title: title, teacher: teacher, room: room, kind: .other, startTime: "", endTime: "")
+    convenience init(title: String, teacher: String?, location: String?) {
+        self.init(title: title, teacher: teacher, location: location, kind: .other, startTime: "", endTime: "")
     }
     
     convenience init(title: String) {
-        self.init(title: title, teacher: nil, room: nil)
+        self.init(title: title, teacher: nil, location: nil)
     }
     
     convenience init() {

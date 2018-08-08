@@ -1,5 +1,5 @@
 //
-//  LessonViewModel.swift
+//  EventViewModel.swift
 //  BMSTUSchedule
 //
 //  Created by a.belkov on 07/08/2018.
@@ -8,20 +8,20 @@
 
 import UIKit
 
-class LessonViewModel {
+class EventViewModel {
     
     var count: Int {
         return viewModels.count
     }
     
     private var viewModels: [CellViewModel] = []
-    private let lesson: Lesson
-    private let displayedLessons: [Lesson]?
+    private let event: Event
+    private let displayedEvents: [Event]?
 
-    init(_ lesson: Lesson, displayedLessons: [Lesson]? = nil) {
+    init(_ event: Event, displayedEvents: [Event]? = nil) {
         
-        self.lesson = lesson
-        self.displayedLessons = displayedLessons
+        self.event = event
+        self.displayedEvents = displayedEvents
         
         fillTitleViewModel()
         fillDescriptionViewModel()
@@ -42,7 +42,7 @@ class LessonViewModel {
     
     private func fillTitleViewModel() {
         
-        let titleViewModel = LessonTitleCellViewModel(title: lesson.title, kind: lesson.kind)
+        let titleViewModel = EventTitleCellViewModel(title: event.title, kind: event.kind)
         viewModels.append(titleViewModel)
     }
     
@@ -53,7 +53,7 @@ class LessonViewModel {
     
     private func fillTeacherViewModel() {
         
-        guard let teacher = lesson.teacher else {
+        guard let teacher = event.teacher else {
             return
         }
         
@@ -61,33 +61,33 @@ class LessonViewModel {
         let fakeTeacher = Teacher(firstName: "TEST", lastName: "TEST", department: "TEST")
         fakeTeacher.degree = "TEST"
         
-        let teacherViewModel = LessonTeacherCellViewModel(fakeTeacher)
+        let teacherViewModel = EventTeacherCellViewModel(fakeTeacher)
         viewModels.append(teacherViewModel)
     }
     
     private func fillLocationViewModel() {
         
-        guard let location = lesson.room else {
+        guard let location = event.location else {
             return
         }
         
-        let locationViewModel = LessonLocationCellViewModel(location: location)
+        let locationViewModel = EventLocationCellViewModel(location: location)
         viewModels.append(locationViewModel)
     }
     
     private func fillCalendarViewModel() {
         
-        guard let displayedLessons = displayedLessons else {
+        guard let displayedEvents = displayedEvents else {
             return
         }
         
-        let calendarViewModel = LessonCalendarCellViewModel(currentLesson: lesson, displayedLessons: displayedLessons)
+        let calendarViewModel = EventCalendarCellViewModel(currentEvent: event, displayedEvents: displayedEvents)
         viewModels.append(calendarViewModel)
     }
     
     private func fillTimeViewModel() {
         
-        let timeViewModel = LessonTimeCellViewModell(startTime: lesson.startTime, endTime: lesson.endTime)
+        let timeViewModel = EventTimeCellViewModell(startTime: event.startTime, endTime: event.endTime)
         viewModels.append(timeViewModel)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  LessonLocationCell.swift
+//  EventLocationCell.swift
 //  BMSTUSchedule
 //
 //  Created by a.belkov on 08/08/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LessonLocationCell: UITableViewCell, CellViewModelProtocol {
+class EventLocationCell: UITableViewCell, CellViewModelProtocol {
 
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationDescriptionLabel: UILabel!
@@ -22,7 +22,7 @@ class LessonLocationCell: UITableViewCell, CellViewModelProtocol {
     
     func fillCell(model: CellViewModel) {
         
-        guard let castedModel = model as? LessonLocationCellViewModel else {
+        guard let castedModel = model as? EventLocationCellViewModel else {
             return
         }
 

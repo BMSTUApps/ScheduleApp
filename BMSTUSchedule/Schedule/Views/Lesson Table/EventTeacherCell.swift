@@ -1,5 +1,5 @@
 //
-//  LessonTeacherCell.swift
+//  EventTeacherCell.swift
 //  BMSTUSchedule
 //
 //  Created by a.belkov on 07/08/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LessonTeacherCell: UITableViewCell, CellViewModelProtocol {
+class EventTeacherCell: UITableViewCell, CellViewModelProtocol {
 
     @IBOutlet weak var photoView: UIImageView!
     
@@ -25,7 +25,7 @@ class LessonTeacherCell: UITableViewCell, CellViewModelProtocol {
     
     func fillCell(model: CellViewModel) {
         
-        guard let castedModel = model as? LessonTeacherCellViewModel else {
+        guard let castedModel = model as? EventTeacherCellViewModel else {
             return
         }
         

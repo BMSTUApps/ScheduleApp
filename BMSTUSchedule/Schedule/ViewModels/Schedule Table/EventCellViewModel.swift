@@ -1,5 +1,5 @@
 //
-//  LessonCellViewModel.swift
+//  EventCellViewModel.swift
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 15/02/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LessonCellViewModel {
+class EventCellViewModel {
     
     let brakeText: String
     let kindText: String
@@ -21,22 +21,22 @@ class LessonCellViewModel {
     let startTime: String
     let endTime: String
     
-    init(_ lesson: Lesson, brakeText: String = "") {
+    init(_ event: Event, brakeText: String = "") {
         
         self.brakeText = brakeText
         
-        if lesson.kind == .other {
+        if event.kind == .other {
             self.kindText = ""
         } else {
-            self.kindText = lesson.kind.rawValue
+            self.kindText = event.kind.rawValue
         }
         
-        self.titleText = lesson.title
+        self.titleText = event.title
         
-        self.teacherText = lesson.teacher ?? ""
-        self.roomText = lesson.room ?? ""
+        self.teacherText = event.teacher ?? ""
+        self.roomText = event.location ?? ""
         
-        self.startTime = lesson.startTime
-        self.endTime = lesson.endTime
+        self.startTime = event.startTime
+        self.endTime = event.endTime
     }
 }

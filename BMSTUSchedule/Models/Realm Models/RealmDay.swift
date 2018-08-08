@@ -14,7 +14,7 @@ class RealmDay: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var date: Date = Date()
     
-    let lessons = List<RealmLesson>()
+    let events = List<RealmEvent>()
 }
 
 // MARK: - Model linking
@@ -27,14 +27,14 @@ extension RealmDay {
         self.title = model.title.rawValue
         self.date = model.date
         
-        var realmLessons: [RealmLesson] = []
+        var realmEvents: [RealmEvent] = []
         
-        for lesson in model.lessons {
-            let realmLesson = RealmLesson(lesson)
-            realmLessons.append(realmLesson)
+        for event in model.events {
+            let realmEvent = RealmEvent(event)
+            realmEvents.append(realmEvent)
         }
         
-        self.lessons.append(objectsIn: realmLessons)
+        self.events.append(objectsIn: realmEvents)
     }
 }
 
@@ -42,13 +42,13 @@ extension Day {
     
     convenience init(_ realmModel: RealmDay) {
         
-        var lessons: [Lesson] = []
+        var events: [Event] = []
         
-        for realmLesson in realmModel.lessons {
-            let lesson = Lesson(realmLesson)
-            lessons.append(lesson)
+        for realmEvent in realmModel.events {
+            let event = Event(realmEvent)
+            events.append(event)
         }
         
-        self.init(title: Title(rawValue: realmModel.title) ?? .monday, lessons: lessons, date: realmModel.date)
+        self.init(title: Title(rawValue: realmModel.title) ?? .monday, events: events, date: realmModel.date)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  LessonController.swift
+//  EventController.swift
 //  BMSTUSchedule
 //
 //  Created by a.belkov on 07/08/2018.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class LessonController: UITableViewController {
+class EventController: UITableViewController {
 
-    var lesson: Lesson?
-    var displayedLessons: [Lesson]?
+    var event: Event?
+    var displayedEvents: [Event]?
     
-    private var viewModel: LessonViewModel?
+    private var viewModel: EventViewModel?
 
     override var previewActionItems: [UIPreviewActionItem] {
         
@@ -33,7 +33,7 @@ class LessonController: UITableViewController {
     
     func prepareUI() {
         
-        self.navigationItem.title = "Lesson".localized
+        self.navigationItem.title = "Event".localized
         
         // Hide large titles
         if #available(iOS 11.0, *) {
@@ -43,11 +43,11 @@ class LessonController: UITableViewController {
     
     func updateTable() {
         
-        guard let lesson = lesson else {
+        guard let event = event else {
             return
         }
         
-        viewModel = LessonViewModel(lesson, displayedLessons: displayedLessons)
+        viewModel = EventViewModel(event, displayedEvents: displayedEvents)
         tableView.reloadData()
     }
     

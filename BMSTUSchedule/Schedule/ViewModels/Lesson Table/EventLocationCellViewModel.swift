@@ -1,5 +1,5 @@
 //
-//  LessonLocationViewModel.swift
+//  EventLocationCellViewModel.swift
 //  BMSTUSchedule
 //
 //  Created by a.belkov on 08/08/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LessonLocationCellViewModel: CellViewModel {
+class EventLocationCellViewModel: CellViewModel {
 
     var location: String
     var locationDescription: String
@@ -20,6 +20,6 @@ class LessonLocationCellViewModel: CellViewModel {
         self.location = location
         self.locationDescription = locationManager.description(for: location)
         
-        super.init(identifier: String(describing: LessonLocationCell.self))
+        super.init(identifier: String(describing: EventLocationCell.self))
     }
 }

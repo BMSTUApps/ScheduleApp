@@ -25,7 +25,7 @@ class Day: CustomStringConvertible {
     var title: Title
     var date: Date
     
-    var lessons: [Lesson]
+    var events: [Event]
     
     var indexInWeek: Int {
         get {
@@ -52,9 +52,9 @@ class Day: CustomStringConvertible {
     
     // MARK: Initialization
     
-    init(title: Title, lessons: [Lesson], date: Date) {
+    init(title: Title, events: [Event], date: Date) {
         self.title = title
         self.date = date
-        self.lessons = lessons
+        self.events = events
     }
 }
