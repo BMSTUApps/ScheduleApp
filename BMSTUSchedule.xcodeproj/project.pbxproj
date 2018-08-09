@@ -24,6 +24,8 @@
 		6A814EF9211A4DB700D9AB3B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EF8211A4DB700D9AB3B /* LocationManager.swift */; };
 		6A814EFB211AFA8200D9AB3B /* EventTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EFA211AFA8200D9AB3B /* EventTimeCell.swift */; };
 		6A814EFD211AFBE300D9AB3B /* EventTimeCellViewModell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EFC211AFBE300D9AB3B /* EventTimeCellViewModell.swift */; };
+		6A814EFF211B054700D9AB3B /* EventActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EFE211B054700D9AB3B /* EventActionsCell.swift */; };
+		6A814F01211B05D000D9AB3B /* EventActionsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814F00211B05D000D9AB3B /* EventActionsCellViewModel.swift */; };
 		6A86E436209365F300333FCF /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A86E435209365F300333FCF /* SettingsViewModel.swift */; };
 		6AA7ABCF209B24C80025CE0F /* TeacherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7ABCE209B24C80025CE0F /* TeacherController.swift */; };
 		6ADECF042097A4EE007B4C15 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADECF032097A4EE007B4C15 /* TeacherCell.swift */; };
@@ -103,6 +105,8 @@
 		6A814EF8211A4DB700D9AB3B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		6A814EFA211AFA8200D9AB3B /* EventTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTimeCell.swift; sourceTree = "<group>"; };
 		6A814EFC211AFBE300D9AB3B /* EventTimeCellViewModell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTimeCellViewModell.swift; sourceTree = "<group>"; };
+		6A814EFE211B054700D9AB3B /* EventActionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActionsCell.swift; sourceTree = "<group>"; };
+		6A814F00211B05D000D9AB3B /* EventActionsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActionsCellViewModel.swift; sourceTree = "<group>"; };
 		6A86E435209365F300333FCF /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		6AA7ABCE209B24C80025CE0F /* TeacherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherController.swift; sourceTree = "<group>"; };
 		6ADECF032097A4EE007B4C15 /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
@@ -195,7 +199,7 @@
 			path = "Schedule Table";
 			sourceTree = "<group>";
 		};
-		6A814EE8211A041600D9AB3B /* Lesson Table */ = {
+		6A814EE8211A041600D9AB3B /* Event Table */ = {
 			isa = PBXGroup;
 			children = (
 				6A5832682119FBAE00C76F07 /* EventViewModel.swift */,
@@ -204,11 +208,12 @@
 				6A814EF0211A46D300D9AB3B /* EventCalendarCellViewModel.swift */,
 				6A814EF6211A4D2F00D9AB3B /* EventLocationCellViewModel.swift */,
 				6A814EFC211AFBE300D9AB3B /* EventTimeCellViewModell.swift */,
+				6A814F00211B05D000D9AB3B /* EventActionsCellViewModel.swift */,
 			);
-			path = "Lesson Table";
+			path = "Event Table";
 			sourceTree = "<group>";
 		};
-		6A814EEF211A467000D9AB3B /* Lesson Table */ = {
+		6A814EEF211A467000D9AB3B /* Event Table */ = {
 			isa = PBXGroup;
 			children = (
 				6A814EE12119FDC500D9AB3B /* EventTitleCell.swift */,
@@ -216,8 +221,9 @@
 				6A814EED211A466A00D9AB3B /* EventCalendarCell.swift */,
 				6A814EF4211A4C7200D9AB3B /* EventLocationCell.swift */,
 				6A814EFA211AFA8200D9AB3B /* EventTimeCell.swift */,
+				6A814EFE211B054700D9AB3B /* EventActionsCell.swift */,
 			);
-			path = "Lesson Table";
+			path = "Event Table";
 			sourceTree = "<group>";
 		};
 		6A814EF2211A4A3000D9AB3B /* Custom Views */ = {
@@ -299,7 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				6A814EF3211A4A4600D9AB3B /* Schedule Table */,
-				6A814EEF211A467000D9AB3B /* Lesson Table */,
+				6A814EEF211A467000D9AB3B /* Event Table */,
 				6A814EF2211A4A3000D9AB3B /* Custom Views */,
 			);
 			path = Views;
@@ -466,7 +472,7 @@
 			children = (
 				6A814EE3211A009C00D9AB3B /* CellViewModel.swift */,
 				6A814EE7211A018B00D9AB3B /* Schedule Table */,
-				6A814EE8211A041600D9AB3B /* Lesson Table */,
+				6A814EE8211A041600D9AB3B /* Event Table */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -750,6 +756,7 @@
 				6AE53860203AC2F3008441FC /* RealmEvent.swift in Sources */,
 				6A814EF7211A4D2F00D9AB3B /* EventLocationCellViewModel.swift in Sources */,
 				6A814EEC211A0B5E00D9AB3B /* EventTeacherCell.swift in Sources */,
+				6A814F01211B05D000D9AB3B /* EventActionsCellViewModel.swift in Sources */,
 				6AA7ABCF209B24C80025CE0F /* TeacherController.swift in Sources */,
 				6AE9FE3D20557F26002733F0 /* SettingsRowCell.swift in Sources */,
 				6A814EEE211A466A00D9AB3B /* EventCalendarCell.swift in Sources */,
@@ -761,6 +768,7 @@
 				A5545DBF202C3CEC00CBF1CD /* Event.swift in Sources */,
 				A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */,
 				A5545DC2202C3CEC00CBF1CD /* Schedule.swift in Sources */,
+				6A814EFF211B054700D9AB3B /* EventActionsCell.swift in Sources */,
 				6AF332B02037F88A0085C033 /* String+Localize.swift in Sources */,
 				A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */,
 				6A5832672119FACA00C76F07 /* EventController.swift in Sources */,

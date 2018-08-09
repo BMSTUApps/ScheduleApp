@@ -29,6 +29,7 @@ class EventViewModel {
         fillLocationViewModel()
         fillTeacherViewModel()
         fillCalendarViewModel()
+        fillActionsViewModel()
     }
     
     func viewModel(for indexPath: IndexPath) -> CellViewModel? {
@@ -89,5 +90,9 @@ class EventViewModel {
         
         let timeViewModel = EventTimeCellViewModell(startTime: event.startTime, endTime: event.endTime)
         viewModels.append(timeViewModel)
+    }
+    
+    private func fillActionsViewModel() {
+        viewModels.append(EventActionsCellViewModel())
     }
 }

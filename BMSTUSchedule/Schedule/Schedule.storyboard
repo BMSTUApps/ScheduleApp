@@ -384,6 +384,58 @@
                                     <outlet property="timeLabel" destination="kVD-OV-Jga" id="gxG-Cc-pP5"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventActionsCell" rowHeight="56" id="hln-aj-HfU" customClass="EventActionsCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="441" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hln-aj-HfU" id="hEV-dI-fXj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7B-fK-2uH">
+                                            <rect key="frame" x="16" y="8" width="167.5" height="40"/>
+                                            <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.2481003852739726" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="jT5-rM-UCa"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                            <state key="normal" title="Напомнить">
+                                                <color key="titleColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="notifyButtonTapped:" destination="Kei-Wd-wiH" eventType="touchUpInside" id="ePQ-7X-rKO"/>
+                                                <action selector="notifyButtonTapped:" destination="hln-aj-HfU" eventType="touchUpInside" id="yEW-UW-6in"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFt-81-agO">
+                                            <rect key="frame" x="191.5" y="8" width="167.5" height="40"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="0.40000000000000002" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="zEO-dI-ZBa"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                            <state key="normal" title="Редактировать">
+                                                <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="editButtonTapped:" destination="hln-aj-HfU" eventType="touchUpInside" id="TP7-6I-hOW"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gFt-81-agO" firstAttribute="top" secondItem="hEV-dI-fXj" secondAttribute="top" constant="8" id="UNu-om-HyP"/>
+                                        <constraint firstAttribute="bottom" secondItem="V7B-fK-2uH" secondAttribute="bottom" constant="8" id="dIs-Pw-seI"/>
+                                        <constraint firstItem="V7B-fK-2uH" firstAttribute="top" secondItem="hEV-dI-fXj" secondAttribute="top" constant="8" id="hmF-i0-iAL"/>
+                                        <constraint firstAttribute="trailing" secondItem="gFt-81-agO" secondAttribute="trailing" constant="16" id="ifZ-2S-dRM"/>
+                                        <constraint firstItem="gFt-81-agO" firstAttribute="width" secondItem="V7B-fK-2uH" secondAttribute="width" id="m0P-ny-TfL"/>
+                                        <constraint firstItem="gFt-81-agO" firstAttribute="leading" secondItem="V7B-fK-2uH" secondAttribute="trailing" constant="8" id="tvJ-bI-h1R"/>
+                                        <constraint firstItem="V7B-fK-2uH" firstAttribute="leading" secondItem="hEV-dI-fXj" secondAttribute="leading" constant="16" id="wHV-D3-Z3T"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="editButton" destination="gFt-81-agO" id="r52-SA-hh2"/>
+                                    <outlet property="notifyButton" destination="V7B-fK-2uH" id="AGC-28-2ef"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="WaZ-XC-i9H" id="FPj-6T-rm8"/>
@@ -392,6 +444,7 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHX-SV-1wp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Kei-Wd-wiH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2949.5999999999999" y="-1066.4167916041979"/>
         </scene>
