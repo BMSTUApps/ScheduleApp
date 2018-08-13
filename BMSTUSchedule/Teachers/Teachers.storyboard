@@ -160,6 +160,68 @@
                                     <outlet property="titleLabel" destination="KW6-9i-CPy" id="Rgc-MF-oWl"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeacherInfoCell" rowHeight="100" id="hEv-JU-DPZ" customClass="TeacherInfoCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="93" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hEv-JU-DPZ" id="C8y-9u-egr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sVl-CW-H35">
+                                            <rect key="frame" x="16" y="8" width="84" height="84"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="84" id="DyT-F4-6pb"/>
+                                                <constraint firstAttribute="width" secondItem="sVl-CW-H35" secondAttribute="height" multiplier="1:1" id="FAp-Ke-XhR"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="старший преподаватель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqh-4B-UDl">
+                                            <rect key="frame" x="108" y="8" width="251" height="19.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="C2P-S8-IdC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="доцент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlh-Yd-dtV">
+                                            <rect key="frame" x="108" y="32" width="251" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="8DD-f5-LNN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ИУ5 (cистемы обработки информации и управления)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtZ-fb-Az9">
+                                            <rect key="frame" x="108" y="56" width="251" height="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Rqh-4B-UDl" secondAttribute="trailing" constant="16" id="3ml-wc-ANa"/>
+                                        <constraint firstAttribute="bottom" secondItem="UtZ-fb-Az9" secondAttribute="bottom" constant="8" id="4km-U2-vfc"/>
+                                        <constraint firstItem="sVl-CW-H35" firstAttribute="top" secondItem="C8y-9u-egr" secondAttribute="top" constant="8" id="95m-pb-8kb"/>
+                                        <constraint firstAttribute="trailing" secondItem="hlh-Yd-dtV" secondAttribute="trailing" constant="16" id="Bkj-KC-AYv"/>
+                                        <constraint firstItem="sVl-CW-H35" firstAttribute="leading" secondItem="C8y-9u-egr" secondAttribute="leading" constant="16" id="JfJ-ot-YDq"/>
+                                        <constraint firstAttribute="trailing" secondItem="UtZ-fb-Az9" secondAttribute="trailing" constant="16" id="UDl-fQ-4c6"/>
+                                        <constraint firstItem="hlh-Yd-dtV" firstAttribute="leading" secondItem="sVl-CW-H35" secondAttribute="trailing" constant="8" id="ZeG-43-rwq"/>
+                                        <constraint firstItem="UtZ-fb-Az9" firstAttribute="leading" secondItem="sVl-CW-H35" secondAttribute="trailing" constant="8" id="qju-ab-4Zg"/>
+                                        <constraint firstItem="Rqh-4B-UDl" firstAttribute="top" secondItem="C8y-9u-egr" secondAttribute="top" constant="8" id="wEt-j3-3np"/>
+                                        <constraint firstAttribute="bottom" secondItem="sVl-CW-H35" secondAttribute="bottom" constant="8" id="waf-Dx-dhB"/>
+                                        <constraint firstItem="UtZ-fb-Az9" firstAttribute="top" secondItem="hlh-Yd-dtV" secondAttribute="bottom" constant="4" id="xif-R8-iYd"/>
+                                        <constraint firstItem="Rqh-4B-UDl" firstAttribute="leading" secondItem="sVl-CW-H35" secondAttribute="trailing" constant="8" id="z4y-fF-VNu"/>
+                                        <constraint firstItem="hlh-Yd-dtV" firstAttribute="top" secondItem="Rqh-4B-UDl" secondAttribute="bottom" constant="4" id="zV1-rB-H7c"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="degreeLabel" destination="hlh-Yd-dtV" id="E6b-JZ-Vix"/>
+                                    <outlet property="departmentLabel" destination="UtZ-fb-Az9" id="tEy-Mn-5gU"/>
+                                    <outlet property="photoView" destination="sVl-CW-H35" id="5WH-hl-4Bf"/>
+                                    <outlet property="positionLabel" destination="Rqh-4B-UDl" id="XIY-ty-02U"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>

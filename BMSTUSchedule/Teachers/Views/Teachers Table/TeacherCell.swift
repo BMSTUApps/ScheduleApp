@@ -24,8 +24,8 @@ class TeacherCell: UITableViewCell {
     func fill(teacher: Teacher) {
     
         photoView.image = #imageLiteral(resourceName: "test_teacher")
-        nameLabel.text = "Абулкасимов Манас Мукитович"
-        positionLabel.text = "старший преподаватель"
+        nameLabel.text = teacher.fullName
+        positionLabel.text = teacher.position
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {

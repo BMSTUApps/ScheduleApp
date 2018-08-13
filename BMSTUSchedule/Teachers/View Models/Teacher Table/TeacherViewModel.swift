@@ -18,11 +18,22 @@ class TeacherViewModel: TableViewModel {
         super.init()
         
         fillTitleViewModel()
+        fillInfoViewModel()
     }
     
     private func fillTitleViewModel() {
         
         let titleViewModel = TeacherTitleCellViewModel(title: teacher.fullName)
         viewModels.append(titleViewModel)
+    }
+    
+    private func fillInfoViewModel() {
+        
+        guard let position = teacher.position, let degree = teacher.degree else {
+            return
+        }
+        
+        let infoViewModel = TeacherInfoCellViewModel(position: position, degree: degree, department: teacher.department)
+        viewModels.append(infoViewModel)
     }
 }
