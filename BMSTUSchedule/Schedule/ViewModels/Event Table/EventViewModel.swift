@@ -46,11 +46,7 @@ class EventViewModel: TableViewModel {
             return
         }
         
-        // FIXME: Add right teacher
-        let fakeTeacher = Teacher(firstName: "TEST", lastName: "TEST", department: "TEST")
-        fakeTeacher.degree = "TEST"
-        
-        let teacherViewModel = EventTeacherCellViewModel(fakeTeacher)
+        let teacherViewModel = EventTeacherCellViewModel(teacher)
         viewModels.append(teacherViewModel)
     }
     

@@ -11,11 +11,14 @@ import Foundation
 class DaySectionViewModel {
 
     let title: String
+    let date: Date
+    
     let events: [EventCellViewModel]
     
     init(_ day: Day) {
         
         self.title = day.title.rawValue
+        self.date = day.date
         
         var eventsViewModels: [EventCellViewModel] = []
         for (index, event) in day.events.enumerated() {
@@ -30,6 +33,7 @@ class DaySectionViewModel {
             let eventViewModel = EventCellViewModel(event, brakeText: brakeText)
             eventsViewModels.append(eventViewModel)
         }
+        
         self.events = eventsViewModels
     }
 }

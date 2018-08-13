@@ -32,14 +32,24 @@ class Teacher: CustomStringConvertible {
     }
     
     var shortName: String {
-        return "\(lastName) \(String(describing: firstName.first)).\(String(describing: middleName?.first))."
+        
+        guard let firstNameChar = firstName.first, let middleNameChar = middleName?.first else {
+            return lastName
+        }
+        
+        return "\(lastName) \(String(firstNameChar)).\(String(middleNameChar))."
     }
 
     // MARK: Initialization
     
-    init(firstName: String, lastName: String, department: String) {
+    init(firstName: String, lastName: String, middleName: String? = nil, department: String, position: String? = nil, degree: String? = nil, photoURL: URL? = nil, about: String? = nil) {
         self.firstName = firstName
         self.lastName = lastName
+        self.middleName = middleName
         self.department = department
+        self.position = position
+        self.degree = degree
+        self.photoURL = photoURL
+        self.about = about
     }
 }

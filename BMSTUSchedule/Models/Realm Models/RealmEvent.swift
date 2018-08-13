@@ -13,7 +13,7 @@ class RealmEvent: Object {
     
     @objc dynamic var title: String = ""
     
-    @objc dynamic var teacher: String? = nil
+    @objc dynamic var teacher: RealmTeacher? = nil
     @objc dynamic var location: String? = nil
     
     @objc dynamic var kind: String = ""
@@ -28,18 +28,22 @@ extension RealmEvent {
     
     convenience init(_ model: Event) {
         self.init()
+        
         self.title = model.title
-        self.teacher = model.teacher
         self.location = model.location
         self.kind = model.kind.rawValue
         self.startTime = model.startTime
         self.endTime = model.endTime
+        
+        if let teacher = model.teacher {
+            self.teacher = RealmTeacher(teacher)
+        }
     }
 }
 
 extension Event {
     
     convenience init(_ realmModel: RealmEvent) {
-        self.init(title: realmModel.title, teacher: realmModel.teacher, location: realmModel.location, kind: Kind(rawValue: realmModel.kind) ?? .other, startTime: realmModel.startTime, endTime: realmModel.endTime)
+        self.init(title: realmModel.title, teacher: Teacher(realmModel.teacher), location: realmModel.location, kind: Kind(rawValue: realmModel.kind) ?? .other, startTime: realmModel.startTime, endTime: realmModel.endTime)
     }
 }

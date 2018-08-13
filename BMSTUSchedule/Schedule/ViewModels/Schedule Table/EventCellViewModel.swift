@@ -33,7 +33,7 @@ class EventCellViewModel {
         
         self.titleText = event.title
         
-        self.teacherText = event.teacher ?? ""
+        self.teacherText = event.teacher?.shortName ?? ""
         self.roomText = event.location ?? ""
         
         self.startTime = event.startTime

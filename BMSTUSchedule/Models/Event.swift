@@ -20,7 +20,7 @@ class Event: CustomStringConvertible {
 
     var title: String
     
-    var teacher: String?
+    var teacher: Teacher?
     var location: String?
     
     var kind: Kind
@@ -34,7 +34,7 @@ class Event: CustomStringConvertible {
     
     // MARK: Initialization
     
-    init(title: String, teacher: String?, location: String?, kind: Kind = .other, startTime: String, endTime: String) {
+    init(title: String, teacher: Teacher?, location: String?, kind: Kind = .other, startTime: String, endTime: String) {
         self.title = title
         self.teacher = teacher
         self.location = location
@@ -43,7 +43,7 @@ class Event: CustomStringConvertible {
         self.endTime = endTime
     }
     
-    convenience init(title: String, teacher: String?, location: String?) {
+    convenience init(title: String, teacher: Teacher?, location: String?) {
         self.init(title: title, teacher: teacher, location: location, kind: .other, startTime: "", endTime: "")
     }
     

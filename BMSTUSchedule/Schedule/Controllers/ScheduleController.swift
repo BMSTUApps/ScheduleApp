@@ -88,7 +88,7 @@ class ScheduleController: TableViewController {
             let dayViewModel = daysViewModels[section]
             
             header.titleLabel.text = dayViewModel.title.localized.capitalized
-            header.dateLabel.text = ""
+            header.dateLabel.text = "12.12.2018"
         }
         
         return header
