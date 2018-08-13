@@ -20,6 +20,7 @@ class TeacherViewModel: TableViewModel {
         fillTitleViewModel()
         fillInfoViewModel()
         fillAboutViewModel()
+        fillActionViewModel()
     }
     
     private func fillTitleViewModel() {
@@ -46,5 +47,9 @@ class TeacherViewModel: TableViewModel {
         
         let aboutViewModel = TeacherAboutCellViewModel(about)
         viewModels.append(aboutViewModel)
+    }
+    
+    private func fillActionViewModel() {
+        viewModels.append(TeacherActionCellViewModel())
     }
 }

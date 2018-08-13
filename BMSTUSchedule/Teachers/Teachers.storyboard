@@ -257,6 +257,39 @@
                                     <outlet property="aboutLabel" destination="Mds-zD-zxQ" id="PEQ-0a-fdr"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeacherActionCell" rowHeight="56" id="Td8-8e-SQg" customClass="TeacherActionCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="253" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Td8-8e-SQg" id="CtH-Lx-w3S">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6t-nm-ART">
+                                            <rect key="frame" x="16" y="8" width="343" height="40"/>
+                                            <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.2481003853" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="giN-JG-jLj"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                            <state key="normal" title="Посмотреть расписание">
+                                                <color key="titleColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="showScheduleButtonTapped:" destination="Td8-8e-SQg" eventType="touchUpInside" id="ozv-zg-IW3"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="T6t-nm-ART" secondAttribute="bottom" constant="8" id="dLu-tj-WZr"/>
+                                        <constraint firstItem="T6t-nm-ART" firstAttribute="leading" secondItem="CtH-Lx-w3S" secondAttribute="leading" constant="16" id="gax-nl-4sa"/>
+                                        <constraint firstAttribute="trailing" secondItem="T6t-nm-ART" secondAttribute="trailing" constant="16" id="m1z-CE-Ggg"/>
+                                        <constraint firstItem="T6t-nm-ART" firstAttribute="top" secondItem="CtH-Lx-w3S" secondAttribute="top" constant="8" id="mBI-wE-bkO"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="showScheduleButton" destination="T6t-nm-ART" id="c8l-4X-jys"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>

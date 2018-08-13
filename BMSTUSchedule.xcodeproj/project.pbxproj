@@ -43,6 +43,8 @@
 		6AE9FC472121886B00F1DA28 /* TeacherInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC462121886B00F1DA28 /* TeacherInfoCellViewModel.swift */; };
 		6AE9FC49212199A200F1DA28 /* TeacherAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC48212199A200F1DA28 /* TeacherAboutCell.swift */; };
 		6AE9FC4B212199E800F1DA28 /* TeacherAboutCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC4A212199E800F1DA28 /* TeacherAboutCellViewModel.swift */; };
+		6AE9FC4D21219E8500F1DA28 /* TeacherActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC4C21219E8500F1DA28 /* TeacherActionCell.swift */; };
+		6AE9FC4F21219EA400F1DA28 /* TeacherActionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC4E21219EA400F1DA28 /* TeacherActionCellViewModel.swift */; };
 		6AE9FE3D20557F26002733F0 /* SettingsRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */; };
 		6AF332B02037F88A0085C033 /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF332AF2037F88A0085C033 /* String+Localize.swift */; };
 		6AF332BA2037FBB10085C033 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AF332BC2037FBB10085C033 /* Localizable.strings */; };
@@ -132,6 +134,8 @@
 		6AE9FC462121886B00F1DA28 /* TeacherInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherInfoCellViewModel.swift; sourceTree = "<group>"; };
 		6AE9FC48212199A200F1DA28 /* TeacherAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAboutCell.swift; sourceTree = "<group>"; };
 		6AE9FC4A212199E800F1DA28 /* TeacherAboutCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAboutCellViewModel.swift; sourceTree = "<group>"; };
+		6AE9FC4C21219E8500F1DA28 /* TeacherActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherActionCell.swift; sourceTree = "<group>"; };
+		6AE9FC4E21219EA400F1DA28 /* TeacherActionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherActionCellViewModel.swift; sourceTree = "<group>"; };
 		6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowCell.swift; sourceTree = "<group>"; };
 		6AF332AF2037F88A0085C033 /* String+Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localize.swift"; sourceTree = "<group>"; };
 		6AF332BB2037FBB10085C033 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				6AE9FC392121793300F1DA28 /* TeacherTitleCellViewModel.swift */,
 				6AE9FC462121886B00F1DA28 /* TeacherInfoCellViewModel.swift */,
 				6AE9FC4A212199E800F1DA28 /* TeacherAboutCellViewModel.swift */,
+				6AE9FC4E21219EA400F1DA28 /* TeacherActionCellViewModel.swift */,
 			);
 			path = "Teacher Table";
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				6AE9FC4021217CAE00F1DA28 /* TeacherTitleCell.swift */,
 				6AE9FC44212187BB00F1DA28 /* TeacherInfoCell.swift */,
 				6AE9FC48212199A200F1DA28 /* TeacherAboutCell.swift */,
+				6AE9FC4C21219E8500F1DA28 /* TeacherActionCell.swift */,
 			);
 			path = "Teacher Table";
 			sourceTree = "<group>";
@@ -807,6 +813,7 @@
 				A5545DC3202C3CEC00CBF1CD /* Group.swift in Sources */,
 				6AE53866203AC518008441FC /* RealmSchedule.swift in Sources */,
 				6AE53862203AC455008441FC /* RealmDay.swift in Sources */,
+				6AE9FC4D21219E8500F1DA28 /* TeacherActionCell.swift in Sources */,
 				6A5CE043208AD474002BE568 /* TeachersController.swift in Sources */,
 				A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */,
 				A5A124091DE8DD70006FB4E5 /* AppManager.swift in Sources */,
@@ -840,6 +847,7 @@
 				A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */,
 				A5545DC2202C3CEC00CBF1CD /* Schedule.swift in Sources */,
 				6A814EFF211B054700D9AB3B /* EventActionsCell.swift in Sources */,
+				6AE9FC4F21219EA400F1DA28 /* TeacherActionCellViewModel.swift in Sources */,
 				6AE9FC49212199A200F1DA28 /* TeacherAboutCell.swift in Sources */,
 				6AF332B02037F88A0085C033 /* String+Localize.swift in Sources */,
 				A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */,
