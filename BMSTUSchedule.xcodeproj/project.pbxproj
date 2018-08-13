@@ -35,6 +35,10 @@
 		6AE53864203AC4C8008441FC /* RealmWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE53863203AC4C8008441FC /* RealmWeek.swift */; };
 		6AE53866203AC518008441FC /* RealmSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE53865203AC518008441FC /* RealmSchedule.swift */; };
 		6AE53868203AC57E008441FC /* RealmGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE53867203AC57E008441FC /* RealmGroup.swift */; };
+		6AE9FC3A2121793300F1DA28 /* TeacherTitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC392121793300F1DA28 /* TeacherTitleCellViewModel.swift */; };
+		6AE9FC3D21217A4600F1DA28 /* TeacherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC3C21217A4600F1DA28 /* TeacherViewModel.swift */; };
+		6AE9FC3F21217A6700F1DA28 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC3E21217A6700F1DA28 /* TableViewModel.swift */; };
+		6AE9FC4121217CAE00F1DA28 /* TeacherTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC4021217CAE00F1DA28 /* TeacherTitleCell.swift */; };
 		6AE9FE3D20557F26002733F0 /* SettingsRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */; };
 		6AF332B02037F88A0085C033 /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF332AF2037F88A0085C033 /* String+Localize.swift */; };
 		6AF332BA2037FBB10085C033 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AF332BC2037FBB10085C033 /* Localizable.strings */; };
@@ -116,6 +120,10 @@
 		6AE53863203AC4C8008441FC /* RealmWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWeek.swift; sourceTree = "<group>"; };
 		6AE53865203AC518008441FC /* RealmSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSchedule.swift; sourceTree = "<group>"; };
 		6AE53867203AC57E008441FC /* RealmGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGroup.swift; sourceTree = "<group>"; };
+		6AE9FC392121793300F1DA28 /* TeacherTitleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherTitleCellViewModel.swift; sourceTree = "<group>"; };
+		6AE9FC3C21217A4600F1DA28 /* TeacherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewModel.swift; sourceTree = "<group>"; };
+		6AE9FC3E21217A6700F1DA28 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		6AE9FC4021217CAE00F1DA28 /* TeacherTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherTitleCell.swift; sourceTree = "<group>"; };
 		6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowCell.swift; sourceTree = "<group>"; };
 		6AF332AF2037F88A0085C033 /* String+Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localize.swift"; sourceTree = "<group>"; };
 		6AF332BB2037FBB10085C033 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -272,6 +280,48 @@
 			path = "Realm Models";
 			sourceTree = "<group>";
 		};
+		6AE9FC37212178B300F1DA28 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				6AE9FC3B2121794100F1DA28 /* Teacher Table */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		6AE9FC38212178E600F1DA28 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				6A814EE3211A009C00D9AB3B /* CellViewModel.swift */,
+				6AE9FC3E21217A6700F1DA28 /* TableViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		6AE9FC3B2121794100F1DA28 /* Teacher Table */ = {
+			isa = PBXGroup;
+			children = (
+				6AE9FC3C21217A4600F1DA28 /* TeacherViewModel.swift */,
+				6AE9FC392121793300F1DA28 /* TeacherTitleCellViewModel.swift */,
+			);
+			path = "Teacher Table";
+			sourceTree = "<group>";
+		};
+		6AE9FC4221217CB800F1DA28 /* Teachers Table */ = {
+			isa = PBXGroup;
+			children = (
+				6ADECF032097A4EE007B4C15 /* TeacherCell.swift */,
+			);
+			path = "Teachers Table";
+			sourceTree = "<group>";
+		};
+		6AE9FC4321217CC400F1DA28 /* Teacher Table */ = {
+			isa = PBXGroup;
+			children = (
+				6AE9FC4021217CAE00F1DA28 /* TeacherTitleCell.swift */,
+			);
+			path = "Teacher Table";
+			sourceTree = "<group>";
+		};
 		6AE9FE3B20557F26002733F0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				A5545DA6202C39DD00CBF1CD /* Teachers.storyboard */,
+				6AE9FC37212178B300F1DA28 /* View Models */,
 				A5545DB1202C3B7000CBF1CD /* Views */,
 				A5545DB0202C3B6500CBF1CD /* Controllers */,
 			);
@@ -333,7 +384,8 @@
 		A5545DB1202C3B7000CBF1CD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6ADECF032097A4EE007B4C15 /* TeacherCell.swift */,
+				6AE9FC4221217CB800F1DA28 /* Teachers Table */,
+				6AE9FC4321217CC400F1DA28 /* Teacher Table */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -390,6 +442,7 @@
 				A5545DBE202C3CEC00CBF1CD /* Group.swift */,
 				6ADECF052099FEEF007B4C15 /* Teacher.swift */,
 				6AE5385E203AC16D008441FC /* Realm Models */,
+				6AE9FC38212178E600F1DA28 /* View Models */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -470,7 +523,6 @@
 		A5D915072035FE3B00E066CA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				6A814EE3211A009C00D9AB3B /* CellViewModel.swift */,
 				6A814EE7211A018B00D9AB3B /* Schedule Table */,
 				6A814EE8211A041600D9AB3B /* Event Table */,
 			);
@@ -731,6 +783,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AE9FC3D21217A4600F1DA28 /* TeacherViewModel.swift in Sources */,
+				6AE9FC3F21217A6700F1DA28 /* TableViewModel.swift in Sources */,
 				A5485CC11DC245BC009610C2 /* EventCell.swift in Sources */,
 				A5A83BB31EE42BA70081D8D5 /* TableViewController.swift in Sources */,
 				6A814EE22119FDC500D9AB3B /* EventTitleCell.swift in Sources */,
@@ -751,6 +805,7 @@
 				6A5832692119FBAE00C76F07 /* EventViewModel.swift in Sources */,
 				6A814EFD211AFBE300D9AB3B /* EventTimeCellViewModell.swift in Sources */,
 				6A5CE041208AACDE002BE568 /* SettingsGroupCell.swift in Sources */,
+				6AE9FC3A2121793300F1DA28 /* TeacherTitleCellViewModel.swift in Sources */,
 				A5650861204062F900D2DA66 /* CalendarView.swift in Sources */,
 				6A86E436209365F300333FCF /* SettingsViewModel.swift in Sources */,
 				6AE53860203AC2F3008441FC /* RealmEvent.swift in Sources */,
@@ -765,6 +820,7 @@
 				6ADECF062099FEEF007B4C15 /* Teacher.swift in Sources */,
 				6A814EF1211A46D300D9AB3B /* EventCalendarCellViewModel.swift in Sources */,
 				A5545DC0202C3CEC00CBF1CD /* Day.swift in Sources */,
+				6AE9FC4121217CAE00F1DA28 /* TeacherTitleCell.swift in Sources */,
 				A5545DBF202C3CEC00CBF1CD /* Event.swift in Sources */,
 				A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */,
 				A5545DC2202C3CEC00CBF1CD /* Schedule.swift in Sources */,

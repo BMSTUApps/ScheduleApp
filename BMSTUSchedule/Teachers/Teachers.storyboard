@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u5W-cb-Vb1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u5W-cb-Vb1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -111,7 +111,7 @@
                                     <outlet property="nameLabel" destination="ood-dl-OkH" id="hMG-kk-xuO"/>
                                     <outlet property="photoView" destination="vjZ-t8-xN0" id="oBD-7a-iqg"/>
                                     <outlet property="positionLabel" destination="M8C-dr-UVF" id="oFQ-3w-NZt"/>
-                                    <segue destination="FIC-zr-kub" kind="show" id="dpe-9v-jGW"/>
+                                    <segue destination="FIC-zr-kub" kind="show" identifier="ShowTeacherController" id="dpe-9v-jGW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -129,38 +129,39 @@
         <!--Teacher-->
         <scene sceneID="Rou-CL-dZz">
             <objects>
-                <tableViewController title="Teacher" id="FIC-zr-kub" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c1N-tv-A5r">
+                <tableViewController title="Teacher" id="FIC-zr-kub" customClass="TeacherController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c1N-tv-A5r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <sections>
-                            <tableViewSection id="PaR-8X-fcv">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="390" id="Fcr-bT-BWG">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="390"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fcr-bT-BWG" id="9DM-kx-bst">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="390"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="ФИО преподавателя" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KW6-9i-CPy">
-                                                    <rect key="frame" x="16" y="16" width="343" height="41"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="KW6-9i-CPy" firstAttribute="leading" secondItem="9DM-kx-bst" secondAttribute="leading" constant="16" id="C0q-7P-Erg"/>
-                                                <constraint firstItem="KW6-9i-CPy" firstAttribute="top" secondItem="9DM-kx-bst" secondAttribute="top" constant="16" id="k6V-Ew-Kuj"/>
-                                                <constraint firstAttribute="trailing" secondItem="KW6-9i-CPy" secondAttribute="trailing" constant="16" id="rF9-KX-DtA"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeacherTitleCell" rowHeight="65" id="Fcr-bT-BWG" customClass="TeacherTitleCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fcr-bT-BWG" id="9DM-kx-bst">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="ФИО преподавателя" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KW6-9i-CPy">
+                                            <rect key="frame" x="16" y="16" width="343" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="KW6-9i-CPy" secondAttribute="bottom" constant="8" id="ApT-JG-wRu"/>
+                                        <constraint firstItem="KW6-9i-CPy" firstAttribute="leading" secondItem="9DM-kx-bst" secondAttribute="leading" constant="16" id="C0q-7P-Erg"/>
+                                        <constraint firstItem="KW6-9i-CPy" firstAttribute="top" secondItem="9DM-kx-bst" secondAttribute="top" constant="16" id="k6V-Ew-Kuj"/>
+                                        <constraint firstAttribute="trailing" secondItem="KW6-9i-CPy" secondAttribute="trailing" constant="16" id="rF9-KX-DtA"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="KW6-9i-CPy" id="Rgc-MF-oWl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="FIC-zr-kub" id="HEz-lA-yN5"/>
                             <outlet property="delegate" destination="FIC-zr-kub" id="TlZ-J7-h1b"/>

@@ -8,13 +8,8 @@
 
 import UIKit
 
-class EventViewModel {
+class EventViewModel: TableViewModel {
     
-    var count: Int {
-        return viewModels.count
-    }
-    
-    private var viewModels: [CellViewModel] = []
     private let event: Event
     private let displayedEvents: [Event]?
 
@@ -22,6 +17,8 @@ class EventViewModel {
         
         self.event = event
         self.displayedEvents = displayedEvents
+
+        super.init()
         
         fillTitleViewModel()
         fillDescriptionViewModel()
@@ -30,15 +27,6 @@ class EventViewModel {
         fillTeacherViewModel()
         fillCalendarViewModel()
         fillActionsViewModel()
-    }
-    
-    func viewModel(for indexPath: IndexPath) -> CellViewModel? {
-        
-        if indexPath.row < viewModels.count {
-            return viewModels[indexPath.row]
-        }
-        
-        return nil
     }
     
     private func fillTitleViewModel() {

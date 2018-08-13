@@ -21,7 +21,7 @@ class TeacherCell: UITableViewCell {
         self.prepareUI()
     }
     
-    func fill() {
+    func fill(teacher: Teacher) {
     
         photoView.image = #imageLiteral(resourceName: "test_teacher")
         nameLabel.text = "Абулкасимов Манас Мукитович"

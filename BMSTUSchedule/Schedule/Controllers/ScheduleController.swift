@@ -114,7 +114,7 @@ class ScheduleController: TableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "ShowEventViewController" {
+        if segue.identifier == "ShowEventController" {
             
             guard let eventController = segue.destination as? EventController else {
                 return

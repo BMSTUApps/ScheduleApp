@@ -47,8 +47,34 @@ class TeachersController: UITableViewController {
         let reuseIdentifier = String(describing: TeacherCell.self)
         let cell = (tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? TeacherCell) ?? TeacherCell()
 
-        cell.fill()
+        // FIXME: Add view model
+        let teacher = Teacher(firstName: "Манас", lastName: "Абулкасимов", department: "ИУ5")
+        teacher.middleName = "Мукитович"
+        teacher.position = "старший преподаватель"
+        teacher.degree = "доцент"
+        
+        cell.fill(teacher: teacher)
         
         return cell
+    }
+    
+    // MARK: Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ShowTeacherController" {
+            
+            guard let teacherController = segue.destination as? TeacherController else {
+                return
+            }
+
+            // FIXME: Find right view model
+            let teacher = Teacher(firstName: "Манас", lastName: "Абулкасимов", department: "ИУ5")
+            teacher.middleName = "Мукитович"
+            teacher.position = "старший преподаватель"
+            teacher.degree = "доцент"
+            
+            teacherController.teacher = teacher
+        }
     }
 }

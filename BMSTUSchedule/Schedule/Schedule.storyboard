@@ -156,7 +156,7 @@
                                     <outlet property="startTimeLabel" destination="BAX-YO-bTl" id="Gom-Wu-w36"/>
                                     <outlet property="teacherLabel" destination="Rdx-qD-rfv" id="x1l-M9-MCw"/>
                                     <outlet property="titleLabel" destination="W1q-RE-YuA" id="5iC-rX-mgl"/>
-                                    <segue destination="WaZ-XC-i9H" kind="show" identifier="ShowEventViewController" id="8Eh-ff-N4I"/>
+                                    <segue destination="WaZ-XC-i9H" kind="show" identifier="ShowEventController" id="8Eh-ff-N4I"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

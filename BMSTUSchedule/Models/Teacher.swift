@@ -28,7 +28,7 @@ class Teacher: CustomStringConvertible {
     }
 
     var fullName: String {
-        return lastName + firstName + (middleName ?? "")
+        return lastName + " " + firstName + " " + (middleName ?? "")
     }
     
     var shortName: String {
