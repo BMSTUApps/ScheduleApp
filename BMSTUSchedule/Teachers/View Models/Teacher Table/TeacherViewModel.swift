@@ -19,6 +19,7 @@ class TeacherViewModel: TableViewModel {
         
         fillTitleViewModel()
         fillInfoViewModel()
+        fillAboutViewModel()
     }
     
     private func fillTitleViewModel() {
@@ -35,5 +36,15 @@ class TeacherViewModel: TableViewModel {
         
         let infoViewModel = TeacherInfoCellViewModel(position: position, degree: degree, department: teacher.department)
         viewModels.append(infoViewModel)
+    }
+    
+    private func fillAboutViewModel() {
+        
+        guard let about = teacher.about else {
+            return
+        }
+        
+        let aboutViewModel = TeacherAboutCellViewModel(about)
+        viewModels.append(aboutViewModel)
     }
 }

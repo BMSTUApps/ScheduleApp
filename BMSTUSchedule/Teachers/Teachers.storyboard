@@ -120,7 +120,9 @@
                             <outlet property="delegate" destination="1lr-Uw-J6G" id="r73-3A-a3s"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Teachers" id="q8U-NX-Mny"/>
+                    <navigationItem key="navigationItem" title="Teachers" id="q8U-NX-Mny">
+                        <barButtonItem key="backBarButtonItem" title=" " id="QEX-Ok-Und"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dw4-9g-p9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +132,7 @@
         <scene sceneID="Rou-CL-dZz">
             <objects>
                 <tableViewController title="Teacher" id="FIC-zr-kub" customClass="TeacherController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c1N-tv-A5r">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c1N-tv-A5r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -220,6 +222,39 @@
                                     <outlet property="departmentLabel" destination="UtZ-fb-Az9" id="tEy-Mn-5gU"/>
                                     <outlet property="photoView" destination="sVl-CW-H35" id="5WH-hl-4Bf"/>
                                     <outlet property="positionLabel" destination="Rqh-4B-UDl" id="XIY-ty-02U"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeacherAboutCell" rowHeight="60" id="Bym-ni-cVZ" customClass="TeacherAboutCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="193" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bym-ni-cVZ" id="0Pp-hK-W2w">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="О преподавателе" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d5J-m5-UA3">
+                                            <rect key="frame" x="16" y="8" width="122" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заведующий кафедрой ИУ-5" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mds-zD-zxQ">
+                                            <rect key="frame" x="16" y="33" width="343" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.098231281729999995" green="0.098231281729999995" blue="0.098231281729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mds-zD-zxQ" firstAttribute="top" secondItem="d5J-m5-UA3" secondAttribute="bottom" constant="8" id="3Rk-Jf-toi"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mds-zD-zxQ" secondAttribute="bottom" constant="8" id="DZp-nO-K2D"/>
+                                        <constraint firstItem="d5J-m5-UA3" firstAttribute="leading" secondItem="0Pp-hK-W2w" secondAttribute="leading" constant="16" id="Rco-ko-Ci5"/>
+                                        <constraint firstItem="Mds-zD-zxQ" firstAttribute="leading" secondItem="0Pp-hK-W2w" secondAttribute="leading" constant="16" id="dfm-M8-Onq"/>
+                                        <constraint firstItem="d5J-m5-UA3" firstAttribute="top" secondItem="0Pp-hK-W2w" secondAttribute="top" constant="8" id="g5v-ai-hqj"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mds-zD-zxQ" secondAttribute="trailing" constant="16" id="nsq-mw-6ez"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="aboutLabel" destination="Mds-zD-zxQ" id="PEQ-0a-fdr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
