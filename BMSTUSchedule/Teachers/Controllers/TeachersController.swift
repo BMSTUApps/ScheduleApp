@@ -10,6 +10,8 @@ import UIKit
 
 class TeachersController: UITableViewController {
 
+    let teachers = AppManager.shared.getTeachers()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
@@ -39,7 +41,7 @@ class TeachersController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return teachers.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,11 +49,7 @@ class TeachersController: UITableViewController {
         let reuseIdentifier = String(describing: TeacherCell.self)
         let cell = (tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? TeacherCell) ?? TeacherCell()
 
-        // FIXME: Add view model
-        let teacher = Teacher(firstName: "Манас", lastName: "Абулкасимов", department: "ИУ5")
-        teacher.middleName = "Мукитович"
-        teacher.position = "старший преподаватель"
-        teacher.degree = "доцент"
+        let teacher = teachers[indexPath.row]
         
         cell.fill(teacher: teacher)
         
@@ -68,19 +66,11 @@ class TeachersController: UITableViewController {
                 return
             }
 
-            // FIXME: Find right view model
-            let teacher = Teacher(firstName: "Манас", lastName: "Абулкасимов", department: "ИУ5")
-            teacher.middleName = "Мукитович"
-            teacher.position = "старший преподаватель"
-            teacher.degree = "доцент"
-            teacher.about =
-            """
-            Заведующий кафедрой ИУ-5, профессор, доктор технических наук.
+            guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {
+                return
+            }
             
-            Черненький В.М. родился 13 мая 1941 г. Окончил МВТУ в 1964 году по кафедре «Математические машины» (ныне кафедра ИУ-6). В настоящее время доктор технических наук, профессор, действительный член Международной Академии Информатизации, лауреат премии Правительства Российской Федерации в области образования.
-            """
-            
-            teacherController.teacher = teacher
+            teacherController.teacher = teachers[indexPath.row]
         }
     }
 }

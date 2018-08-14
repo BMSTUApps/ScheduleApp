@@ -204,6 +204,35 @@ class AppManager {
         
         return schedule
     }
+    
+    func getTeachers() -> [Teacher] {
+        
+        var teachers: [Teacher] = []
+        
+        let realm = try! Realm()
+        let realmTeachers = realm.objects(RealmTeacher.self)
+        
+        for realmTeacher in realmTeachers {
+            if let teacher = Teacher(realmTeacher), teachers.contains(where: { (currentTeacher) -> Bool in
+                return teacher.fullName == currentTeacher.fullName
+            }) == false {
+                
+                // FIXME: Fake data
+                teacher.position = "старший преподаватель"
+                teacher.degree = "доцент"
+                teacher.about =
+                """
+                Заведующий кафедрой ИУ-5, профессор, доктор технических наук.
+                
+                Черненький В.М. родился 13 мая 1941 г. Окончил МВТУ в 1964 году по кафедре «Математические машины» (ныне кафедра ИУ-6). В настоящее время доктор технических наук, профессор, действительный член Международной Академии Информатизации, лауреат премии Правительства Российской Федерации в области образования.
+                """
+                
+                teachers.append(teacher)
+            }
+        }
+        
+        return teachers
+    }
 }
 
 // MARK: - 3D Touch
