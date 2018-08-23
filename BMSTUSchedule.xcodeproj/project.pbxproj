@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		34F1BFD579AC516BB9D72D3F /* Pods_BMSTUScheduleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A44130F770FD807D2AED7F4F /* Pods_BMSTUScheduleTests.framework */; };
+		6A001289212EF48E00C84044 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A001288212EF48E00C84044 /* RealmManager.swift */; };
+		6A00128B212EF5C600C84044 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00128A212EF5C600C84044 /* Model.swift */; };
 		6A5832672119FACA00C76F07 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5832662119FACA00C76F07 /* EventController.swift */; };
 		6A5832692119FBAE00C76F07 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5832682119FBAE00C76F07 /* EventViewModel.swift */; };
 		6A5CE041208AACDE002BE568 /* SettingsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5CE040208AACDE002BE568 /* SettingsGroupCell.swift */; };
@@ -21,7 +23,7 @@
 		6A814EF1211A46D300D9AB3B /* EventCalendarCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EF0211A46D300D9AB3B /* EventCalendarCellViewModel.swift */; };
 		6A814EF5211A4C7200D9AB3B /* EventLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EF4211A4C7200D9AB3B /* EventLocationCell.swift */; };
 		6A814EF7211A4D2F00D9AB3B /* EventLocationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EF6211A4D2F00D9AB3B /* EventLocationCellViewModel.swift */; };
-		6A814EF9211A4DB700D9AB3B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EF8211A4DB700D9AB3B /* LocationManager.swift */; };
+		6A814EF9211A4DB700D9AB3B /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EF8211A4DB700D9AB3B /* LocationHelper.swift */; };
 		6A814EFB211AFA8200D9AB3B /* EventTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EFA211AFA8200D9AB3B /* EventTimeCell.swift */; };
 		6A814EFD211AFBE300D9AB3B /* EventTimeCellViewModell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EFC211AFBE300D9AB3B /* EventTimeCellViewModell.swift */; };
 		6A814EFF211B054700D9AB3B /* EventActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EFE211B054700D9AB3B /* EventActionsCell.swift */; };
@@ -31,10 +33,6 @@
 		6ADECF042097A4EE007B4C15 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADECF032097A4EE007B4C15 /* TeacherCell.swift */; };
 		6ADECF062099FEEF007B4C15 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADECF052099FEEF007B4C15 /* Teacher.swift */; };
 		6AE53860203AC2F3008441FC /* RealmEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE5385F203AC2F3008441FC /* RealmEvent.swift */; };
-		6AE53862203AC455008441FC /* RealmDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE53861203AC455008441FC /* RealmDay.swift */; };
-		6AE53864203AC4C8008441FC /* RealmWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE53863203AC4C8008441FC /* RealmWeek.swift */; };
-		6AE53866203AC518008441FC /* RealmSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE53865203AC518008441FC /* RealmSchedule.swift */; };
-		6AE53868203AC57E008441FC /* RealmGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE53867203AC57E008441FC /* RealmGroup.swift */; };
 		6AE9FC3A2121793300F1DA28 /* TeacherTitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC392121793300F1DA28 /* TeacherTitleCellViewModel.swift */; };
 		6AE9FC3D21217A4600F1DA28 /* TeacherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC3C21217A4600F1DA28 /* TeacherViewModel.swift */; };
 		6AE9FC3F21217A6700F1DA28 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC3E21217A6700F1DA28 /* TableViewModel.swift */; };
@@ -54,8 +52,6 @@
 		A5545DA7202C39DD00CBF1CD /* Teachers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5545DA6202C39DD00CBF1CD /* Teachers.storyboard */; };
 		A5545DA9202C3A3900CBF1CD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5545DA8202C3A3900CBF1CD /* Settings.storyboard */; };
 		A5545DBF202C3CEC00CBF1CD /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBA202C3CEC00CBF1CD /* Event.swift */; };
-		A5545DC0202C3CEC00CBF1CD /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBB202C3CEC00CBF1CD /* Day.swift */; };
-		A5545DC1202C3CEC00CBF1CD /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBC202C3CEC00CBF1CD /* Week.swift */; };
 		A5545DC2202C3CEC00CBF1CD /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBD202C3CEC00CBF1CD /* Schedule.swift */; };
 		A5545DC3202C3CEC00CBF1CD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBE202C3CEC00CBF1CD /* Group.swift */; };
 		A5650861204062F900D2DA66 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5650860204062F900D2DA66 /* CalendarView.swift */; };
@@ -100,6 +96,8 @@
 /* Begin PBXFileReference section */
 		0551AA824E26F3323674A9D2 /* Pods-BMSTUScheduleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMSTUScheduleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BMSTUScheduleUITests/Pods-BMSTUScheduleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5EDF20F0E282FC6530764F45 /* Pods_BMSTUScheduleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMSTUScheduleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A001288212EF48E00C84044 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		6A00128A212EF5C600C84044 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		6A5832662119FACA00C76F07 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		6A5832682119FBAE00C76F07 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		6A5CE040208AACDE002BE568 /* SettingsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGroupCell.swift; sourceTree = "<group>"; };
@@ -113,7 +111,7 @@
 		6A814EF0211A46D300D9AB3B /* EventCalendarCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCalendarCellViewModel.swift; sourceTree = "<group>"; };
 		6A814EF4211A4C7200D9AB3B /* EventLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocationCell.swift; sourceTree = "<group>"; };
 		6A814EF6211A4D2F00D9AB3B /* EventLocationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocationCellViewModel.swift; sourceTree = "<group>"; };
-		6A814EF8211A4DB700D9AB3B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		6A814EF8211A4DB700D9AB3B /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		6A814EFA211AFA8200D9AB3B /* EventTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTimeCell.swift; sourceTree = "<group>"; };
 		6A814EFC211AFBE300D9AB3B /* EventTimeCellViewModell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTimeCellViewModell.swift; sourceTree = "<group>"; };
 		6A814EFE211B054700D9AB3B /* EventActionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActionsCell.swift; sourceTree = "<group>"; };
@@ -123,10 +121,6 @@
 		6ADECF032097A4EE007B4C15 /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
 		6ADECF052099FEEF007B4C15 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		6AE5385F203AC2F3008441FC /* RealmEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEvent.swift; sourceTree = "<group>"; };
-		6AE53861203AC455008441FC /* RealmDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDay.swift; sourceTree = "<group>"; };
-		6AE53863203AC4C8008441FC /* RealmWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWeek.swift; sourceTree = "<group>"; };
-		6AE53865203AC518008441FC /* RealmSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSchedule.swift; sourceTree = "<group>"; };
-		6AE53867203AC57E008441FC /* RealmGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGroup.swift; sourceTree = "<group>"; };
 		6AE9FC392121793300F1DA28 /* TeacherTitleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherTitleCellViewModel.swift; sourceTree = "<group>"; };
 		6AE9FC3C21217A4600F1DA28 /* TeacherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewModel.swift; sourceTree = "<group>"; };
 		6AE9FC3E21217A6700F1DA28 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
@@ -153,8 +147,6 @@
 		A5545DA8202C3A3900CBF1CD /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A5545DB5202C3BFE00CBF1CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5545DBA202C3CEC00CBF1CD /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		A5545DBB202C3CEC00CBF1CD /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
-		A5545DBC202C3CEC00CBF1CD /* Week.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
 		A5545DBD202C3CEC00CBF1CD /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		A5545DBE202C3CEC00CBF1CD /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A5650860204062F900D2DA66 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -212,6 +204,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A00128C212F09AA00C84044 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				6A001288212EF48E00C84044 /* RealmManager.swift */,
+				6AE5385E203AC16D008441FC /* Realm Models */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		6A814EE7211A018B00D9AB3B /* Schedule Table */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,10 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				6AE5385F203AC2F3008441FC /* RealmEvent.swift */,
-				6AE53861203AC455008441FC /* RealmDay.swift */,
-				6AE53863203AC4C8008441FC /* RealmWeek.swift */,
-				6AE53865203AC518008441FC /* RealmSchedule.swift */,
-				6AE53867203AC57E008441FC /* RealmGroup.swift */,
 				6AE9FC502121E75200F1DA28 /* RealmTeacher.swift */,
 			);
 			path = "Realm Models";
@@ -433,7 +430,7 @@
 		A5545DB4202C3BDF00CBF1CD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				6A814EF8211A4DB700D9AB3B /* LocationManager.swift */,
+				6A814EF8211A4DB700D9AB3B /* LocationHelper.swift */,
 				6A86E43820936B7600333FCF /* Extensions */,
 				6AF332BC2037FBB10085C033 /* Localizable.strings */,
 				A5CED4E01DB0E080000D2DFD /* Assets.xcassets */,
@@ -456,13 +453,11 @@
 		A5545DB9202C3CEC00CBF1CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6A00128A212EF5C600C84044 /* Model.swift */,
 				A5545DBA202C3CEC00CBF1CD /* Event.swift */,
-				A5545DBB202C3CEC00CBF1CD /* Day.swift */,
-				A5545DBC202C3CEC00CBF1CD /* Week.swift */,
 				A5545DBD202C3CEC00CBF1CD /* Schedule.swift */,
 				A5545DBE202C3CEC00CBF1CD /* Group.swift */,
 				6ADECF052099FEEF007B4C15 /* Teacher.swift */,
-				6AE5385E203AC16D008441FC /* Realm Models */,
 				6AE9FC38212178E600F1DA28 /* View Models */,
 			);
 			path = Models;
@@ -474,6 +469,8 @@
 				A5CED4D91DB0E080000D2DFD /* AppDelegate.swift */,
 				A5A124081DE8DD70006FB4E5 /* AppManager.swift */,
 				A5B0EBFC1ED1E756006EE607 /* AppTheme.swift */,
+				6A00128C212F09AA00C84044 /* Realm */,
+				A5545DB4202C3BDF00CBF1CD /* Helpers */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -518,7 +515,6 @@
 				A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */,
 				A5A124031DE8DD24006FB4E5 /* Main.storyboard */,
 				A5545DC4202C3D5800CBF1CD /* App */,
-				A5545DB4202C3BDF00CBF1CD /* Helpers */,
 			);
 			path = BMSTUSchedule;
 			sourceTree = "<group>";
@@ -809,20 +805,17 @@
 				A5485CC11DC245BC009610C2 /* EventCell.swift in Sources */,
 				A5A83BB31EE42BA70081D8D5 /* TableViewController.swift in Sources */,
 				6A814EE22119FDC500D9AB3B /* EventTitleCell.swift in Sources */,
-				6A814EF9211A4DB700D9AB3B /* LocationManager.swift in Sources */,
+				6A814EF9211A4DB700D9AB3B /* LocationHelper.swift in Sources */,
 				A5A839D31EE3F24C0081D8D5 /* ViewController.swift in Sources */,
 				6A814EEA211A044700D9AB3B /* EventTeacherCellViewModel.swift in Sources */,
 				6A814EE6211A011800D9AB3B /* EventTitleCellViewModel.swift in Sources */,
 				A5545DC3202C3CEC00CBF1CD /* Group.swift in Sources */,
-				6AE53866203AC518008441FC /* RealmSchedule.swift in Sources */,
-				6AE53862203AC455008441FC /* RealmDay.swift in Sources */,
 				6AE9FC512121E75200F1DA28 /* RealmTeacher.swift in Sources */,
 				6AE9FC4D21219E8500F1DA28 /* TeacherActionCell.swift in Sources */,
 				6A5CE043208AD474002BE568 /* TeachersController.swift in Sources */,
+				6A00128B212EF5C600C84044 /* Model.swift in Sources */,
 				A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */,
 				A5A124091DE8DD70006FB4E5 /* AppManager.swift in Sources */,
-				6AE53864203AC4C8008441FC /* RealmWeek.swift in Sources */,
-				A5545DC1202C3CEC00CBF1CD /* Week.swift in Sources */,
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
 				A5B0EBFD1ED1E756006EE607 /* AppTheme.swift in Sources */,
 				6A5832692119FBAE00C76F07 /* EventViewModel.swift in Sources */,
@@ -845,7 +838,6 @@
 				A5D915062035FDDC00E066CA /* EventCellViewModel.swift in Sources */,
 				6ADECF062099FEEF007B4C15 /* Teacher.swift in Sources */,
 				6A814EF1211A46D300D9AB3B /* EventCalendarCellViewModel.swift in Sources */,
-				A5545DC0202C3CEC00CBF1CD /* Day.swift in Sources */,
 				6AE9FC4121217CAE00F1DA28 /* TeacherTitleCell.swift in Sources */,
 				A5545DBF202C3CEC00CBF1CD /* Event.swift in Sources */,
 				A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */,
@@ -854,9 +846,9 @@
 				6AE9FC4F21219EA400F1DA28 /* TeacherActionCellViewModel.swift in Sources */,
 				6AE9FC49212199A200F1DA28 /* TeacherAboutCell.swift in Sources */,
 				6AF332B02037F88A0085C033 /* String+Localize.swift in Sources */,
+				6A001289212EF48E00C84044 /* RealmManager.swift in Sources */,
 				A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */,
 				6A5832672119FACA00C76F07 /* EventController.swift in Sources */,
-				6AE53868203AC57E008441FC /* RealmGroup.swift in Sources */,
 				A5A839D61EE3FB050081D8D5 /* UIImage+Color.swift in Sources */,
 				6ADECF042097A4EE007B4C15 /* TeacherCell.swift in Sources */,
 				A594878B203611320002C470 /* DaySectionViewModel.swift in Sources */,

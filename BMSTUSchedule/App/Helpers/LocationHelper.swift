@@ -1,14 +1,16 @@
 //
-//  LocationManager.swift
+//  LocationHelper.swift
 //  BMSTUSchedule
 //
-//  Created by a.belkov on 08/08/2018.
+//  Created by Artem Belkov on 08/08/2018.
 //  Copyright © 2018 BMSTU Team. All rights reserved.
 //
 
 import Foundation
 
-class LocationManager {
+// TODO: To implement 'Location' class to 'Event'
+
+class LocationHelper {
 
     class Location {
         

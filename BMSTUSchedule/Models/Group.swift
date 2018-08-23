@@ -8,9 +8,10 @@
 
 import Foundation
 
+// TODO: Combine parsing into 1 method
 
 /// Group 👥
-class Group: CustomStringConvertible {
+class Group: Model {
 
     var name: String {
         didSet {
@@ -25,7 +26,7 @@ class Group: CustomStringConvertible {
     
     var course: Int
 
-    var description : String {
+    override var description : String {
         return "Group(\"\(name)\")\n"
     }
     
@@ -40,7 +41,7 @@ class Group: CustomStringConvertible {
 
     // MARK: Parsing
     
-    func parseDepartment(_ name: String) -> String {
+    private func parseDepartment(_ name: String) -> String {
         
         let hyphen: Character = "-"
         
@@ -54,7 +55,7 @@ class Group: CustomStringConvertible {
         return ""
     }
     
-    func parseNumber(_ name: String) -> Int {
+    private func parseNumber(_ name: String) -> Int {
         
         let hyphen: Character = "-"
         
@@ -68,7 +69,7 @@ class Group: CustomStringConvertible {
         return 0
     }
     
-    func parseCourse(_ name: String) -> Int {
+    private func parseCourse(_ name: String) -> Int {
         
         let hyphen: Character = "-"
 

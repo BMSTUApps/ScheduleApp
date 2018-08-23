@@ -130,51 +130,51 @@ class AppManager {
 
         // Monday
         
-        let event1 = Event(title: "English", teacher: teacherTroshina, location: "401л", kind: .seminar, startTime: "8:30", endTime: "10:05")
-        let event2 = Event(title: "Network Software", teacher: teacherSemkin, location: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
-        let event3 = Event(title: "Multimedia Technology", teacher: teacherAfanasyev, location: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
-        let event4 = Event(title: "Philosophy", teacher: nil, location: "502", kind: .seminar, startTime: "13:50", endTime: "15:25")
-        let event5 = Event(title: "Swimming pool", teacher: teacherVasuschenkova, location: "СК", kind: .other, startTime: "15:50", endTime: "17:25")
+        let event1 = Event(title: "English", teacher: teacherTroshina, location: "401л", kind: .seminar, date: Date(), startTime: "8:30", endTime: "10:05")
+        let event2 = Event(title: "Network Software", teacher: teacherSemkin, location: "515ю", kind: .lecture, date: Date(), startTime: "10:15", endTime: "11:50")
+        let event3 = Event(title: "Multimedia Technology", teacher: teacherAfanasyev, location: "515ю", kind: .lecture, date: Date(), startTime: "12:00", endTime: "13:35")
+        let event4 = Event(title: "Philosophy", teacher: nil, location: "502", kind: .seminar, date: Date(), startTime: "13:50", endTime: "15:25")
+        let event5 = Event(title: "Swimming pool", teacher: teacherVasuschenkova, location: "СК", kind: .other, date: Date(), startTime: "15:50", endTime: "17:25")
         
         let monday = Day(title: .monday, events: [event1, event2, event3, event4, event5], date: Date())
         
         // Tuesday (numerator)
         
-        let event6 = Event(title: "Discrete optimization methods", teacher: teacherIvanov, location: "306ю", kind: .seminar, startTime: "8:30", endTime: "10:05")
-        let event7 = Event(title: "Discrete optimization methods", teacher: teacherIvanov, location: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
-        let event8 = Event(title: "Description of the life cycle processes of ASOIS", teacher: teacherChernenkiyV, location: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
-        let event9 = Event(title: "Description of the life cycle processes of ASOIS", teacher: teacherChernenkiyV, location: "515ю", kind: .lecture, startTime: "13:50", endTime: "15:25")
-        let event10 = Event(title: "Swimming pool", teacher: teacherVasuschenkova, location: "СК", kind: .other, startTime: "15:50", endTime: "17:25")
+        let event6 = Event(title: "Discrete optimization methods", teacher: teacherIvanov, location: "306ю", kind: .seminar, date: Date(), startTime: "8:30", endTime: "10:05")
+        let event7 = Event(title: "Discrete optimization methods", teacher: teacherIvanov, location: "515ю", kind: .lecture, date: Date(), startTime: "10:15", endTime: "11:50")
+        let event8 = Event(title: "Description of the life cycle processes of ASOIS", teacher: teacherChernenkiyV, location: "515ю", kind: .lecture, date: Date(), startTime: "12:00", endTime: "13:35")
+        let event9 = Event(title: "Description of the life cycle processes of ASOIS", teacher: teacherChernenkiyV, location: "515ю", kind: .lecture, date: Date(), startTime: "13:50", endTime: "15:25")
+        let event10 = Event(title: "Swimming pool", teacher: teacherVasuschenkova, location: "СК", kind: .other, date: Date(), startTime: "15:50", endTime: "17:25")
         
         let numeratorTuesday = Day(title: .tuesday, events: [event6, event7, event8, event9, event10], date: Date())
         
         // Wednesday (numerator)
         
-        let event11 = Event(title: "Military Training", teacher: teacherLyaskovskiy, location: "214", kind: .other, startTime: "10:15", endTime: "11:50")
-        let event12 = Event(title: "Military Training", teacher: teacherGorelov, location: "214", kind: .other, startTime: "12:00", endTime: "13:35")
-        let event13 = Event(title: "Military Training", teacher: teacherAmelko, location: "214", kind: .other, startTime: "13:50", endTime: "15:25")
-        let event14 = Event(title: "Military Training", teacher: teacherGorelov, location: "208", kind: .other, startTime: "15:40", endTime: "17:15")
-        let event15 = Event(title: "Multimedia Technology", teacher: teacherBelonogov, location: "903", kind: .lab, startTime: "17:25", endTime: "19:00")
-        let event16 = Event(title: "Multimedia Technology", teacher: teacherBelonogov, location: "903", kind: .lab, startTime: "19:10", endTime: "20:45")
+        let event11 = Event(title: "Military Training", teacher: teacherLyaskovskiy, location: "214", kind: .other, date: Date(), startTime: "10:15", endTime: "11:50")
+        let event12 = Event(title: "Military Training", teacher: teacherGorelov, location: "214", kind: .other, date: Date(), startTime: "12:00", endTime: "13:35")
+        let event13 = Event(title: "Military Training", teacher: teacherAmelko, location: "214", kind: .other, date: Date(), startTime: "13:50", endTime: "15:25")
+        let event14 = Event(title: "Military Training", teacher: teacherGorelov, location: "208", kind: .other, date: Date(), startTime: "15:40", endTime: "17:15")
+        let event15 = Event(title: "Multimedia Technology", teacher: teacherBelonogov, location: "903", kind: .lab, date: Date(), startTime: "17:25", endTime: "19:00")
+        let event16 = Event(title: "Multimedia Technology", teacher: teacherBelonogov, location: "903", kind: .lab, date: Date(), startTime: "19:10", endTime: "20:45")
         
         let numeratorWednesday = Day(title: .wednesday, events: [event11, event12, event13, event14, event15, event16], date: Date())
         
         // Thursday (numerator)
         
-        let event17 = Event(title: "Network technologies in ASOIS", teacher: teacherAntonov, location: "515ю", kind: .lecture, startTime: "10:15", endTime: "11:50")
-        let event18 = Event(title: "Philosophy", teacher: teacherIvlev, location: "515ю", kind: .lecture, startTime: "12:00", endTime: "13:35")
-        let event19 = Event(title: "Supercomputer", teacher: teacherKalistratov, location: "515ю", kind: .lecture, startTime: "13:50", endTime: "15:25")
+        let event17 = Event(title: "Network technologies in ASOIS", teacher: teacherAntonov, location: "515ю", kind: .lecture, date: Date(), startTime: "10:15", endTime: "11:50")
+        let event18 = Event(title: "Philosophy", teacher: teacherIvlev, location: "515ю", kind: .lecture, date: Date(), startTime: "12:00", endTime: "13:35")
+        let event19 = Event(title: "Supercomputer", teacher: teacherKalistratov, location: "515ю", kind: .lecture, date: Date(), startTime: "13:50", endTime: "15:25")
         
         let numeratorThursday = Day(title: .thursday, events: [event17, event18, event19], date: Date())
         
         // Saturday (numerator)
         
-        let event20 = Event(title: "Network Software", teacher: teacherSemkin, location: "903", kind: .lab, startTime: "8:30", endTime: "10:05")
-        let event21 = Event(title: "Network Software", teacher: teacherSemkin, location: "903", kind: .lab, startTime: "10:15", endTime: "11:50")
+        let event20 = Event(title: "Network Software", teacher: teacherSemkin, location: "903", kind: .lab, date: Date(), startTime: "8:30", endTime: "10:05")
+        let event21 = Event(title: "Network Software", teacher: teacherSemkin, location: "903", kind: .lab, date: Date(), startTime: "10:15", endTime: "11:50")
         
         let numeratorSaturday = Day(title: .saturday, events: [event20, event21], date: Date())
         
-        let event22 = Event(title: "Description of the life cycle processes of ASOIS", teacher: teacherChernenkiyМ, location: "395", kind: .seminar, startTime: "13:50", endTime: "15:25")
+        let event22 = Event(title: "Description of the life cycle processes of ASOIS", teacher: teacherChernenkiyМ, location: "395", kind: .seminar, date: Date(), startTime: "13:50", endTime: "15:25")
         
         // Tuesday (denominator)
         
@@ -186,14 +186,14 @@ class AppManager {
         
         // Thursday (denominator)
         
-        let event23 = Event(title: "Supercomputer", teacher: teacherKalistratov, location: "903", kind: .lab, startTime: "15:40", endTime: "17:15")
+        let event23 = Event(title: "Supercomputer", teacher: teacherKalistratov, location: "903", kind: .lab, date: Date(), startTime: "15:40", endTime: "17:15")
         
         let denominatorThursday = Day(title: .thursday, events: [event17, event18, event19, event23], date: Date())
         
         // Friday (denominator)
         
-        let event24 = Event(title: "Network technologies in ASOIS", teacher: teacherAksenov, location: "362", kind: .lab, startTime: "8:30", endTime: "10:05")
-        let event25 = Event(title: "Network technologies in ASOIS", teacher: teacherAksenov, location: "362", kind: .lab, startTime: "10:15", endTime: "11:50")
+        let event24 = Event(title: "Network technologies in ASOIS", teacher: teacherAksenov, location: "362", kind: .lab, date: Date(), startTime: "8:30", endTime: "10:05")
+        let event25 = Event(title: "Network technologies in ASOIS", teacher: teacherAksenov, location: "362", kind: .lab, date: Date(), startTime: "10:15", endTime: "11:50")
         
         let denominatorFriday = Day(title: .friday, events: [event24, event25], date: Date())
         

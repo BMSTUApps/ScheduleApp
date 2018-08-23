@@ -14,9 +14,12 @@ class RealmEvent: Object {
     @objc dynamic var title: String = ""
     
     @objc dynamic var teacher: RealmTeacher? = nil
-    @objc dynamic var location: String? = nil
     
+    @objc dynamic var location: String? = nil
     @objc dynamic var kind: String = ""
+    
+    @objc dynamic var date: Date = Date()
+    @objc dynamic var repeatIn: Int = 0
     
     @objc dynamic var startTime: String = ""
     @objc dynamic var endTime: String = ""
@@ -32,6 +35,8 @@ extension RealmEvent {
         self.title = model.title
         self.location = model.location
         self.kind = model.kind.rawValue
+        self.date = model.date
+        self.repeatIn = model.repeatIn
         self.startTime = model.startTime
         self.endTime = model.endTime
         
@@ -44,6 +49,13 @@ extension RealmEvent {
 extension Event {
     
     convenience init(_ realmModel: RealmEvent) {
-        self.init(title: realmModel.title, teacher: Teacher(realmModel.teacher), location: realmModel.location, kind: Kind(rawValue: realmModel.kind) ?? .other, startTime: realmModel.startTime, endTime: realmModel.endTime)
+        self.init(title: realmModel.title,
+                  teacher: Teacher(realmModel.teacher),
+                  location: realmModel.location,
+                  kind: Kind(rawValue: realmModel.kind) ?? .other,
+                  date: realmModel.date,
+                  repeatIn: realmModel.repeatIn,
+                  startTime: realmModel.startTime,
+                  endTime: realmModel.endTime)
     }
 }

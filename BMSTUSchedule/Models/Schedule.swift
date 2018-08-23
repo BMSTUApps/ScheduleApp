@@ -9,19 +9,9 @@
 import Foundation
 
 /// Schedule 🗂
-class Schedule: CustomStringConvertible {
-
-    var group: Group
-    var weeks: [Week]
-    
-    var description : String {
-        return "Schedule(weeksCount: \(weeks.count))"
-    }
+class Schedule {
     
     // MARK: Initialization
     
-    init(group: Group, weeks: [Week]) {
-        self.group = group
-        self.weeks = weeks
-    }
+    // ..
 }
