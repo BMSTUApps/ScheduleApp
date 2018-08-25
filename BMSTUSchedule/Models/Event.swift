@@ -39,7 +39,7 @@ class Event: Model {
     
     // MARK: Initialization
     
-    init(title: String, teacher: Teacher?, location: Location?, kind: Kind = .other, date: Date, repeatIn: Int, startTime: String, endTime: String) {
+    init(title: String, teacher: Teacher?, location: Location?, kind: Kind = .other, date: Date, repeatIn: Int = 0, startTime: String, endTime: String) {
         self.title = title
         self.teacher = teacher
         self.location = location

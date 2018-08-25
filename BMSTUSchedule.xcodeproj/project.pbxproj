@@ -52,10 +52,11 @@
 		A5545DA7202C39DD00CBF1CD /* Teachers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5545DA6202C39DD00CBF1CD /* Teachers.storyboard */; };
 		A5545DA9202C3A3900CBF1CD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5545DA8202C3A3900CBF1CD /* Settings.storyboard */; };
 		A5545DBF202C3CEC00CBF1CD /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBA202C3CEC00CBF1CD /* Event.swift */; };
-		A5545DC2202C3CEC00CBF1CD /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBD202C3CEC00CBF1CD /* Schedule.swift */; };
 		A5545DC3202C3CEC00CBF1CD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5545DBE202C3CEC00CBF1CD /* Group.swift */; };
 		A5650861204062F900D2DA66 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5650860204062F900D2DA66 /* CalendarView.swift */; };
 		A594878B203611320002C470 /* DaySectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594878A203611320002C470 /* DaySectionViewModel.swift */; };
+		A59E699E21312CB8009A72A7 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E699D21312CB8009A72A7 /* Date+Utils.swift */; };
+		A59E69A021318DC3009A72A7 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E699F21318DC3009A72A7 /* ScheduleViewModel.swift */; };
 		A5A124051DE8DD24006FB4E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A124011DE8DD24006FB4E5 /* LaunchScreen.storyboard */; };
 		A5A124061DE8DD24006FB4E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A124031DE8DD24006FB4E5 /* Main.storyboard */; };
 		A5A124091DE8DD70006FB4E5 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A124081DE8DD70006FB4E5 /* AppManager.swift */; };
@@ -147,10 +148,11 @@
 		A5545DA8202C3A3900CBF1CD /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A5545DB5202C3BFE00CBF1CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5545DBA202C3CEC00CBF1CD /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		A5545DBD202C3CEC00CBF1CD /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		A5545DBE202C3CEC00CBF1CD /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A5650860204062F900D2DA66 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		A594878A203611320002C470 /* DaySectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySectionViewModel.swift; sourceTree = "<group>"; };
+		A59E699D21312CB8009A72A7 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		A59E699F21318DC3009A72A7 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		A5A124021DE8DD24006FB4E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5A124041DE8DD24006FB4E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5A124081DE8DD70006FB4E5 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		6A814EE7211A018B00D9AB3B /* Schedule Table */ = {
 			isa = PBXGroup;
 			children = (
+				A59E699F21318DC3009A72A7 /* ScheduleViewModel.swift */,
 				A594878A203611320002C470 /* DaySectionViewModel.swift */,
 				A5D915052035FDDC00E066CA /* EventCellViewModel.swift */,
 			);
@@ -279,6 +282,7 @@
 			children = (
 				A5A839D51EE3FB050081D8D5 /* UIImage+Color.swift */,
 				6AF332AF2037F88A0085C033 /* String+Localize.swift */,
+				A59E699D21312CB8009A72A7 /* Date+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -455,7 +459,6 @@
 			children = (
 				6A00128A212EF5C600C84044 /* Model.swift */,
 				A5545DBA202C3CEC00CBF1CD /* Event.swift */,
-				A5545DBD202C3CEC00CBF1CD /* Schedule.swift */,
 				A5545DBE202C3CEC00CBF1CD /* Group.swift */,
 				6ADECF052099FEEF007B4C15 /* Teacher.swift */,
 				6AE9FC38212178E600F1DA28 /* View Models */,
@@ -819,6 +822,7 @@
 				A5E0FE841DBFB870008959A9 /* ScheduleController.swift in Sources */,
 				A5B0EBFD1ED1E756006EE607 /* AppTheme.swift in Sources */,
 				6A5832692119FBAE00C76F07 /* EventViewModel.swift in Sources */,
+				A59E699E21312CB8009A72A7 /* Date+Utils.swift in Sources */,
 				6AE9FC45212187BB00F1DA28 /* TeacherInfoCell.swift in Sources */,
 				6A814EFD211AFBE300D9AB3B /* EventTimeCellViewModell.swift in Sources */,
 				6AE9FC4B212199E800F1DA28 /* TeacherAboutCellViewModel.swift in Sources */,
@@ -827,6 +831,7 @@
 				A5650861204062F900D2DA66 /* CalendarView.swift in Sources */,
 				6A86E436209365F300333FCF /* SettingsViewModel.swift in Sources */,
 				6AE53860203AC2F3008441FC /* RealmEvent.swift in Sources */,
+				A59E69A021318DC3009A72A7 /* ScheduleViewModel.swift in Sources */,
 				6A814EF7211A4D2F00D9AB3B /* EventLocationCellViewModel.swift in Sources */,
 				6A814EEC211A0B5E00D9AB3B /* EventTeacherCell.swift in Sources */,
 				6A814F01211B05D000D9AB3B /* EventActionsCellViewModel.swift in Sources */,
@@ -841,7 +846,6 @@
 				6AE9FC4121217CAE00F1DA28 /* TeacherTitleCell.swift in Sources */,
 				A5545DBF202C3CEC00CBF1CD /* Event.swift in Sources */,
 				A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */,
-				A5545DC2202C3CEC00CBF1CD /* Schedule.swift in Sources */,
 				6A814EFF211B054700D9AB3B /* EventActionsCell.swift in Sources */,
 				6AE9FC4F21219EA400F1DA28 /* TeacherActionCellViewModel.swift in Sources */,
 				6AE9FC49212199A200F1DA28 /* TeacherAboutCell.swift in Sources */,
@@ -1033,7 +1037,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 27S8L7RZLQ;
-				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Helpers/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/App/Helpers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bestK1ng.schedule-app";
@@ -1054,7 +1058,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 27S8L7RZLQ;
-				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/Helpers/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/App/Helpers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bestK1ng.schedule-app";
