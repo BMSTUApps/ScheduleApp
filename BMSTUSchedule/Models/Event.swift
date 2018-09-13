@@ -9,7 +9,7 @@
 import Foundation
 
 /// Event 🎓
-class Event: CustomStringConvertible {
+class Event: Model {
 
     enum Kind: String {
         case lecture
@@ -17,41 +17,48 @@ class Event: CustomStringConvertible {
         case lab
         case other
     }
+    
+    typealias Location = String
 
     var title: String
     
     var teacher: Teacher?
-    var location: String?
     
+    var location: Location?
     var kind: Kind
+    
+    var date: Date
+    var repeatIn: Int // weeks count to repeat
     
     var startTime: String
     var endTime: String
 
-    var description : String {
+    override var description : String {
         return "Event(\"\(title)\")\n"
     }
     
     // MARK: Initialization
     
-    init(title: String, teacher: Teacher?, location: String?, kind: Kind = .other, startTime: String, endTime: String) {
+    init(title: String, teacher: Teacher?, location: Location?, kind: Kind = .other, date: Date, repeatIn: Int = 0, startTime: String, endTime: String) {
         self.title = title
         self.teacher = teacher
         self.location = location
         self.kind = kind
+        self.date = date
+        self.repeatIn = repeatIn
         self.startTime = startTime
         self.endTime = endTime
     }
     
-    convenience init(title: String, teacher: Teacher?, location: String?) {
-        self.init(title: title, teacher: teacher, location: location, kind: .other, startTime: "", endTime: "")
+    convenience init(title: String, teacher: Teacher?, location: Location?) {
+        self.init(title: title, teacher: teacher, location: location, kind: .other, date: Date(), repeatIn: 0, startTime: "", endTime: "")
     }
     
     convenience init(title: String) {
         self.init(title: title, teacher: nil, location: nil)
     }
     
-    convenience init() {
+    convenience override init() {
         self.init(title: "")
     }
 }

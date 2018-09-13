@@ -11,29 +11,29 @@ import Foundation
 class DaySectionViewModel {
 
     let title: String
-    let date: Date
+    let subtitle: String
     
-    let events: [EventCellViewModel]
+    let eventCellViewModels: [EventCellViewModel]
     
-    init(_ day: Day) {
+    init(date: Date, events: [Event]) {
         
-        self.title = day.title.rawValue
-        self.date = day.date
+        self.title = date.weekDay ?? ""
+        self.subtitle = date.string(format: "dd.MM") ?? ""
         
         var eventsViewModels: [EventCellViewModel] = []
-        for (index, event) in day.events.enumerated() {
+        for (index, event) in events.enumerated() {
             
             var brakeText = ""
             
-            let isLastEventExist = day.events.indices.contains(index-1)
+            let isLastEventExist = events.indices.contains(index-1)
             if isLastEventExist {
-                brakeText = AppManager.shared.calculateBrake(currentEvent: day.events[index-1], nextEvent: event) ?? ""
+                brakeText = AppManager.shared.calculateBrake(currentEvent: events[index-1], nextEvent: event) ?? ""
             }
             
             let eventViewModel = EventCellViewModel(event, brakeText: brakeText)
             eventsViewModels.append(eventViewModel)
         }
         
-        self.events = eventsViewModels
+        self.eventCellViewModels = eventsViewModels
     }
 }

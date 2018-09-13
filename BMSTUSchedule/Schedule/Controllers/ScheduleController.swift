@@ -10,45 +10,23 @@ import UIKit
 
 class ScheduleController: TableViewController {
     
-    var schedule: Schedule? {
-        
+    var events: [Event] = [] {
         didSet {
-            
-            // Set days
-            var days: [Day] = []
-            for week in (schedule?.weeks)! {
-                days.append(contentsOf: week.days)
-            }
-            
-            self.days = days
-            
-            // Set viewModels
-            var daysViewModels: [DaySectionViewModel] = []
-            for day in days {
-                let dayViewModel = DaySectionViewModel(day)
-                daysViewModels.append(dayViewModel)
-            }
-            
-            self.daysViewModels = daysViewModels
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            scheduleViewModel = ScheduleViewModel(events: events)
+            //tableView.reloadData()
         }
     }
     
-    var group: Group?
-    var days: [Day] = [] // FIXME: Remove days
-    var daysViewModels: [DaySectionViewModel] = []
+    private var scheduleViewModel = ScheduleViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareUI()
         
-        self.schedule = AppManager.shared.getCurrentSchedule()
+        events = AppManager.shared.getCurrentEvents()
     }
     
-    func prepareUI() {
+    private func prepareUI() {
         
         self.navigationItem.title = "Schedule".localized
 
@@ -73,11 +51,11 @@ class ScheduleController: TableViewController {
             print("3D Touch Not Available")
         }
     }
-    
+
     // MARK: UITableViewDataSource
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return daysViewModels.count
+        return scheduleViewModel.daySectionViewModels.count
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -85,17 +63,17 @@ class ScheduleController: TableViewController {
         let header = tableView.dequeueReusableCell(withIdentifier: String(describing: DayHeader.self))
         if let header = header as? DayHeader {
             
-            let dayViewModel = daysViewModels[section]
+            let dayViewModel = scheduleViewModel.daySectionViewModels[section]
             
-            header.titleLabel.text = dayViewModel.title.localized.capitalized
-            header.dateLabel.text = "12.12.2018"
+            header.titleLabel.text = dayViewModel.title.capitalized
+            header.dateLabel.text = dayViewModel.subtitle
         }
         
         return header
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return daysViewModels[section].events.count
+        return scheduleViewModel.daySectionViewModels[section].eventCellViewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,7 +81,7 @@ class ScheduleController: TableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EventCell.self), for: indexPath)
         if let cell = cell as? EventCell {
             
-            let eventViewModel = daysViewModels[indexPath.section].events[indexPath.row]
+            let eventViewModel = scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[indexPath.row]
             cell.fill(model: eventViewModel)
         }
 
@@ -125,10 +103,13 @@ class ScheduleController: TableViewController {
             }
             
             let startIndex = (indexPath.row - 1 >= 0) ? (indexPath.row - 1) : 0
-            let endIndex = (indexPath.row + 1 < days[indexPath.section].events.count) ? (indexPath.row + 1) : days[indexPath.section].events.count-1
-            let displayedEvents: [Event] = Array(days[indexPath.section].events[startIndex...endIndex])
+            let endIndex = (indexPath.row + 1 < scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels.count) ? (indexPath.row + 1) : scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels.count-1
             
-            eventController.event = days[indexPath.section].events[indexPath.row]
+            let displayedEvents: [Event] = Array(scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[startIndex...endIndex]).map { (eventCellViewModel) -> Event in
+                return eventCellViewModel.event
+            }
+            
+            eventController.event = scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[indexPath.row].event
             eventController.displayedEvents = displayedEvents
         }
     }
@@ -148,10 +129,13 @@ extension ScheduleController: UIViewControllerPreviewingDelegate {
         }
         
         let startIndex = (indexPath.row - 1 >= 0) ? (indexPath.row - 1) : 0
-        let endIndex = (indexPath.row + 1 < days[indexPath.section].events.count) ? (indexPath.row + 1) : days[indexPath.section].events.count-1
-        let displayedEvents: [Event] = Array(days[indexPath.section].events[startIndex...endIndex])
+        let endIndex = (indexPath.row + 1 < scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels.count) ? (indexPath.row + 1) : scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels.count-1
         
-        eventController.event = days[indexPath.section].events[indexPath.row]
+        let displayedEvents: [Event] = Array(scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[startIndex...endIndex]).map { (eventCellViewModel) -> Event in
+            return eventCellViewModel.event
+        }
+        
+        eventController.event = scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[indexPath.row].event
         eventController.displayedEvents = displayedEvents
         eventController.preferredContentSize = CGSize(width: eventController.preferredContentSize.width, height: 400)
 
@@ -163,5 +147,4 @@ extension ScheduleController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         show(viewControllerToCommit, sender: self)
     }
-    
 }

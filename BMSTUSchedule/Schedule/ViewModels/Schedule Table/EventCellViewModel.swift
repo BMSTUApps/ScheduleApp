@@ -21,6 +21,8 @@ class EventCellViewModel {
     let startTime: String
     let endTime: String
     
+    let event: Event
+    
     init(_ event: Event, brakeText: String = "") {
         
         self.brakeText = brakeText
@@ -38,5 +40,7 @@ class EventCellViewModel {
         
         self.startTime = event.startTime
         self.endTime = event.endTime
+        
+        self.event = event
     }
 }

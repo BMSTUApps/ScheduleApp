@@ -15,7 +15,7 @@ class EventLocationCellViewModel: CellViewModel {
     
     init(location: String) {
         
-        let locationManager = LocationManager()
+        let locationManager = LocationHelper()
         
         self.location = location
         self.locationDescription = locationManager.description(for: location)
