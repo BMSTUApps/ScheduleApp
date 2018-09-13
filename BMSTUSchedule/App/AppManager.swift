@@ -95,77 +95,44 @@ class AppManager {
         
         // Teachers
         
-        let teacherTroshina = Teacher(firstName: "Ольга", lastName: "Трошина", middleName: "Валерьевна", department: "")
-        let teacherSemkin = Teacher(firstName: "Пётр", lastName: "Семкин", middleName: "Степанович", department: "ИУ5")
-        let teacherAfanasyev = Teacher(firstName: "Геннадий", lastName: "Афанасьев", middleName: "Иванович", department: "ИУ5")
-        let teacherVasuschenkova = Teacher(firstName: "Татьяна", lastName: "Васющенкова", middleName: "Стефановна", department: "")
-        let teacherIvanov = Teacher(firstName: "Александр", lastName: "Иванов", middleName: "Олегович", department: "")
-        let teacherChernenkiyV = Teacher(firstName: "Владимир", lastName: "Черненький", middleName: "Михайлович", department: "ИУ5")
-        let teacherLyaskovskiy = Teacher(firstName: "Вячеслав", lastName: "Лясковский", middleName: "Людвигович", department: "ВК1")
-        let teacherGorelov = Teacher(firstName: "Владимир", lastName: "Горелов", middleName: "Игоревич", department: "ВК1")
-        let teacherAmelko = Teacher(firstName: "Александр", lastName: "Амелько", middleName: "Владимирович", department: "ВК1")
-        let teacherBelonogov = Teacher(firstName: "Игорь", lastName: "Белоногов", middleName: "Борисович", department: "ИУ5")
-        let teacherAntonov = Teacher(firstName: "Артём", lastName: "Антонов", middleName: "Ильич", department: "ИУ5")
-        let teacherIvlev = Teacher(firstName: "Вячеслав", lastName: "Ивлев", middleName: "Юрьевич", department: "")
-        let teacherKalistratov = Teacher(firstName: "Алексей", lastName: "Калистратов", middleName: "Павлович", department: "ИУ5")
-        let teacherChernenkiyМ = Teacher(firstName: "Михаил", lastName: "Черненький", middleName: "Владимирович", department: "ИУ5")
-        let teacherAksenov = Teacher(firstName: "Андрей", lastName: "Аксёнов", middleName: "Николаевич", department: "ИУ5")
-
+        let teacherTerehov = Teacher(firstName: "Валерий", lastName: "Терехов", middleName: "Игоревич", department: "ИУ5")
+        let teacherNesterov = Teacher(firstName: "Юрий", lastName: "Нестеров", middleName: "Григорьевич", department: "ИУ5")
+        let teacherMyushenkov = Teacher(firstName: "Константин", lastName: "Мышенков", middleName: "Сергеевич", department: "ИУ5")
+        let teacherChernenkiy = Teacher(firstName: "Михаил", lastName: "Черненький", middleName: "Валерьевич", department: "ИУ5")
+    
         // Monday
         
-        let event1 = Event(title: "English", teacher: teacherTroshina, location: "401л", kind: .seminar, date: Date("03.09")!, startTime: "8:30", endTime: "10:05")
-        let event2 = Event(title: "Network Software", teacher: teacherSemkin, location: "515ю", kind: .lecture, date: Date("03.09")!, startTime: "10:15", endTime: "11:50")
-        let event3 = Event(title: "Multimedia Technology", teacher: teacherAfanasyev, location: "515ю", kind: .lecture, date: Date("03.09")!, startTime: "12:00", endTime: "13:35")
-        let event4 = Event(title: "Philosophy", teacher: nil, location: "502", kind: .seminar, date: Date("03.09")!, startTime: "13:50", endTime: "15:25")
-        let event5 = Event(title: "Swimming pool", teacher: teacherVasuschenkova, location: "СК", kind: .other, date: Date("03.09")!, startTime: "15:50", endTime: "17:25")
-                
-        // Tuesday (numerator)
-        
-        let event6 = Event(title: "Discrete optimization methods", teacher: teacherIvanov, location: "306ю", kind: .seminar, date: Date("04.09")!, startTime: "8:30", endTime: "10:05")
-        let event7 = Event(title: "Discrete optimization methods", teacher: teacherIvanov, location: "515ю", kind: .lecture, date: Date("04.09")!, startTime: "10:15", endTime: "11:50")
-        let event8 = Event(title: "Description of the life cycle processes of ASOIS", teacher: teacherChernenkiyV, location: "515ю", kind: .lecture, date: Date("04.09")!, startTime: "12:00", endTime: "13:35")
-        let event9 = Event(title: "Description of the life cycle processes of ASOIS", teacher: teacherChernenkiyV, location: "515ю", kind: .lecture, date: Date("04.09")!, startTime: "13:50", endTime: "15:25")
-        let event10 = Event(title: "Swimming pool", teacher: teacherVasuschenkova, location: "СК", kind: .other, date: Date("04.09")!, startTime: "15:50", endTime: "17:25")
-        
-        // Wednesday (numerator)
-        
-        let event11 = Event(title: "Military Training", teacher: teacherLyaskovskiy, location: "214", kind: .other, date: Date("05.09")!, startTime: "10:15", endTime: "11:50")
-        let event12 = Event(title: "Military Training", teacher: teacherGorelov, location: "214", kind: .other, date: Date("05.09")!, startTime: "12:00", endTime: "13:35")
-        let event13 = Event(title: "Military Training", teacher: teacherAmelko, location: "214", kind: .other, date: Date("05.09")!, startTime: "13:50", endTime: "15:25")
-        let event14 = Event(title: "Military Training", teacher: teacherGorelov, location: "208", kind: .other, date: Date("05.09")!, startTime: "15:40", endTime: "17:15")
-        let event15 = Event(title: "Multimedia Technology", teacher: teacherBelonogov, location: "903", kind: .lab, date: Date("05.09")!, startTime: "17:25", endTime: "19:00")
-        let event16 = Event(title: "Multimedia Technology", teacher: teacherBelonogov, location: "903", kind: .lab, date: Date("05.09")!, startTime: "19:10", endTime: "20:45")
-        
-        // Thursday (numerator)
-        
-        let event17 = Event(title: "Network technologies in ASOIS", teacher: teacherAntonov, location: "515ю", kind: .lecture, date: Date("06.09")!, startTime: "10:15", endTime: "11:50")
-        let event18 = Event(title: "Philosophy", teacher: teacherIvlev, location: "515ю", kind: .lecture, date: Date("06.09")!, startTime: "12:00", endTime: "13:35")
-        let event19 = Event(title: "Supercomputer", teacher: teacherKalistratov, location: "515ю", kind: .lecture, date: Date("06.09")!, startTime: "13:50", endTime: "15:25")
-        
-        // Saturday (numerator)
-        
-        let event20 = Event(title: "Network Software", teacher: teacherSemkin, location: "903", kind: .lab, date: Date("07.09")!, startTime: "8:30", endTime: "10:05")
-        let event21 = Event(title: "Network Software", teacher: teacherSemkin, location: "903", kind: .lab, date: Date("07.09")!, startTime: "10:15", endTime: "11:50")
-        let event22 = Event(title: "Description of the life cycle processes of ASOIS", teacher: teacherChernenkiyМ, location: "395", kind: .seminar, date: Date("07.09")!, startTime: "13:50", endTime: "15:25")
-        
-        // Tuesday (denominator)
-        
-        // ..
-        
-        // Wednesday (denominator)
+        let event1 = Event(title: "Методы поддержки принятия решений", teacher: teacherTerehov, location: "533", kind: .lecture, date: Date("03.09")!, startTime: "10:15", endTime: "11:50")
+        let event2 = Event(title: "Элементы управления в АСОИУ", teacher: teacherNesterov, location: "533", kind: .lecture, date: Date("03.09")!, startTime: "12:00", endTime: "13:35")
+        let event3 = Event(title: "Безопасность жизнедеятельности", teacher: nil, location: "533", kind: .lecture, date: Date("03.09")!, startTime: "13:50", endTime: "15:25")
 
-        // ..
         
-        // Thursday (denominator)
+        // Tuesday
+
+        let event4 = Event(title: "Организационное поведение и корпоративная культура", teacher: nil, location: "418ю", kind: .seminar, date: Date("04.09")!, startTime: "08:30", endTime: "10:05")
+        let event5 = Event(title: "Безопасность жизнедеятельности", teacher: nil, location: "533", kind: .lecture, date: Date("04.09")!, startTime: "10:15", endTime: "11:50")
+        let event6 = Event(title: "Технология конструирования ЭВМ", teacher: nil, location: "533", kind: .lecture, date: Date("04.09")!, startTime: "12:00", endTime: "13:35")
+        let event7 = Event(title: "Технология конструирования ЭВМ", teacher: nil, location: "533", kind: .lecture, date: Date("04.09")!, startTime: "13:50", endTime: "15:25")
         
-        let event23 = Event(title: "Supercomputer", teacher: teacherKalistratov, location: "903", kind: .lab, date: Date("13.09")!, startTime: "15:40", endTime: "17:15")
+        // Wednesday
         
-        // Friday (denominator)
+        let event8 = Event(title: "Средства проектирования АСОИУ", teacher: teacherMyushenkov, location: "362", kind: .lab, date: Date("05.09")!, startTime: "10:15", endTime: "11:50")
+        let event9 = Event(title: "Средства проектирования АСОИУ", teacher: teacherMyushenkov, location: "362", kind: .lab, date: Date("05.09")!, startTime: "12:00", endTime: "13:35")
+        let event10 = Event(title: "Методы поддержки принятия решений", teacher: teacherTerehov, location: "395", kind: .lab, date: Date("05.09")!, startTime: "13:50", endTime: "15:25")
+        let event11 = Event(title: "Методы поддержки принятия решений", teacher: teacherTerehov, location: "395", kind: .lab, date: Date("05.09")!, startTime: "15:40", endTime: "17:15")
+
+        // Thursday
         
-        let event24 = Event(title: "Network technologies in ASOIS", teacher: teacherAksenov, location: "362", kind: .lab, date: Date("14.09")!, startTime: "8:30", endTime: "10:05")
-        let event25 = Event(title: "Network technologies in ASOIS", teacher: teacherAksenov, location: "362", kind: .lab, date: Date("14.09")!, startTime: "10:15", endTime: "11:50")
+        let event12 = Event(title: "Экономика", teacher: nil, location: "424ю", kind: .seminar, date: Date("06.09")!, startTime: "13:50", endTime: "15:25")
+        let event13 = Event(title: "Имитационное моделирование дискретных процессов", teacher: teacherChernenkiy, location: "533", kind: .lecture, date: Date("06.09")!, startTime: "15:40", endTime: "17:15")
+        let event14 = Event(title: "Средства проектирования АСОИУ", teacher: teacherMyushenkov, location: "432", kind: .seminar, date: Date("06.09")!, startTime: "17:25", endTime: "19:00")
+
+        // Friday
         
-        return [event1, event2, event3, event4, event5, event6, event7, event8, event9, event10, event11, event12, event13, event14, event15, event16, event17, event18, event19, event20, event21, event22, event23, event24, event25]
+        let event15 = Event(title: "Имитационное моделирование дискретных процессов", teacher: teacherChernenkiy, location: "903", kind: .lab, date: Date("07.09")!, startTime: "10:15", endTime: "11:50")
+        let event16 = Event(title: "Имитационное моделирование дискретных процессов", teacher: teacherChernenkiy, location: "903", kind: .lab, date: Date("07.09")!, startTime: "12:00", endTime: "13:35")
+
+        return [event1, event2, event3, event4, event5, event6, event7, event8, event9, event10, event11, event12, event13, event14, event15, event16]
     }
     
     func getTeachers() -> [Teacher] {
