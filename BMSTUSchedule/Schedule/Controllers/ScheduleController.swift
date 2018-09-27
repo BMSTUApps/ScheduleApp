@@ -10,6 +10,8 @@ import UIKit
 
 class ScheduleController: TableViewController {
     
+    let scheduleStream = ScheduleStream(events: AppManager.shared.getCurrentEvents())
+    
     var events: [Event] = [] {
         didSet {
             scheduleViewModel = ScheduleViewModel(events: events)
@@ -23,7 +25,7 @@ class ScheduleController: TableViewController {
         super.viewDidLoad()
         self.prepareUI()
         
-        events = AppManager.shared.getCurrentEvents()
+        events = scheduleStream.get(.current)
     }
     
     private func prepareUI() {
@@ -50,6 +52,14 @@ class ScheduleController: TableViewController {
         } else {
             print("3D Touch Not Available")
         }
+    }
+    
+    func loadNextWeek() {
+        
+        let newEvents = scheduleStream.get(.next)
+        events.append(contentsOf: newEvents)
+        
+        tableView.reloadData()
     }
 
     // MARK: UITableViewDataSource
@@ -84,7 +94,11 @@ class ScheduleController: TableViewController {
             let eventViewModel = scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[indexPath.row]
             cell.fill(model: eventViewModel)
         }
-
+        
+        if indexPath.section == tableView.numberOfSections - 1 {
+            loadNextWeek()
+        }
+        
         return cell
     }
     

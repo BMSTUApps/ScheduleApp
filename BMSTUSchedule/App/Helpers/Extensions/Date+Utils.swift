@@ -16,7 +16,7 @@ extension Date {
         return string(format: "EEEE")
     }
     
-    init?(_ string: String, format: String = "dd.MM") {
+    init?(_ string: String, format: String = "dd.MM.yyyy") {
         
         let formatter = DateFormatter()
         formatter.dateFormat = format
@@ -82,6 +82,14 @@ extension Date {
                                      direction: direction.calendarSearchDirection)
         
         return date!
+    }
+    
+    func over(weeksCount: Int) -> Date? {
+        
+        let calendar = Calendar.current
+        let date = calendar.date(byAdding: .day, value: weeksCount * 7, to: self)
+        
+        return date
     }
     
     // MARK: Helper
