@@ -48,4 +48,23 @@ class ScheduleViewModel {
     convenience init () {
         self.init(events: [])
     }
+    
+}
+
+extension ScheduleViewModel: TableViewModelProtocol {
+    
+    func viewModel(for indexPath: IndexPath) -> CellViewModel? {
+        
+        guard indexPath.section < daySectionViewModels.count else {
+            return nil
+        }
+
+        let day = daySectionViewModels[indexPath.section]
+        
+        guard indexPath.row < day.eventCellViewModels.count else {
+            return nil
+        }
+        
+        return day.eventCellViewModels[indexPath.row]
+    }
 }

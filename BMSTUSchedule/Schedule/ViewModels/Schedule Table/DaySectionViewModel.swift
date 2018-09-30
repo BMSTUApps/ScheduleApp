@@ -13,7 +13,7 @@ class DaySectionViewModel {
     let title: String
     let subtitle: String
     
-    let eventCellViewModels: [EventCellViewModel]
+    let eventCellViewModels: [CellViewModel]
     
     init(date: Date, events: [Event]) {
         

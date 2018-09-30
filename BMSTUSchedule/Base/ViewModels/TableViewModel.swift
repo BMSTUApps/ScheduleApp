@@ -8,7 +8,12 @@
 
 import UIKit
 
-class TableViewModel {
+protocol TableViewModelProtocol {
+    
+    func viewModel(for indexPath: IndexPath) -> CellViewModel?
+}
+
+class TableViewModel: TableViewModelProtocol {
 
     var count: Int {
         return viewModels.count

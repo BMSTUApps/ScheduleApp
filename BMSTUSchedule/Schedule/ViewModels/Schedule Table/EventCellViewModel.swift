@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EventCellViewModel {
+class EventCellViewModel: CellViewModel {
     
     let brakeText: String
     let kindText: String
@@ -42,5 +42,7 @@ class EventCellViewModel {
         self.endTime = event.endTime
         
         self.event = event
+        
+        super.init(identifier: String(describing: EventCell.self))
     }
 }
