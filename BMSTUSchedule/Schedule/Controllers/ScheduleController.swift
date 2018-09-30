@@ -10,7 +10,7 @@ import UIKit
 
 class ScheduleController: TableViewController {
     
-    let scheduleStream = ScheduleStream(events: AppManager.shared.getCurrentEvents())
+    let scheduleStream = ScheduleStream(events: AppManager.shared.getEvents())
     
     var events: [Event] = [] {
         didSet {
@@ -61,6 +61,13 @@ class ScheduleController: TableViewController {
         
         tableView.reloadData()
     }
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        if scrollView.contentOffset.y > 200 {
+            loadNextWeek()
+        }
+    }
 
     // MARK: UITableViewDataSource
     
@@ -93,10 +100,6 @@ class ScheduleController: TableViewController {
             
             let eventViewModel = scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[indexPath.row]
             cell.fill(model: eventViewModel)
-        }
-        
-        if indexPath.section == tableView.numberOfSections - 1 {
-            loadNextWeek()
         }
         
         return cell

@@ -67,7 +67,7 @@ class AppManager {
     
     // MARK: - Schedule
     
-    func getCurrentEvents() -> [Event] {
+    func getEvents() -> [Event] {
         
         let realm = try! Realm()
         
@@ -94,7 +94,7 @@ class AppManager {
     fileprivate var testEvents: [Event] {
         
         // Teachers
-        
+    
         let teacherTerehov = Teacher(firstName: "Валерий", lastName: "Терехов", middleName: "Игоревич", department: "ИУ5")
         let teacherNesterov = Teacher(firstName: "Юрий", lastName: "Нестеров", middleName: "Григорьевич", department: "ИУ5")
         let teacherMyushenkov = Teacher(firstName: "Константин", lastName: "Мышенков", middleName: "Сергеевич", department: "ИУ5")
@@ -227,29 +227,5 @@ extension AppManager {
         }
         
         return quickActionHandled
-    }
-}
-
-// MARK: - Helpers
-
-extension AppManager {
-    
-    func calculateBrake(currentEvent: Event, nextEvent: Event) -> String? {
-
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:mm"
-        timeFormatter.locale = Locale(identifier: "ru-RU")
-        
-        let date1 = timeFormatter.date(from: currentEvent.endTime)
-        let date2 = timeFormatter.date(from: nextEvent.startTime)
-        
-        guard let startBrakeDate = date1, let endBrakeDate = date2 else {
-            return nil
-        }
-        
-        let interval = endBrakeDate.timeIntervalSince(startBrakeDate)
-        let minutes = Int(interval / 60)
-        
-        return String(format: "%@ minutes break".localized, "\(minutes)")
     }
 }

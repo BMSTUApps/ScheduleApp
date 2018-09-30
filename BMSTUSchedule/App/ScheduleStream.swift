@@ -40,7 +40,14 @@ class ScheduleStream {
         }
         
         nonRepeatEvents.sort { (previous, next) -> Bool in
-            previous.date < next.date
+            
+            if previous.date == next.date,
+                let previousStartDate = Date(previous.startTime, format: "HH:mm"),
+                let nextStartDate = Date(next.startTime, format: "HH:mm") {
+                return previousStartDate < nextStartDate
+            }
+            
+            return previous.date < next.date
         }
         
         return nonRepeatEvents
@@ -97,5 +104,26 @@ class ScheduleStream {
         self.date = from
         
         return events(from: from, to: to)
+    }
+    
+    // MARK: Helpers
+    
+    static func calculateBrake(from previous: Event, to next: Event) -> String? {
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        timeFormatter.locale = Locale(identifier: "ru-RU")
+        
+        let date1 = timeFormatter.date(from: previous.endTime)
+        let date2 = timeFormatter.date(from: next.startTime)
+        
+        guard let startBrakeDate = date1, let endBrakeDate = date2 else {
+            return nil
+        }
+        
+        let interval = endBrakeDate.timeIntervalSince(startBrakeDate)
+        let minutes = Int(interval / 60)
+        
+        return String(format: "%@ minutes break".localized, "\(minutes)")
     }
 }

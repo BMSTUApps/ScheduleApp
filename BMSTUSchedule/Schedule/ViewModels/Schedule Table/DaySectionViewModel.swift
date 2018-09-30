@@ -27,7 +27,7 @@ class DaySectionViewModel {
             
             let isLastEventExist = events.indices.contains(index-1)
             if isLastEventExist {
-                brakeText = AppManager.shared.calculateBrake(currentEvent: events[index-1], nextEvent: event) ?? ""
+                brakeText = ScheduleStream.calculateBrake(from: events[index-1], to: event) ?? ""
             }
             
             let eventViewModel = EventCellViewModel(event, brakeText: brakeText)
