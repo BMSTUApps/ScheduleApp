@@ -23,7 +23,10 @@ class TeacherCell: UITableViewCell {
     
     func fill(teacher: Teacher) {
     
-        photoView.image = #imageLiteral(resourceName: "test_teacher")
+        if let url = teacher.photoURL {
+            photoView.setImage(from: url)
+        }
+        
         nameLabel.text = teacher.fullName
         positionLabel.text = teacher.position
     }
@@ -55,5 +58,6 @@ class TeacherCell: UITableViewCell {
         liningView.layer.rasterizationScale = UIScreen.main.scale
         
         photoView.layer.cornerRadius = photoView.frame.height / 2
+        photoView.clipsToBounds = true
     }
 }

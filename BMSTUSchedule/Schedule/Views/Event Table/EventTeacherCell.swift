@@ -19,6 +19,7 @@ class EventTeacherCell: UITableViewCell, CellViewModelProtocol {
         super.awakeFromNib()
 
         photoView.layer.cornerRadius = photoView.frame.height / 2
+        photoView.clipsToBounds = true
     }
 
     // MARK: - CellViewModelProtocol
@@ -29,7 +30,9 @@ class EventTeacherCell: UITableViewCell, CellViewModelProtocol {
             return
         }
         
-        //photoView.image = castedModel.photoUrl
+        if let url = castedModel.photoUrl {
+            photoView.setImage(from: url)
+        }
         
         fullNameLabel.text = castedModel.fullName
         degreeLabel.text = castedModel.degree

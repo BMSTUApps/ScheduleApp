@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeacherInfoCell: UITableViewCell {
+class TeacherInfoCell: UITableViewCell, CellViewModelProtocol {
 
     @IBOutlet weak var photoView: UIImageView!
     
@@ -20,7 +20,7 @@ class TeacherInfoCell: UITableViewCell {
         super.awakeFromNib()
         
         photoView.layer.cornerRadius = photoView.frame.height / 2
-        photoView.image = #imageLiteral(resourceName: "test_teacher")
+        photoView.clipsToBounds = true
     }
 
     // MARK: - CellViewModelProtocol
@@ -29,6 +29,10 @@ class TeacherInfoCell: UITableViewCell {
         
         guard let castedModel = model as? TeacherInfoCellViewModel else {
             return
+        }
+        
+        if let url = castedModel.photoUrl {
+            photoView.setImage(from: url)
         }
         
         positionLabel.text = castedModel.position

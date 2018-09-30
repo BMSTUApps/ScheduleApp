@@ -126,4 +126,21 @@ class ScheduleStream {
         
         return String(format: "%@ minutes break".localized, "\(minutes)")
     }
+    
+    struct Week {
+        
+        enum Kind: String {
+            case numerator, denominator
+        }
+        
+        let number: Int
+        let type: Kind
+    }
+    
+    static func getCurrentWeek(event: Event) -> Week {
+        
+        // TODO: Calculate week number
+        
+        return Week(number: 1, type: .numerator)
+    }
 }

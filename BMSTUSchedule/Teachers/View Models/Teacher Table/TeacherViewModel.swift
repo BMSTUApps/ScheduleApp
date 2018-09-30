@@ -35,7 +35,7 @@ class TeacherViewModel: TableViewModel {
             return
         }
         
-        let infoViewModel = TeacherInfoCellViewModel(position: position, degree: degree, department: teacher.department)
+        let infoViewModel = TeacherInfoCellViewModel(photoUrl: teacher.photoURL, position: position, degree: degree, department: teacher.department)
         viewModels.append(infoViewModel)
     }
     

@@ -10,12 +10,14 @@ import UIKit
 
 class TeacherInfoCellViewModel: CellViewModel {
 
+    var photoUrl: URL?
     var position: String
     var degree: String
     var department: String
 
-    init(position: String, degree: String, department: String) {
+    init(photoUrl: URL? = nil, position: String, degree: String, department: String) {
         
+        self.photoUrl = photoUrl
         self.position = position
         self.degree = degree
         self.department = department

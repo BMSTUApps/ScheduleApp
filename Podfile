@@ -5,9 +5,18 @@ target 'BMSTUSchedule' do
   use_frameworks!
 
   # Pods for BMSTUSchedule
+  
+  # Notifications & statistics
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  
+  # Cache
   pod 'RealmSwift'
+  
+  # Image cache
+  pod 'Kingfisher'
+  
+  # Code quality
   pod 'SwiftLint'
 
   target 'BMSTUScheduleTests' do

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUx-lA-3Qv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUx-lA-3Qv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,13 +27,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="дата" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-Wr-6hd">
-                                            <rect key="frame" x="123" y="11.5" width="31.5" height="17"/>
+                                            <rect key="frame" x="123" y="12.5" width="31.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="День недели" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="tBM-03-8hL">
-                                            <rect key="frame" x="8" y="9.5" width="109" height="20.5"/>
+                                            <rect key="frame" x="8" y="9" width="109" height="21.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -41,10 +41,11 @@
                                     </subviews>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="tBM-03-8hL" firstAttribute="centerY" secondItem="8qx-eZ-HLL" secondAttribute="centerY" id="Px7-pY-tat"/>
+                                        <constraint firstAttribute="bottom" secondItem="hqT-Wr-6hd" secondAttribute="bottom" constant="10" id="Abg-Mq-s5H"/>
+                                        <constraint firstItem="tBM-03-8hL" firstAttribute="top" secondItem="8qx-eZ-HLL" secondAttribute="top" constant="9" id="NDq-iV-8zb"/>
+                                        <constraint firstAttribute="bottom" secondItem="tBM-03-8hL" secondAttribute="bottom" constant="9" id="VOz-k6-V9l"/>
                                         <constraint firstItem="tBM-03-8hL" firstAttribute="leading" secondItem="8qx-eZ-HLL" secondAttribute="leading" constant="8" id="gDa-jz-GfZ"/>
                                         <constraint firstItem="hqT-Wr-6hd" firstAttribute="leading" secondItem="tBM-03-8hL" secondAttribute="trailing" constant="6" id="uSd-Sg-YXd"/>
-                                        <constraint firstItem="hqT-Wr-6hd" firstAttribute="centerY" secondItem="8qx-eZ-HLL" secondAttribute="centerY" id="vN4-Dg-D4I"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <userDefinedRuntimeAttributes>
@@ -158,30 +159,6 @@
                                     <outlet property="teacherLabel" destination="Rdx-qD-rfv" id="x1l-M9-MCw"/>
                                     <outlet property="titleLabel" destination="W1q-RE-YuA" id="5iC-rX-mgl"/>
                                     <segue destination="WaZ-XC-i9H" kind="show" identifier="ShowEventController" id="8Eh-ff-N4I"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NextCell" rowHeight="96" id="nwF-CK-uhA" customClass="NextCell" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="164" width="375" height="96"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nwF-CK-uhA" id="Iep-ja-Muu">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="95.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_teacher" translatesAutoresizingMaskIntoConstraints="NO" id="E0Y-PG-NGT">
-                                            <rect key="frame" x="137.5" y="45.5" width="100" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="s3U-MA-CVP"/>
-                                                <constraint firstAttribute="height" constant="100" id="vPD-c8-1mj"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="E0Y-PG-NGT" firstAttribute="centerX" secondItem="Iep-ja-Muu" secondAttribute="centerX" id="Duq-O2-9tz"/>
-                                        <constraint firstAttribute="bottom" secondItem="E0Y-PG-NGT" secondAttribute="bottom" constant="-50" id="ZNF-X8-jq3"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="nextImageView" destination="E0Y-PG-NGT" id="SwE-EY-1VB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -502,6 +479,5 @@
     </scenes>
     <resources>
         <image name="schedule" width="25" height="25"/>
-        <image name="test_teacher" width="84" height="84"/>
     </resources>
 </document>
