@@ -24,7 +24,7 @@ target 'BMSTUSchedule' do
   end
 
   target 'BMSTUScheduleUITests' do
-    inherit! :search_paths
+    inherit! :complete
   end
 
 end

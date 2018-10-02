@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_BMSTUScheduleUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_BMSTUScheduleUITestsVersionString[];
+FOUNDATION_EXPORT double Pods_BMSTUSchedule_BMSTUScheduleUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_BMSTUSchedule_BMSTUScheduleUITestsVersionString[];
 
