@@ -32,12 +32,9 @@ class BMSTUScheduleTests: XCTestCase {
     
     func testWeeksFromSchedule() {
         
-        let count = 3
+        let events = AppManager.shared.getEvents()
         
-        let schedule = Manager.standard.randomSchedule()
-        let weeks = Manager.calendar.createWeeksFromSchedule(schedule: schedule, offset: 0, count: count)
-        
-        XCTAssert(weeks.count == count, "The week's count should be equal to count")
+        XCTAssert(events.count > 0, "The week's count should be equal to count")
     }
     
 }
