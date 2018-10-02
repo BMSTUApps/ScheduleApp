@@ -1,0 +1,4 @@
+xcode_workspace: BMSTUSchedule.xcworkspace
+xcode_scheme: BMSTUScheduleTests
+xcode_destination: platform=iOS Simulator,OS=12,name=iPhone X
+osx_image: xcode10
