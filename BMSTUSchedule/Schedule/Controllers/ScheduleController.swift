@@ -62,6 +62,23 @@ class ScheduleController: TableViewController {
         tableView.reloadData()
     }
     
+    func eventsAround(at indexPath: IndexPath) -> [Event] {
+        
+        let startIndex = (indexPath.row - 1 >= 0) ? (indexPath.row - 1) : 0
+        let endIndex = (indexPath.row + 1 < scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels.count) ? (indexPath.row + 1) : scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels.count-1
+        
+        let displayedModels = Array(scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[startIndex...endIndex])
+        
+        var displayedEvents: [Event] = []
+        for model in displayedModels {
+            if let eventModel = model as? EventCellViewModel {
+                displayedEvents.append(eventModel.event)
+            }
+        }
+        
+        return displayedEvents
+    }
+    
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
         if scrollView.contentOffset.y > 200 {
@@ -95,15 +112,6 @@ class ScheduleController: TableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EventCell.self), for: indexPath)
-//        if let cell = cell as? EventCell {
-//
-//            let eventViewModel = scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[indexPath.row]
-//            cell.fill(model: eventViewModel)
-//        }
-        
-        //
-        
         guard let cellViewModel = scheduleViewModel.viewModel(for: indexPath) else {
             return UITableViewCell()
         }
@@ -131,23 +139,11 @@ class ScheduleController: TableViewController {
                 return
             }
             
-            let startIndex = (indexPath.row - 1 >= 0) ? (indexPath.row - 1) : 0
-            let endIndex = (indexPath.row + 1 < scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels.count) ? (indexPath.row + 1) : scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels.count-1
-            
-            let displayedModels = Array(scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[startIndex...endIndex])
-            
-            var displayedEvents: [Event] = []
-            for model in displayedModels {
-                if let eventModel = model as? EventCellViewModel {
-                    displayedEvents.append(eventModel.event)
-                }
-            }
-            
             if let eventCellViewModel = scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[indexPath.row] as? EventCellViewModel {
                 eventController.event = eventCellViewModel.event
             }
             
-            eventController.displayedEvents = displayedEvents
+            eventController.displayedEvents = eventsAround(at: indexPath)
         }
     }
 }
@@ -165,23 +161,11 @@ extension ScheduleController: UIViewControllerPreviewingDelegate {
             
         }
         
-        let startIndex = (indexPath.row - 1 >= 0) ? (indexPath.row - 1) : 0
-        let endIndex = (indexPath.row + 1 < scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels.count) ? (indexPath.row + 1) : scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels.count-1
-        
-        let displayedModels = Array(scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[startIndex...endIndex])
-        
-        var displayedEvents: [Event] = []
-        for model in displayedModels {
-            if let eventModel = model as? EventCellViewModel {
-                displayedEvents.append(eventModel.event)
-            }
-        }
-
         if let eventCellViewModel = scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[indexPath.row] as? EventCellViewModel {
             eventController.event = eventCellViewModel.event
         }
         
-        eventController.displayedEvents = displayedEvents
+        eventController.displayedEvents = eventsAround(at: indexPath)
         eventController.preferredContentSize = CGSize(width: eventController.preferredContentSize.width, height: 400)
 
         previewingContext.sourceRect = cell.frame
