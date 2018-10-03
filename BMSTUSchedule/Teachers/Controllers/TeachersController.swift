@@ -30,6 +30,13 @@ class TeachersController: UITableViewController {
         // Setup navigation bar
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.tintColor = AppTheme.shared.navigationBarTintColor
+        
+        // Setup 3d touch
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        } else {
+            print("3D Touch Not Available")
+        }
     }
     
     // MARK: - Table view data source
@@ -48,10 +55,8 @@ class TeachersController: UITableViewController {
         
         let reuseIdentifier = String(describing: TeacherCell.self)
         let cell = (tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? TeacherCell) ?? TeacherCell()
-
-        let teacher = teachers[indexPath.row]
         
-        cell.fill(teacher: teacher)
+        cell.fill(teacher: teachers[indexPath.row])
         
         return cell
     }
@@ -72,5 +77,31 @@ class TeachersController: UITableViewController {
             
             teacherController.teacher = teachers[indexPath.row]
         }
+    }
+}
+
+extension TeachersController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = tableView.indexPathForRow(at: location), let cell = tableView.cellForRow(at: indexPath) as? TeacherCell else {
+            return nil
+        }
+        
+        guard let teacherController = storyboard?.instantiateViewController(withIdentifier: String(describing: TeacherController.self)) as? TeacherController else {
+            return nil
+            
+        }
+        
+        teacherController.teacher = self.teachers[indexPath.row]
+        teacherController.preferredContentSize = CGSize(width: teacherController.preferredContentSize.width, height: 400)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return teacherController
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: self)
     }
 }
