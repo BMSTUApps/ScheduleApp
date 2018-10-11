@@ -24,7 +24,8 @@ class AppTheme {
         static let lightBlue = UIColor(red: 57/255, green: 152/255, blue: 219/255, alpha: 1)
         static let lightGreen = UIColor(red: 215/255, green: 255/255, blue: 246/255, alpha: 1)
         
-        static let ligthGray = UIColor(red:137/255, green:161/255, blue:175/255, alpha: 1)
+        static let ligthGray = UIColor(red: 137/255, green: 161/255, blue: 175/255, alpha: 1)
+        static let extaLightGray = UIColor(red: 236/255, green: 236/255, blue: 236/255, alpha: 1)
         
         static let white = UIColor.white
     }
@@ -47,4 +48,8 @@ class AppTheme {
     
     let navigationBarTintColor = AppColor.white
     let navigationBarBackgroundColor = AppColor.base
+    
+    // MARK: - Table
+    
+    let tableSelectionColor = AppColor.extaLightGray
 }

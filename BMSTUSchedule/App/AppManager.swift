@@ -177,7 +177,7 @@ class AppManager {
                                     middleName: "Александровна",
                                     department: "ИБМ",
                                     position: "Преподаватель",
-                                    degree: nil,
+                                    degree: "Доцент",
                                     photoURL: URL(string: "https://studizba.com/thumb.php?w=200&h=240&zc=1&src=/uploads/dossier/2016-07/151-195-4993-1081345473-1469171078.jpg"),
                                     about:
 """

@@ -53,7 +53,7 @@ class EventCell: UITableViewCell, CellViewModelProtocol {
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         
         if highlighted {
-            self.backgroundColor = UIColor.gray.withAlphaComponent(0.15)
+            self.backgroundColor = AppTheme.shared.tableSelectionColor
         } else {
             self.backgroundColor = UIColor.white
         }

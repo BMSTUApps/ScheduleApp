@@ -24,8 +24,9 @@ class TeachersController: UITableViewController {
         // Set title
         self.navigationItem.title = "Teachers".localized
         
-        // Set content inset
-        self.tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+        // Set tableview
+        self.tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 8, right: 0)
+        self.tableView.showsVerticalScrollIndicator = false
         
         // Setup navigation bar
         self.navigationController?.navigationBar.barStyle = .black

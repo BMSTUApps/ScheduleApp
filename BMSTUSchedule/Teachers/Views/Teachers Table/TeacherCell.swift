@@ -33,10 +33,13 @@ class TeacherCell: UITableViewCell {
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         
-        if highlighted {
-            liningView.backgroundColor = UIColor.gray.withAlphaComponent(0.15)
-        } else {
-            liningView.backgroundColor = UIColor.white
+        UIView.animate(withDuration: 0.2) {
+            
+            if highlighted {
+                self.transform = self.transform.scaledBy(x: 0.95, y: 0.95)
+            } else {
+                self.transform = CGAffineTransform.identity
+            }
         }
     }
 
