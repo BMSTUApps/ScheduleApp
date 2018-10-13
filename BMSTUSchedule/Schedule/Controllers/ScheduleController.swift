@@ -23,7 +23,9 @@ class ScheduleController: TableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.prepareUI()
+        
+        prepareUI()
+        setupIntents()
         
         events = scheduleStream.get(.current)
     }
@@ -175,5 +177,23 @@ extension ScheduleController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         show(viewControllerToCommit, sender: self)
+    }
+    
+    func setupIntents() {
+        
+        let activityIdentifier = "\(Bundle.main.bundleIdentifier!).\(AppManager.Action.openSchedule.rawValue)"
+        let activity = NSUserActivity(activityType: activityIdentifier)
+        activity.title = "Show schedule".localized
+        activity.userInfo = ["speech" : "schedule"]
+        activity.isEligibleForSearch = true
+        
+        if #available(iOS 12.0, *) {
+            activity.isEligibleForPrediction = true
+            activity.persistentIdentifier = NSUserActivityPersistentIdentifier(activityIdentifier)
+        }
+        
+        view.userActivity = activity
+        
+        activity.becomeCurrent()
     }
 }

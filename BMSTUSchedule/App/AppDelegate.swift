@@ -55,7 +55,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         
-        // Handle quick actions
+        // Handle 3D-touch shortcuts
         completionHandler(AppManager.shared.handleQuickAction(shortcutItem: shortcutItem))
+    }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        
+        // Handle Siri intents
+        let result = AppManager.shared.handleIntent(userActivity: userActivity)
+        
+        return result
     }
 }

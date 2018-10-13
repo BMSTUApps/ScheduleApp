@@ -14,7 +14,9 @@ class TeachersController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         prepareUI()
+        setupIntents()
     }
     
     // MARK: - UI
@@ -96,13 +98,31 @@ extension TeachersController: UIViewControllerPreviewingDelegate {
         
         teacherController.teacher = self.teachers[indexPath.row]
         teacherController.preferredContentSize = CGSize(width: teacherController.preferredContentSize.width, height: 400)
-        
-        previewingContext.sourceRect = cell.frame
+    
+        previewingContext.sourceRect = cell.liningView.convert(cell.liningView.frame, to: self.view)
         
         return teacherController
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         show(viewControllerToCommit, sender: self)
+    }
+    
+    func setupIntents() {
+        
+        let activityIdentifier = "\(Bundle.main.bundleIdentifier!).\(AppManager.Action.openTeachers.rawValue)"
+        let activity = NSUserActivity(activityType: activityIdentifier)
+        activity.title = "Show teachers".localized
+        activity.userInfo = ["speech" : "teachers"]
+        activity.isEligibleForSearch = true
+        
+        if #available(iOS 12.0, *) {
+            activity.isEligibleForPrediction = true
+            activity.persistentIdentifier = NSUserActivityPersistentIdentifier(activityIdentifier)
+        }
+        
+        view.userActivity = activity
+        
+        activity.becomeCurrent()
     }
 }

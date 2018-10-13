@@ -25,3 +25,6 @@
 "Enable notifications" = "Присылать уведомления";
 
 "%@ minutes break" = "%@ минут перерыва";
+
+"Show schedule" = "Показать расписание";
+"Show teachers" = "Показать преподавателей";

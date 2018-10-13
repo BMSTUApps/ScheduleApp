@@ -292,44 +292,64 @@ class AppManager {
 
 extension AppManager {
     
-    enum Shortcut: String {
-        case openSchedule = "OpenSchedule" // ..opening schedule screen
-        case openTeachers = "OpenTeachers" // ..opening teachers screen
+    enum Action: String {
+        case openSchedule
+        case openTeachers
     }
     
-    func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
+    func perfomAction(_ action: Action) -> Bool {
         
         var quickActionHandled = false
-        let type = shortcutItem.type.components(separatedBy: ".").last!
-        if let shortcutType = Shortcut.init(rawValue: type) {
+        
+        switch action {
             
-            switch shortcutType {
-            case .openSchedule:
-                
-                guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else {
-                    return quickActionHandled
-                }
-                
-                if let tababarController = rootViewController as? UITabBarController {
-                    tababarController.selectedIndex = 0
-                }
-                
-                quickActionHandled = true
-                
-            case .openTeachers:
-                
-                guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else {
-                    return quickActionHandled
-                }
-                
-                if let tababarController = rootViewController as? UITabBarController {
-                    tababarController.selectedIndex = 1
-                }
-                
-                quickActionHandled = true
+        case .openSchedule:
+            
+            guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else {
+                return quickActionHandled
             }
+            
+            if let tababarController = rootViewController as? UITabBarController {
+                tababarController.selectedIndex = 0
+            }
+            
+            quickActionHandled = true
+            
+        case .openTeachers:
+            
+            guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else {
+                return quickActionHandled
+            }
+            
+            if let tababarController = rootViewController as? UITabBarController {
+                tababarController.selectedIndex = 1
+            }
+            
+            quickActionHandled = true
         }
         
         return quickActionHandled
+    }
+    
+    /// Support 3D-touch shortcuts
+    func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        
+        let identifier = shortcutItem.type.components(separatedBy: ".").last!
+        if let action = Action.init(rawValue: identifier) {
+            return perfomAction(action)
+        }
+        
+        return false
+    }
+    
+    /// Support Siri intents
+    func handleIntent(userActivity: NSUserActivity) -> Bool {
+     
+        let identifier = userActivity.activityType.components(separatedBy: ".").last!
+        if let action = Action.init(rawValue: identifier) {
+            return perfomAction(action)
+        }
+        
+        return true
     }
 }

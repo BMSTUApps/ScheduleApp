@@ -14,6 +14,7 @@
 		6A5832692119FBAE00C76F07 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5832682119FBAE00C76F07 /* EventViewModel.swift */; };
 		6A5CE041208AACDE002BE568 /* SettingsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5CE040208AACDE002BE568 /* SettingsGroupCell.swift */; };
 		6A5CE043208AD474002BE568 /* TeachersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5CE042208AD474002BE568 /* TeachersController.swift */; };
+		6A61F17A2170E0DE0083CA4D /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A61F1792170E0DE0083CA4D /* Intents.framework */; };
 		6A814EE22119FDC500D9AB3B /* EventTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EE12119FDC500D9AB3B /* EventTitleCell.swift */; };
 		6A814EE4211A009C00D9AB3B /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EE3211A009C00D9AB3B /* CellViewModel.swift */; };
 		6A814EE6211A011800D9AB3B /* EventTitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EE5211A011800D9AB3B /* EventTitleCellViewModel.swift */; };
@@ -106,6 +107,8 @@
 		6A5832682119FBAE00C76F07 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		6A5CE040208AACDE002BE568 /* SettingsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGroupCell.swift; sourceTree = "<group>"; };
 		6A5CE042208AD474002BE568 /* TeachersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersController.swift; sourceTree = "<group>"; };
+		6A61F1782170DF600083CA4D /* BMSTUSchedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BMSTUSchedule.entitlements; sourceTree = "<group>"; };
+		6A61F1792170E0DE0083CA4D /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		6A814EE12119FDC500D9AB3B /* EventTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTitleCell.swift; sourceTree = "<group>"; };
 		6A814EE3211A009C00D9AB3B /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		6A814EE5211A011800D9AB3B /* EventTitleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTitleCellViewModel.swift; sourceTree = "<group>"; };
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38CB2A1B34B5054BF19BB965 /* Pods_BMSTUSchedule.framework in Frameworks */,
+				6A61F17A2170E0DE0083CA4D /* Intents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +537,7 @@
 		A5CED4D81DB0E080000D2DFD /* BMSTUSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				6A61F1782170DF600083CA4D /* BMSTUSchedule.entitlements */,
 				A5545DB9202C3CEC00CBF1CD /* Models */,
 				A5545DAA202C3ABA00CBF1CD /* Schedule */,
 				A5545DAF202C3B4000CBF1CD /* Teachers */,
@@ -573,6 +578,7 @@
 		AE2ACB04E7DE898240F8F264 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A61F1792170E0DE0083CA4D /* Intents.framework */,
 				7737BF8A2939EC394AFE9ED1 /* Pods_BMSTUSchedule.framework */,
 				CB0BCBB6FE3B5FE7630C1246 /* Pods_BMSTUSchedule_BMSTUScheduleUITests.framework */,
 				2DB9FB48FB527CE3BD45C1C4 /* Pods_BMSTUScheduleTests.framework */,
@@ -669,6 +675,14 @@
 						DevelopmentTeam = CT884K7983;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 					A5CED4E91DB0E080000D2DFD = {
 						CreatedOnToolsVersion = 8.0;
@@ -1092,6 +1106,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BMSTUSchedule/BMSTUSchedule.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CT884K7983;
 				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/App/Helpers/Info.plist";
@@ -1113,6 +1128,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BMSTUSchedule/BMSTUSchedule.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CT884K7983;
 				INFOPLIST_FILE = "$(SRCROOT)/BMSTUSchedule/App/Helpers/Info.plist";
