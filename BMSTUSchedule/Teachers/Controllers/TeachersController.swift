@@ -98,8 +98,8 @@ extension TeachersController: UIViewControllerPreviewingDelegate {
         
         teacherController.teacher = self.teachers[indexPath.row]
         teacherController.preferredContentSize = CGSize(width: teacherController.preferredContentSize.width, height: 400)
-    
-        previewingContext.sourceRect = cell.liningView.convert(cell.liningView.frame, to: self.view)
+        
+        previewingContext.sourceRect = cell.convert(cell.liningView.frame, to: self.view)
         
         return teacherController
     }
