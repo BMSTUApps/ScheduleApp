@@ -9,7 +9,7 @@
 import UIKit
 
 class EventTeacherCellViewModel: CellViewModel {
-
+    
     var photoUrl: URL?
    
     var fullName: String
@@ -23,5 +23,7 @@ class EventTeacherCellViewModel: CellViewModel {
         self.degree = teacher.degree
         
         super.init(identifier: String(describing: EventTeacherCell.self))
+        
+        self.shouldHighlight = true
     }
 }

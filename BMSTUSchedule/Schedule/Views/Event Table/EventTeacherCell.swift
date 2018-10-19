@@ -15,13 +15,40 @@ class EventTeacherCell: UITableViewCell, CellViewModelProtocol {
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var degreeLabel: UILabel!
     
+    @IBOutlet weak var highlightView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
         photoView.layer.cornerRadius = photoView.frame.height / 2
         photoView.clipsToBounds = true
+        
+        highlightView.layer.cornerRadius = 20
     }
 
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        
+        if highlighted {
+            highlightView.backgroundColor = AppTheme.shared.tableSelectionColor
+        } else {
+            highlightView.backgroundColor = UIColor.clear
+        }
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        
+        if selected {
+            highlightView.backgroundColor = AppTheme.shared.tableSelectionColor
+        } else {
+            highlightView.backgroundColor = UIColor.clear
+        }
+    }
+    
+    override func prepareForReuse() {
+        
+        highlightView.backgroundColor = UIColor.clear
+    }
+    
     // MARK: - CellViewModelProtocol
     
     func fillCell(model: CellViewModel) {

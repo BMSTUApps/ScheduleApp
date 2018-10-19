@@ -51,7 +51,7 @@ class EventController: UITableViewController {
         tableView.reloadData()
     }
     
-    // MARK: - Table view data source
+    // MARK: - UITableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -74,5 +74,25 @@ class EventController: UITableViewController {
         }
 
         return cell
+    }
+    
+    // MARK: UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return viewModel?.viewModel(for: indexPath)?.shouldHighlight ?? false
+    }
+    
+    // MARK: Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ShowTeacherController" {
+            
+            guard let teacherController = segue.destination as? TeacherController else {
+                return
+            }
+
+            teacherController.teacher = event?.teacher
+        }
     }
 }

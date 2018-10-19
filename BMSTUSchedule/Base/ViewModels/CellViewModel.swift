@@ -9,12 +9,14 @@
 import UIKit
 
 protocol CellViewModelProtocol {
+        
     func fillCell(model: CellViewModel)
 }
 
 class CellViewModel {
 
     let identifier: String
+    var shouldHighlight: Bool = false
     
     init(identifier: String) {
         self.identifier = identifier

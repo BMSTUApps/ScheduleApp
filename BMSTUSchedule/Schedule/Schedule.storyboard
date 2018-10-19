@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUx-lA-3Qv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUx-lA-3Qv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -177,7 +177,7 @@
         <scene sceneID="3un-vw-gDB">
             <objects>
                 <tableViewController storyboardIdentifier="EventController" id="WaZ-XC-i9H" customClass="EventController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oIi-0D-soo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oIi-0D-soo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -237,6 +237,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJQ-x0-GvE">
+                                            <rect key="frame" x="12" y="28" width="351" height="55"/>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Преподаватель" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jx2-eB-B2I">
                                             <rect key="frame" x="16" y="8" width="109" height="16"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -266,9 +269,12 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="94G-Ga-Wwm" firstAttribute="top" secondItem="jx2-eB-B2I" secondAttribute="bottom" constant="12" id="8cZ-gm-bgn"/>
+                                        <constraint firstItem="sJQ-x0-GvE" firstAttribute="leading" secondItem="Vhv-cL-mqv" secondAttribute="leading" constant="12" id="Ar8-r1-wvr"/>
                                         <constraint firstItem="P6w-2U-Wgh" firstAttribute="leading" secondItem="Vhv-cL-mqv" secondAttribute="leading" constant="16" id="CMR-sk-LBC"/>
                                         <constraint firstItem="jx2-eB-B2I" firstAttribute="top" secondItem="Vhv-cL-mqv" secondAttribute="top" constant="8" id="D49-aO-SNL"/>
+                                        <constraint firstAttribute="bottom" secondItem="sJQ-x0-GvE" secondAttribute="bottom" constant="12" id="G4V-G7-EOg"/>
                                         <constraint firstItem="Nf0-ow-Rl5" firstAttribute="top" secondItem="94G-Ga-Wwm" secondAttribute="bottom" id="JQJ-rZ-Rrt"/>
+                                        <constraint firstItem="sJQ-x0-GvE" firstAttribute="top" secondItem="jx2-eB-B2I" secondAttribute="bottom" constant="4" id="MCr-hf-I53"/>
                                         <constraint firstItem="jx2-eB-B2I" firstAttribute="leading" secondItem="Vhv-cL-mqv" secondAttribute="leading" constant="16" id="Nr3-on-gLd"/>
                                         <constraint firstItem="Nf0-ow-Rl5" firstAttribute="leading" secondItem="P6w-2U-Wgh" secondAttribute="trailing" constant="12" id="QH7-Yr-wae"/>
                                         <constraint firstAttribute="trailing" secondItem="94G-Ga-Wwm" secondAttribute="trailing" constant="16" id="WYt-Pf-9eO"/>
@@ -276,12 +282,15 @@
                                         <constraint firstItem="94G-Ga-Wwm" firstAttribute="leading" secondItem="P6w-2U-Wgh" secondAttribute="trailing" constant="12" id="mxQ-cP-ptN"/>
                                         <constraint firstItem="P6w-2U-Wgh" firstAttribute="top" secondItem="jx2-eB-B2I" secondAttribute="bottom" constant="8" id="n4S-3G-1hn"/>
                                         <constraint firstAttribute="bottom" secondItem="P6w-2U-Wgh" secondAttribute="bottom" constant="16" id="txM-0d-9Qq"/>
+                                        <constraint firstAttribute="trailing" secondItem="sJQ-x0-GvE" secondAttribute="trailing" constant="12" id="yHs-ch-1q8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="degreeLabel" destination="Nf0-ow-Rl5" id="zG6-xh-Hqm"/>
                                     <outlet property="fullNameLabel" destination="94G-Ga-Wwm" id="l0p-9x-WFh"/>
+                                    <outlet property="highlightView" destination="sJQ-x0-GvE" id="UBS-Fq-nlV"/>
                                     <outlet property="photoView" destination="P6w-2U-Wgh" id="X4F-Pa-uwb"/>
+                                    <segue destination="Uve-bI-mas" kind="show" identifier="ShowTeacherController" id="n1L-ZH-mEQ"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCalendarCell" rowHeight="76" id="uIs-88-rEo" customClass="EventCalendarCell" customModule="BMSTUSchedule" customModuleProvider="target">
@@ -475,6 +484,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOG-QO-5iB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1025" y="-1066"/>
+        </scene>
+        <!--TeacherController-->
+        <scene sceneID="VXe-qr-ig5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Teachers" referencedIdentifier="TeacherController" id="Uve-bI-mas" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Расписание" image="schedule" id="j0k-Th-px4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jw3-bm-o6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3442" y="-1083"/>
         </scene>
     </scenes>
     <resources>

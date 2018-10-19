@@ -18,7 +18,7 @@ class TeacherTitleCell: UITableViewCell, CellViewModelProtocol {
     }
     
     // MARK: - CellViewModelProtocol
-    
+        
     func fillCell(model: CellViewModel) {
         
         guard let castedModel = model as? TeacherTitleCellViewModel else {
