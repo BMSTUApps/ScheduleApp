@@ -23,7 +23,7 @@ class EventTeacherCell: UITableViewCell, CellViewModelProtocol {
         photoView.layer.cornerRadius = photoView.frame.height / 2
         photoView.clipsToBounds = true
         
-        highlightView.layer.cornerRadius = 20
+        highlightView.layer.cornerRadius = 15
     }
 
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {

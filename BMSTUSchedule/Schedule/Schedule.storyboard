@@ -254,21 +254,24 @@
                                                 <constraint firstAttribute="height" constant="47" id="V1R-JB-Acb"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Фамилия Имя Отчество" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94G-Ga-Wwm">
-                                            <rect key="frame" x="75" y="36" width="284" height="25.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия Имя Отчество" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94G-Ga-Wwm">
+                                            <rect key="frame" x="75" y="32" width="284" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="старший преподаватель" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nf0-ow-Rl5">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="старший преподаватель" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nf0-ow-Rl5">
                                             <rect key="frame" x="75" y="62" width="144" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="Vw1-dE-Zjk"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="94G-Ga-Wwm" firstAttribute="top" secondItem="jx2-eB-B2I" secondAttribute="bottom" constant="12" id="8cZ-gm-bgn"/>
+                                        <constraint firstItem="94G-Ga-Wwm" firstAttribute="top" secondItem="jx2-eB-B2I" secondAttribute="bottom" constant="8" id="8cZ-gm-bgn"/>
                                         <constraint firstItem="sJQ-x0-GvE" firstAttribute="leading" secondItem="Vhv-cL-mqv" secondAttribute="leading" constant="12" id="Ar8-r1-wvr"/>
                                         <constraint firstItem="P6w-2U-Wgh" firstAttribute="leading" secondItem="Vhv-cL-mqv" secondAttribute="leading" constant="16" id="CMR-sk-LBC"/>
                                         <constraint firstItem="jx2-eB-B2I" firstAttribute="top" secondItem="Vhv-cL-mqv" secondAttribute="top" constant="8" id="D49-aO-SNL"/>
@@ -277,6 +280,7 @@
                                         <constraint firstItem="sJQ-x0-GvE" firstAttribute="top" secondItem="jx2-eB-B2I" secondAttribute="bottom" constant="4" id="MCr-hf-I53"/>
                                         <constraint firstItem="jx2-eB-B2I" firstAttribute="leading" secondItem="Vhv-cL-mqv" secondAttribute="leading" constant="16" id="Nr3-on-gLd"/>
                                         <constraint firstItem="Nf0-ow-Rl5" firstAttribute="leading" secondItem="P6w-2U-Wgh" secondAttribute="trailing" constant="12" id="QH7-Yr-wae"/>
+                                        <constraint firstItem="Nf0-ow-Rl5" firstAttribute="top" secondItem="94G-Ga-Wwm" secondAttribute="bottom" id="RDh-wp-5jX"/>
                                         <constraint firstAttribute="trailing" secondItem="94G-Ga-Wwm" secondAttribute="trailing" constant="16" id="WYt-Pf-9eO"/>
                                         <constraint firstAttribute="bottom" secondItem="Nf0-ow-Rl5" secondAttribute="bottom" constant="18" id="ZEb-f9-jor"/>
                                         <constraint firstItem="94G-Ga-Wwm" firstAttribute="leading" secondItem="P6w-2U-Wgh" secondAttribute="trailing" constant="12" id="mxQ-cP-ptN"/>
