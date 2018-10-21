@@ -45,7 +45,7 @@ class ScheduleViewModel {
                 // If new week starts, add week header
                 if lastWeekIndex != dayDate.weekIndex {
                     
-                    let weekSection = WeekHeaderViewModel(weekNumber: dayDate.weekIndex - startTermWeekIndex)
+                    let weekSection = WeekHeaderViewModel(weekNumber: dayDate.weekIndex - startTermWeekIndex + 1)
                     
                     if let lastSection = sections.last {
                         

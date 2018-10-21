@@ -25,6 +25,7 @@ class ScheduleStream {
         self.events = events
         self.date = startDate
         
+        // Calculate start term week index
         let sortedEvents = events.sorted { (event1, event2) -> Bool in
             return event1.date < event2.date
         }

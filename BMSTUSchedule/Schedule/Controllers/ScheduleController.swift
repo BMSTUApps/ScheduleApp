@@ -15,7 +15,6 @@ class ScheduleController: TableViewController {
     var events: [Event] = [] {
         didSet {
             scheduleViewModel = ScheduleViewModel(events: events, startTermWeekIndex: scheduleStream.startTermWeekIndex)
-            //tableView.reloadData()
         }
     }
     
@@ -92,6 +91,10 @@ class ScheduleController: TableViewController {
         let h = scrollView.contentSize.height
         let reloadDistance: CGFloat = 200
         
+        if h...(h + reloadDistance) ~= y {
+            print("FUCK")
+        }
+        
         if y > (h + reloadDistance) {
             print("Did Scroll")
             loadNextWeek()
@@ -141,7 +144,7 @@ class ScheduleController: TableViewController {
         return cell
     }
     
-    // MARK: UITableViewDelega
+    // MARK: UITableViewDelegate
 
     override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return scheduleViewModel.viewModel(for: indexPath)?.shouldHighlight ?? false
