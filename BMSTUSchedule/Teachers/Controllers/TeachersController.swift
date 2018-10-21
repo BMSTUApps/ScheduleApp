@@ -2,7 +2,7 @@
 //  TeachersController.swift
 //  BMSTUSchedule
 //
-//  Created by a.belkov on 21/04/2018.
+//  Created by Artem Belkov on 21/04/2018.
 //  Copyright © 2018 BMSTU Team. All rights reserved.
 //
 

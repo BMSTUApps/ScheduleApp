@@ -191,6 +191,34 @@
                                     <segue destination="WaZ-XC-i9H" kind="show" identifier="ShowEventController" id="8Eh-ff-N4I"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NextCell" rowHeight="100" id="c74-At-Ghq" customClass="NextCell" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="204" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c74-At-Ghq" id="FJa-dt-LiZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJL-I5-tKJ">
+                                            <rect key="frame" x="162.5" y="25.5" width="50" height="50"/>
+                                            <color key="backgroundColor" red="0.90196078430000004" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="kEd-2K-eVW"/>
+                                                <constraint firstAttribute="width" secondItem="PJL-I5-tKJ" secondAttribute="height" multiplier="1:1" id="rdP-DE-bRD"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="PJL-I5-tKJ" secondAttribute="bottom" constant="25" id="2mW-c4-elI"/>
+                                        <constraint firstItem="PJL-I5-tKJ" firstAttribute="centerY" secondItem="FJa-dt-LiZ" secondAttribute="centerY" id="PYe-yj-ZCF"/>
+                                        <constraint firstItem="PJL-I5-tKJ" firstAttribute="centerX" secondItem="FJa-dt-LiZ" secondAttribute="centerX" id="wxh-Fs-jrO"/>
+                                        <constraint firstItem="PJL-I5-tKJ" firstAttribute="top" secondItem="FJa-dt-LiZ" secondAttribute="top" constant="25" id="yOD-bn-er3"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bubbleView" destination="PJL-I5-tKJ" id="45n-sg-1HL"/>
+                                    <outlet property="bubbleViewHeightConstant" destination="kEd-2K-eVW" id="2Bd-n4-faV"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="rTI-OB-1MC" id="v6c-wK-cNb"/>

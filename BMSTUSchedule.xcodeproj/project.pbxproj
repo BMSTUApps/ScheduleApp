@@ -12,6 +12,8 @@
 		6A00128B212EF5C600C84044 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00128A212EF5C600C84044 /* Model.swift */; };
 		6A1276C5217C6484002CC62F /* DayHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1276C4217C6484002CC62F /* DayHeaderViewModel.swift */; };
 		6A1276C7217C6557002CC62F /* WeekHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1276C6217C6557002CC62F /* WeekHeaderViewModel.swift */; };
+		6A1276C9217CDBB7002CC62F /* NextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1276C8217CDBB7002CC62F /* NextCell.swift */; };
+		6A1276CB217CDC08002CC62F /* NextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1276CA217CDC08002CC62F /* NextCellViewModel.swift */; };
 		6A5832672119FACA00C76F07 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5832662119FACA00C76F07 /* EventController.swift */; };
 		6A5832692119FBAE00C76F07 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5832682119FBAE00C76F07 /* EventViewModel.swift */; };
 		6A5CE041208AACDE002BE568 /* SettingsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5CE040208AACDE002BE568 /* SettingsGroupCell.swift */; };
@@ -107,6 +109,8 @@
 		6A00128A212EF5C600C84044 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		6A1276C4217C6484002CC62F /* DayHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayHeaderViewModel.swift; sourceTree = "<group>"; };
 		6A1276C6217C6557002CC62F /* WeekHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderViewModel.swift; sourceTree = "<group>"; };
+		6A1276C8217CDBB7002CC62F /* NextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCell.swift; sourceTree = "<group>"; };
+		6A1276CA217CDC08002CC62F /* NextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCellViewModel.swift; sourceTree = "<group>"; };
 		6A5832662119FACA00C76F07 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		6A5832682119FBAE00C76F07 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		6A5CE040208AACDE002BE568 /* SettingsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGroupCell.swift; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 				6A1276C6217C6557002CC62F /* WeekHeaderViewModel.swift */,
 				6A1276C4217C6484002CC62F /* DayHeaderViewModel.swift */,
 				A5D915052035FDDC00E066CA /* EventCellViewModel.swift */,
+				6A1276CA217CDC08002CC62F /* NextCellViewModel.swift */,
 			);
 			path = "Schedule Table";
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				6AECC8DB217B68FE00DE1822 /* WeekHeader.swift */,
 				A5B2572B1DF085D70081EA0B /* DayHeader.swift */,
 				A5485CC01DC245BC009610C2 /* EventCell.swift */,
+				6A1276C8217CDBB7002CC62F /* NextCell.swift */,
 			);
 			path = "Schedule Table";
 			sourceTree = "<group>";
@@ -886,6 +892,7 @@
 				6A814EE6211A011800D9AB3B /* EventTitleCellViewModel.swift in Sources */,
 				A5545DC3202C3CEC00CBF1CD /* Group.swift in Sources */,
 				6AE9FC512121E75200F1DA28 /* RealmTeacher.swift in Sources */,
+				6A1276C9217CDBB7002CC62F /* NextCell.swift in Sources */,
 				6AE9FC4D21219E8500F1DA28 /* TeacherActionCell.swift in Sources */,
 				6A5CE043208AD474002BE568 /* TeachersController.swift in Sources */,
 				6A00128B212EF5C600C84044 /* Model.swift in Sources */,
@@ -919,6 +926,7 @@
 				6ADECF062099FEEF007B4C15 /* Teacher.swift in Sources */,
 				6A814EF1211A46D300D9AB3B /* EventCalendarCellViewModel.swift in Sources */,
 				6AE9FC4121217CAE00F1DA28 /* TeacherTitleCell.swift in Sources */,
+				6A1276CB217CDC08002CC62F /* NextCellViewModel.swift in Sources */,
 				A5545DBF202C3CEC00CBF1CD /* Event.swift in Sources */,
 				A5B2572C1DF085D70081EA0B /* DayHeader.swift in Sources */,
 				6A1276C5217C6484002CC62F /* DayHeaderViewModel.swift in Sources */,

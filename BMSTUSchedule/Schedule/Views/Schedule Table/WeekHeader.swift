@@ -2,7 +2,7 @@
 //  WeekHeader.swift
 //  BMSTUSchedule
 //
-//  Created by a.belkov on 20/10/2018.
+//  Created by Artem Belkov on 20/10/2018.
 //  Copyright © 2018 BMSTU Team. All rights reserved.
 //
 

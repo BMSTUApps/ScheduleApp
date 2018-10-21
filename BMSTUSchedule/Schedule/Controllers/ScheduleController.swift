@@ -17,6 +17,9 @@ class ScheduleController: TableViewController {
             scheduleViewModel = ScheduleViewModel(events: events, startTermWeekIndex: scheduleStream.startTermWeekIndex)
         }
     }
+
+    private let nextCellHeight: CGFloat = 100
+    private var nextCell: NextCellProtocol?
     
     private var scheduleViewModel = ScheduleViewModel()
     
@@ -44,8 +47,8 @@ class ScheduleController: TableViewController {
         
         // Set table view
         tableView.tableFooterView = UIView()
-        tableView.sectionHeaderHeight = 40.0 // FIXME: Need self-size header
-        tableView.estimatedRowHeight = 96.0 // FIXME: Need self-size cell
+        tableView.estimatedRowHeight = 96.0
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -nextCellHeight, right: 0)
         
         // Setup 3d touch
         if traitCollection.forceTouchCapability == .available {
@@ -89,10 +92,12 @@ class ScheduleController: TableViewController {
         
         let y = scrollView.contentOffset.y + scrollView.bounds.size.height - scrollView.contentInset.bottom
         let h = scrollView.contentSize.height
-        let reloadDistance: CGFloat = 200
+        let reloadDistance: CGFloat = 150
         
         if h...(h + reloadDistance) ~= y {
-            print("FUCK")
+        
+            let height = (h + reloadDistance) - y
+            nextCell?.updateBubbleHeight(height)
         }
         
         if y > (h + reloadDistance) {
@@ -139,6 +144,10 @@ class ScheduleController: TableViewController {
         
         if let castedCell = cell as? CellViewModelProtocol {
             castedCell.fillCell(model: cellViewModel)
+        }
+        
+        if let nextCell = cell as? NextCellProtocol {
+            self.nextCell = nextCell
         }
         
         return cell

@@ -81,13 +81,14 @@ class ScheduleViewModel {
             sections.append(Section(DayHeaderViewModel(date: dayDate), cells: dayCells))
         }
         
+        sections.append(Section(header: nil, cells: [NextCellViewModel()]))
+        
         self.sections = sections
     }
     
     convenience init () {
         self.init(events: [], startTermWeekIndex: -1)
     }
-    
 }
 
 extension ScheduleViewModel: TableViewModelProtocol {
