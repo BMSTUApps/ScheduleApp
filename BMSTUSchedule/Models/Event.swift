@@ -16,6 +16,10 @@ class Event: Model {
         case seminar
         case lab
         case other
+        
+        var localizedValue: String {
+            return self.rawValue.localized
+        }
     }
     
     typealias Location = String

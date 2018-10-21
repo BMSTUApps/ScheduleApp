@@ -14,7 +14,7 @@ class ScheduleController: TableViewController {
     
     var events: [Event] = [] {
         didSet {
-            scheduleViewModel = ScheduleViewModel(events: events)
+            scheduleViewModel = ScheduleViewModel(events: events, startTermWeekIndex: scheduleStream.startTermWeekIndex)
             //tableView.reloadData()
         }
     }
@@ -67,9 +67,9 @@ class ScheduleController: TableViewController {
     func eventsAround(at indexPath: IndexPath) -> [Event] {
         
         let startIndex = (indexPath.row - 1 >= 0) ? (indexPath.row - 1) : 0
-        let endIndex = (indexPath.row + 1 < scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels.count) ? (indexPath.row + 1) : scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels.count-1
+        let endIndex = (indexPath.row + 1 < scheduleViewModel.sections[indexPath.section].cells.count) ? (indexPath.row + 1) : scheduleViewModel.sections[indexPath.section].cells.count-1
         
-        let displayedModels = Array(scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[startIndex...endIndex])
+        let displayedModels = Array(scheduleViewModel.sections[indexPath.section].cells[startIndex...endIndex])
         
         var displayedEvents: [Event] = []
         for model in displayedModels {
@@ -83,33 +83,47 @@ class ScheduleController: TableViewController {
     
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
-        if scrollView.contentOffset.y > 200 {
+        print("Begin Dragging")
+    }
+
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let y = scrollView.contentOffset.y + scrollView.bounds.size.height - scrollView.contentInset.bottom
+        let h = scrollView.contentSize.height
+        let reloadDistance: CGFloat = 200
+        
+        if y > (h + reloadDistance) {
+            print("Did Scroll")
             loadNextWeek()
         }
     }
-
+    
     // MARK: UITableViewDataSource
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return scheduleViewModel.daySectionViewModels.count
+        return scheduleViewModel.sections.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return (scheduleViewModel.sections[section].header != nil) ? 40 : 0
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let header = tableView.dequeueReusableCell(withIdentifier: String(describing: DayHeader.self))
-        if let header = header as? DayHeader {
-            
-            let dayViewModel = scheduleViewModel.daySectionViewModels[section]
-            
-            header.titleLabel.text = dayViewModel.title.capitalized
-            header.dateLabel.text = dayViewModel.subtitle
+
+        guard let headerModel = scheduleViewModel.sections[section].header,
+              let headerCell = tableView.dequeueReusableCell(withIdentifier: headerModel.identifier) else {
+            return nil
+        }
+
+        if let castedCell = headerCell as? CellViewModelProtocol {
+            castedCell.fillCell(model: headerModel)
         }
         
-        return header
+        return headerCell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return scheduleViewModel.daySectionViewModels[section].eventCellViewModels.count
+        return scheduleViewModel.sections[section].cells.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -127,6 +141,12 @@ class ScheduleController: TableViewController {
         return cell
     }
     
+    // MARK: UITableViewDelega
+
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return scheduleViewModel.viewModel(for: indexPath)?.shouldHighlight ?? false
+    }
+    
     // MARK: Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -141,7 +161,7 @@ class ScheduleController: TableViewController {
                 return
             }
             
-            if let eventCellViewModel = scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[indexPath.row] as? EventCellViewModel {
+            if let eventCellViewModel = scheduleViewModel.viewModel(for: indexPath) as? EventCellViewModel {
                 eventController.event = eventCellViewModel.event
             }
             
@@ -163,7 +183,7 @@ extension ScheduleController: UIViewControllerPreviewingDelegate {
             
         }
         
-        if let eventCellViewModel = scheduleViewModel.daySectionViewModels[indexPath.section].eventCellViewModels[indexPath.row] as? EventCellViewModel {
+        if let eventCellViewModel = scheduleViewModel.viewModel(for: indexPath) as? EventCellViewModel {
             eventController.event = eventCellViewModel.event
         }
         

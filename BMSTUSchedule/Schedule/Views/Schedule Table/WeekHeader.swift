@@ -1,22 +1,21 @@
 //
-//  DayHeader.swift
+//  WeekHeader.swift
 //  BMSTUSchedule
 //
-//  Created by Artem Belkov on 01/12/2016.
-//  Copyright © 2016 BMSTU Team. All rights reserved.
+//  Created by a.belkov on 20/10/2018.
+//  Copyright © 2018 BMSTU Team. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
 
-class DayHeader: UITableViewCell, CellViewModelProtocol {
+class WeekHeader: UITableViewCell, CellViewModelProtocol {
     
     // MARK: Outlets
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-
+    @IBOutlet weak var weekNumberLabel: UILabel!
+    
     // MARK: - IBInspectable
     
     @IBInspectable var today: Bool = false {
@@ -41,11 +40,10 @@ class DayHeader: UITableViewCell, CellViewModelProtocol {
     
     func fillCell(model: CellViewModel) {
         
-        guard let castedModel = model as? DayHeaderViewModel else {
+        guard let castedModel = model as? WeekHeaderViewModel else {
             return
         }
         
-        titleLabel.text = castedModel.title
-        dateLabel.text = castedModel.subtitle
+        weekNumberLabel.text = castedModel.title
     }
 }

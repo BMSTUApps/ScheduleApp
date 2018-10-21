@@ -39,7 +39,7 @@ class EventTitleCell: UITableViewCell, CellViewModelProtocol {
         
         titleLabel.text = castedModel.title
         
-        kindLabel.text = castedModel.kind.rawValue
+        kindLabel.text = castedModel.kind.localizedValue
         kindView.backgroundColor = kindColors[castedModel.kind.rawValue]
     }
 }

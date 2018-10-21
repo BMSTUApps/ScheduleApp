@@ -16,7 +16,9 @@ protocol CellViewModelProtocol {
 class CellViewModel {
 
     let identifier: String
+    
     var shouldHighlight: Bool = false
+    // TODO: Add height option
     
     init(identifier: String) {
         self.identifier = identifier

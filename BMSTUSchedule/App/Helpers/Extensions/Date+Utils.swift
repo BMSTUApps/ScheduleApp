@@ -12,8 +12,16 @@ extension Date {
 
     // MARK: Formatting
     
-    var weekDay: String? {
+    var weekday: String? {
         return string(format: "EEEE")
+    }
+    
+    var weekdayIndex: Int {
+        return Calendar.current.component(.weekday, from: self)
+    }
+    
+    var weekIndex: Int {
+        return Calendar.current.component(.weekOfYear, from: self)
     }
     
     init?(_ string: String, format: String = "dd.MM.yyyy") {

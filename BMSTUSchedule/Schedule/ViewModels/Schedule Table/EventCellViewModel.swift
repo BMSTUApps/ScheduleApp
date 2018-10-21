@@ -44,5 +44,7 @@ class EventCellViewModel: CellViewModel {
         self.event = event
         
         super.init(identifier: String(describing: EventCell.self))
+        
+        self.shouldHighlight = true
     }
 }

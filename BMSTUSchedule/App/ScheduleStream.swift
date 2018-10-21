@@ -16,12 +16,19 @@ class ScheduleStream {
         case previous
     }
     
+    var startTermWeekIndex: Int
+    
     private var events: [Event]
     private var date: Date
     
     init(events: [Event], startDate: Date = Date.today.previous(.monday, considerToday: true)) {
         self.events = events
         self.date = startDate
+        
+        let sortedEvents = events.sorted { (event1, event2) -> Bool in
+            return event1.date < event2.date
+        }
+        self.startTermWeekIndex = sortedEvents.first?.date.weekIndex ?? -1
     }
     
     // TODO: Improve streaming algorithm

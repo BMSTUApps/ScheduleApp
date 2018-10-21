@@ -19,33 +19,25 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayHeader" rowHeight="40" id="O7I-7n-E9Z" customClass="DayHeader" customModule="BMSTUSchedule" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeekHeader" rowHeight="40" id="iTb-Ki-lq1" customClass="WeekHeader" customModule="BMSTUSchedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O7I-7n-E9Z" id="8qx-eZ-HLL">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iTb-Ki-lq1" id="iZa-Vs-vmK">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="дата" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-Wr-6hd">
-                                            <rect key="frame" x="123" y="12.5" width="31.5" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="День недели" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="tBM-03-8hL">
-                                            <rect key="frame" x="8" y="9" width="109" height="21.5"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер недели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQq-ax-Sgl">
+                                            <rect key="frame" x="8" y="8" width="359" height="31.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="hqT-Wr-6hd" secondAttribute="bottom" constant="10" id="Abg-Mq-s5H"/>
-                                        <constraint firstItem="tBM-03-8hL" firstAttribute="top" secondItem="8qx-eZ-HLL" secondAttribute="top" constant="9" id="NDq-iV-8zb"/>
-                                        <constraint firstAttribute="bottom" secondItem="tBM-03-8hL" secondAttribute="bottom" constant="9" id="VOz-k6-V9l"/>
-                                        <constraint firstItem="tBM-03-8hL" firstAttribute="leading" secondItem="8qx-eZ-HLL" secondAttribute="leading" constant="8" id="gDa-jz-GfZ"/>
-                                        <constraint firstItem="hqT-Wr-6hd" firstAttribute="leading" secondItem="tBM-03-8hL" secondAttribute="trailing" constant="6" id="uSd-Sg-YXd"/>
+                                        <constraint firstItem="aQq-ax-Sgl" firstAttribute="top" secondItem="iZa-Vs-vmK" secondAttribute="top" constant="8" id="8dn-uK-M2e"/>
+                                        <constraint firstAttribute="trailing" secondItem="aQq-ax-Sgl" secondAttribute="trailing" constant="8" id="VMW-8s-MWa"/>
+                                        <constraint firstItem="aQq-ax-Sgl" firstAttribute="leading" secondItem="iZa-Vs-vmK" secondAttribute="leading" constant="8" id="jXv-r4-euC"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <userDefinedRuntimeAttributes>
@@ -54,12 +46,50 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="dateLabel" destination="hqT-Wr-6hd" id="mUa-0p-q53"/>
-                                    <outlet property="titleLabel" destination="tBM-03-8hL" id="cKo-B0-5gk"/>
+                                    <outlet property="weekNumberLabel" destination="aQq-ax-Sgl" id="DmB-A5-ItO"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayHeader" rowHeight="40" id="VuA-B7-mxF" customClass="DayHeader" customModule="BMSTUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="68" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VuA-B7-mxF" id="6L6-Jy-DnC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="дата" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4k-77-16a">
+                                            <rect key="frame" x="123" y="12.5" width="31.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="День недели" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="uxg-E5-eem">
+                                            <rect key="frame" x="8" y="9" width="109" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="uxg-E5-eem" secondAttribute="bottom" constant="9" id="TUq-EP-RWc"/>
+                                        <constraint firstItem="uxg-E5-eem" firstAttribute="leading" secondItem="6L6-Jy-DnC" secondAttribute="leading" constant="8" id="WVI-EG-LfN"/>
+                                        <constraint firstItem="uxg-E5-eem" firstAttribute="top" secondItem="6L6-Jy-DnC" secondAttribute="top" constant="9" id="dS8-Fx-v2f"/>
+                                        <constraint firstItem="i4k-77-16a" firstAttribute="leading" secondItem="uxg-E5-eem" secondAttribute="trailing" constant="6" id="fli-Au-C9T"/>
+                                        <constraint firstAttribute="bottom" secondItem="i4k-77-16a" secondAttribute="bottom" constant="10" id="nW3-mW-7lz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                        <color key="value" red="0.80784313730000001" green="0.8980392157" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dateLabel" destination="i4k-77-16a" id="rRY-8t-TxQ"/>
+                                    <outlet property="titleLabel" destination="uxg-E5-eem" id="eNG-az-9Tu"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="96" id="hpD-7j-EOI" customClass="EventCell" customModule="BMSTUSchedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="68" width="375" height="96"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hpD-7j-EOI" id="Suu-2J-Uou">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="95.5"/>
@@ -497,7 +527,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jw3-bm-o6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3442" y="-1083"/>
+            <point key="canvasLocation" x="3478" y="-1067"/>
         </scene>
     </scenes>
     <resources>
