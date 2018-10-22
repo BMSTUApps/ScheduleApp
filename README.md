@@ -13,8 +13,7 @@
 ## Скриншоты
 
 <p align="center">
-  <img src="https://github.com/BMSTUScheduleTeam/App/blob/develop/BMSTUSchedule/App/Helpers/Screenshots/ScheduleController-screenshot.png" width="350" alt="ScheduleController"/>
-  <img src="https://github.com/BMSTUScheduleTeam/App/blob/develop/BMSTUSchedule/App/Helpers/Screenshots/LessonController-screenshot.png" width="350" hspace="50" alt="MenuController"/>
+  <img src="https://github.com/BMSTUScheduleTeam/App/blob/develop/BMSTUSchedule/App/Helpers/Screenshots/README-Screenshot.PNG" alt="ScheduleController"/>
 </p>
 
 ## Статус
