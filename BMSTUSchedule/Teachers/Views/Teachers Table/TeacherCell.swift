@@ -42,6 +42,15 @@ class TeacherCell: UITableViewCell {
             }
         }
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        photoView.image = nil
+        
+        nameLabel.text = ""
+        positionLabel.text = ""
+    }
 
     // MARK: - UI
     

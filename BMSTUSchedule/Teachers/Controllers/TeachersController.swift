@@ -12,11 +12,15 @@ class TeachersController: UITableViewController {
 
     let teachers = AppManager.shared.getTeachers()
     
+    private(set) var showTeachers: [Teacher] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         prepareUI()
         setupIntents()
+        
+        showTeachers = teachers
     }
     
     // MARK: - UI
@@ -27,7 +31,7 @@ class TeachersController: UITableViewController {
         self.navigationItem.title = "Teachers".localized
         
         // Set tableview
-        self.tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 8, right: 0)
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
         self.tableView.showsVerticalScrollIndicator = false
         
         // Setup navigation bar
@@ -51,15 +55,28 @@ class TeachersController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return teachers.count
+        return 1 + showTeachers.count // search + teachers
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        guard indexPath.row != 0 else {
+            
+            // Search Cell
+            
+            let reuseIdentifier = String(describing: TeacherSearchCell.self)
+            let cell = (tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? TeacherSearchCell) ?? TeacherSearchCell()
+            cell.searchBar.delegate = self as? UISearchBarDelegate
+
+            return cell
+        }
+        
+        // Teacher Cell
+        
         let reuseIdentifier = String(describing: TeacherCell.self)
         let cell = (tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? TeacherCell) ?? TeacherCell()
         
-        cell.fill(teacher: teachers[indexPath.row])
+        cell.fill(teacher: showTeachers[indexPath.row - 1])
         
         return cell
     }
@@ -124,5 +141,50 @@ extension TeachersController: UIViewControllerPreviewingDelegate {
         view.userActivity = activity
         
         activity.becomeCurrent()
+    }
+}
+
+extension TeachersController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        guard searchText.isEmpty == false else {
+            updateTeachers(with: self.teachers)
+            return
+        }
+        
+        let searchString = searchText.lowercased()
+        
+        let filteredTeachers = self.teachers.filter { teacher -> Bool in
+            
+            let firstName = teacher.firstName.lowercased()
+            let lastName = teacher.lastName.lowercased()
+            let middleName = teacher.middleName?.lowercased()
+            
+            return firstName.contains(searchString) || lastName.contains(searchString) || (middleName?.contains(searchString) ?? false)
+        }
+        
+        updateTeachers(with: filteredTeachers)
+    }
+    
+    func updateTeachers(with newTeachers: [Teacher]) {
+        
+        self.tableView.beginUpdates()
+        
+        var oldIndexPaths: [IndexPath] = []
+        for (index, _) in showTeachers.enumerated() {
+            oldIndexPaths.append(IndexPath(row: index + 1, section: 0))
+        }
+        self.tableView.deleteRows(at: oldIndexPaths, with: .fade)
+        
+        self.showTeachers = newTeachers
+
+        var newIndexPaths: [IndexPath] = []
+        for (index, _) in newTeachers.enumerated() {
+            newIndexPaths.append(IndexPath(row: index + 1, section: 0))
+        }
+        self.tableView.insertRows(at: newIndexPaths, with: .fade)
+        
+        self.tableView.endUpdates()
     }
 }

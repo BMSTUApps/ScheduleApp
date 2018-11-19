@@ -34,6 +34,7 @@
 		6A814EFF211B054700D9AB3B /* EventActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814EFE211B054700D9AB3B /* EventActionsCell.swift */; };
 		6A814F01211B05D000D9AB3B /* EventActionsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814F00211B05D000D9AB3B /* EventActionsCellViewModel.swift */; };
 		6A86E436209365F300333FCF /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A86E435209365F300333FCF /* SettingsViewModel.swift */; };
+		6A97CF0921A2BB7D00B5F378 /* TeacherSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A97CF0821A2BB7D00B5F378 /* TeacherSearchCell.swift */; };
 		6AA7ABCF209B24C80025CE0F /* TeacherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7ABCE209B24C80025CE0F /* TeacherController.swift */; };
 		6AAE962B21591BF400760AE6 /* ScheduleStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAE962A21591BF400760AE6 /* ScheduleStream.swift */; };
 		6ADECF042097A4EE007B4C15 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADECF032097A4EE007B4C15 /* TeacherCell.swift */; };
@@ -132,6 +133,7 @@
 		6A814EFE211B054700D9AB3B /* EventActionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActionsCell.swift; sourceTree = "<group>"; };
 		6A814F00211B05D000D9AB3B /* EventActionsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActionsCellViewModel.swift; sourceTree = "<group>"; };
 		6A86E435209365F300333FCF /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		6A97CF0821A2BB7D00B5F378 /* TeacherSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSearchCell.swift; sourceTree = "<group>"; };
 		6AA7ABCE209B24C80025CE0F /* TeacherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherController.swift; sourceTree = "<group>"; };
 		6AAE962A21591BF400760AE6 /* ScheduleStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStream.swift; sourceTree = "<group>"; };
 		6ADECF032097A4EE007B4C15 /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				6ADECF032097A4EE007B4C15 /* TeacherCell.swift */,
+				6A97CF0821A2BB7D00B5F378 /* TeacherSearchCell.swift */,
 			);
 			path = "Teachers Table";
 			sourceTree = "<group>";
@@ -914,6 +917,7 @@
 				6AE53860203AC2F3008441FC /* RealmEvent.swift in Sources */,
 				A59E69A021318DC3009A72A7 /* ScheduleViewModel.swift in Sources */,
 				6A814EF7211A4D2F00D9AB3B /* EventLocationCellViewModel.swift in Sources */,
+				6A97CF0921A2BB7D00B5F378 /* TeacherSearchCell.swift in Sources */,
 				6A814EEC211A0B5E00D9AB3B /* EventTeacherCell.swift in Sources */,
 				6ADF76372160F6D600131603 /* UIImageView+Network.swift in Sources */,
 				6A814F01211B05D000D9AB3B /* EventActionsCellViewModel.swift in Sources */,
