@@ -103,6 +103,10 @@ class ScheduleController: TableViewController {
         if y > (h + reloadDistance) {
             print("Did Scroll")
             loadNextWeek()
+            
+            // Generate taptic feedback
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
         }
     }
     
