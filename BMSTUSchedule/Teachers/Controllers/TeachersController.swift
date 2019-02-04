@@ -95,7 +95,7 @@ class TeachersController: UITableViewController {
                 return
             }
             
-            teacherController.teacher = teachers[indexPath.row]
+            teacherController.teacher = teachers[indexPath.row - 1]
         }
     }
 }
