@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.43"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,20 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расписание МГТУ имени Н.Э. Баумана" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPO-9f-F0x">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-transparent" translatesAutoresizingMaskIntoConstraints="NO" id="hIx-R8-mzX">
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="272" id="iRS-Bf-tkD"/>
-                                    <constraint firstAttribute="height" constant="73" id="ztc-Wk-2O7"/>
+                                    <constraint firstAttribute="width" constant="100" id="0KK-0e-S6o"/>
+                                    <constraint firstAttribute="height" constant="100" id="ccx-i0-wpZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bPO-9f-F0x" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="E0B-cr-2LK"/>
-                            <constraint firstItem="bPO-9f-F0x" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="JVZ-kE-JLg"/>
+                            <constraint firstItem="hIx-R8-mzX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="85Q-Hf-1Hc"/>
+                            <constraint firstItem="hIx-R8-mzX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ge6-rj-5dQ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,4 +41,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo-transparent" width="326" height="348"/>
+    </resources>
 </document>

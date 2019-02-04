@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GjX-oX-8CA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GjX-oX-8CA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.43"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,7 +33,7 @@
         <scene sceneID="ufa-OH-9t6">
             <objects>
                 <viewControllerPlaceholder storyboardName="Schedule" id="egg-oP-AfV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Расписание" image="schedule" id="gZy-Pf-E9C"/>
+                    <tabBarItem key="tabBarItem" title="Расписание" image="Schedule" id="gZy-Pf-E9C"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGR-Vo-qZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,7 +43,7 @@
         <scene sceneID="PNt-Zy-QEF">
             <objects>
                 <viewControllerPlaceholder storyboardName="Teachers" id="b4b-Vo-4Fc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Преподаватели" image="teachers" id="1XI-wi-9If"/>
+                    <tabBarItem key="tabBarItem" title="Преподаватели" image="Teachers" id="1XI-wi-9If"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9c-yz-M4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,7 +53,7 @@
         <scene sceneID="2fy-ly-7iG">
             <objects>
                 <viewControllerPlaceholder storyboardName="Settings" id="IlX-KC-JvU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Профиль" image="settings" id="SEV-th-5Sv"/>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="Settings" id="SEV-th-5Sv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVQ-Sq-olE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,8 +61,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="schedule" width="25" height="25"/>
-        <image name="settings" width="25" height="25"/>
-        <image name="teachers" width="25" height="25"/>
+        <image name="Schedule" width="25" height="25"/>
+        <image name="Settings" width="25" height="25"/>
+        <image name="Teachers" width="25" height="25"/>
     </resources>
 </document>
