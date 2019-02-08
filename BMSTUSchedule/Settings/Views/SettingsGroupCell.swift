@@ -13,12 +13,8 @@ class SettingsGroupCell: UITableViewCell {
     @IBOutlet weak var groupLabel: UILabel!
     @IBOutlet weak var changeButton: UIButton!
     
-    @IBOutlet weak var topConstraint: NSLayoutConstraint!
-    @IBOutlet weak var betweenConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    
     fileprivate let initialTopConstant: CGFloat = 24
-    fileprivate let initialBetweenConstant: CGFloat = 14
+    fileprivate let maxGroupLabelScale: CGFloat = 1.6
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,11 +45,31 @@ class SettingsGroupCell: UITableViewCell {
         
         let newOffset = initialTopConstant + offset
         if newOffset < initialTopConstant {
-            topConstraint.constant = initialTopConstant + floor(offset / 3)
-            betweenConstraint.constant = initialBetweenConstant - floor(offset / 6)
-            bottomConstraint.constant = initialTopConstant - floor(offset / 6)
-        
-            groupLabel.font = groupLabel.font.withSize(36 - floor(offset / 6))
+
+            // Group Label
+            
+            var groupLabelTransform = CGAffineTransform.identity
+    
+            let deltaY = offset / 2
+            groupLabelTransform = groupLabelTransform.translatedBy(x: 0, y: deltaY)
+            
+            let currentY = groupLabel.frame.origin.y
+            let newY = currentY + deltaY
+            
+            var deltaHeight = abs(newY - currentY) * 2 / groupLabel.frame.height + 1
+            
+            if deltaHeight > maxGroupLabelScale {
+                deltaHeight = maxGroupLabelScale
+            }
+            
+            groupLabelTransform = groupLabelTransform.scaledBy(x: deltaHeight, y: deltaHeight)
+            
+            groupLabel.transform = groupLabelTransform
+            
+            // Change Button
+            
+            let delta = offset / 4
+            changeButton.transform = CGAffineTransform.identity.translatedBy(x: 0, y: delta)
         }
     }
 
