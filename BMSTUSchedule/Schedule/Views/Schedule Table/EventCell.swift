@@ -22,6 +22,9 @@ class EventCell: UITableViewCell, CellViewModelProtocol {
     @IBOutlet weak var kindLabel: UILabel!
     @IBOutlet weak var kindView: UIView!
     
+    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var separatorViewHeightConstraint: NSLayoutConstraint!
+    
     // FIXME: Create kind colors in Theme
     let kindColors = [
         "lecture": AppTheme.shared.greenColor,
@@ -33,6 +36,9 @@ class EventCell: UITableViewCell, CellViewModelProtocol {
     override func awakeFromNib() {
         
         kindView.layer.cornerRadius = 2
+        
+        separatorView.backgroundColor = AppTheme.shared.tableSeparatorColor
+        separatorViewHeightConstraint.constant = CGFloat.pixelHeight
     }
     
     override func prepareForReuse() {

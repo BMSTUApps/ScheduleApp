@@ -54,7 +54,7 @@ class CalendarView: UIView {
     override func awakeFromNib() {
         
         self.layer.borderWidth = CGFloat(lineThickness)
-        self.layer.borderColor = UIColor(displayP3Red: 143/255, green: 142/255, blue: 148/255, alpha: 0.5).cgColor
+        self.layer.borderColor = AppTheme.shared.tableSeparatorColor.cgColor
     }
     
     func updateView() {

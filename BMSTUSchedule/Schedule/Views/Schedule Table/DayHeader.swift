@@ -17,6 +17,15 @@ class DayHeader: UITableViewCell, CellViewModelProtocol {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
 
+    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var separatorViewHeightConstraint: NSLayoutConstraint!
+    
+    override func awakeFromNib() {
+        
+        separatorView.backgroundColor = AppTheme.shared.tableSeparatorColor
+        separatorViewHeightConstraint.constant = CGFloat.pixelHeight
+    }
+    
     // MARK: - IBInspectable
     
     @IBInspectable var today: Bool = false {
