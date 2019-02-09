@@ -33,6 +33,7 @@ class TeachersController: UITableViewController {
         // Set tableview
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
         self.tableView.showsVerticalScrollIndicator = false
+        self.tableView.keyboardDismissMode = .onDrag
         
         // Setup navigation bar
         self.navigationController?.navigationBar.barStyle = .black
@@ -145,6 +146,10 @@ extension TeachersController: UIViewControllerPreviewingDelegate {
 }
 
 extension TeachersController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         

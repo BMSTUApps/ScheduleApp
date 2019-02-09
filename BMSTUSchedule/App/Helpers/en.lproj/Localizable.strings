@@ -6,27 +6,27 @@
   Copyright © 2018 BMSTU Team. All rights reserved.
 */
 
-"Schedule" = "Schedule";
+"Schedule" = "Расписание";
 
-"Event" = "Event";
+"Event" = "Занятие";
 
-"lecture" = "lecture";
-"seminar" = "seminar";
-"lab" = "lab";
-"other" = "other";
+"lecture" = "лекция";
+"seminar" = "семинар";
+"lab" = "лаба";
+"other" = "другое";
 
-"Teacher" = "Teacher";
-"Room" = "Room";
-"Time" = "Time";
+"Teacher" = "Преподаватель";
+"Room" = "Аудитория";
+"Time" = "Время";
 
-"Teachers" = "Teachers";
-"Settings" = "Settings";
+"Teachers" = "Преподаватели";
+"Settings" = "Настройки";
 
-"Enable notifications" = "Enable notifications";
+"Enable notifications" = "Присылать уведомления";
 
-"%@ minutes break" = "%@ minutes break";
+"%@ minutes break" = "%@ минут перерыва";
 
-"Show schedule" = "Show schedule";
-"Show teachers" = "Show teachers";
+"Show schedule" = "Показать расписание";
+"Show teachers" = "Показать преподавателей";
 
-"Week" = "Week";
+"Week" = "Неделя";

@@ -8,10 +8,12 @@
 
 import Foundation
 
+fileprivate let dateLocale = Locale(identifier: "Ru_ru")
+
 extension Date {
 
     // MARK: Formatting
-    
+
     var weekday: String? {
         return string(format: "EEEE")
     }
@@ -27,8 +29,9 @@ extension Date {
     init?(_ string: String, format: String = "dd.MM.yyyy") {
         
         let formatter = DateFormatter()
+        formatter.locale = dateLocale
         formatter.dateFormat = format
-
+        
         if let date = formatter.date(from: string) {
             self = date
         } else {
@@ -39,8 +42,9 @@ extension Date {
     func string(format: String) -> String? {
         
         let formatter = DateFormatter()
+        formatter.locale = dateLocale
         formatter.dateFormat = format
-        
+
         return formatter.string(from: self)
     }
     

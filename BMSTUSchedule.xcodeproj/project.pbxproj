@@ -35,6 +35,7 @@
 		6A814F01211B05D000D9AB3B /* EventActionsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A814F00211B05D000D9AB3B /* EventActionsCellViewModel.swift */; };
 		6A86E436209365F300333FCF /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A86E435209365F300333FCF /* SettingsViewModel.swift */; };
 		6A97CF0921A2BB7D00B5F378 /* TeacherSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A97CF0821A2BB7D00B5F378 /* TeacherSearchCell.swift */; };
+		6A9D5E71220EF42200DEEF0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AF332BC2037FBB10085C033 /* Localizable.strings */; };
 		6AA7ABCF209B24C80025CE0F /* TeacherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7ABCE209B24C80025CE0F /* TeacherController.swift */; };
 		6AAE962B21591BF400760AE6 /* ScheduleStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAE962A21591BF400760AE6 /* ScheduleStream.swift */; };
 		6ADECF042097A4EE007B4C15 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADECF032097A4EE007B4C15 /* TeacherCell.swift */; };
@@ -55,7 +56,6 @@
 		6AE9FE3D20557F26002733F0 /* SettingsRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */; };
 		6AECC8DC217B68FE00DE1822 /* WeekHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AECC8DB217B68FE00DE1822 /* WeekHeader.swift */; };
 		6AF332B02037F88A0085C033 /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF332AF2037F88A0085C033 /* String+Localize.swift */; };
-		6AF332BA2037FBB10085C033 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AF332BC2037FBB10085C033 /* Localizable.strings */; };
 		885110780E7D7FCFE218D911 /* Pods_BMSTUScheduleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB9FB48FB527CE3BD45C1C4 /* Pods_BMSTUScheduleTests.framework */; };
 		A5485CC11DC245BC009610C2 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC01DC245BC009610C2 /* EventCell.swift */; };
 		A5545DA5202C38DC00CBF1CD /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5545DA4202C38DC00CBF1CD /* Schedule.storyboard */; };
@@ -136,6 +136,7 @@
 		6A97CF0821A2BB7D00B5F378 /* TeacherSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSearchCell.swift; sourceTree = "<group>"; };
 		6AA7ABCE209B24C80025CE0F /* TeacherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherController.swift; sourceTree = "<group>"; };
 		6AAE962A21591BF400760AE6 /* ScheduleStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStream.swift; sourceTree = "<group>"; };
+		6ACBFC82220F58CE00950B58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6ADECF032097A4EE007B4C15 /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
 		6ADECF052099FEEF007B4C15 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		6ADF76362160F6D600131603 /* UIImageView+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Network.swift"; sourceTree = "<group>"; };
@@ -154,7 +155,6 @@
 		6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowCell.swift; sourceTree = "<group>"; };
 		6AECC8DB217B68FE00DE1822 /* WeekHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeader.swift; sourceTree = "<group>"; };
 		6AF332AF2037F88A0085C033 /* String+Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localize.swift"; sourceTree = "<group>"; };
-		6AF332BB2037FBB10085C033 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6AF332BD2037FBC50085C033 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7070BEABD42D18944AA408DA /* Pods-BMSTUSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMSTUSchedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMSTUSchedule/Pods-BMSTUSchedule.debug.xcconfig"; sourceTree = "<group>"; };
 		7737BF8A2939EC394AFE9ED1 /* Pods_BMSTUSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMSTUSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -742,7 +742,7 @@
 				A5A124061DE8DD24006FB4E5 /* Main.storyboard in Resources */,
 				A5A124051DE8DD24006FB4E5 /* LaunchScreen.storyboard in Resources */,
 				A5545DA7202C39DD00CBF1CD /* Teachers.storyboard in Resources */,
-				6AF332BA2037FBB10085C033 /* Localizable.strings in Resources */,
+				6A9D5E71220EF42200DEEF0D /* Localizable.strings in Resources */,
 				A5CED4E11DB0E080000D2DFD /* Assets.xcassets in Resources */,
 				A5545DA9202C3A3900CBF1CD /* Settings.storyboard in Resources */,
 				A5545DA5202C38DC00CBF1CD /* Schedule.storyboard in Resources */,
@@ -983,8 +983,8 @@
 		6AF332BC2037FBB10085C033 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6AF332BB2037FBB10085C033 /* en */,
 				6AF332BD2037FBC50085C033 /* ru */,
+				6ACBFC82220F58CE00950B58 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

@@ -40,9 +40,7 @@ class SettingsGroupCell: UITableViewCell {
     }
     
     func updateTopOffset(_ offset: CGFloat) {
-        
-        // FIXME: Fix lugs with parallax
-        
+                
         let newOffset = initialTopConstant + offset
         if newOffset < initialTopConstant {
 
