@@ -26,13 +26,13 @@ enum SettingsSection: Int {
     
     // Teachers Row 👨‍🏫
     enum TeachersRow: Int {
-        case showAll
+        case onlyDepartmentTeachers
         
         static var count = {
-            return TeachersRow.showAll.rawValue + 1
+            return TeachersRow.onlyDepartmentTeachers.rawValue + 1
         }
         
-        private static let titles = [showAll: "Show all teachers".localized]
+        private static let titles = [onlyDepartmentTeachers: "Only department teachers".localized]
         
         func title() -> String {
             if let title = TeachersRow.titles[self] {
@@ -49,14 +49,14 @@ enum SettingsSection: Int {
     
     // Other Row 📖
     enum OtherRow: Int {
-        case license, about
+        case terms, contact
         
         static var count = {
-            return OtherRow.about.rawValue + 1
+            return OtherRow.contact.rawValue + 1
         }
         
-        private static let titles = [license: "License".localized,
-                                       about: "About".localized]
+        private static let titles = [terms: "Terms of use".localized,
+                                     contact: "Contact us".localized]
         
         func title() -> String {
             if let title = OtherRow.titles[self] {
@@ -66,8 +66,8 @@ enum SettingsSection: Int {
             }
         }
         
-        private static let selections = [license: true,
-                                           about: true]
+        private static let selections = [terms: true,
+                                           contact: true]
         
         func canSelect() -> Bool {
             if let canSelect = OtherRow.selections[self] {
@@ -82,8 +82,7 @@ enum SettingsSection: Int {
         return SettingsSection.other.rawValue + 1
     }
     
-    private static let titles = [teachers: "Teachers".localized,
-                                    other: "Other".localized]
+    private static let titles = [teachers: "Teachers".localized]
     
     func title() -> String {
         if let title = SettingsSection.titles[self] {
