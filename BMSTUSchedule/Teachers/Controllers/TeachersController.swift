@@ -174,13 +174,15 @@ extension TeachersController: UISearchBarDelegate {
     
     func updateTeachers(with newTeachers: [Teacher]) {
         
+        let animation: UITableView.RowAnimation = .fade
+        
         self.tableView.beginUpdates()
         
         var oldIndexPaths: [IndexPath] = []
         for (index, _) in showTeachers.enumerated() {
             oldIndexPaths.append(IndexPath(row: index + 1, section: 0))
         }
-        self.tableView.deleteRows(at: oldIndexPaths, with: .fade)
+        self.tableView.deleteRows(at: oldIndexPaths, with: animation)
         
         self.showTeachers = newTeachers
 
@@ -188,7 +190,7 @@ extension TeachersController: UISearchBarDelegate {
         for (index, _) in newTeachers.enumerated() {
             newIndexPaths.append(IndexPath(row: index + 1, section: 0))
         }
-        self.tableView.insertRows(at: newIndexPaths, with: .fade)
+        self.tableView.insertRows(at: newIndexPaths, with: animation)
         
         self.tableView.endUpdates()
     }
