@@ -32,7 +32,7 @@ class SettingsGroupCell: UITableViewCell {
         let attributedDepartment = NSMutableAttributedString(string: components[0] + "-")
         
         // Set number
-        let colorAttributes = [NSAttributedStringKey.foregroundColor: AppTheme.shared.blueColor]
+        let colorAttributes = [NSAttributedString.Key.foregroundColor: AppTheme.shared.blueColor]
         let attributedNumber = NSAttributedString(string: components[1], attributes: colorAttributes)
         
         attributedDepartment.append(attributedNumber)

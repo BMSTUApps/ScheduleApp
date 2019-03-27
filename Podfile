@@ -19,6 +19,9 @@ target 'BMSTUSchedule' do
   # Code quality
   pod 'SwiftLint'
 
+  # Apple Music stork
+  pod 'SPStorkController'
+  
   target 'BMSTUScheduleTests' do
     inherit! :search_paths
   end

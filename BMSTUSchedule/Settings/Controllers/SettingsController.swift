@@ -74,7 +74,7 @@ class SettingsController: TableViewController {
         
         let reuseIdentifier = String(describing: SettingsGroupCell.self)
         let cell = (tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? SettingsGroupCell) ?? SettingsGroupCell()
-        cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, UIScreen.main.bounds.width)
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
         cell.selectionStyle = row.canSelect() ? .default : .none
         
         // Fix group name

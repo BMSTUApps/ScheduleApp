@@ -63,6 +63,7 @@ PODS:
   - Realm/Headers (3.10.0)
   - RealmSwift (3.10.0):
     - Realm (= 3.10.0)
+  - SPStorkController (1.6)
   - SwiftLint (0.27.0)
 
 DEPENDENCIES:
@@ -70,10 +71,11 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Kingfisher
   - RealmSwift
+  - SPStorkController
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -86,6 +88,7 @@ SPEC REPOS:
     - Protobuf
     - Realm
     - RealmSwift
+    - SPStorkController
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -101,8 +104,9 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   Realm: 85ab9e4f779d66f6e9ffeb118dc25b7f130c96ac
   RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
+  SPStorkController: 54293a8a1ca3c691a09eb6274b6e487b602e975a
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: b9204e0ef5ebc2218aebca99b8c6c62f56ab7cda
+PODFILE CHECKSUM: f498f0283ca00c3d7074b77806c938d34e3f799c
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.1
