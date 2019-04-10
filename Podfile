@@ -5,7 +5,8 @@ target 'BMSTUSchedule' do
   use_frameworks!
 
   # Pods for BMSTUSchedule
-  
+  inhibit_all_warnings!
+
   # Notifications & statistics
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
@@ -22,6 +23,9 @@ target 'BMSTUSchedule' do
 
   # Apple Music stork
   pod 'SPStorkController'
+  
+  # Debug
+  pod 'Reveal-SDK', :configurations => ['Debug']
   
   target 'BMSTUScheduleTests' do
     inherit! :search_paths

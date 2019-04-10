@@ -32,7 +32,7 @@ class EventActionsCell: UITableViewCell, CellViewModelProtocol {
     
     func fillCell(model: CellViewModel) {
         
-        guard let castedModel = model as? EventActionsCellViewModel else {
+        guard model is EventActionsCellViewModel else {
             return
         }
         

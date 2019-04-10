@@ -67,7 +67,7 @@ class TeachersController: UITableViewController {
             
             let reuseIdentifier = String(describing: TeacherSearchCell.self)
             let cell = (tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? TeacherSearchCell) ?? TeacherSearchCell()
-            cell.searchBar.delegate = self as? UISearchBarDelegate
+            cell.searchBar.delegate = self
 
             return cell
         }

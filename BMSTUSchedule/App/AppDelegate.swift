@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         completionHandler(AppManager.shared.handleQuickAction(shortcutItem: shortcutItem))
     }
     
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         
         // Handle Siri intents
         let result = AppManager.shared.handleIntent(userActivity: userActivity)

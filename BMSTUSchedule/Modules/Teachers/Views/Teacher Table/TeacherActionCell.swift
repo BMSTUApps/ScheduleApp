@@ -26,7 +26,7 @@ class TeacherActionCell: UITableViewCell, CellViewModelProtocol {
     
     func fillCell(model: CellViewModel) {
         
-        guard let castedModel = model as? TeacherActionCellViewModel else {
+        guard model is TeacherActionCellViewModel else {
             return
         }
         

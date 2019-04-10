@@ -66,6 +66,7 @@ PODS:
   - Realm/Headers (3.10.0)
   - RealmSwift (3.10.0):
     - Realm (= 3.10.0)
+  - Reveal-SDK (21)
   - SPStorkController (1.6)
   - SwiftLint (0.27.0)
 
@@ -75,6 +76,7 @@ DEPENDENCIES:
   - Kingfisher
   - R.swift
   - RealmSwift
+  - Reveal-SDK
   - SPStorkController
   - SwiftLint
 
@@ -94,6 +96,7 @@ SPEC REPOS:
     - R.swift.Library
     - Realm
     - RealmSwift
+    - Reveal-SDK
     - SPStorkController
     - SwiftLint
 
@@ -112,9 +115,10 @@ SPEC CHECKSUMS:
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   Realm: 85ab9e4f779d66f6e9ffeb118dc25b7f130c96ac
   RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
+  Reveal-SDK: 3523e0eb7c562811c51bb71da6e523a6373702c8
   SPStorkController: 54293a8a1ca3c691a09eb6274b6e487b602e975a
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: e9f45916e5b87333e15bc1625e34e7a35dfcbbd2
+PODFILE CHECKSUM: 75deb65e88b6b5b6251f3257158f2f7f728c2ee1
 
 COCOAPODS: 1.6.1
