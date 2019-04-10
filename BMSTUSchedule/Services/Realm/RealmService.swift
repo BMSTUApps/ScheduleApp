@@ -1,5 +1,5 @@
 //
-//  RealmManager.swift
+//  RealmService.swift
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 23/08/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RealmManager {
+class RealmService {
 
     // MARK: Event
     
