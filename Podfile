@@ -18,6 +18,7 @@ target 'BMSTUSchedule' do
   
   # Code quality
   pod 'SwiftLint'
+  pod 'R.swift'
 
   # Apple Music stork
   pod 'SPStorkController'

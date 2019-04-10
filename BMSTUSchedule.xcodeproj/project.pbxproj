@@ -10,6 +10,7 @@
 		38CB2A1B34B5054BF19BB965 /* Pods_BMSTUSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7737BF8A2939EC394AFE9ED1 /* Pods_BMSTUSchedule.framework */; };
 		6A001289212EF48E00C84044 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A001288212EF48E00C84044 /* RealmManager.swift */; };
 		6A00128B212EF5C600C84044 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00128A212EF5C600C84044 /* Model.swift */; };
+		6A09C045225E8FD30068F818 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A09C044225E8FD30068F818 /* R.generated.swift */; };
 		6A1276C5217C6484002CC62F /* DayHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1276C4217C6484002CC62F /* DayHeaderViewModel.swift */; };
 		6A1276C7217C6557002CC62F /* WeekHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1276C6217C6557002CC62F /* WeekHeaderViewModel.swift */; };
 		6A1276C9217CDBB7002CC62F /* NextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1276C8217CDBB7002CC62F /* NextCell.swift */; };
@@ -109,6 +110,7 @@
 		62CB30E6CAC8647FE237B0E4 /* Pods-BMSTUSchedule-BMSTUScheduleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMSTUSchedule-BMSTUScheduleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BMSTUSchedule-BMSTUScheduleUITests/Pods-BMSTUSchedule-BMSTUScheduleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6A001288212EF48E00C84044 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		6A00128A212EF5C600C84044 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		6A09C044225E8FD30068F818 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		6A1276C4217C6484002CC62F /* DayHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayHeaderViewModel.swift; sourceTree = "<group>"; };
 		6A1276C6217C6557002CC62F /* WeekHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderViewModel.swift; sourceTree = "<group>"; };
 		6A1276C8217CDBB7002CC62F /* NextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCell.swift; sourceTree = "<group>"; };
@@ -232,6 +234,35 @@
 				6AE5385E203AC16D008441FC /* Realm Models */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		6A09C03D225E5F930068F818 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A5545DAA202C3ABA00CBF1CD /* Schedule */,
+				A5545DAF202C3B4000CBF1CD /* Teachers */,
+				A5545DB2202C3B9500CBF1CD /* Settings */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		6A09C042225E8D160068F818 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6A09C044225E8FD30068F818 /* R.generated.swift */,
+				6AF332BC2037FBB10085C033 /* Localizable.strings */,
+				A5CED4E01DB0E080000D2DFD /* Assets.xcassets */,
+				A5A1240F1DE8E606006FB4E5 /* Screenshots */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6A09C043225E8D650068F818 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6A00128C212F09AA00C84044 /* Realm */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		6A814EE7211A018B00D9AB3B /* Schedule Table */ = {
@@ -480,11 +511,8 @@
 			children = (
 				6A814EF8211A4DB700D9AB3B /* LocationHelper.swift */,
 				6A86E43820936B7600333FCF /* Extensions */,
-				6AF332BC2037FBB10085C033 /* Localizable.strings */,
-				A5CED4E01DB0E080000D2DFD /* Assets.xcassets */,
 				A5D39BEA2039C8130072B6D5 /* Info.plist */,
 				A5545DB5202C3BFE00CBF1CD /* GoogleService-Info.plist */,
-				A5A1240F1DE8E606006FB4E5 /* Screenshots */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -517,7 +545,6 @@
 				A5A124081DE8DD70006FB4E5 /* AppManager.swift */,
 				A5B0EBFC1ED1E756006EE607 /* AppTheme.swift */,
 				6AAE962A21591BF400760AE6 /* ScheduleStream.swift */,
-				6A00128C212F09AA00C84044 /* Realm */,
 				A5545DB4202C3BDF00CBF1CD /* Helpers */,
 			);
 			path = App;
@@ -556,12 +583,12 @@
 			isa = PBXGroup;
 			children = (
 				6A61F1782170DF600083CA4D /* BMSTUSchedule.entitlements */,
+				6A09C043225E8D650068F818 /* Services */,
+				6A09C03D225E5F930068F818 /* Modules */,
 				A5545DB9202C3CEC00CBF1CD /* Models */,
-				A5545DAA202C3ABA00CBF1CD /* Schedule */,
-				A5545DAF202C3B4000CBF1CD /* Teachers */,
-				A5545DB2202C3B9500CBF1CD /* Settings */,
-				6AE9FC38212178E600F1DA28 /* Base */,
 				A5545DC4202C3D5800CBF1CD /* App */,
+				6AE9FC38212178E600F1DA28 /* Base */,
+				6A09C042225E8D160068F818 /* Resources */,
 			);
 			path = BMSTUSchedule;
 			sourceTree = "<group>";
@@ -629,6 +656,7 @@
 				A5CED4D31DB0E07F000D2DFD /* Frameworks */,
 				A5CED4D41DB0E07F000D2DFD /* Resources */,
 				85278171D43D3138A8A398F2 /* [CP] Embed Pods Frameworks */,
+				6A09C03E225E8B510068F818 /* R.swift */,
 			);
 			buildRules = (
 			);
@@ -770,6 +798,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6A09C03E225E8B510068F818 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/$PRODUCT_NAME/Resources/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PRODUCT_NAME/Resources/R.generated.swift\"\n\n";
+		};
 		85278171D43D3138A8A398F2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -780,6 +828,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SPStorkController/SPStorkController.framework",
@@ -790,6 +839,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPStorkController.framework",
@@ -846,6 +896,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SPStorkController/SPStorkController.framework",
@@ -856,6 +907,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPStorkController.framework",
@@ -918,6 +970,7 @@
 				6AE9FC4B212199E800F1DA28 /* TeacherAboutCellViewModel.swift in Sources */,
 				6A5CE041208AACDE002BE568 /* SettingsGroupCell.swift in Sources */,
 				6AE9FC3A2121793300F1DA28 /* TeacherTitleCellViewModel.swift in Sources */,
+				6A09C045225E8FD30068F818 /* R.generated.swift in Sources */,
 				A5650861204062F900D2DA66 /* CalendarView.swift in Sources */,
 				6A86E436209365F300333FCF /* SettingsViewModel.swift in Sources */,
 				6AECC8DC217B68FE00DE1822 /* WeekHeader.swift in Sources */,

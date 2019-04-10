@@ -58,6 +58,9 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.6.1)
+  - R.swift (5.0.3):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.0)
   - Realm (3.10.0):
     - Realm/Headers (= 3.10.0)
   - Realm/Headers (3.10.0)
@@ -70,6 +73,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Messaging
   - Kingfisher
+  - R.swift
   - RealmSwift
   - SPStorkController
   - SwiftLint
@@ -86,6 +90,8 @@ SPEC REPOS:
     - Kingfisher
     - nanopb
     - Protobuf
+    - R.swift
+    - R.swift.Library
     - Realm
     - RealmSwift
     - SPStorkController
@@ -102,11 +108,13 @@ SPEC CHECKSUMS:
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
+  R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   Realm: 85ab9e4f779d66f6e9ffeb118dc25b7f130c96ac
   RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
   SPStorkController: 54293a8a1ca3c691a09eb6274b6e487b602e975a
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: f498f0283ca00c3d7074b77806c938d34e3f799c
+PODFILE CHECKSUM: e9f45916e5b87333e15bc1625e34e7a35dfcbbd2
 
 COCOAPODS: 1.6.1
