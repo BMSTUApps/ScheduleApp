@@ -14,6 +14,7 @@
 		6A1276C7217C6557002CC62F /* WeekHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1276C6217C6557002CC62F /* WeekHeaderViewModel.swift */; };
 		6A1276C9217CDBB7002CC62F /* NextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1276C8217CDBB7002CC62F /* NextCell.swift */; };
 		6A1276CB217CDC08002CC62F /* NextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1276CA217CDC08002CC62F /* NextCellViewModel.swift */; };
+		6A410CAC225FE137009E342D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A410CAB225FE137009E342D /* GoogleService-Info.plist */; };
 		6A5832672119FACA00C76F07 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5832662119FACA00C76F07 /* EventController.swift */; };
 		6A5832692119FBAE00C76F07 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5832682119FBAE00C76F07 /* EventViewModel.swift */; };
 		6A5CE041208AACDE002BE568 /* SettingsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5CE040208AACDE002BE568 /* SettingsGroupCell.swift */; };
@@ -114,6 +115,7 @@
 		6A1276C6217C6557002CC62F /* WeekHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderViewModel.swift; sourceTree = "<group>"; };
 		6A1276C8217CDBB7002CC62F /* NextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCell.swift; sourceTree = "<group>"; };
 		6A1276CA217CDC08002CC62F /* NextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCellViewModel.swift; sourceTree = "<group>"; };
+		6A410CAB225FE137009E342D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A5832662119FACA00C76F07 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		6A5832682119FBAE00C76F07 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		6A5CE040208AACDE002BE568 /* SettingsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGroupCell.swift; sourceTree = "<group>"; };
@@ -166,7 +168,6 @@
 		A5545DA4202C38DC00CBF1CD /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		A5545DA6202C39DD00CBF1CD /* Teachers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Teachers.storyboard; sourceTree = "<group>"; };
 		A5545DA8202C3A3900CBF1CD /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		A5545DB5202C3BFE00CBF1CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5545DBA202C3CEC00CBF1CD /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A5545DBE202C3CEC00CBF1CD /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A5650860204062F900D2DA66 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -268,7 +269,7 @@
 		6A09C046225E955B0068F818 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				A5545DB5202C3BFE00CBF1CD /* GoogleService-Info.plist */,
+				6A410CAB225FE137009E342D /* GoogleService-Info.plist */,
 				A5D39BEA2039C8130072B6D5 /* Info.plist */,
 			);
 			path = Info;
@@ -779,6 +780,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A124061DE8DD24006FB4E5 /* Main.storyboard in Resources */,
+				6A410CAC225FE137009E342D /* GoogleService-Info.plist in Resources */,
 				A5A124051DE8DD24006FB4E5 /* LaunchScreen.storyboard in Resources */,
 				A5545DA7202C39DD00CBF1CD /* Teachers.storyboard in Resources */,
 				6A9D5E71220EF42200DEEF0D /* Localizable.strings in Resources */,
