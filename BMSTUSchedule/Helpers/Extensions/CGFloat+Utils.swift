@@ -2,7 +2,7 @@
 //  CGFloat+Utils.swift
 //  BMSTUSchedule
 //
-//  Created by a.belkov on 09/02/2019.
+//  Created by Artem Belkov on 09/02/2019.
 //  Copyright © 2019 BMSTU Team. All rights reserved.
 //
 

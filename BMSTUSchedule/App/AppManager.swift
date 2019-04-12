@@ -13,6 +13,18 @@ class AppManager {
     
     static let shared = AppManager()
     
+    // MARK: Services
+    let notificationsService = NotificationsService()
+    
+    func configureOnLaunching() {
+        
+        // Configure firebase
+        FirebaseApp.configure()
+        
+        // Configure notifications
+        notificationsService.registerForRemoteNotifications()
+    }
+    
     // MARK: -
     
     private let defaults = UserDefaults.standard
