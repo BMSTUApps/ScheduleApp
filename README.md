@@ -3,7 +3,7 @@
 ![Contributors](https://img.shields.io/github/contributors/BMSTUScheduleTeam/BMSTUSchedule.svg)
 
 <p align="left">
-  <img width=150 src="https://github.com/BMSTUScheduleTeam/App/blob/develop/BMSTUSchedule/App/Helpers/Screenshots/Icon.png" alt="Icon"/>
+  <img width=150 src="https://github.com/BMSTUScheduleTeam/App/blob/develop/Screenshots/Icon.png" alt="Icon"/>
 </p>
 
 Неофициальное приложение с расписанием занятий МГТУ имени Н.Э. Баумана.
@@ -13,7 +13,7 @@
 ## Скриншоты
 
 <p align="center">
-  <img src="https://github.com/BMSTUScheduleTeam/App/blob/develop/BMSTUSchedule/App/Helpers/Screenshots/README-Screenshot.PNG" alt="ScheduleController"/>
+  <img src="https://github.com/BMSTUScheduleTeam/App/blob/develop/Screenshots/README-Screenshot.PNG" alt="ScheduleController"/>
 </p>
 
 ## Статус
