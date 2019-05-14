@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 
+typealias JSON = [String: Any]
+
 enum Result<T, U> {
     case success(T)
     case failure(U)
@@ -40,7 +42,6 @@ struct Authorization {
 }
 
 class NetworkingService {
-    typealias JSON = [String: Any]
     typealias Method = (http: HTTPMethod, server: String)
 
     enum Module: String {
