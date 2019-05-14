@@ -11,6 +11,9 @@ target 'BMSTUSchedule' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   
+  # Networking
+  pod 'Alamofire'
+  
   # Cache
   pod 'RealmSwift'
   

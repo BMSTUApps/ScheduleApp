@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.8.1)
   - Firebase/Core (5.9.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.2.0)
@@ -71,6 +72,7 @@ PODS:
   - SwiftLint (0.27.0)
 
 DEPENDENCIES:
+  - Alamofire
   - Firebase/Core
   - Firebase/Messaging
   - Kingfisher
@@ -82,6 +84,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -101,6 +104,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Firebase: 383fa29aca93e371cab776b48a5c66544d3c2003
   FirebaseAnalytics: 831f1f127f4a75698e9875a87bf7e2668730d953
   FirebaseCore: 2a84b6b325792a4319ef71ee18819dcba08d2fd7
@@ -119,6 +123,6 @@ SPEC CHECKSUMS:
   SPStorkController: 54293a8a1ca3c691a09eb6274b6e487b602e975a
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 75deb65e88b6b5b6251f3257158f2f7f728c2ee1
+PODFILE CHECKSUM: 315e72da9b9f7efb0463cc1c698457e1cf4b6fb0
 
 COCOAPODS: 1.6.1
