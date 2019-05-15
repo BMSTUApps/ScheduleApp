@@ -25,6 +25,11 @@ class ScheduleController: TableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let provider = ScheduleProvider()
+        provider.getSchedule { result in
+            // ..
+        }
         
         prepareUI()
         setupIntents()

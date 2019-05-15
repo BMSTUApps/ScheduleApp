@@ -24,45 +24,84 @@ class Event: Model {
     
     typealias Location = String
 
-    var title: String
+    let id: String
     
-    var teacher: Teacher?
+    let title: String
     
-    var location: Location?
-    var kind: Kind
+    let teacher: Teacher?
     
-    var date: Date
-    var repeatIn: Int // weeks count to repeat
+    let location: Location?
+    let kind: Kind
     
-    var startTime: String
-    var endTime: String
+    let date: Date
+    let repeatIn: Int // weeks count to repeat
+    let endDate: Date?
+    
+    let startTime: String
+    let endTime: String
 
     override var description : String {
         return "Event(\"\(title)\")\n"
     }
     
+    private enum Key: String {
+        case id
+        case title
+        case teacherID = "teacher_id"
+        case location
+        case kind
+        case date
+        case repeatIn = "repeat_in"
+        case endDate = "end_date"
+        case startTime = "start_time"
+        case endTime = "end_time"
+    }
+    
     // MARK: Initialization
     
-    init(title: String, teacher: Teacher?, location: Location?, kind: Kind = .other, date: Date, repeatIn: Int = 0, startTime: String, endTime: String) {
+    init?(_ json: JSON) {
+        guard let id = json[Key.id.rawValue] as? String,
+            let title = json[Key.title.rawValue] as? String,
+            let rawKind = json[Key.kind.rawValue] as? String, let kind = Kind(rawValue: rawKind),
+            let rawDate = json[Key.date.rawValue] as? String, let date = Date(rawDate),
+            let repeatIn = json[Key.repeatIn.rawValue] as? Int,
+            let startTime = json[Key.startTime.rawValue] as? String,
+            let endTime = json[Key.endTime.rawValue] as? String else {
+            return nil
+        }
+        
+        self.id = id
+        
         self.title = title
-        self.teacher = teacher
-        self.location = location
+
+        // TODO: Get teacher
+        self.teacher = nil
+        
+        self.location = json[Key.location.rawValue] as? String
         self.kind = kind
+        
         self.date = date
         self.repeatIn = repeatIn
+        if let rawEndDate = json[Key.endDate.rawValue] as? String {
+            self.endDate = Date(rawEndDate)
+        } else {
+            self.endDate = nil
+        }
+        
         self.startTime = startTime
         self.endTime = endTime
     }
     
-    convenience init(title: String, teacher: Teacher?, location: Location?) {
-        self.init(title: title, teacher: teacher, location: location, kind: .other, date: Date(), repeatIn: 0, startTime: "", endTime: "")
-    }
-    
-    convenience init(title: String) {
-        self.init(title: title, teacher: nil, location: nil)
-    }
-    
-    convenience override init() {
-        self.init(title: "")
+    init(_ realm: RealmEvent) {
+        self.id = realm.serverID
+        self.title = realm.title
+        self.teacher = Teacher(realm.teacher)
+        self.location = realm.location
+        self.kind = Event.Kind(rawValue: realm.kind) ?? .other
+        self.date = realm.date
+        self.repeatIn = realm.repeatIn
+        self.endDate = realm.endDate
+        self.startTime = realm.startTime
+        self.endTime = realm.endTime
     }
 }

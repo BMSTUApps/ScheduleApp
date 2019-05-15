@@ -10,6 +10,8 @@ import Foundation
 import RealmSwift
 
 class RealmEvent: Object {
+
+    @objc dynamic var serverID: String = ""
     
     @objc dynamic var title: String = ""
     
@@ -20,7 +22,8 @@ class RealmEvent: Object {
     
     @objc dynamic var date: Date = Date()
     @objc dynamic var repeatIn: Int = 0
-    
+    @objc dynamic var endDate: Date? = nil
+
     @objc dynamic var startTime: String = ""
     @objc dynamic var endTime: String = ""
 }
@@ -32,30 +35,18 @@ extension RealmEvent {
     convenience init(_ model: Event) {
         self.init()
         
+        self.serverID = model.id
         self.title = model.title
         self.location = model.location
         self.kind = model.kind.rawValue
         self.date = model.date
         self.repeatIn = model.repeatIn
+        self.endDate = model.endDate
         self.startTime = model.startTime
         self.endTime = model.endTime
         
         if let teacher = model.teacher {
             self.teacher = RealmTeacher(teacher)
         }
-    }
-}
-
-extension Event {
-    
-    convenience init(_ realmModel: RealmEvent) {
-        self.init(title: realmModel.title,
-                  teacher: Teacher(realmModel.teacher),
-                  location: realmModel.location,
-                  kind: Kind(rawValue: realmModel.kind) ?? .other,
-                  date: realmModel.date,
-                  repeatIn: realmModel.repeatIn,
-                  startTime: realmModel.startTime,
-                  endTime: realmModel.endTime)
     }
 }

@@ -11,6 +11,8 @@ import Foundation
 /// User 👀
 class User: Model {
 
+    var id: String
+    
     var email: String
     
     var firstName: String
@@ -21,9 +23,8 @@ class User: Model {
     
     var schedule: [Event]
     
-    // MARK: Initialization
-    
     private enum Key: String {
+        case id
         case email
         case firstName = "first_name"
         case lastName = "last_name"
@@ -31,10 +32,16 @@ class User: Model {
         case scheduleID = "schedule_id"
     }
     
+    // MARK: Initialization
+    
     init?(json: JSON) {
-        guard let email = json[Key.email.rawValue] as? String, let scheduleID = json[Key.scheduleID.rawValue] as? Int else {
+        guard let id = json[Key.id.rawValue] as? String,
+            let email = json[Key.email.rawValue] as? String,
+            let scheduleID = json[Key.scheduleID.rawValue] as? Int else {
             return nil
         }
+        
+        self.id = id
         
         self.email = email
         

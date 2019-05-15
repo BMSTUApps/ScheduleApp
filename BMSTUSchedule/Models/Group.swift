@@ -12,77 +12,40 @@ import Foundation
 
 /// Group 👥
 class Group: Model {
+    
+    let id: String
+    
+    let department: String
+    let number: Int
 
     var name: String {
-        didSet {
-            self.department = parseDepartment(name)
-            self.number = parseNumber(name)
-            self.course = parseCourse(name)
-        }
+        return "\(department)-\(number)"
     }
     
-    var department: String
-    var number: Int
-    
-    var course: Int
-
     override var description : String {
         return "Group(\"\(name)\")\n"
     }
     
     // MARK: Initialization
     
-    init(name: String) {
-        self.name = name
-        self.department = ""
-        self.number = 0
-        self.course = 0
-    }
-
-    // MARK: Parsing
-    
-    private func parseDepartment(_ name: String) -> String {
-        
-        let hyphen: Character = "-"
-        
-        // Finding department
-        if let indexOfHyphen = name.index(of: hyphen) {
-            let department = String(name.prefix(upTo: indexOfHyphen))
-            
-            return department
-        }
-        
-        return ""
+    private enum Key: String {
+        case id
+        case department
+        case number
+        case scheduleID = "schedule_id"
     }
     
-    private func parseNumber(_ name: String) -> Int {
-        
-        let hyphen: Character = "-"
-        
-        // Finding number
-        if let indexOfHyphen = name.index(of: hyphen) {
-            let number = Int(name.suffix(from: indexOfHyphen)) ?? 0
-            
-            return number
+    init?(json: JSON) {
+        guard let id = json[Key.id.rawValue] as? String,
+            let department = json[Key.department.rawValue] as? String,
+            let number = json[Key.number.rawValue] as? Int,
+            let scheduleID = json[Key.scheduleID.rawValue] as? String else {
+                return nil
         }
         
-        return 0
-    }
-    
-    private func parseCourse(_ name: String) -> Int {
-        
-        let hyphen: Character = "-"
-
-        // Finding course
-        if let indexOfHyphen = name.index(of: hyphen) {
-            let number = Int(name.suffix(from: indexOfHyphen)) ?? 0
-            
-            // Calculate course
-            let course = Int(String(format:"%.f", Double(Double(number) / 20))) ?? 0
-            
-            return course
-        }
-        
-        return 0
+        self.id = id
+        self.department = department
+        self.number = number
+        // TODO: Get schedule
     }
 }
