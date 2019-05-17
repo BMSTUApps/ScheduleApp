@@ -21,8 +21,8 @@ class ScheduleStream {
     private var events: [Event]
     private var date: Date
     
-    init(events: [Event], startDate: Date = Date.today.previous(.monday, considerToday: true)) {
-        self.events = events
+    init(schedule: Schedule, startDate: Date = Date.today.previous(.monday, considerToday: true)) {
+        self.events = schedule.events
         self.date = startDate
         
         // Calculate start term week index

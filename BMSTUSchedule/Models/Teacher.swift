@@ -57,7 +57,7 @@ final class Teacher: Model {
     // MARK: Initialization
     
     init?(json: JSON) {
-        guard let id = json[Key.id.rawValue] as? String,
+        guard let id = json[Key.id.rawValue] as? ID,
             let firstName = json[Key.firstName.rawValue] as? String,
             let lastName = json[Key.lastName.rawValue] as? String,
             let department = json[Key.department.rawValue] as? String else {

@@ -10,7 +10,7 @@ import Foundation
 
 class Model: CustomStringConvertible {
     
-    typealias ID = String
+    typealias ID = Int
     
     var description : String {
         return "Model"

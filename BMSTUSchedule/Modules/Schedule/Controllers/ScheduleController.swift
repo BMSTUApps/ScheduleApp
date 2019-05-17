@@ -10,10 +10,11 @@ import UIKit
 
 class ScheduleController: TableViewController {
     
-    let scheduleStream = ScheduleStream(events: AppManager.shared.getEvents())
+    var scheduleStream: ScheduleStream? = nil
     
     var events: [StreamingEvent] = [] {
         didSet {
+            guard let scheduleStream = scheduleStream else { return }
             scheduleViewModel = ScheduleViewModel(events: events, startTermWeekIndex: scheduleStream.startTermWeekIndex)
         }
     }
@@ -26,15 +27,24 @@ class ScheduleController: TableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // FIXME: Remove test code
         let provider = ScheduleProvider()
-        provider.getSchedule { result in
-            // ..
+        let group = Group(json: [
+            "id": 240,
+            "department": "ИУ5",
+            "number": "83Б",
+            "schedule_id": 240
+        ])!
+        provider.getSchedule(for: group) { schedule in
+            guard let schedule = schedule else { return }
+            self.scheduleStream = ScheduleStream(schedule: schedule)
+            self.events = self.scheduleStream?.get(.current) ?? []
         }
         
         prepareUI()
         setupIntents()
         
-        events = scheduleStream.get(.current)
+        events = scheduleStream?.get(.current) ?? []
     }
     
     private func prepareUI() {
@@ -64,7 +74,8 @@ class ScheduleController: TableViewController {
     }
     
     func loadNextWeek() {
-        
+        guard let scheduleStream = scheduleStream else { return }
+
         let newEvents = scheduleStream.get(.next)
         events.append(contentsOf: newEvents)
         

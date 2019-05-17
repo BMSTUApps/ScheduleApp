@@ -24,7 +24,7 @@ class Schedule: Model {
     // MARK: Initialization
     
     init?(_ json: JSON) {
-        guard let id = json[Key.id.rawValue] as? String,
+        guard let id = json[Key.id.rawValue] as? ID,
             let isTemplate = json[Key.isTemplate.rawValue] as? Bool,
             let rawEvents = json[Key.events.rawValue] as? [JSON] else {
             return nil

@@ -60,7 +60,7 @@ final class Event: Model {
     // MARK: Initialization
     
     init?(_ json: JSON) {
-        guard let id = json[Key.id.rawValue] as? String,
+        guard let id = json[Key.id.rawValue] as? ID,
             let title = json[Key.title.rawValue] as? String,
             let rawKind = json[Key.kind.rawValue] as? String, let kind = Kind(rawValue: rawKind),
             let rawDate = json[Key.date.rawValue] as? String, let date = Date(rawDate),

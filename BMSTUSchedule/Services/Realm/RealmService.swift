@@ -22,7 +22,7 @@ class RealmService {
     // MARK: Group
     
     func getGroup(id: Model.ID) -> Group? {
-        guard let realmGroup = database.objects(RealmGroup.self).filter("serverID = '\(id)'").first else {
+        guard let realmGroup = database.objects(RealmGroup.self).filter("serverID = \(id)").first else {
             return nil
         }
         
@@ -30,7 +30,7 @@ class RealmService {
     }
     
     func saveGroup(_ group: Group) {
-        let oldGroups = database.objects(RealmGroup.self).filter("serverID = '\(group.id)'")
+        let oldGroups = database.objects(RealmGroup.self).filter("serverID = \(group.id)")
         let realmGroup = RealmGroup(group)
         
         try! database.write {
@@ -42,7 +42,7 @@ class RealmService {
     // MARK: Schedule
     
     func getSchedule(id: Model.ID) -> Schedule? {
-        guard let realmSchedule = database.objects(RealmSchedule.self).filter("serverID = '\(id)'").first else {
+        guard let realmSchedule = database.objects(RealmSchedule.self).filter("serverID = \(id)").first else {
             return nil
         }
     
@@ -50,7 +50,7 @@ class RealmService {
     }
     
     func saveSchedule(_ schedule: Schedule) {
-        let oldSchedules = database.objects(RealmSchedule.self).filter("serverID = '\(schedule.id)'")
+        let oldSchedules = database.objects(RealmSchedule.self).filter("serverID = \(schedule.id)")
         let realmSchedule = RealmSchedule(schedule)
         
         try! database.write {
@@ -62,7 +62,7 @@ class RealmService {
     // MARK: Event
     
     func getEvent(id: Model.ID) -> Event? {
-        guard let realmEvent = database.objects(RealmEvent.self).filter("serverID = '\(id)'").first else {
+        guard let realmEvent = database.objects(RealmEvent.self).filter("serverID = \(id)").first else {
             return nil
         }
         

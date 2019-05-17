@@ -20,7 +20,6 @@ class AppManager {
     let networkingService = NetworkingService()
     
     // MARK: -
-
     
     func configureOnLaunching() {
         
@@ -45,7 +44,8 @@ class AppManager {
     /// Current group
     var currentGroup: Group? {
         get {
-            guard let groupID = defaults.string(forKey: currentGroupKey) else { return nil }
+            let groupID = defaults.integer(forKey: currentGroupKey)
+            guard groupID != 0 else { return nil }
             return realmService.getGroup(id: groupID)
         }
         

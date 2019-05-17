@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 typealias JSON = [String: Any]
+typealias RequestParameters = [String: Any]
 
 enum Result<T, U> {
     case success(T)

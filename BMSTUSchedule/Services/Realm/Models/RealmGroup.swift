@@ -11,12 +11,12 @@ import RealmSwift
 
 class RealmGroup: Object {
 
-    @objc dynamic var serverID: String = ""
+    @objc dynamic var serverID: Int = 0
     
     @objc dynamic var department: String = ""
-    @objc dynamic var number: Int = 0
+    @objc dynamic var number: String = ""
     
-    @objc dynamic var scheduleID: String = ""
+    @objc dynamic var scheduleID: Int = 0
 }
 
 // MARK: - Model linking

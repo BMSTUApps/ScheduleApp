@@ -11,7 +11,7 @@ import RealmSwift
 
 class RealmTeacher: Object {
     
-    @objc dynamic var serverID: String = ""
+    @objc dynamic var serverID: Int = 0
     
     @objc dynamic var firstName: String = ""
     @objc dynamic var lastName: String = ""

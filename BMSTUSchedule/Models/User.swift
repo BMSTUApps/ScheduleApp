@@ -35,9 +35,9 @@ final class User: Model {
     // MARK: Initialization
     
     init?(json: JSON) {
-        guard let id = json[Key.id.rawValue] as? String,
+        guard let id = json[Key.id.rawValue] as? ID,
             let email = json[Key.email.rawValue] as? String,
-            let scheduleID = json[Key.scheduleID.rawValue] as? Int else {
+            let scheduleID = json[Key.scheduleID.rawValue] as? ID else {
             return nil
         }
         

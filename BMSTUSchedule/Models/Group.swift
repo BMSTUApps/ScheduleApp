@@ -14,7 +14,7 @@ final class Group: Model {
     let id: ID
     
     let department: String
-    let number: Int
+    let number: String
 
     let scheduleID: ID
     
@@ -38,7 +38,7 @@ final class Group: Model {
     init?(json: JSON) {
         guard let id = json[Key.id.rawValue] as? ID,
             let department = json[Key.department.rawValue] as? String,
-            let number = json[Key.number.rawValue] as? Int,
+            let number = json[Key.number.rawValue] as? String,
             let scheduleID = json[Key.scheduleID.rawValue] as? ID else {
                 return nil
         }

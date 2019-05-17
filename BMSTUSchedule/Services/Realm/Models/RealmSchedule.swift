@@ -11,7 +11,7 @@ import RealmSwift
 
 class RealmSchedule: Object {
 
-    @objc dynamic var serverID: String = ""
+    @objc dynamic var serverID: Int = 0
     @objc dynamic var isTemplate: Bool = false
     
     let events = List<RealmEvent>()
