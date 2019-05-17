@@ -8,12 +8,24 @@
 
 import Foundation
 
+struct Session {
+    let email: String
+    let token: String
+    let expiresAt: Date
+    
+    var isValid: Bool {
+        return expiresAt > .today
+    }
+}
+
 class DefaultsService {
 
     private let database = UserDefaults.standard
     
     private let userGroupIDKey = "userGroupID"
     private let userEmailKey = "userEmail"
+    private let sessionTokenKey = "sessionToken"
+    private let sessionExpiresAtKey = "sessionExpiresAt"
     private let offlineModeKey = "offlineMode"
 
     /// User e-mail
@@ -22,8 +34,8 @@ class DefaultsService {
             return database.string(forKey: userEmailKey)
         }
         
-        set(new) {
-            guard let newEmail = new else { return }
+        set(newValue) {
+            guard let newEmail = newValue else { return }
             
             // Save email to UserDefaults
             database.set(newEmail, forKey: userEmailKey)
@@ -38,11 +50,30 @@ class DefaultsService {
             return groupID
         }
         
-        set(new) {
-            guard let newID = new else { return }
+        set(newValue) {
+            guard let newID = newValue else { return }
             
             // Save group ID to UserDefaults
             database.set(newID, forKey: userGroupIDKey)
+        }
+    }
+    
+    /// Session
+    var session: Session? {
+        get {
+            guard let email = userEmail, let token = database.string(forKey: sessionTokenKey), let expiresAt = database.object(forKey: sessionExpiresAtKey) as? Date else {
+                return nil
+            }
+            
+            return Session(email: email, token: token, expiresAt: expiresAt)
+        }
+        
+        set(newValue)  {
+            guard let newSession = newValue else { return }
+
+            userEmail = newSession.email
+            database.set(newSession.token, forKey: sessionTokenKey)
+            database.set(newSession.expiresAt, forKey: sessionExpiresAtKey)
         }
     }
     
@@ -53,8 +84,8 @@ class DefaultsService {
             return mode
         }
         
-        set(new) {
-            database.set(new, forKey: offlineModeKey)
+        set(newValue) {
+            database.set(newValue, forKey: offlineModeKey)
         }
     }
 }

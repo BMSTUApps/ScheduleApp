@@ -33,12 +33,7 @@ class AppManager {
     }
     
     // MARK: Authorization
-    
-    struct Session {
-        let email: String
-        let token: String
-    }
-    
+
     enum AuthorizationState {
         case authorized(session: Session)
         case template(group: Group)
@@ -48,13 +43,29 @@ class AppManager {
     var authorizationState: AuthorizationState {
         
         // Try to get user email & session token
-        if let email = defaultsService.userEmail, let token = try? keychainService.getToken(for: email), let unwrappedToken = token {
-            let session = Session(email: email, token: unwrappedToken)
+        if let session = defaultsService.session, session.isValid {
             return .authorized(session: session)
-        } else if let group = currentGroup {
-            return .template(group: group)
         } else {
-            return .unauthorized
+            updateToken()
+            
+            if let group = currentGroup {
+                return .template(group: group)
+            } else {
+                return .unauthorized
+            }
+        }
+    }
+    
+    private func updateToken() {
+        
+        guard let email = defaultsService.userEmail, let password = try? keychainService.getPassword(for: email), let unwrappedPassword = password else {
+            return
+        }
+        
+        // Get token
+        networkingService.makeRequest(module: .user, method: (.get, "login")) { result in
+            
+            // ..
         }
     }
     

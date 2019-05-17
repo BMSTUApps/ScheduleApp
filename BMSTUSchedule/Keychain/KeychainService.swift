@@ -16,7 +16,7 @@ class KeychainService {
         case unhandledError(reason: String)
     }
     
-    func getToken(for email: String) throws -> String? {
+    func getPassword(for email: String) throws -> String? {
         var query: [String: Any] = [:]
         query[String(kSecMatchLimit)] = kSecMatchLimitOne
         query[String(kSecReturnAttributes)] = kCFBooleanTrue
@@ -32,12 +32,12 @@ class KeychainService {
         case errSecSuccess:
             guard
                 let queriedItem = queryResult as? [String: Any],
-                let tokenData = queriedItem[String(kSecValueData)] as? Data,
-                let token = String(data: tokenData, encoding: .utf8)
+                let passwordData = queriedItem[String(kSecValueData)] as? Data,
+                let password = String(data: passwordData, encoding: .utf8)
                 else {
                     throw Error.conversionError
             }
-            return token
+            return password
         case errSecItemNotFound:
             return nil
         default:
@@ -45,9 +45,9 @@ class KeychainService {
         }
     }
     
-    func saveToken(_ token: String, for email: String) throws {
+    func savePassword(_ password: String, for email: String) throws {
         
-        guard let encodedToken = token.data(using: .utf8) else {
+        guard let encodedPassword = password.data(using: .utf8) else {
             throw Error.conversionError
         }
         
@@ -58,7 +58,7 @@ class KeychainService {
         switch status {
         case errSecSuccess:
             var attributesToUpdate: [String: Any] = [:]
-            attributesToUpdate[String(kSecValueData)] = encodedToken
+            attributesToUpdate[String(kSecValueData)] = encodedPassword
             
             status = SecItemUpdate(query as CFDictionary,
                                    attributesToUpdate as CFDictionary)
@@ -66,7 +66,7 @@ class KeychainService {
                 throw error(from: status)
             }
         case errSecItemNotFound:
-            query[String(kSecValueData)] = encodedToken
+            query[String(kSecValueData)] = encodedPassword
             
             status = SecItemAdd(query as CFDictionary, nil)
             if status != errSecSuccess {
@@ -77,7 +77,7 @@ class KeychainService {
         }
     }
     
-    func removeToken(for email: String) throws {
+    func removePassword(for email: String) throws {
         var query: [String: Any] = [:]
         query[String(kSecAttrAccount)] = email
         
