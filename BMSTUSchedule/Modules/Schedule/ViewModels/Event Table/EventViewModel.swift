@@ -66,9 +66,8 @@ class EventViewModel: TableViewModel {
             return
         }
 
-        // FIXME: Fix transmiting event
-//        let calendarViewModel = EventCalendarCellViewModel(currentEvent: event, displayedEvents: displayedEvents)
-//        viewModels.append(calendarViewModel)
+        let calendarViewModel = EventCalendarCellViewModel(currentEvent: event, displayedEvents: displayedEvents)
+        viewModels.append(calendarViewModel)
     }
     
     private func fillTimeViewModel() {

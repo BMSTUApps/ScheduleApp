@@ -61,6 +61,10 @@ class ScheduleProvider {
         }
     }
     
+    func getEvent(from streamingEvent: StreamingEvent) -> Event? {
+        return realm.getEvent(id: streamingEvent.id)
+    }
+    
 //    func getSchedule(completion: (Result<[Event], Error?>) -> Void) {
 //        let authorization = Authorization(accessToken: "Bearer /CvTI4NfIfrIGP20Gy3Tbw==")
 //        network.makeRequest(module: .schedule, method: (.get, ""), authorization: authorization) { result in
