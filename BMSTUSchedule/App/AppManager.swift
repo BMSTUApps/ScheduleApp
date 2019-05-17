@@ -18,8 +18,10 @@ class AppManager {
     let notificationsService = NotificationsService()
     let realmService = RealmService()
     let networkingService = NetworkingService()
+    let keychainService = KeychainService()
+    let defaultsService = DefaultsService()
     
-    // MARK: -
+    // MARK: Configuration
     
     func configureOnLaunching() {
         
@@ -30,22 +32,38 @@ class AppManager {
         notificationsService.registerForRemoteNotifications()
     }
     
-    // MARK: -
+    // MARK: Authorization
     
-    private let defaults = UserDefaults.standard
+    struct Session {
+        let email: String
+        let token: String
+    }
     
-    // MARK: - Keys
+    enum AuthorizationState {
+        case authorized(session: Session)
+        case template(group: Group)
+        case unauthorized
+    }
     
-    private let currentGroupKey = "currentGroup"
-    private let offlineModeKey = "offlineMode"
+    var authorizationState: AuthorizationState {
+        
+        // Try to get user email & session token
+        if let email = defaultsService.userEmail, let token = try? keychainService.getToken(for: email), let unwrappedToken = token {
+            let session = Session(email: email, token: unwrappedToken)
+            return .authorized(session: session)
+        } else if let group = currentGroup {
+            return .template(group: group)
+        } else {
+            return .unauthorized
+        }
+    }
     
-    // MARK: - Identifiers
+    // MARK: Identifiers
     
     /// Current group
     var currentGroup: Group? {
         get {
-            let groupID = defaults.integer(forKey: currentGroupKey)
-            guard groupID != 0 else { return nil }
+            guard let groupID = defaultsService.userGroupID else { return nil }
             return realmService.getGroup(id: groupID)
         }
         
@@ -53,7 +71,7 @@ class AppManager {
             guard let newGroup = new else { return }
             
             // Save group ID to UserDefaults
-            defaults.set(newGroup.id, forKey: currentGroupKey)
+            defaultsService.userGroupID = newGroup.id
             
             // Save group to realm
             realmService.saveGroup(newGroup)
@@ -71,32 +89,17 @@ class AppManager {
         }
     }
     
-    /// Offline mode flag
+    /// Offline mode
     var offlineMode: Bool {
         get {
-            let mode = defaults.bool(forKey: offlineModeKey)
-            return mode
+            return defaultsService.offlineMode
         }
         set(new) {
-            defaults.set(new, forKey: offlineModeKey)
+            defaultsService.offlineMode = new
         }
     }
     
-    // MARK: - Schedule
-    
-    func getEvents() -> [Event] {
-        
-        let realm = try! Realm()
-        
-        let realmEvents = realm.objects(RealmEvent.self).sorted(byKeyPath: "date")
-        
-        var events: [Event] = []
-        for realmEvent in realmEvents {
-            events.append(Event(realmEvent))
-        }
-
-        return events
-    }
+    // MARK: -
     
     func getTeachers() -> [Teacher] {
         

@@ -49,6 +49,8 @@
 		6AAE962B21591BF400760AE6 /* ScheduleStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAE962A21591BF400760AE6 /* ScheduleStream.swift */; };
 		6ACBFC84220F5FB700950B58 /* CGFloat+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACBFC83220F5FB700950B58 /* CGFloat+Utils.swift */; };
 		6ACE2564225E98F6004769DB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE2563225E98F6004769DB /* R.generated.swift */; };
+		6ADE0DBD228F3CCE009BBCA8 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE0DBC228F3CCE009BBCA8 /* KeychainService.swift */; };
+		6ADE0DBF228F43BF009BBCA8 /* DefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE0DBE228F43BF009BBCA8 /* DefaultsService.swift */; };
 		6ADECF042097A4EE007B4C15 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADECF032097A4EE007B4C15 /* TeacherCell.swift */; };
 		6ADECF062099FEEF007B4C15 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADECF052099FEEF007B4C15 /* Teacher.swift */; };
 		6ADF76372160F6D600131603 /* UIImageView+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADF76362160F6D600131603 /* UIImageView+Network.swift */; };
@@ -159,6 +161,8 @@
 		6ACBFC82220F58CE00950B58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6ACBFC83220F5FB700950B58 /* CGFloat+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Utils.swift"; sourceTree = "<group>"; };
 		6ACE2563225E98F6004769DB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		6ADE0DBC228F3CCE009BBCA8 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		6ADE0DBE228F43BF009BBCA8 /* DefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsService.swift; sourceTree = "<group>"; };
 		6ADECF032097A4EE007B4C15 /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
 		6ADECF052099FEEF007B4C15 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		6ADF76362160F6D600131603 /* UIImageView+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Network.swift"; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 				6A00128C212F09AA00C84044 /* Realm */,
 				6A410CAF225FE9F4009E342D /* Notifications */,
 				6A81938B2289EF08004A3C37 /* Networking */,
+				6ADE0DBB228F3C58009BBCA8 /* Keychain */,
+				6ADE0DC0228F43C7009BBCA8 /* Defaults */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -385,6 +391,23 @@
 				6ADF76362160F6D600131603 /* UIImageView+Network.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6ADE0DBB228F3C58009BBCA8 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				6ADE0DBC228F3CCE009BBCA8 /* KeychainService.swift */,
+			);
+			name = Keychain;
+			path = ../Keychain;
+			sourceTree = "<group>";
+		};
+		6ADE0DC0228F43C7009BBCA8 /* Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				6ADE0DBE228F43BF009BBCA8 /* DefaultsService.swift */,
+			);
+			path = Defaults;
 			sourceTree = "<group>";
 		};
 		6ADF76342160DB3D00131603 /* ViewModels */ = {
@@ -1039,6 +1062,7 @@
 				A59E69A021318DC3009A72A7 /* ScheduleViewModel.swift in Sources */,
 				6A814EF7211A4D2F00D9AB3B /* EventLocationCellViewModel.swift in Sources */,
 				6A97CF0921A2BB7D00B5F378 /* TeacherSearchCell.swift in Sources */,
+				6ADE0DBF228F43BF009BBCA8 /* DefaultsService.swift in Sources */,
 				6A814EEC211A0B5E00D9AB3B /* EventTeacherCell.swift in Sources */,
 				6ADF76372160F6D600131603 /* UIImageView+Network.swift in Sources */,
 				6A814F01211B05D000D9AB3B /* EventActionsCellViewModel.swift in Sources */,
@@ -1047,6 +1071,7 @@
 				6ACBFC84220F5FB700950B58 /* CGFloat+Utils.swift in Sources */,
 				6AE9FE3D20557F26002733F0 /* SettingsRowCell.swift in Sources */,
 				6A814EEE211A466A00D9AB3B /* EventCalendarCell.swift in Sources */,
+				6ADE0DBD228F3CCE009BBCA8 /* KeychainService.swift in Sources */,
 				6A814EE4211A009C00D9AB3B /* CellViewModel.swift in Sources */,
 				A5D915062035FDDC00E066CA /* StreamingEventCellViewModel.swift in Sources */,
 				6ADECF062099FEEF007B4C15 /* Teacher.swift in Sources */,

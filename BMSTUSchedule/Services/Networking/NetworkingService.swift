@@ -31,20 +31,20 @@ enum Result<T, U> {
     }
 }
 
-enum NetworkingError: Error {
-    case invalidURL
-    case invalidJSON
-    case connection(reason: String)
-    case server(reason: String)
-}
-
-struct Authorization {
-    let accessToken: String
-}
-
 class NetworkingService {
     typealias Method = (http: HTTPMethod, server: String)
 
+    enum Error: LocalizedError {
+        case invalidURL
+        case invalidJSON
+        case connection(reason: String)
+        case server(reason: String)
+    }
+    
+    struct Authorization {
+        let accessToken: String
+    }
+    
     enum Module: String {
         case schedule
         case teachers
@@ -58,7 +58,7 @@ class NetworkingService {
         return URL(string: "\(server):\(port)/api")
     }
     
-    func makeRequest(module: Module, method: Method, parameters: Parameters? = nil, authorization: Authorization? = nil, completion: @escaping (Result<JSON, NetworkingError>) -> Void) {
+    func makeRequest(module: Module, method: Method, parameters: Parameters? = nil, authorization: Authorization? = nil, completion: @escaping (Result<JSON, Error>) -> Void) {
         guard let url = apiURL?.appendingPathComponent(module.rawValue).appendingPathComponent(method.server) else {
             completion(.failure(.invalidURL))
             return
