@@ -8,8 +8,6 @@
 
 import Foundation
 
-// TODO: Combine parsing into 1 method
-
 /// Group 👥
 final class Group: Model {
     
@@ -18,6 +16,8 @@ final class Group: Model {
     let department: String
     let number: Int
 
+    let scheduleID: ID
+    
     var name: String {
         return "\(department)-\(number)"
     }
@@ -36,16 +36,23 @@ final class Group: Model {
     }
     
     init?(json: JSON) {
-        guard let id = json[Key.id.rawValue] as? String,
+        guard let id = json[Key.id.rawValue] as? ID,
             let department = json[Key.department.rawValue] as? String,
             let number = json[Key.number.rawValue] as? Int,
-            let scheduleID = json[Key.scheduleID.rawValue] as? String else {
+            let scheduleID = json[Key.scheduleID.rawValue] as? ID else {
                 return nil
         }
         
         self.id = id
         self.department = department
         self.number = number
-        // TODO: Get schedule
+        self.scheduleID = scheduleID
+    }
+    
+    init(_ realm: RealmGroup) {
+        self.id = realm.serverID
+        self.department = realm.department
+        self.number = realm.number
+        self.scheduleID = realm.scheduleID
     }
 }

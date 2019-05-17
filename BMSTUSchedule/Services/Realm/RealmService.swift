@@ -7,18 +7,65 @@
 //
 
 import Foundation
+import RealmSwift
 
 class RealmService {
-
-    // MARK: Event
     
-    func saveEvents(_ events: [Event]) {
-        
-        return
+    private var database = try! Realm()
+    
+    func clear() {
+        try! database.write {
+            database.deleteAll()
+        }
     }
     
-    func getEvents(from: Date, to: Date) -> [Event] {
+    // MARK: Group
+    
+    func getGroup(id: Model.ID) -> Group? {
+        guard let realmGroup = database.objects(RealmGroup.self).filter("serverID = '\(id)'").first else {
+            return nil
+        }
         
-        return []
+        return Group(realmGroup)
+    }
+    
+    func saveGroup(_ group: Group) {
+        let oldGroups = database.objects(RealmGroup.self).filter("serverID = '\(group.id)'")
+        let realmGroup = RealmGroup(group)
+        
+        try! database.write {
+            database.delete(oldGroups)
+            database.add(realmGroup)
+        }
+    }
+    
+    // MARK: Schedule
+    
+    func getSchedule(id: Model.ID) -> Schedule? {
+        guard let realmSchedule = database.objects(RealmSchedule.self).filter("serverID = '\(id)'").first else {
+            return nil
+        }
+    
+        return Schedule(realmSchedule)
+    }
+    
+    func saveSchedule(_ schedule: Schedule) {
+        let oldSchedules = database.objects(RealmSchedule.self).filter("serverID = '\(schedule.id)'")
+        let realmSchedule = RealmSchedule(schedule)
+        
+        try! database.write {
+            database.delete(oldSchedules)
+            database.add(realmSchedule)
+        }
+    }
+    
+    // MARK: Event
+    
+    func getEvent(id: Model.ID) -> Event? {
+        guard let realmEvent = database.objects(RealmEvent.self).filter("serverID = '\(id)'").first else {
+            return nil
+        }
+        
+        return Event(realmEvent)
     }
 }

@@ -2,7 +2,7 @@
 //  StreamEvent.swift
 //  BMSTUSchedule
 //
-//  Created by a.belkov on 16/05/2019.
+//  Created by Artem Belkov on 16/05/2019.
 //  Copyright © 2019 BMSTU Team. All rights reserved.
 //
 

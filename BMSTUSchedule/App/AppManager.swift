@@ -14,7 +14,13 @@ class AppManager {
     static let shared = AppManager()
     
     // MARK: Services
+
     let notificationsService = NotificationsService()
+    let realmService = RealmService()
+    let networkingService = NetworkingService()
+    
+    // MARK: -
+
     
     func configureOnLaunching() {
         
@@ -39,16 +45,18 @@ class AppManager {
     /// Current group
     var currentGroup: Group? {
         get {
-            let groupName = defaults.string(forKey: currentGroupKey)
-            
-            // TODO: Get group
-            return nil
+            guard let groupID = defaults.string(forKey: currentGroupKey) else { return nil }
+            return realmService.getGroup(id: groupID)
         }
         
         set(new) {
-            if let groupName = new?.name {
-                defaults.set(groupName, forKey: currentGroupKey)
-            }
+            guard let newGroup = new else { return }
+            
+            // Save group ID to UserDefaults
+            defaults.set(newGroup.id, forKey: currentGroupKey)
+            
+            // Save group to realm
+            realmService.saveGroup(newGroup)
         }
     }
     
