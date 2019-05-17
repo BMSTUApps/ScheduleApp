@@ -13,9 +13,9 @@ class ScheduleViewModel {
     typealias Section = (header: DayHeaderViewModel?, cells: [CellViewModel])
 
     var sections: [Section] = []
-    let events: [Event]
+    let events: [StreamingEvent]
     
-    init(events: [Event], startTermWeekIndex: Int) {
+    init(events: [StreamingEvent], startTermWeekIndex: Int) {
         
         let sortedEvents = events.sorted { (event1, event2) -> Bool in
             return event1.date < event2.date
@@ -26,7 +26,7 @@ class ScheduleViewModel {
         let dayFormatter = DateFormatter()
         dayFormatter.dateFormat = "dd.MM.yyyy"
         
-        var dayEvents: [Event] = []
+        var dayEvents: [StreamingEvent] = []
         var sections: [Section] = []
         
         var lastDay: String?
@@ -38,8 +38,8 @@ class ScheduleViewModel {
             // If new day starts
             if let lastDay = lastDay, currentDay != lastDay, let dayDate = dayFormatter.date(from: lastDay) {
                 
-                let dayCells = dayEvents.compactMap { (event) -> EventCellViewModel in
-                    return EventCellViewModel(event)
+                let dayCells = dayEvents.compactMap { (event) -> StreamingEventCellViewModel in
+                    return StreamingEventCellViewModel(event)
                 }
                 
                 // If new week starts, add week header
@@ -74,8 +74,8 @@ class ScheduleViewModel {
         
         if let lastDay = lastDay, let dayDate = dayFormatter.date(from: lastDay) {
             
-            let dayCells = dayEvents.compactMap { (event) -> EventCellViewModel in
-                return EventCellViewModel(event)
+            let dayCells = dayEvents.compactMap { (event) -> StreamingEventCellViewModel in
+                return StreamingEventCellViewModel(event)
             }
             
             sections.append(Section(DayHeaderViewModel(date: dayDate), cells: dayCells))

@@ -1,5 +1,5 @@
 //
-//  EventCell.swift
+//  StreamingEventCell.swift
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 26/10/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventCell: UITableViewCell, CellViewModelProtocol {
+class StreamingEventCell: UITableViewCell, CellViewModelProtocol {
 
     @IBOutlet weak var breakLabel: UILabel!
 
@@ -69,7 +69,7 @@ class EventCell: UITableViewCell, CellViewModelProtocol {
     
     func fillCell(model: CellViewModel) {
         
-        guard let castedModel = model as? EventCellViewModel else {
+        guard let castedModel = model as? StreamingEventCellViewModel else {
             return
         }
         

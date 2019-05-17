@@ -11,9 +11,9 @@ import Foundation
 // TODO: Combine parsing into 1 method
 
 /// Group 👥
-class Group: Model {
+final class Group: Model {
     
-    let id: String
+    let id: ID
     
     let department: String
     let number: Int

@@ -33,16 +33,16 @@ class ScheduleStream {
     }
     
     // TODO: Improve streaming algorithm
-    private func events(from: Date, to: Date) -> [Event] {
+    private func events(from: Date, to: Date) -> [StreamingEvent] {
         
-        var nonRepeatEvents: [Event] = []
+        var nonRepeatEvents: [StreamingEvent] = []
         
         for event in events {
             
             let eventDates = dates(for: event, from: from, to: to)
             for eventDate in eventDates {
                 
-                let nonRepeatEvent = Event(title: event.title, teacher: event.teacher, location: event.location, kind: event.kind, date: eventDate, repeatIn: 0, startTime: event.startTime, endTime: event.endTime)
+                let nonRepeatEvent = StreamingEvent(event, date: eventDate)
                 nonRepeatEvents.append(nonRepeatEvent)
             }
         }
@@ -90,7 +90,7 @@ class ScheduleStream {
         return dates
     }
     
-    func get(_ type: GetType) -> [Event] {
+    func get(_ type: GetType) -> [StreamingEvent] {
         
         var targetDate: Date?
         

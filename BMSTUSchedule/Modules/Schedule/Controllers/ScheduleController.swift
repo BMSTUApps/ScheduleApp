@@ -12,7 +12,7 @@ class ScheduleController: TableViewController {
     
     let scheduleStream = ScheduleStream(events: AppManager.shared.getEvents())
     
-    var events: [Event] = [] {
+    var events: [StreamingEvent] = [] {
         didSet {
             scheduleViewModel = ScheduleViewModel(events: events, startTermWeekIndex: scheduleStream.startTermWeekIndex)
         }
@@ -71,17 +71,17 @@ class ScheduleController: TableViewController {
         tableView.reloadData()
     }
     
-    func eventsAround(at indexPath: IndexPath) -> [Event] {
+    func eventsAround(at indexPath: IndexPath) -> [StreamingEvent] {
         
         let startIndex = (indexPath.row - 1 >= 0) ? (indexPath.row - 1) : 0
         let endIndex = (indexPath.row + 1 < scheduleViewModel.sections[indexPath.section].cells.count) ? (indexPath.row + 1) : scheduleViewModel.sections[indexPath.section].cells.count-1
         
         let displayedModels = Array(scheduleViewModel.sections[indexPath.section].cells[startIndex...endIndex])
         
-        var displayedEvents: [Event] = []
+        var displayedEvents: [StreamingEvent] = []
         for model in displayedModels {
-            if let eventModel = model as? EventCellViewModel {
-                displayedEvents.append(eventModel.event)
+            if let eventModel = model as? StreamingEventCellViewModel {
+                displayedEvents.append(eventModel.streamingEvent)
             }
         }
         
@@ -181,12 +181,13 @@ class ScheduleController: TableViewController {
             guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {
                 return
             }
-            
-            if let eventCellViewModel = scheduleViewModel.viewModel(for: indexPath) as? EventCellViewModel {
-                eventController.event = eventCellViewModel.event
-            }
-            
-            eventController.displayedEvents = eventsAround(at: indexPath)
+
+            // Fix transmiting event
+//            if let eventCellViewModel = scheduleViewModel.viewModel(for: indexPath) as? StreamingEventCellViewModel {
+//                eventController.event = eventCellViewModel.event
+//            }
+//
+//            eventController.displayedEvents = eventsAround(at: indexPath)
         }
     }
 }
@@ -203,12 +204,13 @@ extension ScheduleController: UIViewControllerPreviewingDelegate {
             return nil
             
         }
-        
-        if let eventCellViewModel = scheduleViewModel.viewModel(for: indexPath) as? EventCellViewModel {
-            eventController.event = eventCellViewModel.event
-        }
-        
-        eventController.displayedEvents = eventsAround(at: indexPath)
+
+        // FIXME: Fix transmiting event
+//        if let eventCellViewModel = scheduleViewModel.viewModel(for: indexPath) as? StreamingEventCellViewModel {
+//            eventController.event = eventCellViewModel.event
+//        }
+//
+//        eventController.displayedEvents = eventsAround(at: indexPath)
         eventController.preferredContentSize = CGSize(width: eventController.preferredContentSize.width, height: 400)
 
         previewingContext.sourceRect = cell.frame

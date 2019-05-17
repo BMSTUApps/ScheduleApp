@@ -9,7 +9,7 @@
 import Foundation
 
 /// Event 🎓
-class Event: Model {
+final class Event: Model {
 
     enum Kind: String {
         case lecture
@@ -24,7 +24,7 @@ class Event: Model {
     
     typealias Location = String
 
-    let id: String
+    let id: ID
     
     let title: String
     
@@ -95,7 +95,13 @@ class Event: Model {
     init(_ realm: RealmEvent) {
         self.id = realm.serverID
         self.title = realm.title
-        self.teacher = Teacher(realm.teacher)
+        
+        if let realmTeacher = realm.teacher {
+            self.teacher = Teacher(realmTeacher)
+        } else {
+            self.teacher = nil
+        }
+        
         self.location = realm.location
         self.kind = Event.Kind(rawValue: realm.kind) ?? .other
         self.date = realm.date

@@ -10,7 +10,9 @@ import Foundation
 import RealmSwift
 
 class RealmTeacher: Object {
-
+    
+    @objc dynamic var serverID: String = ""
+    
     @objc dynamic var firstName: String = ""
     @objc dynamic var lastName: String = ""
     @objc dynamic var middleName: String? = nil
@@ -31,6 +33,8 @@ extension RealmTeacher {
     convenience init(_ model: Teacher) {
         self.init()
         
+        self.serverID = model.id
+        
         self.firstName = model.firstName
         self.lastName = model.lastName
         self.middleName = model.middleName
@@ -42,23 +46,5 @@ extension RealmTeacher {
         
         self.photoURL = model.photoURL?.absoluteString
         self.about = model.about
-    }
-}
-
-extension Teacher {
-    
-    convenience init?(_ realmModel: RealmTeacher?) {
-        guard let realmModel = realmModel else {
-            return nil
-        }
-        
-        self.init(firstName: realmModel.firstName,
-                  lastName: realmModel.lastName,
-                  middleName: realmModel.middleName,
-                  department: realmModel.department,
-                  position: realmModel.position,
-                  degree: realmModel.degree,
-                  photoURL: URL(string: realmModel.photoURL ?? ""),
-                  about: realmModel.about)
     }
 }

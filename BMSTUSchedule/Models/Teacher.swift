@@ -9,9 +9,9 @@
 import Foundation
 
 /// Teacher 👨‍🏫
-class Teacher: Model {
+final class Teacher: Model {
 
-    let id: String
+    let id: ID
     
     var firstName: String
     var lastName: String
@@ -80,5 +80,20 @@ class Teacher: Model {
         }
         
         self.about = json[Key.about.rawValue] as? String
+    }
+    
+    init(_ realm: RealmTeacher) {
+        self.id = realm.serverID
+        self.firstName = realm.firstName
+        self.lastName = realm.lastName
+        self.middleName = realm.middleName
+        self.department = realm.department
+        self.position = realm.position
+        self.degree = realm.degree
+        self.about = realm.about
+
+        if let urlString = realm.photoURL {
+            self.photoURL = URL(string: urlString)
+        }
     }
 }

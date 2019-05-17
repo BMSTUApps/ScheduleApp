@@ -1,5 +1,5 @@
 //
-//  EventCellViewModel.swift
+//  StreamingEventCellViewModel.swift
 //  BMSTUSchedule
 //
 //  Created by Artem Belkov on 15/02/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EventCellViewModel: CellViewModel {
+class StreamingEventCellViewModel: CellViewModel {
     
     let brakeText: String
     let kindText: String
@@ -21,9 +21,9 @@ class EventCellViewModel: CellViewModel {
     let startTime: String
     let endTime: String
     
-    let event: Event
+    let streamingEvent: StreamingEvent
     
-    init(_ event: Event, brakeText: String = "") {
+    init(_ event: StreamingEvent, brakeText: String = "") {
         
         self.brakeText = brakeText
         
@@ -41,9 +41,9 @@ class EventCellViewModel: CellViewModel {
         self.startTime = event.startTime
         self.endTime = event.endTime
         
-        self.event = event
+        self.streamingEvent = event
         
-        super.init(identifier: String(describing: EventCell.self))
+        super.init(identifier: String(describing: StreamingEventCell.self))
         
         self.shouldHighlight = true
     }

@@ -9,9 +9,9 @@
 import Foundation
 
 /// User 👀
-class User: Model {
+final class User: Model {
 
-    var id: String
+    var id: ID
     
     var email: String
     
