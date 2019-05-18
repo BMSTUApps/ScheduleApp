@@ -26,7 +26,10 @@ class DefaultsService {
         }
         
         set(newValue) {
-            guard let newEmail = newValue else { return }
+            guard let newEmail = newValue else {
+                database.removeObject(forKey: userEmailKey)
+                return
+            }
             
             // Save email to UserDefaults
             database.set(newEmail, forKey: userEmailKey)
@@ -42,7 +45,10 @@ class DefaultsService {
         }
         
         set(newValue) {
-            guard let newID = newValue else { return }
+            guard let newID = newValue else {
+                database.removeObject(forKey: userGroupIDKey)
+                return
+            }
             
             // Save group ID to UserDefaults
             database.set(newID, forKey: userGroupIDKey)
@@ -58,7 +64,10 @@ class DefaultsService {
         }
         
         set(newValue) {
-            guard let newID = newValue else { return }
+            guard let newID = newValue else {
+                database.removeObject(forKey: userScheduleIDKey)
+                return
+            }
             
             // Save schedule ID to UserDefaults
             database.set(newID, forKey: userScheduleIDKey)
@@ -76,7 +85,10 @@ class DefaultsService {
         }
         
         set(newValue)  {
-            guard let newSession = newValue else { return }
+            guard let newSession = newValue else {
+                removeSession()
+                return
+            }
 
             userEmail = newSession.email
             database.set(newSession.token, forKey: sessionTokenKey)
@@ -94,5 +106,14 @@ class DefaultsService {
         set(newValue) {
             database.set(newValue, forKey: offlineModeKey)
         }
+    }
+    
+    private func removeSession() {
+        database.removeObject(forKey: userEmailKey)
+        database.removeObject(forKey: userGroupIDKey)
+        database.removeObject(forKey: userScheduleIDKey)
+        database.removeObject(forKey: sessionTokenKey)
+        database.removeObject(forKey: sessionExpiresAtKey)
+        database.removeObject(forKey: offlineModeKey)
     }
 }

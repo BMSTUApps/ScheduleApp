@@ -81,4 +81,14 @@ class SettingsGroupCell: UITableViewCell {
         changeButton.backgroundColor = AppTheme.shared.blueColor.withAlphaComponent(0.15)
         changeButton.layer.cornerRadius = 10
     }
+    
+    // MARk: Actions
+    
+    @IBAction func changeTapped(_ sender: Any) {
+        
+        // FIXME: Remove test logout
+        AppManager.shared.authorizationProvider.logout()
+        AppManager.shared.router.openAuthorization()
+    }
+    
 }

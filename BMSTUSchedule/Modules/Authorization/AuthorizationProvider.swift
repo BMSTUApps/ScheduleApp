@@ -95,6 +95,12 @@ class AuthorizationProvider: Authorizable {
         }
     }
     
+    func logout() {
+        
+        // Delete session from UserDefaults
+        defaults.session = nil
+    }
+    
     func updateSession(_ session: Session, completion: @escaping (Session?) -> Void) {
         guard let password = keychain.getPassword(for: session.email) else {
             completion(nil)
