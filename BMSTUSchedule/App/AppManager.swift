@@ -44,9 +44,12 @@ class AppManager {
     func configureUI() {
         
         // Circle corners of root VC
-        let rootViewController = UIApplication.shared.windows.first?.rootViewController
+        let rootViewController = AppRouter.Window.main.window.rootViewController
         rootViewController?.view.layer.cornerRadius = 4
         rootViewController?.view.clipsToBounds = true
+        
+        // Configure activity indicator
+        ActivityIndicator.standart.prepare()
     }
     
     // MARK: Authorization state

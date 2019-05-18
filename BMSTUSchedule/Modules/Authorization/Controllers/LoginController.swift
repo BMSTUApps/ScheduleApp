@@ -2,7 +2,7 @@
 //  LoginController.swift
 //  BMSTUSchedule
 //
-//  Created by a.belkov on 18/05/2019.
+//  Created by Artem Belkov on 18/05/2019.
 //  Copyright © 2019 BMSTU Team. All rights reserved.
 //
 
@@ -45,7 +45,17 @@ class LoginController: UIViewController {
             return
         }
         
-        provider.login(email: email, password: password) { _ in
+        ActivityIndicator.standart.start()
+        provider.login(email: email, password: password) { session in
+            DispatchQueue.main.async {
+                ActivityIndicator.standart.stop()
+            }
+            
+            guard session != nil else {
+                // TODO: Show error
+                return
+            }
+            
             DispatchQueue.main.async {
                 AppManager.shared.router.openMain()
             }

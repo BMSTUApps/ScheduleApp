@@ -10,35 +10,40 @@ import UIKit
 
 class AppRouter {
 
+    enum Window: Int {
+        case main = 0
+        case activityIndicator = 101
+        
+        var window: UIWindow {
+            return UIApplication.shared.windows.first(where: { window -> Bool in
+                return window.tag == self.rawValue
+            })!
+        }
+    }
+    
     enum ModuleStoryboard: String {
         case main
         case authorization
         
-        var storyboard: UIStoryboard? {
+        var storyboard: UIStoryboard {
             return UIStoryboard(name: self.rawValue.capitalized, bundle: nil)
         }
         
-        var controller: UIViewController? {
-            return storyboard?.instantiateInitialViewController()
+        var controller: UIViewController {
+            return storyboard.instantiateInitialViewController()!
         }
     }
     
     func openMain() {
-        guard let vc = ModuleStoryboard.main.controller else {
-            return
-        }
-        
-        let window = UIApplication.shared.windows.first
-        window?.rootViewController = vc
+        let vc = ModuleStoryboard.main.controller
+        let window = Window.main.window
+        window.rootViewController = vc
     }
     
     func openAuthorization() {
-        guard let vc = ModuleStoryboard.authorization.controller else {
-            return
-        }
-
-        let window = UIApplication.shared.windows.first
-        window?.rootViewController = vc
+        let vc = ModuleStoryboard.authorization.controller
+        let window = Window.main.window
+        window.rootViewController = vc
     }
     
     func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
