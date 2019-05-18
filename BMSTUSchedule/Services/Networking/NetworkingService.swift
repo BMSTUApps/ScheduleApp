@@ -72,7 +72,7 @@ class NetworkingService {
 
             var headers: HTTPHeaders = headers ?? [:]
             if let session = session, session.isValid {
-                headers["Authorization"] = session.token
+                headers["Authorization"] = "Bearer \(session.token)"
             }
             
             Alamofire.request(url, method: method.http, parameters: parameters, headers: headers).responseJSON { response in
@@ -97,7 +97,7 @@ class NetworkingService {
             }
         }
         
-        // If authorization session is expired
+        // If authorization session is expired -> try to update
         if let session = session, !session.isValid {
             authorizationProvider.updateSession(session) { session in
                 guard let session = session, session.isValid else {

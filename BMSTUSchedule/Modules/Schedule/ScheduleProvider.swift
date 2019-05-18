@@ -18,13 +18,53 @@ class ScheduleProvider {
         return AppManager.shared.realmService
     }
     
-    func getGroupSchedule(completion: @escaping (Schedule?) -> Void) {
-        guard let group = AppManager.shared.currentGroup else {
+    private var defaults: DefaultsService {
+        return AppManager.shared.defaultsService
+    }
+    
+    func getSchedule(completion: @escaping (Schedule?) -> Void) {
+        switch AppManager.shared.authorizationState {
+        case .authorized(let session):
+            getSchedule(session: session, completion: completion)
+        case .template(let group):
+            getSchedule(for: group, completion: completion)
+        case .unauthorized:
             completion(nil)
+        }
+    }
+    
+    func getSchedule(session: Session, completion: @escaping (Schedule?) -> Void) {
+        
+        // If schedule is cached -> return cached
+        if let scheduleID = defaults.userScheduleID, let schedule = realm.getSchedule(id: scheduleID) {
+            print("Return schedule '\(schedule.id)' from realm")
+            completion(schedule)
             return
         }
         
-        getSchedule(for: group, completion: completion)
+        // If not in the realm -> download from the server
+        network.makeRequest(module: .schedule, method: (.get, ""), session: session) { result in
+            switch result {
+            case .failure(let error):
+                // TODO: Handle error
+                break
+            case .success(let json):
+                if let schedule = Schedule(json) {
+                    
+                    // If got the schedule -> cache it in the realm.
+                    self.realm.saveSchedule(schedule)
+                    
+                    // -> also save schedule id to UserDefaults
+                    self.defaults.userScheduleID = schedule.id
+                    
+                    print("Return schedule '\(schedule.id)' from server")
+                    completion(schedule)
+                    return
+                }
+            }
+            
+            completion(nil)
+        }
     }
     
     func getSchedule(for group: Group, completion: @escaping (Schedule?) -> Void) {
@@ -39,14 +79,11 @@ class ScheduleProvider {
         let parameters: RequestParameters = ["group": group.name]
         network.makeRequest(module: .schedule, method: (.get, "template"), parameters: parameters) { result in
             
-            print("test")
-            
             switch result {
             case .failure(let error):
                 // TODO: Handle error
                 break
             case .success(let json):
-                
                 if let schedule = Schedule(json) {
                     
                     // If got the schedule -> cache it in the realm.
@@ -57,21 +94,10 @@ class ScheduleProvider {
             }
             
             completion(nil)
-            return
         }
     }
     
     func getEvent(from streamingEvent: StreamingEvent) -> Event? {
         return realm.getEvent(id: streamingEvent.id)
     }
-    
-//    func getSchedule(completion: (Result<[Event], Error?>) -> Void) {
-//        let authorization = Authorization(accessToken: "Bearer /CvTI4NfIfrIGP20Gy3Tbw==")
-//        network.makeRequest(module: .schedule, method: (.get, ""), authorization: authorization) { result in
-//
-//
-//
-//            print(result)
-//        }
-//    }
 }

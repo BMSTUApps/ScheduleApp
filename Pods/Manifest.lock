@@ -52,6 +52,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.3.0):
     - GoogleUtilities/Logger
+  - KeychainAccess (3.1.2)
   - Kingfisher (4.10.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -75,6 +76,7 @@ DEPENDENCIES:
   - Alamofire
   - Firebase/Core
   - Firebase/Messaging
+  - KeychainAccess
   - Kingfisher
   - R.swift
   - RealmSwift
@@ -92,6 +94,7 @@ SPEC REPOS:
     - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleUtilities
+    - KeychainAccess
     - Kingfisher
     - nanopb
     - Protobuf
@@ -112,6 +115,7 @@ SPEC CHECKSUMS:
   FirebaseMessaging: d6feeb06218d2675b4149b0ada925a6b707a74cf
   GoogleAppMeasurement: 2b3a023a61239c8d002e6e4fcf4abce8eddce0e0
   GoogleUtilities: 760ccb53b7c7f40f9c02d8c241f76f841a7a6162
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
@@ -123,6 +127,6 @@ SPEC CHECKSUMS:
   SPStorkController: 54293a8a1ca3c691a09eb6274b6e487b602e975a
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 315e72da9b9f7efb0463cc1c698457e1cf4b6fb0
+PODFILE CHECKSUM: 3906c499569dbcf6a649b545c8ed24ff5db5cf74
 
 COCOAPODS: 1.6.1

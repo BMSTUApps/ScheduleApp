@@ -30,18 +30,13 @@ class ScheduleController: TableViewController {
         super.viewDidLoad()
 
         // FIXME: Remove test code
-        let group = Group(json: [
-            "id": 240,
-            "department": "ИУ5",
-            "number": "83Б",
-            "schedule_id": 240
-        ])!
-        provider.getSchedule(for: group) { schedule in
+        provider.getSchedule { schedule in
             guard let schedule = schedule else { return }
             self.scheduleStream = ScheduleStream(schedule: schedule)
             self.events = self.scheduleStream?.get(.current) ?? []
+            self.tableView.reloadData()
         }
-        
+    
         prepareUI()
         setupIntents()
         

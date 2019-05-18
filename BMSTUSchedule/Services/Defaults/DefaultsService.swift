@@ -2,7 +2,7 @@
 //  DefaultsService.swift
 //  BMSTUSchedule
 //
-//  Created by a.belkov on 17/05/2019.
+//  Created by Artem Belkov on 17/05/2019.
 //  Copyright © 2019 BMSTU Team. All rights reserved.
 //
 
@@ -12,8 +12,9 @@ class DefaultsService {
 
     private let database = UserDefaults.standard
     
-    private let userGroupIDKey = "userGroupID"
     private let userEmailKey = "userEmail"
+    private let userGroupIDKey = "userGroupID"
+    private let userScheduleIDKey = "userScheduleID"
     private let sessionTokenKey = "sessionToken"
     private let sessionExpiresAtKey = "sessionExpiresAt"
     private let offlineModeKey = "offlineMode"
@@ -45,6 +46,22 @@ class DefaultsService {
             
             // Save group ID to UserDefaults
             database.set(newID, forKey: userGroupIDKey)
+        }
+    }
+    
+    /// User schedule ID
+    var userScheduleID: Model.ID? {
+        get {
+            let scheduleID = database.integer(forKey: userScheduleIDKey)
+            guard scheduleID != 0 else { return nil }
+            return scheduleID
+        }
+        
+        set(newValue) {
+            guard let newID = newValue else { return }
+            
+            // Save schedule ID to UserDefaults
+            database.set(newID, forKey: userScheduleIDKey)
         }
     }
     

@@ -20,6 +20,9 @@ target 'BMSTUSchedule' do
   # Image cache
   pod 'Kingfisher'
   
+  # Security
+  pod 'KeychainAccess'
+  
   # Code quality
   pod 'SwiftLint'
   pod 'R.swift'
