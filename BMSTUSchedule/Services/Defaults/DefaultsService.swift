@@ -8,16 +8,6 @@
 
 import Foundation
 
-struct Session {
-    let email: String
-    let token: String
-    let expiresAt: Date
-    
-    var isValid: Bool {
-        return expiresAt > .today
-    }
-}
-
 class DefaultsService {
 
     private let database = UserDefaults.standard

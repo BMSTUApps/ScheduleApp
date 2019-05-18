@@ -37,12 +37,10 @@ class NetworkingService {
     enum Error: LocalizedError {
         case invalidURL
         case invalidJSON
+        case invalidSession
+        case emptyPassword
         case connection(reason: String)
         case server(reason: String)
-    }
-    
-    struct Authorization {
-        let accessToken: String
     }
     
     enum Module: String {
@@ -51,6 +49,8 @@ class NetworkingService {
         case user
     }
     
+    private let authorizationProvider: Authorizable
+    
     private let server: String = "http://localhost"
     private let port: String = "8080"
     
@@ -58,38 +58,58 @@ class NetworkingService {
         return URL(string: "\(server):\(port)/api")
     }
     
-    func makeRequest(module: Module, method: Method, parameters: Parameters? = nil, authorization: Authorization? = nil, completion: @escaping (Result<JSON, Error>) -> Void) {
+    init(authorizationProvider: Authorizable = AuthorizationProvider()) {
+        self.authorizationProvider = authorizationProvider
+    }
+    
+    func makeRequest(module: Module, method: Method, parameters: Parameters? = nil, headers: HTTPHeaders? = nil, session: Session? = nil, completion: @escaping (Result<JSON, Error>) -> Void) {
         guard let url = apiURL?.appendingPathComponent(module.rawValue).appendingPathComponent(method.server) else {
             completion(.failure(.invalidURL))
             return
         }
         
-        var headers: HTTPHeaders = [:]
-        
-        // If need authorization
-        if let authorizationToken = authorization?.accessToken {
-            headers["Authorization"] = authorizationToken
-        }
-        
-        Alamofire.request(url, method: method.http, parameters: parameters, headers: headers).responseJSON { response in
-            switch response.result {
-            case .failure(let error):
-                completion(.failure(.connection(reason: error.localizedDescription)))
-                return
+        let startRequest: (Session?) -> Void = { session in
+
+            var headers: HTTPHeaders = headers ?? [:]
+            if let session = session, session.isValid {
+                headers["Authorization"] = session.token
+            }
             
-            case .success(let value):
-                guard let json = value as? JSON else {
-                    completion(.failure(.invalidJSON))
+            Alamofire.request(url, method: method.http, parameters: parameters, headers: headers).responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(.failure(.connection(reason: error.localizedDescription)))
                     return
+                    
+                case .success(let value):
+                    guard let json = value as? JSON else {
+                        completion(.failure(.invalidJSON))
+                        return
+                    }
+                    
+                    if json["error"] != nil, let reason = json["reason"] as? String {
+                        completion(.failure(.server(reason: reason)))
+                        return
+                    }
+                    
+                    completion(.success(json))
                 }
-                
-                if json["error"] != nil, let reason = json["reason"] as? String {
-                    completion(.failure(.server(reason: reason)))
-                    return
-                }
-                
-                completion(.success(json))
             }
         }
+        
+        // If authorization session is expired
+        if let session = session, !session.isValid {
+            authorizationProvider.updateSession(session) { session in
+                guard let session = session, session.isValid else {
+                    completion(.failure(.invalidSession))
+                    return
+                }
+                
+                startRequest(session)
+                return
+            }
+        }
+        
+        startRequest(session)
     }
 }

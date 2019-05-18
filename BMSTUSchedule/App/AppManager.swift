@@ -42,30 +42,12 @@ class AppManager {
     
     var authorizationState: AuthorizationState {
         
-        // Try to get user email & session token
-        if let session = defaultsService.session, session.isValid {
+        if let session = defaultsService.session {
             return .authorized(session: session)
+        } else if let group = currentGroup {
+            return .template(group: group)
         } else {
-            updateToken()
-            
-            if let group = currentGroup {
-                return .template(group: group)
-            } else {
-                return .unauthorized
-            }
-        }
-    }
-    
-    private func updateToken() {
-        
-        guard let email = defaultsService.userEmail, let password = try? keychainService.getPassword(for: email), let unwrappedPassword = password else {
-            return
-        }
-        
-        // Get token
-        networkingService.makeRequest(module: .user, method: (.get, "login")) { result in
-            
-            // ..
+            return .unauthorized
         }
     }
     

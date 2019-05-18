@@ -51,6 +51,7 @@
 		6ACE2564225E98F6004769DB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE2563225E98F6004769DB /* R.generated.swift */; };
 		6ADE0DBD228F3CCE009BBCA8 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE0DBC228F3CCE009BBCA8 /* KeychainService.swift */; };
 		6ADE0DBF228F43BF009BBCA8 /* DefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE0DBE228F43BF009BBCA8 /* DefaultsService.swift */; };
+		6ADE0DC2228FE344009BBCA8 /* AuthorizationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE0DC1228FE344009BBCA8 /* AuthorizationProvider.swift */; };
 		6ADECF042097A4EE007B4C15 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADECF032097A4EE007B4C15 /* TeacherCell.swift */; };
 		6ADECF062099FEEF007B4C15 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADECF052099FEEF007B4C15 /* Teacher.swift */; };
 		6ADF76372160F6D600131603 /* UIImageView+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADF76362160F6D600131603 /* UIImageView+Network.swift */; };
@@ -163,6 +164,7 @@
 		6ACE2563225E98F6004769DB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		6ADE0DBC228F3CCE009BBCA8 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		6ADE0DBE228F43BF009BBCA8 /* DefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsService.swift; sourceTree = "<group>"; };
+		6ADE0DC1228FE344009BBCA8 /* AuthorizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationProvider.swift; sourceTree = "<group>"; };
 		6ADECF032097A4EE007B4C15 /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
 		6ADECF052099FEEF007B4C15 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		6ADF76362160F6D600131603 /* UIImageView+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Network.swift"; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				A5545DAA202C3ABA00CBF1CD /* Schedule */,
 				A5545DB2202C3B9500CBF1CD /* Settings */,
 				A5545DAF202C3B4000CBF1CD /* Teachers */,
+				6ADE0DC1228FE344009BBCA8 /* AuthorizationProvider.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1035,6 +1038,7 @@
 				6A814EEA211A044700D9AB3B /* EventTeacherCellViewModel.swift in Sources */,
 				6A814EE6211A011800D9AB3B /* EventTitleCellViewModel.swift in Sources */,
 				A5545DC3202C3CEC00CBF1CD /* Group.swift in Sources */,
+				6ADE0DC2228FE344009BBCA8 /* AuthorizationProvider.swift in Sources */,
 				6AE9FC512121E75200F1DA28 /* RealmTeacher.swift in Sources */,
 				6A1276C9217CDBB7002CC62F /* NextCell.swift in Sources */,
 				6AE9FC4D21219E8500F1DA28 /* TeacherActionCell.swift in Sources */,
