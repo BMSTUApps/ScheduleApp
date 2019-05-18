@@ -16,16 +16,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    private var manager: AppManager {
+        return AppManager.shared
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        AppManager.shared.configureOnLaunching()
+        manager.configureServices()
+        manager.configureUI()
+
+        switch manager.authorizationState {
+        case .unauthorized:
+            
+            // FIXME: Fix this
+            guard let authController = AppRouter.ModuleStoryboard.authorization.controller else {
+                break
+            }
+            window?.rootViewController = authController
+            
+        default:
+            break
+        }
         
-        // FIXME: Bring UI preparation to a separate place
-        // Circle corners of root VC
-        let rootViewController = self.window!.rootViewController
-        rootViewController?.view.layer.cornerRadius = 4.0
-        rootViewController?.view.clipsToBounds = true
- 
         return true
     }
 

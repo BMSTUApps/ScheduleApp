@@ -24,7 +24,9 @@ class ScheduleController: TableViewController {
     
     private var scheduleViewModel = ScheduleViewModel()
     
-    private let provider = ScheduleProvider()
+    private var provider: ScheduleProvider {
+        return AppManager.shared.scheduleProvider
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

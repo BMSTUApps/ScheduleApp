@@ -13,6 +13,10 @@ class AppManager {
     
     static let shared = AppManager()
     
+    // MARK: Routing
+
+    let router = AppRouter()
+    
     // MARK: Services
 
     let notificationsService = NotificationsService()
@@ -21,9 +25,14 @@ class AppManager {
     let keychainService = KeychainService()
     let defaultsService = DefaultsService()
     
+    // MARK: Providers
+    
+    let authorizationProvider = AuthorizationProvider()
+    let scheduleProvider = ScheduleProvider()
+    
     // MARK: Configuration
     
-    func configureOnLaunching() {
+    func configureServices() {
         
         // Configure firebase
         FirebaseApp.configure()
@@ -32,7 +41,15 @@ class AppManager {
         notificationsService.registerForRemoteNotifications()
     }
     
-    // MARK: Authorization
+    func configureUI() {
+        
+        // Circle corners of root VC
+        let rootViewController = UIApplication.shared.windows.first?.rootViewController
+        rootViewController?.view.layer.cornerRadius = 4
+        rootViewController?.view.clipsToBounds = true
+    }
+    
+    // MARK: Authorization state
 
     enum AuthorizationState {
         case authorized(session: Session)
@@ -90,27 +107,6 @@ class AppManager {
         set(new) {
             defaultsService.offlineMode = new
         }
-    }
-    
-    // MARK: -
-    
-    func getTeachers() -> [Teacher] {
-        
-        var teachers: [Teacher] = []
-        
-        let realm = try! Realm()
-        let realmTeachers = realm.objects(RealmTeacher.self)
-        
-        for realmTeacher in realmTeachers {
-            let teacher = Teacher(realmTeacher)
-            if teachers.contains(where: { (currentTeacher) -> Bool in
-                return teacher.fullName == currentTeacher.fullName
-            }) == false {
-                teachers.append(teacher)
-            }
-        }
-        
-        return teachers
     }
 }
 

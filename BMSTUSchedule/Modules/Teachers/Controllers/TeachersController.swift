@@ -10,7 +10,7 @@ import UIKit
 
 class TeachersController: UITableViewController {
 
-    let teachers = AppManager.shared.getTeachers()
+    let teachers: [Teacher] = []
     
     private(set) var showTeachers: [Teacher] = []
     
