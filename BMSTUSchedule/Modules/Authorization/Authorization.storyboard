@@ -131,20 +131,172 @@
         <scene sceneID="PIL-id-N5f">
             <objects>
                 <tableViewController id="R33-7K-baU" customClass="SignupController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uch-oe-cqQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uch-oe-cqQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iaf-yT-teh">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iaf-yT-teh" id="kuL-9O-N7P">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="CzK-Eh-xNG">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="iaf-yT-teh">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iaf-yT-teh" id="kuL-9O-N7P">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Upe-np-Bqe">
+                                                    <rect key="frame" x="22" y="12" width="43" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <color key="textColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="example@example.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C0F-QE-rnC" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
+                                                    <rect key="frame" x="22" y="39" width="370" height="40"/>
+                                                    <color key="backgroundColor" red="0.88610398769378662" green="0.88588494062423706" blue="0.91064679622650146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="xeY-1M-yKi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" textContentType="email"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                            <color key="value" red="0.14323133230000001" green="0.19527560469999999" blue="0.24522843959999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="C0F-QE-rnC" secondAttribute="bottom" constant="8" id="EAp-Dd-hAQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="C0F-QE-rnC" secondAttribute="trailing" constant="22" id="INs-KH-0Y2"/>
+                                                <constraint firstItem="Upe-np-Bqe" firstAttribute="leading" secondItem="kuL-9O-N7P" secondAttribute="leading" constant="22" id="fNJ-nu-IYk"/>
+                                                <constraint firstItem="C0F-QE-rnC" firstAttribute="top" secondItem="Upe-np-Bqe" secondAttribute="bottom" constant="8" id="jT7-X6-Rlc"/>
+                                                <constraint firstItem="Upe-np-Bqe" firstAttribute="top" secondItem="kuL-9O-N7P" secondAttribute="top" constant="12" id="oDH-zV-DaI"/>
+                                                <constraint firstItem="C0F-QE-rnC" firstAttribute="leading" secondItem="kuL-9O-N7P" secondAttribute="leading" constant="22" id="xcD-AS-0gr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="IKe-WX-oX6">
+                                        <rect key="frame" x="0.0" y="87" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IKe-WX-oX6" id="eVi-MN-BKn">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="LDH-ib-icc">
+                                                    <rect key="frame" x="22" y="12" width="52" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <color key="textColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="сложный_пароль" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4iF-tG-GbD" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
+                                                    <rect key="frame" x="22" y="39" width="370" height="40"/>
+                                                    <color key="backgroundColor" red="0.88610398769999998" green="0.8858849406" blue="0.9106467962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="fSP-Ke-srs"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" textContentType="email"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                            <color key="value" red="0.14323133230000001" green="0.19527560469999999" blue="0.24522843959999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4iF-tG-GbD" firstAttribute="top" secondItem="LDH-ib-icc" secondAttribute="bottom" constant="8" id="T7C-R4-oFQ"/>
+                                                <constraint firstItem="LDH-ib-icc" firstAttribute="top" secondItem="eVi-MN-BKn" secondAttribute="top" constant="12" id="eNa-mg-zRp"/>
+                                                <constraint firstItem="4iF-tG-GbD" firstAttribute="leading" secondItem="eVi-MN-BKn" secondAttribute="leading" constant="22" id="foF-HJ-CuB"/>
+                                                <constraint firstItem="LDH-ib-icc" firstAttribute="leading" secondItem="eVi-MN-BKn" secondAttribute="leading" constant="22" id="kNP-qk-f2o"/>
+                                                <constraint firstAttribute="trailing" secondItem="4iF-tG-GbD" secondAttribute="trailing" constant="22" id="nXS-vH-WQa"/>
+                                                <constraint firstAttribute="bottom" secondItem="4iF-tG-GbD" secondAttribute="bottom" constant="8" id="sM7-oo-d9n"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="HWU-Sn-U4D">
+                                        <rect key="frame" x="0.0" y="174" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HWU-Sn-U4D" id="h7x-HF-89H">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Фамилия" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="w9a-IN-Wif">
+                                                    <rect key="frame" x="22" y="12" width="65" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <color key="textColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Иванов" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oEL-tE-ss6" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
+                                                    <rect key="frame" x="22" y="39" width="370" height="40"/>
+                                                    <color key="backgroundColor" red="0.88610398769999998" green="0.8858849406" blue="0.9106467962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="h0B-vQ-mQp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" textContentType="email"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                            <color key="value" red="0.14323133230000001" green="0.19527560469999999" blue="0.24522843959999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oEL-tE-ss6" firstAttribute="top" secondItem="w9a-IN-Wif" secondAttribute="bottom" constant="8" id="5hh-xb-Yab"/>
+                                                <constraint firstItem="w9a-IN-Wif" firstAttribute="top" secondItem="h7x-HF-89H" secondAttribute="top" constant="12" id="G6B-OI-cJe"/>
+                                                <constraint firstAttribute="trailing" secondItem="oEL-tE-ss6" secondAttribute="trailing" constant="22" id="Jvi-gb-DqB"/>
+                                                <constraint firstItem="w9a-IN-Wif" firstAttribute="leading" secondItem="h7x-HF-89H" secondAttribute="leading" constant="22" id="bOz-ut-cCO"/>
+                                                <constraint firstItem="oEL-tE-ss6" firstAttribute="leading" secondItem="h7x-HF-89H" secondAttribute="leading" constant="22" id="j2a-wW-CFZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="oEL-tE-ss6" secondAttribute="bottom" constant="8" id="wkX-za-kzE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="hs3-Pw-1q2">
+                                        <rect key="frame" x="0.0" y="261" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hs3-Pw-1q2" id="baQ-IM-7sb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="c4o-Xr-lmO">
+                                                    <rect key="frame" x="22" y="12" width="29.5" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <color key="textColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Иван" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="02A-hC-pad" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
+                                                    <rect key="frame" x="22" y="39" width="370" height="40"/>
+                                                    <color key="backgroundColor" red="0.88610398769999998" green="0.8858849406" blue="0.9106467962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="fm5-el-d0k"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" textContentType="email"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                            <color key="value" red="0.14323133230000001" green="0.19527560469999999" blue="0.24522843959999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="02A-hC-pad" firstAttribute="top" secondItem="c4o-Xr-lmO" secondAttribute="bottom" constant="8" id="EWT-ym-9uz"/>
+                                                <constraint firstAttribute="bottom" secondItem="02A-hC-pad" secondAttribute="bottom" constant="8" id="HHb-yv-V4o"/>
+                                                <constraint firstAttribute="trailing" secondItem="02A-hC-pad" secondAttribute="trailing" constant="22" id="OPS-9u-Ggu"/>
+                                                <constraint firstItem="c4o-Xr-lmO" firstAttribute="top" secondItem="baQ-IM-7sb" secondAttribute="top" constant="12" id="XGe-U1-jg5"/>
+                                                <constraint firstItem="02A-hC-pad" firstAttribute="leading" secondItem="baQ-IM-7sb" secondAttribute="leading" constant="22" id="j5U-ui-1W6"/>
+                                                <constraint firstItem="c4o-Xr-lmO" firstAttribute="leading" secondItem="baQ-IM-7sb" secondAttribute="leading" constant="22" id="sBc-Es-gd9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="R33-7K-baU" id="Pec-Rf-LPU"/>
                             <outlet property="delegate" destination="R33-7K-baU" id="KJg-DX-Y14"/>
@@ -154,7 +306,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLo-MD-HKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1616" y="9"/>
+            <point key="canvasLocation" x="1615.9420289855075" y="8.7053571428571423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bOp-ms-jjd">
