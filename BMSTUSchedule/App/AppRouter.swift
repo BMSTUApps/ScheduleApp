@@ -11,6 +11,7 @@ import UIKit
 class AppRouter {
 
     enum ModuleStoryboard: String {
+        case main
         case authorization
         
         var storyboard: UIStoryboard? {
@@ -22,13 +23,22 @@ class AppRouter {
         }
     }
     
+    func openMain() {
+        guard let vc = ModuleStoryboard.main.controller else {
+            return
+        }
+        
+        let window = UIApplication.shared.windows.first
+        window?.rootViewController = vc
+    }
+    
     func openAuthorization() {
         guard let vc = ModuleStoryboard.authorization.controller else {
             return
         }
-        
-        let topVC = topViewController(controller: UIApplication.shared.windows.first?.rootViewController)
-        topVC?.present(vc, animated: false, completion: nil)
+
+        let window = UIApplication.shared.windows.first
+        window?.rootViewController = vc
     }
     
     func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {

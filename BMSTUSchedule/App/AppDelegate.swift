@@ -27,13 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         switch manager.authorizationState {
         case .unauthorized:
-            
-            // FIXME: Fix this
-            guard let authController = AppRouter.ModuleStoryboard.authorization.controller else {
-                break
-            }
-            window?.rootViewController = authController
-            
+            manager.router.openAuthorization()
         default:
             break
         }

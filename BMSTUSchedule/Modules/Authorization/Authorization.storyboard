@@ -38,6 +38,9 @@
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" red="0.14323133230209351" green="0.19527560472488403" blue="0.24522843956947327" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="пароль" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="srm-wr-792" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
@@ -51,6 +54,9 @@
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" red="0.14323133230000001" green="0.19527560469999999" blue="0.24522843959999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Es5-7n-IYL">
@@ -120,6 +126,7 @@
                     <connections>
                         <outlet property="contentView" destination="jWr-ca-IKq" id="DNn-tw-ks8"/>
                         <outlet property="emailField" destination="ZYK-B0-vL6" id="2pf-x9-rcY"/>
+                        <outlet property="loginButton" destination="Es5-7n-IYL" id="mrF-HX-DQc"/>
                         <outlet property="passwordField" destination="srm-wr-792" id="BmD-rC-Qyn"/>
                         <outlet property="titleLabel" destination="0a9-nk-Rjn" id="g6Q-yL-Bgr"/>
                     </connections>
