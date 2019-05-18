@@ -15,17 +15,11 @@
             <objects>
                 <viewController id="wWE-61-BNg" customClass="LoginController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="afq-bh-N23">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вход" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-nk-Rjn">
-                                <rect key="frame" x="24" y="132" width="80" height="39.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWr-ca-IKq">
-                                <rect key="frame" x="0.0" y="297" width="414" height="302"/>
+                                <rect key="frame" x="0.0" y="227" width="414" height="302"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e-mail" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZYK-B0-vL6" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
                                         <rect key="frame" x="24" y="24" width="366" height="40"/>
@@ -116,32 +110,29 @@
                         <color key="backgroundColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jWr-ca-IKq" firstAttribute="centerY" secondItem="afq-bh-N23" secondAttribute="centerY" id="6Qu-na-yXi"/>
-                            <constraint firstItem="0a9-nk-Rjn" firstAttribute="leading" secondItem="hJD-xj-Pmf" secondAttribute="leading" constant="24" id="Iwz-vl-pkt"/>
-                            <constraint firstItem="0a9-nk-Rjn" firstAttribute="top" secondItem="hJD-xj-Pmf" secondAttribute="top" constant="44" id="RR1-a6-Cv9"/>
                             <constraint firstItem="hJD-xj-Pmf" firstAttribute="trailing" secondItem="jWr-ca-IKq" secondAttribute="trailing" id="mdv-BO-zTp"/>
                             <constraint firstItem="jWr-ca-IKq" firstAttribute="leading" secondItem="hJD-xj-Pmf" secondAttribute="leading" id="ynU-48-HWS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hJD-xj-Pmf"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Вход" id="f2t-CW-Wug"/>
+                    <navigationItem key="navigationItem" title="Вход" largeTitleDisplayMode="always" id="f2t-CW-Wug"/>
                     <connections>
                         <outlet property="contentView" destination="jWr-ca-IKq" id="DNn-tw-ks8"/>
                         <outlet property="emailField" destination="ZYK-B0-vL6" id="2pf-x9-rcY"/>
                         <outlet property="loginButton" destination="Es5-7n-IYL" id="mrF-HX-DQc"/>
                         <outlet property="passwordField" destination="srm-wr-792" id="BmD-rC-Qyn"/>
-                        <outlet property="titleLabel" destination="0a9-nk-Rjn" id="g6Q-yL-Bgr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBq-lJ-ZON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="724.63768115942037" y="8.7053571428571423"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Регистрация-->
         <scene sceneID="PIL-id-N5f">
             <objects>
-                <tableViewController id="R33-7K-baU" sceneMemberID="viewController">
+                <tableViewController id="R33-7K-baU" customClass="SignupController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uch-oe-cqQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -159,6 +150,7 @@
                             <outlet property="delegate" destination="R33-7K-baU" id="KJg-DX-Y14"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Регистрация" largeTitleDisplayMode="always" id="Nel-m5-hCK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLo-MD-HKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,9 +161,17 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d1u-qn-nka" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ksq-cQ-3dA">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="Ksq-cQ-3dA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

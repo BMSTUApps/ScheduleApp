@@ -14,8 +14,6 @@ class LoginController: UIViewController {
         return AppManager.shared.authorizationProvider
     }
     
-    @IBOutlet private weak var titleLabel: UILabel!
-    
     @IBOutlet private weak var emailField: RoundTextField!
     @IBOutlet private weak var passwordField: RoundTextField!
     
@@ -28,7 +26,7 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         emailField.delegate = self
         passwordField.delegate = self
         
@@ -37,7 +35,7 @@ class LoginController: UIViewController {
         
         updateLoginButton()
     }
-    
+
     // MARK: Actions
     
     @IBAction func loginTapped(_ sender: Any) {
