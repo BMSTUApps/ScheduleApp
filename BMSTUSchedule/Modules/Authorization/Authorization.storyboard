@@ -134,7 +134,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uch-oe-cqQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="CzK-Eh-xNG">
                                 <cells>
@@ -176,6 +176,7 @@
                                                 <constraint firstItem="C0F-QE-rnC" firstAttribute="leading" secondItem="kuL-9O-N7P" secondAttribute="leading" constant="22" id="xcD-AS-0gr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="IKe-WX-oX6">
                                         <rect key="frame" x="0.0" y="87" width="414" height="87"/>
@@ -215,6 +216,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="4iF-tG-GbD" secondAttribute="bottom" constant="8" id="sM7-oo-d9n"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="HWU-Sn-U4D">
                                         <rect key="frame" x="0.0" y="174" width="414" height="87"/>
@@ -254,6 +256,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="oEL-tE-ss6" secondAttribute="bottom" constant="8" id="wkX-za-kzE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="hs3-Pw-1q2">
                                         <rect key="frame" x="0.0" y="261" width="414" height="87"/>
@@ -275,7 +278,7 @@
                                                         <constraint firstAttribute="height" constant="40" id="fm5-el-d0k"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" textContentType="email"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" textContentType="email"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
@@ -293,6 +296,42 @@
                                                 <constraint firstItem="c4o-Xr-lmO" firstAttribute="leading" secondItem="baQ-IM-7sb" secondAttribute="leading" constant="22" id="sBc-Es-gd9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="94" id="xWb-PM-mu3">
+                                        <rect key="frame" x="0.0" y="348" width="414" height="94"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xWb-PM-mu3" id="eut-TZ-7Tm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmt-ua-ylr">
+                                                    <rect key="frame" x="22" y="22" width="370" height="50"/>
+                                                    <color key="backgroundColor" red="0.23137254900000001" green="0.60392156860000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="5xn-HX-SwW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <state key="normal" title="Далее">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="12"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="loginTapped:" destination="wWE-61-BNg" eventType="touchUpInside" id="RKk-Ss-bmi"/>
+                                                        <action selector="nextTapped:" destination="R33-7K-baU" eventType="touchUpInside" id="fLN-ZB-amx"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Jmt-ua-ylr" firstAttribute="leading" secondItem="eut-TZ-7Tm" secondAttribute="leading" constant="22" id="GXa-Rb-iFm"/>
+                                                <constraint firstAttribute="trailing" secondItem="Jmt-ua-ylr" secondAttribute="trailing" constant="22" id="UYx-CW-6sr"/>
+                                                <constraint firstItem="Jmt-ua-ylr" firstAttribute="top" secondItem="eut-TZ-7Tm" secondAttribute="top" constant="22" id="r4h-Wd-Ppd"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jmt-ua-ylr" secondAttribute="bottom" constant="22" id="sd4-KF-xnr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -303,6 +342,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Регистрация" largeTitleDisplayMode="always" id="Nel-m5-hCK"/>
+                    <connections>
+                        <outlet property="emailField" destination="C0F-QE-rnC" id="zHB-w6-DpM"/>
+                        <outlet property="firstNameField" destination="02A-hC-pad" id="bG8-ci-z1w"/>
+                        <outlet property="lastNameField" destination="oEL-tE-ss6" id="s9T-CE-6UW"/>
+                        <outlet property="nextButton" destination="Jmt-ua-ylr" id="ofM-R5-VvP"/>
+                        <outlet property="passwordField" destination="4iF-tG-GbD" id="ZRE-GM-HjJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLo-MD-HKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

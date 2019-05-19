@@ -60,13 +60,12 @@ class LoginController: UIViewController {
         }
     }
     
-    @IBAction func signUpTapped(_ sender: Any) {
-        // TODO: Open signup screen
-    }
-    
     private func updateLoginButton() {
-        loginButton.isEnabled = emailValid && passwordValid
-        loginButton.backgroundColor = loginButton.isEnabled ? AppTheme.AppColor.blue : AppTheme.AppColor.lightGray
+        
+        UIView.animate(withDuration: 0.3) {
+            self.loginButton.isEnabled = self.emailValid && self.passwordValid
+            self.loginButton.backgroundColor = self.loginButton.isEnabled ? AppTheme.AppColor.blue : AppTheme.AppColor.lightGray
+        }
     }
 }
 
