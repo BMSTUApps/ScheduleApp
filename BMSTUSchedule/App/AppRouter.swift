@@ -23,6 +23,8 @@ class AppRouter {
     
     enum ModuleStoryboard: String {
         case main
+        case schedule
+        case teachers
         case authorization
         
         var storyboard: UIStoryboard {

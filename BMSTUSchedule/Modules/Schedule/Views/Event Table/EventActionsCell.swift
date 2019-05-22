@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SPStorkController
 
 class EventActionsCell: UITableViewCell, CellViewModelProtocol {
 
@@ -26,6 +27,19 @@ class EventActionsCell: UITableViewCell, CellViewModelProtocol {
     
     @IBAction func editButtonTapped(_ sender: Any) {
         print("Edit button tapped")
+        
+        let transitionDelegate = SPStorkTransitioningDelegate()
+        
+        guard let controller = AppRouter.ModuleStoryboard.schedule.storyboard.instantiateViewController(withIdentifier: String(describing: EditEventController.self)) as? EditEventController,
+            let rootController = AppManager.shared.router.topViewController() else {
+            return
+        }
+        
+        controller.transitioningDelegate = transitionDelegate
+        controller.modalPresentationStyle = .custom
+        controller.modalPresentationCapturesStatusBarAppearance = true
+        
+        rootController.present(controller, animated: true, completion: nil)
     }
     
     // MARK: - CellViewModelProtocol

@@ -581,6 +581,256 @@
             </objects>
             <point key="canvasLocation" x="3630" y="-1067"/>
         </scene>
+        <!--Edit Event Controller-->
+        <scene sceneID="Mb3-ff-X1j">
+            <objects>
+                <tableViewController storyboardIdentifier="EditEventController" id="LLM-Om-glw" customClass="EditEventController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7rc-OK-Pi9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="IsD-hp-pjO">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="8Bi-8x-Ham">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Bi-8x-Ham" id="lvb-O7-5oQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Название предмета" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Rkf-NO-qfs">
+                                                    <rect key="frame" x="22" y="12" width="140" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Математический анализ" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QDF-HH-YFo" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
+                                                    <rect key="frame" x="22" y="39" width="370" height="40"/>
+                                                    <color key="backgroundColor" red="0.88610398769999998" green="0.8858849406" blue="0.9106467962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="66P-Jd-qs2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" textContentType="email"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                            <color key="value" red="0.14323133230000001" green="0.19527560469999999" blue="0.24522843959999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="QDF-HH-YFo" secondAttribute="trailing" constant="22" id="8zg-gA-QQN"/>
+                                                <constraint firstItem="Rkf-NO-qfs" firstAttribute="leading" secondItem="lvb-O7-5oQ" secondAttribute="leading" constant="22" id="I0d-xf-ySf"/>
+                                                <constraint firstAttribute="bottom" secondItem="QDF-HH-YFo" secondAttribute="bottom" constant="8" id="Lcd-HW-4Ub"/>
+                                                <constraint firstItem="Rkf-NO-qfs" firstAttribute="top" secondItem="lvb-O7-5oQ" secondAttribute="top" constant="12" id="dZl-cs-3us"/>
+                                                <constraint firstItem="QDF-HH-YFo" firstAttribute="top" secondItem="Rkf-NO-qfs" secondAttribute="bottom" constant="8" id="mBh-cb-SZ8"/>
+                                                <constraint firstItem="QDF-HH-YFo" firstAttribute="leading" secondItem="lvb-O7-5oQ" secondAttribute="leading" constant="22" id="pa6-Xm-gf7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="Ysg-wm-ASw">
+                                        <rect key="frame" x="0.0" y="87" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ysg-wm-ASw" id="hIo-Pc-Gdy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Тип" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="gfS-Zb-fad">
+                                                    <rect key="frame" x="22" y="12" width="26" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="лекция" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cYX-0R-oUx" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
+                                                    <rect key="frame" x="22" y="39" width="370" height="40"/>
+                                                    <color key="backgroundColor" red="0.88610398769999998" green="0.8858849406" blue="0.9106467962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="X3T-PN-4M7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" textContentType="email"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                            <color key="value" red="0.14323133230000001" green="0.19527560469999999" blue="0.24522843959999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gfS-Zb-fad" firstAttribute="top" secondItem="hIo-Pc-Gdy" secondAttribute="top" constant="12" id="67c-8I-SHI"/>
+                                                <constraint firstItem="gfS-Zb-fad" firstAttribute="leading" secondItem="hIo-Pc-Gdy" secondAttribute="leading" constant="22" id="8cv-fV-qpW"/>
+                                                <constraint firstItem="cYX-0R-oUx" firstAttribute="leading" secondItem="hIo-Pc-Gdy" secondAttribute="leading" constant="22" id="eOV-4I-hBb"/>
+                                                <constraint firstItem="cYX-0R-oUx" firstAttribute="top" secondItem="gfS-Zb-fad" secondAttribute="bottom" constant="8" id="iyN-92-w4k"/>
+                                                <constraint firstAttribute="bottom" secondItem="cYX-0R-oUx" secondAttribute="bottom" constant="8" id="qfd-8e-Yzu"/>
+                                                <constraint firstAttribute="trailing" secondItem="cYX-0R-oUx" secondAttribute="trailing" constant="22" id="t4Y-eb-hwt"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="rau-EV-t0B">
+                                        <rect key="frame" x="0.0" y="174" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rau-EV-t0B" id="aen-XD-FTq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Время" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Gxn-yq-bvH">
+                                                    <rect key="frame" x="22" y="12" width="45.5" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="12:00 — 13:35" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QLk-dl-Shh" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
+                                                    <rect key="frame" x="22" y="39" width="370" height="40"/>
+                                                    <color key="backgroundColor" red="0.88610398769999998" green="0.8858849406" blue="0.9106467962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="3iE-a0-k47"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" textContentType="email"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                            <color key="value" red="0.14323133230000001" green="0.19527560469999999" blue="0.24522843959999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Gxn-yq-bvH" firstAttribute="top" secondItem="aen-XD-FTq" secondAttribute="top" constant="12" id="4U4-Xu-RID"/>
+                                                <constraint firstItem="Gxn-yq-bvH" firstAttribute="leading" secondItem="aen-XD-FTq" secondAttribute="leading" constant="22" id="DS9-Ne-aG3"/>
+                                                <constraint firstAttribute="bottom" secondItem="QLk-dl-Shh" secondAttribute="bottom" constant="8" id="GWD-DK-cE3"/>
+                                                <constraint firstItem="QLk-dl-Shh" firstAttribute="top" secondItem="Gxn-yq-bvH" secondAttribute="bottom" constant="8" id="Quz-fb-w7H"/>
+                                                <constraint firstAttribute="trailing" secondItem="QLk-dl-Shh" secondAttribute="trailing" constant="22" id="S17-dw-qAh"/>
+                                                <constraint firstItem="QLk-dl-Shh" firstAttribute="leading" secondItem="aen-XD-FTq" secondAttribute="leading" constant="22" id="dqf-Ss-DRk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="uBM-0K-wYk">
+                                        <rect key="frame" x="0.0" y="261" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uBM-0K-wYk" id="8Gd-JL-x5N">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Аудитория" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="HhQ-BY-I8p">
+                                                    <rect key="frame" x="22" y="12" width="76" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="512ю" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SV4-BO-p74" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
+                                                    <rect key="frame" x="22" y="39" width="370" height="40"/>
+                                                    <color key="backgroundColor" red="0.88610398769999998" green="0.8858849406" blue="0.9106467962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="bXk-AW-xY5"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" textContentType="email"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                            <color key="value" red="0.14323133230000001" green="0.19527560469999999" blue="0.24522843959999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SV4-BO-p74" firstAttribute="leading" secondItem="8Gd-JL-x5N" secondAttribute="leading" constant="22" id="2TQ-w3-K2n"/>
+                                                <constraint firstAttribute="trailing" secondItem="SV4-BO-p74" secondAttribute="trailing" constant="22" id="9Y2-oD-QZP"/>
+                                                <constraint firstItem="HhQ-BY-I8p" firstAttribute="leading" secondItem="8Gd-JL-x5N" secondAttribute="leading" constant="22" id="GXD-th-QBf"/>
+                                                <constraint firstItem="SV4-BO-p74" firstAttribute="top" secondItem="HhQ-BY-I8p" secondAttribute="bottom" constant="8" id="LKf-2p-mD4"/>
+                                                <constraint firstItem="HhQ-BY-I8p" firstAttribute="top" secondItem="8Gd-JL-x5N" secondAttribute="top" constant="12" id="U00-SJ-gYf"/>
+                                                <constraint firstAttribute="bottom" secondItem="SV4-BO-p74" secondAttribute="bottom" constant="8" id="p33-r2-Wx8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="IEp-t4-Pda">
+                                        <rect key="frame" x="0.0" y="348" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IEp-t4-Pda" id="WjC-Rg-eiS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Преподаватель" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="BVQ-Cr-YgA">
+                                                    <rect key="frame" x="22" y="12" width="109" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Иванов И.И." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4vM-hp-x0p" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
+                                                    <rect key="frame" x="22" y="39" width="370" height="40"/>
+                                                    <color key="backgroundColor" red="0.88610398769999998" green="0.8858849406" blue="0.9106467962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="B9c-uC-SSU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" textContentType="email"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                            <color key="value" red="0.14323133230000001" green="0.19527560469999999" blue="0.24522843959999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4vM-hp-x0p" firstAttribute="top" secondItem="BVQ-Cr-YgA" secondAttribute="bottom" constant="8" id="6Th-qm-WR2"/>
+                                                <constraint firstItem="BVQ-Cr-YgA" firstAttribute="leading" secondItem="WjC-Rg-eiS" secondAttribute="leading" constant="22" id="8kW-g2-ABk"/>
+                                                <constraint firstAttribute="bottom" secondItem="4vM-hp-x0p" secondAttribute="bottom" constant="8" id="AH6-eC-Pn5"/>
+                                                <constraint firstItem="BVQ-Cr-YgA" firstAttribute="top" secondItem="WjC-Rg-eiS" secondAttribute="top" constant="12" id="OOi-Rc-Vgx"/>
+                                                <constraint firstAttribute="trailing" secondItem="4vM-hp-x0p" secondAttribute="trailing" constant="22" id="QTW-gf-uRL"/>
+                                                <constraint firstItem="4vM-hp-x0p" firstAttribute="leading" secondItem="WjC-Rg-eiS" secondAttribute="leading" constant="22" id="n2Q-5v-e0a"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="94" id="mbS-AK-fei">
+                                        <rect key="frame" x="0.0" y="435" width="414" height="94"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mbS-AK-fei" id="EYN-Jm-lIT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34G-6m-dhO">
+                                                    <rect key="frame" x="22" y="22" width="370" height="50"/>
+                                                    <color key="backgroundColor" red="0.23137254900000001" green="0.60392156860000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="upc-42-CCQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <state key="normal" title="Сохранить">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="12"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="34G-6m-dhO" firstAttribute="top" secondItem="EYN-Jm-lIT" secondAttribute="top" constant="22" id="91o-jf-nl1"/>
+                                                <constraint firstAttribute="bottom" secondItem="34G-6m-dhO" secondAttribute="bottom" constant="22" id="Sqv-tZ-zAw"/>
+                                                <constraint firstItem="34G-6m-dhO" firstAttribute="leading" secondItem="EYN-Jm-lIT" secondAttribute="leading" constant="22" id="VH7-oS-5wT"/>
+                                                <constraint firstAttribute="trailing" secondItem="34G-6m-dhO" secondAttribute="trailing" constant="22" id="ha2-dm-boY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="LLM-Om-glw" id="t3R-47-8aS"/>
+                            <outlet property="delegate" destination="LLM-Om-glw" id="5SI-SU-sjc"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y6T-GX-eb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3913" y="-577"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Schedule" width="25" height="25"/>
