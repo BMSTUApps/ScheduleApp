@@ -7,19 +7,51 @@
 //
 
 import UIKit
+import SPStorkController
 
 class SignupController: UITableViewController {
-
+    
     @IBOutlet private weak var emailField: RoundTextField!
     @IBOutlet private weak var passwordField: RoundTextField!
     @IBOutlet private weak var lastNameField: RoundTextField!
     @IBOutlet private weak var firstNameField: RoundTextField!
-    @IBOutlet private weak var nextButton: UIButton!
+    @IBOutlet weak var groupField: RoundTextField!
     
-    private var emailValid: Bool = false
-    private var passwordValid: Bool = false
-    private var lastNameValid: Bool = false
-    private var firstNameValid: Bool = false
+    @IBOutlet private weak var nextButton: UIButton!
+
+    private var group: String?
+    
+    private var emailValid: Bool {
+        guard let text = emailField.text else { return false }
+        return text.isEmail
+    }
+    
+    private var passwordValid: Bool {
+        guard let text = passwordField.text else { return false }
+        return text.count > 8
+    }
+    
+    private var lastNameValid: Bool {
+        guard let text = lastNameField.text else { return false }
+        return text.count > 3
+    }
+    
+    private var firstNameValid: Bool {
+        guard let text = firstNameField.text else { return false }
+        return text.count > 3
+    }
+    
+    private var groupValid: Bool {
+        if let group = group, !group.isEmpty {
+            return true
+        }
+        
+        return false
+    }
+    
+    private var dataValid: Bool {
+        return emailValid && passwordValid && lastNameValid && firstNameValid && groupValid
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,54 +60,74 @@ class SignupController: UITableViewController {
         passwordField.delegate = self
         lastNameField.delegate = self
         firstNameField.delegate = self
+        groupField.delegate = self
         
         emailField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         passwordField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         lastNameField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         firstNameField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(showGroupPicker))
+        groupField.addGestureRecognizer(tap)
+        
         updateNextButton()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateGroupField()
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     // MARK: Actions
     
-    @IBAction func nextTapped(_ sender: Any) {
-        // TODO: Open schedule chooser
+    @IBAction func signUpTapped(_ sender: Any) {
+        
+        // TODO: Sign up
     }
+    
+    // MARK: UI
     
     private func updateNextButton() {
         
         UIView.animate(withDuration: 0.3) {
-            self.nextButton.isEnabled = self.emailValid && self.passwordValid && self.lastNameValid && self.firstNameValid
+            self.nextButton.isEnabled = self.dataValid
             self.nextButton.backgroundColor = self.nextButton.isEnabled ? AppTheme.AppColor.blue : AppTheme.AppColor.lightGray
         }
+    }
+    
+    private func updateGroupField() {
+        groupField.text = group
+    }
+    
+    @objc private func showGroupPicker() {
+        view.endEditing(true)
+        
+        let transitionDelegate = SPStorkTransitioningDelegate()
+        transitionDelegate.customHeight = 300
+
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: String(describing: GroupPickerController.self)) as? GroupPickerController else {
+            return
+        }
+        
+        controller.delegate = self
+        controller.transitioningDelegate = transitionDelegate
+        controller.modalPresentationStyle = .custom
+        controller.modalPresentationCapturesStatusBarAppearance = true
+
+        self.present(controller, animated: true, completion: nil)
     }
 }
 
 extension SignupController: UITextFieldDelegate {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        guard let text = textField.text else { return }
-        
-        switch textField {
-        case emailField:
-            emailValid = text.isEmail
-        case passwordField:
-            passwordValid = text.count > 8
-        case lastNameField:
-            lastNameValid = text.count > 5
-        case firstNameField:
-            firstNameValid = text.count > 5
-        default:
-            break
-        }
-        
         updateNextButton()
     }
     
@@ -89,10 +141,29 @@ extension SignupController: UITextFieldDelegate {
             firstNameField.becomeFirstResponder()
         case firstNameField:
             firstNameField.resignFirstResponder()
+            showGroupPicker()
         default:
             break
         }
         
         return true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
+        if textField == groupField {
+            return false
+        }
+        
+        return true
+    }
+}
+
+extension SignupController: GroupPickerControllerDelegate {
+    
+    func groupDidChoose(_ group: String) {
+        self.group = group
+        updateGroupField()
+        updateNextButton()
     }
 }

@@ -84,7 +84,6 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="signUpTapped:" destination="wWE-61-BNg" eventType="touchUpInside" id="MXA-IT-qyu"/>
                                             <segue destination="R33-7K-baU" kind="show" id="bXl-UI-yiv"/>
                                         </connections>
                                     </button>
@@ -298,8 +297,48 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="pPV-1G-Mhg">
+                                        <rect key="frame" x="0.0" y="348" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pPV-1G-Mhg" id="ToL-un-YoK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Группа" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Pp2-g3-eHS">
+                                                    <rect key="frame" x="22" y="12" width="49.5" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <color key="textColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ИУ5-11" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="whZ-uV-qQS" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
+                                                    <rect key="frame" x="22" y="39" width="370" height="40"/>
+                                                    <color key="backgroundColor" red="0.88610398769999998" green="0.8858849406" blue="0.9106467962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="daP-We-yHw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" textContentType="email"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                            <color key="value" red="0.14323133230000001" green="0.19527560469999999" blue="0.24522843959999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="whZ-uV-qQS" firstAttribute="top" secondItem="Pp2-g3-eHS" secondAttribute="bottom" constant="8" id="2hS-eK-mnL"/>
+                                                <constraint firstItem="Pp2-g3-eHS" firstAttribute="top" secondItem="ToL-un-YoK" secondAttribute="top" constant="12" id="8eN-di-6gG"/>
+                                                <constraint firstAttribute="bottom" secondItem="whZ-uV-qQS" secondAttribute="bottom" constant="8" id="Ilo-g4-Z1G"/>
+                                                <constraint firstItem="Pp2-g3-eHS" firstAttribute="leading" secondItem="ToL-un-YoK" secondAttribute="leading" constant="22" id="JR6-Vf-iCq"/>
+                                                <constraint firstItem="whZ-uV-qQS" firstAttribute="leading" secondItem="ToL-un-YoK" secondAttribute="leading" constant="22" id="dJ6-FR-RJd"/>
+                                                <constraint firstAttribute="trailing" secondItem="whZ-uV-qQS" secondAttribute="trailing" constant="22" id="jEh-hB-V5k"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="94" id="xWb-PM-mu3">
-                                        <rect key="frame" x="0.0" y="348" width="414" height="94"/>
+                                        <rect key="frame" x="0.0" y="435" width="414" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xWb-PM-mu3" id="eut-TZ-7Tm">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
@@ -312,15 +351,14 @@
                                                         <constraint firstAttribute="height" constant="50" id="5xn-HX-SwW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                    <state key="normal" title="Далее">
+                                                    <state key="normal" title="Зарегистрироваться">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="12"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="loginTapped:" destination="wWE-61-BNg" eventType="touchUpInside" id="RKk-Ss-bmi"/>
-                                                        <action selector="nextTapped:" destination="R33-7K-baU" eventType="touchUpInside" id="fLN-ZB-amx"/>
+                                                        <action selector="signUpTapped:" destination="R33-7K-baU" eventType="touchUpInside" id="fLN-ZB-amx"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -345,6 +383,7 @@
                     <connections>
                         <outlet property="emailField" destination="C0F-QE-rnC" id="zHB-w6-DpM"/>
                         <outlet property="firstNameField" destination="02A-hC-pad" id="bG8-ci-z1w"/>
+                        <outlet property="groupField" destination="whZ-uV-qQS" id="P2D-Pu-WPK"/>
                         <outlet property="lastNameField" destination="oEL-tE-ss6" id="s9T-CE-6UW"/>
                         <outlet property="nextButton" destination="Jmt-ua-ylr" id="ofM-R5-VvP"/>
                         <outlet property="passwordField" destination="4iF-tG-GbD" id="ZRE-GM-HjJ"/>
@@ -353,6 +392,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLo-MD-HKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1615.9420289855075" y="8.7053571428571423"/>
+        </scene>
+        <!--Group Picker Controller-->
+        <scene sceneID="V9C-Dx-ipm">
+            <objects>
+                <viewController storyboardIdentifier="GroupPickerController" id="qYK-zE-XTo" customClass="GroupPickerController" customModule="BMSTUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WSF-lH-uXq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNh-ck-iDa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="730"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynL-Ux-TUd">
+                                <rect key="frame" x="22" y="790" width="370" height="50"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.60392156860000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Bm1-YB-eqa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Выбрать">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="12"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="chooseTapped:" destination="qYK-zE-XTo" eventType="touchUpInside" id="zx7-uI-Vu1"/>
+                                    <action selector="signUpTapped:" destination="R33-7K-baU" eventType="touchUpInside" id="vCI-3Y-jpe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="O1c-Zd-gl3" firstAttribute="trailing" secondItem="ynL-Ux-TUd" secondAttribute="trailing" constant="22" id="04p-Kh-VYC"/>
+                            <constraint firstItem="ynL-Ux-TUd" firstAttribute="top" secondItem="KNh-ck-iDa" secondAttribute="bottom" constant="16" id="3B9-DY-m6p"/>
+                            <constraint firstItem="KNh-ck-iDa" firstAttribute="top" secondItem="O1c-Zd-gl3" secondAttribute="top" id="8Ni-AE-QV8"/>
+                            <constraint firstItem="ynL-Ux-TUd" firstAttribute="bottom" secondItem="O1c-Zd-gl3" secondAttribute="bottom" constant="-22" id="8Vp-P0-xWC"/>
+                            <constraint firstItem="ynL-Ux-TUd" firstAttribute="leading" secondItem="O1c-Zd-gl3" secondAttribute="leading" constant="22" id="OqH-vW-W9V"/>
+                            <constraint firstItem="KNh-ck-iDa" firstAttribute="trailing" secondItem="O1c-Zd-gl3" secondAttribute="trailing" id="nQI-T3-whj"/>
+                            <constraint firstItem="KNh-ck-iDa" firstAttribute="leading" secondItem="O1c-Zd-gl3" secondAttribute="leading" id="vEY-dt-WD4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1c-Zd-gl3"/>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="KNh-ck-iDa" id="q5Y-uW-CkW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qbn-1p-Hy4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2507" y="9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bOp-ms-jjd">
