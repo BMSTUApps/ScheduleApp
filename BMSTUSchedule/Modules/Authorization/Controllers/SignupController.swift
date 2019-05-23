@@ -107,12 +107,25 @@ class SignupController: UITableViewController {
     }
     
     @objc private func showGroupPicker() {
+        ActivityIndicator.standart.start()
         view.endEditing(true)
+        
+        getPickerData { (data) in
+            guard let data = data else { return }
+        
+            DispatchQueue.main.async {
+                ActivityIndicator.standart.stop()
+                self.openPickerController(data: data)
+            }
+        }
+    }
+    
+    private func openPickerController(data: GroupPickerController.Data) {
         
         let transitionDelegate = SPStorkTransitioningDelegate()
         transitionDelegate.customHeight = 300
-
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: String(describing: GroupPickerController.self)) as? GroupPickerController else {
+        
+        guard let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: GroupPickerController.self)) as? GroupPickerController else {
             return
         }
         
@@ -120,8 +133,55 @@ class SignupController: UITableViewController {
         controller.transitioningDelegate = transitionDelegate
         controller.modalPresentationStyle = .custom
         controller.modalPresentationCapturesStatusBarAppearance = true
-
+        controller.pickerData = data
+        
         self.present(controller, animated: true, completion: nil)
+    }
+    
+    private func getPickerData(completion: @escaping (GroupPickerController.Data?) -> Void) {
+        AppManager.shared.networkingService.makeRequest(module: .schedule, method: (.get, "templates")) { result in
+            switch result {
+            case .failure(let error):
+                // TODO: Handle error
+                break
+            case .success(let json):
+                guard let rawGroups = json["result"] as? [JSON] else {
+                    completion(nil)
+                    return
+                }
+                
+                let groups = rawGroups.compactMap({ raw in
+                    return Group(json: raw)
+                }).sorted(by: { (first, second) -> Bool in
+                    if first.department == second.department {
+                        return first.number < second.number
+                    }
+                    
+                    return first.department < second.department
+                })
+                
+                var data = GroupPickerController.Data()
+                for group in groups {
+                    var departmentNumber = 1
+                    if let number = Int(group.department.numerals) {
+                        departmentNumber = number
+                    }
+                    
+                    let faculty = group.department.replacingOccurrences(of: "\(departmentNumber)", with: "")
+                    
+                    var groupsArray = data[faculty]?["\(departmentNumber)"] ?? []
+                    groupsArray.append((group.number, schedule: group.scheduleID))
+                    
+                    if data[faculty] == nil {
+                        data[faculty] = ["\(departmentNumber)": groupsArray]
+                    } else {
+                        data[faculty]?["\(departmentNumber)"] = groupsArray
+                    }
+                }
+                
+                completion(data)
+            }
+        }
     }
 }
 

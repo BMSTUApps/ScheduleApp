@@ -23,7 +23,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e-mail" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZYK-B0-vL6" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
                                         <rect key="frame" x="24" y="24" width="366" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="sAc-bx-MfG"/>
                                         </constraints>
@@ -39,7 +39,7 @@
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="пароль" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="srm-wr-792" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
                                         <rect key="frame" x="24" y="80" width="366" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="fGD-R8-c4y"/>
                                         </constraints>
@@ -78,7 +78,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <state key="normal" title="Зарегистрироваться">
-                                            <color key="titleColor" red="0.75103605799445183" green="0.92415044810654678" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.53725490196078429" green="0.63137254901960782" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
@@ -106,7 +106,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="jWr-ca-IKq" firstAttribute="centerY" secondItem="afq-bh-N23" secondAttribute="centerY" id="6Qu-na-yXi"/>
                             <constraint firstItem="hJD-xj-Pmf" firstAttribute="trailing" secondItem="jWr-ca-IKq" secondAttribute="trailing" id="mdv-BO-zTp"/>
@@ -152,7 +152,7 @@
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="example@example.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C0F-QE-rnC" customClass="RoundTextField" customModule="BMSTUSchedule" customModuleProvider="target">
                                                     <rect key="frame" x="22" y="39" width="370" height="40"/>
-                                                    <color key="backgroundColor" red="0.88610398769378662" green="0.88588494062423706" blue="0.91064679622650146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="xeY-1M-yKi"/>
                                                     </constraints>

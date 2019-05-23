@@ -90,6 +90,8 @@ class AuthorizationProvider: Authorizable {
                 // Save session to UserDefaults
                 self.defaults.session = newSession
                 
+                print("Authorized with token '\(newSession.token)'")
+                
                 completion(newSession)
             }
         }

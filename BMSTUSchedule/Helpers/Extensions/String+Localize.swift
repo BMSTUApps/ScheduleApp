@@ -18,4 +18,10 @@ extension String {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
     }
+    
+    var numerals: String {
+        let pattern = UnicodeScalar("0")..."9"
+        return String(unicodeScalars
+            .compactMap { pattern ~= $0 ? Character($0) : nil })
+    }
 }

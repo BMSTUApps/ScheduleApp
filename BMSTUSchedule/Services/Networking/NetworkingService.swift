@@ -81,7 +81,11 @@ class NetworkingService {
                     completion(.failure(.connection(reason: error.localizedDescription)))
                     return
                     
-                case .success(let value):
+                case .success(var value):
+                    if let jsonArray = value as? [JSON] {
+                        value = ["result": jsonArray]
+                    }
+                    
                     guard let json = value as? JSON else {
                         completion(.failure(.invalidJSON))
                         return

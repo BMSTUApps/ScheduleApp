@@ -19,16 +19,8 @@ class GroupPickerController: UIViewController {
     @IBOutlet weak var picker: UIPickerView!
     
     // TODO: Get picker data from server
-    private let pickerData: [String: [String: [String]]] = [
-        "ИУ": [
-            "4": ["11", "12", "13", "14"],
-            "5": ["21Б", "22Б", "23Б", "24Б"]
-        ],
-        "МТ": [
-            "1": ["31", "32", "33", "34"],
-            "2": ["41", "42", "43", "44"]
-        ],
-    ]
+    typealias Data = [String: [String: [(group: String, schedule: Model.ID)]]]
+    var pickerData: Data = [:]
     
     private enum Component: Int {
         case faculty = 0
@@ -70,13 +62,14 @@ class GroupPickerController: UIViewController {
         case .group:
             guard let selectedFaculty = selectedValue(for: .faculty),
                 let selectedDepartment = selectedValue(for: .department),
-                let groups = pickerData[selectedFaculty]?[selectedDepartment]?.sorted() else {
+                let groups = pickerData[selectedFaculty]?[selectedDepartment]?.sorted(by: { (first, second) -> Bool in
+                    return first.group < second.group
+                }) else {
                     return nil
             }
             
-            return groups[row]
+            return groups[row].group
         }
-        
     }
     
     override func viewDidLoad() {
