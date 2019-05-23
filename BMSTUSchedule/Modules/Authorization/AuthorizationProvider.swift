@@ -62,6 +62,37 @@ class AuthorizationProvider: Authorizable {
         return AppManager.shared.networkingService
     }
 
+    func signUp(email: String, password: String, firstName: String, lastName: String, scheduleID: Model.ID, completion: @escaping (Session?) -> Void) {
+        
+        let parameters: Parameters = [
+            "email": email,
+            "password": password,
+            "first_name": firstName,
+            "last_name": lastName,
+            "template_schedule_id": scheduleID
+        ]
+        
+        network.makeRequest(module: .user, method: (.post, "sign_up"), parameters: parameters) { (result) in
+            switch result {
+            case .failure(let error):
+                // TODO: Handle error
+                completion(nil)
+                return
+            case .success(let json):
+                guard json["id"] != nil else {
+                    // TODO: Handle error
+                    completion(nil)
+                    return
+                }
+                
+                self.login(email: email, password: password, completion: { session in
+                    completion(session)
+                    return
+                })
+            }
+        }
+    }
+    
     func login(email: String, password: String, completion: @escaping (Session?) -> Void) {
         
         let secureString = "\(email):\(password)"

@@ -19,7 +19,11 @@ class SignupController: UITableViewController {
     
     @IBOutlet private weak var nextButton: UIButton!
 
-    private var group: String?
+    private var provider: AuthorizationProvider {
+        return AppManager.shared.authorizationProvider
+    }
+    
+    private var group: PickerGroup?
     
     private var emailValid: Bool {
         guard let text = emailField.text else { return false }
@@ -42,7 +46,7 @@ class SignupController: UITableViewController {
     }
     
     private var groupValid: Bool {
-        if let group = group, !group.isEmpty {
+        if let group = group, !group.name.isEmpty {
             return true
         }
         
@@ -88,8 +92,29 @@ class SignupController: UITableViewController {
     // MARK: Actions
     
     @IBAction func signUpTapped(_ sender: Any) {
+        guard let firstName = firstNameField.text,
+            let lastName = lastNameField.text,
+            let email = emailField.text,
+            let password = passwordField.text,
+            let scheduleID = group?.scheduleID else {
+                return
+        }
         
-        // TODO: Sign up
+        ActivityIndicator.standart.start()
+        
+        provider.signUp(email: email, password: password, firstName: firstName, lastName: lastName, scheduleID: scheduleID) { session in
+            DispatchQueue.main.async {
+                ActivityIndicator.standart.stop()
+            }
+            
+            guard session != nil else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                AppManager.shared.router.openMain()
+            }
+        }
     }
     
     // MARK: UI
@@ -103,7 +128,7 @@ class SignupController: UITableViewController {
     }
     
     private func updateGroupField() {
-        groupField.text = group
+        groupField.text = group?.name
     }
     
     @objc private func showGroupPicker() {
@@ -221,7 +246,7 @@ extension SignupController: UITextFieldDelegate {
 
 extension SignupController: GroupPickerControllerDelegate {
     
-    func groupDidChoose(_ group: String) {
+    func groupDidChoose(_ group: PickerGroup) {
         self.group = group
         updateGroupField()
         updateNextButton()

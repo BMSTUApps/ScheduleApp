@@ -8,8 +8,10 @@
 
 import UIKit
 
+typealias PickerGroup = (name: String, scheduleID: Model.ID)
+
 protocol GroupPickerControllerDelegate: AnyObject {
-    func groupDidChoose(_ group: String)
+    func groupDidChoose(_ group: PickerGroup)
 }
 
 class GroupPickerController: UIViewController {
@@ -19,7 +21,8 @@ class GroupPickerController: UIViewController {
     @IBOutlet weak var picker: UIPickerView!
     
     // TODO: Get picker data from server
-    typealias Data = [String: [String: [(group: String, schedule: Model.ID)]]]
+    typealias GroupData = (group: String, schedule: Model.ID)
+    typealias Data = [String: [String: [GroupData]]]
     var pickerData: Data = [:]
     
     private enum Component: Int {
@@ -32,14 +35,19 @@ class GroupPickerController: UIViewController {
         }
     }
     
-    var selectedGroup: String? {
+    var selectedGroup: PickerGroup? {
         guard let faculty = selectedValue(for: .faculty),
             let department = selectedValue(for: .department),
-            let group = selectedValue(for: .group) else {
+            let group = selectedValue(for: .group),
+            let scheduleID = pickerData[faculty]?[department]?.first(where: { (groupNumber, schedule) -> Bool in
+                return group == groupNumber
+            })?.schedule else {
                 return nil
         }
         
-        return "\(faculty)\(department)-\(group)"
+        let name = "\(faculty)\(department)-\(group)"
+        
+        return (name, scheduleID)
     }
     
     private func selectedValue(for component: Component) -> String? {
