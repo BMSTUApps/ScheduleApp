@@ -60,6 +60,9 @@
 		6ADE0DD12290A006009BBCA8 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE0DD02290A006009BBCA8 /* SignupController.swift */; };
 		6ADE0DD422947860009BBCA8 /* GroupPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE0DD322947860009BBCA8 /* GroupPickerController.swift */; };
 		6ADE0DD62295A856009BBCA8 /* EditEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE0DD52295A855009BBCA8 /* EditEventController.swift */; };
+		6ADE0DD9229714AD009BBCA8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE0DD8229714AD009BBCA8 /* Session.swift */; };
+		6ADE0DDB22971645009BBCA8 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE0DDA22971645009BBCA8 /* Result.swift */; };
+		6ADE0DDD22971AAB009BBCA8 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE0DDC22971AAB009BBCA8 /* TableCell.swift */; };
 		6ADECF042097A4EE007B4C15 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADECF032097A4EE007B4C15 /* TeacherCell.swift */; };
 		6ADECF062099FEEF007B4C15 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADECF052099FEEF007B4C15 /* Teacher.swift */; };
 		6ADF76372160F6D600131603 /* UIImageView+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADF76362160F6D600131603 /* UIImageView+Network.swift */; };
@@ -77,7 +80,7 @@
 		6AE9FC512121E75200F1DA28 /* RealmTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FC502121E75200F1DA28 /* RealmTeacher.swift */; };
 		6AE9FE3D20557F26002733F0 /* SettingsRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */; };
 		6AECC8DC217B68FE00DE1822 /* WeekHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AECC8DB217B68FE00DE1822 /* WeekHeader.swift */; };
-		6AF332B02037F88A0085C033 /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF332AF2037F88A0085C033 /* String+Localize.swift */; };
+		6AF332B02037F88A0085C033 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF332AF2037F88A0085C033 /* String+Utils.swift */; };
 		885110780E7D7FCFE218D911 /* Pods_BMSTUScheduleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB9FB48FB527CE3BD45C1C4 /* Pods_BMSTUScheduleTests.framework */; };
 		A5485CC11DC245BC009610C2 /* StreamingEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5485CC01DC245BC009610C2 /* StreamingEventCell.swift */; };
 		A5545DA5202C38DC00CBF1CD /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5545DA4202C38DC00CBF1CD /* Schedule.storyboard */; };
@@ -181,6 +184,9 @@
 		6ADE0DD02290A006009BBCA8 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		6ADE0DD322947860009BBCA8 /* GroupPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPickerController.swift; sourceTree = "<group>"; };
 		6ADE0DD52295A855009BBCA8 /* EditEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventController.swift; sourceTree = "<group>"; };
+		6ADE0DD8229714AD009BBCA8 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		6ADE0DDA22971645009BBCA8 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		6ADE0DDC22971AAB009BBCA8 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		6ADECF032097A4EE007B4C15 /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
 		6ADECF052099FEEF007B4C15 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		6ADF76362160F6D600131603 /* UIImageView+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Network.swift"; sourceTree = "<group>"; };
@@ -198,7 +204,7 @@
 		6AE9FC502121E75200F1DA28 /* RealmTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTeacher.swift; sourceTree = "<group>"; };
 		6AE9FE3C20557F26002733F0 /* SettingsRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowCell.swift; sourceTree = "<group>"; };
 		6AECC8DB217B68FE00DE1822 /* WeekHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeader.swift; sourceTree = "<group>"; };
-		6AF332AF2037F88A0085C033 /* String+Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localize.swift"; sourceTree = "<group>"; };
+		6AF332AF2037F88A0085C033 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		6AF332BD2037FBC50085C033 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7070BEABD42D18944AA408DA /* Pods-BMSTUSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMSTUSchedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMSTUSchedule/Pods-BMSTUSchedule.debug.xcconfig"; sourceTree = "<group>"; };
 		7737BF8A2939EC394AFE9ED1 /* Pods_BMSTUSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMSTUSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -387,6 +393,7 @@
 		6A81938B2289EF08004A3C37 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				6ADE0DDA22971645009BBCA8 /* Result.swift */,
 				6A8193892289EEF0004A3C37 /* NetworkingService.swift */,
 			);
 			path = Networking;
@@ -405,7 +412,7 @@
 			children = (
 				6ACBFC83220F5FB700950B58 /* CGFloat+Utils.swift */,
 				A59E699D21312CB8009A72A7 /* Date+Utils.swift */,
-				6AF332AF2037F88A0085C033 /* String+Localize.swift */,
+				6AF332AF2037F88A0085C033 /* String+Utils.swift */,
 				A5A839D51EE3FB050081D8D5 /* UIImage+Color.swift */,
 				6ADF76362160F6D600131603 /* UIImageView+Network.swift */,
 			);
@@ -433,7 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				6ADE0DC4229046B0009BBCA8 /* Authorization.storyboard */,
-				6ADE0DC1228FE344009BBCA8 /* AuthorizationProvider.swift */,
+				6ADE0DD722971496009BBCA8 /* Provider */,
 				6ADE0DCB2290509E009BBCA8 /* Controllers */,
 				6ADE0DC822904DE4009BBCA8 /* Views */,
 			);
@@ -444,7 +451,6 @@
 			isa = PBXGroup;
 			children = (
 				6ADE0DC622904DE0009BBCA8 /* RoundTextField.swift */,
-				6ADE0DCE22907BBC009BBCA8 /* ActivityIndicator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -457,6 +463,24 @@
 				6ADE0DD322947860009BBCA8 /* GroupPickerController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6ADE0DD722971496009BBCA8 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				6ADE0DD8229714AD009BBCA8 /* Session.swift */,
+				6ADE0DC1228FE344009BBCA8 /* AuthorizationProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		6ADE0DDE22971AB4009BBCA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6ADE0DDC22971AAB009BBCA8 /* TableCell.swift */,
+				6ADE0DCE22907BBC009BBCA8 /* ActivityIndicator.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		6ADF76342160DB3D00131603 /* ViewModels */ = {
@@ -501,6 +525,7 @@
 				A5545DB6202C3C7600CBF1CD /* Controllers */,
 				6ADF76352160DB7300131603 /* Models */,
 				6ADF76342160DB3D00131603 /* ViewModels */,
+				6ADE0DDE22971AB4009BBCA8 /* Views */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1094,9 +1119,11 @@
 				6ADE0DC2228FE344009BBCA8 /* AuthorizationProvider.swift in Sources */,
 				6AE9FC512121E75200F1DA28 /* RealmTeacher.swift in Sources */,
 				6A1276C9217CDBB7002CC62F /* NextCell.swift in Sources */,
+				6ADE0DDD22971AAB009BBCA8 /* TableCell.swift in Sources */,
 				6AE9FC4D21219E8500F1DA28 /* TeacherActionCell.swift in Sources */,
 				6A5CE043208AD474002BE568 /* TeachersController.swift in Sources */,
 				6A00128B212EF5C600C84044 /* Model.swift in Sources */,
+				6ADE0DDB22971645009BBCA8 /* Result.swift in Sources */,
 				6ADE0DD62295A856009BBCA8 /* EditEventController.swift in Sources */,
 				A5E0FE891DBFFB22008959A9 /* SettingsController.swift in Sources */,
 				A5A124091DE8DD70006FB4E5 /* AppManager.swift in Sources */,
@@ -1119,6 +1146,7 @@
 				6AECC8DC217B68FE00DE1822 /* WeekHeader.swift in Sources */,
 				6A1276C7217C6557002CC62F /* WeekHeaderViewModel.swift in Sources */,
 				6AE53860203AC2F3008441FC /* RealmEvent.swift in Sources */,
+				6ADE0DD9229714AD009BBCA8 /* Session.swift in Sources */,
 				A59E69A021318DC3009A72A7 /* ScheduleViewModel.swift in Sources */,
 				6A814EF7211A4D2F00D9AB3B /* EventLocationCellViewModel.swift in Sources */,
 				6A97CF0921A2BB7D00B5F378 /* TeacherSearchCell.swift in Sources */,
@@ -1150,7 +1178,7 @@
 				6A814EFF211B054700D9AB3B /* EventActionsCell.swift in Sources */,
 				6AE9FC4F21219EA400F1DA28 /* TeacherActionCellViewModel.swift in Sources */,
 				6AE9FC49212199A200F1DA28 /* TeacherAboutCell.swift in Sources */,
-				6AF332B02037F88A0085C033 /* String+Localize.swift in Sources */,
+				6AF332B02037F88A0085C033 /* String+Utils.swift in Sources */,
 				6A001289212EF48E00C84044 /* RealmService.swift in Sources */,
 				A5CED4DA1DB0E080000D2DFD /* AppDelegate.swift in Sources */,
 				6A5832672119FACA00C76F07 /* EventController.swift in Sources */,

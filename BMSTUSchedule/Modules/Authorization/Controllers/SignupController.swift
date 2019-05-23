@@ -2,7 +2,7 @@
 //  SignupController.swift
 //  BMSTUSchedule
 //
-//  Created by a.belkov on 18/05/2019.
+//  Created by Artem Belkov on 18/05/2019.
 //  Copyright © 2019 BMSTU Team. All rights reserved.
 //
 
@@ -15,8 +15,7 @@ class SignupController: UITableViewController {
     @IBOutlet private weak var passwordField: RoundTextField!
     @IBOutlet private weak var lastNameField: RoundTextField!
     @IBOutlet private weak var firstNameField: RoundTextField!
-    @IBOutlet weak var groupField: RoundTextField!
-    
+    @IBOutlet private weak var groupField: RoundTextField!
     @IBOutlet private weak var nextButton: UIButton!
 
     private var provider: AuthorizationProvider {
@@ -101,7 +100,6 @@ class SignupController: UITableViewController {
         }
         
         ActivityIndicator.standart.start()
-        
         provider.signUp(email: email, password: password, firstName: firstName, lastName: lastName, scheduleID: scheduleID) { session in
             DispatchQueue.main.async {
                 ActivityIndicator.standart.stop()
@@ -163,49 +161,36 @@ class SignupController: UITableViewController {
         self.present(controller, animated: true, completion: nil)
     }
     
+    // MARK: Data
+    
     private func getPickerData(completion: @escaping (GroupPickerController.Data?) -> Void) {
-        AppManager.shared.networkingService.makeRequest(module: .schedule, method: (.get, "templates")) { result in
-            switch result {
-            case .failure(let error):
-                // TODO: Handle error
-                break
-            case .success(let json):
-                guard let rawGroups = json["result"] as? [JSON] else {
-                    completion(nil)
-                    return
-                }
-                
-                let groups = rawGroups.compactMap({ raw in
-                    return Group(json: raw)
-                }).sorted(by: { (first, second) -> Bool in
-                    if first.department == second.department {
-                        return first.number < second.number
-                    }
-                    
-                    return first.department < second.department
-                })
-                
-                var data = GroupPickerController.Data()
-                for group in groups {
-                    var departmentNumber = 1
-                    if let number = Int(group.department.numerals) {
-                        departmentNumber = number
-                    }
-                    
-                    let faculty = group.department.replacingOccurrences(of: "\(departmentNumber)", with: "")
-                    
-                    var groupsArray = data[faculty]?["\(departmentNumber)"] ?? []
-                    groupsArray.append((group.number, schedule: group.scheduleID))
-                    
-                    if data[faculty] == nil {
-                        data[faculty] = ["\(departmentNumber)": groupsArray]
-                    } else {
-                        data[faculty]?["\(departmentNumber)"] = groupsArray
-                    }
-                }
-                
-                completion(data)
+        
+        provider.getAvailableGroups { groups in
+            guard let groups = groups else {
+                completion(nil)
+                return
             }
+            
+            var data = GroupPickerController.Data()
+            for group in groups {
+                var departmentNumber = 1
+                if let number = Int(group.department.numerals) {
+                    departmentNumber = number
+                }
+                
+                let faculty = group.department.replacingOccurrences(of: "\(departmentNumber)", with: "")
+                
+                var groupsArray = data[faculty]?["\(departmentNumber)"] ?? []
+                groupsArray.append((group.number, schedule: group.scheduleID))
+                
+                if data[faculty] == nil {
+                    data[faculty] = ["\(departmentNumber)": groupsArray]
+                } else {
+                    data[faculty]?["\(departmentNumber)"] = groupsArray
+                }
+            }
+            
+            completion(data)
         }
     }
 }
@@ -235,12 +220,7 @@ extension SignupController: UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        
-        if textField == groupField {
-            return false
-        }
-        
-        return true
+        return textField != groupField
     }
 }
 

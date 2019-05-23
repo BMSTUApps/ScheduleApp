@@ -9,7 +9,6 @@
 import UIKit
 
 protocol CellViewModelProtocol {
-        
     func fillCell(model: CellViewModel)
 }
 

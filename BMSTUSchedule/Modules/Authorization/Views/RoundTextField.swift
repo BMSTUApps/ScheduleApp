@@ -2,7 +2,7 @@
 //  RoundTextField.swift
 //  BMSTUSchedule
 //
-//  Created by a.belkov on 18/05/2019.
+//  Created by Artem Belkov on 18/05/2019.
 //  Copyright © 2019 BMSTU Team. All rights reserved.
 //
 

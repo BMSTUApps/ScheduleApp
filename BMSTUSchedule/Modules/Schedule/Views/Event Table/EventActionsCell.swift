@@ -9,8 +9,17 @@
 import UIKit
 import SPStorkController
 
-class EventActionsCell: UITableViewCell, CellViewModelProtocol {
+protocol EventActionsCellDelegate: TableCellDelegate {
+    func onNotify()
+    func onEdit()
+}
 
+class EventActionsCell: TableCell, CellViewModelProtocol {
+
+    weak var actionsDelegate: EventActionsCellDelegate! {
+        return (delegate as! EventActionsCellDelegate)
+    }
+    
     @IBOutlet weak var notifyButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
     
@@ -22,7 +31,7 @@ class EventActionsCell: UITableViewCell, CellViewModelProtocol {
     }
 
     @IBAction func notifyButtonTapped(_ sender: Any) {
-        print("Notify button tapped")
+        actionsDelegate?.onNotify()
         
         let alert = UIAlertController(title: "Напоминание установлено", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
@@ -32,7 +41,7 @@ class EventActionsCell: UITableViewCell, CellViewModelProtocol {
     }
     
     @IBAction func editButtonTapped(_ sender: Any) {
-        print("Edit button tapped")
+        actionsDelegate?.onEdit()
         
         let transitionDelegate = SPStorkTransitioningDelegate()
         

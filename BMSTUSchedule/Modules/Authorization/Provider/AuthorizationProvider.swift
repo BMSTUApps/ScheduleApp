@@ -6,43 +6,7 @@
 //  Copyright © 2019 BMSTU Team. All rights reserved.
 //
 
-import Foundation
 import Alamofire
-
-struct Session {
-    let email: String
-    let token: String
-    let expiresAt: Date
-    
-    var isValid: Bool {
-        return expiresAt > .today
-    }
-    
-    private enum Key: String {
-        case token
-        case expiresAt = "expires_at"
-    }
-    
-    // MARK: Initialization
-
-    init(email: String, token: String, expiresAt: Date) {
-        self.email = email
-        self.token = token
-        self.expiresAt = expiresAt
-    }
-    
-    init?(email: String, tokenJSON: JSON) {
-        guard let token = tokenJSON[Key.token.rawValue] as? String,
-            let rawExpiresAt = tokenJSON[Key.expiresAt.rawValue] as? String,
-            let expiresAt = Date(rawExpiresAt, format: "yyyy-MM-dd HH:mm:ss") else {
-                return nil
-        }
-
-        self.email = email
-        self.token = token
-        self.expiresAt = expiresAt
-    }
-}
 
 protocol Authorizable {
     func updateSession(_ session: Session, completion: @escaping (Session?) -> Void)
@@ -142,6 +106,34 @@ class AuthorizationProvider: Authorizable {
         
         login(email: session.email, password: password) { updatedSession in
             completion(updatedSession)
+        }
+    }
+    
+    func getAvailableGroups(completion: @escaping ([Group]?) -> Void) {
+        
+        network.makeRequest(module: .schedule, method: (.get, "templates")) { result in
+            switch result {
+            case .failure(let error):
+                // TODO: Handle error
+                break
+            case .success(let json):
+                guard let rawGroups = json["result"] as? [JSON] else {
+                    completion(nil)
+                    return
+                }
+                
+                let groups = rawGroups.compactMap({ raw in
+                    return Group(json: raw)
+                }).sorted(by: { (first, second) -> Bool in
+                    if first.department == second.department {
+                        return first.number < second.number
+                    }
+                    
+                    return first.department < second.department
+                })
+                
+                completion(groups)
+            }
         }
     }
 }

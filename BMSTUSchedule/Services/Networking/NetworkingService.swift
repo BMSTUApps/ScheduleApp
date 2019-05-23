@@ -6,30 +6,10 @@
 //  Copyright © 2019 BMSTU Team. All rights reserved.
 //
 
-import Foundation
 import Alamofire
 
 typealias JSON = [String: Any]
 typealias RequestParameters = [String: Any]
-
-enum Result<T, U> {
-    case success(T)
-    case failure(U)
-    
-    public var value: T? {
-        if case .success(let value) = self {
-            return value
-        }
-        return nil
-    }
-    
-    public var error: U? {
-        if case .failure(let error) = self {
-            return error
-        }
-        return nil
-    }
-}
 
 class NetworkingService {
     typealias Method = (http: HTTPMethod, server: String)
