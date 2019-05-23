@@ -10,7 +10,7 @@ import UIKit
 
 class TeachersController: UITableViewController {
 
-    let teachers: [Teacher] = []
+    var teachers: [Teacher] = []
     
     private(set) var showTeachers: [Teacher] = []
     
@@ -21,6 +21,38 @@ class TeachersController: UITableViewController {
         setupIntents()
         
         showTeachers = teachers
+        
+        // FIXME: Test teachers
+        let parameters: [String: Any] = [
+            "department": "ИУ5"
+        ]
+        ActivityIndicator.standart.start()
+        AppManager.shared.networkingService.makeRequest(module: .teachers, method: (.get, ""), parameters: parameters) { result in
+            switch result {
+            case .failure(let error):
+                // TODO: Handle error
+                break
+            case .success(let json):
+                DispatchQueue.main.async {
+                    ActivityIndicator.standart.stop()
+                }
+                
+                guard let rawTeachers = json["result"] as? [JSON] else {
+                    return
+                }
+                
+                let teachers = rawTeachers.compactMap({ raw -> Teacher? in
+                    return Teacher(json: raw)
+                })
+                
+                self.showTeachers = teachers
+                self.teachers = teachers
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
     
     // MARK: - UI

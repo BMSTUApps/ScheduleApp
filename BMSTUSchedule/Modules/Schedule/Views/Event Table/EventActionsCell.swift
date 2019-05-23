@@ -23,6 +23,12 @@ class EventActionsCell: UITableViewCell, CellViewModelProtocol {
 
     @IBAction func notifyButtonTapped(_ sender: Any) {
         print("Notify button tapped")
+        
+        let alert = UIAlertController(title: "Напоминание установлено", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        AppManager.shared.router.topViewController()?.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func editButtonTapped(_ sender: Any) {

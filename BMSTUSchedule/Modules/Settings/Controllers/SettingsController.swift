@@ -78,7 +78,7 @@ class SettingsController: TableViewController {
         cell.selectionStyle = row.canSelect() ? .default : .none
         
         // Fix group name
-        cell.fill(groupName: "ИУ5-63")
+        cell.fill(groupName: "ИУ5-83")
 
         self.groupCell = cell
         
