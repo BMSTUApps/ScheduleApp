@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SPStorkController
 
 protocol EventActionsCellDelegate: TableCellDelegate {
     func onNotify()
@@ -32,29 +31,10 @@ class EventActionsCell: TableCell, CellViewModelProtocol {
 
     @IBAction func notifyButtonTapped(_ sender: Any) {
         actionsDelegate?.onNotify()
-        
-        let alert = UIAlertController(title: "Напоминание установлено", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        AppManager.shared.router.topViewController()?.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func editButtonTapped(_ sender: Any) {
         actionsDelegate?.onEdit()
-        
-        let transitionDelegate = SPStorkTransitioningDelegate()
-        
-        guard let controller = AppRouter.ModuleStoryboard.schedule.storyboard.instantiateViewController(withIdentifier: String(describing: EditEventController.self)) as? EditEventController,
-            let rootController = AppManager.shared.router.topViewController() else {
-            return
-        }
-        
-        controller.transitioningDelegate = transitionDelegate
-        controller.modalPresentationStyle = .custom
-        controller.modalPresentationCapturesStatusBarAppearance = true
-        
-        rootController.present(controller, animated: true, completion: nil)
     }
     
     // MARK: - CellViewModelProtocol

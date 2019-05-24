@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SPStorkController
 
 class EventController: UITableViewController {
 
@@ -69,6 +70,10 @@ class EventController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellViewModel.identifier, for: indexPath)
         
+        if let castedCell = cell as? TableCell {
+            castedCell.delegate = self
+        }
+        
         if let castedCell = cell as? CellViewModelProtocol {
             castedCell.fillCell(model: cellViewModel)
         }
@@ -94,5 +99,35 @@ class EventController: UITableViewController {
 
             teacherController.teacher = event?.teacher
         }
+    }
+}
+
+extension EventController: EventActionsCellDelegate {
+    
+    func onNotify() {
+        print("onNotify")
+        
+        let alert = UIAlertController(title: "Напоминание установлено", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func onEdit() {
+        print("onEdit")
+        
+        let transitionDelegate = SPStorkTransitioningDelegate()
+        
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: String(describing: EditEventController.self)) as? EditEventController else {
+                return
+        }
+        
+        controller.transitioningDelegate = transitionDelegate
+        controller.modalPresentationStyle = .custom
+        controller.modalPresentationCapturesStatusBarAppearance = true
+        
+        present(controller, animated: true, completion: nil)
     }
 }

@@ -12,9 +12,7 @@ import Kingfisher
 extension UIImageView {
 
     func setImage(from url: URL) {
-        
         let resource = ImageResource(downloadURL: url)
-        
         self.kf.setImage(with: resource, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
     }
 }
